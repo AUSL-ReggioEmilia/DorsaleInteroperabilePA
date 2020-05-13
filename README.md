@@ -32,13 +32,9 @@ marco.foracchia@ausl.re.it
 
 ### Contatti di Progel S.p.A (Mantainer) 
 
-Progel S.p.A. è il mantainer della soluzione e partecipa alla conduzione della tavolo di confronto sul riuso della soluzione,
-offre contratti di assistenza, manutenzione ed sviluppi sulla soluzione Dorsale Interoperabile PA, 
-offre consulenza in ambito di digializzazione dei procedimenti e attività e conservazione,
-offre la soluzione Dorsale Interiperabile PA in modalità cloud utilizzando Windows Azure (IAAS qualificato nei marketplace della PA) 
+Progel S.p.A. è il mantainer della soluzione e partecipa alla conduzione del tavolo di confronto sul riuso della soluzione, offre contratti di assistenza, manutenzione e sviluppi sulla Soluzione Dorsale Interoperabile PA, offre consulenza in ambito di digitalizzazione dei processi sanitari,
+offre la soluzione Dorsale Interoperabile PA in modalità cloud utilizzando Windows Azure (IAAS qualificato nei marketplace della PA) 
 
 Maggiori informazioni sul sito aziendale https://www.progel.it
 
-Contatto del responsabile della BU ISV - Healthcare di Progel S.p.A. 
-Alessandro Nostini
-alessandro.nostini@progel.it 
+Contatto del responsabile della BU ISV - Healthcare di Progel S.p.A.: Alessandro Nostini alessandro.nostini@progel.it 
