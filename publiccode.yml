@@ -28,6 +28,11 @@ description:
       - Clinical Data Repository (CDR)
       - Enterprise Master Patient Index (MPI)
       - ' OrderEntry (OE)'
+      - Print Manager (stampa automatizzata dei referti)
+      - Print Dispatcher (stampa automatizzata delle etichette)
+      - Generazione dei CDA e Invio dei referti verso FSE / Circuito SOLE
+      - Portale Web Consultazione Utente
+      - Portale Web di Amministrazione
     genericName: Dorsale Interoperabile PA
     localisedName: Dorsale Interoperabile PA
     longDescription: >
@@ -181,6 +186,20 @@ description:
       • garantire una maggiore stabilità ed usabilità delle informazioni, in
       relazione alle valutazioni cliniche di cura ed alle indagini
       epidemiologiche o su particolari popolazioni di pazienti.
+
+
+      ​
+
+
+      Ogni modifica della Soluzione Medico di Dorsale Interoparabile dovrà
+      essere adeguatamente controllato e soggetto a verifiche  (da parte del )
+      di conformità legate alle procedure di Gestione della Qualità e
+      Certificazione come Dispositivo Medico rispettando i requisiti normativi e
+      legislativi che permettono al dispositivo di operare in piena conformità a
+      leggi e normative a cui è soggetto ( Requisiti di Performance, di Safety,
+      di Security, di Interfaccia, dovuti all’ambiente di installazione del
+      dispositivo, di Gestione delle Anomalie, di Gestione delle Anomalie,
+      normativi e legislativi)
     screenshots:
       - >-
         https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_Core.png
