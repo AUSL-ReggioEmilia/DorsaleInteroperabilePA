@@ -7,12 +7,12 @@ applicationSuite: >-
   Dorsale Interoperabile - Clinical Data Repository (CDR), Enterprise Master
   Patient Index (MPI), OrderEntry (OE)
 categories:
+  - warehouse-management
+  - document-management
   - data-collection
   - data-visualization
+  - data-analytics
   - customer-service-and-support
-  - document-management
-  - warehouse-management
-  - workflow-management
 dependsOn:
   proprietary:
     - name: Microsoft SQL Server
@@ -28,7 +28,7 @@ description:
       - Clinical Data Repository (CDR)
       - Enterprise Master Patient Index (MPI)
       - ' OrderEntry (OE)'
-    genericName: Dorsale Interoperabile
+    genericName: Dorsale Interoperabile PA
     localisedName: Dorsale Interoperabile PA
     longDescription: >
       Il Dispositivo Medico di Dorsale Interoperabile è La Soluzione Software
@@ -41,7 +41,7 @@ description:
 
 
       L’adozione della Soluzione comporta dei benefici diretti ed indiretti nel
-      percorso di cura dei pazienti. 
+      percorso di cura dei pazienti.
 
 
       Sono di seguito riepilogati i principali vantaggi:
@@ -78,7 +78,7 @@ description:
 
 
       Il DM Dorsale Interoperabile è quindi La Soluzione Software che estende il
-      Sistema Informativo Ospedaliero di una organizzazione sanitaria. 
+      Sistema Informativo Ospedaliero di una organizzazione sanitaria.
 
 
       Le funzioni di trasmissione dati della DI sono applicabili a tutti gli
@@ -86,8 +86,7 @@ description:
 
 
       Permette infatti di integrare, mediante connettori sviluppati ad hoc, i
-      sistemi informativi dipartimentali in uso presso le varie Unità
-      Operative. 
+      sistemi informativi dipartimentali in uso presso le varie Unità Operative.
 
 
       I sistemi dipartimentali possono permettere agli operatori di richiedere
@@ -137,7 +136,7 @@ description:
       I benefici di cui una organizzazione sanitaria può avvalersi adottando il
       DM Dorsale Interoperabile, sono prevalentemente organizzativi, insiti
       nella semplificazione e nella ottimizzazione dei flussi informativi che
-      richiede l’attività clinico sanitaria delle unità operative. 
+      richiede l’attività clinico sanitaria delle unità operative.
 
 
       ​
@@ -182,15 +181,13 @@ description:
       • garantire una maggiore stabilità ed usabilità delle informazioni, in
       relazione alle valutazioni cliniche di cura ed alle indagini
       epidemiologiche o su particolari popolazioni di pazienti.
-
-
-      ​
-
-
-      ​
-
-
-      ​
+    screenshots:
+      - >-
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_Core.png
+      - >-
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_OE_Core.png
+      - >-
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_SAC_CORE.png
     shortDescription: >-
       Dorsale Interoperabile: Clinical Data Repository (CDR), Enterprise Master
       Patient Index (MPI), OrderEntry (OE)
@@ -218,7 +215,7 @@ it:
     codiceIPA: auslre
 landingURL: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
 legal:
-  license: EUPL-1.2
+  license: LGPL-3.0-or-later
   mainCopyrightOwner: AUSL Reggio Emilia
   repoOwner: AUSL Reggio Emilia
 localisation:
@@ -239,10 +236,10 @@ maintenance:
 name: Dorsale Interoperabile
 platforms:
   - windows
-releaseDate: '2020-01-04'
+releaseDate: '2020-05-13'
 roadmap: 'https://www.progel.it/healthcare/#offerta'
 softwareType: standalone/other
-softwareVersion: '2.00'
+softwareVersion: 1.2020.5.13
 url: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA.git'
 usedBy:
   - AUSL Reggio Emilia
