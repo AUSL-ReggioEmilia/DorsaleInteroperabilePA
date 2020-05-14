@@ -1,28 +1,34 @@
 
-Dorsale Interoperabile è la soluzione Core che unisce Clinical Data Repository (CDR), Enterprise Master Patient Index (MPI) e OrderEntry (OE) in riuso con azienda pubblica cedente la AUSL di Reggio Emilia. 
+Dorsale Interoperabile è la Soluzione Core che unisce Clinical Data Repository (CDR), Enterprise Master Patient Index (MPI) e OrderEntry (OE) in riuso con azienda pubblica cedente la AUSL di Reggio Emilia. 
 
-Il progetto concettuale e l’analisi funzionale del DWH (primo modulo sviluppato della Dorsale Interoperabile) sono iniziati nel corso del 2007 a seguito dell’aggiudicazione da parte di PROGEL S.p.A. di un bando di gara emesso dall’Arcispedale S. Maria Nuova di Reggio Emilia (in seguito inglobato nell’Azienda Sanitaria Locale di Reggio Emilia). Le specifiche funzionali furono redatte della direzione tecnica informatica dell’Arcispedale. PROGEL S.p.A. sviluppo e realizzò la prima versione del modulo DWH CORE (di cui è proprietaria) in stretta collaborazione e con la supervisione della direzione tecnica dell’Arcispedale.
+Il progetto concettuale e l’analisi funzionale del DWH (primo modulo sviluppato della Dorsale Interoperabile) sono iniziati nel corso del 2007 a seguito dell’aggiudicazione da parte di PROGEL S.R.L. (ora PROGEL S.p.A.) di un bando di gara emesso dall’Arcispedale S. Maria Nuova di Reggio Emilia (in seguito inglobato nell’Azienda Sanitaria Locale di Reggio Emilia). 
 
-Nel tempo sono stati ideati ed analizzati, con il medesimo approccio partecipativo, anche i moduli CORE di SAC e OE oltre ai vari connettori per l’integrazione dei vari sistemi eroganti e richiedenti. La direzione tecnica dell’ente sanitario ha sempre contribuito attivamente alle seguenti attività:
+Le specifiche funzionali furono redatte della direzione tecnica informatica dell’Arcispedale. 
+
+PROGEL S.p.A. sviluppò e realizzò la prima versione del modulo DWH CORE (di cui è proprietaria) in stretta collaborazione e con la supervisione della direzione tecnica dell’Arcispedale.
+
+Nel tempo sono stati ideati ed analizzati, con il medesimo approccio partecipativo, anche i moduli CORE di SAC e OE oltre ai vari connettori per l’integrazione dei vari sistemi eroganti e richiedenti. 
+
+La direzione tecnica dell’ente sanitario ha sempre contribuito attivamente alle seguenti attività:
 
 • Progettazione funzionale dei moduli della DI e linee guida strategiche per la reciproca integrazione;
 
 • Definizione degli standard di riferimento tecnologico per l’integrazione;
 
-• Valutazione di efficacia nell’esecuzione del percorso di cura della soluzione DI presso le unità operative convolte;
+• Valutazione di efficacia nell’esecuzione del percorso di cura della Soluzione DI presso le unità operative convolte;
 
 • Analisi evolutiva per soddisfare le nuove esigenze operative;
 
-• Esecuzione dei test di corrispondenza della soluzione applicativa alle esigenze funzionali dell’Organizzazione.
+• Esecuzione dei test di corrispondenza della Soluzione applicativa alle esigenze funzionali dell’Organizzazione.
 
-La forma di collaborazione, ormai consolidata nel tempo, con l’Azienda Sanitaria Locale di Reggio Emila ha trovato una regolare formalizzazione con l’adesione delle parti (Progel e AUSL RE) alla “normativa sul Riuso” del software (rif. CAD Decreto legislativo n. 235/2010 e successive integrazioni) che prevede quanto di seguito riportato:
+La forma di collaborazione, ormai consolidata nel tempo, con l’Azienda Sanitaria Locale di Reggio Emila ha trovato una regolare formalizzazione con l’adesione delle parti (Progel S.p.A e AUSL RE) alla “normativa sul Riuso” del software (rif. CAD Decreto legislativo n. 235/2010 e successive integrazioni) che prevede quanto di seguito riportato:
 
 • PROGEL S.p.A. è proprietaria dei componenti CORE della DI in quanto inizialmente realizzati in seguito ad aggiudicazione di una gara pubblica ad invito. PROGEL detiene quindi le competenze ed i sorgenti dei componenti CORE della DI e ne esegue l’evoluzione e la manutenzione in esclusiva;
 
-• L’Azienda Sanitaria Locale di Reggio Emilia detiene la proprietà di ogni componente della DI sviluppato a seguito di evolutive di cui fornisce l’analisi funzionale del progetto e ne richiede lo sviluppo (ad eccezione dei moduli che sono di proprietà di PROGEL S.pA.);
+• L’Azienda Sanitaria Locale di Reggio Emilia detiene la proprietà di ogni componente della DI sviluppato a seguito di evolutive di cui fornisce l’analisi funzionale del progetto e ne richiede lo sviluppo (ad eccezione dei moduli che sono di proprietà di PROGEL S.p.A.);
 
-I vincoli di riutilizzo previsti dalla normativa sul Riuso, prevedono la possibilità, per ogni altra azienda sanitaria pubblica della Regione Emilia-Romagna, di acquisire a titolo non oneroso i componenti “riusabili” di interesse della DI a semplice richiesta.
+I vincoli di riutilizzo previsti dalla normativa sul Riuso, prevedono la possibilità, per ogni altra azienda sanitaria pubblica, di acquisire a titolo non oneroso i componenti “riusabili” di interesse della Soluzione di Dorsale Interoperabile a semplice richiesta.
 
 Sulla base di quanto sopra esposto è lecito ritenere che la valutazione di appropriatezza ed efficacia della Dorsale Interoperabile sia stata condotta da una organizzazione sanitaria competente come l’Azienda Sanitaria di Reggio Emila.
 
-Nel 2019 la soluzione fu adottata, per mezzo di riuso, anche dalla Azienda Ospedaliero - Universitaria di Modena.
+Nel 2018 la Soluzione fu adottata, per mezzo di riuso, anche dalla Azienda Ospedaliero - Universitaria di Modena.
