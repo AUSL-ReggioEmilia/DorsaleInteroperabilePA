@@ -234,7 +234,7 @@ it:
     codiceIPA: auslre
 landingURL: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
 legal:
-  license: LGPL-3.0-or-later
+  license: EUPL-1.2
   mainCopyrightOwner: AUSL Reggio Emilia
   repoOwner: AUSL Reggio Emilia
 localisation:
