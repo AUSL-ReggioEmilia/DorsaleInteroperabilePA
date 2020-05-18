@@ -4,8 +4,8 @@
 
 publiccodeYmlVersion: '0.2'
 applicationSuite: >-
-  Dorsale Interoperabile - Clinical Data Repository (CDR), Enterprise Master
-  Patient Index (MPI), OrderEntry (OE)
+  Dorsale Interoperabile - DataWareHouse Clinico, Anagrafica Pazienti
+  Centralizzata, OrderEntry
 categories:
   - warehouse-management
   - document-management
@@ -20,10 +20,65 @@ dependsOn:
       version: ''
       versionMax: '2019'
       versionMin: '2014'
+developmentStatus: stable
+landingURL: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
+name: >-
+  Dorsale Interoperabile - Clinical Data Repository (CDR), Enterprise Master
+  Patient Index (MPI), OrderEntry (OE)
+platforms:
+  - windows
+releaseDate: '2020-05-13'
+roadmap: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
+softwareType: standalone/other
+softwareVersion: 1.2020.5.13
+url: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
+usedBy:
+  - AUSL Reggio Emilia
+  - Azienda Ospedaliero - Universitaria di Modena
+maintenance:
+  contacts:
+    - affiliation: AUSL Reggio Emilia
+      email: marco.foracchia@ausl.re.it
+      name: Marco Foracchia
+      phone: '+393346478393'
+  contractors:
+    - name: Progel SpA
+      until: '2022-12-31'
+      website: 'https://www.progel.it/'
+  type: contract
+legal:
+  license: EUPL-1.2
+  mainCopyrightOwner: AUSL Reggio Emilia
+  repoOwner: AUSL Reggio Emilia
+intendedAudience:
+  countries:
+    - it
+  scope:
+    - healthcare
+    - research
+    - emergency-services
+localisation:
+  availableLanguages:
+    - it
+  localisationReady: false
+it:
+  conforme:
+    gdpr: true
+    lineeGuidaDesign: false
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: true
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+  riuso:
+    codiceIPA: auslre
 description:
   it:
-    apiDocumentation: 'https://www.progel.it/healthcare/#offerta'
-    documentation: 'https://www.progel.it/healthcare/#offerta'
+    apiDocumentation: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
+    documentation: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
     features:
       - Clinical Data Repository (CDR)
       - Enterprise Master Patient Index (MPI)
@@ -32,7 +87,10 @@ description:
       - Print Dispatcher (stampa automatizzata delle etichette)
       - Generazione dei CDA e Invio dei referti verso FSE / Circuito SOLE
       - Portale Web Consultazione Utente
-      - Portale Web di Amministrazione
+      - 'Portale Web di Amministrazione, Monitoraggio e Configurazione'
+      - Banca Dati Farmaci
+      - Codifiche ICD9
+      - Codifiche SOLE
     genericName: Dorsale Interoperabile PA
     localisedName: Dorsale Interoperabile PA
     longDescription: >
@@ -40,26 +98,6 @@ description:
       che offre un sistema aperto e interoperabile per la concentrazione di
       informazioni e la spedizione di messaggi in formato elettronico contenenti
       informazioni di rilevanza clinica.
-
-
-      ​
-
-
-      L’adozione della Soluzione comporta dei benefici diretti ed indiretti nel
-      percorso di cura dei pazienti.
-
-
-      Sono di seguito riepilogati i principali vantaggi:
-
-
-      • miglioramento del percorso di cura del paziente
-
-
-      • miglioramento della sicurezza per il paziente
-
-
-      • riduzione del rischio di errata esecuzione di azioni da parte del
-      personale sanitario
 
 
       ​
@@ -127,12 +165,21 @@ description:
       ​
 
 
-      L’infrastruttura tecnologica della Dorsale Interoperabile è costituita da
-      un repository centralizzato e segmentato, un middleware di comunicazione
-      asincrona (bus), dei servizi di integrazione applicativa (Web Service),
-      dei connettori di integrazione (con altri sistemi informativi) e dei
-      portali tematici riservati agli operatori (operatori clinico sanitari) ed
-      agli amministratori (tecnici informatici).
+      L’adozione della Soluzione comporta dei benefici diretti ed indiretti nel
+      percorso di cura dei pazienti.
+
+
+      Sono di seguito riepilogati i principali vantaggi:
+
+
+      • miglioramento del percorso di cura del paziente
+
+
+      • miglioramento della sicurezza per il paziente
+
+
+      • riduzione del rischio di errata esecuzione di azioni da parte del
+      personale sanitario
 
 
       ​
@@ -152,6 +199,17 @@ description:
       sanitario uno strumento di supporto efficace nelle attività di richiesta e
       consultazione (sostituendosi all'unica alternativa di esecuzione di
       procedure manuali basate su carta).
+
+
+      ​
+
+
+      L’infrastruttura tecnologica della Dorsale Interoperabile è costituita da
+      un repository centralizzato e segmentato, un middleware di comunicazione
+      asincrona (bus), dei servizi di integrazione applicativa (Web Service),
+      dei connettori di integrazione (con altri sistemi informativi) e dei
+      portali tematici riservati agli operatori (operatori clinico sanitari) ed
+      agli amministratori (tecnici informatici).
 
 
       ​
@@ -192,8 +250,8 @@ description:
 
 
       Ogni modifica della Soluzione Medico di Dorsale Interoparabile dovrà
-      essere adeguatamente controllato e soggetto a verifiche  (da parte del )
-      di conformità legate alle procedure di Gestione della Qualità e
+      essere adeguatamente controllato e soggetto a verifiche (da parte del ) di
+      conformità legate alle procedure di Gestione della Qualità e
       Certificazione come Dispositivo Medico rispettando i requisiti normativi e
       legislativi che permettono al dispositivo di operare in piena conformità a
       leggi e normative a cui è soggetto ( Requisiti di Performance, di Safety,
@@ -210,56 +268,3 @@ description:
     shortDescription: >-
       Dorsale Interoperabile: Clinical Data Repository (CDR), Enterprise Master
       Patient Index (MPI), OrderEntry (OE)
-developmentStatus: stable
-intendedAudience:
-  countries:
-    - it
-  scope:
-    - healthcare
-    - research
-    - emergency-services
-it:
-  conforme:
-    gdpr: true
-    lineeGuidaDesign: false
-    misureMinimeSicurezza: true
-    modelloInteroperabilita: true
-  countryExtensionVersion: '0.2'
-  piattaforme:
-    anpr: false
-    cie: false
-    pagopa: false
-    spid: false
-  riuso:
-    codiceIPA: auslre
-landingURL: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
-legal:
-  license: EUPL-1.2
-  mainCopyrightOwner: AUSL Reggio Emilia
-  repoOwner: AUSL Reggio Emilia
-localisation:
-  availableLanguages:
-    - it
-  localisationReady: false
-maintenance:
-  contacts:
-    - affiliation: AUSL Reggio Emilia
-      email: marco.foracchia@ausl.re.it
-      name: Marco Foracchia
-      phone: '+393346478393'
-  contractors:
-    - name: Progel SpA
-      until: '2022-12-31'
-      website: 'https://www.progel.it/'
-  type: contract
-name: Dorsale Interoperabile
-platforms:
-  - windows
-releaseDate: '2020-05-13'
-roadmap: 'https://www.progel.it/healthcare/#offerta'
-softwareType: standalone/other
-softwareVersion: 1.2020.5.13
-url: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA.git'
-usedBy:
-  - AUSL Reggio Emilia
-  - Azienda Ospedaliero - Universitaria di Modena
