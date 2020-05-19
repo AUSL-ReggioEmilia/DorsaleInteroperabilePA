@@ -20,6 +20,11 @@ dependsOn:
       version: ''
       versionMax: '2019'
       versionMin: '2014'
+    - name: Biztalk Server
+      optional: false
+      version: ''
+      versionMax: '2019'
+      versionMin: '2014'
 description:
   it:
     apiDocumentation: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
@@ -30,17 +35,20 @@ description:
       - ' OrderEntry (OE)'
       - Print Manager (stampa automatizzata dei referti)
       - Print Dispatcher (stampa automatizzata delle etichette)
-      - Generazione dei CDA e Invio dei referti verso FSE / Circuito SOLE
+      - >-
+        Generazione dei CDA e Invio dei referti verso Fascicolo Sanitario Emilia
+        Romagna
       - Portale Web Consultazione Utente
       - 'Portale Web di Amministrazione, Monitoraggio e Configurazione'
+      - Integrazione con il Fascicolo Sanitario Emilia Romagna
       - Banca Dati Farmaci
       - Codifiche ICD9
       - Codifiche SOLE
     genericName: Dorsale Interoperabile PA
     localisedName: Dorsale Interoperabile PA
     longDescription: >
-      Il Dispositivo Medico di Dorsale Interoperabile è La Soluzione Software
-      che offre un sistema aperto e interoperabile per la concentrazione di
+      Il Dispositivo Medico Dorsale Interoperabile è La Soluzione Software che
+      offre un sistema aperto e interoperabile per la concentrazione di
       informazioni e la spedizione di messaggi in formato elettronico contenenti
       informazioni di rilevanza clinica.
 
@@ -161,7 +169,7 @@ description:
 
 
       Il modello di dati e delle mappe di archiviazione dei dati adottato per il
-      modulo DWH della Dorsale interoperabile è di tipo ibrido Centralized Data
+      modulo DWH della Dorsale Interoperabile è di tipo ibrido Centralized Data
       e sfrutta la configurazione classica relazionale per gli attributi non
       sparsi di entità “stabili” e la configurazione EAV per gli attributi
       sparsi e/o “variabili”.
@@ -196,15 +204,22 @@ description:
 
       Ogni modifica apportata da terze parti al Dispositivo Medico Dorsale
       Interoperabile dovrà essere oggetto di ricertificazione da parte di un
-      Mantainer che ha i requisiti in vigore nel rispetto della norma ISO
-      13485. 
+      Mantainer che ha i requisiti in vigore nel rispetto della norma ISO 13485.
     screenshots:
       - >-
-        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_Core.png
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_Referti_Core.png
       - >-
-        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_OE_Core.png
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_Eventi_Core.png
       - >-
-        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_SAC_CORE.png
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_SAC_Pazienti_Core.png
+      - >-
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_OE_RichiesteStati_Core.png
+      - >-
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_NoteAnamnestiche_Core.png
+      - >-
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_SAC_Consensi_Core.png
+      - >-
+        https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_OE_EroganteGenerico_Core.png
     shortDescription: >-
       Dorsale Interoperabile: Clinical Data Repository (CDR), Enterprise Master
       Patient Index (MPI), OrderEntry (OE)
