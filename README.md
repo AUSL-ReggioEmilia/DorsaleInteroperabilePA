@@ -26,8 +26,6 @@ Nella sezione Dorsale Interoperabile PA è disponibile l'intero manuale della So
 
 ### Contatti della AUSL Reggio Emilia (Pubblica Amministrazione cedente) 
 
-Il referente del Servizio Informatico della AUSL di Reggio Emilia (https://www.ausl.re.it/node/303999) che segue i contatti con le pubbliche amministrazioni interessate alla Soluzione Dorsale Interoperabile PA è la Dott.sa Silvia Filippi silvia.filippi@ausl.re.it
-
 Il referente tecnico del Servizio Tecnologie Informatiche e Telematiche (https://www.ausl.re.it/node/304003) che segue gli sviluppi e la conduzione della Soluzione Dorsale Interoperabile PA è l'Ing. Marco Foracchia marco.foracchia@ausl.re.it
 
 ### Contatti di Progel S.p.A (Mantainer) 
