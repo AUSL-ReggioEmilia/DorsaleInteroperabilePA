@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ConnectorV2" nillable="true" type="ConnectorV2" />
+  <xs:complexType name="ConnectorV2" />
+  <xs:element name="RegConfig" nillable="true" type="RegConfig" />
+  <xs:complexType name="RegConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LogSource" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LogInformation" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LogWarning" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LogError" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ConnectionStringSac" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DatabaseIsolationLevel" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ApplicationSyncLevel" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ApplicationSyncTimeout" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ConnectionErrorTMaxRetry" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ConnectionErrorDelayRetry" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CommandTimeoutTMaxRetry" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CommandTimeoutDelayRetry" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

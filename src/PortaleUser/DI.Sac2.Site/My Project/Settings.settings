@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="VecchioPortaleUserUrlASMN" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VecchioPortaleUserUrlAUSL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WsSac_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">progel.it\dev_vs</Value>
+    </Setting>
+    <Setting Name="WsSac_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aa1234BB</Value>
+    </Setting>
+    <Setting Name="Anonimizzazioni_ModuloStampa_Avviso" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Su richiesta dell'assistito la Direzione Sanitaria ha rilasciato la seguente posizione anonima, da utilizzare 
+per gli accessi alle strutture sanitarie pubbliche della provincia di Reggio Emilia.&lt;br/&gt;
+Per chiarimenti contattare la Direzione Sanitaria dell'Azienda USL o l'operatore che ha rilasciato il codice.&lt;br/&gt;&lt;br/&gt;
+In caso di registrazione dell'assistito sui sistemi informativi aziendali, procedere con una RICERCA
+preliminare per verificare che la posizione anonima seguente non sia già presente.&lt;br/&gt;
+Qualora la posizione non sia presente, inserirla garantendo che siano compilati tutti i campi come indicato.</Value>
+    </Setting>
+    <Setting Name="InstrumentationKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">47f2a002-85e4-4b5b-af93-bb848e0c7a4a</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

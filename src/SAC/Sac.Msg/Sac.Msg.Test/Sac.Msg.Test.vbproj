@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D258F70D-397B-4597-89C6-40C53D9AC515}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Asmn.Sac.Msg.Test.My.MyApplication</StartupObject>
+    <RootNamespace>Asmn.Sac.Msg.Test</RootNamespace>
+    <AssemblyName>Asmn.Sac.Msg.Test</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Asmn.Sac.Msg.Test.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Asmn.Sac.Msg.Test.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Asmn.Sac.Msg.DataAccess">
+      <HintPath>..\Sac.Msg.DataAccess\bin\Release\Asmn.Sac.Msg.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\SacWcfServiceReferenceConsensi\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SacWcfServiceReference\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Application2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SerializerHelper.vb" />
+    <Compile Include="Utility.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\SacWcfServiceReferenceConsensi\Asmn.Sac.Msg.Test.SacWcfServiceReferenceConsensi.MessaggioConsensoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SacWcfServiceReferenceConsensi\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SacWcfServiceReferenceConsensi\v1.0.wsdl" />
+    <None Include="Connected Services\SacWcfServiceReferenceConsensi\v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SacWcfServiceReference\Asmn.Sac.Msg.Test.SacWcfServiceReference.DettaglioPazienteReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SacWcfServiceReference\Asmn.Sac.Msg.Test.SacWcfServiceReference.ListaPazientiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SacWcfServiceReference\Asmn.Sac.Msg.Test.SacWcfServiceReference.MessaggioPazienteReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SacWcfServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SacWcfServiceReference\v1.0.wsdl" />
+    <None Include="Connected Services\SacWcfServiceReference\v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application2.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\Sac.Msg.Wcf.sac.bt.consenso.schema.dataaccess.MessaggioConsensoReturn.datasource" />
+    <None Include="My Project\DataSources\Sac.Msg.Wcf.sac.bt.paziente.schema.dataaccess.DettaglioPazienteReturn.datasource" />
+    <None Include="My Project\DataSources\Sac.Msg.Wcf.sac.bt.paziente.schema.dataaccess.ListaPazientiReturn.datasource" />
+    <None Include="My Project\DataSources\Sac.Msg.Wcf.sac.bt.paziente.schema.dataaccess.MessaggioPazienteReturn.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XML Test Consensi\CREAZIONE Consenso - con dati minimi.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Test Consensi\CREAZIONE Consenso - paziente che NON esiste.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Test Consensi\CREAZIONE Consenso - [LHA, ZZZ5].xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\ProcessaMessaggio-FUSIONE PCS_002 in PCS_001.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\ProcessaMessaggio-PCS_001.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\ProcessaMessaggio-PCS_002.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ1 - PazienteParameter-AGGIORNAMENTO - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ1 - PazienteParameter-AGGIORNAMENTO - SENZA ESENZIONI - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ1 - PazienteParameter-CANCELLAZIONE - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ1 - PazienteParameter-FUSIONE in ZZZ2 - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ10 - PazienteParameter-FUSIONE in ZZZ2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ2 - GST_ASMN - PazienteParameter-AGGIORNAMENTO.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ2 - PazienteParameter-AGGIORNAMENTO - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ3 - PazienteParameter-AGGIORNAMENTO - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ4 - PazienteParameter-AGGIORNAMENTO - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ4 - PazienteParameter-AGGIORNAMENTO-GST-ASMN - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ4 - PazienteParameter-AGGIORNAMENTO-GST-AUSL - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ4 - PazienteParameter-FUSIONE in ZZZ5 - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ5 - PazienteParameter-AGGIORNAMENTO - Copy - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ6 - PazienteParameter-AGGIORNAMENTO-CAMPI NULL - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Text Pazienti\Prova Messaggio WCF - ZZZ8 - PazienteParameter-AGGIORNAMENTO - NEW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Connected Services\SacWcfServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\SacWcfServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\SacWcfServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SacWcfServiceReferenceConsensi\configuration91.svcinfo" />
+    <None Include="Connected Services\SacWcfServiceReferenceConsensi\configuration.svcinfo" />
+    <None Include="Connected Services\SacWcfServiceReferenceConsensi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="TestFile\MessaggioPaziente_Fusione_PAZ_TEST_B-PAZ_TEST_A.xml" />
+    <Content Include="TestFile\MessaggioPaziente_Fusione_PAZ_TEST_C-PAZ_TEST_A.xml" />
+    <Content Include="TestFile\MessaggioPaziente_Fusione_PAZ_TEST_D-PAZ_TEST_A.xml" />
+    <Content Include="TestFile\MessaggioPaziente_Fusione_PAZ_TEST_D-PAZ_TEST_C.xml" />
+    <Content Include="TestFile\MessaggioPaziente_PAZ_TEST_A.xml" />
+    <Content Include="TestFile\MessaggioPaziente_PAZ_TEST_B.xml" />
+    <Content Include="TestFile\MessaggioPaziente_Fusione_PAZ_TEST_A-PAZ_TEST_B.xml" />
+    <Content Include="TestFile\MessaggioPaziente_PAZ_TEST_C.xml" />
+    <Content Include="TestFile\MessaggioPaziente_PAZ_TEST_D.xml" />
+    <Content Include="TestFile\MessaggioPaziente_Template.xml" />
+    <Content Include="TestFile\MessaggioConsenso_Template.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SacWcfServiceReferenceConsensi\" />
+    <WCFMetadataStorage Include="Connected Services\SacWcfServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sac.Msg.DataAccess\Sac.Msg.DataAccess.vbproj">
+      <Project>{5145499D-228B-45D0-B8DF-D957A68B56EE}</Project>
+      <Name>Sac.Msg.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

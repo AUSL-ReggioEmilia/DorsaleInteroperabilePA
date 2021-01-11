@@ -1,0 +1,2 @@
+﻿CREATE USER [PROGEL.IT\Sviluppo] FOR LOGIN [PROGEL.IT\Sviluppo];
+

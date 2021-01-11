@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessaggioEvento>
+	<Paziente>
+		<IdEsternoPaziente>TEST_8000</IdEsternoPaziente>
+		<Cognome>Nostini</Cognome>
+		<Nome>Alessandro</Nome>
+		<Sesso>M</Sesso>
+		<DataNascita>1964-10-16 00:00:00.000</DataNascita>
+		<LuogoNascita>BO</LuogoNascita>
+		<CodiceSanitario>3400671</CodiceSanitario>
+	</Paziente>
+	<Evento>
+		<IdEsternoEvento>TEST_ADT_NOSOLOGICO_DATA</IdEsternoEvento>
+		<AziendaErogante>ASMN</AziendaErogante>
+		<SistemaErogante>ADT</SistemaErogante>
+		<RepartoErogante>ADT-RE</RepartoErogante>
+		<DataEvento>2009-01-01T11:15:00.000</DataEvento>
+		<TipoEventoCodice>A</TipoEventoCodice>
+		<TipoEventoDescr>Accettazione</TipoEventoDescr>
+		<NumeroNosologico>110001</NumeroNosologico>
+		<TipoEpisodio>O</TipoEpisodio>
+		<TipoEpisodioDescrizione>Ricovero Ordinario</TipoEpisodioDescrizione>
+		<RepartoCodice>RRC-1</RepartoCodice>
+		<RepartoDescrizione>RRC-1 Descrizione</RepartoDescrizione>
+		<SettoreRicoveroCodice>SRC-1</SettoreRicoveroCodice>
+		<SettoreRicoveroDescrizione>SRC-1 Descrizione</SettoreRicoveroDescrizione>
+		<LettoRicoveroCodice>LRC-1</LettoRicoveroCodice>
+		<LettoRicoveroDescrizione>LRC-1 Descrizione</LettoRicoveroDescrizione>
+		<Diagnosi>La diagnosi è...(Test caratteri speciali [é è ò ù ° ò £ Ω Ñ])</Diagnosi>
+	</Evento>
+</MessaggioEvento>

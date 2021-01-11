@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.progel.it/WCF/DWH/Ws/LayerReferti/1.0" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/DWH/Ws/LayerReferti/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" />
+  <xs:complexType name="LayerRefertoFormatiReturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LayerRefertoFormati" nillable="true" type="tns:LayerFormatiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q1="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Errore" nillable="true" type="q1:ErroreType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LayerRefertoFormatiReturn" nillable="true" type="tns:LayerRefertoFormatiReturn" />
+  <xs:complexType name="LayerFormatiType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Formato" nillable="true" type="tns:LayerFormatoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LayerFormatiType" nillable="true" type="tns:LayerFormatiType" />
+  <xs:complexType name="LayerFormatoType">
+    <xs:sequence>
+      <xs:element name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TipiFormato" nillable="true" type="tns:LayerTipiFormatoType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LayerFormatoType" nillable="true" type="tns:LayerFormatoType" />
+  <xs:complexType name="LayerTipiFormatoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoFormato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LayerTipiFormatoType" nillable="true" type="tns:LayerTipiFormatoType" />
+  <xs:complexType name="ArrayOfLayerTipoFormatoEnum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LayerTipoFormatoEnum" type="tns:LayerTipoFormatoEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLayerTipoFormatoEnum" nillable="true" type="tns:ArrayOfLayerTipoFormatoEnum" />
+  <xs:simpleType name="LayerTipoFormatoEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RTF" />
+      <xs:enumeration value="TEXT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LayerTipoFormatoEnum" nillable="true" type="tns:LayerTipoFormatoEnum" />
+  <xs:complexType name="LayerRefertoFormattatoReturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LayerRefertoFormattato" nillable="true" type="tns:LayerRefertoFormattatoType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q2="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Errore" nillable="true" type="q2:ErroreType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LayerRefertoFormattatoReturn" nillable="true" type="tns:LayerRefertoFormattatoReturn" />
+  <xs:complexType name="LayerRefertoFormattatoType">
+    <xs:sequence>
+      <xs:element name="Formattazioni" nillable="true" type="tns:LayerFormattazioniType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LayerRefertoFormattatoType" nillable="true" type="tns:LayerRefertoFormattatoType" />
+  <xs:complexType name="LayerFormattazioniType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Formattazione" nillable="true" type="tns:LayerFormattazioneType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LayerFormattazioniType" nillable="true" type="tns:LayerFormattazioniType" />
+  <xs:complexType name="LayerFormattazioneType">
+    <xs:sequence>
+      <xs:element name="TipoFormato" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Contenuto" nillable="true" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LayerFormattazioneType" nillable="true" type="tns:LayerFormattazioneType" />
+</xs:schema>

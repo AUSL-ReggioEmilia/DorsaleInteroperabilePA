@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DwhConnFileRefertoInput">
+  <DataContextMoniker Name="/DwhConnFileRefertoInputDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8d5aee56-52e3-458a-b87a-98c59fcabb47" absoluteBounds="1.25, 3, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/DwhConnFileRefertoInputDataContext/SistemiEroganti_Aziende" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab81039c-1990-4ab0-8d3a-3608cea5b8b7" absoluteBounds="1.2649999999999997, 3.46, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d2d8e9e-c963-4e5d-aa2a-4795ab830227" absoluteBounds="4.25, 3, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/DwhConnFileRefertoInputDataContext/SistemiEroganti_Sistemi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c8d9647-f54e-4e32-9ffc-7ae7d5ea9988" absoluteBounds="4.265, 3.46, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5fecbcca-f8ea-4283-bc33-51fac0bf4909" absoluteBounds="2.875, 0.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DwhConnFileRefertoInputDataContext/fri_SistemiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c929b37a-6915-4546-9986-71bf50a18326" absoluteBounds="2.8899999999999997, 1.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5625 : 3); (4.5625 : 2.5881982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DwhConnFileRefertoInputDataContext/SistemiEroganti_Sistemi/SistemiEroganti_Sistemi_SistemiEroganti" />
+      <nodes>
+        <classShapeMoniker Id="2d2d8e9e-c963-4e5d-aa2a-4795ab830227" />
+        <classShapeMoniker Id="5fecbcca-f8ea-4283-bc33-51fac0bf4909" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.0625 : 3); (3.0625 : 2.5881982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DwhConnFileRefertoInputDataContext/SistemiEroganti_Aziende/SistemiEroganti_Aziende_SistemiEroganti" />
+      <nodes>
+        <classShapeMoniker Id="8d5aee56-52e3-458a-b87a-98c59fcabb47" />
+        <classShapeMoniker Id="5fecbcca-f8ea-4283-bc33-51fac0bf4909" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

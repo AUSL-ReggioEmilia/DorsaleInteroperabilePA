@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OeBtConfig">
+  <DataContextMoniker Name="/OeBtConfigDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8e05b3f4-422a-4da5-a8d5-726044d5795b" absoluteBounds="3, 0.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/OeBtConfigDataContext/TipoOperazioneOsu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9dd6b785-d18d-4747-88e1-43c97dd4a267" absoluteBounds="3.0149999999999997, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="82326067-9659-4850-94a4-20d9b2bb08aa" absoluteBounds="0.625, 2.625, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeBtConfigDataContext/TipoOperazioneOsuAziende" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04e3eb4e-42e4-4512-a800-23d4543cb25c" absoluteBounds="0.64000000000000012, 3.085, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 2.625); (3 : 2.2612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeBtConfigDataContext/TipoOperazioneOsuAziende/TipoOperazioneOsuAziende_TipoOperazioneOsu" />
+      <nodes>
+        <classShapeMoniker Id="82326067-9659-4850-94a4-20d9b2bb08aa" />
+        <classShapeMoniker Id="8e05b3f4-422a-4da5-a8d5-726044d5795b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="be4fb49a-b8d1-4813-aa80-76bbede968ff" absoluteBounds="3, 2.625, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeBtConfigDataContext/TipoOperazioneOsuSistemi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ebb983b-49e7-45d1-b75c-857101db90c9" absoluteBounds="3.015, 3.085, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.0312525 : 2.625); (4.0312525 : 2.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/OeBtConfigDataContext/TipoOperazioneOsuSistemi/TipoOperazioneOsuSistemi_TipoOperazioneOsu" />
+      <nodes>
+        <classShapeMoniker Id="be4fb49a-b8d1-4813-aa80-76bbede968ff" />
+        <classShapeMoniker Id="8e05b3f4-422a-4da5-a8d5-726044d5795b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

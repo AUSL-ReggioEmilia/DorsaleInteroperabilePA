@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ConnectorV2" nillable="true" type="ConnectorV2" />
+  <xs:complexType name="ConnectorV2" />
+  <xs:element name="MessaggioAnagrafica" nillable="true" type="MessaggioAnagrafica" />
+  <xs:complexType name="MessaggioAnagrafica">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdEsternoPaziente" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AziendaErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SistemaErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepartoErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cognome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sesso" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataNascita" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LuogoNascita" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodiceSanitario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Attributi" type="ArrayOfAttributo" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Riferimenti" type="ArrayOfRiferimento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfAttributo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attributo" nillable="true" type="Attributo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Attributo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Valore" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfRiferimento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Riferimento" nillable="true" type="Riferimento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Riferimento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Valore" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessaggioConsenso" nillable="true" type="MessaggioConsenso" />
+  <xs:complexType name="MessaggioConsenso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdEsterno" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AziendaErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SistemaErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Data" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Abilitato" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Tipo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AccountUtente" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NomeUtente" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Paziente" type="Paziente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Paziente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdEsternoPaziente" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodiceAnagraficaCentrale" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NomeAnagraficaCentrale" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cognome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sesso" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataNascita" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LuogoNascita" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodiceSanitario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Attributi" type="ArrayOfAttributo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessaggioEpisodio" nillable="true" type="MessaggioEpisodio" />
+  <xs:complexType name="MessaggioEpisodio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Paziente" type="Paziente" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Referto" type="Referto" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Prestazioni" type="ArrayOfPrestazione" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Allegati" type="ArrayOfAllegato" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StileVisualizzazione" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatiSoloPerCercare" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Referto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdEsternoReferto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AziendaErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SistemaErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepartoErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SezioneErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SpecialitaErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataReferto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NumeroReferto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NumeroPrenotazione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NumeroNosologico" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrioritaCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrioritaDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StatoRichiestaCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StatoRichiestaDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoRichiestaCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoRichiestaDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepartoRichiedenteCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepartoRichiedenteDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MedicoRefertanteCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MedicoRefertanteDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Attributi" type="ArrayOfAttributo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPrestazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Prestazione" nillable="true" type="Prestazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Prestazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdEsternoPrestazione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataErogazione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrestazioneCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrestazioneDescrizione" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PrestazionePosizione" type="xs:short" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SezioneCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SezioneDescrizione" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SezionePosizione" type="xs:short" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GravitaCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GravitaDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantita" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Risultato" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValoriRiferimento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrestazioneCommenti" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Attributi" type="ArrayOfAttributo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfAllegato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Allegato" nillable="true" type="Allegato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Allegato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdEsternoAllegato" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataFile" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NomeFile" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descrizione" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Posizione" type="xs:short" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StatoCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StatoDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MimeType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MimeData" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Attributi" type="ArrayOfAttributo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessaggioEvento" nillable="true" type="MessaggioEvento" />
+  <xs:complexType name="MessaggioEvento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Paziente" type="Paziente" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Evento" type="Evento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Evento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdEsternoEvento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AziendaErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SistemaErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepartoErogante" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataEvento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StatoCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoEventoCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoEventoDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NumeroNosologico" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoEpisodio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepartoRicoveroCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepartoRicoveroDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SettoreRicoveroCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SettoreRicoveroDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LettoRicoveroCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LettoRicoveroDescrizione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Diagnosi" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Attributi" type="ArrayOfAttributo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegConfig" nillable="true" type="RegConfig" />
+  <xs:complexType name="RegConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LogSource" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LogInformation" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LogWarning" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LogError" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ConnectionStringAusl" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ConnectionStringAsmn" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DatabaseIsolationLevel" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ApplicationSyncLevel" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ApplicationSyncTimeout" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

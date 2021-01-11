@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="97dff505-b1ce-4b6c-80a5-4af265241d1e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SAC.wsdl" MetadataType="Wsdl" ID="3447d806-b0ef-4a39-9ac4-fadfc706e7f6" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SAC.xsd" MetadataType="Schema" ID="27251e30-0fcb-4d13-9d9f-1f8f4a449ec0" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?xsd=xsd2" />
+    <MetadataFile FileName="SAC1.xsd" MetadataType="Schema" ID="bf6ec3c2-2c95-4977-85ea-041121cc0970" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?xsd=xsd3" />
+    <MetadataFile FileName="SAC.disco" MetadataType="Disco" ID="72ef0ebc-ad15-44aa-9e84-afa0473938a5" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?disco" />
+    <MetadataFile FileName="SAC2.xsd" MetadataType="Schema" ID="cbfc0e35-57f4-41fb-8a1e-f5fc60585740" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?xsd=xsd1" />
+    <MetadataFile FileName="Pazienti.wsdl" MetadataType="Wsdl" ID="c2ee9ffd-f78e-4507-8084-0bfd1d99abf9" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?wsdl" />
+    <MetadataFile FileName="SAC3.xsd" MetadataType="Schema" ID="35d99142-8f8a-4e25-be09-809d035e56b8" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

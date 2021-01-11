@@ -1,0 +1,215 @@
+﻿@page "/"
+@namespace DI.BiztalkMonitor.Site.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model HostModel
+
+<!DOCTYPE html>
+<html lang="it-it">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    @* Disabilità la compatibilità di IE11 *@
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    @* Titolo *@
+    <title>Biztalk Monitor</title>
+    <base href="~/" />
+
+    @* Font awesome *@
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+
+    @* Bootstrap 4 è incluso nela site.css poichè importiamo tutti i suoi SCSS *@
+    <link href="~/css/site.min.css" rel="stylesheet" />
+
+    @* Script importante per far funzionare IE 11 *@
+    <script type="text/javascript">
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+            document.write('<script src="js/blazor.polyfill.min.js"><\/script>');
+        }
+    </script>
+
+    @* CSS Blazorize solo se non si è su IE 11 *@
+    <script type="text/javascript">
+        if (!navigator.userAgent.match(/Trident\/7.0/)) {
+
+            document.write('<link href="_content/Blazorise/blazorise.css" rel="stylesheet" />');
+            document.write('<link href="_content/Blazorise.Bootstrap/blazorise.bootstrap.css" rel="stylesheet" />');
+        }
+    </script>
+
+</head>
+<body>
+
+    <div id="components-reconnect-modal" class="my-reconnect-modal components-reconnect-hide">
+        @* Nascondo il messaggio se la riconnessione è in corso *@
+        <div class="show">
+            <p class="h4">
+                Riconnessione al server in corso...
+            </p>
+        </div>
+        <div class="failed">
+            <p class="h4">
+                Impossibile riconnettersi al server, premere <a href="javascript:location.reload();">qui</a> per ricaricare la pagina
+            </p>
+
+        </div>
+        <div class="rejected">
+            <p class="h4">
+                Errore di connessione,provare a ricaricare la pagina.
+            </p>
+            <p class="h3">
+                premere <a href="javascript:location.reload();">qui</a> per ricaricare la pagina
+            </p>
+        </div>
+    </div>
+
+    <app>
+        <component type="typeof(App)" param-UserAgent="@Model.UserAgent" render-mode="Server" />
+    </app>
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            Si è verificato un errore fatale. L'applicazione potrebbe non rispondere, ricaricare la pagina.
+        </environment>
+        <environment include="Development">
+            Si è verificato un errore. L'applicazione potrebbe non rispondere, controllare i tool del browser per dettagli aggiuntivi.
+        </environment>
+        <a href="javascript:location.reload();" class="reload">Ricarica</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <!-- Installato Client-Side Library (LibMan)-->
+    <script src="~/lib/jquery/jquery.slim.min.js"></script>
+    <!-- Installato Client-Side Library (LibMan) -->
+    <script src="~/lib/popper.js/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/js/bootstrap.min.js"></script>
+
+    <!-- Carico gli script di BLAZORIZE solo se NON sono su IE11-->
+    <script type="text/javascript">
+        if (!navigator.userAgent.match(/Trident\/7.0/)) {  /*&& !navigator.userAgent.match(/rv:11/) NON FUNZIONA IL CONTROLLO SULLA VERSIONE --> SU DAGOBAH NON C'E' LA VERSIONE*/
+
+            var body = document.getElementsByTagName('body')[0];
+            var js1 = document.createElement("script");
+            var js2 = document.createElement("script");
+
+            js1.type = "text/javascript";
+            js2.type = "text/javascript";
+
+            js1.src = '_content/Blazorise/blazorise.js';
+            js2.src = '_content/Blazorise.Bootstrap/blazorise.bootstrap.js';
+
+            body.appendChild(js1);
+            body.appendChild(js2);
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        @* Serve per il dowload dei file *@
+
+        function dataURItoBlob(dataURI, callback) {
+            // convert base64 to raw binary data held in a string
+            // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+            var byteString = atob(dataURI.split(',')[1]);
+            // separate out the mime component
+            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+            // write the bytes of the string to an ArrayBuffer
+            var ab = new ArrayBuffer(byteString.length);
+            var ia = new Uint8Array(ab);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+            // write the ArrayBuffer to a blob, and you're done
+            var bb = new Blob([ab]);
+            return bb;
+        }
+
+        function FileSaveAsZip(fileName, content) {
+            /* Saves a text string as a blob file*/
+            var ie = navigator.userAgent.match(/MSIE\s([\d.]+)/),
+                ie11 = navigator.userAgent.match(/Trident\/7.0/) && navigator.userAgent.match(/rv:11/),
+                ieEDGE = navigator.userAgent.match(/Edge/g),
+                ieVer = (ie ? ie[1] : (ie11 ? 11 : (ieEDGE ? 12 : -1)));
+
+            if (ie && ieVer < 10) {
+                console.log("No blobs on IE ver<10");
+                return;
+            }
+
+            var byteString = atob(content);
+
+            var ab = new ArrayBuffer(byteString.length);
+            var ia = new Uint8Array(ab);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+
+            var blobContent = new Blob([ia], {
+                type: 'application/zip'
+            });
+
+            if (ieVer > -1) {
+                window.navigator.msSaveBlob(blobContent, fileName);
+
+            } else {
+                var downloadLink = document.createElement("a");
+                downloadLink.download = fileNameToSaveAs;
+                downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                downloadLink.onclick = function (e) { document.body.removeChild(e.target); };
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+            }
+
+
+        }
+
+
+        function FileSaveAs(fileNameToSaveAs, textToWrite) {
+            /* Saves a text string as a blob file*/
+            var ie = navigator.userAgent.match(/MSIE\s([\d.]+)/),
+                ie11 = navigator.userAgent.match(/Trident\/7.0/) && navigator.userAgent.match(/rv:11/),
+                ieEDGE = navigator.userAgent.match(/Edge/g),
+                ieVer = (ie ? ie[1] : (ie11 ? 11 : (ieEDGE ? 12 : -1)));
+
+            if (ie && ieVer < 10) {
+                console.log("No blobs on IE ver<10");
+                return;
+            }
+
+            var textFileAsBlob = new Blob([textToWrite], {
+                type: 'text/plain'
+            });
+
+            if (ieVer > -1) {
+                window.navigator.msSaveBlob(textFileAsBlob, fileNameToSaveAs);
+
+            } else {
+                var downloadLink = document.createElement("a");
+                downloadLink.download = fileNameToSaveAs;
+                downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                downloadLink.onclick = function (e) { document.body.removeChild(e.target); };
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+            }
+        }
+
+        @* Serve per aprire il file XML in una nuova finestra *@
+        function openXmlNewTab(id) {
+
+            var myWindow = window.open("xml/" + id, "_blank", "resizable=yes,scrollbars=yes");
+            myWindow.focus()
+        }
+
+
+    </script>
+
+    @* Script base di Blazor, non togliere! *@
+    <script src="_framework/blazor.server.js"></script>
+    <script src="~/js/main.js"></script>
+</body>
+</html>

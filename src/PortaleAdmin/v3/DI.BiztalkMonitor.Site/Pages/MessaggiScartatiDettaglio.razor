@@ -1,0 +1,229 @@
+﻿@page "/messaggiscartati/dettaglio/{Id:guid}"
+@inject IDBRepository _dbRepository
+@inject NavigationManager NavigationManager
+@inject ILogger<MessaggiScartatiDettaglio> _logger
+@inject IJSRuntime js
+@inject State.AppState _appState
+
+@using DI.BiztalkMonitor.DataAccess.Models
+@using DI.BiztalkMonitor.Site.Classes
+@using System.Xml.Linq
+
+@*Tool per la visulizzazione del percorso di navigazione*@
+<NavigationPath ListPage="MessaggiScartati" DetailPage="Dettaglio"></NavigationPath>
+
+<div class="row">
+    <div class="col-sm-12 col-md-11 col-lg-9">
+        <div class="page-title">Dettaglio Messaggio</div>
+        <div class="div-bianco">
+            <div class="h4 font-weight-bold">Informazioni</div>
+            <div class="row">
+                @* Data *@
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="TxtData" class="col-sm-6 col-md-4 text-right col-form-label font-weight-bold">Data</label>
+                        <div class="col-sm-6 col-md-8">
+                            <label id="TxtData" class="form-control-plaintext">@_messaggioScartato.DataMessaggio</label>
+                        </div>
+                    </div>
+                </div>
+                @* Nome orchestrazione *@
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="TxtNomeOrchestrazione" class="col-sm-6 col-md-4 text-right col-form-label font-weight-bold">Nome orc.</label>
+                        <div class="col-sm-6 col-md-8">
+                            <label id="TxtNomeOrchestrazione" class="form-control-plaintext" style="word-wrap:break-word">@_messaggioScartato.NomeOrchestrazione (@_messaggioScartato.VersioneOrchestrazione)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @* Errore *@
+                <div class="col-sm-12">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-md-2 text-right col-form-label font-weight-bold">Errore</label>
+                        <div class="col-sm-9 col-md-10">
+                            <label id="TxtErrore" class="form-control-plaintext">@_messaggioScartato.DescrizioneErrore</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="h4 font-weight-bold">XML</div>
+            <div class="row">
+                <div class="col-11 offset-1">
+
+
+                    @foreach (MessaggioXMLPageModel messaggio in _messaggiXML)
+                    {
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <p>@messaggio.NameSpace</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <p>@messaggio.DimensioneKB.ToString("0.00") KB</p>
+                                    </div>
+                                    <div class="col-5 float-right text-right">
+
+                                        <button class="btn btn-sm btn-70 btn-primary" type="button" @onclick="() => OpenMessaggio(messaggio)"
+                                            title="Visualizza il messaggio XML"><i class="fas fa-code fa-lg"></i>&nbsp;Apri
+                                        </button>
+
+                                        <button class="btn btn-sm btn-70 btn-primary" type="button" @onclick="() => DownloadMessaggio(messaggio.Messaggio)" 
+                                                title="Scarica il messaggio XML"><i class="fas fa-download fa-lg"></i>&nbsp;Scarica
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <hr />
+            <div class="row">
+                <div class="col-12">
+                    <div class="h4 font-weight-bold">In carico a @_messaggioScartato.UtenteModifica</div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-md-4 text-right col-form-label font-weight-bold">Stato</label>
+                                <div class="col-sm-6 col-md-8">
+                                    <select class="form-control" @bind="_messaggioScartato.IdStato">
+                                        @foreach (MessaggioScartatoStatoData stato in _statiMessaggio)
+                                        {
+                                            <option value="@stato.Id">@stato.Descrizione</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-md-4 text-right col-form-label font-weight-bold">Utente</label>
+                                <div class="col-sm-6 col-md-8">
+                                    <label class="form-control-plaintext">@_messaggioScartato.UtenteModifica</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-right">
+            <button class="btn btn-100 btn-primary" type="button" @onclick="OnConfirmClick">Conferma</button>
+            <button class="btn btn-100 btn-secondary" type="button" @onclick="OnCancelClick">Annulla</button>
+        </div>
+    </div>
+</div>
+
+
+@code {
+
+    [CascadingParameter]
+    private Task<AuthenticationState> _authenticationStateTask { get; set; }
+    private System.Security.Claims.ClaimsPrincipal _user;
+
+    [Parameter]
+    public Guid Id { get; set; }
+
+    MessaggioScartatoData _messaggioScartato = new MessaggioScartatoData();
+    private List<MessaggioScartatoStatoData> _statiMessaggio = new List<MessaggioScartatoStatoData>();
+    private List<MessaggioXMLPageModel> _messaggiXML = new List<MessaggioXMLPageModel>();
+
+    private string _messageError;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Utente corrente
+        _user = (await _authenticationStateTask).User;
+
+        try
+        {
+            if (!string.IsNullOrEmpty(Id.ToString()))
+            {
+                // Recupero gli stati dei messaggi
+                await FetchStatiMessaggiAsync();
+
+                // Prendo il dettaglio del messaggio
+                using (MessaggiScartatiAdapter richiesteRepository = _dbRepository.MessaggiScartati)
+                {
+                    _messaggioScartato = await richiesteRepository.GetById(Id);
+                }
+
+                // Prendo i nodi all'interno della root
+                IEnumerable<XElement> childList = from x in _messaggioScartato.MessaggioOrchestrazione.Elements() select x;
+
+                // Popolo la lista dei Messaggi (Classe Custom)
+                int count = 0;
+                foreach (XElement child in childList)
+                {
+                    _messaggiXML.Add(new MessaggioXMLPageModel()
+                    {
+                        NameSpace = child.Name.Namespace.ToString(),
+                        Numero = count.ToString(),
+                        Messaggio = child
+                    });
+                    count++;
+                }
+            }
+        }
+        catch (ApplicationException appEx)
+        {
+            _messageError = appEx.Message;
+        }
+        catch (Exception ex)
+        {
+            _messageError = $"Errore durante il caricamento della richiesta";
+            _logger.LogError(ex, _messageError);
+        }
+    }
+
+    // Reperisce gli stati del messaggio dal DB
+    private async Task FetchStatiMessaggiAsync()
+    {
+        using (MessaggiScartatiStatiAdapter messaggiScartatiStati = _dbRepository.MessaggiScartatiStati)
+        {
+            _statiMessaggio = await messaggiScartatiStati.GetAll();
+        }
+    }
+
+    // Reindirizza alla pagina di lista
+    private void OnCancelClick()
+    {
+        NavigationManager.NavigateTo($"messaggiscartati");
+    }
+
+    // Aggiorna lo stato del messaggio 
+    private async Task OnConfirmClick()
+    {
+        // Aggiorno lo stato del messaggio
+        using (MessaggiScartatiAdapter richiesteRepository = _dbRepository.MessaggiScartati)
+        {
+            await richiesteRepository.ChangeState(_messaggioScartato.Id, _messaggioScartato.IdStato, _user.Identity.Name);
+        }
+
+        NavigationManager.NavigateTo($"messaggiscartati");
+    }
+
+    // Apre il messaggio xml da visualizzare
+    private async Task OpenMessaggio(MessaggioXMLPageModel messaggio)
+    {
+        _appState.Xml.XmlDictionary.Add(Id + _appState.Xml.Separatore + messaggio.Numero, messaggio.Messaggio);
+
+        await Utility.OpenXMlNewTab(js, Id + _appState.Xml.Separatore + messaggio.Numero);
+
+    }
+
+    // Scarica il messaggio xml
+    private async Task DownloadMessaggio(XElement messaggio)
+    {
+        //var bytes = System.Text.Encoding.UTF8.GetBytes(messaggio.ToString());
+        await Utility.SaveAs(js, $"XML_{_messaggioScartato.NomeOrchestrazione}.xml", messaggio.ToString());
+    }
+
+
+}

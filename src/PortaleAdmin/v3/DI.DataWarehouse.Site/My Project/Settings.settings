@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="PazienteSacUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2:8080/Sac/Pazienti/PazienteDettaglio.aspx?id={0}</Value>
+    </Setting>
+    <Setting Name="ReportRefertiAdmin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://dwhclinico-dev.progel.it/Reporting/Reports/AdminListaReferti.aspx</Value>
+    </Setting>
+    <Setting Name="ReportingUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2:8080/Reporting/Reports/{0}.aspx</Value>
+    </Setting>
+    <Setting Name="RefertoDettaglioTestataUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2:8080/Reporting/Reports/AdminRefertoTestata.aspx?@@FLD@@@IdReferto={0}</Value>
+    </Setting>
+    <Setting Name="CommandTimeoutMAX" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="ReportingDwhUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2:8080/ReportingUser/{0}</Value>
+    </Setting>
+    <Setting Name="OscPuntuali_RinotificaSole" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NoteAnamnestiche_Visualizza" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ToolRefertoExport_Abilitato" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ToolRefertoImport_Abilitato" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RefertiDettaglioUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://DAGOBAH2:8087/DWHCLINICO/Referti/ApreReferto.aspx?IdReferto={0}</Value>
+    </Setting>
+    <Setting Name="RefertoUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2:8087/DwhClinico/AccessoDiretto/Referto.aspx?Idreferto={0}</Value>
+    </Setting>
+    <Setting Name="InstrumentationKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">137d619d-c491-40b7-ad25-b33124a14470</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

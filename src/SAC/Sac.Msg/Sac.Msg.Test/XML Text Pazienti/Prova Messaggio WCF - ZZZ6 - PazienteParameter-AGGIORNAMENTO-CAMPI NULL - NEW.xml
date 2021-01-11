@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<MessaggioPazienteParameter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Utente>BT_LHA</Utente>
+  <DataSequenza>2014-03-13T17:00:00</DataSequenza>
+  <Paziente>
+    <Id>ZZZ6</Id>
+    <Cognome>ProvaZZZ6</Cognome>
+    <Nome>ProvaZZZ6</Nome>
+    <CodiceFiscale>ZZZZZZ0000000006</CodiceFiscale>
+  <Attributi>
+    <AttributoType>
+      <Nome>MantenimentoPediatra</Nome>
+      <Valore>false</Valore>
+    </AttributoType>
+    <AttributoType>
+      <Nome>CapoFamiglia</Nome>
+      <Valore>true</Valore>
+    </AttributoType>
+    <AttributoType>
+      <Nome>Indigenza</Nome>
+      <Valore>false</Valore>
+    </AttributoType>
+    <AttributoType>
+      <Nome>TesseraTeam</Nome>
+      <Valore>TesseraTeam1</Valore>
+    </AttributoType>
+    <AttributoType>
+      <Nome>DataScadenzaTesseraTeam</Nome>
+      <Valore>2030-01-01</Valore>
+    </AttributoType>
+  </Attributi>
+  </Paziente>
+</MessaggioPazienteParameter>

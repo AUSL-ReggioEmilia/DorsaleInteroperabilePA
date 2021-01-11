@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="68df80c0-a2ac-4dc0-aa64-f26d87087ff4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dagobah2:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DwhClinico1.xsd" MetadataType="Schema" ID="8ac80d67-90d1-4602-bece-d90d5cb75912" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="DwhClinico4.xsd" MetadataType="Schema" ID="23887c9e-683e-494a-9445-6e10204169d7" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd5" />
+    <MetadataFile FileName="DwhClinico2.xsd" MetadataType="Schema" ID="9db9d1ca-4298-4208-b60c-cdcc7e147561" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="DwhClinico5.xsd" MetadataType="Schema" ID="c7649309-0bf2-43ce-86cf-85b722a1e0c6" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd9" />
+    <MetadataFile FileName="DwhClinico7.xsd" MetadataType="Schema" ID="3a572721-0a2c-428f-82e1-f7b1c09556d1" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd11" />
+    <MetadataFile FileName="DwhClinico.disco" MetadataType="Disco" ID="0d9d8d88-efc0-4913-ad07-3dfeaabeaff1" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?disco" />
+    <MetadataFile FileName="DwhClinico41.xsd" MetadataType="Schema" ID="ed980b2f-4e00-4f17-bc76-a2c49caa0860" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd4" />
+    <MetadataFile FileName="DwhClinico3.xsd" MetadataType="Schema" ID="ab387d47-447f-430d-9fe3-388130f3a6ff" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="DwhClinico42.xsd" MetadataType="Schema" ID="9bd937d9-3583-47bd-be8f-2d776769468d" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd8" />
+    <MetadataFile FileName="DwhClinico43.xsd" MetadataType="Schema" ID="c154225e-2964-46c8-9071-0a71908588ea" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd7" />
+    <MetadataFile FileName="DwhClinico.xsd" MetadataType="Schema" ID="c30dd0a3-4558-4f6c-aeb5-c1c1d406ef30" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="9398b5bd-05b3-44fa-be4c-9c6e7b1d93dd" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?wsdl" />
+    <MetadataFile FileName="DwhClinico6.xsd" MetadataType="Schema" ID="9350511b-635d-4c23-9dd0-78a1236d6ab6" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd10" />
+    <MetadataFile FileName="DwhClinico44.xsd" MetadataType="Schema" ID="eabb4c33-0c80-4091-a5c9-06b7a2585021" SourceId="1" SourceUrl="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

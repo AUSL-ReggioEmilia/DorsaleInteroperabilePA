@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_OrderEntry" Class="RollbackRichiestaDCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=CORUSCANT;Initial Catalog=AuslAsmnRe_OrderEntry;Integrated Security=True" SettingsObjectName="OE.DataAccess.My.MySettings" SettingsPropertyName="OrderEntryConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.OrdiniTestate" Member="OrdiniTestates">
+    <Type Name="OrdiniTestate">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataInserimento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="IDTicketInserimento" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDTicketModifica" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TS" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Anno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Numero" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUnitaOperativaRichiedente" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDSistemaRichiedente" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroNosologico" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="IDRichiestaRichiedente" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="DataRichiesta" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="StatoOrderEntry" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="SottoStatoOrderEntry" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="StatoRisposta" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="DataModificaStato" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="StatoRichiedente" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Operatore" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="Priorita" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="TipoEpisodio" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="AnagraficaCodice" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AnagraficaNome" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="PazienteIdRichiedente" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="PazienteIdSac" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PazienteRegime" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="PazienteCognome" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="PazienteNome" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="PazienteDataNascita" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PazienteSesso" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="PazienteCodiceFiscale" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Paziente" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="Consensi" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DatiRollback" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="Regime" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="DataPrenotazione" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="StatoValidazione" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Validazione" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="StatoTransazione" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="DataTransazione" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="OrdiniTestate_OrdiniTestateDatiAggiuntivi" Member="OrdiniTestateDatiAggiuntivis" ThisKey="ID" OtherKey="IDOrdineTestata" Type="OrdiniTestateDatiAggiuntivi" />
+      <Association Name="OrdiniTestate_OrdiniRigheRichieste" Member="OrdiniRigheRichiestes" ThisKey="ID" OtherKey="IDOrdineTestata" Type="OrdiniRigheRichieste" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrdiniTestateDatiAggiuntivi" Member="OrdiniTestateDatiAggiuntivis">
+    <Type Name="OrdiniTestateDatiAggiuntivi">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataInserimento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="IDTicketInserimento" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDTicketModifica" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TS" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="IDOrdineTestata" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDDatoAggiuntivo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoDato" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoContenuto" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ValoreDato" Type="System.Object" DbType="Variant" CanBeNull="true" />
+      <Column Name="ValoreDatoVarchar" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ValoreDatoXml" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="ParametroSpecifico" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Persistente" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="OrdiniTestate_OrdiniTestateDatiAggiuntivi" Member="OrdiniTestate" ThisKey="IDOrdineTestata" OtherKey="ID" Type="OrdiniTestate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrdiniRigheRichieste" Member="OrdiniRigheRichiestes">
+    <Type Name="OrdiniRigheRichieste">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataInserimento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="IDTicketInserimento" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDTicketModifica" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TS" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="IDOrdineTestata" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StatoOrderEntry" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="DataModificaStato" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IDPrestazione" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDSistemaErogante" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDRigaOrderEntry" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="IDRigaRichiedente" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="IDRigaErogante" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="IDRichiestaErogante" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="StatoRichiedente" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="Consensi" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Association Name="OrdiniRigheRichieste_OrdiniRigheRichiesteDatiAggiuntivi" Member="OrdiniRigheRichiesteDatiAggiuntivis" ThisKey="ID" OtherKey="IDRigaRichiesta" Type="OrdiniRigheRichiesteDatiAggiuntivi" />
+      <Association Name="OrdiniTestate_OrdiniRigheRichieste" Member="OrdiniTestate" ThisKey="IDOrdineTestata" OtherKey="ID" Type="OrdiniTestate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrdiniRigheRichiesteDatiAggiuntivi" Member="OrdiniRigheRichiesteDatiAggiuntivis">
+    <Type Name="OrdiniRigheRichiesteDatiAggiuntivi">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataInserimento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="IDTicketInserimento" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDTicketModifica" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TS" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="IDRigaRichiesta" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDDatoAggiuntivo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoDato" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoContenuto" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ValoreDato" Type="System.Object" DbType="Variant" CanBeNull="true" />
+      <Column Name="ValoreDatoVarchar" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ValoreDatoXml" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="ParametroSpecifico" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Persistente" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="OrdiniRigheRichieste_OrdiniRigheRichiesteDatiAggiuntivi" Member="OrdiniRigheRichieste" ThisKey="IDRigaRichiesta" OtherKey="ID" Type="OrdiniRigheRichieste" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

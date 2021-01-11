@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[ConsensiTipo] (
+    [Id]   TINYINT      NOT NULL,
+    [Nome] VARCHAR (64) NULL,
+    CONSTRAINT [PK_PazientiTipo] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (FILLFACTOR = 95),
+    CONSTRAINT [IX_ConsensiTipo_Nome] UNIQUE NONCLUSTERED ([Nome] ASC) WITH (FILLFACTOR = 95)
+);
+

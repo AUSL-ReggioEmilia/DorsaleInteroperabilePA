@@ -1,0 +1,1374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{5EC71B68-678F-4A41-A8C8-C3EBDC69B372}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>DI.OrderEntry.User</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.OrderEntry.User.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.OrderEntry.User.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DI.Common, Version=1.0.7487.25180, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Components\DI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.11.2\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.11.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.WebForms.12.0.2402.15\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDenied.htm" />
+    <Content Include="AccessDenied.aspx" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\config.json" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\attachment.gif" />
+    <Content Include="Images\Computer.gif" />
+    <Content Include="Images\Email.gif" />
+    <Content Include="Images\Informativa.gif" />
+    <Content Include="Images\left_white.png" />
+    <Content Include="Images\LogoASMN.jpg" />
+    <Content Include="Images\LogoAzienda.jpg" />
+    <Content Include="ErrorUnknown.htm" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\alert.png" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\arrow_down.png" />
+    <Content Include="Images\arrow_right.gif" />
+    <Content Include="Images\arrow_up.png" />
+    <Content Include="Images\back.gif" />
+    <Content Include="Images\barcode.png" />
+    <Content Include="Images\checkbox_ok.png" />
+    <Content Include="Images\close - Copy %282%29.png" />
+    <Content Include="Images\close - Copy.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\delete_grey.gif" />
+    <Content Include="Images\detail.png" />
+    <Content Include="Images\detailsmerge.GIF" />
+    <Content Include="Images\detailsmerge_grey.gif" />
+    <Content Include="Images\dwh_gray.gif" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\editInPlace.gif" />
+    <Content Include="Images\edititem.gif" />
+    <Content Include="Images\edititem_grey.gif" />
+    <Content Include="Images\ErrorAccessDenied.jpg" />
+    <Content Include="Images\ErrorMissingResource.gif" />
+    <Content Include="Images\ErrorUnknown.gif" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\find.png" />
+    <Content Include="Images\green-left.jpg" />
+    <Content Include="Images\group.gif" />
+    <Content Include="Images\icon-expand.gif" />
+    <Content Include="Images\icon_err.gif" />
+    <Content Include="Images\icon_small_caution.gif" />
+    <Content Include="Images\icon_small_caution_gray.gif" />
+    <Content Include="Images\icon_small_detail.bmp" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\interrogativo.gif" />
+    <Content Include="Images\left.gif" />
+    <Content Include="Images\log.gif" />
+    <Content Include="Images\LogoToolbar.jpg" />
+    <Content Include="Images\LogoToolbarDispatcher.jpg" />
+    <Content Include="Images\LogoToolbarDwh.jpg" />
+    <Content Include="Images\LogoToolbarOrderEntry.jpg" />
+    <Content Include="Images\LogoToolbarPm.jpg" />
+    <Content Include="Images\LogoToolbarSac.jpg" />
+    <Content Include="Images\log_grey.gif" />
+    <Content Include="Images\Marchio_CE_Header.png" />
+    <Content Include="Images\menuButton.png" />
+    <Content Include="Images\MenuLeftBackground.jpg" />
+    <Content Include="Images\MenuTopBackground.gif" />
+    <Content Include="Images\MenuTopPopUp.gif" />
+    <Content Include="Images\MenuTopSeparator.gif" />
+    <Content Include="Images\merge.gif" />
+    <Content Include="Images\merge_grey.gif" />
+    <Content Include="Images\minus.gif" />
+    <Content Include="Images\new.gif" />
+    <Content Include="Images\newitem.gif" />
+    <Content Include="Images\next.gif" />
+    <Content Include="Images\ok.png" />
+    <Content Include="Images\pdficon.gif" />
+    <Content Include="Images\person.gif" />
+    <Content Include="Images\PixelTrasparente.gif" />
+    <Content Include="Images\PresenzaReferti1.gif" />
+    <Content Include="Images\PresenzaReferti30.gif" />
+    <Content Include="Images\PresenzaReferti7.gif" />
+    <Content Include="Images\PresenzaReferti_gray.gif" />
+    <Content Include="Images\print.png" />
+    <Content Include="Images\refresh.gif" />
+    <Content Include="Images\restore.gif" />
+    <Content Include="Images\restore_grey.gif" />
+    <Content Include="Images\dwh.gif" />
+    <Content Include="Images\RicoveroDH.gif" />
+    <Content Include="Images\RicoveroDS.gif" />
+    <Content Include="Images\RicoveroOrdinario.gif" />
+    <Content Include="Images\RicoveroOrdinario_gray.gif" />
+    <Content Include="Images\RicoveroPS.gif" />
+    <Content Include="Images\right.gif" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\saveInPlace.gif" />
+    <Content Include="Images\sel.gif" />
+    <Content Include="Images\sort_asc.gif" />
+    <Content Include="Images\sort_desc.gif" />
+    <Content Include="Images\stato.gif" />
+    <Content Include="Images\stato_referto_completato.gif" />
+    <Content Include="Images\stato_referto_incorso.gif" />
+    <Content Include="Images\success.png" />
+    <Content Include="Images\toolgrad_vintage.gif" />
+    <Content Include="Images\trash.gif" />
+    <Content Include="Images\undo.png" />
+    <Content Include="Images\undoInPlace.gif" />
+    <Content Include="Images\user.gif" />
+    <Content Include="Images\view.png" />
+    <Content Include="Images\ViewDoc.gif" />
+    <Content Include="Images\_LogoToolbar.gif" />
+    <Content Include="MissingResource.htm" />
+    <Content Include="Pages\AccessoDirettoMessage.aspx" />
+    <Content Include="Pages\AjaxWebMethods\RiassuntoOrdineMethods.asmx" />
+    <Content Include="Pages\ConfermaInoltro.aspx" />
+    <Content Include="Pages\CopiaOrdine.aspx" />
+    <Content Include="Pages\ListaOrdiniPianificati.aspx" />
+    <Content Include="Pages\ListaPazientiRicoverati.aspx" />
+    <Content Include="Pages\RiepilogoDatiAccessori.aspx" />
+    <Content Include="References\Microsoft.SqlServer.Types.dll" />
+    <Content Include="Reports\ReportPdfDownLoad.aspx" />
+    <Content Include="Reports\ReportPdfViewer.aspx" />
+    <Content Include="Pages\PdfViewer.aspx" />
+    <Content Include="Pages\ProfiliUtente.aspx" />
+    <Content Include="Pages\RiassuntoOrdine.aspx" />
+    <Content Include="Pages\DatiAccessori.aspx" />
+    <Content Include="Pages\Home.aspx" />
+    <Content Include="Pages\ListaOrdini.aspx" />
+    <Content Include="Pages\ListaPazienti.aspx" />
+    <Content Include="Pages\ComposizioneOrdine.aspx" />
+    <Content Include="Pages\PazientePerNosologico.aspx" />
+    <Content Include="Pages\ReportViewer.aspx" />
+    <Content Include="Reports\StampaOrdine.aspx" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\ListaOrdini.js" />
+    <Content Include="Scripts\master.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\dati-accessori.js" />
+    <Content Include="Documenti\Informativa.pdf" />
+    <None Include="My Project\DataSources\System.Xml.Linq.XElement.datasource" />
+    <Content Include="Pages\Redirector.ashx" />
+    <None Include="My Project\PublishProfiles\dagobah2.pubxml" />
+    <None Include="Reports\OrdineDataSet.xsc">
+      <DependentUpon>OrdineDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\OrdineDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdineDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Reports\OrdineDataSet.xss">
+      <DependentUpon>OrdineDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiornaOrdineDatiAccessoriPerIdGuigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiornaOrdineDatiAccessoriPerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiornaOrdineDatiAccessoriValoriPerIdGuigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiornaOrdineDatiAccessoriValoriPerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiungiPrestazionePerIdGuidPerCodicePrestazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiungiPrestazionePerIdGuidPerIdPrestazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiungiPrestazionePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiungiPrestazionePerIdRichiestaPerCodicePrestazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiungiPrestazionePerIdRichiestaPerIdPrestazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiungiPrestazionePerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CancellaOrdinePerIdRichiestaRichiedenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CancellaProfiloUtentePerCodiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaGruppiPrestazioniPerDescrizioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerAziendaNosologicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerDataModificaErogatoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerRangeIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerRangeIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <Content Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerStatoPianificatoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerUnitaOperative2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaPrestazioniPerGruppoPrestazioniResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CompilaOrdineDatiAccessoriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CompilaOrdineDatiAccessoriValoriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <Content Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CopiaOrdinePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CopiaOrdinePerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CopiaOrdinePerIdRichiestaRichiedenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CreaTokenAccesso2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CreaTokenAccessoDelega2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.InoltraOrdinePerIdRichiestaRichiedenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniDatiAccessoriPerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniDatiAccessoriPerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniDatiAccessoriValoriPerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniDatiAccessoriValoriPerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniDatiAggiuntiviVisualizzazionePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniDatiAggiuntiviVisualizzazionePerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniGruppoPrestazioniPerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniOrdinePerIdRichiestaRichiedenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniProfiloUtentePerCodiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.ReinoltraOrdineIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.RimuoviPrestazionePerIdGuidPerCodicePrestazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.RimuoviPrestazionePerIdGuidPerIdPrestazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.RimuoviPrestazionePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.RimuoviPrestazionePerIdRichiestaPerCodicePrestazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.RimuoviPrestazionePerIdRichiestaPerIdPrestazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.RimuoviPrestazionePerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <Content Include="Scripts\RiepilogoDatiAccessori.js" />
+    <Content Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.RipianificaOrdineIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.RipianificaOrdinePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.TentaOttieniOrdinePerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.ValidaOrdinePerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\OE6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\OE61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\OE62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\OE63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\OE64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\OE65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\OrderEntry1.wsdl" />
+    <Content Include="Service References\WcfDwhClinico\DizionarioTipiRefertoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WcfDwhClinico\DwhClinico.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WcfDwhClinico\EpisodioReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\EpisodiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\LayerRefertoFormatiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\LayerRefertoFormattatoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\MatricePrestazioniReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\PatientSummaryReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\PazienteReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\PazientiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\PrescrizioneEstesaReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\PrescrizioneReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\PrescrizioniReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\RefertiModificatiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\RefertiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\RefertoPdfReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\RefertoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WcfDwhClinico\Service.wsdl" />
+    <Content Include="Service References\WcfDwhClinico\StringReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\TokenReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="SiteAccessoDiretto.Master" />
+    <None Include="_Modifiche.txt" />
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.GetProvenienzaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.IstatComuniCercaByNomeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.IstatComuniCercaByProvinciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.IstatComuniCercaByRegioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.IstatComuniCercaEsteriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.IstatNazioniCercaByNomeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.IstatProvinceCercaByNomeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.IstatProvinceCercaByRegioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.IstatRegioniCercaByNomeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiAggiungiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiCerca2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiCercaByMedicoBaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiCercaByProvenienzaIdProvenienzaOrAggiungeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiCercaOrAggiungeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiCercaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiDettaglio2ByIdProvenienzaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiDettaglio2ByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiDettaglioByIdProvenienzaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiDettaglioByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiModificaByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiModificaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiRimuoviByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\DI.OrderEntry.SacServices.PazientiRimuoviResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.SacServices\Pazienti.wsdl" />
+    <None Include="Service References\DI.OrderEntry.SacServices\Pazienti.disco" />
+    <None Include="Service References\DI.OrderEntry.SacServices\configuration91.svcinfo" />
+    <None Include="Service References\DI.OrderEntry.SacServices\configuration.svcinfo" />
+    <None Include="Service References\DI.OrderEntry.SacServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiungiOppureModificaOrdineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.AggiungiOppureModificaProfiloUtenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CancellaOrdinePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CancellaOrdinePerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CancellaProfiloUtentePerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniEvasiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerDataModificaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerDataPrenotazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerDataRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerNosologicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerPazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerSistemaEroganteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerSistemaRichiedenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerUnitaOperativeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaOrdiniPerUtenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaPrestazioniPerCodiceODescrizioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaPrestazioniPerPazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaPrestazioniPerSistemaEroganteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaPrestazioniPerUnitaOperativaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaPrestazioniProfiliUtentePerCodiceODescrizioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaProfiliPerCodiceODescrizioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CercaProfiliUtentePerCodiceODescrizioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CompilaPazienteSacResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CreaTokenAccessoDelegaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.CreaTokenAccessoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.InoltraOrdineConValidazionePazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.InoltraOrdinePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.InoltraOrdinePerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.InoltraOrdineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniDatiAccessoriPerIdPrestazioniResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniListeDizionariResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniOrdinePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniOrdinePerIdRichiestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniPazientePerIdSacResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniPrestazionePerCodiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniPrestazionePerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniPrestazioniPerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.OttieniProfiloUtentePerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.ReinoltraOrdinePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.ValidaOrdinePerIdGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\DI.OrderEntry.Services.ValidaOrdineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\configuration91.svcinfo" />
+    <None Include="Service References\DI.OrderEntry.Services\configuration.svcinfo" />
+    <None Include="Service References\DI.OrderEntry.Services\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\DI.OrderEntry.Services\OE1.disco" />
+    <None Include="Service References\WcfDwhClinico\DwhClinico.disco" />
+    <None Include="Service References\WcfDwhClinico\configuration91.svcinfo" />
+    <None Include="Service References\WcfDwhClinico\configuration.svcinfo" />
+    <None Include="Service References\WcfDwhClinico\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Styles\images\alert.png" />
+    <Content Include="Styles\images\asc.gif" />
+    <Content Include="Styles\images\background.gif" />
+    <Content Include="Styles\images\bg.gif" />
+    <Content Include="Styles\images\coffee.png" />
+    <Content Include="Styles\images\desc.gif" />
+    <Content Include="Styles\images\error.png" />
+    <Content Include="Styles\images\image-1.png" />
+    <Content Include="Styles\images\image-2.png" />
+    <Content Include="Styles\images\image-3.png" />
+    <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Styles\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Styles\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Styles\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Styles\master.css" />
+    <Content Include="UnderConstruction.aspx" />
+    <Content Include="UserControl\ucDettaglioPaziente2.ascx" />
+    <Content Include="UserControl\UcToolbar.ascx" />
+    <Content Include="UserControl\UcWizard.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessDenied.aspx.designer.vb">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessDenied.aspx.vb">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\CacheDataSource.vb" />
+    <Compile Include="Components\CustomDataSourceDettaglioPaziente.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\CustomDataSource.vb" />
+    <Compile Include="Components\Eccezioni.vb" />
+    <Compile Include="Components\FilterHelper.vb" />
+    <Compile Include="Components\HelperGridView.vb" />
+    <Compile Include="Components\MyTelemetryInitializer.vb" />
+    <Compile Include="Components\SessionHandler.vb" />
+    <Compile Include="Components\Tokens.vb" />
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilterHelper.vb" />
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="Components\DataAdapterManager.vb" />
+    <Compile Include="ExceptionsManager.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Components\LookupManager.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pages\AccessoDirettoMessage.aspx.designer.vb">
+      <DependentUpon>AccessoDirettoMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccessoDirettoMessage.aspx.vb">
+      <DependentUpon>AccessoDirettoMessage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Components\CustomDataSourceRiassuntoOrdine.vb" />
+    <Compile Include="Pages\AjaxWebMethods\RiassuntoOrdineMethods.asmx.vb">
+      <DependentUpon>RiassuntoOrdineMethods.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pages\ConfermaInoltro.aspx.designer.vb">
+      <DependentUpon>ConfermaInoltro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConfermaInoltro.aspx.vb">
+      <DependentUpon>ConfermaInoltro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CopiaOrdine.aspx.designer.vb">
+      <DependentUpon>CopiaOrdine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CopiaOrdine.aspx.vb">
+      <DependentUpon>CopiaOrdine.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListaOrdiniPianificati.aspx.designer.vb">
+      <DependentUpon>ListaOrdiniPianificati.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListaOrdiniPianificati.aspx.vb">
+      <DependentUpon>ListaOrdiniPianificati.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListaPazientiRicoverati.aspx.designer.vb">
+      <DependentUpon>ListaPazientiRicoverati.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListaPazientiRicoverati.aspx.vb">
+      <DependentUpon>ListaPazientiRicoverati.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Redirector.ashx.vb">
+      <DependentUpon>Redirector.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RiassuntoOrdine.aspx.vb">
+      <DependentUpon>RiassuntoOrdine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RiepilogoDatiAccessori.aspx.designer.vb">
+      <DependentUpon>RiepilogoDatiAccessori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RiepilogoDatiAccessori.aspx.vb">
+      <DependentUpon>RiepilogoDatiAccessori.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportPdfDownLoad.aspx.designer.vb">
+      <DependentUpon>ReportPdfDownLoad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportPdfDownLoad.aspx.vb">
+      <DependentUpon>ReportPdfDownLoad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportPdfViewer.aspx.designer.vb">
+      <DependentUpon>ReportPdfViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportPdfViewer.aspx.vb">
+      <DependentUpon>ReportPdfViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PdfViewer.aspx.designer.vb">
+      <DependentUpon>PdfViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PdfViewer.aspx.vb">
+      <DependentUpon>PdfViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProfiliUtente.aspx.designer.vb">
+      <DependentUpon>ProfiliUtente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProfiliUtente.aspx.vb">
+      <DependentUpon>ProfiliUtente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RiassuntoOrdine.aspx.designer.vb">
+      <DependentUpon>RiassuntoOrdine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DatiAccessori.aspx.designer.vb">
+      <DependentUpon>DatiAccessori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DatiAccessori.aspx.vb">
+      <DependentUpon>DatiAccessori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListaOrdini.aspx.designer.vb">
+      <DependentUpon>ListaOrdini.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListaOrdini.aspx.vb">
+      <DependentUpon>ListaOrdini.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListaPazienti.aspx.designer.vb">
+      <DependentUpon>ListaPazienti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListaPazienti.aspx.vb">
+      <DependentUpon>ListaPazienti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ComposizioneOrdine.aspx.designer.vb">
+      <DependentUpon>ComposizioneOrdine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ComposizioneOrdine.aspx.vb">
+      <DependentUpon>ComposizioneOrdine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PazientePerNosologico.aspx.designer.vb">
+      <DependentUpon>PazientePerNosologico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PazientePerNosologico.aspx.vb">
+      <DependentUpon>PazientePerNosologico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ReportViewer.aspx.designer.vb">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportViewer.aspx.vb">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\OrdineDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdineDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StampaOrdine.aspx.designer.vb">
+      <DependentUpon>StampaOrdine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StampaOrdine.aspx.vb">
+      <DependentUpon>StampaOrdine.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Components\ReportUtility.vb" />
+    <Compile Include="Service References\DI.OrderEntry.SacServices\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DI.OrderEntry.Services\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WcfDwhClinico\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="SiteAccessoDiretto.Master.designer.vb">
+      <DependentUpon>SiteAccessoDiretto.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteAccessoDiretto.Master.vb">
+      <DependentUpon>SiteAccessoDiretto.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.designer.vb">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.vb">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucDettaglioPaziente2.ascx.designer.vb">
+      <DependentUpon>ucDettaglioPaziente2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucDettaglioPaziente2.ascx.vb">
+      <DependentUpon>ucDettaglioPaziente2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UcToolbar.ascx.designer.vb">
+      <DependentUpon>UcToolbar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UcToolbar.ascx.vb">
+      <DependentUpon>UcToolbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UcWizard.ascx.designer.vb">
+      <DependentUpon>UcWizard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UcWizard.ascx.vb">
+      <DependentUpon>UcWizard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\UserDataManager.vb" />
+    <Compile Include="Components\Utility.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Reports\Ordine.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Order.psd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.PortalUser2\DI.PortalUser2.vbproj">
+      <Project>{957a73f0-ffa8-4d90-8e8d-ce48a8ddb099}</Project>
+      <Name>DI.PortalUser2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DI.OrderEntry.SacServices\" />
+    <WCFMetadataStorage Include="Service References\DI.OrderEntry.Services\" />
+    <WCFMetadataStorage Include="Service References\WcfDwhClinico\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Web" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>57967</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57968/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

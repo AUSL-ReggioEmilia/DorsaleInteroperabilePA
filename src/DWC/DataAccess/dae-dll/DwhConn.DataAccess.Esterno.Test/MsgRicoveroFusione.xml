@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessaggioEvento>
+	<Paziente>
+		<IdEsternoPaziente>TEST_A1</IdEsternoPaziente>
+		<CodiceAnagraficaCentrale>A1</CodiceAnagraficaCentrale>
+		<NomeAnagraficaCentrale>TEST</NomeAnagraficaCentrale>
+		<Cognome>CAMPANI</Cognome>
+		<Nome>GIORGIO</Nome>
+		<CodiceFiscale>CMPGRG58H25A586Z</CodiceFiscale>
+		<Sesso>M</Sesso>
+		<DataNascita>1958-06-25 00:00:00.000</DataNascita>
+		<LuogoNascita>BAISO</LuogoNascita>
+		<CodiceSanitario>3267067</CodiceSanitario>
+	</Paziente>
+	<Evento>
+		<IdEsternoEvento>TEST_ADT_NOSOLOGICO_DATA_M</IdEsternoEvento>
+		<AziendaErogante>ASMN</AziendaErogante>
+		<SistemaErogante>ADT</SistemaErogante>
+		<RepartoErogante>ADT-RE</RepartoErogante>
+		<DataEvento>2010-06-10T18:45:00.000</DataEvento>
+		<TipoEventoCodice>F</TipoEventoCodice>
+		<TipoEventoDescr>Fusione</TipoEventoDescr>
+		<NumeroNosologico>D09012123_TEST</NumeroNosologico>
+		<TipoEpisodio/>
+		<RepartoRicoveroCodice></RepartoRicoveroCodice>
+		<RepartoRicoveroDescrizione></RepartoRicoveroDescrizione>
+		<SettoreRicoveroCodice></SettoreRicoveroCodice>
+		<SettoreRicoveroDescrizione></SettoreRicoveroDescrizione>
+		<LettoRicoveroCodice></LettoRicoveroCodice>
+		<LettoRicoveroDescrizione></LettoRicoveroDescrizione>
+		<Diagnosi></Diagnosi>
+	</Evento>
+</MessaggioEvento>

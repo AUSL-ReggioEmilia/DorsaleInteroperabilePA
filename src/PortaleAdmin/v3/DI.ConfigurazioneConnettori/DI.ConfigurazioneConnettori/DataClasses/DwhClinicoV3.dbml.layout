@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 8.5" name="DwhClinicoV3">
+  <DataContextMoniker Name="/DwhClinicoV3DataContext" />
+  <nestedChildShapes>
+    <classShape Id="85db7ee6-2a75-4df5-9e68-926080c58d2d" absoluteBounds="9.25, 0.875, 2, 2.3478011067708331">
+      <DataClassMoniker Name="/DwhClinicoV3DataContext/Sole_AbilitazioniPrestazioni" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3536ae8-caaf-40fe-95b3-4bcccbe59969" absoluteBounds="9.265, 1.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de5a809a-9d6b-46a5-9454-f8c457b48d09" absoluteBounds="3.375, 0.625, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/DwhClinicoV3DataContext/Sole_AbilitazioniSistemi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="325f6825-1a8f-4e62-bdfe-668945889fd8" absoluteBounds="3.3899999999999997, 1.085, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e79d6d8-1304-4586-9191-ddef31aa99ad" absoluteBounds="0.625, 2.625, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/DwhClinicoV3DataContext/AbilitazioniTipologieSole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="694a3523-691e-45a1-a0a7-45bcc1e3e58b" absoluteBounds="0.64000000000000057, 3.085, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10fb6650-a7d0-4343-900f-742df6d20981" absoluteBounds="6.125, 1.25, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/DwhClinicoV3DataContext/AbilitazioniSistemiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5fb4a4a-5705-4fc1-9289-a48f8cd4cb02" absoluteBounds="6.1400000000000006, 1.71, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="877b2ed3-4605-413d-9f78-d56bca01a316" absoluteBounds="0.625, 1.25, 2, 1.0016910807291657">
+      <DataClassMoniker Name="/DwhClinicoV3DataContext/AbilitazioniTipiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20ad443b-b83f-4998-ba01-75447f78426b" absoluteBounds="0.64000000000000012, 1.71, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4815229a-217e-4c85-93b6-9d77482d10dd" absoluteBounds="6.125, 2.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/DwhClinicoV3DataContext/AbilitazioniAziendeEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef9c8f17-9331-40cf-85dd-ec7363488c3c" absoluteBounds="6.14, 3.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 3.12584554036458); (3.375 : 3.12584554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DwhClinicoV3DataContext/AbilitazioniTipologieSole/AbilitazioniTipologieSole_Sole_AbilitazioniSistemi" />
+      <nodes>
+        <classShapeMoniker Id="1e79d6d8-1304-4586-9191-ddef31aa99ad" />
+        <classShapeMoniker Id="de5a809a-9d6b-46a5-9454-f8c457b48d09" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 1.6887363133286); (9.25 : 1.6887363133286)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DwhClinicoV3DataContext/AbilitazioniSistemiEroganti/AbilitazioniSistemiEroganti_Sole_AbilitazioniPrestazioni" />
+      <nodes>
+        <classShapeMoniker Id="10fb6650-a7d0-4343-900f-742df6d20981" />
+        <classShapeMoniker Id="85db7ee6-2a75-4df5-9e68-926080c58d2d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 1.62148386014562); (5.375 : 1.62148386014562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DwhClinicoV3DataContext/AbilitazioniSistemiEroganti/AbilitazioniSistemiEroganti_Sole_AbilitazioniSistemi" />
+      <nodes>
+        <classShapeMoniker Id="10fb6650-a7d0-4343-900f-742df6d20981" />
+        <classShapeMoniker Id="de5a809a-9d6b-46a5-9454-f8c457b48d09" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 1.75084554036458); (3.375 : 1.75084554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DwhClinicoV3DataContext/AbilitazioniTipiEroganti/AbilitazioniTipiEroganti_Sole_AbilitazioniSistemi" />
+      <nodes>
+        <classShapeMoniker Id="877b2ed3-4605-413d-9f78-d56bca01a316" />
+        <classShapeMoniker Id="de5a809a-9d6b-46a5-9454-f8c457b48d09" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 3.25084554036458); (8.5 : 3.25084554036458); (8.5 : 1.88928185002721); (9.25 : 1.88928185002721)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DwhClinicoV3DataContext/AbilitazioniAziendeEroganti/AbilitazioniAziendeEroganti_Sole_AbilitazioniPrestazioni" />
+      <nodes>
+        <classShapeMoniker Id="4815229a-217e-4c85-93b6-9d77482d10dd" />
+        <classShapeMoniker Id="85db7ee6-2a75-4df5-9e68-926080c58d2d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 3.25084554036458); (5.75 : 3.25084554036458); (5.75 : 1.81087356800698); (5.375 : 1.81087356800698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DwhClinicoV3DataContext/AbilitazioniAziendeEroganti/AbilitazioniAziendeEroganti_Sole_AbilitazioniSistemi" />
+      <nodes>
+        <classShapeMoniker Id="4815229a-217e-4c85-93b6-9d77482d10dd" />
+        <classShapeMoniker Id="de5a809a-9d6b-46a5-9454-f8c457b48d09" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

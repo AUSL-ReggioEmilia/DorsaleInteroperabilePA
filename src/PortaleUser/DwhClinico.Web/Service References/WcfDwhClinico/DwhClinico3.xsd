@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.progel.it/WCF/DWH/Ws/1.0" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/DWH/Ws/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd3" namespace="http://schemas.progel.it/WCF/DWH/Ws/Prescrizioni/1.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd4" namespace="http://schemas.progel.it/WCF/DWH/Ws/PrescrizioniEstesa/1.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd5" namespace="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd6" namespace="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd7" namespace="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd8" namespace="http://schemas.progel.it/WCF/DWH/Ws/LayerReferti/1.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd10" namespace="http://schemas.progel.it/WCF/DWH/Ws/NoteAnamnestiche/1.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd11" namespace="http://schemas.progel.it/WCF/DWH/Ws/Fse/1.0" />
+  <xs:element name="CreaTokenAccesso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodiceRuolo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="CreaTokenAccessoResult" nillable="true" type="q1:TokenReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoDelega">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodiceRuolo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UtenteDelega" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoDelegaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="CreaTokenAccessoDelegaResult" nillable="true" type="q2:TokenReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioneOttieniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q3:TokenType" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPrescrizione" type="q4:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioneOttieniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.progel.it/WCF/DWH/Ws/Prescrizioni/1.0" minOccurs="0" name="PrescrizioneOttieniPerIdResult" nillable="true" type="q5:PrescrizioneReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioniCercaPerIdPaziente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q6:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPaziente" type="q7:guid" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioniCercaPerIdPazienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.progel.it/WCF/DWH/Ws/Prescrizioni/1.0" minOccurs="0" name="PrescrizioniCercaPerIdPazienteResult" nillable="true" type="q8:PrescrizioniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioniCercaPerGeneralita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q9:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceSanitario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomeAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioniCercaPerGeneralitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.progel.it/WCF/DWH/Ws/Prescrizioni/1.0" minOccurs="0" name="PrescrizioniCercaPerGeneralitaResult" nillable="true" type="q10:PrescrizioniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioniCercaPerPazienteRiferimenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q11:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CodiceAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomeAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioniCercaPerPazienteRiferimentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.progel.it/WCF/DWH/Ws/Prescrizioni/1.0" minOccurs="0" name="PrescrizioniCercaPerPazienteRiferimentiResult" nillable="true" type="q12:PrescrizioniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioneEstesaOttieniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q13:TokenType" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPrescrizione" type="q14:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrescrizioneEstesaOttieniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.progel.it/WCF/DWH/Ws/PrescrizioniEstesa/1.0" minOccurs="0" name="PrescrizioneEstesaOttieniPerIdResult" nillable="true" type="q15:PrescrizioneEstesaReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DizionarioTipiRefertoOttieni">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DizionarioTipiRefertoOttieniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="DizionarioTipiRefertoOttieniResult" nillable="true" type="q16:DizionarioTipiRefertoReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertoOttieniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q17:TokenType" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdReferto" type="q18:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertoOttieniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertoOttieniPerIdResult" nillable="true" type="q19:RefertoReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertoOttieniPerIdEsterno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q20:TokenType" />
+        <xs:element minOccurs="0" name="IdEsternoReferto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertoOttieniPerIdEsternoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertoOttieniPerIdEsternoResult" nillable="true" type="q21:RefertoReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertoPdfOttieniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q22:TokenType" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdReferto" type="q23:guid" />
+        <xs:element xmlns:q24="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="Modalita" type="q24:RefertoPdfModalitaEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertoPdfOttieniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertoPdfOttieniPerIdResult" nillable="true" type="q25:RefertoPdfReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerIdPaziente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q26:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPaziente" type="q27:guid" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="SistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoRichiedenteCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerIdPazienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertiCercaPerIdPazienteResult" nillable="true" type="q28:RefertiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerGeneralita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q29:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceSanitario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomeAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerGeneralitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertiCercaPerGeneralitaResult" nillable="true" type="q30:RefertiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerPazienteRiferimenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q31:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CodiceAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomeAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="SistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoRichiedenteCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerPazienteRiferimentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertiCercaPerPazienteRiferimentiResult" nillable="true" type="q32:RefertiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerNosologico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q33:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AziendaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerNosologicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertiCercaPerNosologicoResult" nillable="true" type="q34:RefertiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerNumeroReferto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q35:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="NumeroReferto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AziendaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AnnoReferto" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdEsternoPaziente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerNumeroRefertoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertiCercaPerNumeroRefertoResult" nillable="true" type="q36:RefertiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerNumeroPrenotazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q37:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="NumeroPrenotazione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="SistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoRichiedenteCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerNumeroPrenotazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertiCercaPerNumeroPrenotazioneResult" nillable="true" type="q38:RefertiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerIdOrderEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q39:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="IdOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiCercaPerIdOrderEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertiCercaPerIdOrderEntryResult" nillable="true" type="q40:RefertiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiModificatiCercaPerSistema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q41:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="AziendaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoRichiedenteCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertiModificatiCercaPerSistemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="RefertiModificatiCercaPerSistemaResult" nillable="true" type="q42:RefertiModificatiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MatricePrestazioniLabCercaPerIdPaziente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q43:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPaziente" type="q44:guid" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="PrestazioneCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SezioneCodice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MatricePrestazioniLabCercaPerIdPazienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="MatricePrestazioniLabCercaPerIdPazienteResult" nillable="true" type="q45:MatricePrestazioniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MatricePrestazioniLabCercaPerNosologico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q46:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AziendaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PrestazioneCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SezioneCodice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MatricePrestazioniLabCercaPerNosologicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" minOccurs="0" name="MatricePrestazioniLabCercaPerNosologicoResult" nillable="true" type="q47:MatricePrestazioniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertoIncrementaVisionatoById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q48:TokenType" />
+        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdReferto" type="q49:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefertoIncrementaVisionatoByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="RefertoIncrementaVisionatoByIdResult" nillable="true" type="q50:ErroreType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodiCercaPerIdPaziente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q51:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPaziente" type="q52:guid" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodiCercaPerIdPazienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="EpisodiCercaPerIdPazienteResult" nillable="true" type="q53:EpisodiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodiCercaPerPazienteRiferimenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q54:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CodiceAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomeAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AziendaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RepartoAzienda" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodiCercaPerPazienteRiferimentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="EpisodiCercaPerPazienteRiferimentiResult" nillable="true" type="q55:EpisodiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodiCercaPerGeneralita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q56:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceSanitario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomeAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodiCercaPerGeneralitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="EpisodiCercaPerGeneralitaResult" nillable="true" type="q57:EpisodiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodioOttieniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q58:TokenType" />
+        <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdEpisodio" type="q59:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodioOttieniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="EpisodioOttieniPerIdResult" nillable="true" type="q60:EpisodioReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodioOttieniPerNosologico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q61:TokenType" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AziendaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EpisodioOttieniPerNosologicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="EpisodioOttieniPerNosologicoResult" nillable="true" type="q62:EpisodioReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaAttesaPerNosologico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q63:TokenType" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AziendaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaAttesaPerNosologicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="ListaAttesaPerNosologicoResult" nillable="true" type="q64:StringReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NosologicoPerListaAttesa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q65:TokenType" />
+        <xs:element minOccurs="0" name="CodiceListaAttesa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AziendaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NosologicoPerListaAttesaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="NosologicoPerListaAttesaResult" nillable="true" type="q66:StringReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteOttieniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q67:TokenType" />
+        <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPaziente" type="q68:guid" />
+        <xs:element minOccurs="0" name="OttieniEpisodiAperti" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteOttieniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazienteOttieniPerIdResult" nillable="true" type="q69:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteOttieniPerAnagrafica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q70:TokenType" />
+        <xs:element minOccurs="0" name="CodiceAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomeAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OttieniEpisodiAperti" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteOttieniPerAnagraficaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazienteOttieniPerAnagraficaResult" nillable="true" type="q71:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCercaPerCodiceFiscale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q72:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCercaPerCodiceFiscaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazientiCercaPerCodiceFiscaleResult" nillable="true" type="q73:PazientiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCercaPerTesseraSanitaria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q74:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TesseraSanitaria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCercaPerTesseraSanitariaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazientiCercaPerTesseraSanitariaResult" nillable="true" type="q75:PazientiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCercaPerGeneralita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q76:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="LuogoNascita" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCercaPerGeneralitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazientiCercaPerGeneralitaResult" nillable="true" type="q77:PazientiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiRicoveratiCercaPerReparti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q78:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element xmlns:q79="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="Reparti" nillable="true" type="q79:RepartiParam" />
+        <xs:element xmlns:q80="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="Stato" type="q80:StatoRicoveroEnum" />
+        <xs:element minOccurs="0" name="TipoEpisodioCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataAperturaDal" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DataAperturaAl" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DataConclusioneDal" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DataConclusioneAl" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Luogonascita" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AziendaEroganteNosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiRicoveratiCercaPerRepartiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazientiRicoveratiCercaPerRepartiResult" nillable="true" type="q81:PazientiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiTrasferitiCercaPerReparti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q82:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element xmlns:q83="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="Reparti" nillable="true" type="q83:RepartiParam" />
+        <xs:element minOccurs="0" name="TipoEpisodioCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataDal" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DataAl" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Luogonascita" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AziendaEroganteNosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiTrasferitiCercaPerRepartiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazientiTrasferitiCercaPerRepartiResult" nillable="true" type="q84:PazientiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiTransitatiCercaPerReparti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q85:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element xmlns:q86="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="Reparti" nillable="true" type="q86:RepartiParam" />
+        <xs:element minOccurs="0" name="TipoEpisodioCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataDal" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DataAl" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Luogonascita" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AziendaEroganteNosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiTransitatiCercaPerRepartiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazientiTransitatiCercaPerRepartiResult" nillable="true" type="q87:PazientiTransitatiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiPrenotatiCercaPerReparti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q88:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element xmlns:q89="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="Reparti" nillable="true" type="q89:RepartiParam" />
+        <xs:element minOccurs="0" name="TipoEpisodioCodice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataDal" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DataAl" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Luogonascita" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiPrenotatiCercaPerRepartiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazientiPrenotatiCercaPerRepartiResult" nillable="true" type="q90:PazientiPrenotatiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiNatiCercaPerReparti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q91:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element xmlns:q92="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" minOccurs="0" name="Reparti" nillable="true" type="q92:RepartiParam" />
+        <xs:element xmlns:q93="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="Stato" type="q93:StatoRicoveroNatiEnum" />
+        <xs:element minOccurs="0" name="DataDal" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DataAl" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Luogonascita" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FiltroMadre" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiNatiCercaPerRepartiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PazientiNatiCercaPerRepartiResult" nillable="true" type="q94:PazientiNatiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientSummaryOttieniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q95:TokenType" />
+        <xs:element xmlns:q96="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPaziente" type="q96:guid" />
+        <xs:element minOccurs="0" name="RichiedenteCognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RichiedenteNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RichiedenteCodiceFiscale" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientSummaryOttieniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" minOccurs="0" name="PatientSummaryOttieniPerIdResult" nillable="true" type="q97:PatientSummaryReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayerRefertoFormatiOttieniPerIdReferto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q98:TokenType" />
+        <xs:element xmlns:q99="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdReferto" type="q99:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayerRefertoFormatiOttieniPerIdRefertoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.progel.it/WCF/DWH/Ws/LayerReferti/1.0" minOccurs="0" name="LayerRefertoFormatiOttieniPerIdRefertoResult" nillable="true" type="q100:LayerRefertoFormatiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayerRefertoFormattatoOttieniPerFormatiTipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q101:TokenType" />
+        <xs:element xmlns:q102="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdReferto" type="q102:guid" />
+        <xs:element xmlns:q103="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdFormato" nillable="true" type="q103:ArrayOfstring" />
+        <xs:element xmlns:q104="http://schemas.progel.it/WCF/DWH/Ws/LayerReferti/1.0" minOccurs="0" name="Tipo" nillable="true" type="q104:ArrayOfLayerTipoFormatoEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayerRefertoFormattatoOttieniPerFormatiTipoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.progel.it/WCF/DWH/Ws/LayerReferti/1.0" minOccurs="0" name="LayerRefertoFormattatoOttieniPerFormatiTipoResult" nillable="true" type="q105:LayerRefertoFormattatoReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotaAnamnesticaOttieniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q106:TokenType" />
+        <xs:element xmlns:q107="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdNotaAnamnestica" type="q107:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotaAnamnesticaOttieniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.progel.it/WCF/DWH/Ws/NoteAnamnestiche/1.0" minOccurs="0" name="NotaAnamnesticaOttieniPerIdResult" nillable="true" type="q108:NotaAnamnesticaReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoteAnamnesticheCercaPerIdPaziente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q109:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element xmlns:q110="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPaziente" type="q110:guid" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoteAnamnesticheCercaPerIdPazienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.progel.it/WCF/DWH/Ws/NoteAnamnestiche/1.0" minOccurs="0" name="NoteAnamnesticheCercaPerIdPazienteResult" nillable="true" type="q111:NoteAnamnesticheReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoteAnamnesticheCercaPerGeneralita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q112:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceSanitario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomeAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoteAnamnesticheCercaPerGeneralitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.progel.it/WCF/DWH/Ws/NoteAnamnestiche/1.0" minOccurs="0" name="NoteAnamnesticheCercaPerGeneralitaResult" nillable="true" type="q113:NoteAnamnesticheReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoteAnamnesticheCercaPerPazienteRiferimenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q114:TokenType" />
+        <xs:element minOccurs="0" name="MaxNumRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ByPassaConsenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CodiceAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomeAnagrafica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DallaData" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AllaData" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoteAnamnesticheCercaPerPazienteRiferimentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.progel.it/WCF/DWH/Ws/NoteAnamnestiche/1.0" minOccurs="0" name="NoteAnamnesticheCercaPerPazienteRiferimentiResult" nillable="true" type="q115:NoteAnamnesticheReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseConsensoAggiungiOppureModifica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q116:TokenType" />
+        <xs:element minOccurs="0" name="Consenso" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CodiceFiscalePaziente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CognomePaziente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NomePaziente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAslAssPaziente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscaleMedico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseConsensoAggiungiOppureModificaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="FseConsensoAggiungiOppureModificaResult" nillable="true" type="q117:ErroreReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseConsensoOttieniPerCodiceFiscale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q118:TokenType" />
+        <xs:element minOccurs="0" name="CodiceFiscalePaziente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseConsensoOttieniPerCodiceFiscaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.progel.it/WCF/DWH/Ws/Fse/1.0" minOccurs="0" name="FseConsensoOttieniPerCodiceFiscaleResult" nillable="true" type="q119:ConsensoReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseDizionariOttieni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q120:TokenType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseDizionariOttieniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.progel.it/WCF/DWH/Ws/Fse/1.0" minOccurs="0" name="FseDizionariOttieniResult" nillable="true" type="q121:DizionariReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseDocumentiCerca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q122:TokenType" />
+        <xs:element minOccurs="0" name="NumMaxRecord" type="xs:int" />
+        <xs:element minOccurs="0" name="TipoAccesso" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipiDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataDal" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DataAl" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="CodiceFiscalePaziente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscaleMedico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseDocumentiCercaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.progel.it/WCF/DWH/Ws/Fse/1.0" minOccurs="0" name="FseDocumentiCercaResult" nillable="true" type="q123:DocumentiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseDocumentoOttieniPerCodice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" minOccurs="0" name="Token" nillable="true" type="q124:TokenType" />
+        <xs:element minOccurs="0" name="CodiceDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoAccesso" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DocumentoNatura" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscalePaziente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscaleMedico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FseDocumentoOttieniPerCodiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.progel.it/WCF/DWH/Ws/Fse/1.0" minOccurs="0" name="FseDocumentoOttieniPerCodiceResult" nillable="true" type="q125:DocumentoReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

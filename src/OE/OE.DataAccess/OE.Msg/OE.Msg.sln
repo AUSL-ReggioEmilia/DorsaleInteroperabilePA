@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OE.Msg.DataAccess", "OE.Msg.DataAccess\OE.Msg.DataAccess.vbproj", "{D10077FA-2171-4B53-AD9B-34695F249DA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7647126A-F332-4D39-9B3A-AB1F98F230E3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OE.Core", "..\OE.Core\OE.Core.vbproj", "{4146E959-65F6-49D8-87F5-358333EF2DD9}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OE.Wcf.BtDataAccess", "OE.Wcf.BtDataAccess\OE.Wcf.BtDataAccess.vbproj", "{D8D79DC9-AEC4-4D32-9BD5-A5E03A7C2CD7}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OE.Wcf.ClientTestPipe", "OE.Wcf.ClientTestPipe\OE.Wcf.ClientTestPipe.vbproj", "{7E46AC78-228A-468D-8C66-7813FDC72E41}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OE.Msg.Test", "OE.Msg.Test\OE.Msg.Test.vbproj", "{C8F6B9C2-5ACB-45BB-B7A3-30019432141E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D10077FA-2171-4B53-AD9B-34695F249DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10077FA-2171-4B53-AD9B-34695F249DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10077FA-2171-4B53-AD9B-34695F249DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10077FA-2171-4B53-AD9B-34695F249DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4146E959-65F6-49D8-87F5-358333EF2DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4146E959-65F6-49D8-87F5-358333EF2DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4146E959-65F6-49D8-87F5-358333EF2DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4146E959-65F6-49D8-87F5-358333EF2DD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8D79DC9-AEC4-4D32-9BD5-A5E03A7C2CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8D79DC9-AEC4-4D32-9BD5-A5E03A7C2CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8D79DC9-AEC4-4D32-9BD5-A5E03A7C2CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8D79DC9-AEC4-4D32-9BD5-A5E03A7C2CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E46AC78-228A-468D-8C66-7813FDC72E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E46AC78-228A-468D-8C66-7813FDC72E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E46AC78-228A-468D-8C66-7813FDC72E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E46AC78-228A-468D-8C66-7813FDC72E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F6B9C2-5ACB-45BB-B7A3-30019432141E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F6B9C2-5ACB-45BB-B7A3-30019432141E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F6B9C2-5ACB-45BB-B7A3-30019432141E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F6B9C2-5ACB-45BB-B7A3-30019432141E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1967607A-3152-4986-A34C-20F9715737B5}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hellen.progel.org:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\OE.Core\\OE.Core.vbproj
+		SccProjectName1 = ../OE.Core
+		SccLocalPath1 = ..\\OE.Core
+		SccProjectUniqueName2 = OE.Msg.DataAccess\\OE.Msg.DataAccess.vbproj
+		SccProjectName2 = OE.Msg.DataAccess
+		SccLocalPath2 = OE.Msg.DataAccess
+		SccProjectUniqueName3 = OE.Wcf.BtDataAccess\\OE.Wcf.BtDataAccess.vbproj
+		SccProjectName3 = OE.Wcf.BtDataAccess
+		SccLocalPath3 = OE.Wcf.BtDataAccess
+		SccProjectUniqueName4 = OE.Wcf.ClientTestPipe\\OE.Wcf.ClientTestPipe.vbproj
+		SccProjectName4 = OE.Wcf.ClientTestPipe
+		SccLocalPath4 = OE.Wcf.ClientTestPipe
+		SccProjectUniqueName5 = OE.Msg.Test\\OE.Msg.Test.vbproj
+		SccProjectName5 = OE.Msg.Test
+		SccLocalPath5 = OE.Msg.Test
+	EndGlobalSection
+EndGlobal

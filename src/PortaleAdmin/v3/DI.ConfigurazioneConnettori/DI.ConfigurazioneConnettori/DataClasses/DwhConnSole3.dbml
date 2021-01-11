@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_DwhConnSole3" Class="DwhConnSole3DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_DwhConnSole3;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_DwhConnSole3ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PresidiEroganti" Member="PresidiEroganti">
+    <Type Name="PresidiEroganti">
+      <Column Name="TipoErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RepartoErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AziendaErogantePrefissoEsterno" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="PresidioEroganteCodice" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="PresidioEroganteDescr" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="PresidioEroganteSubCodice" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="AziendaEroganteDescr" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="RepartoEroganteDescr" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AziendaEroganteCodice" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="RegioneEroganteCodice" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="UnitaOperativaCodice" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="UnitaOperativaDescr" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="UnitaOperativaSubCodice" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="FseAbilitato" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PresidiErogantiAziendeEroganti_PresidiEroganti" Member="PresidiErogantiAziendeEroganti" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="PresidiErogantiAziendeEroganti" IsForeignKey="true" />
+      <Association Name="PresidiErogantiSistemiEroganti_PresidiEroganti" Member="PresidiErogantiSistemiEroganti" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="PresidiErogantiSistemiEroganti" IsForeignKey="true" />
+      <Association Name="PresidiErogantiTipiEroganti_PresidiEroganti" Member="PresidiErogantiTipiEroganti" ThisKey="TipoErogante" OtherKey="TipoErogante" Type="PresidiErogantiTipiEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.PresidiErogantiAziendeEroganti" Member="PresidiErogantiAziendeEroganti">
+    <Type Name="PresidiErogantiAziendeEroganti">
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="PresidiErogantiAziendeEroganti_PresidiEroganti" Member="PresidiEroganti" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="PresidiEroganti" />
+    </Type>
+  </Table>
+  <Table Name="admin.PresidiErogantiSistemiEroganti" Member="PresidiErogantiSistemiEroganti">
+    <Type Name="PresidiErogantiSistemiEroganti">
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="PresidiErogantiSistemiEroganti_PresidiEroganti" Member="PresidiEroganti" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="PresidiEroganti" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="admin.PresidiErogantiTipiEroganti" Member="PresidiErogantiTipiEroganti">
+    <Type Name="PresidiErogantiTipiEroganti">
+      <Column Name="TipoErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="PresidiErogantiTipiEroganti_PresidiEroganti" Member="PresidiEroganti" ThisKey="TipoErogante" OtherKey="TipoErogante" Type="PresidiEroganti" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RepartiRichiedenti" Member="RepartiRichiedentis">
+    <Type Name="RepartiRichiedenti">
+      <Column Name="TipoErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RepartoRichiedenteCodice" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RepartoRichiedenteTipo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="IstitutoCodice" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="PercorsoCarceri" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PercorsoSert" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="RepartiRichiedentiTipiEroganti_RepartiRichiedenti" Member="RepartiRichiedentiTipiEroganti" ThisKey="TipoErogante" OtherKey="TipoErogante" Type="RepartiRichiedentiTipiEroganti" IsForeignKey="true" />
+      <Association Name="RepartiRichiedentiAziendeEroganti_RepartiRichiedenti" Member="RepartiRichiedentiAziendeEroganti" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="RepartiRichiedentiAziendeEroganti" IsForeignKey="true" />
+      <Association Name="RepartiRichiedentiSistemiEroganti_RepartiRichiedenti" Member="RepartiRichiedentiSistemiEroganti" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="RepartiRichiedentiSistemiEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.RepartiRichiedentiTipiEroganti" Member="RepartiRichiedentiTipiErogantis">
+    <Type Name="RepartiRichiedentiTipiEroganti">
+      <Column Name="TipoErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="RepartiRichiedentiTipiEroganti_RepartiRichiedenti" Member="RepartiRichiedentis" ThisKey="TipoErogante" OtherKey="TipoErogante" Type="RepartiRichiedenti" />
+    </Type>
+  </Table>
+  <Table Name="admin.RepartiRichiedentiAziendeEroganti" Member="RepartiRichiedentiAziendeErogantis">
+    <Type Name="RepartiRichiedentiAziendeEroganti">
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="RepartiRichiedentiAziendeEroganti_RepartiRichiedenti" Member="RepartiRichiedentis" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="RepartiRichiedenti" />
+    </Type>
+  </Table>
+  <Table Name="admin.RepartiRichiedentiSistemiEroganti" Member="RepartiRichiedentiSistemiErogantis">
+    <Type Name="RepartiRichiedentiSistemiEroganti">
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="RepartiRichiedentiSistemiEroganti_RepartiRichiedenti" Member="RepartiRichiedentis" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="RepartiRichiedenti" />
+    </Type>
+  </Table>
+</Database>

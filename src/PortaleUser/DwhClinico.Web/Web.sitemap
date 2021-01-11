@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="#" title="Data Warehouse Clinico"  description="Data Warehouse Clinico" >
+    <siteMapNode url="~/Default.aspx" title="Pazienti Ricoverati"  description="Pazienti Ricoverati" />
+    <siteMapNode url="~/Pazienti/Pazienti.aspx" title="Cerca Pazienti"  description="Cerca Pazienti" />
+    <!--<siteMapNode url="~/Referti/RefertiListaPaziente.aspx" title="Lista Referti"  description="Lista Referti" />-->
+    <siteMapNode url="~/ConfigurazioneStampa.aspx?Config=1" title="Configura stampante"  description="Configura stampante" />
+  </siteMapNode>
+</siteMap>

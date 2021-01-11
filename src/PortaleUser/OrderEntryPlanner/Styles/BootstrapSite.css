@@ -1,0 +1,129 @@
+﻿/* ****************************************** */
+/* Visual Studio default CSS */
+/* ****************************************** */
+.nestedRow-no {
+    background-color: red;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+}
+
+
+
+
+
+/* ****************************************** */
+/* CUSTOM CSS */
+/* ****************************************** */
+
+/*Toglie gli style creati dalla renderizzazione dell'aspMenu  */
+.navbar-collapse > div {
+    clear: none !important;
+}
+
+@media (max-width: 768px) {
+    /* Aggiusta il menu durante il collassamento. Toglie il float e da un colore al testo. */
+    .navbar-custum-collapse .navbar-nav {
+        float: none !important;
+        color: #9d9d9d;
+    }
+
+    .navbar-custum-collapse .navbar-nav > li{
+        float:none !important;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .staticMenuSecondario-custum-float, .pr-aspMenu {
+        float: none !important;
+    }
+}
+
+
+/* Allinea le checkbox alle textbox nelle form bootstrap */
+@media (min-width: 768px) {
+    .checkbox-custum-top-align {
+        margin-top: 35px;
+    }
+}
+
+/* Imposta margine dall'alto per le GridView contenute nei tab */
+.gridView-custum-margin {
+    margin-top: 5px;
+}
+
+/* Serve per unire i due menu */
+#MenuPrincipale {
+    margin-bottom: 0px;
+}
+
+#MenuSecondario.affix {
+    position: fixed;
+    z-index: 1;
+    top: 35px;
+    width: 100%;
+}
+
+.checkboxlist-custom-left-margin > label, .checkboxlist-custom-left-margin > input {
+    margin-left: 20px !important;
+}
+
+.btn {
+    white-space: normal;
+}
+
+.popover {
+    margin-right: 20px;
+}
+
+/* AFFIX FILTRI LATERALI */
+#MenuPrincipale.affix {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+@media (max-width:768px) {
+    .affix {
+        position: static;
+        width: 100% !important;
+    }
+}
+/* FINE AFFIX FILTRI LATERALI */
+
+.custum-margin-right-sidebar {
+    margin-right: 10px;
+}
+
+/* aumenta il margin-top della row che contiene le griglie all'interno delle tab*/
+.tab-row-custom-margin-top {
+    margin-top: 10px;
+}
+
+/* Allinea il testo nella tab della lista dei referti in cui viene scritta la data inserita nei filtri */
+.tab-li-custum-text {
+    margin-right: 15px;
+}
+
+/* Allinea a sinistra il testo del tooltip*/
+.tooltip-inner {
+    text-align: left;
+}
+
+.navbar-accessoDiretto-button-margin {
+    margin-bottom: 10px !important;
+}
+
+.divPage {
+    margin-top: 5px;
+}

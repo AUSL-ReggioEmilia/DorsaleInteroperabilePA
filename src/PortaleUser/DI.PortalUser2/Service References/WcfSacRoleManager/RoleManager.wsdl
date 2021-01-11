@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.progel.it/WCF/SAC/Service/3.0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RoleManager" targetNamespace="http://schemas.progel.it/WCF/SAC/Service/3.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IRoleManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.progel.it/WCF/SAC/Service/3.0/Imports">
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd0" namespace="http://schemas.progel.it/WCF/SAC/Service/3.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd3" namespace="http://schemas.progel.it/WCF/SAC/Types/3.0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRoleManager_GruppiCerca_InputMessage">
+    <wsdl:part name="parameters" element="tns:GruppiCerca" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_GruppiCerca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GruppiCercaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_GruppoOttieniPerNomeGruppo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GruppoOttieniPerNomeGruppo" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_GruppoOttieniPerNomeGruppo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GruppoOttieniPerNomeGruppoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_GruppiOttieniPerUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GruppiOttieniPerUtente" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_GruppiOttieniPerUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GruppiOttieniPerUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoliCerca_InputMessage">
+    <wsdl:part name="parameters" element="tns:RuoliCerca" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoliCerca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RuoliCercaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoliOttieniPerUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:RuoliOttieniPerUtente" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoliOttieniPerUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RuoliOttieniPerUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoliOttieniPerIdUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:RuoliOttieniPerIdUtente" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoliOttieniPerIdUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RuoliOttieniPerIdUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoloDettagliOttieni_InputMessage">
+    <wsdl:part name="parameters" element="tns:RuoloDettagliOttieni" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoloDettagliOttieni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RuoloDettagliOttieniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_SistemiCerca_InputMessage">
+    <wsdl:part name="parameters" element="tns:SistemiCerca" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_SistemiCerca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SistemiCercaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_UnitaOperativeCerca_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnitaOperativeCerca" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_UnitaOperativeCerca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnitaOperativeCercaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_UtentiCerca_InputMessage">
+    <wsdl:part name="parameters" element="tns:UtentiCerca" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_UtentiCerca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UtentiCercaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_UtenteOttieniPerNomeUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:UtenteOttieniPerNomeUtente" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_UtenteOttieniPerNomeUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UtenteOttieniPerNomeUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_UtentiOttieniPerRuolo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UtentiOttieniPerRuolo" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_UtentiOttieniPerRuolo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UtentiOttieniPerRuoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_AccessiOttieniPerRuolo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AccessiOttieniPerRuolo" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_AccessiOttieniPerRuolo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccessiOttieniPerRuoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoliOttieniPerAttributo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RuoliOttieniPerAttributo" />
+  </wsdl:message>
+  <wsdl:message name="IRoleManager_RuoliOttieniPerAttributo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RuoliOttieniPerAttributoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRoleManager">
+    <wsdl:operation name="GruppiCerca">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/GruppiCerca" message="tns:IRoleManager_GruppiCerca_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/GruppiCercaResponse" message="tns:IRoleManager_GruppiCerca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GruppoOttieniPerNomeGruppo">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/GruppoOttieniPerNomeGruppo" message="tns:IRoleManager_GruppoOttieniPerNomeGruppo_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/GruppoOttieniPerNomeGruppoResponse" message="tns:IRoleManager_GruppoOttieniPerNomeGruppo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GruppiOttieniPerUtente">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/GruppiOttieniPerUtente" message="tns:IRoleManager_GruppiOttieniPerUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/GruppiOttieniPerUtenteResponse" message="tns:IRoleManager_GruppiOttieniPerUtente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RuoliCerca">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliCerca" message="tns:IRoleManager_RuoliCerca_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliCercaResponse" message="tns:IRoleManager_RuoliCerca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RuoliOttieniPerUtente">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliOttieniPerUtente" message="tns:IRoleManager_RuoliOttieniPerUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliOttieniPerUtenteResponse" message="tns:IRoleManager_RuoliOttieniPerUtente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RuoliOttieniPerIdUtente">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliOttieniPerIdUtente" message="tns:IRoleManager_RuoliOttieniPerIdUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliOttieniPerIdUtenteResponse" message="tns:IRoleManager_RuoliOttieniPerIdUtente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RuoloDettagliOttieni">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoloDettagliOttieni" message="tns:IRoleManager_RuoloDettagliOttieni_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoloDettagliOttieniResponse" message="tns:IRoleManager_RuoloDettagliOttieni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SistemiCerca">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/SistemiCerca" message="tns:IRoleManager_SistemiCerca_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/SistemiCercaResponse" message="tns:IRoleManager_SistemiCerca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnitaOperativeCerca">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UnitaOperativeCerca" message="tns:IRoleManager_UnitaOperativeCerca_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UnitaOperativeCercaResponse" message="tns:IRoleManager_UnitaOperativeCerca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UtentiCerca">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UtentiCerca" message="tns:IRoleManager_UtentiCerca_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UtentiCercaResponse" message="tns:IRoleManager_UtentiCerca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UtenteOttieniPerNomeUtente">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UtenteOttieniPerNomeUtente" message="tns:IRoleManager_UtenteOttieniPerNomeUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UtenteOttieniPerNomeUtenteResponse" message="tns:IRoleManager_UtenteOttieniPerNomeUtente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UtentiOttieniPerRuolo">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UtentiOttieniPerRuolo" message="tns:IRoleManager_UtentiOttieniPerRuolo_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UtentiOttieniPerRuoloResponse" message="tns:IRoleManager_UtentiOttieniPerRuolo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessiOttieniPerRuolo">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/AccessiOttieniPerRuolo" message="tns:IRoleManager_AccessiOttieniPerRuolo_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/AccessiOttieniPerRuoloResponse" message="tns:IRoleManager_AccessiOttieniPerRuolo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RuoliOttieniPerAttributo">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliOttieniPerAttributo" message="tns:IRoleManager_RuoliOttieniPerAttributo_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliOttieniPerAttributoResponse" message="tns:IRoleManager_RuoliOttieniPerAttributo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IRoleManager" type="tns:IRoleManager">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IRoleManager_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GruppiCerca">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/GruppiCerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GruppoOttieniPerNomeGruppo">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/GruppoOttieniPerNomeGruppo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GruppiOttieniPerUtente">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/GruppiOttieniPerUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RuoliCerca">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliCerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RuoliOttieniPerUtente">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliOttieniPerUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RuoliOttieniPerIdUtente">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliOttieniPerIdUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RuoloDettagliOttieni">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoloDettagliOttieni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SistemiCerca">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/SistemiCerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitaOperativeCerca">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UnitaOperativeCerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtentiCerca">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UtentiCerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtenteOttieniPerNomeUtente">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UtenteOttieniPerNomeUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtentiOttieniPerRuolo">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/UtentiOttieniPerRuolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessiOttieniPerRuolo">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/AccessiOttieniPerRuolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RuoliOttieniPerAttributo">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IRoleManager/RuoliOttieniPerAttributo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RoleManager">
+    <wsdl:port name="BasicHttpBinding_IRoleManager" binding="tns:BasicHttpBinding_IRoleManager">
+      <soap:address location="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

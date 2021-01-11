@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessaggioEvento>
+	<Paziente>
+		<IdEsternoPaziente>XXX</IdEsternoPaziente>
+		<Cognome>Felici</Cognome>
+		<Nome>Laura</Nome>
+		<Sesso>F</Sesso>
+		<DataNascita>1944-03-28T00:00:00</DataNascita>
+		<LuogoNascita>QUATTRO CASTELLA</LuogoNascita>
+		<CodiceSanitario>3400671</CodiceSanitario>
+		<CodiceFiscale>FLCLRA44C68H122B</CodiceFiscale>
+	</Paziente>
+	<Evento>
+		<IdEsternoEvento>TEST_ADT_NOSOLOGICO_T</IdEsternoEvento>
+		<AziendaErogante>ASMN</AziendaErogante>
+		<SistemaErogante>ADT</SistemaErogante>
+		<RepartoErogante>ADT-RE</RepartoErogante>
+		<DataEvento>2011-08-22T11:20:00.000</DataEvento>
+		<TipoEventoCodice>T</TipoEventoCodice>
+		<TipoEventoDescr>Trasferimento</TipoEventoDescr>
+		<TipoEpisodio></TipoEpisodio>
+		<TipoEpisodioDescrizione></TipoEpisodioDescrizione>
+		<NumeroNosologico>D09012123_TEST</NumeroNosologico>
+		<RepartoCodice>RRC-2</RepartoCodice>
+		<RepartoDescrizione>RRC-2 Descrizione</RepartoDescrizione>
+		<Diagnosi></Diagnosi>
+		<Attributi>
+			<Attributo>
+				<Nome>SettoreCodice</Nome>
+				<Valore>SC1</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>SettoreDescr</Nome>
+				<Valore>SC1-desc</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>LettoCodice</Nome>
+				<Valore>LC1</Valore>
+			</Attributo>
+		</Attributi>
+	</Evento>
+</MessaggioEvento>

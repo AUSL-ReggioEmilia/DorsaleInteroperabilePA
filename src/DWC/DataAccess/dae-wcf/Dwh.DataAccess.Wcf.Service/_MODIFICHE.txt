@@ -1,0 +1,9 @@
+﻿
+SERVER DI SVILUPPO PER LE PROVE:
+\\endor3.progel.org\c$\inetpub\wwwroot\DwhDataAccess 
+
+
+---------------------------------------------------------------------------------------------------
+2016-01-05
+Ora viene passato come Paziente IdProvenienzaDiRicerca CF_'codicefiscale' se CF non è nullo
+	altrimenti TS_'n°tesserasanitaria'

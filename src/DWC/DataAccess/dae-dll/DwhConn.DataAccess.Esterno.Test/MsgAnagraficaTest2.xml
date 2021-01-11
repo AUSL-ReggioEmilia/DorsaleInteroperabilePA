@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MessaggioAnagrafica>
+	<IdEsternoPaziente>SAC_D4B08531-667B-4C55-A5B9-02C2E46DA4B8</IdEsternoPaziente>
+	<AziendaErogante>ASMN</AziendaErogante>
+	<SistemaErogante>LHA</SistemaErogante>
+	<RepartoErogante></RepartoErogante>
+	<Cognome>Drusilla</Cognome>
+	<Nome>Livia</Nome>
+	<DataNascita>1984-09-09T00:00:00.00</DataNascita>
+	<LuogoNascita>Reggio Emilia</LuogoNascita>
+	<CodiceFiscale>DRSLVI84P49H223I</CodiceFiscale>
+	<CodiceSanitario></CodiceSanitario>
+	<Sesso>F</Sesso>
+	<Attributi>
+		<Attributo>
+			<Nome>Attributo_test1</Nome>
+			<Valore>test1</Valore>
+		</Attributo>
+		<Attributo>
+			<Nome>Attributo_test2</Nome>
+			<Valore>test2</Valore>
+		</Attributo>
+	</Attributi>
+	<!-- I riferimenti vengono creati solo in INSERT o in caso di FUSIONE -->
+	<Riferimenti>
+		<Riferimento>
+			<Nome>SAC</Nome>
+			<Valore>A4B08532-657B-4d55-A5a9-02C3E46DA4B8</Valore>
+		</Riferimento>
+		<Riferimento>
+			<Nome>GST_ASMN</Nome>
+			<Valore>0101010101</Valore>
+		</Riferimento>
+	</Riferimenti>
+</MessaggioAnagrafica>

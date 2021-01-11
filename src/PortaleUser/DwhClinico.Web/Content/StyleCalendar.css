@@ -1,0 +1,123 @@
+﻿
+/* 
+    ***************** STILI PER VISULIZZAZIONE CALENDARIO *****************
+*/
+
+/*
+    COLORI SFONDO
+*/
+.calendar-rank-default {
+    background-color: #e2e2e2;
+}
+
+.calendar-rank-default-weekend {
+    background-color: #f6e8e8;
+}
+
+.calendar-rank-escluso {
+    background-color: #f8f8f8;
+}
+
+.calendar-rank1 {
+    background-color: #009e47;
+}
+
+.calendar-panel {
+    margin: 1px;
+    font-size: 10px;
+    text-align: center;
+    vertical-align: middle;
+    height: 11px;
+    width: 14px;
+}
+
+    .calendar-panel > a {
+        color: #f8f8f8;
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        vertical-align: middle;
+        /* Serve per rendere clicabile tutta la casella (panel)*/
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        display: inline-block;
+    }
+
+
+/*
+    COLORE BORDO 1 : Prodnto Soccorso e OBI
+*/
+.calendar-panel-border1 {
+    border-color: #a206e5;
+    border-width: 1px;
+    border-style: solid;
+}
+
+    .calendar-panel-border1 > div {
+        margin: 0px;
+        padding-right: -1px;
+    }
+
+    .calendar-panel-border1 > a {
+        vertical-align: top;
+    }
+
+/*
+    COLORE BORDO 2 : Ordinario
+*/
+
+.calendar-panel-border2 {
+    border-color: #3da0ff;
+    border-width: 1px;
+    border-style: solid;
+}
+
+    .calendar-panel-border2 > div {
+        margin: 0px;
+        padding-right: -1px;
+    }
+
+    .calendar-panel-border2 > a {
+        vertical-align: top;
+    }
+
+/*
+    COLORE BORDO 3 : Day Hospital e Day Services
+*/
+
+.calendar-panel-border3 {
+    border-color: #e6be19;
+    border-width: 1px;
+    border-style: solid;
+}
+
+    .calendar-panel-border3 > div {
+        margin: 0px;
+        padding-right: -1px;
+    }
+
+    .calendar-panel-border3 > a {
+        vertical-align: top;
+    }
+
+/*
+    COLORE BORDO 4 : Altro
+*/
+
+.calendar-panel-border4 {
+    border-color: #797979;
+    border-width: 1px;
+    border-style: solid;
+}
+
+    .calendar-panel-border4 > div {
+        margin: 0px;
+        padding-right: -1px;
+    }
+
+    .calendar-panel-border4 > a {
+        vertical-align: top;
+    }

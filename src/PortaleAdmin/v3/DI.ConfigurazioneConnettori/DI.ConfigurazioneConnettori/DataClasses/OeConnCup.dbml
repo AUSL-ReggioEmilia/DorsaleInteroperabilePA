@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ASMN_OeConnCup" Class="OeConnCupDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=ASMN_OeConnCup;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ASMN_OeConnCupConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TranscodificaAgendaCupStrutturaErogante" Member="TranscodificaAgendaCupStrutturaErogante">
+    <Type Name="TranscodificaAgendaCupStrutturaErogante">
+      <Column Name="CodiceAgendaCup" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescrizioneAgendaCup" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TranscodificaCodiceAgendaCup" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="DescrizioneStrutturaErogante" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceSistemaErogante" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodiceAziendaErogante" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="MultiErogante" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ocup_StruttureEroganti_TranscodificaAgendaCupStrutturaErogante" Member="ocup_StruttureEroganti" Storage="_StruttureEroganti" ThisKey="StrutturaErogante" OtherKey="Codice" Type="ocup_StruttureEroganti" IsForeignKey="true" />
+      <Association Name="Enum_CodiciSistemiEroganti_TranscodificaAgendaCupStrutturaErogante" Member="Enum_CodiciSistemiEroganti" ThisKey="CodiceSistemaErogante" OtherKey="CodiceSistema" Type="Enum_CodiciSistemiEroganti" IsForeignKey="true" />
+      <Association Name="Enum_CodiciAziendeEroganti_TranscodificaAgendaCupStrutturaErogante" Member="Enum_CodiciAziendeEroganti" ThisKey="CodiceAziendaErogante" OtherKey="CodiceAzienda" Type="Enum_CodiciAziendeEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TranscodificaAttributiPrestazioniCupErogante" Member="TranscodificaAttributiPrestazioniCupErogante">
+    <Type Name="TranscodificaAttributiPrestazioniCupErogante">
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneCup" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Posizione" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="TipoDato" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="TipoContenuto" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SpecialitaEsameCup" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceSistemaErogante" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodiceAziendaErogante" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Association Name="ocup_StruttureEroganti_TranscodificaAttributiPrestazioniCupErogante" Member="ocup_StruttureEroganti" Storage="_StruttureEroganti" ThisKey="StrutturaErogante" OtherKey="Codice" Type="ocup_StruttureEroganti" IsForeignKey="true" />
+      <Association Name="AttributiNomi_TranscodificaAttributiPrestazioniCupErogante" Member="AttributiNomi" ThisKey="Nome" OtherKey="Nome" Type="AttributiNomi" IsForeignKey="true" />
+      <Association Name="Enum_CodiciSistemiEroganti_TranscodificaAttributiPrestazioniCupErogante" Member="Enum_CodiciSistemiEroganti" ThisKey="CodiceSistemaErogante" OtherKey="CodiceSistema" Type="Enum_CodiciSistemiEroganti" IsForeignKey="true" />
+      <Association Name="Enum_CodiciAziendeEroganti_TranscodificaAttributiPrestazioniCupErogante" Member="Enum_CodiciAziendeEroganti" ThisKey="CodiceAziendaErogante" OtherKey="CodiceAzienda" Type="Enum_CodiciAziendeEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TranscodificaCodiceProvenienzaCupErogante" Member="TranscodificaCodiceProvenienzaCupErogante">
+    <Type Name="TranscodificaCodiceProvenienzaCupErogante">
+      <Column Name="CodiceProvenienzaCup" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceProvenienzaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="DescrizioneProvenienzaErogante" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="ocup_StruttureEroganti_TranscodificaCodiceProvenienzaCupErogante" Member="ocup_StruttureEroganti" Storage="_StruttureEroganti" ThisKey="StrutturaErogante" OtherKey="Codice" Type="ocup_StruttureEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TranscodificaCodiceUrgenzaCupOrderEntry" Member="TranscodificaCodiceUrgenzaCupOrderEntry">
+    <Type Name="TranscodificaCodiceUrgenzaCupOrderEntry">
+      <Column Name="CodiceUrgenzaCup" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceUrgenzaOe" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="DescrizioneUrgenzaOe" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TranscodificaTipoContrattoCupErogante" Member="TranscodificaTipoContrattoCupErogante">
+    <Type Name="TranscodificaTipoContrattoCupErogante">
+      <Column Name="CodiceTipoContrattoCup" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceTipoContrattoErogante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="ocup_StruttureEroganti_TranscodificaTipoContrattoCupErogante" Member="ocup_StruttureEroganti" Storage="_StruttureEroganti" ThisKey="StrutturaErogante" OtherKey="Codice" Type="ocup_StruttureEroganti" IsForeignKey="true" />
+      <Association Name="TipiContrattoErogante_TranscodificaTipoContrattoCupErogante" Member="TipiContrattoErogante" ThisKey="CodiceTipoContrattoErogante" OtherKey="Codice" Type="TipiContrattoErogante" IsForeignKey="true" />
+      <Association Name="TipiContrattoCup_TranscodificaTipoContrattoCupErogante" Member="TipiContrattoCup" ThisKey="CodiceTipoContrattoCup" OtherKey="Codice" Type="TipiContrattoCup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AgendeCupSistemiDiStampa" Member="AgendeCupSistemiDiStampa">
+    <Type Name="AgendeCupSistemiDiStampa">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodiceAgendaCup" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="PcRichiedente" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SistemaDiStampa" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StruttureEroganti" Member="ocup_StruttureErogantis">
+    <Type Name="ocup_StruttureEroganti">
+      <Column Name="Codice" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="ocup_StruttureEroganti_TranscodificaAgendaCupStrutturaErogante" Member="TranscodificaAgendaCupStrutturaErogantes" ThisKey="Codice" OtherKey="StrutturaErogante" Type="TranscodificaAgendaCupStrutturaErogante" />
+      <Association Name="ocup_StruttureEroganti_TranscodificaAttributiPrestazioniCupErogante" Member="TranscodificaAttributiPrestazioniCupErogantes" ThisKey="Codice" OtherKey="StrutturaErogante" Type="TranscodificaAttributiPrestazioniCupErogante" />
+      <Association Name="ocup_StruttureEroganti_TranscodificaCodiceProvenienzaCupErogante" Member="TranscodificaCodiceProvenienzaCupErogantes" ThisKey="Codice" OtherKey="StrutturaErogante" Type="TranscodificaCodiceProvenienzaCupErogante" />
+      <Association Name="ocup_StruttureEroganti_TranscodificaTipoContrattoCupErogante" Member="TranscodificaTipoContrattoCupErogantes" ThisKey="Codice" OtherKey="StrutturaErogante" Type="TranscodificaTipoContrattoCupErogante" />
+      <Association Name="ocup_StruttureEroganti_DiffPrestazioniCup" Member="DiffPrestazioniCups" ThisKey="Codice" OtherKey="StrutturaErogante" Type="DiffPrestazioniCup" />
+    </Type>
+  </Table>
+  <Table Name="admin.DiffAgendeCup" Member="DiffAgendeCups">
+    <Type Name="DiffAgendeCup">
+      <Column Name="CodiceAgendaCup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DescrizioneAgendaCup" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TranscodificaCodiceAgendaCup" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.DiffProvenienzeCup" Member="DiffProvenienzeCups">
+    <Type Name="DiffProvenienzeCup">
+      <Column Name="CodiceProvenienzaCup" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="DescrizioneProvenienzaErogante" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.DiffPrestazioniCup" Member="DiffPrestazioniCups">
+    <Type Name="DiffPrestazioniCup">
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceAgendaCup" Type="System.String" DbType="NVarChar(50)" CanBeNull="false" />
+      <Column Name="IdPrestazioneErogante" Type="System.String" DbType="NVarChar(32)" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="IdPrestazioneCup" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="SpecialitaEsameCup" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="ocup_StruttureEroganti_DiffPrestazioniCup" Member="ocup_StruttureEroganti" Storage="_StruttureEroganti" ThisKey="StrutturaErogante" OtherKey="Codice" Type="ocup_StruttureEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipiContrattoErogante" Member="TipiContrattoErogantes">
+    <Type Name="TipiContrattoErogante">
+      <Column Name="Codice" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TipiContrattoErogante_TranscodificaTipoContrattoCupErogante" Member="TranscodificaTipoContrattoCupErogantes" ThisKey="Codice" OtherKey="CodiceTipoContrattoErogante" Type="TranscodificaTipoContrattoCupErogante" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegimiOe" Member="RegimiOes">
+    <Type Name="RegimiOe">
+      <Column Name="Codice" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="RegimiOe_TranscodificaTipoContrattoCupRegimeOrderEntry" Member="TranscodificaTipoContrattoCupRegimeOrderEntries" ThisKey="Codice" OtherKey="CodiceRegimeOe" Type="TranscodificaTipoContrattoCupRegimeOrderEntry" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AttributiNomi" Member="AttributiNomis">
+    <Type Name="AttributiNomi">
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AttributiNomi_TranscodificaAttributiPrestazioniCupErogante" Member="TranscodificaAttributiPrestazioniCupErogantes" ThisKey="Nome" OtherKey="Nome" Type="TranscodificaAttributiPrestazioniCupErogante" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SistemiEroganti" Member="ocup_SistemiErogantis">
+    <Type Name="ocup_SistemiEroganti">
+      <Column Name="CodiceAzienda" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceSistema" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="admin.Enum_CodiciSistemiEroganti" Member="Enum_CodiciSistemiErogantis">
+    <Type Name="Enum_CodiciSistemiEroganti">
+      <Column Name="CodiceSistema" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Enum_CodiciSistemiEroganti_TranscodificaAgendaCupStrutturaErogante" Member="TranscodificaAgendaCupStrutturaErogantes" ThisKey="CodiceSistema" OtherKey="CodiceSistemaErogante" Type="TranscodificaAgendaCupStrutturaErogante" />
+      <Association Name="Enum_CodiciSistemiEroganti_TranscodificaAttributiPrestazioniCupErogante" Member="TranscodificaAttributiPrestazioniCupErogantes" ThisKey="CodiceSistema" OtherKey="CodiceSistemaErogante" Type="TranscodificaAttributiPrestazioniCupErogante" />
+    </Type>
+  </Table>
+  <Table Name="admin.Enum_CodiciAziendeEroganti" Member="Enum_CodiciAziendeErogantis">
+    <Type Name="Enum_CodiciAziendeEroganti">
+      <Column Name="CodiceAzienda" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Enum_CodiciAziendeEroganti_TranscodificaAgendaCupStrutturaErogante" Member="TranscodificaAgendaCupStrutturaErogantes" ThisKey="CodiceAzienda" OtherKey="CodiceAziendaErogante" Type="TranscodificaAgendaCupStrutturaErogante" />
+      <Association Name="Enum_CodiciAziendeEroganti_TranscodificaAttributiPrestazioniCupErogante" Member="TranscodificaAttributiPrestazioniCupErogantes" ThisKey="CodiceAzienda" OtherKey="CodiceAziendaErogante" Type="TranscodificaAttributiPrestazioniCupErogante" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipiContrattoCup" Member="TipiContrattoCups">
+    <Type Name="TipiContrattoCup">
+      <Column Name="Codice" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TipiContrattoCup_TranscodificaTipoContrattoCupErogante" Member="TranscodificaTipoContrattoCupErogantes" ThisKey="Codice" OtherKey="CodiceTipoContrattoCup" Type="TranscodificaTipoContrattoCupErogante" />
+      <Association Name="TipiContrattoCup_TranscodificaTipoContrattoCupRegimeOrderEntry" Member="TranscodificaTipoContrattoCupRegimeOrderEntries" ThisKey="Codice" OtherKey="CodiceTipoContrattoCup" Type="TranscodificaTipoContrattoCupRegimeOrderEntry" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TranscodificaTipoContrattoCupRegimeOrderEntry" Member="TranscodificaTipoContrattoCupRegimeOrderEntries">
+    <Type Name="TranscodificaTipoContrattoCupRegimeOrderEntry">
+      <Column Name="CodiceTipoContrattoCup" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceRegimeOe" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="DescrizioneRegimeOe" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="RegimiOe_TranscodificaTipoContrattoCupRegimeOrderEntry" Member="RegimiOe" ThisKey="CodiceRegimeOe" OtherKey="Codice" Type="RegimiOe" IsForeignKey="true" />
+      <Association Name="TipiContrattoCup_TranscodificaTipoContrattoCupRegimeOrderEntry" Member="TipiContrattoCup" ThisKey="CodiceTipoContrattoCup" OtherKey="Codice" Type="TipiContrattoCup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.DiffAgendeEsistentiPrestazioniMancanti" Member="DiffAgendeEsistentiPrestazioniMancantis">
+    <Type Name="DiffAgendeEsistentiPrestazioniMancanti">
+      <Column Name="CodiceAgendaCup" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="DescrizioneAgendaCup" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TranscodificaCodiceAgendaCup" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

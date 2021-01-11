@@ -1,0 +1,198 @@
+﻿<ns1:Message xmlns:ns1="http://SOLE.BackBone.Schema.Message/Content" xmlns:ns2="http://SOLE.BackBone.Schema.Message/Content/DataTypes" xmlns:ns0="http://SOLE.BackBone.Schema.Message/Content/Segments">
+  <ns0:Header>
+    <ns0:EncodingCharacters>^~\&amp;</ns0:EncodingCharacters>
+    <ns0:SendingApplication>
+      <ns2:UniversalId>millewin.13.39.28.2446 RC141.42_CATO09/06/2016_POSTHQ9SI7AL_PREP11</ns2:UniversalId>
+    </ns0:SendingApplication>
+    <ns0:DateTimeOfMessage>
+      <ns0:TimeStamp1>2017-06-21T19:24:31</ns0:TimeStamp1>
+    </ns0:DateTimeOfMessage>
+    <ns0:MessageType>
+      <ns0:MessageType>ORM</ns0:MessageType>
+      <ns0:TriggerEvent>O01</ns0:TriggerEvent>
+      <ns0:MessageStructure>ORM_O01</ns0:MessageStructure>
+    </ns0:MessageType>
+    <ns0:MessageControlId>20170621072337</ns0:MessageControlId>
+    <ns0:ProcessingId>
+      <ns2:ProcessingId>P</ns2:ProcessingId>
+    </ns0:ProcessingId>
+    <ns0:VersionId>
+      <ns2:VersionId>2.3.1</ns2:VersionId>
+    </ns0:VersionId>
+  </ns0:Header>
+  <ns0:Patient>
+    <ns0:PatientIdentification>
+      <ns0:PatientIdentifierList>
+        <ns2:IdNumber>BRGFNC95P53H223R</ns2:IdNumber>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>MinFin</ns2:NamespaceId>
+          <ns2:UniversalId>Ministero Finanze</ns2:UniversalId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CF</ns2:IdentifierTypeCode>
+      </ns0:PatientIdentifierList>
+      <ns0:PatientIdentifierList>
+        <ns2:IdNumber>2907052</ns2:IdNumber>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>080103</ns2:NamespaceId>
+          <ns2:UniversalId>AUSL 080103</ns2:UniversalId>
+          <ns2:UniversalIdType>AUSLassist</ns2:UniversalIdType>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CS</ns2:IdentifierTypeCode>
+      </ns0:PatientIdentifierList>
+      <ns0:PatientIdentifierList>
+        <ns2:IdNumber>0000000</ns2:IdNumber>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>080103</ns2:NamespaceId>
+          <ns2:UniversalId>AUSL 080103</ns2:UniversalId>
+          <ns2:UniversalIdType>AUSLappart</ns2:UniversalIdType>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>AUSLAPPART</ns2:IdentifierTypeCode>
+      </ns0:PatientIdentifierList>
+      <ns0:PatientName>
+        <ns2:FamilyName>
+          <ns2:Surname>BERGIANTI</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>FRANCESCA</ns2:GivenName>
+      </ns0:PatientName>
+      <ns0:DateTimeOfBirth>
+        <ns2:TS_Time>1995-09-13T00:00:00.0000000</ns2:TS_Time>
+      </ns0:DateTimeOfBirth>
+      <ns0:AdministrativeSex>F</ns0:AdministrativeSex>
+      <ns0:PatientAddress>
+        <ns2:StreetAddress>
+          <ns2:StreetOrMailingAddress>VIA P.MARTELLI36</ns2:StreetOrMailingAddress>
+        </ns2:StreetAddress>
+        <ns2:City>VEZZANO SUL CROSTOLO</ns2:City>
+        <ns2:StateOrProvince>RE</ns2:StateOrProvince>
+        <ns2:ZipOrPostalCode>42030</ns2:ZipOrPostalCode>
+        <ns2:Country>100</ns2:Country>
+        <ns2:AddressType>L</ns2:AddressType>
+        <ns2:CountyParishCode>035043</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+      <ns0:PatientAddress>
+        <ns2:StreetAddress>
+          <ns2:StreetOrMailingAddress>VIA P.MARTELLI36</ns2:StreetOrMailingAddress>
+        </ns2:StreetAddress>
+        <ns2:City>VEZZANO SUL CROSTOLO</ns2:City>
+        <ns2:StateOrProvince>RE</ns2:StateOrProvince>
+        <ns2:ZipOrPostalCode>42030</ns2:ZipOrPostalCode>
+        <ns2:Country>100</ns2:Country>
+        <ns2:AddressType>H</ns2:AddressType>
+        <ns2:CountyParishCode>035043</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+      <ns0:PatientAddress>
+        <ns2:City>REGGIO NELL'EMILIA</ns2:City>
+        <ns2:StateOrProvince>RE</ns2:StateOrProvince>
+        <ns2:Country>100</ns2:Country>
+        <ns2:AddressType>BR</ns2:AddressType>
+        <ns2:CountyParishCode>035033</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+    </ns0:PatientIdentification>
+    <ns0:PatientVisit>
+      <ns0:PatientClass>A</ns0:PatientClass>
+      <ns0:AttendingDoctor>
+        <ns2:IdNumber>BZZGLN64B52H223R</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>BIZZARRI</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>GIULIANA</ns2:GivenName>
+        <ns2:DegreeEGMd>1</ns2:DegreeEGMd>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>MinFin</ns2:NamespaceId>
+          <ns2:UniversalId>Ministero Finanze</ns2:UniversalId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CF</ns2:IdentifierTypeCode>
+      </ns0:AttendingDoctor>
+      <ns0:AttendingDoctor>
+        <ns2:IdNumber>19892</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>BIZZARRI</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>GIULIANA</ns2:GivenName>
+        <ns2:DegreeEGMd>1</ns2:DegreeEGMd>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>080103</ns2:NamespaceId>
+          <ns2:UniversalId>AUSL 080103</ns2:UniversalId>
+          <ns2:UniversalIdType>Azienda medico</ns2:UniversalIdType>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CODMAT</ns2:IdentifierTypeCode>
+        <ns2:AssigningFacility>
+          <ns2:UniversalIdType>codice distretto</ns2:UniversalIdType>
+        </ns2:AssigningFacility>
+      </ns0:AttendingDoctor>
+      <ns0:ReferringDoctor>
+        <ns2:IdNumber>BZZGLN64B52H223R</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>BIZZARRI</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>Giuliana</ns2:GivenName>
+        <ns2:DegreeEGMd>1</ns2:DegreeEGMd>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>MinFin</ns2:NamespaceId>
+          <ns2:UniversalId>Ministero Finanze</ns2:UniversalId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CF</ns2:IdentifierTypeCode>
+        <ns2:AssigningFacility>
+          <ns2:UniversalIdType>codice distretto</ns2:UniversalIdType>
+        </ns2:AssigningFacility>
+      </ns0:ReferringDoctor>
+      <ns0:ReferringDoctor>
+        <ns2:IdNumber>19892</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>BIZZARRI</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>Giuliana</ns2:GivenName>
+        <ns2:DegreeEGMd>1</ns2:DegreeEGMd>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>080103</ns2:NamespaceId>
+          <ns2:UniversalId>AUSL 080103</ns2:UniversalId>
+          <ns2:UniversalIdType>Azienda medico</ns2:UniversalIdType>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CODMAT</ns2:IdentifierTypeCode>
+        <ns2:AssigningFacility>
+          <ns2:UniversalIdType>codice distretto</ns2:UniversalIdType>
+        </ns2:AssigningFacility>
+      </ns0:ReferringDoctor>
+      <ns0:FinancialClass>
+        <ns2:FinancialClassCode>RE2</ns2:FinancialClassCode>
+      </ns0:FinancialClass>
+    </ns0:PatientVisit>
+  </ns0:Patient>
+  <ns0:Order>
+    <ns0:CommonOrder>
+      <ns0:OrderControl>NW</ns0:OrderControl>
+      <ns0:PlacerOrderNumber>
+        <ns2:EntityIdentifier>103JR34739PQ8EPL</ns2:EntityIdentifier>
+      </ns0:PlacerOrderNumber>
+      <ns0:QuantityTiming>
+        <ns2:Quantity>
+          <ns2:Quantity>1</ns2:Quantity>
+        </ns2:Quantity>
+        <ns2:Priority>R</ns2:Priority>
+      </ns0:QuantityTiming>
+      <ns0:DateTimeOfTransaction>
+        <ns2:TS_Time>2017-06-21T07:23:00.0000000</ns2:TS_Time>
+      </ns0:DateTimeOfTransaction>
+    </ns0:CommonOrder>
+    <ns0:ObservationRequest>
+      <ns0:PlacerOrderNumber>
+        <ns2:EntityIdentifier>103JR34739PQ8EPL</ns2:EntityIdentifier>
+      </ns0:PlacerOrderNumber>
+      <ns0:UniversalServiceIdentifier>
+        <ns2:Identifier>4365.060</ns2:Identifier>
+        <ns2:Text>PARASSITI INTESTINALI RICERCA - feci</ns2:Text>
+        <ns2:NameOfCodingSystem>Catalogo Unico SOLE</ns2:NameOfCodingSystem>
+      </ns0:UniversalServiceIdentifier>
+      <ns0:RelevantClinicalInformation>Accertamenti</ns0:RelevantClinicalInformation>
+      <ns0:QuantityTiming>
+        <ns2:Quantity>
+          <ns2:Quantity>1</ns2:Quantity>
+        </ns2:Quantity>
+        <ns2:Priority>R</ns2:Priority>
+      </ns0:QuantityTiming>
+      <ns0:ReasonForStudy>
+        <ns2:Text>Accertamenti - diarrea persistente</ns2:Text>
+      </ns0:ReasonForStudy>
+    </ns0:ObservationRequest>
+  </ns0:Order>
+</ns1:Message>

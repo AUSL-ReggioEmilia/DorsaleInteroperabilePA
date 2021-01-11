@@ -1,0 +1,1259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{8CEE4894-359C-4297-8DA5-FF6243F79A0C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DwhClinico.Web</RootNamespace>
+    <AssemblyName>DwhClinico.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DwhClinico.Web.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DwhClinico.Web.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="App_Licenses, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\App_Licenses.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=17.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="ChilkatDotNet45, Version=9.5.0.51, Culture=neutral, PublicKeyToken=eb5fc1fc52ef09bd, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\ChilkatDotNet45.dll</HintPath>
+    </Reference>
+    <Reference Include="DI.PortalUser2, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\DI.PortalUser2.dll</HintPath>
+    </Reference>
+    <Reference Include="DwhClinico2.Redir, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\DwhClinico2.Redir.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.11.2\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.11.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="DI.PortalUser" />
+    <Import Include="DwhClinico.Web" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessoDiretto\AccessoDiretto.master.designer.vb">
+      <DependentUpon>AccessoDiretto.master</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\AccessoDiretto.master.vb">
+      <DependentUpon>AccessoDiretto.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\ApreAllegato.aspx.designer.vb">
+      <DependentUpon>ApreAllegato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\ApreAllegato.aspx.vb">
+      <DependentUpon>ApreAllegato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\FSE\Documento.aspx.designer.vb">
+      <DependentUpon>Documento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\FSE\Documento.aspx.vb">
+      <DependentUpon>Documento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\ErrorPage.aspx.designer.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\ErrorPage.aspx.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\FSE\DocumentiLista.aspx.designer.vb">
+      <DependentUpon>DocumentiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\FSE\DocumentiLista.aspx.vb">
+      <DependentUpon>DocumentiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\FSE\DocumentoViewer.aspx.designer.vb">
+      <DependentUpon>DocumentoViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\FSE\DocumentoViewer.aspx.vb">
+      <DependentUpon>DocumentoViewer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\GestioneConsensi.aspx.designer.vb">
+      <DependentUpon>GestioneConsensi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\GestioneConsensi.aspx.vb">
+      <DependentUpon>GestioneConsensi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\MatricePrestazioniBySezioneCodice.aspx.designer.vb">
+      <DependentUpon>MatricePrestazioniBySezioneCodice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\MatricePrestazioniBySezioneCodice.aspx.vb">
+      <DependentUpon>MatricePrestazioniBySezioneCodice.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\PatientSummary.aspx.designer.vb">
+      <DependentUpon>PatientSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\PatientSummary.aspx.vb">
+      <DependentUpon>PatientSummary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\Pazienti.aspx.designer.vb">
+      <DependentUpon>Pazienti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\Pazienti.aspx.vb">
+      <DependentUpon>Pazienti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\Referti.aspx.designer.vb">
+      <DependentUpon>Referti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\Referti.aspx.vb">
+      <DependentUpon>Referti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\RefertiAllegati.aspx.designer.vb">
+      <DependentUpon>RefertiAllegati.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\RefertiAllegati.aspx.vb">
+      <DependentUpon>RefertiAllegati.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\Referto.aspx.designer.vb">
+      <DependentUpon>Referto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\Referto.aspx.vb">
+      <DependentUpon>Referto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\Ricoveri.aspx.designer.vb">
+      <DependentUpon>Ricoveri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\Ricoveri.aspx.vb">
+      <DependentUpon>Ricoveri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessoDiretto\Ricovero.aspx.designer.vb">
+      <DependentUpon>Ricovero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoDiretto\Ricovero.aspx.vb">
+      <DependentUpon>Ricovero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\AsposeUtil.vb" />
+    <Compile Include="Components\CacheDataSource.vb" />
+    <Compile Include="Components\Calendario\CalendarAdapter.vb" />
+    <Compile Include="Components\Calendario\CalendarDay.vb" />
+    <Compile Include="Components\Calendario\CalendarMonth.vb" />
+    <Compile Include="Components\Calendario\CalendarMonthByWeeks.vb" />
+    <Compile Include="Components\Calendario\CalendarWeek.vb" />
+    <Compile Include="Components\Calendario\CalendarDataSource.vb" />
+    <Compile Include="Components\Eccezioni.vb" />
+    <Compile Include="Components\EmailMessage.vb" />
+    <Compile Include="Components\Extension.vb" />
+    <Compile Include="Components\FseDataSource.vb" />
+    <Compile Include="Components\GenericSerialization.vb" />
+    <Compile Include="Components\HelperGridView.vb" />
+    <Compile Include="Components\HelperRicoveri.vb" />
+    <Compile Include="Components\CustomDataSource.vb" />
+    <Compile Include="Components\MyTelemetryInitializer.vb" />
+    <Compile Include="Components\MyTelemetryProcessor.vb" />
+    <Compile Include="Components\Notificatore.vb" />
+    <Compile Include="Components\OpzioniUtente.vb" />
+    <Compile Include="Components\PatientSummaryUtil.vb" />
+    <Compile Include="Components\TracciaAccessi.vb" />
+    <Compile Include="Components\Ws2Types.vb" />
+    <Compile Include="Components\Ws3TypesToWs2Types.vb" />
+    <Compile Include="Components\UserInterface.vb" />
+    <Compile Include="Components\Tokens.vb" />
+    <Compile Include="FSE\DocumentoViewer.aspx.designer.vb">
+      <DependentUpon>DocumentoViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FSE\DocumentoViewer.aspx.vb">
+      <DependentUpon>DocumentoViewer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="FSE\Documento.aspx.designer.vb">
+      <DependentUpon>Documento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FSE\Documento.aspx.vb">
+      <DependentUpon>Documento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="GetIconaTipoReferto.ashx.vb">
+      <DependentUpon>GetIconaTipoReferto.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\GestioneConsensi.aspx.designer.vb">
+      <DependentUpon>GestioneConsensi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\GestioneConsensi.aspx.vb">
+      <DependentUpon>GestioneConsensi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FSE\DocumentiLista.aspx.designer.vb">
+      <DependentUpon>DocumentiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FSE\DocumentiLista.aspx.vb">
+      <DependentUpon>DocumentiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Referti\MatricePrestazioniBySezioneCodice.aspx.designer.vb">
+      <DependentUpon>MatricePrestazioniBySezioneCodice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referti\MatricePrestazioniBySezioneCodice.aspx.vb">
+      <DependentUpon>MatricePrestazioniBySezioneCodice.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Service References\WcfDwhClinico\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SessionHandler.vb" />
+    <Compile Include="ConfigurazioneStampa.aspx.designer.vb">
+      <DependentUpon>ConfigurazioneStampa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlRender.aspx.designer.vb">
+      <DependentUpon>HtmlRender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurazioneStampa.aspx.vb">
+      <DependentUpon>ConfigurazioneStampa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HtmlRender.aspx.vb">
+      <DependentUpon>HtmlRender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Components\Logging.vb" />
+    <Compile Include="Components\LogonUser.vb" />
+    <Compile Include="Components\PrintUtil.vb" />
+    <Compile Include="Components\Utility.vb" />
+    <Compile Include="Pazienti\PatientSummary.aspx.designer.vb">
+      <DependentUpon>PatientSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PatientSummary.aspx.vb">
+      <DependentUpon>PatientSummary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\Pazienti.aspx.designer.vb">
+      <DependentUpon>Pazienti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\Pazienti.aspx.vb">
+      <DependentUpon>Pazienti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazientiCancella.aspx.designer.vb">
+      <DependentUpon>PazientiCancella.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiCancella.aspx.vb">
+      <DependentUpon>PazientiCancella.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portale\Default.master.designer.vb">
+      <DependentUpon>Default.master</DependentUpon>
+    </Compile>
+    <Compile Include="Portale\Default.master.vb">
+      <DependentUpon>Default.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalRedirect.aspx.designer.vb">
+      <DependentUpon>PortalRedirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PortalRedirect.aspx.vb">
+      <DependentUpon>PortalRedirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referti\ApreAllegato.aspx.designer.vb">
+      <DependentUpon>ApreAllegato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referti\ApreAllegato.aspx.vb">
+      <DependentUpon>ApreAllegato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referti\ApreReferto.aspx.designer.vb">
+      <DependentUpon>ApreReferto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referti\ApreReferto.aspx.vb">
+      <DependentUpon>ApreReferto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referti\RefertiAllegati.aspx.designer.vb">
+      <DependentUpon>RefertiAllegati.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referti\RefertiAllegati.aspx.vb">
+      <DependentUpon>RefertiAllegati.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referti\RefertiCancella.aspx.designer.vb">
+      <DependentUpon>RefertiCancella.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referti\RefertiCancella.aspx.vb">
+      <DependentUpon>RefertiCancella.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referti\RefertiDettaglio.aspx.designer.vb">
+      <DependentUpon>RefertiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referti\RefertiDettaglio.aspx.vb">
+      <DependentUpon>RefertiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referti\RefertiListaPaziente.aspx.designer.vb">
+      <DependentUpon>RefertiListaPaziente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referti\RefertiListaPaziente.aspx.vb">
+      <DependentUpon>RefertiListaPaziente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referti\RefertiNote.aspx.designer.vb">
+      <DependentUpon>RefertiNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referti\RefertiNote.aspx.vb">
+      <DependentUpon>RefertiNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referti\StampaReferto.aspx.designer.vb">
+      <DependentUpon>StampaReferto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referti\StampaReferto.aspx.vb">
+      <DependentUpon>StampaReferto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.aspx.designer.vb">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.aspx.vb">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service References\SacConsensiDataAccess\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SacPazientiDataAccess\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WcfPatientSummary\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsPrintManager\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsRenderingPdf\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TracciaAccessi.aspx.designer.vb">
+      <DependentUpon>TracciaAccessi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TracciaAccessi.aspx.vb">
+      <DependentUpon>TracciaAccessi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\RefertoDettaglioEsterno.ascx.designer.vb">
+      <DependentUpon>RefertoDettaglioEsterno.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RefertoDettaglioEsterno.ascx.vb">
+      <DependentUpon>RefertoDettaglioEsterno.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\RefertoDettaglioInterno.ascx.designer.vb">
+      <DependentUpon>RefertoDettaglioInterno.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RefertoDettaglioInterno.ascx.vb">
+      <DependentUpon>RefertoDettaglioInterno.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\RefertoDettaglioPdf.ascx.designer.vb">
+      <DependentUpon>RefertoDettaglioPdf.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RefertoDettaglioPdf.ascx.vb">
+      <DependentUpon>RefertoDettaglioPdf.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucInfoPaziente.ascx.designer.vb">
+      <DependentUpon>ucInfoPaziente.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucInfoPaziente.ascx.vb">
+      <DependentUpon>ucInfoPaziente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucLegenda.ascx.designer.vb">
+      <DependentUpon>ucLegenda.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucLegenda.ascx.vb">
+      <DependentUpon>ucLegenda.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucMenuRuoliUtente.ascx.designer.vb">
+      <DependentUpon>ucMenuRuoliUtente.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucMenuRuoliUtente.ascx.vb">
+      <DependentUpon>ucMenuRuoliUtente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucModaleInvioLinkPerAccessoDiretto.ascx.designer.vb">
+      <DependentUpon>ucModaleInvioLinkPerAccessoDiretto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucModaleInvioLinkPerAccessoDiretto.ascx.vb">
+      <DependentUpon>ucModaleInvioLinkPerAccessoDiretto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucStampaReferti.ascx.designer.vb">
+      <DependentUpon>ucStampaReferti.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucStampaReferti.ascx.vb">
+      <DependentUpon>ucStampaReferti.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucTestataPaziente.ascx.designer.vb">
+      <DependentUpon>ucTestataPaziente.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucTestataPaziente.ascx.vb">
+      <DependentUpon>ucTestataPaziente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCache.aspx.designer.vb">
+      <DependentUpon>ViewCache.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCache.aspx.vb">
+      <DependentUpon>ViewCache.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessoDiretto\AccessoDiretto.master" />
+    <Content Include="AccessoDiretto\FSE\Documento.aspx" />
+    <Content Include="AccessoDiretto\FSE\DocumentiLista.aspx" />
+    <Content Include="AccessoDiretto\FSE\DocumentoViewer.aspx" />
+    <Content Include="AccessoDiretto\GestioneConsensi.aspx" />
+    <Content Include="AccessoDiretto\MatricePrestazioniBySezioneCodice.aspx" />
+    <Content Include="AccessoDiretto\PatientSummary.aspx" />
+    <Content Include="Content\StyleCalendar.css" />
+    <Content Include="Content\AccessoDirettoStyles.css" />
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-tokenfield\bootstrap-tokenfield.css" />
+    <Content Include="Content\bootstrap-tokenfield\tokenfield-typeahead.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\glyphicons-bootstrap.css" />
+    <Content Include="Content\css\glyphicons.css" />
+    <Content Include="Content\fonts\glyphicons-regular.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FSE\Documento.aspx" />
+    <Content Include="FSE\DocumentoViewer.aspx" />
+    <Content Include="Images\H-Logo-COL.jpg" />
+    <Content Include="Images\LegendaCalendario\Calendario_Ricovero_A.png" />
+    <Content Include="Images\LegendaCalendario\Calendario_Ricovero_D-S.png" />
+    <Content Include="Images\LegendaCalendario\Calendario_Ricovero_O.png" />
+    <Content Include="Images\LegendaCalendario\Calendario_Ricovero_PS-OBI.png" />
+    <Content Include="Images\LegendaCalendario\Calendario_Ricovero_Referto.png" />
+    <Content Include="Images\Marchio_CE_Header.png" />
+    <Content Include="Images\PresenzaRefertiOlder.gif" />
+    <Content Include="Images\sole-logo.png" />
+    <Content Include="My Project\DataSources\System.Xml.Linq.XElement1.datasource" />
+    <Content Include="Pazienti\GestioneConsensi.aspx" />
+    <Content Include="FSE\DocumentiLista.aspx" />
+    <Content Include="Referti\MatricePrestazioniBySezioneCodice.aspx" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap-tokenfield.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\clipboard.js" />
+    <Content Include="Scripts\clipboard.min.js" />
+    <Content Include="Scripts\jquery.cookie-1.4.1.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nb.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Scripts\master.js" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.AccessiReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.GruppiReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.GruppoReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.RuoliReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.RuoloDettagliReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.SistemiReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.UnitaOperativeReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.UtenteReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.UtentiReturn.datasource" />
+    <Content Include="Content\bootstrap-tokenfield\tokenfield-typeahead.less" />
+    <Content Include="Content\bootstrap-tokenfield\bootstrap-tokenfield.less" />
+    <Content Include="Scripts\referti-dettaglio.js" />
+    <Content Include="Scripts\uc-modale-invio-link-accesso-diretto.js" />
+    <Content Include="UserControl\RefertoDettaglioEsterno.ascx" />
+    <Content Include="UserControl\RefertoDettaglioInterno.ascx" />
+    <Content Include="UserControl\RefertoDettaglioPdf.ascx" />
+    <Content Include="UserControl\ucInfoPaziente.ascx" />
+    <Content Include="UserControl\ucMenuRuoliUtente.ascx" />
+    <Content Include="UserControl\ucModaleInvioLinkPerAccessoDiretto.ascx" />
+    <Content Include="Content\Visualizzazioni.css" />
+    <Content Include="Xslt\DettaglioPrenotazione1.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Xslt\EmailLinkPerAccessoDiretto.xslt" />
+    <Content Include="Xslt\TestataRicovero1.xsl" />
+    <Content Include="GetIconaTipoReferto.ashx" />
+    <Content Include="Content\config.json" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker.css.map" />
+    <Content Include="Content\fonts\glyphicons-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-regular.woff2" />
+    <Content Include="ApplicationInsights.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Aspose.Words.lic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="My Project\DataSources\System.Xml.XmlNode.datasource" />
+    <Content Include="Documenti\GuidaAlDwhClinico.pdf" />
+    <Content Include="Documenti\Informativa.pdf" />
+    <Content Include="AccessoDiretto\ErrorPage.aspx" />
+    <Content Include="DocumentViewer.ashx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\Dagobha2.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\Computer.gif" />
+    <Content Include="Images\Consenso_0.gif" />
+    <Content Include="Images\Consenso_1.gif" />
+    <Content Include="Images\Consenso_2.gif" />
+    <Content Include="Images\Consenso_3.gif" />
+    <Content Include="Images\LogoAzienda.jpg" />
+    <Content Include="Images\RicoveroOBI.gif" />
+    <Content Include="Images\Progress.gif" />
+    <Content Include="Pazienti\PatientSummary.aspx" />
+    <Content Include="Portale\Default.master" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Scripts\jquery-1.11.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.2.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.map" />
+    <None Include="Service References\SacConsensiDataAccess\Consensi1.wsdl" />
+    <Content Include="Service References\SacConsensiDataAccess\DwhClinico.Web.SacConsensiDataAccess.ConsensiAggiungiResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\SacConsensiDataAccess\DwhClinico.Web.SacConsensiDataAccess.ConsensiCercaByCodiceFiscalePazienteResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\SacConsensiDataAccess\DwhClinico.Web.SacConsensiDataAccess.ConsensiCercaByGeneralitaPazienteResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\SacConsensiDataAccess\DwhClinico.Web.SacConsensiDataAccess.ConsensiCercaByIdPazienteResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\SacConsensiDataAccess\DwhClinico.Web.SacConsensiDataAccess.ConsensiCercaByIdProvenienzaPazienteResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\SacConsensiDataAccess\DwhClinico.Web.SacConsensiDataAccess.ConsensiCercaByTesseraPazienteResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\SacConsensiDataAccess\DwhClinico.Web.SacConsensiDataAccess.RelazioniConMinoreType1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\SacPazientiDataAccess\Pazienti.wsdl" />
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.EpisodioReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.EpisodiReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.LayerRefertoFormatiReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.LayerRefertoFormattatoReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.MatricePrestazioniReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.PazienteReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.PazientiReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.PrescrizioneReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.PrescrizioniReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.RefertiModificatiReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.RefertiReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.RefertoPdfReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.RefertoReturn1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.DizionarioTipiRefertoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.StringReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.TokenReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.PatientSummaryReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.PrescrizioneEstesaReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.NotaAnamnesticaReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.NoteAnamnesticheReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.PazientiNatiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.PazientiPrenotatiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.PazientiTransitatiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.ErroreType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.ConsensoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.DizionariReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.DocumentiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.DocumentoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfDwhClinico\DwhClinico.Web.WcfDwhClinico.ErroreReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WcfDwhClinico\DwhClinico.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico44.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfDwhClinico\Service.wsdl" />
+    <None Include="Service References\WcfPatientSummary\BizTalkServiceInstance.wsdl" />
+    <Content Include="Service References\WcfPatientSummary\DwhClinico.Web.WcfPatientSummary.Risposta1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WcfPatientSummary\SOLE.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfPatientSummary\SOLE1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WsPrintManager\DwhClinico.Web.WsPrintManager.JobInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsPrintManager\DwhClinico.Web.WsPrintManager.QueueInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsPrintManager\DwhClinico.Web.WsPrintManager.QueuePath1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsPrintManager\DwhClinico.Web.WsPrintManager.ServerInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WsPrintManager\Ver1.wsdl" />
+    <None Include="Service References\WsRenderingPdf\RenderingPdf.wsdl" />
+    <None Include="Service References\SacConsensiDataAccess\configuration91.svcinfo" />
+    <None Include="Service References\SacConsensiDataAccess\configuration.svcinfo" />
+    <None Include="Service References\SacConsensiDataAccess\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\WsRenderingPdf\RenderingPdf.disco" />
+    <None Include="Service References\WsRenderingPdf\configuration91.svcinfo" />
+    <None Include="Service References\WsRenderingPdf\configuration.svcinfo" />
+    <None Include="Service References\WsRenderingPdf\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\WsPrintManager\Ver1.disco" />
+    <None Include="Service References\WsPrintManager\configuration91.svcinfo" />
+    <None Include="Service References\WsPrintManager\configuration.svcinfo" />
+    <None Include="Service References\WsPrintManager\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\SacPazientiDataAccess\configuration91.svcinfo" />
+    <None Include="Service References\SacPazientiDataAccess\configuration.svcinfo" />
+    <None Include="Service References\SacPazientiDataAccess\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\SacConsensiDataAccess\Consensi1.disco" />
+    <None Include="Service References\WcfPatientSummary\configuration91.svcinfo" />
+    <None Include="Service References\WcfPatientSummary\configuration.svcinfo" />
+    <None Include="Service References\WcfPatientSummary\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\WcfDwhClinico\DwhClinico.disco" />
+    <None Include="Service References\WcfDwhClinico\configuration91.svcinfo" />
+    <None Include="Service References\WcfDwhClinico\configuration.svcinfo" />
+    <None Include="Service References\WcfDwhClinico\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="UserControl\ucLegenda.ascx" />
+    <Content Include="UserControl\ucStampaReferti.ascx" />
+    <Content Include="UserControl\ucTestataPaziente.ascx" />
+    <Content Include="ViewCache.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DwhClinico.Data\DwhClinico.Data.vbproj">
+      <Project>{990A2223-C912-450C-B76B-C0D380CF47FD}</Project>
+      <Name>DwhClinico.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDenied.htm" />
+    <Content Include="AccessoDiretto\ApreAllegato.aspx" />
+    <Content Include="AccessoDiretto\Pazienti.aspx" />
+    <Content Include="AccessoDiretto\Referti.aspx" />
+    <Content Include="AccessoDiretto\RefertiAllegati.aspx" />
+    <Content Include="AccessoDiretto\Referto.aspx" />
+    <Content Include="AccessoDiretto\Ricoveri.aspx" />
+    <Content Include="AccessoDiretto\Ricovero.aspx" />
+    <Content Include="ConfigurazioneStampa.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Documenti\Informativa.htm" />
+    <Content Include="ErrorNoRights.htm" />
+    <Content Include="ErrorUnknown.htm" />
+    <Content Include="HtmlRender.aspx" />
+    <Content Include="Images\Allegato.gif" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\CancellatoStato_0.gif" />
+    <Content Include="Images\CancellatoStato_1.gif" />
+    <Content Include="Images\CancellatoStato_2.gif" />
+    <Content Include="Images\DatiAnamnestici_0.gif" />
+    <Content Include="Images\DatiAnamnestici_1.gif" />
+    <Content Include="Images\DecedutoStato_0.gif" />
+    <Content Include="Images\DecedutoStato_1.gif" />
+    <Content Include="Images\Email.gif" />
+    <Content Include="Images\ErrorAccessDenied.jpg" />
+    <Content Include="Images\ErrorMissingResource.gif" />
+    <Content Include="Images\ErrorUnknown.gif" />
+    <Content Include="Images\HomeAdmin.jpg" />
+    <Content Include="Images\HomeDwhClinico.jpg" />
+    <Content Include="Images\HomeReports.jpg" />
+    <Content Include="Images\Informativa.gif" />
+    <Content Include="Images\LegendaNetlabPrestazioni.gif" />
+    <Content Include="Images\LegendaReferti.gif" />
+    <Content Include="Images\LegendaStati.gif" />
+    <Content Include="Images\LogoToolbar.jpg" />
+    <Content Include="Images\LogoToolbar_asmn.jpg" />
+    <Content Include="Images\LogoToolbar_ausl.jpg" />
+    <Content Include="Images\Manuale.gif" />
+    <Content Include="Images\MenuLeftBackground.jpg" />
+    <Content Include="Images\MenuLeftBullet.gif" />
+    <Content Include="Images\MenuTopBackground.gif" />
+    <Content Include="Images\MenuTopSeparator.gif" />
+    <Content Include="Images\ModImportazione.gif" />
+    <Content Include="Images\NoteCancella.gif" />
+    <Content Include="Images\PazientiCancella.gif" />
+    <Content Include="Images\PixelTrasparente.gif" />
+    <Content Include="Images\PresenzaReferti1.gif" />
+    <Content Include="Images\PresenzaReferti30.gif" />
+    <Content Include="Images\PresenzaReferti7.gif" />
+    <Content Include="Images\Printer.gif" />
+    <Content Include="Images\Printer2.gif" />
+    <Content Include="Images\Printer2OnErr.gif" />
+    <Content Include="Images\Print_Canceled.gif" />
+    <Content Include="Images\Print_Err.gif" />
+    <Content Include="Images\Print_Ok.gif" />
+    <Content Include="Images\Print_Paused.gif" />
+    <Content Include="Images\punto_interr.gif" />
+    <Content Include="Images\RefertiCancella.gif" />
+    <Content Include="Images\Referti\Commenti.gif" />
+    <Content Include="Images\Referti\PrCancellata.gif" />
+    <Content Include="Images\Referti\PrEstremo.gif" />
+    <Content Include="Images\Referti\PrNondefinito.gif" />
+    <Content Include="Images\Referti\PrNormale.gif" />
+    <Content Include="Images\Referti\PrPanico.gif" />
+    <Content Include="Images\Referti\RiCompletata.gif" />
+    <Content Include="Images\Referti\RiCorso.gif" />
+    <Content Include="Images\Referti\RiVariata.gif" />
+    <Content Include="Images\Referti\StatoRichiesta_0.gif" />
+    <Content Include="Images\Referti\StatoRichiesta_1.gif" />
+    <Content Include="Images\Referti\StatoRichiesta_2.gif" />
+    <Content Include="Images\Referti\StatoRichiesta_3.gif" />
+    <Content Include="Images\Reporting\af_vertdelim.gif" />
+    <Content Include="Images\Reporting\MenuTopBackground.gif" />
+    <Content Include="Images\Reporting\TabButtonLeftNormal.gif" />
+    <Content Include="Images\Reporting\TabButtonLeftSelected.gif" />
+    <Content Include="Images\Reporting\TabButtonNormal.gif" />
+    <Content Include="Images\Reporting\TabButtonRightNormal.gif" />
+    <Content Include="Images\Reporting\TabButtonRightSelected.gif" />
+    <Content Include="Images\Reporting\TabButtonSelected.gif" />
+    <Content Include="Images\RicoveroDH.gif" />
+    <Content Include="Images\RicoveroDS.gif" />
+    <Content Include="Images\RicoveroOrdinario.gif" />
+    <Content Include="Images\RicoveroPS.gif" />
+    <Content Include="Images\Testo.gif" />
+    <Content Include="Images\ViewDoc.gif" />
+    <Content Include="MissingResource.htm" />
+    <Content Include="Pazienti\Pazienti.aspx" />
+    <Content Include="Pazienti\PazientiCancella.aspx" />
+    <Content Include="PortalRedirect.aspx" />
+    <Content Include="Referti\ApreAllegato.aspx" />
+    <Content Include="Referti\ApreReferto.aspx" />
+    <Content Include="Referti\RefertiAllegati.aspx" />
+    <Content Include="Referti\RefertiCancella.aspx" />
+    <Content Include="Referti\RefertiDettaglio.aspx" />
+    <Content Include="Referti\RefertiListaPaziente.aspx" />
+    <Content Include="Referti\RefertiNote.aspx" />
+    <Content Include="Referti\StampaReferto.aspx" />
+    <Content Include="Reports.aspx" />
+    <Content Include="StyleReportData.css" />
+    <Content Include="StyleReporting.css" />
+    <Content Include="Styles.css" />
+    <Content Include="TracciaAccessi.aspx" />
+    <Content Include="Xslt\MatricePrestazioni.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SacConsensiDataAccess\" />
+    <WCFMetadataStorage Include="Service References\SacPazientiDataAccess\" />
+    <WCFMetadataStorage Include="Service References\WcfDwhClinico\" />
+    <WCFMetadataStorage Include="Service References\WcfPatientSummary\" />
+    <WCFMetadataStorage Include="Service References\WsPrintManager\" />
+    <WCFMetadataStorage Include="Service References\WsRenderingPdf\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DwhClinico.Web.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DwhClinico.Web.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50342</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:32165/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

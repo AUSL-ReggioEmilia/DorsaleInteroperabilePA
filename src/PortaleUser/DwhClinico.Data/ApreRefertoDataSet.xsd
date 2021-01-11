@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="ApreRefertoDataSet" targetNamespace="http://www.tempuri.org/ApreRefertoDataSet.xsd" xmlns:mstns="http://www.tempuri.org/ApreRefertoDataSet.xsd" xmlns="http://www.tempuri.org/ApreRefertoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="ApreRefertoDataSet" msdata:IsDataSet="true" msdata:Locale="it-IT">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="ApreRefertoStiliDisponibili">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nome" type="xs:string" />
+              <xs:element name="Abilitato" type="xs:boolean" />
+              <xs:element name="Descrizione" type="xs:string" />
+              <xs:element name="Note" type="xs:string" minOccurs="0" />
+              <xs:element name="PaginaWeb" type="xs:string" />
+              <xs:element name="Parametri" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

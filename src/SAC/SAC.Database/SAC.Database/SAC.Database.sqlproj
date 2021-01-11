@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SAC.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{f8b74dcd-13ea-4e8b-9436-118ed8ac6214}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SAC.Database</RootNamespace>
+    <AssemblyName>SAC.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="codifiche\" />
+    <Folder Include="codifiche\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="organigramma\" />
+    <Folder Include="organigramma\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="organigramma_da\" />
+    <Folder Include="organigramma_da\Views\" />
+    <Folder Include="organigramma_admin\" />
+    <Folder Include="organigramma_admin\Views\" />
+    <Folder Include="Ro\" />
+    <Folder Include="Ro\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="codifiche_ws\" />
+    <Folder Include="codifiche_ws\Functions\" />
+    <Folder Include="organigramma_admin\Functions\" />
+    <Folder Include="organigramma\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="organigramma\Stored Procedures\" />
+    <Folder Include="organigramma_admin\Stored Procedures\" />
+    <Folder Include="codifiche_ws\Stored Procedures\" />
+    <Folder Include="codifiche_admin\" />
+    <Folder Include="codifiche_admin\Stored Procedures\" />
+    <Folder Include="organigramma_da\Stored Procedures\" />
+    <Folder Include="organigramma_ws\" />
+    <Folder Include="organigramma_ws\Stored Procedures\" />
+    <Folder Include="Progel\" />
+    <Folder Include="Progel\Stored Procedures\" />
+    <Folder Include="Database Triggers\" />
+    <Folder Include="dbo\Synonyms\" />
+    <Folder Include="organigramma_ws\Views\" />
+    <Folder Include="pazienti_ws\" />
+    <Folder Include="pazienti_ws\Views\" />
+    <Folder Include="pazienti_ws\Stored Procedures\" />
+    <Folder Include="pazienti_ws\Functions\" />
+    <Folder Include="_anon\" />
+    <Folder Include="_anon\Functions\" />
+    <Folder Include="test\" />
+    <Folder Include="test\Stored Procedures\" />
+    <Folder Include="_anon\Stored Procedures\" />
+    <Folder Include="ara_svc\" />
+    <Folder Include="ara_svc\Tables\" />
+    <Folder Include="ara\" />
+    <Folder Include="ara\Tables\" />
+    <Folder Include="ara_ws\" />
+    <Folder Include="ara_ws\Stored Procedures\" />
+    <Folder Include="ara_svc\Stored Procedures\" />
+    <Folder Include="ara\Stored Procedures\" />
+    <Folder Include="ara\User Defined Types\" />
+    <Folder Include="_anon\Synonyms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="codifiche\Tables\SOLEBranche.sql" />
+    <Build Include="dbo\Tables\PazientiAnonimizzazioniContatori.sql" />
+    <Build Include="dbo\Tables\PazientiNotifiche.sql" />
+    <Build Include="codifiche\Tables\FarmaDitteProduttrici.sql" />
+    <Build Include="dbo\Tables\IstatComuni.sql" />
+    <Build Include="dbo\Tables\IstatProvince.sql" />
+    <Build Include="organigramma\Tables\Attributi.sql" />
+    <Build Include="dbo\Tables\IstatNazioni.sql" />
+    <Build Include="organigramma\Tables\Aziende.sql" />
+    <Build Include="dbo\Tables\PazientiNotificheUtenti.sql" />
+    <Build Include="dbo\Tables\IstatRegioni.sql" />
+    <Build Include="organigramma\Tables\OggettiActiveDirectory.sql" />
+    <Build Include="dbo\Tables\PazientiEsenzioni.sql" />
+    <Build Include="dbo\Tables\Pazienti.sql" />
+    <Build Include="dbo\Tables\IstatAsl.sql" />
+    <Build Include="organigramma\Tables\Ruoli.sql" />
+    <Build Include="organigramma\Tables\RuoliAttributi.sql" />
+    <Build Include="dbo\Tables\TraceInterno.sql" />
+    <Build Include="organigramma\Tables\RuoliSistemi.sql" />
+    <Build Include="organigramma\Tables\RuoliSistemiAttributi.sql" />
+    <Build Include="organigramma\Tables\RuoliUnitaOperative.sql" />
+    <Build Include="organigramma\Tables\RuoliUnitaOperativeAttributi.sql" />
+    <Build Include="organigramma\Tables\Sistemi.sql" />
+    <Build Include="organigramma\Tables\UnitaOperativeSistemi.sql" />
+    <Build Include="organigramma\Tables\UnitaOperative.sql" />
+    <Build Include="codifiche\Tables\FarmaInterazioni.sql" />
+    <Build Include="dbo\Tables\PazientiFusioni.sql" />
+    <Build Include="dbo\Tables\ConsensiConfig.sql" />
+    <Build Include="codifiche\Tables\FarmaFormaFarmaceutica.sql" />
+    <Build Include="codifiche\Tables\FarmaNotePrescrizione.sql" />
+    <Build Include="dbo\Tables\PazientiSinonimi.sql" />
+    <Build Include="codifiche\Tables\FarmaRegimeSSN.sql" />
+    <Build Include="dbo\Tables\ConsensiUtenti.sql" />
+    <Build Include="dbo\Tables\Provenienze.sql" />
+    <Build Include="dbo\Tables\PazientiPosizioneAss.sql" />
+    <Build Include="codifiche\Tables\SOLEPrestazioniBranche.sql" />
+    <Build Include="dbo\Tables\Servizi.sql" />
+    <Build Include="dbo\Tables\Utenti.sql" />
+    <Build Include="dbo\Tables\ConsensiEventi.sql" />
+    <Build Include="dbo\Tables\EventiOperazione.sql" />
+    <Build Include="organigramma\Tables\OggettiActiveDirectoryUtentiGruppi.sql" />
+    <Build Include="codifiche\Tables\FarmaGrammature.sql" />
+    <Build Include="dbo\Tables\DizionarioTerminazioni.sql" />
+    <Build Include="dbo\Tables\PazientiIncoerenzaIstat.sql" />
+    <Build Include="dbo\Tables\PazientiEventi.sql" />
+    <Build Include="codifiche\Tables\ICD9.sql" />
+    <Build Include="dbo\Tables\DizionarioMediciDiBase.sql" />
+    <Build Include="dbo\Tables\ConsensiNotifiche.sql" />
+    <Build Include="dbo\Tables\DizionarioCircoscrizioni.sql" />
+    <Build Include="dbo\Tables\PazientiUtenti.sql" />
+    <Build Include="codifiche\Tables\FarmaArchivioAtcGmp.sql" />
+    <Build Include="dbo\Tables\Consensi.sql" />
+    <Build Include="organigramma\Tables\Regimi.sql" />
+    <Build Include="organigramma\Tables\UnitaOperativeRegimi.sql" />
+    <Build Include="codifiche\Tables\SOLECodifichePrestazioni.sql" />
+    <Build Include="dbo\Tables\EntitaAccessiServizi.sql" />
+    <Build Include="dbo\Tables\ConsensiNotificheUtenti.sql" />
+    <Build Include="dbo\Tables\PazientiConfig.sql" />
+    <Build Include="dbo\Tables\DatabaseLog.sql" />
+    <Build Include="dbo\Tables\QueueOperazione.sql" />
+    <Build Include="dbo\Tables\DizionarioEsenzioni.sql" />
+    <Build Include="dbo\Tables\ConfigNome.sql" />
+    <Build Include="dbo\Tables\ConsensiTipo.sql" />
+    <Build Include="dbo\Tables\PazientiQueue.sql" />
+    <Build Include="organigramma\Tables\OggettiActiveDirectoryUtentiAccessiCalcolati.sql" />
+    <Build Include="codifiche\Tables\FarmaMonografieProdotti.sql" />
+    <Build Include="codifiche\Tables\FarmaMonografieSezioni.sql" />
+    <Build Include="organigramma\Tables\PermessiUtenti.sql" />
+    <Build Include="dbo\Tables\ConsensiNotifiche_Storico.sql" />
+    <Build Include="dbo\Tables\ConsensiNotificheUtenti_Storico.sql" />
+    <Build Include="codifiche\Tables\FarmaMonografieFoglietti.sql" />
+    <Build Include="dbo\Tables\ConsensiQueue_Storico.sql" />
+    <Build Include="dbo\Tables\ConsensiQueue.sql" />
+    <Build Include="organigramma\Tables\RuoliOggettiActiveDirectory.sql" />
+    <Build Include="codifiche\Tables\FarmaLottiInvendibili.sql" />
+    <Build Include="dbo\Tables\ConsensiLog.sql" />
+    <Build Include="organigramma\Tables\Eventi.sql" />
+    <Build Include="dbo\Tables\EntitaAccessi.sql" />
+    <Build Include="dbo\Tables\PazientiAnonimizzazioni.sql" />
+    <Build Include="dbo\Tables\PazientiNotifiche_Storico.sql" />
+    <Build Include="dbo\Tables\AslRegioni.sql" />
+    <Build Include="dbo\Tables\PazientiNotificheUtenti_Storico.sql" />
+    <Build Include="codifiche\Tables\FarmaPrincipiAttivi.sql" />
+    <Build Include="dbo\Tables\ErrorLog.sql" />
+    <Build Include="dbo\Tables\PazientiQueue_Storico.sql" />
+    <Build Include="codifiche\Tables\FarmaProdotti.sql" />
+    <Build Include="codifiche\Tables\ICD9TipoCodice.sql" />
+    <Build Include="dbo\Tables\PazientiFusioniLog.sql" />
+    <Build Include="dbo\Views\EsenzioniPazienti.sql" />
+    <Build Include="dbo\Views\DizionarioIstatRegioniOutput.sql" />
+    <Build Include="dbo\Views\ConsensiDropTable.sql" />
+    <Build Include="dbo\Views\PazientiDecedutiOutput.sql" />
+    <Build Include="dbo\Views\DizionarioMediciDiBaseOutput.sql" />
+    <Build Include="dbo\Views\DatabaseLogLastObjectChanged.sql" />
+    <Build Include="dbo\Views\DizionarioMediciOutput.sql" />
+    <Build Include="dbo\Views\DizionarioNazioniOutput.sql" />
+    <Build Include="dbo\Views\DizionarioRegioniOutput.sql" />
+    <Build Include="dbo\Views\PazientiUiBaseGestioneResult.sql" />
+    <Build Include="dbo\Views\PazientiSinonimiOutput.sql" />
+    <Build Include="dbo\Views\DizionarioTerminazioniOutput.sql" />
+    <Build Include="dbo\Views\FullSyncLhaPazienti.sql" />
+    <Build Include="dbo\Views\FullSyncLhaPazientiConsensi.sql" />
+    <Build Include="dbo\Views\FullSyncLhaPazientiEsenzioni.sql" />
+    <Build Include="dbo\Views\FullSyncLhaPazientiFusi.sql" />
+    <Build Include="dbo\Views\PazientiEsenzioniOutput.sql" />
+    <Build Include="dbo\Views\ConsensiMsgBaseResult.sql" />
+    <Build Include="dbo\Views\PazientiDatiPrimaFusione.sql" />
+    <Build Include="dbo\Views\PazientiOutput.sql" />
+    <Build Include="dbo\Views\ConsensiAggregati.sql" />
+    <Build Include="dbo\Views\PazientiFusioniOutput.sql" />
+    <Build Include="dbo\Views\ConsensiOutput.sql" />
+    <Build Include="organigramma_da\Views\GruppiUtenti.sql" />
+    <Build Include="organigramma_da\Views\RuoliUtenti.sql" />
+    <Build Include="organigramma_da\Views\Gruppi.sql" />
+    <Build Include="organigramma_da\Views\Ruoli.sql" />
+    <Build Include="organigramma_da\Views\RuoliSistemi.sql" />
+    <Build Include="organigramma_da\Views\RuoliUnitaOperative.sql" />
+    <Build Include="organigramma_da\Views\Sistemi.sql" />
+    <Build Include="organigramma_da\Views\TranscodificheUnitaOperative.sql" />
+    <Build Include="organigramma_da\Views\UnitaOperative.sql" />
+    <Build Include="organigramma_da\Views\Utenti.sql" />
+    <Build Include="dbo\Views\PazientiDropTable.sql" />
+    <Build Include="dbo\Views\PazientiCercaResult.sql" />
+    <Build Include="dbo\Views\PazientiDettaglioResult.sql" />
+    <Build Include="organigramma_admin\Views\UnionAttributi.sql" />
+    <Build Include="dbo\Views\PazientiAttiviMsgBaseResult.sql" />
+    <Build Include="dbo\Views\PazientiDecessi.sql" />
+    <Build Include="dbo\Views\PazientiOutput2.sql" />
+    <Build Include="dbo\Views\PazientiMsgBaseResult.sql" />
+    <Build Include="dbo\Views\PazientiUiBaseResult.sql" />
+    <Build Include="dbo\Views\PazientiUiEsenzioniResult.sql" />
+    <Build Include="organigramma_da\Views\Aziende.sql" />
+    <Build Include="dbo\Views\PazientiAttiviResult.sql" />
+    <Build Include="dbo\Views\DatabaseLogTsql.sql" />
+    <Build Include="organigramma_admin\Views\RuoliLista.sql" />
+    <Build Include="organigramma_da\Views\RuoliAccesso.sql" />
+    <Build Include="organigramma_admin\Views\RuoliUnitaOperativeLista.sql" />
+    <Build Include="Ro\Views\PazientiIncoerenzaIstat.sql" />
+    <Build Include="dbo\Views\DizionarioAslOutput.sql" />
+    <Build Include="organigramma_da\Views\UtentiGruppi.sql" />
+    <Build Include="dbo\Views\PazientiDropTable2.sql" />
+    <Build Include="dbo\Views\DizionarioCircoscrizioniOutput.sql" />
+    <Build Include="dbo\Views\ConsensiSpResult.sql" />
+    <Build Include="dbo\Views\PazientiEsenzioniSpResult.sql" />
+    <Build Include="dbo\Views\DizionarioComuniOutput.sql" />
+    <Build Include="dbo\Views\PazientiFusioniSpResult.sql" />
+    <Build Include="dbo\Views\PazientiSinonimiSpResult.sql" />
+    <Build Include="dbo\Views\DizionarioDiagnosiOutput.sql" />
+    <Build Include="dbo\Views\ConsensiPazienti.sql" />
+    <Build Include="dbo\Views\DizionarioDistrettiOutput.sql" />
+    <Build Include="dbo\Views\ConsensiPazientiAggregati.sql" />
+    <Build Include="dbo\Views\DizionarioEsenzioniOutput.sql" />
+    <Build Include="dbo\Views\DizionarioIstatAslOutput.sql" />
+    <Build Include="dbo\Views\DizionarioIstatComuniOutput.sql" />
+    <Build Include="dbo\Views\DizionarioIstatNazioniOutput.sql" />
+    <Build Include="dbo\Views\DizionarioIstatProvinceOutput.sql" />
+    <Build Include="Security\DataAccessWs.sql" />
+    <Build Include="Security\DataAccessDll.sql" />
+    <Build Include="Security\DataAccessUi.sql" />
+    <Build Include="Security\ExecuteBiztalk.sql" />
+    <Build Include="Security\DataAccessSql.sql" />
+    <Build Include="Security\DataAccessDizionari.sql" />
+    <Build Include="Security\DataAccessDwhFusioni.sql" />
+    <Build Include="Security\DataAccessSISS.sql" />
+    <Build Include="Security\DataAccessRo.sql" />
+    <Build Include="Security\progel.it_AsmnSac_Anagrafica.sql" />
+    <Build Include="Security\OE_BT_DA.sql" />
+    <Build Include="Security\PROGEL.IT_DevBizTalkService.sql" />
+    <Build Include="Security\SAC_CUP_IMPORT.sql" />
+    <Build Include="Security\DEV_VS.sql" />
+    <Build Include="Security\PROGEL.IT_MARCOD-BT09_.sql" />
+    <Build Include="Security\PROGEL.IT_Sviluppo.sql" />
+    <Build Include="Security\SAC_GST_ASMN.sql" />
+    <Build Include="Security\PROGEL.IT_DAGOBAH2_.sql" />
+    <Build Include="Security\NT AUTHORITY_NETWORK SERVICE.sql" />
+    <Build Include="Security\SAC_DWC.sql" />
+    <Build Include="Security\DWH_DAE.sql" />
+    <Build Include="Security\PROGEL.IT_DevDwhClinicoSite.sql" />
+    <Build Include="dbo\Functions\GetNomeServizioById.sql" />
+    <Build Include="dbo\Functions\GetAggregazioneSistemiProvenienza.sql" />
+    <Build Include="dbo\Functions\LookupIstatAslCodiceEsteso.sql" />
+    <Build Include="dbo\Functions\GetPazienteByProvenienzaIdProvenienza.sql" />
+    <Build Include="codifiche_ws\Functions\FarmaGetPosologiaByCodiceMonografia.sql" />
+    <Build Include="codifiche_ws\Functions\FarmaGetInterazioniByCodiceMonografia.sql" />
+    <Build Include="dbo\Functions\LeggePazientiLivelloAttendibilita.sql" />
+    <Build Include="dbo\Functions\NormalizzaCodiceIstatComune.sql" />
+    <Build Include="dbo\Functions\ConfigConsensiLivelloAttendibilitaUi.sql" />
+    <Build Include="dbo\Functions\ConfigConsensiProvenienzaUi.sql" />
+    <Build Include="dbo\Functions\LookupIstatComuni.sql" />
+    <Build Include="dbo\Functions\GetPesoPaziente.sql" />
+    <Build Include="dbo\Functions\LookupIstatNazioni.sql" />
+    <Build Include="dbo\Functions\LookupIstatProvince.sql" />
+    <Build Include="dbo\Functions\LookupIstatRegioni.sql" />
+    <Build Include="dbo\Functions\LookupIstatAsl.sql" />
+    <Build Include="dbo\Functions\GetPazienteRootByPazienteId.sql" />
+    <Build Include="dbo\Functions\GetStatoDisattivatoPaziente.sql" />
+    <Build Include="dbo\Functions\LeggeConsensiPermessiScrittura.sql" />
+    <Build Include="dbo\Functions\LeggeConsensiPermessiLettura.sql" />
+    <Build Include="organigramma_admin\Functions\ConcatenaTranscodificaSistemi.sql" />
+    <Build Include="dbo\Functions\LeggeConsensiPermessiCancellazione.sql" />
+    <Build Include="dbo\Functions\LookUpIstatErrorCode.sql" />
+    <Build Include="dbo\Functions\GetPazientiDataDecesso.sql" />
+    <Build Include="dbo\Functions\GetPermessoFusioneByProvenienza.sql" />
+    <Build Include="dbo\Functions\GetPermessoFusioneByLivelloAttendibilita.sql" />
+    <Build Include="dbo\Functions\LeggePazientiId.sql" />
+    <Build Include="dbo\Functions\IsGUID.sql" />
+    <Build Include="dbo\Functions\ConfigPazientiLivelloAttendibilitaUi.sql" />
+    <Build Include="dbo\Functions\LeggeConsensiLivelloAttendibilita.sql" />
+    <Build Include="dbo\Functions\GetPermessoFusioneByFasciaOraria.sql" />
+    <Build Include="dbo\Functions\ConfigPazientiProvenienzaUi.sql" />
+    <Build Include="dbo\Functions\LeggeConsensiProvenienza.sql" />
+    <Build Include="organigramma_admin\Functions\ConcatenaRuoliSistemi.sql" />
+    <Build Include="organigramma_admin\Functions\ConcatenaRuoliUnitaOperative.sql" />
+    <Build Include="dbo\Functions\LeggePazientiPermessiLettura.sql" />
+    <Build Include="dbo\Functions\LeggePazientiPermessiScrittura.sql" />
+    <Build Include="dbo\Functions\LeggePazientiPermessiCancellazione.sql" />
+    <Build Include="dbo\Functions\LookupPazientiPosizioneAss.sql" />
+    <Build Include="dbo\Functions\GetEta.sql" />
+    <Build Include="dbo\Functions\GetModificaPazienteByLivelloAttendibilita.sql" />
+    <Build Include="dbo\Functions\LookupAslRegioni.sql" />
+    <Build Include="organigramma\Functions\LeggePermessiCancellazione.sql" />
+    <Build Include="organigramma\Functions\LeggePermessiLettura.sql" />
+    <Build Include="organigramma\Functions\LeggePermessiScrittura.sql" />
+    <Build Include="dbo\Functions\GetIstatCodiceProvinciaByCodiceComune.sql" />
+    <Build Include="organigramma_admin\Functions\ConcatenaRuoliAttributi.sql" />
+    <Build Include="dbo\Functions\LeggePazientiProvenienza.sql" />
+    <Build Include="dbo\Functions\GetPazienteIdByProvenienza.sql" />
+    <Build Include="organigramma\Functions\OttieneAccessiPerIdRuolo.sql" />
+    <Build Include="organigramma\Functions\OttieneGruppiPerUtente.sql" />
+    <Build Include="dbo\Functions\GetTreeFusione.sql" />
+    <Build Include="organigramma\Functions\OttieneGruppiPerIdUtente.sql" />
+    <Build Include="organigramma\Functions\OttieneUtentiPerGruppo.sql" />
+    <Build Include="organigramma\Functions\OttieneUtentiPerIdGruppo.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiAnonimizzazioniSelect.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma\Stored Procedures\EventiInformazione.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsEsenzioniByIdPaziente.sql" />
+    <Build Include="organigramma\Stored Procedures\EventiSuccesso.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiSistemiProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiEsenzioniSelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUIAnonimizzazioniListaByIdSacOriginale.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ConsensiQueueAdd.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgPazientiFusioniLogInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiNotificheLista.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_Cdc_AbilitaCdc.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiFusioneLista.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_Cdc_DisabilitaCdc.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiOutputByCodiceFiscalePaziente.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiLista.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiUiSQLServerLista.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiOutputByGeneralitaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiQueueBtGet.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiAnonimizzazioniPazienteSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiBatchMergeInsert.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiOutputByIdProvenienzaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiGestioneLista.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUIAnonimizzazioniSelectByIdSacAnonimo.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiUiServiziLista.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiLista1.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiOutputByTesseraPaziente.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\OggettiActiveDirectoryUtentiGruppiOttieniPerGruppo.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiQueueBtGet.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsAggancioPazienteByCognomeNomeCodiceFiscale.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiBaseGestioneSelect.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiUiBaseDelete.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\PermessiUtentiInserisce.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\PermessiUtentiModifica.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiRinotificaFusione.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiBaseGestioneUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiSelect.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\PermessiUtentiOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsAggancioPazienteByProvenienzaIdProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputSinonimiByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiAnonimizzazioniEsenzioniByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiMsgPazienteInsert.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiOutputCompleta.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsSinonimiByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiOutputByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputEsenzioniByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputById2.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputCercaAggancioPaziente.sql" />
+    <Build Include="codifiche_ws\Stored Procedures\FarmaProdottiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiMergeSelect.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiNotificheUtentiBtGet.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsCercaByProvenienzaIdProvenienzaOrAggiunge.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiMsgBaseSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiMergeSelectPadre.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiIncoerenzaIstatDelete.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiOutputCercaByProvenienzaIdProvenienzaOrAggiunge.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiMergeUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiIncoerenzaIstatLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiOutputCercaOrAggiunge.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiMsgBaseInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiBaseDeMerge.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsCercaOrAggiunge.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiMsgUtentiAck.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiBaseMerge.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiIncoerenzaIstatSelect.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\IstatRegioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\IstatProvinceInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgBaseMergeMandatario.sql" />
+    <Build Include="dbo\Stored Procedures\IstatNazioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgBaseMerge2.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiUiBaseListaAll.sql" />
+    <Build Include="dbo\Stored Procedures\IstatComuniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiMergeInsert2.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiUiBaseSelect.sql" />
+    <Build Include="dbo\Stored Procedures\IstatAslInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiBatchMergeInsert2.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiUiLista.sql" />
+    <Build Include="dbo\Stored Procedures\MntSincronizzazioneIstat.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputCercaFuzzyOrAggiunge.sql" />
+    <Build Include="codifiche_admin\Stored Procedures\FarmaProdottiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiUiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUtilIdSacByIdProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\IsValidoCodiceIstatComune.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiUiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiUiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsByIdProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\ProvenienzeUiUtentiLista.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgProprieta2.sql" />
+    <Build Include="dbo\Stored Procedures\ProvenienzeUiLista.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiBatchAggancioPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ProvenienzeUiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsByCodiceFiscale.sql" />
+    <Build Include="dbo\Stored Procedures\ProvenienzeUiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsByGeneralita.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiBatchAggancioPazienteUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiUiBaseLista.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsFusioniByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ProvenienzeUiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsById.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiLeggePazientiPermessiScrittura.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputFusioniByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiPazientiUiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsModificaById.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiPazientiUiLista.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsByTessera.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsRimuoviById.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiConsensiUiLista.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputModificaById.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiPazientiUiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputRimuoviById.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsByCognomeNome.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiConsensiUiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiConsensiUiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputRimuoviByIdProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsByCognomeNomeDatanascita.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiPazientiUiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputModificaByIdProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\IstatMsgIncoerenzaIstatInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsByCognomeNomeDatanascitaLuogonascita.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiConsensiUiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsByCognomeNomeLuogonascita.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiPazientiUiComboUtenti.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_CancellaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiUiComboProvenienze.sql" />
+    <Build Include="dbo\Stored Procedures\UtentiConsensiUiComboUtenti.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiMsgProprieta.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsModifica.sql" />
+    <Build Include="dbo\Stored Procedures\_Schedule_AttivitaGiornaliere.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsBaseUpdate.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\AttributiLista.sql" />
+    <Build Include="dbo\Stored Procedures\_Schedule_AttivitaNotturne.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\SistemiInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\_Schedule_AttivitaFrequente.sql" />
+    <Build Include="dbo\Stored Procedures\IstatNazioniWsByNome.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiComboAsl.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\SistemiModifica.sql" />
+    <Build Include="codifiche_admin\Stored Procedures\FarmaPrincipiAttiviCerca.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\SistemiRimuove.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_CancellaConsenso.sql" />
+    <Build Include="dbo\Stored Procedures\IstatRegioniWsByNome.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\SistemiOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\IstatProvinceWsByNome.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\SistemiCerca.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\IstatProvinceWsByRegione.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeModifica.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiMergeInsert.sql" />
+    <Build Include="dbo\Stored Procedures\IstatComuniWsByNome.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeRimuove.sql" />
+    <Build Include="dbo\Stored Procedures\IstatComuniUiInsert.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\IstatComuniWsByRegione.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\IstatComuniUiUpdate.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\IstatComuniWsByProvincia.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeCerca.sql" />
+    <Build Include="dbo\Stored Procedures\MntPazientiRinotificaFusioni.sql" />
+    <Build Include="dbo\Stored Procedures\IstatComuniUiSelect.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="codifiche_ws\Stored Procedures\SOLEBrancheSelectByIdPrestazione.sql" />
+    <Build Include="dbo\Stored Procedures\IstatComuniWsEsteri.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeSistemiOttieniPerIdUnitaOperativa.sql" />
+    <Build Include="codifiche_admin\Stored Procedures\ICD9Cerca.sql" />
+    <Build Include="dbo\Stored Procedures\IstatComuniUiLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiWsRimuovi.sql" />
+    <Build Include="codifiche_admin\Stored Procedures\ICD9TipoCodiceCerca.sql" />
+    <Build Include="organigramma_da\Stored Procedures\GruppiCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\IstatWsIncoerenzaIstatVerifica.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsBaseDelete.sql" />
+    <Build Include="organigramma_da\Stored Procedures\GruppiOttienePerId.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiUiMergeDelete.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsCerca.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeSistemiCerca.sql" />
+    <Build Include="organigramma_da\Stored Procedures\GruppiOttienePerGruppo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiNotificheAdd.sql" />
+    <Build Include="organigramma_da\Stored Procedures\RuoliOttieniPerIdUtente.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\IstatProvinceUiLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_da\Stored Procedures\RuoliOttieniPerUtente.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\IstatMsgIncoerenzaIstatVerifica.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsDettaglioById.sql" />
+    <Build Include="organigramma_da\Stored Procedures\SistemiOttieniPerCodiceRuolo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiWsDettaglioByIdProvenienza.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UnitaOperativeOttieniPerCodiceRuolo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\IstatComuniUiDelete.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiOutputCerca.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeSistemiModifica.sql" />
+    <Build Include="organigramma_da\Stored Procedures\SistemiCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiMsgSinonimiByIdPaziente.sql" />
+    <Build Include="organigramma_ws\Stored Procedures\TranscodificaUnitaOperativaDaSistemaACentrale.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiEventiAccessoAutorizzato.sql" />
+    <Build Include="organigramma_da\Stored Procedures\SistemiInserisce.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\TranscodificaUnitaOperativaDaCentraleASistema.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiEventiAccessoNegato.sql" />
+    <Build Include="organigramma_da\Stored Procedures\SistemiInserisceOppureModifica.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ConsensiEventiAvvertimento.sql" />
+    <Build Include="organigramma_da\Stored Procedures\SistemiModifica.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ConsensiEventiErrore.sql" />
+    <Build Include="organigramma_da\Stored Procedures\SistemiOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiMsgBaseSelectAllByGeneralita.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiEventiFallito.sql" />
+    <Build Include="organigramma_da\Stored Procedures\SistemiOttieniOppureInserisce.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiMsgProprietaByCodiceFiscaleCognomeNome.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiEventiInformazione.sql" />
+    <Build Include="organigramma_da\Stored Procedures\SistemiRimuove.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ConsensiEventiSuccesso.sql" />
+    <Build Include="organigramma_da\Stored Procedures\TranscodificaUnitaOperativaDaCentraleASistema.sql" />
+    <Build Include="dbo\Stored Procedures\IstatUiComboRegioni.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiMergeSelect1.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiMsgCercaByCodiceFiscalePaziente.sql" />
+    <Build Include="organigramma_da\Stored Procedures\TranscodificaUnitaOperativaDaSistemaACentrale.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiEventiSuccesso.sql" />
+    <Build Include="dbo\Stored Procedures\IstatUiComboProvince.sql" />
+    <Build Include="organigramma_da\Stored Procedures\TranscodificheUnitaOperativeCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiEventiFallito.sql" />
+    <Build Include="codifiche_ws\Stored Procedures\ICD9Cerca.sql" />
+    <Build Include="organigramma_da\Stored Procedures\TranscodificheUnitaOperativeOttieniPerSistema.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiEventiInformazione.sql" />
+    <Build Include="codifiche_ws\Stored Procedures\ICD9Select.sql" />
+    <Build Include="organigramma_da\Stored Procedures\TranscodificheUnitaOperativeOttieniPerTranscodifica.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiEventiAvvertimento.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiMsgCercaByIdProvenienzaPaziente.sql" />
+    <Build Include="organigramma_da\Stored Procedures\TranscodificheUnitaOperativeOttieniPerUnitaOperativa.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiEventiErrore.sql" />
+    <Build Include="dbo\Stored Procedures\IstatProvinceUiInsert.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ConsensiMsgCercaByGeneralitaPaziente.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UnitaOperativeCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiEventiAccessoAutorizzato.sql" />
+    <Build Include="dbo\Stored Procedures\IstatProvinceUiUpdate.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_da\Stored Procedures\UnitaOperativeInserisce.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiEventiAccessoNegato.sql" />
+    <Build Include="dbo\Stored Procedures\IstatProvinceUiDelete.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_da\Stored Procedures\UnitaOperativeInserisceOppureModifica.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiUiBaseDelete.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliCopia.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\IstatProvinceUiSelect.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_da\Stored Procedures\UnitaOperativeModifica.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiNotificheUtentiBtGet.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiComboTerminazioni.sql" />
+    <Build Include="dbo\Stored Procedures\MntConsensiNotificaArchivia.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UnitaOperativeOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiUtilIdSacByIdProvenienza2.sql" />
+    <Build Include="dbo\Stored Procedures\MntPazientiNotificaArchivia.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UnitaOperativeOttieniOppureInserisce.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="codifiche_ws\Stored Procedures\SOLECodifichePrestazioniCerca.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UnitaOperativeRimuove.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiOutputByIdProvenienza2.sql" />
+    <Build Include="dbo\Stored Procedures\MntPazientiRinotifica.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UtentiCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiFusioniOttieniCandidatoPadre.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiEsenzioniSelect.sql" />
+    <Build Include="organigramma_da\Stored Procedures\GruppiOttienePerIdUtente.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_da\Stored Procedures\GruppiOttienePerUtente.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ConsensiWsAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiBaseInsert.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UtentiOttienePerId.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiMsgPesoPazienteSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgProprieta.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UtentiOttienePerUtente.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiMsgPermessoFusioneByLivelloAttendibilita.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgUtentiAck.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiBaseSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgPermessoFusioneByProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgEsenzioniSelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiBaseUpdate.sql" />
+    <Build Include="organigramma_da\Stored Procedures\AccessiOttienePerCodiceRuolo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiMsgSinonimiSelectAll.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeRegimiSelect.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliOggettiActiveDirectoryCerca.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliOggettiActiveDirectoryInserisce.sql" />
+    <Build Include="organigramma_da\Stored Procedures\RuoliCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_admin\Stored Procedures\UnitaOperativeRegimiModifica.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiServiziSelect.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliOggettiActiveDirectoryRimuove.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsCercaDettagliByGeneralita.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\OggettiActiveDirectoryCerca.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiNotificheAdd.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsSinonimiSacByIdPaziente.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\OggettiActiveDirectoryOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiBatchMerge.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\OggettiActiveDirectoryUtentiGruppiOttieniPerUtente.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiMsgBaseUpdate.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\OggettiActiveDirectoryUtentiAccessiCalcolatiOttieniPerUtente.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsByCodiceFiscalePaziente.sql" />
+    <Build Include="organigramma_da\Stored Procedures\RegimiOttieniPerUnitaOperativa.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsCercaByMedicoBase.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiEsenzioniDelete.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsByGeneralitaPaziente.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliPerOggettoActiveDirectoryCerca.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiEsenzioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgBaseMerge.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiEsenzioniUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsByTesseraPaziente.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UtentiOttienePerGruppo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiUiEsenzioniDeleteAll.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsByIdProvenienzaPaziente.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliInserisce.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="codifiche_ws\Stored Procedures\FarmaProdottiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsBaseInsert.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliModifica.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiMsgProprietaByCodiceFiscale.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliRimuove.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiMsgProprietaByIdProvenienza.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="codifiche_admin\Stored Procedures\SOLECodifichePrestazioniCerca.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ConsensiWsById.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliUnitaOperativeInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputById.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliUnitaOperativeRimuove.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiOutputByIdProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsGetProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsGetProvenienza.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsBaseInsert.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliUnitaOperativeCerca.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiLista.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsAggiungi.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\AziendeLista.sql" />
+    <Build Include="dbo\Stored Procedures\MntConsensiCancellazioneConsensiNonValidi.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiComboComuni.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiComboProvince.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiAccessiLogAdd.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgBaseInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsBaseInsert3.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiComboPosizioniAss.sql" />
+    <Build Include="dbo\Stored Procedures\IstatAslSelect.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliSistemiInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgBaseUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsAggiungi3.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiComboNazioni.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliSistemiRimuove.sql" />
+    <Build Include="organigramma_da\Stored Procedures\UtentiOttienePerIdGruppo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiMsgBaseDelete.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsBaseUpdate3.sql" />
+    <Build Include="dbo\Stored Procedures\MntPazientiIncoerenzaIstat.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiComboRegioni.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliSistemiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgBaseSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsModifica3.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\PrintError.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliAttributiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiQueueAdd.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiServiziInsert.sql" />
+    <Build Include="dbo\Stored Procedures\LogError.sql" />
+    <Build Include="organigramma\Stored Procedures\EventiAccessoAutorizzato.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliAttributiInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiDelete.sql" />
+    <Build Include="dbo\Stored Procedures\RaiseErrorByIdLog.sql" />
+    <Build Include="organigramma\Stored Procedures\EventiAccessoNegato.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgEsenzioniAdd.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsBaseInsert2.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliAttributiRimuove.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsModifica3ById.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiServiziDelete.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiAnonimizzazioniGetIdAnonimo.sql" />
+    <Build Include="codifiche_ws\Stored Procedures\SOLECodifichePrestazioniSelect.sql" />
+    <Build Include="organigramma\Stored Procedures\EventiAvvertimento.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgProprietaByIdProvenienza2.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsConsensiByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiServiziUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiAnonimizzazioniInserisci.sql" />
+    <Build Include="codifiche_ws\Stored Procedures\SOLECodifichePrestazioniSelectByCodici.sql" />
+    <Build Include="organigramma\Stored Procedures\EventiErrore.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgEsenzioniRemove.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiGestioneLista1.sql" />
+    <Build Include="dbo\Stored Procedures\EntitaAccessiUpdateInPlace.sql" />
+    <Build Include="Progel\Stored Procedures\CreaSP.sql" />
+    <Build Include="organigramma\Stored Procedures\EventiFallito.sql" />
+    <Build Include="Database Triggers\DatabaseTriggerLog.sql" />
+    <Build Include="Security\Progel.sql" />
+    <Build Include="Security\organigramma_ws.sql" />
+    <Build Include="Security\Ro.sql" />
+    <Build Include="Security\organigramma.sql" />
+    <Build Include="Security\organigramma_da.sql" />
+    <Build Include="Security\organigramma_admin.sql" />
+    <Build Include="Security\codifiche.sql" />
+    <Build Include="Security\codifiche_admin.sql" />
+    <Build Include="Security\codifiche_ws.sql" />
+    <Build Include="dbo\Synonyms\SacConnLha_DizionariLhaComuni.sql" />
+    <Build Include="dbo\Synonyms\SacConnLha_DizionariLhaNazioni.sql" />
+    <Build Include="dbo\Synonyms\SacConnLHA_DizionariLhaAsl.sql" />
+    <Build Include="dbo\Synonyms\SacConnLHA_DizionariLhaRegioni.sql" />
+    <Build Include="dbo\Synonyms\SacConnLHA_DizionariLhaDiagnosi.sql" />
+    <Build Include="dbo\Synonyms\SacConnLHA_DizionariLhaDistretti.sql" />
+    <Build Include="dbo\Synonyms\SacConnLHA_DizionariLhaEsenzioni.sql" />
+    <Build Include="dbo\Synonyms\SacConnLHA_DizionariLhaMedici.sql" />
+    <Build Include="Security\Permissions.sql" />
+    <Build Include="ExtendedProperties.sql" />
+    <Build Include="dbo\Views\PazientiDatiRoot.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsDeleteByIdPaziente.sql" />
+    <Build Include="dbo\Tables\RelazioneConMinore.sql" />
+    <Build Include="dbo\Views\ConsensiOutput2.sql" />
+    <Build Include="dbo\Functions\WsGetAttributi.sql" />
+    <Build Include="organigramma_da\Stored Procedures\RuoliMembroRimuove.sql" />
+    <Build Include="organigramma_da\Stored Procedures\RuoliMembroAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiWsCercaByGeneralitaAnnoNascita.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgProprietaSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgProprieta3.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiWsRelazioniConMinoreLista.sql" />
+    <Build Include="dbo\Views\PazientiOutput3.sql" />
+    <Build Include="dbo\Functions\OttieneConsensiPerIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\BtPazientiQueueOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BtPazientiQueueConta.sql" />
+    <Build Include="dbo\Stored Procedures\BtPazientiNotificheUtentiOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BtPazientiNotificheUtentiConta.sql" />
+    <Build Include="dbo\Stored Procedures\BtConsensiQueueOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BtConsensiQueueConta.sql" />
+    <Build Include="dbo\Views\ConsensiCatenaFusioneOutput.sql" />
+    <Build Include="dbo\Functions\ReplaceInvalidChar.sql" />
+    <Build Include="dbo\Functions\IsAnagraficaDaFondereAutomaticamente.sql" />
+    <Build Include="organigramma_ws\Views\Utenti.sql" />
+    <Build Include="organigramma_ws\Views\RuoliUtenti.sql" />
+    <Build Include="organigramma_ws\Views\RuoliAccesso.sql" />
+    <Build Include="organigramma_ws\Views\Gruppi.sql" />
+    <Build Include="dbo\Views\DizionarioMediciOutput2.sql" />
+    <Build Include="pazienti_ws\Views\PazientiEsenzioni.sql" />
+    <Build Include="pazienti_ws\Views\PazientiSinonimi.sql" />
+    <Build Include="pazienti_ws\Views\Consensi.sql" />
+    <Build Include="pazienti_ws\Views\PazientiDettaglio.sql" />
+    <Build Include="pazienti_ws\Views\PazientiLista.sql" />
+    <Build Include="dbo\Functions\OttieneConsensiSolePerIdPaziente.sql" />
+    <Build Include="dbo\Functions\OttieneConsensiAziendalePerIdPaziente.sql" />
+    <Build Include="organigramma_ws\Stored Procedures\UtentiOttieniPerRuolo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\UtentiOttienePerNomeUtente.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\UtentiCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\UnitaOperativeOttieniPerCodiceRuolo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\UnitaOperativeCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\SistemiOttieniPerCodiceRuolo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\SistemiCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\RuoliOttieniPerUtente.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\RuoliOttieniPerIdUtente.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\RuoliCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\GruppiOttieniPerUtente.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\GruppiOttienePerGruppo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\GruppiCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\AccessiOttienePerCodiceRuolo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_admin\Stored Procedures\RuoliCercaPerUnitaOperativa.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliCercaPerSistema.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteEsenzioniByIdPaziente.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteSinonimiByIdPaziente.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazientiByGeneralita.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\IstatVerificaIncoerenza.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteConsensiByIdPaziente.sql" />
+    <Build Include="Security\pazienti_ws.sql" />
+    <Build Include="dbo\Tables\PazientiQueueSemaforo.sql" />
+    <Build Include="dbo\Tables\PazientiNotificheUtentiSemaforo.sql" />
+    <Build Include="dbo\Tables\DizionarioIstatAsl.sql" />
+    <Build Include="dbo\Tables\ConsensiQueueSemaforo.sql" />
+    <Build Include="dbo\Tables\ConsensiNotificheUtentiSemaforo.sql" />
+    <Build Include="dbo\Views\PazientiDecessi_with.sql" />
+    <Build Include="pazienti_ws\Functions\GetPazienteByProvenienzaIdProvenienza.sql" />
+    <Build Include="dbo\Functions\LookupDizionarioIstatAsl.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\ProvenienzaOttieni.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazientiCercaByProvenienzaIdProvenienzaOrAggiunge.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazientiByMedicoBase.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteRimuovi.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\IstatRegioniByNome.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\IstatProvinceByRegione.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\IstatProvinceByNome.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\IstatNazioniByNome.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\IstatComuniEsteri.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\IstatComuniByRegione.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\IstatComuniByProvincia.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\IstatComuniByNome.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\ConsensiRimuoviByIdPaziente.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\ConsensiRelazioniConMinoreLista.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\ConsensiAggancioPazienteByProvenienzaIdProvenienza.sql" />
+    <Build Include="organigramma_ws\Stored Procedures\RuoliOttieniPerCodiceRuolo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiUiUltimiArrivi.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUISinottico.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiRinotificaPazienteAttivo.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiUiUltimiArrivi.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiUISinottico.sql" />
+    <Build Include="dbo\Synonyms\SacConnLHA_DizionariLhaFasceReddito.sql" />
+    <Build Include="dbo\Tables\PazientiPosizioniCollegateContatori.sql" />
+    <Build Include="dbo\Tables\PazientiPosizioniCollegate.sql" />
+    <Build Include="dbo\Tables\EsenzioniUtenti.sql" />
+    <Build Include="dbo\Tables\EsenzioniEventi.sql" />
+    <Build Include="dbo\Functions\LeggeEsenzioniProvenienza.sql" />
+    <Build Include="dbo\Functions\LeggeEsenzioniPermessiScrittura.sql" />
+    <Build Include="dbo\Functions\LeggeEsenzioniPermessiCancellazione.sql" />
+    <Build Include="dbo\Functions\GetIsValidoCodiceIstatComune.sql" />
+    <Build Include="dbo\Functions\GetErroreIncoerenzaIstat.sql" />
+    <Build Include="dbo\Functions\AttributiXmlDeleteAttributo.sql" />
+    <Build Include="dbo\Functions\AttributiXmlAddAttributo.sql" />
+    <Build Include="_anon\Functions\OffuscaDeoffuscaChar.sql" />
+    <Build Include="_anon\Functions\Offusca.sql" />
+    <Build Include="_anon\Functions\DeOffusca.sql" />
+    <Build Include="dbo\Functions\_TEST_PazientiMsgProprieta2_Prova2.sql" />
+    <Build Include="dbo\Functions\_TEST_PazientiMsgProprieta2.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\EsenzioniRimuoviByIdEsenzione.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\EsenzioniAggiungi.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\ConsensiAggiungi2.sql" />
+    <Build Include="organigramma_ws\Stored Procedures\RuoliOttieniPerAttributo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="organigramma_ws\Stored Procedures\RegimiOttieniPerUnitaOperativa.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RegimiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUIPosizioniCollegateSelectByIdSacPosizioneCollegata.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiPosizioniCollegateSelect.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiUiPosizioniCollegatePazienteSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUIPosizioniCollegateListaByIdSacOriginale.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PazientiUiPosizioniCollegateInserisci.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiPosizioniCollegateGetIdPosizioneCollegata.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiNotificaLista.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiUiMergeDelete2.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgDettaglioSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgConsensiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgBaseSelectAllByGeneralita2.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiBaseDeMerge_Prova.sql" />
+    <Build Include="dbo\Stored Procedures\EsenzioniUtentiUiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\EsenzioniUtentiUiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\EsenzioniUtentiUiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\EsenzioniEventiInserisce.sql" />
+    <Build Include="_anon\Stored Procedures\MntDatiAnagraficiDeOffusca.sql" />
+    <Build Include="_anon\Stored Procedures\MntDatiAnagraficiOffuscaDeOffuscaById.sql" />
+    <Build Include="_anon\Stored Procedures\MntDatiAnagraficiOffusca.sql" />
+    <Build Include="Security\test.sql" />
+    <Build Include="Security\_anon.sql" />
+    <Build Include="dbo\Tables\TranscodificaCodiceTerminazione.sql" />
+    <Build Include="dbo\Tables\PazientiAttributiDizionario.sql" />
+    <Build Include="codifiche\Tables\2019_10_01_BCK_FarmaProdotti.sql" />
+    <Build Include="organigramma_ws\Views\UtentiGruppi.sql" />
+    <Build Include="organigramma_ws\Views\Ruoli.sql" />
+    <Build Include="organigramma_ws\Views\GruppiUtenti.sql" />
+    <Build Include="organigramma_da\Views\RuoliUtenti2.sql" />
+    <Build Include="dbo\Views\FullSyncLhaDizionarioTerminazioni.sql" />
+    <Build Include="dbo\Functions\ConfigPazientiFusionePazientiConUgualeAttendibilita.sql" />
+    <Build Include="dbo\Functions\OttieneProvenienzeRicercabiliWs.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazientiAttributiDizionarioLista.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteSemplificatoModificaByProvenienzaIdProvenienza2.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteSemplificatoModificaById2.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteSemplificatoModificaBase.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteModificaByProvenienzaIdProvenienza3.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteModificaById3.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteModificaBase3.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteByIdProvenienza3.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteById3.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\PazienteAggiungi3.sql" />
+    <Build Include="pazienti_ws\Stored Procedures\DizionariEsenzioniCerca.sql" />
+    <Build Include="dbo\Stored Procedures\ProvenienzeUiLista2.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgTranscodificaCodiceTerminazione.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiMsgCandidatoFusioneAutomaticaSelect.sql" />
+    <Build Include="ara_svc\Tables\CodaAnagraficheDaAggiornareInputScartati.sql" />
+    <Build Include="ara_svc\Tables\CodaAnagraficheDaAggiornareProcessati.sql" />
+    <Build Include="ara_svc\Tables\CodaAnagraficheDaAggiornareInput.sql" />
+    <Build Include="ara\Tables\Config.sql" />
+    <Build Include="ara\Tables\AnagraficheCercate.sql" />
+    <Build Include="Security\DataAccessSvc.sql" />
+    <Build Include="ara_ws\Stored Procedures\PazientiConsensiAggiorna.sql" />
+    <Build Include="ara_ws\Stored Procedures\PazientiEsenzioniAggiorna.sql" />
+    <Build Include="ara_ws\Stored Procedures\PazientiAggiorna.sql" />
+    <Build Include="ara_ws\Stored Procedures\AnagraficheCercateOttieni.sql" />
+    <Build Include="ara_ws\Stored Procedures\AnagraficheCercateAggiorna.sql" />
+    <Build Include="ara_svc\Stored Procedures\PazientiAggiorna.sql" />
+    <Build Include="ara_svc\Stored Procedures\CodaAnagraficheDaAggiornareInputScartatiInserisce.sql" />
+    <Build Include="ara_svc\Stored Procedures\CodaAnagraficheDaAggiornareOttieni.sql" />
+    <Build Include="ara_svc\Stored Procedures\CodaAnagraficheDaAggiornareRiempi.sql" />
+    <Build Include="ara\Stored Procedures\MntPurge.sql" />
+    <Build Include="ara\User Defined Types\ParamPazientiConsensi.sql" />
+    <Build Include="ara\User Defined Types\ParamAnagraficheCercate.sql" />
+    <Build Include="ara\User Defined Types\ParamPazientiEsenzioni.sql" />
+    <Build Include="Security\ara_ws.sql" />
+    <Build Include="Security\ara_svc.sql" />
+    <Build Include="Security\ara.sql" />
+    <Build Include="_anon\Synonyms\PazientiCertificati.sql" />
+    <Build Include="dbo\Tables\PazientiDiProva.sql" />
+    <Build Include="dbo\Views\PazientiDiProvaOutput.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\RuoliPerOggettoActiveDirectoryCerca2.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\ProspettoRuoliExcel.sql" />
+    <Build Include="organigramma_admin\Stored Procedures\OggettiActiveDirectoryCerca2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SAC_SqlSchemaCompare.scmp" />
+  </ItemGroup>
+</Project>

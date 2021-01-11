@@ -1,0 +1,27 @@
+﻿.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
+hr {
+    margin-top: 3px !important;
+}
+
+
+input[type=text] {
+    max-width: 280px;
+}
+
+textarea{
+    max-width: 280px;
+}
+
+.btn-tuttiConsensi {
+    margin-left: 20px;
+    width: 250px;
+}
+
+.custom-button {
+    width: 450px;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.progel.it/WCF/OE/Service/1.0" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/OE/Service/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntryAdmin.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/OE/WsTypes/1.2" />
+  <xs:element name="InoltraOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="InoltraOrdinePerIdGuidResult" nillable="true" type="q1:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReinoltraOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReinoltraOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ReinoltraOrdinePerIdGuidResult" nillable="true" type="q2:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CancellaOrdinePerIdGuidResult" nillable="true" type="q3:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RipianificaOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataPrenotazione" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RipianificaOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="RipianificaOrdinePerIdGuidResult" nillable="true" type="q4:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

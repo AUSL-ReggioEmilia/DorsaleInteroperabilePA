@@ -1,0 +1,136 @@
+
+********************************************************
+2016-08-11 
+********************************************************
+Aggiunta campo [FusioneAutomatica] alle provenienze
+	ALTER PROCEDURE [dbo].[ProvenienzeUiInsert]
+	ALTER PROCEDURE [dbo].[ProvenienzeUiSelect]
+	ALTER PROCEDURE [dbo].[ProvenienzeUiUpdate]
+
+
+********************************************************
+2015-12-02
+********************************************************
+ALTER PROCEDURE [codifiche_admin].[FarmaPrincipiAttiviCerca]
+ALTER PROCEDURE [dbo].[UtentiConsensiUiUpdate]
+
+
+********************************************************
+2015-10-23
+********************************************************
+
+CREATE TUTTE LE TABELLE codifiche.Farma*
+CREATE PROC [codifiche_admin].[FarmaProdottiCerca]
+CREATE PROC [codifiche_admin].[FarmaPrincipiAttiviCerca]
+CREATE PROCEDURE dbo.PazientiUiRinotificaFusione
+
+
+********************************************************
+	2015-07-24
+********************************************************
+CREATE TABLE [dbo].[Regimi]
+CREATE TABLE [dbo].[UnitaOperativeRegimi]
+INSERT [dbo].Regimi .....
+
+ALTER FUNCTION [organigramma_admin].[ConcatenaRuoliAttributi] 
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[organigramma_admin].[RuoliNumeroAttributi]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+ DROP FUNCTION [organigramma_admin].[RuoliNumeroAttributi]
+GO
+
+ALTER PROCEDURE  [organigramma_admin].[OggettiActiveDirectoryCerca]
+ALTER PROCEDURE  [organigramma_admin].[RuoliCerca]
+CREATE PROCEDURE [organigramma_admin].[UnitaOperativeRegimiSelect]
+CREATE PROCEDURE [organigramma_admin].[UnitaOperativeRegimiModifica]
+CREATE PROCEDURE [organigramma_admin].[RuoliCopia]
+ALTER PROCEDURE  [organigramma_admin].[RuoliInserisce]
+
+CREATE PROCEDURE [organigramma_da].[RegimiOttieniPerUnitaOperativa]
+
+
+********************************************************
+	2015-04-08 
+********************************************************
+mostra la descrizione al posto del codice per gli attributi di unità op. e sistemi
+ALTER VIEW [organigramma_admin].[UnionAttributi]
+
+
+********************************************************
+	2015-01-21 Codifiche e Organigramma (include 22-23-dic) 
+********************************************************
+ALTER PROCEDURE [codifiche_admin].[SOLECodifichePrestazioniCerca]
+
+
+********************************************************
+	2014-12-23 
+********************************************************
+* ricompilato per tipo campo errato  in SOLECodificaPrestazioni
+
+
+********************************************************
+	2014-12-22 Gestione Utenti applicativi - Codifiche ICD9 e SOLE
+********************************************************
+** modifiche per aggiungere la gestione del servizio organigramma, con relative permissions
+
+	INSERT INTO [dbo].[Servizi] ([Id] ,[Nome] ,[Descrizione]) VALUES (8,'Organigramma','Organigramma Role Manager')
+	CREATE PROCEDURE [dbo].[UtentiUiSQLServerLista]
+	GRANT EXECUTE ON [dbo].[UtentiUiSQLServerLista] TO [DataAccessUi] AS [dbo]		
+	ALTER PROCEDURE [dbo].[UtentiUiLista]
+	ALTER PROCEDURE [dbo].[UtentiUiServiziLista]
+	CREATE PROC [organigramma_admin].[PermessiUtentiInserisce]
+	CREATE PROC [organigramma_admin].[PermessiUtentiModifica]
+	CREATE PROC [organigramma_admin].[PermessiUtentiOttieni]
+** Codifiche SOLE e ICD9
+	CREATE TABLE [codifiche].ICD9TipoCodice 
+		INSERT INTO [codifiche].[ICD9TipoCodice] ([Id],[Descrizione]) VALUES (0,'Diagnosi')
+		INSERT INTO [codifiche].[ICD9TipoCodice] ([Id],[Descrizione]) VALUES (1,'Procedure')
+	CREATE PROC codifiche_admin.ICD9Cerca
+	CREATE PROC codifiche_admin.ICD9TipoCodiceCerca
+	ALTER PROCEDURE [codifiche_admin].[SOLECodifichePrestazioniCerca]
+**
+ALTER PROC [organigramma_admin].[RuoliAttributiCerca]
+
+
+
+********************************************************
+	2014-10-15 - Modifiche Role Manager
+********************************************************
+ALTER FUNCTION [organigramma_admin].[ConcatenaRuoliSistemi] 
+ALTER FUNCTION [organigramma_admin].[ConcatenaRuoliUnitaOperative] 
+CREATE FUNCTION organigramma_admin.ConcatenaRuoliAttributi 
+ALTER PROC [organigramma_admin].[RuoliCerca]
+
+
+********************************************************
+	2014-01-15 - Modifiche per Anonimizzazione
+********************************************************
+-Nuova versione: 1.3.0.0
+
+-Aggiunto la gestione degli errori SQL tramite tabella "ErroLog" e SP "LogError()", "RaiseErrorByID()" + funzione NET TrapError() che scrive nell'event source e compone un messaggio per l'utente.
+
+-Aggiunto i nuovi ruoli CREATE_ANONIMIZZAZIONE e READ_ANONIMIZZAZIONE
+
+-Menù sinistro: modificata la posizione e il title di alcuni link
+				Aumentata l'indentatura dei rami del treeview (NodeIndent="1" -> NodeIndent="15")
+
+-EntitaAccessiLista.aspx
+	1) modificato gli header della tabella: Nome->Account, Descrizione 1->Display Name, Descrizione 2 -> Common name, Descriione 3 -> Descrizione
+	2) Creato colonna template con Domijnio\Account al posto di due colonne separate
+
+-Modificato il dataset "Permessidataset"
+
+-Aggiunto il dataset "PazientiAnonimizzazioni"
+
+
+-Nuova pagina "PazientiCreaAnonimizzazione.aspx"
+-Nuova pagina "PazientiCercaAnonimizzazione.aspx"
+-Modificata la pagina "PazientiLista.aspx" per abilitare link "Nuovo paziente" in base ai ruoli. 
+-Modificata la pagina "PazientiDettaglio.aspx":
+	-gestione ruoli + anonimizzazioni (item toolbar "Anonimizzazione" + TAB per lista delle anonimizzazioni)
+	-VISUALIZZAZIONE LIST DELLE ANONIMIZZAZIONI NEL DETTAGLIO PAZIENTE/LINK VAI A POSIZIONE ORIGINALE SE ANAGRAFICA ANONIMA
+	-try catch dove mancavano
+
+-Modificata la gestione del sitemap: aggiunto aattributo hide="true" e nella pagina sitemaster ho modificato il codice per nascondere e selezionare l'item del tree cliccato
+-Via codice viene anche fatto l'IsInRole() del ruolo associato ai rami del tree del menu sinistro per "trimmare" rami che l'utente non deve vedere.
+
+- Corretto problema dropdownlist del sesso: se sesso era minuscolo veniva generato un errore (--> in DataSource_selected eseguo ToUpper() del campo "Sesso")

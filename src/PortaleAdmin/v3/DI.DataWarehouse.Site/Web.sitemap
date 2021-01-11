@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="DWH" description="DWH">
+
+    <!--Ricerca-->
+    <siteMapNode title="Ricerca" description="Ricerca">
+      <siteMapNode url="Pages/RefertiLista.aspx" title="Referti" description="Referti" >
+        <siteMapNode hide="true"  url="Pages/SOLELogInvii.aspx" title="Log Invii SOLE" description="Log Invii SOLE" />
+        <siteMapNode hide="true" url="Pages/RefertiDettaglio.aspx" title="Dettaglio Referto" description="Dettaglio Referto"/>
+      </siteMapNode>
+      <siteMapNode url="Pages/RicoveriLista.aspx" title="Ricoveri" description="Ricoveri" >
+        <siteMapNode hide="true" url="Pages/EventiSOLELogInvii.aspx" title="Log Invii SOLE" description="Log Invii SOLE" />
+        <siteMapNode hide="true" url="Pages/RicoveriDettaglio.aspx" title="Dettaglio Ricovero" description="Dettaglio Ricovero"/>
+      </siteMapNode>
+      <siteMapNode url="PagesNoteAnamnestiche/NoteAnamnesticheLista.aspx" title="Note Anamnestiche" description="Note Anamnestiche">
+        <siteMapNode hide="true" url="PagesNoteAnamnestiche/NoteAnamnesticheDettaglio.aspx" title="Dettaglio Nota Anamnestica" description="Dettaglio Nota Anamnestica"/>
+      </siteMapNode>
+    </siteMapNode>
+
+    <!--Monitoraggio-->
+    <siteMapNode title="Monitoraggio" description="Monitoraggio">
+      <siteMapNode url="Pages/RefertiUltimiArrivi.aspx" title="Referti Ultimi Arrivi" description="Referti Ultimi Arrivi" />
+      <siteMapNode url="Pages/RefertiSinottico.aspx" title="Referti Sinottico" description="Referti Sinottico" />
+      <siteMapNode url="Pages/EventiUltimiArrivi.aspx" title="Eventi Ultimi Arrivi" description="Eventi Ultimi Arrivi" />
+      <siteMapNode url="Pages/EventiSinottico.aspx" title="Eventi Sinottico" description="Eventi Sinottico" />
+      <siteMapNode url="CrashSystem/LogOperazioni.aspx" title="Log Crash System" description="Log Crash System" />
+      <siteMapNode url="Pages/RefertiInviiSoleSinottico.aspx" title="Referti SOLE Sinottico" description="Invii Referti SOLE Sinottico" />
+      <siteMapNode url="Pages/EventiInviiSoleSinottico.aspx" title="Eventi SOLE Sinottico" description="Invii Eventi SOLE Sinottico" />
+      <siteMapNode url="PagesNoteAnamnestiche/NoteAnamnesticheUltimiArrivi.aspx" title="Note Anamnestiche Ultimi Arrivi" description="Note Anamnestiche Ultimi Arrivi" />
+      <siteMapNode url="PagesNoteAnamnestiche/NoteAnamnesticheSinottico.aspx" title="Note Anamnestiche Sinottico" description="Note Anamnestiche Sinottico" />
+      <siteMapNode url="PagesLog/LogAggancioPaziente.aspx" title="Log Mnt Aggancio Paziente" description="Log Mnt Aggancio Paziente" />
+    </siteMapNode>
+
+    <siteMapNode url="Pages/ReportViewer.aspx?repository=dwh&amp;reportName=BackEnd/Default.aspx" title="Visualizzazioni" description="Visualizzazioni" />
+
+    <siteMapNode url="Pages/StiliLista.aspx" title="Stili" description="Stili">
+      <siteMapNode hide="true" url="Pages/StiliDettaglio.aspx" title="Dettaglio stile" description="Dettaglio stile" />
+    </siteMapNode>
+
+    <siteMapNode url="Pages/TipiRefertoLista.aspx" title="Tipi Referto" description="Tipi Referto">
+      <siteMapNode hide="true" url="Pages/TipiRefertoDettaglio.aspx" title="Dettaglio Tipo Referto" description="Dettaglio Tipo Referto" />
+    </siteMapNode>
+
+    <siteMapNode url="Pages/SistemiErogantiDocumentiLista.aspx" title="Documenti sistemi eroganti" description="Documenti sistemi eroganti">
+      <siteMapNode  hide="true" url="Pages/SistemiErogantiDocumentiDettaglio.aspx" title="Dettaglio documenti sistemi eroganti" description="Dettaglio documenti sistemi eroganti">
+        <siteMapNode hide="true" url="Pages/FileUpload.aspx" title="File Upload" description="File Upload" />
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="Pages/SistemiErogantiLista.aspx" title="Sistemi Eroganti" description="Sistemi Eroganti">
+      <siteMapNode hide="true" url="Pages/SistemiErogantiDettaglio.aspx" title="Dettaglio Sistemi Eroganti" description="Dettaglio Sistemi Eroganti" />
+    </siteMapNode>
+    <siteMapNode url="Pages/RefertiNoteLista.aspx" title="Note referti" description="Note referti">
+      <siteMapNode hide="true" url="Pages/RefertiNoteDettaglio.aspx" title="Dettaglio note referti" description="Dettaglio note referti" />
+    </siteMapNode>
+    <siteMapNode url="Pages/AbbonamentiStampe.aspx" title="Abbonamenti stampe" description="Abbonamenti stampe">
+      <siteMapNode hide="true" url="Pages/AbbonamentiStampeDettaglio.aspx" title="Dettaglio abbonamenti stampe" description="Dettaglio abbonamenti stampe" />
+    </siteMapNode>
+
+    <siteMapNode url="CrashSystem/SottoscrizioniLista.aspx" title="Sottoscrizioni Crash System" description="Sottoscrizioni Crash System">
+      <siteMapNode hide="true" url="CrashSystem/SottoscrizioniDettaglio.aspx" title="Dettaglio Sottoscrizione" description="Dettaglio Sottoscrizione" />
+    </siteMapNode>
+
+    <!-- Sistemi Abilitati MMG --><!--
+    <siteMapNode url="Pages/MMGSistemiAbilitatiLista.aspx" title="MMG - Sistemi Abilitati" description="MMG - Sistemi Abilitati" >
+      <siteMapNode hide="true" url="Pages/MMGSistemiAbilitatiDettaglio.aspx" title="Dettaglio Sistema abilitato"  description="Dettaglio Sistema abilitato" />
+    </siteMapNode>-->
+
+    <siteMapNode url="Pages/OscuramentiLista.aspx" title="Oscuramenti" description="Oscuramenti">
+      <siteMapNode hide="true" url="Pages/OscuramentiDettaglio.aspx" title="Dettaglio Oscuramento" description="Dettaglio Oscuramento" />
+      <siteMapNode hide="true" url="Pages/OscuramentiRinotifica.aspx" title="Rinotifica" description="Rinotifica"/>
+      <siteMapNode hide="true" url="Pages/OscuramentoRuoliLista.aspx" title="Lista Ruoli" description="Lista Ruoli" />
+    </siteMapNode>
+    <siteMapNode url="Pages/RefertiRiassociazioneLista.aspx" title="Riassociazione Referti" description="Riassociazione Referti" >
+      <siteMapNode hide="true" url="Pages/RefertiRiassociazioneDettaglio.aspx" title="Dettaglio Referto" description="Dettaglio Referto" >
+        <siteMapNode hide="true" url="Pages/RefertiRiassociazioneSACPazientiLista.aspx" title="Ricerca Paziente" description="Ricerca Paziente" />
+      </siteMapNode>
+    </siteMapNode>
+    
+    <siteMapNode url="PagesRicoveri/RicoveriRiassociazioneLista.aspx" title="Riassociazione Ricoveri" description="Riassociazione Ricoveri" >
+      <siteMapNode hide="true" url="PagesRicoveri/RicoveriRiassociazioneDettaglio.aspx" title="Dettaglio Ricovero" description="Dettaglio Ricoveri" >
+        <siteMapNode hide="true" url="PagesRicoveri/RicoveriRiassociazioneSACPazientiLista.aspx" title="Ricerca Paziente" description="Ricerca Paziente" />
+      </siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode url="PagesNoteAnamnestiche/NoteAnamnesticheRiassociazioneLista.aspx" title="Riassociazione Note Anamnestiche" description="Riassociazione Note Anamnestiche" >
+      <siteMapNode hide="true" url="PagesNoteAnamnestiche/NoteAnamnesticheRiassociazioneDettaglio.aspx" title="Dettaglio Note Anamnestiche" description="Dettaglio Note Anamnestiche" >
+        <siteMapNode hide="true" url="PagesNoteAnamnestiche/NoteAnamnesticheRiassociazionePazientiLista.aspx" title="Ricerca Paziente" description="Ricerca Paziente" />
+      </siteMapNode>
+    </siteMapNode>
+
+    <!--RINOTIFICA-->
+    <siteMapNode url="Pages/RinotificaMassivaReferti.aspx" title="Rinotifica Referti" description="Rinotifica Referti">
+    </siteMapNode>
+
+    <siteMapNode url="Pages/RinotificaMassivaRicoveri.aspx" title="Rinotifica Eventi Ricoveri" description="Rinotifica Eventi Ricoveri">
+    </siteMapNode>
+
+    <!--TRANSCODIFICHE -->
+    <siteMapNode url="Transcodifiche/TranscodificaRegimiLista.aspx" title="Transcodifica Regimi" description="Transcodifica Regimi">
+      <siteMapNode hide="true" url="Transcodifiche/TranscodificaRegimiDettaglio.aspx" title="Dettaglio Transcodifica Regimi" description="Dettaglio Transcodifica Regimi"/>
+    </siteMapNode>
+    
+    <siteMapNode url="Transcodifiche/TranscodificaPrioritaLista.aspx" title="Transcodifica Priorita" description="Transcodifica Priorita">
+      <siteMapNode hide="true" url="Transcodifiche/TranscodificaPrioritaDettaglio.aspx" title="Dettaglio Transcodifica Priorita" description="Dettaglio Transcodifica Priorita"/>      
+    </siteMapNode>
+    
+      
+    <!-- PER LE OPERAZIONI DI RIPROCESSAMENTO/REINVIO di referti ed eventi-->
+    <siteMapNode title="Sole" description="Sole">
+      <siteMapNode url="PagesSole/RefertiReinvioByEsito.aspx" title="Reinvio referti" description="Reinvia i referti con esito invio errato o ancora da inviare">
+      </siteMapNode>
+      <siteMapNode url="PagesSole/EventiReinvioByEsito.aspx" title="Reinvio eventi" description="Reinvia gli eventi con esito invio errato o ancora da inviare">
+      </siteMapNode>
+    </siteMapNode>
+      
+
+    <!--Applicazioni Integrate-->
+    <siteMapNode title="Applicazioni Integrate" description="Applicazioni Integrate" >
+      <!--Utenti-->
+      <siteMapNode url="Pages/UtentiLista.aspx" title="Utenti Applicativi" description="Utenti Applicativi" >
+        <siteMapNode hide="true" url="Pages/UtentiDettaglio.aspx" title="Dettaglio Utente"  description="Dettaglio Utente" />
+      </siteMapNode>
+
+    </siteMapNode>
+
+    <!--Richieste di abilitazione-->
+    <siteMapNode title="Richieste di abilitazione" description="Richieste di abilitazione" >
+      <siteMapNode url="Accessi/GdALista.aspx" title="Gruppi di Utenti" description="Gruppi di Utenti" />
+    </siteMapNode>
+    
+    <siteMapNode title="Tools" description="Tools" >
+      <siteMapNode url="PagesTools/RefertoExport.aspx" title="Export referto" description="Esporta il referto" />
+      <siteMapNode url="PagesTools/RefertoImport.aspx" title="Import referto" description="Importa il referto" />
+    </siteMapNode>
+    
+
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,59 @@
+﻿
+<div class="modal @ModalClass" tabindex="-1" role="dialog" style="display: @ModalDisplay" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold">Xml</h5>
+                <button type="button" class="close opacity-unset" @onclick="Close" aria-label="Close">
+                    <span class="fas fa-times fa-lg"></span>
+                </button>
+            </div>
+            <div class="modal-body modal-invite-dialog">
+                @* Testo iframe *@
+                    <iframe type="text/plain" src="xml/@Id" width="900" height="600"></iframe>
+
+                @*<embed src="xml" width="600" height="800" />*@
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-100 btn-secondary" @onclick="Close">Chiudi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ShowBackdrop)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+
+@code {
+
+    public string Id;
+
+    // l'xml arriva dal controller e popola l'iframe:
+    // servizio -> Controllers.XmlController.Get (Popolato al click nella lista)
+    // Obbiettivo: passare in uno scoped l'xml e caricarlo in questa modal
+
+    //Modal
+    public string ModalDisplay = "none;";
+    public string ModalClass = "";
+    public bool ShowBackdrop = false;
+
+    public void Open(string id)
+    {
+        Id = id;
+        ModalDisplay = "block;";
+        ModalClass = "show";
+        ShowBackdrop = true;
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        ModalDisplay = "none";
+        ModalClass = "";
+        ShowBackdrop = false;
+        StateHasChanged();
+    }
+}

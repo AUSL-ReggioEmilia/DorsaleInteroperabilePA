@@ -1,0 +1,103 @@
+﻿@inherits LayoutComponentBase
+@inject IDBRepository _dbRepository
+@inject ILogger<Header> _logger
+
+<div class="main">
+
+    <Header MainTitle="BIZTALK MONITOR" SubTitle="@_subTitle" InformazioniURL="@_informazioniURL" />
+    <NavMenu />
+
+    <CascadingValue Value="@ClientIsIE">
+        <div class="container-fluid pl-0">
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-12 pr-0">
+                    <NavSubMenu />
+                </div>
+                <div class="col-xl-10 col-lg-10 col-md-10 col-12">
+
+                    @Body
+
+                </div>
+            </div>
+        </div>
+    </CascadingValue>
+
+    <Footer CenterText="@_subTitle" />
+
+</div>
+
+@code {
+
+    [CascadingParameter]
+    private Task<AuthenticationState> _authenticationStateTask { get; set; }
+    private System.Security.Claims.ClaimsPrincipal _user;
+
+    [CascadingParameter]
+    public string UserAgent { get; set; }
+
+    public bool ClientIsIE;
+
+    private string _subTitle;
+    private string _informazioniURL;
+    private PortalAdminConfigurazioniData _configurazioni;
+    private List<PortalAdminConfigurazioneMenuData> _menu = new List<PortalAdminConfigurazioneMenuData>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Utente corrente
+        _user = (await _authenticationStateTask).User;
+
+        try
+        {
+            List<PortalAdminConfigurazioneMenuData> menuTemp;
+            using (PortalAdminConfigurazioneMenuAdapter configurazioneMenuRepository = _dbRepository.ConfigurazioneMenu)
+            {
+                // Ottengo tutte le voci del menù
+                menuTemp = await configurazioneMenuRepository.GetAll();
+
+                // Ottengo l'URL per navigare alla pagina di Informazione del portale home ADMIN
+                _informazioniURL = await configurazioneMenuRepository.GetURLInformazioni();
+            }
+            if (menuTemp != null)
+            {
+                foreach (PortalAdminConfigurazioneMenuData item in menuTemp)
+                {
+                    //Se l'utente corrente ha il Gruppo ad per poter vedere la n voce del menu l'aggiungo alla lista "menu"
+                    string sIdRuoloLetture = Utility.GetSidObjectDomain(item.RuoloLettura);
+                    if (_user.IsInRole(sIdRuoloLetture))
+                    {
+                        _menu.Add(item);
+                    }
+                }
+            }
+
+            // Ottengo il sottotitolo del portale
+            using (PortalAdminConfigurazioniAdapter configurazioniRepository = _dbRepository.ConfigurazioniAdmin)
+            {
+                _configurazioni = await configurazioniRepository.GetSubTitle();
+            }
+
+            _subTitle = _configurazioni.ValoreString;
+
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Errore durante il caricamento del menù dei portali");
+        }
+
+    }
+
+    protected override void OnInitialized()
+    {
+        if (UserAgent != null)
+        {
+            // Controllo se il browser è IE 11 e valorizzo la booleana
+            if (UserAgent.Contains("Trident/7.0"))
+            {
+                ClientIsIE = true;
+                StateHasChanged();
+            }
+        }
+
+    }
+}

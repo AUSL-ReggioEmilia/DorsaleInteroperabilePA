@@ -1,0 +1,37 @@
+﻿
+<td class="@CssClass" style="@rowStyle">
+    @if (Value != null)
+    {
+        @Value
+    }
+    else
+    {
+        @TemplateField
+    }
+</td>
+
+
+@code {
+
+    //
+    // Parametri
+    //
+    [Parameter] public RenderFragment TemplateField { get; set; }
+    [Parameter] public object Value { get; set; }
+    [Parameter] public string CssClass { get; set; }
+
+    /// <summary>
+    /// Imposta la colonna a dimensione minima per adattarsi alle icone.
+    /// </summary>
+    [Parameter] public bool IsIcon { get; set; } = false;
+
+    private string rowStyle = "";
+
+    protected override void OnInitialized()
+    {
+        if (IsIcon)
+        {
+            rowStyle = "width: 1px;";
+        }
+    }
+}

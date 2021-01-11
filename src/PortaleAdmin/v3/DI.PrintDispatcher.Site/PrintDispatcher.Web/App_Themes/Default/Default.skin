@@ -1,0 +1,61 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White">
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:GridView runat="server" SkinId="GridViewSkin"
+    AllowSorting="true" AllowPaging="false" PageSize="100" Width="100%"
+    AutoGenerateColumns="False" GridLines="Horizontal" BorderColor="White" BorderStyle="Solid"
+    BorderWidth="1px" CellPadding="2" CellSpacing="0"
+    EmptyDataText="Nessun dato da visualizzare!" EmptyDataRowStyle-CssClass="GridViewEmptyDataRowStyle">
+        <FooterStyle CssClass="GridViewFooterStyle" />
+        <HeaderStyle CssClass="GridViewHeaderStyle" HorizontalAlign="Left" />
+        <PagerStyle CssClass="GridViewPagerStyle" HorizontalAlign="Center" />
+        <RowStyle CssClass="GridViewRowStyle" HorizontalAlign="Left" />
+        <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
+        <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
+</asp:GridView>
+
+<asp:GridView runat="server" SkinId="GridViewYUISkin"
+    AllowSorting="true" AllowPaging="false" PageSize="100" Width="100%"
+    AutoGenerateColumns="False" GridLines="None" CssClass="tablestyle"
+    EmptyDataText="Nessun dato da visualizzare!" EmptyDataRowStyle-CssClass="GridViewEmptyDataRowStyle">
+        <AlternatingRowStyle CssClass="altrowstyle" />
+        <HeaderStyle CssClass="headerstyle" />
+        <RowStyle CssClass="rowstyle" />
+</asp:GridView>
+
+<asp:GridView runat="server" SkinId="GridViewPagingYUISkin"
+    AllowSorting="true" AllowPaging="true" PageSize="100" Width="100%"
+    AutoGenerateColumns="False" GridLines="None" CssClass="tablestyle"
+    EmptyDataText="Nessun dato da visualizzare!" EmptyDataRowStyle-CssClass="GridViewEmptyDataRowStyle">
+        <AlternatingRowStyle CssClass="altrowstyle" />
+        <HeaderStyle CssClass="headerstyle" />
+        <RowStyle CssClass="rowstyle" />
+</asp:GridView>
+
+<asp:TreeView runat="server" SkinId="TreeViewSideBar"
+    ShowLines="True" MaxDataBindDepth="1"
+
+    SelectedNodeStyle-CssClass="TreeViewSelectedNodeStyle"
+    RootNodeStyle-CssClass="TreeViewRootNodeStyle"
+    LeafNodeStyle-CssClass="TreeViewLeafNodeStyle"
+    NodeStyle-CssClass="TreeViewNodeStyle">
+</asp:TreeView>
+
+<asp:SiteMapPath runat="server" SkinId="SiteMapPathSkin">
+    <PathSeparatorStyle CssClass="SiteMapPathSeparatorStyle" />
+    <RootNodeStyle CssClass="SiteMapPathRootNodeStyle" />
+    <NodeStyle CssClass="SiteMapPathNodeStyle" />
+    <CurrentNodeStyle CssClass="SiteMapPathCurrentNodeStyle" />
+</asp:SiteMapPath>

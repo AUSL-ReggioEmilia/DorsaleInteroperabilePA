@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DwhClinicoMMG">
+  <DataContextMoniker Name="/DwhClinicoMMGDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e0d52c59-5966-4fff-a784-e15323581212" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DwhClinicoMMGDataContext/SistemiAbilitati" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5eba324-7978-4092-a31d-b7465c0158cc" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

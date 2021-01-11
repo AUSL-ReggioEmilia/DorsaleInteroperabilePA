@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8d046000-714f-405d-aaf5-cb2a57d5a46a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OE6.xsd" MetadataType="Schema" ID="c1136292-8636-471a-ae14-08d305c58575" SourceId="1" SourceUrl="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd0" />
+    <MetadataFile FileName="OE1.disco" MetadataType="Disco" ID="0ca5cf66-4f64-4685-8d75-f36c7e6c1823" SourceId="1" SourceUrl="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?disco" />
+    <MetadataFile FileName="OE61.xsd" MetadataType="Schema" ID="fe6fb1b0-52b0-40a8-8b79-1429651553ac" SourceId="1" SourceUrl="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd5" />
+    <MetadataFile FileName="OE62.xsd" MetadataType="Schema" ID="499d885a-853a-4e16-a410-ac51e4d5541d" SourceId="1" SourceUrl="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd4" />
+    <MetadataFile FileName="OrderEntry1.wsdl" MetadataType="Wsdl" ID="b540c7ff-530d-41bc-bfad-a38955bb426c" SourceId="1" SourceUrl="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?wsdl" />
+    <MetadataFile FileName="OE63.xsd" MetadataType="Schema" ID="0060d4ed-6e37-43fb-a31a-0b9c96199511" SourceId="1" SourceUrl="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd3" />
+    <MetadataFile FileName="OE64.xsd" MetadataType="Schema" ID="a24e7fd6-8499-489c-97a0-8998cff6f201" SourceId="1" SourceUrl="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd2" />
+    <MetadataFile FileName="OE65.xsd" MetadataType="Schema" ID="16e01f95-9c83-4d13-8f5b-91780e812fb6" SourceId="1" SourceUrl="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

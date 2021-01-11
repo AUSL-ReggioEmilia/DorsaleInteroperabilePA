@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_OeConnGST" EntityNamespace="OeConnAuslGST" ContextNamespace="OeConnAuslGST" Class="OeConnAuslGstDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_OeConnGST;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_OeConnGSTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TranscodificaAttributiPrestazioniGstELCO" Member="TranscodificaAttributiPrestazioniGstELCO">
+    <Type Name="TranscodificaAttributiPrestazioniGstELCO">
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneGst" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneRis" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Posizione" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="TipoDato" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="TipoContenuto" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Association Name="TranscodificaAttributiPrestazioniGstELCOSistemiEroganti_TranscodificaAttributiPrestazioniGstELCO" Member="TranscodificaAttributiPrestazioniGstELCOSistemiEroganti" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="TranscodificaAttributiPrestazioniGstELCOSistemiEroganti" IsForeignKey="true" />
+      <Association Name="TranscodificaAttributiPrestazioniGstELCONomi_TranscodificaAttributiPrestazioniGstELCO" Member="TranscodificaAttributiPrestazioniGstELCONomi" ThisKey="Nome" OtherKey="Nome" Type="TranscodificaAttributiPrestazioniGstELCONomi" IsForeignKey="true" />
+      <Association Name="TranscodificaAttributiPrestazioniGstELCOAziendeEroganti_TranscodificaAttributiPrestazioniGstELCO" Member="TranscodificaAttributiPrestazioniGstELCOAziendeEroganti" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="TranscodificaAttributiPrestazioniGstELCOAziendeEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TranscodificaAttributiPrestazioniGstMetafora" Member="TranscodificaAttributiPrestazioniGstMetafora">
+    <Type Name="TranscodificaAttributiPrestazioniGstMetafora">
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneGst" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneLis" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Posizione" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="TipoDato" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="TipoContenuto" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti_TranscodificaAttributiPrestazioniGstMetafora" Member="TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti" ThisKey="StrutturaErogante" OtherKey="StrutturaErogante" Type="TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti" IsForeignKey="true" />
+      <Association Name="TranscodificaAttributiPrestazioniGstMetaforaNomi_TranscodificaAttributiPrestazioniGstMetafora" Member="TranscodificaAttributiPrestazioniGstMetaforaNomi" ThisKey="Nome" OtherKey="Nome" Type="TranscodificaAttributiPrestazioniGstMetaforaNomi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.TranscodificaAttributiPrestazioniGstELCOSistemiEroganti" Member="TranscodificaAttributiPrestazioniGstELCOSistemiEroganti">
+    <Type Name="TranscodificaAttributiPrestazioniGstELCOSistemiEroganti">
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TranscodificaAttributiPrestazioniGstELCOSistemiEroganti_TranscodificaAttributiPrestazioniGstELCO" Member="TranscodificaAttributiPrestazioniGstELCO" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="TranscodificaAttributiPrestazioniGstELCO" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="admin.TranscodificaAttributiPrestazioniGstELCONomi" Member="TranscodificaAttributiPrestazioniGstELCONomi">
+    <Type Name="TranscodificaAttributiPrestazioniGstELCONomi">
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TranscodificaAttributiPrestazioniGstELCONomi_TranscodificaAttributiPrestazioniGstELCO" Member="TranscodificaAttributiPrestazioniGstELCO" ThisKey="Nome" OtherKey="Nome" Type="TranscodificaAttributiPrestazioniGstELCO" />
+    </Type>
+  </Table>
+  <Table Name="admin.TranscodificaAttributiPrestazioniGstELCOAziendeEroganti" Member="TranscodificaAttributiPrestazioniGstELCOAziendeEroganti">
+    <Type Name="TranscodificaAttributiPrestazioniGstELCOAziendeEroganti">
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(64)" IsPrimaryKey="true" CanBeNull="true" />
+      <Association Name="TranscodificaAttributiPrestazioniGstELCOAziendeEroganti_TranscodificaAttributiPrestazioniGstELCO" Member="TranscodificaAttributiPrestazioniGstELCO" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="TranscodificaAttributiPrestazioniGstELCO" />
+    </Type>
+  </Table>
+  <Table Name="admin.TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti" Member="TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti">
+    <Type Name="TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti">
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti_TranscodificaAttributiPrestazioniGstMetafora" Member="TranscodificaAttributiPrestazioniGstMetafora" ThisKey="StrutturaErogante" OtherKey="StrutturaErogante" Type="TranscodificaAttributiPrestazioniGstMetafora" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="admin.TranscodificaAttributiPrestazioniGstMetaforaNomi" Member="TranscodificaAttributiPrestazioniGstMetaforaNomi">
+    <Type Name="TranscodificaAttributiPrestazioniGstMetaforaNomi">
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TranscodificaAttributiPrestazioniGstMetaforaNomi_TranscodificaAttributiPrestazioniGstMetafora" Member="TranscodificaAttributiPrestazioniGstMetafora" ThisKey="Nome" OtherKey="Nome" Type="TranscodificaAttributiPrestazioniGstMetafora" />
+    </Type>
+  </Table>
+</Database>

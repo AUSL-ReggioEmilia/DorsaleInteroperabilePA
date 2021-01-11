@@ -1,0 +1,1263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.progel.it/WCF/OE/WsTypes/1.1" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/OE/WsTypes/1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_1/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd3" namespace="http://schemas.progel.it/OE/Types/1.1" />
+  <xs:complexType name="TokenAccessoType">
+    <xs:sequence>
+      <xs:element name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Utente" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q1="http://schemas.progel.it/OE/Types/1.1" name="SistemaRichiedente" nillable="true" type="q1:SistemaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DataRilascio" type="xs:dateTime" />
+      <xs:element name="DataScadenza" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PcRichiedente" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TokenAccessoType" nillable="true" type="tns:TokenAccessoType" />
+  <xs:complexType name="ProfiloUtenteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Codice" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Prestazioni" nillable="true" type="tns:ProfiloUtentePrestazioniType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfiloUtenteType" nillable="true" type="tns:ProfiloUtenteType" />
+  <xs:complexType name="ProfiloUtentePrestazioniType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Prestazione" nillable="true" type="tns:ProfiloUtentePrestazioneType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfiloUtentePrestazioniType" nillable="true" type="tns:ProfiloUtentePrestazioniType" />
+  <xs:complexType name="ProfiloUtentePrestazioneType">
+    <xs:sequence>
+      <xs:element name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Codice" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q2="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="SistemaErogante" nillable="true" type="q2:SistemaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Tipo" type="tns:TipoPrestazioneErogabileEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfiloUtentePrestazioneType" nillable="true" type="tns:ProfiloUtentePrestazioneType" />
+  <xs:simpleType name="TipoPrestazioneErogabileEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Prestazione" />
+      <xs:enumeration value="ProfiloBlindato" />
+      <xs:enumeration value="ProfiloScomponibile" />
+      <xs:enumeration value="ProfiloUtente" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipoPrestazioneErogabileEnum" nillable="true" type="tns:TipoPrestazioneErogabileEnum" />
+  <xs:complexType name="OrdineType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdGuidOrderEntry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IdRichiestaOrderEntry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IdRichiestaRichiedente" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q3="http://schemas.progel.it/OE/Types/1.1" name="SistemaRichiedente" nillable="true" type="q3:SistemaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q4="http://schemas.progel.it/OE/Types/1.1" name="UnitaOperativaRichiedente" nillable="true" type="q4:StrutturaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q5="http://schemas.progel.it/OE/Types/1.1" name="Regime" nillable="true" type="q5:RegimeType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DataRichiesta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataPrenotazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q6="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Operatore" nillable="true" type="q6:OperatoreType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q7="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Priorita" nillable="true" type="q7:PrioritaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q8="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="TipoEpisodio" nillable="true" type="q8:CodiceDescrizioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q9="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Paziente" nillable="true" type="q9:PazienteType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q10="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Consensi" nillable="true" type="q10:ConsensiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatiAggiuntivi" nillable="true" type="tns:DatiAggiuntiviType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatiPersistenti" nillable="true" type="tns:DatiPersistentiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RigheRichieste" nillable="true" type="tns:RigheRichiesteType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AnteprimaPrestazioni" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Cancellabile" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdineType" nillable="true" type="tns:OrdineType" />
+  <xs:complexType name="DatiAggiuntiviType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatoAggiuntivo" nillable="true" type="tns:DatoNomeValoreType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiAggiuntiviType" nillable="true" type="tns:DatiAggiuntiviType" />
+  <xs:complexType name="DatoNomeValoreType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nome" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TipoDato" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TipoContenuto" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ValoreDato" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatoAccessorio" nillable="true" type="tns:DatoAccessorioType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatoNomeValoreType" nillable="true" type="tns:DatoNomeValoreType" />
+  <xs:complexType name="DatoAccessorioType">
+    <xs:sequence>
+      <xs:element name="Codice" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Etichetta" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Tipo" type="tns:TipoDatoAccessorioEnum" />
+      <xs:element name="Obbligatorio" type="xs:boolean" />
+      <xs:element name="Ripetibile" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Valori" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Ordinamento" type="xs:int" />
+      <xs:element minOccurs="0" name="Gruppo" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValidazioneRegex" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValidazioneMessaggio" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatoAccessorioType" nillable="true" type="tns:DatoAccessorioType" />
+  <xs:simpleType name="TipoDatoAccessorioEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TextBox" />
+      <xs:enumeration value="ComboBox" />
+      <xs:enumeration value="NumberBox" />
+      <xs:enumeration value="FloatBox" />
+      <xs:enumeration value="DateBox" />
+      <xs:enumeration value="DateTimeBox" />
+      <xs:enumeration value="TimeBox" />
+      <xs:enumeration value="ListBox" />
+      <xs:enumeration value="ListMultiBox" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipoDatoAccessorioEnum" nillable="true" type="tns:TipoDatoAccessorioEnum" />
+  <xs:complexType name="DatiPersistentiType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatoPersistente" nillable="true" type="tns:DatoNomeValoreType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPersistentiType" nillable="true" type="tns:DatiPersistentiType" />
+  <xs:complexType name="RigheRichiesteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RigaRichiesta" nillable="true" type="tns:RigaRichiestaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RigheRichiesteType" nillable="true" type="tns:RigheRichiesteType" />
+  <xs:complexType name="RigaRichiestaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdGuidOrderEntry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IdRigaOrderEntry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q11="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="OperazioneOrderEntry" type="q11:OperazioneRigaRichiestaOrderEntryEnum" />
+      <xs:element minOccurs="0" name="IdRigaRichiedente" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IdRigaErogante" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q12="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="OperazioneRichiedente" nillable="true" type="q12:CodiceDescrizioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q13="http://schemas.progel.it/OE/Types/1.1" name="SistemaErogante" nillable="true" type="q13:SistemaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IdRichiestaErogante" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q14="http://schemas.progel.it/OE/Types/1.1" name="Prestazione" nillable="true" type="q14:PrestazioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PrestazioneTipo" type="tns:TipoPrestazioneErogabileEnum" />
+      <xs:element xmlns:q15="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Consensi" nillable="true" type="q15:ConsensiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatiAggiuntivi" nillable="true" type="tns:DatiAggiuntiviType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RigaRichiestaType" nillable="true" type="tns:RigaRichiestaType" />
+  <xs:complexType name="StatoType">
+    <xs:sequence>
+      <xs:element name="Ordine" nillable="true" type="tns:OrdineType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Erogati" nillable="true" type="tns:TestateErogateType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DescrizioneStato" type="tns:StatoDescrizioneEnum" />
+      <xs:element name="StatoValidazione" nillable="true" type="tns:StatoValidazioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatoType" nillable="true" type="tns:StatoType" />
+  <xs:complexType name="TestateErogateType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Erogato" nillable="true" type="tns:TestataErogatoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestateErogateType" nillable="true" type="tns:TestateErogateType" />
+  <xs:complexType name="TestataErogatoType">
+    <xs:sequence>
+      <xs:element xmlns:q16="http://schemas.progel.it/OE/Types/1.1" name="StatoOrderEntry" type="q16:StatoTestataErogatoOrderEntryEnum" />
+      <xs:element minOccurs="0" name="IdRichiestaErogante" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q17="http://schemas.progel.it/OE/Types/1.1" name="SistemaErogante" nillable="true" type="q17:SistemaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q18="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="StatoErogante" nillable="true" type="q18:CodiceDescrizioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DataPrenotazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q19="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Operatore" nillable="true" type="q19:OperatoreType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q20="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Consensi" nillable="true" type="q20:ConsensiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatiAggiuntivi" nillable="true" type="tns:DatiAggiuntiviType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatiPersistenti" nillable="true" type="tns:DatiPersistentiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="RigheErogate" nillable="true" type="tns:RigheErogateType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestataErogatoType" nillable="true" type="tns:TestataErogatoType" />
+  <xs:complexType name="RigheErogateType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RigaErogata" nillable="true" type="tns:RigaErogataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RigheErogateType" nillable="true" type="tns:RigheErogateType" />
+  <xs:complexType name="RigaErogataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdRigaOrderEntry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q21="http://schemas.progel.it/OE/Types/1.1" name="StatoOrderEntry" type="q21:StatoRigaErogataOrderEntryEnum" />
+      <xs:element minOccurs="0" name="IdRigaRichiedente" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IdRigaErogante" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q22="http://schemas.progel.it/OE/Types/1.1" name="StatoErogante" nillable="true" type="q22:CodiceDescrizioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q23="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Operatore" nillable="true" type="q23:OperatoreType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q24="http://schemas.progel.it/OE/Types/1.1" name="Prestazione" nillable="true" type="q24:PrestazioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q25="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Consensi" nillable="true" type="q25:ConsensiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatiAggiuntivi" nillable="true" type="tns:DatiAggiuntiviType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q26="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Versione" nillable="true" type="q26:VersioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RigaErogataType" nillable="true" type="tns:RigaErogataType" />
+  <xs:simpleType name="StatoDescrizioneEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inserito" />
+      <xs:enumeration value="Inoltrato" />
+      <xs:enumeration value="Modificato" />
+      <xs:enumeration value="Cancellato" />
+      <xs:enumeration value="Accettato" />
+      <xs:enumeration value="Rifiutato" />
+      <xs:enumeration value="Errato" />
+      <xs:enumeration value="In carico" />
+      <xs:enumeration value="Programmato" />
+      <xs:enumeration value="Erogato" />
+      <xs:enumeration value="Annullato" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatoDescrizioneEnum" nillable="true" type="tns:StatoDescrizioneEnum" />
+  <xs:complexType name="StatoValidazioneType">
+    <xs:sequence>
+      <xs:element name="Stato" type="tns:StatoValidazioneEnum" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Righe" nillable="true" type="tns:StatoRigheValidazioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatoValidazioneType" nillable="true" type="tns:StatoValidazioneType" />
+  <xs:simpleType name="StatoValidazioneEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AA" />
+      <xs:enumeration value="AR" />
+      <xs:enumeration value="AE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatoValidazioneEnum" nillable="true" type="tns:StatoValidazioneEnum" />
+  <xs:complexType name="StatoRigheValidazioneType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Riga" nillable="true" type="tns:StatoRigaValidazioneType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatoRigheValidazioneType" nillable="true" type="tns:StatoRigheValidazioneType" />
+  <xs:complexType name="StatoRigaValidazioneType">
+    <xs:sequence>
+      <xs:element name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IdRigaRichiedente" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Stato" type="tns:StatoValidazioneEnum" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatoRigaValidazioneType" nillable="true" type="tns:StatoRigaValidazioneType" />
+  <xs:complexType name="PrestazioniListaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Prestazione" nillable="true" type="tns:PrestazioneListaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrestazioniListaType" nillable="true" type="tns:PrestazioniListaType" />
+  <xs:complexType name="PrestazioneListaType">
+    <xs:sequence>
+      <xs:element name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Codice" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q27="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="SistemaErogante" nillable="true" type="q27:SistemaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Tipo" type="tns:TipoPrestazioneErogabileEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrestazioneListaType" nillable="true" type="tns:PrestazioneListaType" />
+  <xs:complexType name="PrestazioneErogabileType">
+    <xs:sequence>
+      <xs:element name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Codice" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q28="http://schemas.progel.it/OE/Types/1.1" name="SistemaErogante" nillable="true" type="q28:SistemaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Tipo" type="tns:TipoPrestazioneErogabileEnum" />
+      <xs:element minOccurs="0" name="Prestazioni" nillable="true" type="tns:PrestazioniErogabiliType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatiAccessori" nillable="true" type="tns:DatiAccessoriType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Attributi" nillable="true" type="tns:PrestazioneAttributiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrestazioneErogabileType" nillable="true" type="tns:PrestazioneErogabileType" />
+  <xs:complexType name="PrestazioniErogabiliType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Prestazione" nillable="true" type="tns:PrestazioneErogabileType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrestazioniErogabiliType" nillable="true" type="tns:PrestazioniErogabiliType" />
+  <xs:complexType name="DatiAccessoriType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatoAccessorio" nillable="true" type="tns:DatoAccessorioType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiAccessoriType" nillable="true" type="tns:DatiAccessoriType" />
+  <xs:complexType name="PrestazioneAttributiType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attributo" nillable="true" type="tns:PrestazioneAttributoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrestazioneAttributiType" nillable="true" type="tns:PrestazioneAttributiType" />
+  <xs:complexType name="PrestazioneAttributoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nome" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TipoDato" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TipoContenuto" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Valore" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrestazioneAttributoType" nillable="true" type="tns:PrestazioneAttributoType" />
+  <xs:complexType name="GruppiPrestazioniListaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Gruppo" nillable="true" type="tns:GruppoPrestazioniListaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GruppiPrestazioniListaType" nillable="true" type="tns:GruppiPrestazioniListaType" />
+  <xs:complexType name="GruppoPrestazioniListaType">
+    <xs:sequence>
+      <xs:element name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumeroPrestazioni" type="xs:int" />
+      <xs:element minOccurs="0" name="SistemiEroganti" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GruppoPrestazioniListaType" nillable="true" type="tns:GruppoPrestazioniListaType" />
+  <xs:complexType name="GruppoPrestazioniType">
+    <xs:sequence>
+      <xs:element name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Prestazioni" nillable="true" type="tns:PrestazioniListaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GruppoPrestazioniType" nillable="true" type="tns:GruppoPrestazioniType" />
+  <xs:complexType name="DatiAccessoriListaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatoAccessorio" nillable="true" type="tns:DatoAccessorioListaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiAccessoriListaType" nillable="true" type="tns:DatiAccessoriListaType" />
+  <xs:complexType name="DatoAccessorioListaType">
+    <xs:sequence>
+      <xs:element name="DatoAccessorio" nillable="true" type="tns:DatoAccessorioType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Prestazioni" nillable="true" type="tns:PrestazioniListaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatoAccessorioRichiesta" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ValoreDato" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatoAccessorioListaType" nillable="true" type="tns:DatoAccessorioListaType" />
+  <xs:complexType name="DatiAccessoriValoriType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiAccessori" nillable="true" type="tns:DatoAccessorioValoreType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiAccessoriValoriType" nillable="true" type="tns:DatiAccessoriValoriType" />
+  <xs:complexType name="DatoAccessorioValoreType">
+    <xs:sequence>
+      <xs:element name="Codice" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Ripetizione" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ValoreDato" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatoAccessorioValoreType" nillable="true" type="tns:DatoAccessorioValoreType" />
+  <xs:complexType name="ArrayOfStatoDescrizioneEnum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatoDescrizioneEnum" type="tns:StatoDescrizioneEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatoDescrizioneEnum" nillable="true" type="tns:ArrayOfStatoDescrizioneEnum" />
+  <xs:complexType name="OrdiniListaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ordine" nillable="true" type="tns:OrdineListaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdiniListaType" nillable="true" type="tns:OrdiniListaType" />
+  <xs:complexType name="OrdineListaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdGuidOrderEntry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DataInserimento" type="xs:dateTime" />
+      <xs:element name="DataModifica" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdRichiestaOrderEntry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IdRichiestaRichiedente" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q29="http://schemas.progel.it/OE/Types/1.1" name="SistemaRichiedente" nillable="true" type="q29:SistemaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q30="http://schemas.progel.it/OE/Types/1.1" name="UnitaOperativaRichiedente" nillable="true" type="q30:StrutturaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="NumeroNosologico" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q31="http://schemas.progel.it/OE/Types/1.1" name="Regime" nillable="true" type="q31:RegimeType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DataRichiesta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataPrenotazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q32="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Operatore" nillable="true" type="q32:OperatoreType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q33="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Priorita" nillable="true" type="q33:PrioritaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q34="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="TipoEpisodio" nillable="true" type="q34:CodiceDescrizioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q35="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" name="Paziente" nillable="true" type="q35:PazienteType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DescrizioneStato" type="tns:StatoDescrizioneEnum" />
+      <xs:element name="StatoValidazione" nillable="true" type="tns:StatoValidazioneType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SistemiEroganti" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumeroRighe" type="xs:int" />
+      <xs:element minOccurs="0" name="AnteprimaPrestazioni" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Cancellabile" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdineListaType" nillable="true" type="tns:OrdineListaType" />
+  <xs:complexType name="ArrayOfTipoPrestazioneErogabileEnum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoPrestazioneErogabileEnum" type="tns:TipoPrestazioneErogabileEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoPrestazioneErogabileEnum" nillable="true" type="tns:ArrayOfTipoPrestazioneErogabileEnum" />
+  <xs:complexType name="ProfiliUtenteListaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Profilo" nillable="true" type="tns:ProfiloUtenteListaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfiliUtenteListaType" nillable="true" type="tns:ProfiliUtenteListaType" />
+  <xs:complexType name="ProfiloUtenteListaType">
+    <xs:sequence>
+      <xs:element name="Id" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Codice" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Descrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumeroPrestazioni" type="xs:int" />
+      <xs:element minOccurs="0" name="SistemiEroganti" nillable="true" type="xs:anyType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfiloUtenteListaType" nillable="true" type="tns:ProfiloUtenteListaType" />
+  <xs:complexType name="DizionariType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aziende" nillable="true" type="tns:DizionariType.AziendeType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SistemiEroganti" nillable="true" type="tns:DizionariType.SistemiErogantiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SistemiRichiedenti" nillable="true" type="tns:DizionariType.SistemiRichiedentiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UnitaOperative" nillable="true" type="tns:DizionariType.UnitaOperativeType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Priorita" nillable="true" type="tns:DizionariType.PrioritaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Regimi" nillable="true" type="tns:DizionariType.RegimiType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DatiAccessoriDefault" nillable="true" type="tns:DizionariType.DatiAccessoriDefaultType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DizionariType" nillable="true" type="tns:DizionariType" />
+  <xs:complexType name="DizionariType.AziendeType">
+    <xs:sequence>
+      <xs:element xmlns:q36="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" maxOccurs="unbounded" name="Azienda" nillable="true" type="q36:CodiceDescrizioneType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DizionariType.AziendeType" nillable="true" type="tns:DizionariType.AziendeType" />
+  <xs:complexType name="DizionariType.SistemiErogantiType">
+    <xs:sequence>
+      <xs:element xmlns:q37="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" maxOccurs="unbounded" name="SistemaErogante" nillable="true" type="q37:SistemaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DizionariType.SistemiErogantiType" nillable="true" type="tns:DizionariType.SistemiErogantiType" />
+  <xs:complexType name="DizionariType.SistemiRichiedentiType">
+    <xs:sequence>
+      <xs:element xmlns:q38="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" maxOccurs="unbounded" name="SistemaRichiedente" nillable="true" type="q38:SistemaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DizionariType.SistemiRichiedentiType" nillable="true" type="tns:DizionariType.SistemiRichiedentiType" />
+  <xs:complexType name="DizionariType.UnitaOperativeType">
+    <xs:sequence>
+      <xs:element xmlns:q39="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" maxOccurs="unbounded" name="UnitaOperativa" nillable="true" type="q39:StrutturaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DizionariType.UnitaOperativeType" nillable="true" type="tns:DizionariType.UnitaOperativeType" />
+  <xs:complexType name="DizionariType.PrioritaType">
+    <xs:sequence>
+      <xs:element xmlns:q40="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" maxOccurs="unbounded" name="Priorita" nillable="true" type="q40:PrioritaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DizionariType.PrioritaType" nillable="true" type="tns:DizionariType.PrioritaType" />
+  <xs:complexType name="DizionariType.RegimiType">
+    <xs:sequence>
+      <xs:element xmlns:q41="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" maxOccurs="unbounded" name="Regime" nillable="true" type="q41:RegimeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DizionariType.RegimiType" nillable="true" type="tns:DizionariType.RegimiType" />
+  <xs:complexType name="DizionariType.DatiAccessoriDefaultType">
+    <xs:sequence>
+      <xs:element xmlns:q42="http://schemas.progel.it/OE/Types/1.1" minOccurs="0" maxOccurs="unbounded" name="DatoAccessorioDefault" nillable="true" type="q42:CodiceDescrizioneType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DizionariType.DatiAccessoriDefaultType" nillable="true" type="tns:DizionariType.DatiAccessoriDefaultType" />
+  <xs:complexType name="StatiType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Stato" nillable="true" type="tns:StatoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatiType" nillable="true" type="tns:StatiType" />
+</xs:schema>

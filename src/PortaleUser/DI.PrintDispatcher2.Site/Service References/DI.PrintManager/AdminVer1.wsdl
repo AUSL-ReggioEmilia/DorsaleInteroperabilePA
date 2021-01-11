@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://progel.org/ws/asmnRe/printManager/Admin/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://progel.org/ws/asmnRe/printManager/Admin/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://progel.org/ws/asmnRe/printManager/Admin/1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="PrintJobList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:StatusFilter" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateStart" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateEnd" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Paused" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Deleted" nillable="true" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="InHistory" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="StatusFilter">
+        <s:restriction base="s:string">
+          <s:enumeration value="Tutti" />
+          <s:enumeration value="InElaborazione" />
+          <s:enumeration value="Creato" />
+          <s:enumeration value="Completato" />
+          <s:enumeration value="NonCompletato" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="PrintJobListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintJobListResult" type="tns:ArrayOfPrintJob" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPrintJob">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PrintJob" nillable="true" type="tns:PrintJob" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PrintJob">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InHistory" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateCreated" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ts" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrintServerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrintQueueName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrintJobDateCreated" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrintJobDateCompleted" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrintJobPrintPages" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PauseDateCompleted" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeleteDateCompleted" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrintJobSuspend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdJob" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ts" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintJobSuspendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrintJobSuspendResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintJobRestart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdJob" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ts" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintJobRestartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrintJobRestartResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintJobDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdJob" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ts" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintJobDeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrintJobDeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintJobRePrint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdJob" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ts" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintJobRePrintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrintJobRePrintResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PrintJobListSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintJobList" />
+  </wsdl:message>
+  <wsdl:message name="PrintJobListSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintJobListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintJobSuspendSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintJobSuspend" />
+  </wsdl:message>
+  <wsdl:message name="PrintJobSuspendSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintJobSuspendResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintJobRestartSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintJobRestart" />
+  </wsdl:message>
+  <wsdl:message name="PrintJobRestartSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintJobRestartResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintJobDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintJobDelete" />
+  </wsdl:message>
+  <wsdl:message name="PrintJobDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintJobDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintJobRePrintSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintJobRePrint" />
+  </wsdl:message>
+  <wsdl:message name="PrintJobRePrintSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintJobRePrintResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AdminVer1Soap">
+    <wsdl:operation name="PrintJobList">
+      <wsdl:input message="tns:PrintJobListSoapIn" />
+      <wsdl:output message="tns:PrintJobListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobSuspend">
+      <wsdl:input message="tns:PrintJobSuspendSoapIn" />
+      <wsdl:output message="tns:PrintJobSuspendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobRestart">
+      <wsdl:input message="tns:PrintJobRestartSoapIn" />
+      <wsdl:output message="tns:PrintJobRestartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobDelete">
+      <wsdl:input message="tns:PrintJobDeleteSoapIn" />
+      <wsdl:output message="tns:PrintJobDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobRePrint">
+      <wsdl:input message="tns:PrintJobRePrintSoapIn" />
+      <wsdl:output message="tns:PrintJobRePrintSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdminVer1Soap" type="tns:AdminVer1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrintJobList">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobSuspend">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobSuspend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobRestart">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobRestart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobDelete">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobRePrint">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobRePrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AdminVer1Soap12" type="tns:AdminVer1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrintJobList">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobSuspend">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobSuspend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobRestart">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobRestart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobDelete">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintJobRePrint">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/Admin/1/PrintJobRePrint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdminVer1">
+    <wsdl:port name="AdminVer1Soap" binding="tns:AdminVer1Soap">
+      <soap:address location="http://commesse.dev.progel.org/asmn/PrintManager/Ws/AdminVer1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AdminVer1Soap12" binding="tns:AdminVer1Soap12">
+      <soap12:address location="http://commesse.dev.progel.org/asmn/PrintManager/Ws/AdminVer1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

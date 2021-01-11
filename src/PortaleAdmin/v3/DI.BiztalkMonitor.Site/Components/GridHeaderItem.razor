@@ -1,0 +1,123 @@
+﻿@inject IJSRuntime jsRuntime
+
+<th class="text-center">
+    <div class="row">
+        @if (AllowSort)
+        {
+            // Button con gestione del click (per l'ordinamento)
+            <div class="col-auto w-100">
+                @switch (Sorted)
+                {
+                    case SortOrder.Asc:
+                        <button class="btn btn-link text-decoration-none text-center" @onclick="@(() => OnClick.InvokeAsync(HeaderText))"> @HeaderText <i class="mr-2 fas fa-long-arrow-alt-up text-success"></i></button>
+                        break;
+
+                    case SortOrder.Desc:
+                        <button class="btn btn-link text-decoration-none text-center" @onclick="@(() => OnClick.InvokeAsync(HeaderText))"> @HeaderText <i class="mr-2 fas fa-long-arrow-alt-down text-danger"></i></button>
+                        break;
+
+                    case SortOrder.None:
+                        <button class="btn btn-link text-decoration-none text-center" @onclick="@(() => OnClick.InvokeAsync(HeaderText))"> @HeaderText</button>
+                        break;
+                }
+
+                @if (AllowFilter)
+                {
+                    @* Icona per il filtro*@
+                    <span class="pointer oi oi-magnifying-glass text-white ml-2" @onclick="@ShowHideFilter"></span>
+                }
+            </div>
+        }
+        else
+        {
+
+            if (HeaderText != null)
+            {
+                <div class="col-auto w-100">
+                    <label class="text-center"> @HeaderText</label>
+                </div>
+            }
+            else
+            {
+                <div class="col-auto w-100">
+                    @TemplateHeader
+                </div>
+            }
+        }
+
+        @if (_filterVisible)
+        {
+            <div class="col-5">
+                @* Input box per il filtro*@
+                <input type="search" id="search" @ref="search" class="form-control font-weight-light" placeholder="Cerca" autofocus="autofocus"
+                       @bind-value="@_searchTerm" @bind-value:event="oninput" @onkeyup="@SearchBoxKeyPress" />
+            </div>
+        }
+
+    </div>
+</th>
+@code {
+
+    private string _searchTerm;
+    private bool _filterVisible;
+    private ElementReference search;
+
+    //
+    // Parametri
+    //
+    [Parameter] public string HeaderText { get; set; }
+    [Parameter] public RenderFragment TemplateHeader { get; set; }
+    [Parameter] public bool AllowSort { get; set; } = false;
+    [Parameter] public bool AllowFilter { get; set; }
+    [Parameter] public EventCallback<string> OnClick { get; set; }
+    [Parameter] public EventCallback<string> OnFilterChange { get; set; }
+    [Parameter] public SortOrder Sorted { get; set; }
+
+    public enum SortOrder
+    {
+        None = 0,
+        Asc = 1,
+        Desc = 2
+    }
+
+    // Event Args utilizzato nell'evento OkClick
+    public class SearchEventArgs : EventArgs
+    {
+        public SearchEventArgs(string item)
+        {
+            _searchItem = item;
+        }
+        private string _searchItem;
+
+        public string SearchText
+        {
+            get { return _searchItem; }
+        }
+    }
+    protected void ShowHideFilter()
+    {
+        _filterVisible = !_filterVisible;
+
+        if (_filterVisible)
+        {
+            jsRuntime.InvokeAsync<bool>("SetFocusElement", "search");
+        }
+    }
+    protected void SearchBoxKeyPress(KeyboardEventArgs ev)
+    {
+        //
+        // Eseguo la ricerca alla pressione del tasto Enter
+        //
+
+        SearchClick();
+    }
+    protected void SearchClick()
+    {
+        //
+        // Eseguo la ricerca
+        //
+        SearchEventArgs arg = new SearchEventArgs(_searchTerm);
+        OnFilterChange.InvokeAsync(arg.SearchText);
+    }
+
+}

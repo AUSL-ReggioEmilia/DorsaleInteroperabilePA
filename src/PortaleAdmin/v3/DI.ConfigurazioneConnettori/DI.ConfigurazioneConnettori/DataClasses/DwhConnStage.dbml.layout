@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DwhConnStage">
+  <DataContextMoniker Name="/DwhConnStageDataContext" />
+  <nestedChildShapes>
+    <classShape Id="012194b8-7ff2-4ffa-9391-a2fd6b83d96a" absoluteBounds="0.75, 0.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/DwhConnStageDataContext/AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5fb6c3a5-a7dd-44dc-a7ca-1f52aed8b518" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3df026d2-e9f9-4c59-a241-1b7cac655c71" absoluteBounds="0.75, 2.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/DwhConnStageDataContext/AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d99f1e91-93d2-44d7-b8fe-94bb68f25d8e" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0a62a18-972a-4af1-9434-7af540eb69b5" absoluteBounds="4, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DwhConnStageDataContext/AdtSpecchioTranscodificheCodiciReparto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f410430a-88a4-4d51-b397-ce7b9540edb5" absoluteBounds="4.015, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.31334554036458); (4 : 1.31334554036458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DwhConnStageDataContext/AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione/AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione_AdtSpecchioTranscodificheCodiciReparto" />
+      <nodes>
+        <classShapeMoniker Id="012194b8-7ff2-4ffa-9391-a2fd6b83d96a" />
+        <classShapeMoniker Id="f0a62a18-972a-4af1-9434-7af540eb69b5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.25084554036458); (5 : 3.25084554036458); (5 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DwhConnStageDataContext/AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza/AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza_AdtSpecchioTranscodificheCodiciReparto" />
+      <nodes>
+        <classShapeMoniker Id="3df026d2-e9f9-4c59-a241-1b7cac655c71" />
+        <classShapeMoniker Id="f0a62a18-972a-4af1-9434-7af540eb69b5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

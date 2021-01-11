@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_DwhClinicoMMG" Class="DwhClinicoMMGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_DwhClinicoMMG;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_DwhClinicoMMGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SistemiAbilitati" Member="SistemiAbilitati">
+    <Type Name="SistemiAbilitati">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="SpecialitaErogante" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

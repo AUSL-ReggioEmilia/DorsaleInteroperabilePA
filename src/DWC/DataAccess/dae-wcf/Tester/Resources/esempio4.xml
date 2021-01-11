@@ -1,0 +1,219 @@
+﻿<ns1:Message xmlns:ns1="http://SOLE.BackBone.Schema.Message/Content" xmlns:ns2="http://SOLE.BackBone.Schema.Message/Content/DataTypes" xmlns:ns0="http://SOLE.BackBone.Schema.Message/Content/Segments">
+  <ns0:Header>
+    <ns0:EncodingCharacters>MSH.2</ns0:EncodingCharacters>
+    <ns0:SendingApplication>
+      <ns2:NamespaceId>Koine' v2.30.043CATK_POST1_PREP12</ns2:NamespaceId>
+      <ns2:UniversalId>Koine' v2.30.043CATK_POST1_PREP12</ns2:UniversalId>
+    </ns0:SendingApplication>
+    <ns0:DateTimeOfMessage>
+      <ns0:TimeStamp1>2017-06-21T20:13:00.0000000</ns0:TimeStamp1>
+    </ns0:DateTimeOfMessage>
+    <ns0:MessageType>
+      <ns0:MessageType>OMP</ns0:MessageType>
+      <ns0:TriggerEvent>O09</ns0:TriggerEvent>
+      <ns0:MessageStructure>OMP_O09</ns0:MessageStructure>
+    </ns0:MessageType>
+    <ns0:MessageControlId>2280945699</ns0:MessageControlId>
+    <ns0:ProcessingId>
+      <ns2:ProcessingId>P</ns2:ProcessingId>
+    </ns0:ProcessingId>
+    <ns0:VersionId>
+      <ns2:VersionId>2.5</ns2:VersionId>
+    </ns0:VersionId>
+  </ns0:Header>
+  <ns0:NotesAndComments>
+    <ns0:SourceOfComment>P</ns0:SourceOfComment>
+    <ns0:Comment>A4</ns0:Comment>
+    <ns0:CommentType>
+      <ns2:Identifier>Stampa</ns2:Identifier>
+      <ns2:Text>Formato Stampa</ns2:Text>
+    </ns0:CommentType>
+  </ns0:NotesAndComments>
+  <ns0:NotesAndComments>
+    <ns0:SourceOfComment>P</ns0:SourceOfComment>
+    <ns0:Comment>D0:50:99:4D:5F:79</ns0:Comment>
+    <ns0:CommentType>
+      <ns2:Identifier>MAC</ns2:Identifier>
+      <ns2:Text>Indirizzo MAC</ns2:Text>
+    </ns0:CommentType>
+  </ns0:NotesAndComments>
+  <ns0:NotesAndComments>
+    <ns0:SourceOfComment>P</ns0:SourceOfComment>
+    <ns0:Comment>2.0</ns0:Comment>
+    <ns0:CommentType>
+      <ns2:Identifier>VersioneProntuario</ns2:Identifier>
+      <ns2:Text>Versione Prontuario</ns2:Text>
+    </ns0:CommentType>
+  </ns0:NotesAndComments>
+  <ns0:NotesAndComments>
+    <ns0:SourceOfComment>P</ns0:SourceOfComment>
+    <ns0:Comment>1</ns0:Comment>
+    <ns0:CommentType>
+      <ns2:Identifier>PrescrizioneStandard</ns2:Identifier>
+      <ns2:Text>Prescrizione Standard</ns2:Text>
+    </ns0:CommentType>
+  </ns0:NotesAndComments>
+  <ns0:NotesAndComments>
+    <ns0:SourceOfComment></ns0:SourceOfComment>
+    <ns0:Comment>Il reddito XXX</ns0:Comment>
+    <ns0:CommentType>
+      <ns2:Identifier>faSCIAREDDITO</ns2:Identifier>
+    </ns0:CommentType>
+  </ns0:NotesAndComments>
+
+  <ns0:Patient>
+    <ns0:PatientIdentification>
+      <ns0:PatientIdentifierList>
+        <ns2:IdNumber>GNTGZL51S57L815S</ns2:IdNumber>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>Ministero Finanze</ns2:NamespaceId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>NNITA</ns2:IdentifierTypeCode>
+      </ns0:PatientIdentifierList>
+      <ns0:PatientIdentifierList>
+        <ns2:IdNumber>GNTGZL51S57L815S</ns2:IdNumber>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>Ministero Finanze</ns2:NamespaceId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>NNITA</ns2:IdentifierTypeCode>
+      </ns0:PatientIdentifierList>
+      <ns0:PatientName>
+        <ns2:FamilyName>
+          <ns2:Surname>GENITONI</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>GRAZIELLA</ns2:GivenName>
+      </ns0:PatientName>
+      <ns0:DateTimeOfBirth>
+        <ns2:TS_Time>1951-11-17T00:00:00.0000000</ns2:TS_Time>
+      </ns0:DateTimeOfBirth>
+      <ns0:AdministrativeSex>F</ns0:AdministrativeSex>
+      <ns0:PatientAddress>
+        <ns2:StreetAddress>
+          <ns2:StreetOrMailingAddress>VIA GROPPO, 68</ns2:StreetOrMailingAddress>
+        </ns2:StreetAddress>
+        <ns2:City>VETTO</ns2:City>
+        <ns2:StateOrProvince>080</ns2:StateOrProvince>
+        <ns2:ZipOrPostalCode>42020</ns2:ZipOrPostalCode>
+        <ns2:AddressType>L</ns2:AddressType>
+        <ns2:OtherGeographicDesignation>RE</ns2:OtherGeographicDesignation>
+      </ns0:PatientAddress>
+      <ns0:PatientAddress>
+        <ns2:City>VETTO</ns2:City>
+        <ns2:AddressType>N</ns2:AddressType>
+        <ns2:CountyParishCode>035042</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+      <ns0:PhoneNumberHome>
+        <ns2:TelecommunicationEquipmentType>PRN</ns2:TelecommunicationEquipmentType>
+      </ns0:PhoneNumberHome>
+      <ns0:PhoneNumberHome>
+        <ns2:TelecommunicationEquipmentType>NET</ns2:TelecommunicationEquipmentType>
+        <ns2:EmailAddress>@</ns2:EmailAddress>
+      </ns0:PhoneNumberHome>
+      <ns0:Citizenship>
+        <ns2:AlternateText/>
+        <ns2:NameOfAlternateCodingSystem>ISTAT</ns2:NameOfAlternateCodingSystem>
+      </ns0:Citizenship>
+    </ns0:PatientIdentification>
+    <ns0:PatientAdditionalDemographic>
+      <ns0:PatientPrimaryFacility>
+        <ns2:IdNumber>080103</ns2:IdNumber>
+        <ns2:IdentifierTypeCode>ASLA</ns2:IdentifierTypeCode>
+      </ns0:PatientPrimaryFacility>
+      <ns0:PatientPrimaryFacility>
+        <ns2:IdNumber>080103</ns2:IdNumber>
+        <ns2:IdentifierTypeCode>ASLR</ns2:IdentifierTypeCode>
+      </ns0:PatientPrimaryFacility>
+      <ns0:ProtectionIndicator>N</ns0:ProtectionIndicator>
+    </ns0:PatientAdditionalDemographic>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>1</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>LivCons</ns2:Identifier>
+        <ns2:Text>Livello Consenso SOLE</ns2:Text>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+    <ns0:PatientVisit>
+      <ns0:PatientClass>A</ns0:PatientClass>
+      <ns0:ReferringDoctor>
+        <ns2:IdNumber>FRRLNR81C48C219H</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>Ferretti</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>Eleonora</ns2:GivenName>
+        <ns2:DegreeEGMd>F</ns2:DegreeEGMd>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>Ministero Finanze</ns2:NamespaceId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>NNITA</ns2:IdentifierTypeCode>
+        <ns2:AssigningJurisdiction>
+          <ns2:Identifier>080103</ns2:Identifier>
+          <ns2:NameOfCodingSystem>Azienda medico prescrittore</ns2:NameOfCodingSystem>
+        </ns2:AssigningJurisdiction>
+        <ns2:AssigningAgencyOrDepartment>
+          <ns2:NameOfCodingSystem>Struttura inviante</ns2:NameOfCodingSystem>
+        </ns2:AssigningAgencyOrDepartment>
+      </ns0:ReferringDoctor>
+      <ns0:FinancialClass>
+        <ns2:FinancialClassCode>E01</ns2:FinancialClassCode>
+      </ns0:FinancialClass>
+    </ns0:PatientVisit>
+  </ns0:Patient>
+  <ns0:Order>
+    <ns0:CommonOrder>
+      <ns0:OrderControl>NW</ns0:OrderControl>
+      <ns0:PlacerOrderNumber>
+        <ns2:EntityIdentifier>103AGJZ7E9PQ96LT</ns2:EntityIdentifier>
+      </ns0:PlacerOrderNumber>
+      <ns0:PlacerGroupNumber>
+        <ns2:EntityIdentifier>080K03095576486</ns2:EntityIdentifier>
+      </ns0:PlacerGroupNumber>
+      <ns0:EnteredBy>
+        <ns2:IdNumber>FRRLNR81C48C219H</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>Ferretti</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>Eleonora</ns2:GivenName>
+        <ns2:DegreeEGMd>F</ns2:DegreeEGMd>
+        <ns2:IdentifierTypeCode>NNITA</ns2:IdentifierTypeCode>
+      </ns0:EnteredBy>
+    </ns0:CommonOrder>
+    <ns0:TimingQuantity>
+      <ns0:Quantity>
+        <ns2:Quantity>2</ns2:Quantity>
+      </ns0:Quantity>
+      <ns0:TotalOccurrenceS>2</ns0:TotalOccurrenceS>
+    </ns0:TimingQuantity>
+    <ns0:PharmacyTreatmentOrder>
+      <ns0:RequestedGiveCode>
+        <ns2:Identifier>038064010</ns2:Identifier>
+        <ns2:Text>LANSOPRAZOLO ABC*14CPS 15MG</ns2:Text>
+        <ns2:NameOfCodingSystem>AIC</ns2:NameOfCodingSystem>
+      </ns0:RequestedGiveCode>
+      <ns0:ProviderSPharmacyTreatmentInstructions>
+        <ns2:Text>1</ns2:Text>
+      </ns0:ProviderSPharmacyTreatmentInstructions>
+      <ns0:Indication>
+        <ns2:Identifier>048</ns2:Identifier>
+        <ns2:Text>AIFA</ns2:Text>
+      </ns0:Indication>
+      <ns0:SupplementaryCode>
+        <ns2:Identifier>A02BC03</ns2:Identifier>
+        <ns2:NameOfCodingSystem>ATC</ns2:NameOfCodingSystem>
+      </ns0:SupplementaryCode>
+      <ns0:SupplementaryCode>
+        <ns2:Identifier>CDA</ns2:Identifier>
+        <ns2:Text>XXXXXXXXXXX</ns2:Text>
+        <ns2:NameOfCodingSystem>gruppo equivalenza</ns2:NameOfCodingSystem>
+      </ns0:SupplementaryCode>
+    </ns0:PharmacyTreatmentOrder>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:CommentType>
+        <ns2:Identifier>Note</ns2:Identifier>
+        <ns0:Comment>Questo è il commento</ns0:Comment>        -->
+        <ns2:Text>Note sulla prescrizione</ns2:Text>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+  </ns0:Order>
+</ns1:Message>

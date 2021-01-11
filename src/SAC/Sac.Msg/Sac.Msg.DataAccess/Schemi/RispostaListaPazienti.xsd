@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RispostaListaPazienti" nillable="true" type="RispostaListaPazienti" />
+  <xs:complexType name="RispostaListaPazienti">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Paziente" type="PazienteHL7" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PazienteHL7">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Provenienza" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Tessera" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cognome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataNascita" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sesso" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CapRes" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CapDom" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Telefono1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Telefono2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CognomeMadreNubile" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NomeMadreNubile" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StatoCivile" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Religione" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GruppoEtnico" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cittadinanza" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataDecesso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sinonimi" type="ArrayOfPazienteSinonimo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPazienteSinonimo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PazienteSinonimo" nillable="true" type="PazienteSinonimo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PazienteSinonimo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Provenienza" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

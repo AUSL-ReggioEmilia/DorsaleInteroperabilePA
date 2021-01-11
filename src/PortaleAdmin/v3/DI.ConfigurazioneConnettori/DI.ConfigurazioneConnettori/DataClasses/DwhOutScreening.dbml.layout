@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DwhOutScreening">
+  <DataContextMoniker Name="/DwhOutScreeningDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4a71a27e-fda1-4115-8584-6fd92120f98b" absoluteBounds="0.875, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DwhOutScreeningDataContext/FiltriMammografia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28ad859b-249f-4767-9cec-5fb6ebca02a8" absoluteBounds="0.88999999999999968, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5cda9924-e6ca-454b-bebb-2426857967e5" absoluteBounds="0.5, 2.625, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/DwhOutScreeningDataContext/FiltriMammografiaAziendeEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe3559b3-1abe-4ab5-af35-19e58d0acd4f" absoluteBounds="0.51500000000000012, 3.085, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.6875 : 2.625); (1.6875 : 2.1362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DwhOutScreeningDataContext/FiltriMammografiaAziendeEroganti/FiltriMammografiaAziendaErogante_FiltriMammografia" />
+      <nodes>
+        <classShapeMoniker Id="5cda9924-e6ca-454b-bebb-2426857967e5" />
+        <classShapeMoniker Id="4a71a27e-fda1-4115-8584-6fd92120f98b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1d080059-19d2-45ea-9ecd-a2f84434c2d3" absoluteBounds="2.75, 2.625, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/DwhOutScreeningDataContext/FiltriMammografiaSistemiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4432754a-1fa9-477d-b4fa-854d1dea580b" absoluteBounds="2.765, 3.085, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.8125005 : 2.625); (3.8125005 : 1.44314697265625); (2.875 : 1.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DwhOutScreeningDataContext/FiltriMammografiaSistemiEroganti/FiltriMammografiaSistemiErogante_FiltriMammografia" />
+      <nodes>
+        <classShapeMoniker Id="1d080059-19d2-45ea-9ecd-a2f84434c2d3" />
+        <classShapeMoniker Id="4a71a27e-fda1-4115-8584-6fd92120f98b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

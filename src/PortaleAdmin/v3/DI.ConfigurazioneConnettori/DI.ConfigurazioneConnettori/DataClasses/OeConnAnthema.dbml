@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_OeConnAnthema" Class="OeConnAnthemaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_OeConnAnthema;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_OeConnAnthemaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TranscodificaAttributiPrestazioniMetaforaAnthema" Member="TranscodificaAttributiPrestazioniMetaforaAnthema">
+    <Type Name="TranscodificaAttributiPrestazioniMetaforaAnthema">
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneAnthema" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneLis" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Posizione" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="TipoDato" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="TipoContenuto" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante_TranscodificaAttributiPrestazioniMetaforaAnthema" Member="TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante" ThisKey="StrutturaErogante" OtherKey="StrutturaErogante" Type="TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante" IsForeignKey="true" />
+      <Association Name="TranscodificaAttributiPrestazioniMetaforaAnthemaNomi_TranscodificaAttributiPrestazioniMetaforaAnthema" Member="TranscodificaAttributiPrestazioniMetaforaAnthemaNomi" ThisKey="Nome" OtherKey="Nome" Type="TranscodificaAttributiPrestazioniMetaforaAnthemaNomi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TranscodificaAttributiPrestazioniAnthemaMetafora" Member="TranscodificaAttributiPrestazioniAnthemaMetafora">
+    <Type Name="TranscodificaAttributiPrestazioniAnthemaMetafora">
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneAnthema" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPrestazioneLis" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Posizione" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="TipoDato" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="TipoContenuto" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti_TranscodificaAttributiPrestazioniAnthemaMetafora" Member="TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti" ThisKey="StrutturaErogante" OtherKey="StrutturaErogante" Type="TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti" IsForeignKey="true" />
+      <Association Name="TranscodificaAttributiPrestazioniAnthemaMetaforaNomi_TranscodificaAttributiPrestazioniAnthemaMetafora" Member="TranscodificaAttributiPrestazioniAnthemaMetaforaNomi" ThisKey="Nome" OtherKey="Nome" Type="TranscodificaAttributiPrestazioniAnthemaMetaforaNomi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CentriRichiedenti" Member="OeConnAnthema_CentriRichiedenti">
+    <Type Name="OeConnAnthema_CentriRichiedenti">
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PuntoPrelievo" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceLIS" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="AziendaRichiedente" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="SistemaRichiedente" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="PCInvioRichiesta" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="CentriRichiedentiAziendeEroganti_OeConnAnthema_CentriRichiedenti" Member="CentriRichiedentiAziendeEroganti" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="CentriRichiedentiAziendeEroganti" IsForeignKey="true" />
+      <Association Name="CentriRichiedentiSistemiEroganti_OeConnAnthema_CentriRichiedenti" Member="CentriRichiedentiSistemiEroganti" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="CentriRichiedentiSistemiEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante" Member="TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante">
+    <Type Name="TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante">
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante_TranscodificaAttributiPrestazioniMetaforaAnthema" Member="TranscodificaAttributiPrestazioniMetaforaAnthema" ThisKey="StrutturaErogante" OtherKey="StrutturaErogante" Type="TranscodificaAttributiPrestazioniMetaforaAnthema" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="admin.TranscodificaAttributiPrestazioniMetaforaAnthemaNomi" Member="TranscodificaAttributiPrestazioniMetaforaAnthemaNomi">
+    <Type Name="TranscodificaAttributiPrestazioniMetaforaAnthemaNomi">
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TranscodificaAttributiPrestazioniMetaforaAnthemaNomi_TranscodificaAttributiPrestazioniMetaforaAnthema" Member="TranscodificaAttributiPrestazioniMetaforaAnthema" ThisKey="Nome" OtherKey="Nome" Type="TranscodificaAttributiPrestazioniMetaforaAnthema" />
+    </Type>
+  </Table>
+  <Table Name="admin.TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti" Member="TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti">
+    <Type Name="TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti">
+      <Column Name="StrutturaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti_TranscodificaAttributiPrestazioniAnthemaMetafora" Member="TranscodificaAttributiPrestazioniAnthemaMetafora" ThisKey="StrutturaErogante" OtherKey="StrutturaErogante" Type="TranscodificaAttributiPrestazioniAnthemaMetafora" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="admin.TranscodificaAttributiPrestazioniAnthemaMetaforaNomi" Member="TranscodificaAttributiPrestazioniAnthemaMetaforaNomi">
+    <Type Name="TranscodificaAttributiPrestazioniAnthemaMetaforaNomi">
+      <Column Name="Nome" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TranscodificaAttributiPrestazioniAnthemaMetaforaNomi_TranscodificaAttributiPrestazioniAnthemaMetafora" Member="TranscodificaAttributiPrestazioniAnthemaMetafora" ThisKey="Nome" OtherKey="Nome" Type="TranscodificaAttributiPrestazioniAnthemaMetafora" />
+    </Type>
+  </Table>
+  <Table Name="admin.CentriRichiedentiAziendeEroganti" Member="CentriRichiedentiAziendeEroganti">
+    <Type Name="CentriRichiedentiAziendeEroganti">
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CentriRichiedentiAziendeEroganti_OeConnAnthema_CentriRichiedenti" Member="OeConnAnthema_CentriRichiedenti" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="OeConnAnthema_CentriRichiedenti" />
+    </Type>
+  </Table>
+  <Table Name="admin.CentriRichiedentiSistemiEroganti" Member="CentriRichiedentiSistemiEroganti">
+    <Type Name="CentriRichiedentiSistemiEroganti">
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CentriRichiedentiSistemiEroganti_OeConnAnthema_CentriRichiedenti" Member="OeConnAnthema_CentriRichiedenti" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="OeConnAnthema_CentriRichiedenti" />
+    </Type>
+  </Table>
+</Database>

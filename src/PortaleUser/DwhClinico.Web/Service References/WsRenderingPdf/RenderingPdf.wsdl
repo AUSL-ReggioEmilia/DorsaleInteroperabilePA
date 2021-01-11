@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://dwhClinico.org/webService/Rendering" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://dwhClinico.org/webService/Rendering" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://dwhClinico.org/webService/Rendering">
+      <s:element name="GetByteReferto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByteRefertoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByteRefertoResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByte">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByteResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetByteRefertoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByteReferto" />
+  </wsdl:message>
+  <wsdl:message name="GetByteRefertoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByteRefertoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByte" />
+  </wsdl:message>
+  <wsdl:message name="GetByteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RenderingPdfSoap">
+    <wsdl:operation name="GetByteReferto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restituisce il dettaglio del referto in formato PDF con watermark, header e footer.</wsdl:documentation>
+      <wsdl:input message="tns:GetByteRefertoSoapIn" />
+      <wsdl:output message="tns:GetByteRefertoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByte">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restituisce il dettaglio del referto in formato PDF con watermark, senza header e senza footer.</wsdl:documentation>
+      <wsdl:input message="tns:GetByteSoapIn" />
+      <wsdl:output message="tns:GetByteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RenderingPdfSoap" type="tns:RenderingPdfSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetByteReferto">
+      <soap:operation soapAction="http://dwhClinico.org/webService/Rendering/GetByteReferto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByte">
+      <soap:operation soapAction="http://dwhClinico.org/webService/Rendering/GetByte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RenderingPdfSoap12" type="tns:RenderingPdfSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetByteReferto">
+      <soap12:operation soapAction="http://dwhClinico.org/webService/Rendering/GetByteReferto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByte">
+      <soap12:operation soapAction="http://dwhClinico.org/webService/Rendering/GetByte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RenderingPdf">
+    <wsdl:port name="RenderingPdfSoap" binding="tns:RenderingPdfSoap">
+      <soap:address location="http://dagobah2:8043/Printing/RenderingPdf.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RenderingPdfSoap12" binding="tns:RenderingPdfSoap12">
+      <soap12:address location="http://dagobah2:8043/Printing/RenderingPdf.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

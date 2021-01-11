@@ -1,0 +1,139 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{A36560A0-8776-4C2C-8FD3-149D3C12669E}"
+	ProjectSection(SolutionItems) = preProject
+		Components\AjaxControlToolkit.dll = Components\AjaxControlToolkit.dll
+		Components\Aspose.Cells.dll = Components\Aspose.Cells.dll
+		Components\Progel.Identity.ActiveDirectory.dll = Components\Progel.Identity.ActiveDirectory.dll
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.Common", "..\PortaleCommon\DI.Common\DI.Common.vbproj", "{EBAF272B-B9BE-4FD0-8556-2D49F031DF22}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.PortalAdmin", "DI.PortalAdmin\DI.PortalAdmin.vbproj", "{0D8EB637-68F3-47B1-B1A4-B7990011FC66}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.PortalAdmin.Site", "DI.PortalAdmin.Site\DI.PortalAdmin.Site.vbproj", "{7BB01A6D-F3E4-42BF-B372-44899B7B3EA7}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.DataWarehouse.Site", "DI.DataWarehouse.Site\DI.DataWarehouse.Site.vbproj", "{E3EB4ED4-2198-4084-ABDD-2C3FBC39C7C2}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.OrderEntry.Site", "DI.OrderEntry.Site\DI.OrderEntry.Site.vbproj", "{0BBC9585-5951-4B2A-97A3-19997D0CBC81}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.Sac.Site", "DI.Sac.Site\DI.Sac.Site.vbproj", "{4A7019DD-152C-4E39-8F54-A8CC90E7877F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.ConfigurazioneConnettori", "DI.ConfigurazioneConnettori\DI.ConfigurazioneConnettori\DI.ConfigurazioneConnettori.vbproj", "{DB04DA54-0B44-4DED-9A43-2164B577BDFF}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintDispatcherAdmin.Web", "DI.PrintDispatcher.Site\PrintDispatcher.Web\PrintDispatcherAdmin.Web.vbproj", "{101A217F-A1E7-4DC3-96F5-5BBBFF139E90}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintDispatcherAdmin.DataAccess", "DI.PrintDispatcher.Site\PrintDispatcher.DataAccess\PrintDispatcherAdmin.DataAccess.vbproj", "{33F5A30E-170B-47C4-B54B-D042D8F04E2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI.BiztalkMonitor", "DI.BiztalkMonitor", "{550FDDEC-1D17-48CB-A482-18DABF64A34F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI.BiztalkMonitor.DataAccess", "DI.BiztalkMonitor.DataAccess\DI.BiztalkMonitor.DataAccess.csproj", "{5D90DB64-E911-46C8-B472-CDEC58C6D467}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI.BiztalkMonitor.Site", "DI.BiztalkMonitor.Site\DI.BiztalkMonitor.Site.csproj", "{8596E4FB-00C7-467A-BA7F-3CC712465750}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBAF272B-B9BE-4FD0-8556-2D49F031DF22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAF272B-B9BE-4FD0-8556-2D49F031DF22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAF272B-B9BE-4FD0-8556-2D49F031DF22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAF272B-B9BE-4FD0-8556-2D49F031DF22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D8EB637-68F3-47B1-B1A4-B7990011FC66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D8EB637-68F3-47B1-B1A4-B7990011FC66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D8EB637-68F3-47B1-B1A4-B7990011FC66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D8EB637-68F3-47B1-B1A4-B7990011FC66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB01A6D-F3E4-42BF-B372-44899B7B3EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB01A6D-F3E4-42BF-B372-44899B7B3EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB01A6D-F3E4-42BF-B372-44899B7B3EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB01A6D-F3E4-42BF-B372-44899B7B3EA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3EB4ED4-2198-4084-ABDD-2C3FBC39C7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3EB4ED4-2198-4084-ABDD-2C3FBC39C7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3EB4ED4-2198-4084-ABDD-2C3FBC39C7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3EB4ED4-2198-4084-ABDD-2C3FBC39C7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BBC9585-5951-4B2A-97A3-19997D0CBC81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BBC9585-5951-4B2A-97A3-19997D0CBC81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BBC9585-5951-4B2A-97A3-19997D0CBC81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BBC9585-5951-4B2A-97A3-19997D0CBC81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A7019DD-152C-4E39-8F54-A8CC90E7877F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A7019DD-152C-4E39-8F54-A8CC90E7877F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A7019DD-152C-4E39-8F54-A8CC90E7877F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A7019DD-152C-4E39-8F54-A8CC90E7877F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB04DA54-0B44-4DED-9A43-2164B577BDFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB04DA54-0B44-4DED-9A43-2164B577BDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB04DA54-0B44-4DED-9A43-2164B577BDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB04DA54-0B44-4DED-9A43-2164B577BDFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{101A217F-A1E7-4DC3-96F5-5BBBFF139E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{101A217F-A1E7-4DC3-96F5-5BBBFF139E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{101A217F-A1E7-4DC3-96F5-5BBBFF139E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{101A217F-A1E7-4DC3-96F5-5BBBFF139E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33F5A30E-170B-47C4-B54B-D042D8F04E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F5A30E-170B-47C4-B54B-D042D8F04E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F5A30E-170B-47C4-B54B-D042D8F04E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F5A30E-170B-47C4-B54B-D042D8F04E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D90DB64-E911-46C8-B472-CDEC58C6D467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D90DB64-E911-46C8-B472-CDEC58C6D467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D90DB64-E911-46C8-B472-CDEC58C6D467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D90DB64-E911-46C8-B472-CDEC58C6D467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8596E4FB-00C7-467A-BA7F-3CC712465750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8596E4FB-00C7-467A-BA7F-3CC712465750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8596E4FB-00C7-467A-BA7F-3CC712465750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8596E4FB-00C7-467A-BA7F-3CC712465750}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D90DB64-E911-46C8-B472-CDEC58C6D467} = {550FDDEC-1D17-48CB-A482-18DABF64A34F}
+		{8596E4FB-00C7-467A-BA7F-3CC712465750} = {550FDDEC-1D17-48CB-A482-18DABF64A34F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6DE4204-D2AD-45BA-9758-6D2FA5025945}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hellen:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\PortaleCommon\\DI.Common\\DI.Common.vbproj
+		SccProjectName1 = ../PortaleCommon/DI.Common
+		SccLocalPath1 = ..\\PortaleCommon\\DI.Common
+		SccProjectUniqueName2 = DI.PortalAdmin\\DI.PortalAdmin.vbproj
+		SccProjectName2 = DI.PortalAdmin
+		SccLocalPath2 = DI.PortalAdmin
+		SccProjectUniqueName3 = DI.PortalAdmin.Site\\DI.PortalAdmin.Site.vbproj
+		SccProjectName3 = DI.PortalAdmin.Site
+		SccLocalPath3 = DI.PortalAdmin.Site
+		SccProjectUniqueName4 = DI.DataWarehouse.Site\\DI.DataWarehouse.Site.vbproj
+		SccProjectName4 = DI.DataWarehouse.Site
+		SccLocalPath4 = DI.DataWarehouse.Site
+		SccProjectUniqueName5 = DI.OrderEntry.Site\\DI.OrderEntry.Site.vbproj
+		SccProjectName5 = DI.OrderEntry.Site
+		SccLocalPath5 = DI.OrderEntry.Site
+		SccProjectUniqueName6 = DI.Sac.Site\\DI.Sac.Site.vbproj
+		SccProjectName6 = DI.Sac.Site
+		SccLocalPath6 = DI.Sac.Site
+		SccProjectUniqueName7 = DI.ConfigurazioneConnettori\\DI.ConfigurazioneConnettori\\DI.ConfigurazioneConnettori.vbproj
+		SccProjectName7 = DI.ConfigurazioneConnettori/DI.ConfigurazioneConnettori
+		SccLocalPath7 = DI.ConfigurazioneConnettori\\DI.ConfigurazioneConnettori
+		SccProjectUniqueName8 = DI.PrintDispatcher.Site\\PrintDispatcher.Web\\PrintDispatcherAdmin.Web.vbproj
+		SccProjectName8 = DI.PrintDispatcher.Site/PrintDispatcher.Web
+		SccLocalPath8 = DI.PrintDispatcher.Site\\PrintDispatcher.Web
+		SccProjectUniqueName9 = DI.PrintDispatcher.Site\\PrintDispatcher.DataAccess\\PrintDispatcherAdmin.DataAccess.vbproj
+		SccProjectName9 = DI.PrintDispatcher.Site/PrintDispatcher.DataAccess
+		SccLocalPath9 = DI.PrintDispatcher.Site\\PrintDispatcher.DataAccess
+		SccProjectUniqueName10 = DI.BiztalkMonitor.DataAccess\\DI.BiztalkMonitor.DataAccess.csproj
+		SccProjectTopLevelParentUniqueName10 = PortaleAdmin.sln
+		SccProjectName10 = DI.BiztalkMonitor.DataAccess
+		SccLocalPath10 = DI.BiztalkMonitor.DataAccess
+		SccProjectUniqueName11 = DI.BiztalkMonitor.Site\\DI.BiztalkMonitor.Site.csproj
+		SccProjectTopLevelParentUniqueName11 = PortaleAdmin.sln
+		SccProjectName11 = DI.BiztalkMonitor.Site
+		SccLocalPath11 = DI.BiztalkMonitor.Site
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_CupConnLHA" Class="CupConnLHADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_CupConnLHA;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_CupConnLHAConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LhaAgende" Member="LhaAgendes">
+    <Type Name="LhaAgende">
+      <Column Name="IDAGENDA" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CODICEMNEMONICO" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CODICEAZIENDALE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIZIONE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IDSTRUTTURAEROGANTE" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="CODICEMNEMONICOSTREROGANTE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CODICEAZIENDALESTREROGANTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDSPECIALITA" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IDTIPOAGENDA" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="GENERAZIONEFINOAL" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="DATAAPERTURA" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="DATACHIUSURA" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IDCONTROLLO" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="CONTROLLOFORZABILE" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDZONAGEOGRAFICA" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="IDPROGRESSIVOMODIFICA" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="INSERIMENTOUTENTE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="INSERIMENTODATA" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="INSERIMENTOFONTE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFICADATA" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFICAUTENTE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFICAFONTE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

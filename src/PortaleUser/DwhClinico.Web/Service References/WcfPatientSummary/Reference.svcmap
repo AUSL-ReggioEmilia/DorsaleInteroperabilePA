@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="13f75ae4-dddb-49fc-9a13-40477085761c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://marcod-bt09.progel.org/Sole.DwhClinico.PatientSummary/SOLE.Wcf.BtDataAccess.PatientSummary.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BizTalkServiceInstance.wsdl" MetadataType="Wsdl" ID="fcf8dfb7-c905-42f2-a8d3-95e012be272f" SourceId="1" SourceUrl="https://marcod-bt09.progel.org/Sole.DwhClinico.PatientSummary/SOLE.Wcf.BtDataAccess.PatientSummary.svc" />
+    <MetadataFile FileName="SOLE.xsd" MetadataType="Schema" ID="426ff754-0281-4a2a-8a2b-ab051a7afe8b" SourceId="1" SourceUrl="https://marcod-bt09.progel.org/Sole.DwhClinico.PatientSummary/SOLE.Wcf.BtDataAccess.PatientSummary.svc?xsd=xsd3" />
+    <MetadataFile FileName="SOLE1.xsd" MetadataType="Schema" ID="a682e2df-9def-4f19-b50e-7f75f61b4c7d" SourceId="1" SourceUrl="https://marcod-bt09.progel.org/Sole.DwhClinico.PatientSummary/SOLE.Wcf.BtDataAccess.PatientSummary.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

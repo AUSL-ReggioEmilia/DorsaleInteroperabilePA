@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://sac.org/Consensi" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://sac.org/Types" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://sac.org/Consensi" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://sac.org/Consensi">
+      <s:import namespace="http://sac.org/Types" />
+      <s:element name="ConsensiCercaByIdPaziente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idPaziente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiCercaByIdPazienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsensiCercaByIdPazienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Consensi">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteTessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteDataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Attributi" type="s1:AttributiType" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiCercaByIdProvenienzaPaziente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="provenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idProvenienza" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiCercaByIdProvenienzaPazienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsensiCercaByIdProvenienzaPazienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Consensi">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteTessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteDataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Attributi" type="s1:AttributiType" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiCercaByCodiceFiscalePaziente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codiceFiscale" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiCercaByCodiceFiscalePazienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsensiCercaByCodiceFiscalePazienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Consensi">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteTessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteDataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Attributi" type="s1:AttributiType" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiCercaByGeneralitaPaziente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cognome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataNascita" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="comuneNascitaCodice" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiCercaByGeneralitaPazienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsensiCercaByGeneralitaPazienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Consensi">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteTessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteDataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Attributi" type="s1:AttributiType" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiCercaByTesseraPaziente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tesseraSanitaria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiCercaByTesseraPazienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsensiCercaByTesseraPazienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Consensi">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteTessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteDataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Attributi" type="s1:AttributiType" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiAggiungi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consenso" type="tns:Consenso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Consenso">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="tns:TipoConsenso" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteProvenienza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteIdProvenienza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PazienteDataNascita" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteTesseraSanitaria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attributi" type="s1:AttributiType" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoConsenso">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="Generico" />
+              <s:enumeration value="Dossier" />
+              <s:enumeration value="DossierStorico" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:element name="ConsensiAggiungiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsensiAggiungiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Consensi">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteTessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteDataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Attributi" type="s1:AttributiType" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiEliminaPerIdPaziente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UtenteOperazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsensiEliminaPerIdPazienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConsensiEliminaPerIdPazienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProvenienza">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProvenienzaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProvenienzaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RelazioniConMinoreCerca">
+        <s:complexType />
+      </s:element>
+      <s:element name="RelazioniConMinoreCercaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:RelazioniConMinore" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://sac.org/Types">
+      <s:complexType name="AttributiType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Attributo" type="s1:AttributoType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AttributoType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valore" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RelazioniConMinore" type="s1:RelazioniConMinoreType" />
+      <s:complexType name="RelazioniConMinoreType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RelazioneConMinore" type="s1:RelazioneConMinoreType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RelazioneConMinoreType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descrizione" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsensiCercaByIdPazienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByIdPaziente" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiCercaByIdPazienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByIdPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiCercaByIdProvenienzaPazienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByIdProvenienzaPaziente" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiCercaByIdProvenienzaPazienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByIdProvenienzaPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiCercaByCodiceFiscalePazienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByCodiceFiscalePaziente" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiCercaByCodiceFiscalePazienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByCodiceFiscalePazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiCercaByGeneralitaPazienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByGeneralitaPaziente" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiCercaByGeneralitaPazienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByGeneralitaPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiCercaByTesseraPazienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByTesseraPaziente" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiCercaByTesseraPazienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsensiCercaByTesseraPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiAggiungiSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsensiAggiungi" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiAggiungiSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsensiAggiungiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiEliminaPerIdPazienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsensiEliminaPerIdPaziente" />
+  </wsdl:message>
+  <wsdl:message name="ConsensiEliminaPerIdPazienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsensiEliminaPerIdPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProvenienzaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProvenienza" />
+  </wsdl:message>
+  <wsdl:message name="GetProvenienzaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProvenienzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelazioniConMinoreCercaSoapIn">
+    <wsdl:part name="parameters" element="tns:RelazioniConMinoreCerca" />
+  </wsdl:message>
+  <wsdl:message name="RelazioniConMinoreCercaSoapOut">
+    <wsdl:part name="parameters" element="tns:RelazioniConMinoreCercaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConsensiSoap">
+    <wsdl:operation name="ConsensiCercaByIdPaziente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i consensi per id paziente.</wsdl:documentation>
+      <wsdl:input message="tns:ConsensiCercaByIdPazienteSoapIn" />
+      <wsdl:output message="tns:ConsensiCercaByIdPazienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByIdProvenienzaPaziente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i consensi per id provenienza paziente.</wsdl:documentation>
+      <wsdl:input message="tns:ConsensiCercaByIdProvenienzaPazienteSoapIn" />
+      <wsdl:output message="tns:ConsensiCercaByIdProvenienzaPazienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByCodiceFiscalePaziente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i consensi per codice fiscale paziente.</wsdl:documentation>
+      <wsdl:input message="tns:ConsensiCercaByCodiceFiscalePazienteSoapIn" />
+      <wsdl:output message="tns:ConsensiCercaByCodiceFiscalePazienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByGeneralitaPaziente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i consensi per generalità paziente.</wsdl:documentation>
+      <wsdl:input message="tns:ConsensiCercaByGeneralitaPazienteSoapIn" />
+      <wsdl:output message="tns:ConsensiCercaByGeneralitaPazienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByTesseraPaziente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i consensi per tessera sanitaria paziente.</wsdl:documentation>
+      <wsdl:input message="tns:ConsensiCercaByTesseraPazienteSoapIn" />
+      <wsdl:output message="tns:ConsensiCercaByTesseraPazienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiAggiungi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiunge un nuovo consenso.</wsdl:documentation>
+      <wsdl:input message="tns:ConsensiAggiungiSoapIn" />
+      <wsdl:output message="tns:ConsensiAggiungiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiEliminaPerIdPaziente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina i consensi per il paziente passato.</wsdl:documentation>
+      <wsdl:input message="tns:ConsensiEliminaPerIdPazienteSoapIn" />
+      <wsdl:output message="tns:ConsensiEliminaPerIdPazienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvenienza">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ritorna il codice di provenienza.</wsdl:documentation>
+      <wsdl:input message="tns:GetProvenienzaSoapIn" />
+      <wsdl:output message="tns:GetProvenienzaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RelazioniConMinoreCerca">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restituisce le possibili relazioni con minore.</wsdl:documentation>
+      <wsdl:input message="tns:RelazioniConMinoreCercaSoapIn" />
+      <wsdl:output message="tns:RelazioniConMinoreCercaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsensiSoap" type="tns:ConsensiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsensiCercaByIdPaziente">
+      <soap:operation soapAction="http://sac.org/Consensi/ConsensiCercaByIdPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByIdProvenienzaPaziente">
+      <soap:operation soapAction="http://sac.org/Consensi/ConsensiCercaByIdProvenienzaPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByCodiceFiscalePaziente">
+      <soap:operation soapAction="http://sac.org/Consensi/ConsensiCercaByCodiceFiscalePaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByGeneralitaPaziente">
+      <soap:operation soapAction="http://sac.org/Consensi/ConsensiCercaByGeneralitaPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByTesseraPaziente">
+      <soap:operation soapAction="http://sac.org/Consensi/ConsensiCercaByTesseraPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiAggiungi">
+      <soap:operation soapAction="http://sac.org/Consensi/ConsensiAggiungi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiEliminaPerIdPaziente">
+      <soap:operation soapAction="http://sac.org/Consensi/ConsensiEliminaPerIdPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvenienza">
+      <soap:operation soapAction="http://sac.org/Consensi/GetProvenienza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RelazioniConMinoreCerca">
+      <soap:operation soapAction="http://sac.org/Consensi/RelazioniConMinoreCerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsensiSoap12" type="tns:ConsensiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsensiCercaByIdPaziente">
+      <soap12:operation soapAction="http://sac.org/Consensi/ConsensiCercaByIdPaziente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByIdProvenienzaPaziente">
+      <soap12:operation soapAction="http://sac.org/Consensi/ConsensiCercaByIdProvenienzaPaziente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByCodiceFiscalePaziente">
+      <soap12:operation soapAction="http://sac.org/Consensi/ConsensiCercaByCodiceFiscalePaziente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByGeneralitaPaziente">
+      <soap12:operation soapAction="http://sac.org/Consensi/ConsensiCercaByGeneralitaPaziente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiCercaByTesseraPaziente">
+      <soap12:operation soapAction="http://sac.org/Consensi/ConsensiCercaByTesseraPaziente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiAggiungi">
+      <soap12:operation soapAction="http://sac.org/Consensi/ConsensiAggiungi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsensiEliminaPerIdPaziente">
+      <soap12:operation soapAction="http://sac.org/Consensi/ConsensiEliminaPerIdPaziente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvenienza">
+      <soap12:operation soapAction="http://sac.org/Consensi/GetProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RelazioniConMinoreCerca">
+      <soap12:operation soapAction="http://sac.org/Consensi/RelazioniConMinoreCerca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Consensi">
+    <wsdl:port name="ConsensiSoap" binding="tns:ConsensiSoap">
+      <soap:address location="http://dagobah2:8082/WS-DI-SAC-2/Consensi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsensiSoap12" binding="tns:ConsensiSoap12">
+      <soap12:address location="http://dagobah2:8082/WS-DI-SAC-2/Consensi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,218 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SiteAccessoDiretto.Master.vb" Inherits="DI.OrderEntry.User.SiteAccessoDiretto" %>
+
+<!DOCTYPE html>
+<html lang="it-it">
+<head id="PHead" runat="server">
+	<title>Portale DI</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<%-- IMPORT FILE BOOTSTRAP --%>
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/Site.css?<%# Reflection.Assembly.GetExecutingAssembly.GetName.Version.ToString %>" rel="stylesheet" runat="server" />
+
+	<!-- 
+To collect end-user usage analytics about your application, 
+insert the following script into each page you want to track.
+Place this code immediately before the closing </head> tag,
+and before any other scripts. Your first data will appear 
+automatically in just a few seconds.
+-->
+	<script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;) i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+        }({
+            instrumentationKey: "<%= CustomInitializer.Telemetry.MyTelemetryInitializer.InstrumentationKey %>"
+        });
+
+        appInsights.queue.push(function () {
+            appInsights.context.addTelemetryInitializer(function (envelope) {
+                envelope.tags["ai.cloud.role"] = '<%= CustomInitializer.Telemetry.MyTelemetryInitializer.RoleName %>';
+            });
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body>
+	<form id="MainForm" runat="server">
+		<asp:ScriptManager ID="ScriptManagerMaster" runat="server" EnablePageMethods="false">
+			<Scripts>
+				<%-- DEFINITI NEL GLOBAL.ASAX --%>
+				<asp:ScriptReference Name="jquery" />
+				<asp:ScriptReference Name="bootstrap" />
+				<asp:ScriptReference Name="respond" />
+				<asp:ScriptReference Name="modernizr" />
+				<asp:ScriptReference Path="~/Scripts/master.js?<%# Reflection.Assembly.GetExecutingAssembly.GetName.Version.ToString %>" />
+			</Scripts>
+		</asp:ScriptManager>
+
+		<asp:Literal ID="HeaderPlaceholder" runat="server" visible="false"/>
+
+		<div class="div-menu-affix" data-spy="affix" data-offset-top="67" runat="server">
+			<div class="navbar navbar-inverse navbar-static-top navbar-custum-collapse">
+					
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Accesso Diretto Order Entry</a>
+				</div>
+
+				<ul id="MainMenuRight" class="nav navbar-nav navbar-right MainMenuRight">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								<asp:Label ID="lblLegend" runat="server" Text="Info Utente"></asp:Label>
+								-
+                                <asp:Label ID="lblRuoloUtente" runat="server"></asp:Label>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-custom-width">
+								<li>
+									<div id="divUtente" runat="server">
+										<fieldset>
+											<div class="form-group col-sm-12" id="trRuoli" runat="server">
+												<asp:Label Text="Ruolo:" runat="server" AssociatedControlID="cmbRuoliUtente"></asp:Label>
+												<asp:DropDownList ID="cmbRuoliUtente" runat="server" AutoPostBack="True" CssClass="form-control input-sm">
+												</asp:DropDownList>
+											</div>
+											<div class="form-group col-sm-12">
+												<asp:Label Text="Nome Utente:" runat="server" AssociatedControlID="cmbRuoliUtente"></asp:Label>
+												<asp:Label ID="lblUtente" runat="server" Text=""></asp:Label>
+											</div>
+											<div class="form-group col-sm-12">
+												<asp:Label Text="Postazione:" runat="server" AssociatedControlID="cmbRuoliUtente" />
+												<asp:Label ID="lblPostazione" runat="server" Text=""></asp:Label>
+											</div>
+										</fieldset>
+									</div>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<fieldset>
+										<div class="form-group col-sm-12">
+											<asp:Label Text="Ultimo accesso:" runat="server" AssociatedControlID="cmbRuoliUtente" />
+											<asp:Label ID="lblUltimoAccesso" runat="server" Text=""></asp:Label>
+										</div>
+									</fieldset>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<fieldset>
+										<div class="form-group col-sm-12">
+											<asp:Label Text="Versione:" runat="server" AssociatedControlID="versioneAssembly" />
+											<asp:Label ID="versioneAssembly" runat="server" />
+										</div>
+										<div class="form-group col-sm-12">
+											<asp:Label Text="Host:" runat="server" AssociatedControlID="nomeHost" />
+											<asp:Label ID="nomeHost" runat="server" />
+										</div>
+									</fieldset>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+			</div>
+		</div>
+
+		<div class="container-fluid body-content">
+			<div class="row" id="divErrore" runat="server">
+				<div class="col-sm-12">
+					<div class="alert alert-danger">
+						<asp:Label ID="lblErrore" runat="server" />
+					</div>
+				</div>
+			</div>
+
+			<!-- Contenitore pagina child -->
+			<asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+
+		<asp:SiteMapDataSource ID="MainSiteMapDataSource" runat="server" />
+	</form>
+
+	<%-- Modale visualizzata durante il caricamento delle tabelle. --%>
+	<div id="modalCaricamento" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h4>Caricamento in corso...</h4>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+							<span class="sr-only"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	//Rendering per Bootstrap: permette di non chiudere il dropdown-menu al click nel suo contenuto
+	$('.dropdown-menu').click(function (e) {
+		e.stopPropagation();
+	});
+
+	$(document).ready(function () {
+		//
+		// PUNTATORE MOUSE ATTESA DURANTE LE CHIAMATE AJAX
+		//
+		var prm = Sys.WebForms.PageRequestManager.getInstance();
+		prm.add_initializeRequest(InitializeRequest);
+		prm.add_endRequest(EndRequest);
+
+		function InitializeRequest(sender, args) {
+			try {
+				// DISABILITO IL PULSANTE CHE HA CAUSATO IL POSTBACK
+				$get(args._postBackElement.id).disabled = true;
+			}
+			catch (error) { }
+			finally {
+				//PUNTATORE ATTESA                
+				document.body.style.cursor = 'wait';
+			}
+		}
+
+		function EndRequest(sender, args) {
+			try {
+				// RIABILITO IL PULSANTE CHE AVEVA CAUSATO IL POSTBACK
+				$get(sender._postBackSettings.sourceElement.id).disabled = false;
+			}
+			catch (error) { }
+			finally {
+				//PUNTATORE NORMALE
+				document.body.style.cursor = 'auto';
+			}
+		}
+
+
+
+		// Attivo i tooltip Bootstrap.
+		$('[data-toggle="tooltip"]').tooltip();
+
+		//Rimuove gli style causati dalla renderizzazione del ASP:menu.
+		$(".navbar-nav li, .navbar-nav a, .navbar-nav ul").removeAttr('style');
+
+		//Applica la classe Bootstrap dropdown-toggle al sotto-menù dell'ASP:menu.
+		$(".dropdown-menu").closest("li").removeClass().addClass("dropdown-toggle");
+
+		//Applica gli attributi Bootstrap agli elementi dei sotto-menù.
+		$(".dropdown-toggle").children("a").attr("data-toggle", "dropdown");
+		$(".dropdown-toggle").children("a").attr("aria-haspopup", "true");
+		$(".dropdown-toggle").children("a").attr("aria-expanded", "false");
+		$(".dropdown-toggle").children("a").append("<span class='caret'></span>");
+
+		//Applica la classe Bootstrap active agli item selezionati
+		$("a.selected").closest("li").addClass("active");
+		$("a.selected").closest(".dropdown-toggle").addClass("active");
+
+		$('.navbar-collapsMenu1 .selected').parent().addClass('active');
+		$('.navbarMenu2 .selected').parent().addClass('active');
+
+		//Rendering per Bootstrap: permette di non chiudere il dropdown-menu al click nel suo contenuto
+		$('.dropdown-menu').click(function (e) {
+			e.stopPropagation();
+		});
+	});
+</script>

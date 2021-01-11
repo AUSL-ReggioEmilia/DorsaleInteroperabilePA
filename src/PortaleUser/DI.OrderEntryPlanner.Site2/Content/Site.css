@@ -1,0 +1,137 @@
+﻿/* 
+*    
+*   Microsoft Default Style
+*
+*/
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*Toglie gli style creati dalla renderizzazione dell'aspMenu  */
+.navbar-collapse > div {
+    clear: none !important;
+}
+
+@media (max-width: 768px) {
+    /* Aggiusta il menu durante il collassamento. Toglie il float e da un colore al testo. */
+    .navbar-custum-collapse .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+        color: #9d9d9d;
+    }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-control {
+        max-width: 280px;
+    }
+}
+
+
+/* 
+*    
+*   Styles Personalizzati
+*
+*/
+.page-header {
+    margin-top: 1px !important;
+}
+
+/* rimuove le animazioni dal collapse */
+.ricercaavanzata-collapsing {
+    -webkit-transition: none;
+    transition: none;
+}
+
+.panel-body-ordini-nonprogrammati {
+    min-height: 90px;
+}
+
+.dropdown-menu-custom-width {
+    min-width: 30rem !important;
+}
+
+/* necessario per evitare il problema dei jump in della scrollbar durante l'affix */
+.div-menu-affix.affix + .container-fluid {
+    padding-top: 100px;
+}
+
+/* affix menu' principale e secondario */
+.div-menu-affix.affix {
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+}
+
+/* attenzione: non utilizzata. puo' essere usata per disabilitare l'affix */
+.disable-affix {
+    position: static !important;
+    width: 100% !important;
+}
+
+/* toglie gli style creati dalla renderizzazione dell'aspMenu  */
+.navbar-collapse > div {
+    clear: none !important;
+}
+
+/* solo su schermi small */
+@media (max-width: 768px) {
+    /* aggiusta il menu durante il collassamento. Toglie il float e da un colore al testo. */
+    .navbar-nav {
+        color: #9d9d9d;
+    }
+
+    .aspmenu-custom {
+        float: none !important;
+    }
+}
+
+/* serve per unire i due menu */
+#MenuPrincipale {
+    margin-bottom: 0px;
+}
+/* Toolbar superiore per la pagina PianificaOrdine */
+.jumbotron-toolbar-custom-margin {
+    padding: 5px !important;
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+
+.button-custom-align {
+    margin-top: 61px;
+}
+
+.custom-label {
+    margin-bottom: 5px;
+    background-color: #f8f8f8;
+    border-color:;
+    color: black;
+    padding: 2px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    font-size: 0.85em;
+    line-height: 1.3;
+    border-radius: 3px;
+    border: 1px solid #9a9a9a;
+}
+
+.custom-label :hover{
+    color:#017282;
+}
+
+/*Css per il fullcalendar*/
+.day-background-color {
+    background-color: #b9ffb3;
+}

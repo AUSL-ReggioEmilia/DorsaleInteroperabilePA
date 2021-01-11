@@ -1,0 +1,49 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="PazienteSacUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Sac/Pazienti/PazienteDettaglio.aspx?id={0}</Value>
+    </Setting>
+    <Setting Name="ReportingUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2:8080/Reporting/Reports/{0}.aspx</Value>
+    </Setting>
+    <Setting Name="DwhUrlReferti" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://DAGOBAH2:8087/DwhClinico/AccessoDiretto/Referti.aspx?IdPaziente={0}</Value>
+    </Setting>
+    <Setting Name="AziendaRichiedente" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ASMN</Value>
+    </Setting>
+    <Setting Name="SistemaRichiedente" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PortaleRichiesta</Value>
+    </Setting>
+    <Setting Name="DispatcherUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2:8080/PrintDispatcherAdmin/JobQueueList.aspx?IdOrderEntry={0}</Value>
+    </Setting>
+    <Setting Name="UnitaOperativeSacUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Sac/RoleManager/UnitaOperativeLista.aspx</Value>
+    </Setting>
+    <Setting Name="RuoliSacUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Sac/RoleManager/RuoliLista.aspx</Value>
+    </Setting>
+    <Setting Name="Asmn_DwhOut_ScreeningConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ALDERAAN;Initial Catalog=Asmn_DwhOut_Screening;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ALDERAAN;Initial Catalog=Asmn_DwhOut_Screening;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=alderaan;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=alderaan;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="InstrumentationKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">137d619d-c491-40b7-ad25-b33124a14470</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

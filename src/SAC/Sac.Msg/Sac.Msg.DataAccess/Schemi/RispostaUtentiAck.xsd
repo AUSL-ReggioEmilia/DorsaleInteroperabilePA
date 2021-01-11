@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RispostaUtentiAck" nillable="true" type="RispostaUtentiAck" />
+  <xs:complexType name="RispostaUtentiAck">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Ingresso" type="IngressoAck" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Notifiche" type="NotificaAck" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IngressoAck">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Utente" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Ack" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Url" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Account" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NotificaAck">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Utente" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Ack" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Url" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Account" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

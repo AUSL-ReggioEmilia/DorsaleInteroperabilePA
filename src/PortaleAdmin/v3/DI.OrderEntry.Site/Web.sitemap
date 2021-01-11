@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode title="Order Entry" description="Order Entry">
+
+    <!--Ricerca-->
+    <siteMapNode title="Ricerca" description="Ricerca">
+      <siteMapNode url="Ordini/OrdiniRichiesti.aspx" title="Ordini"  description="Ordini">
+        <siteMapNode url="Ordini/OrdiniDettaglio.aspx"  title="Dettaglio" description="Dettaglio"></siteMapNode>
+      </siteMapNode>
+    </siteMapNode>
+
+    <!--Monitoraggio-->
+    <siteMapNode title="Monitoraggio" description="Monitoraggio">
+      <siteMapNode url="Ordini/QuadroSinottico.aspx" title="Quadro Sinottico"  description="Quadro Sinottico" />
+      <siteMapNode url="Messaggi/Richieste.aspx" title="Richieste"  description="Richieste" />
+      <siteMapNode url="Messaggi/Stati.aspx" title="Stati"  description="Stati" />
+      <siteMapNode url="Messaggi/MonitoraggioUltimiArrivi.aspx" title="Ordini Ultimi Arrivi"  description="Ordini Ultimi Arrivi" />
+    </siteMapNode>
+
+    <!--Gestione-->
+    <siteMapNode title="Gestione" description="Gestione">
+      <siteMapNode url="Gestione/ListaSistemi.aspx" title="Sistemi"  description="Modifica sistemi eroganti/richiedenti" />
+      <siteMapNode url="Pages/Redirector.ashx?Target=UnitaOperative" title="Unità operative"  description="Modifica unità operative" />
+      <siteMapNode url="Pages/Redirector.ashx?Target=Ruoli" title="Ruoli"  description="Configura ruoli applicativi" />
+    </siteMapNode>
+
+    <!--Dati Accessori-->
+    <siteMapNode title="Dati Accessori" description="Dati Accessori">
+      <siteMapNode url="Gestione/DatiAccessori.aspx" title="Dati Accessori"  description="Configura i dati accessori" />
+      <siteMapNode url="Gestione/DatiAggiuntiviLista.aspx" title="Dati Aggiuntivi"  description="Dati Aggiuntivi" >
+        <siteMapNode hide="true" url="Gestione/DatiAggiuntiviDettaglio.aspx" title="Dettaglio Dato Aggiuntivo"  description="Dettaglio Dato Aggiuntivo" />
+      </siteMapNode>
+      <siteMapNode url="Gestione/EnnupleDatiAccessori.aspx" title="Permessi (ennuple)"  description="Permessi (ennuple)" />
+      <siteMapNode url="Gestione/SimulazioneEnnupleDatiAccessori.aspx" title="Simulazione ennuple"  description="Simulazione delle richieste dei dati accessori in base alle ennuple inserite" />
+    </siteMapNode>
+
+    <!--Prestazioni-->
+    <siteMapNode url="Gestione/Prestazioni.aspx" title="Prestazioni" description="Prestazioni">
+      <siteMapNode url="Gestione/ListaPrestazioni.aspx" title="Prestazioni"  description="Prestazioni" />
+      <siteMapNode url="Gestione/Profili.aspx" title="Profili"  description="Configura i profili e i template amministrativi" />
+      <siteMapNode url="Gestione/GruppiPrestazioni.aspx" title="Gruppi di prestazioni"  description="Gruppi di prestazioni" />
+      <siteMapNode url="Gestione/Ennuple.aspx" title="Permessi (ennuple)"  description="Permessi (ennuple)" />
+      <siteMapNode url="Gestione/SimulazioneEnnuple.aspx" title="Simulazione ennuple"  description="Simulazione delle richieste di prestazioni in base alle ennuple inserite" />
+    </siteMapNode>
+
+    <!--Accessi-->
+    <siteMapNode url="Gestione/Accessi.aspx" title="Accessi" description="Accessi">
+      <siteMapNode url="Gestione/ListaUtenti.aspx" title="Utenti / Gruppi di AD"  description="Utenti / Gruppi di AD" >
+        <siteMapNode hide="true" url="Gestione/SACCercaUtente.aspx" title="Ricerca Utente" description="Ricerca Utente" />
+        <siteMapNode hide="true" url="Gestione/SACCercaGruppo.aspx" title="Ricerca Gruppo" description="Ricerca Gruppo" />
+      </siteMapNode>
+      <siteMapNode url="Gestione/GruppiUtenti.aspx" title="Gruppi di Order Entry"  description="Gruppi di Order Entry" />
+      <siteMapNode url="Gestione/EnnupleAccessi.aspx" title="Permessi (ennuple)"  description="Permessi (ennuple)" />
+
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

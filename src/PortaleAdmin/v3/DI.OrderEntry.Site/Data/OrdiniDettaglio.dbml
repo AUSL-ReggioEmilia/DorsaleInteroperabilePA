@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_OrderEntry" EntityNamespace="DI.OrderEntry.Admin.Data" ContextNamespace="DI.OrderEntry.Admin.Data" Class="OrdiniDettaglioDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=coruscant;Initial Catalog=AuslAsmnRe_OrderEntry;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_OrderEntryConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.UiTrackingList" Method="UiTrackingList">
+    <Parameter Name="idOrdineTestata" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="UiTrackingListResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DataInserimento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="Sistema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="StatoOE" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Stato" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UiOrdiniErogatiList" Method="UiOrdiniErogatiList">
+    <Parameter Name="idOrdineTestata" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="UiOrdiniErogatiListResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DataInserimento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="IdRichiestaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="StatoOrderEntry" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="StatoErogante" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CodiceAziendaSistemaErogante" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="CodiceSistemaErogante" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UiOrdiniErogatiFinteTestateSelect" Method="UiOrdiniErogatiFinteTestateSelect">
+    <Parameter Name="idOrdineTestata" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="UiOrdiniErogatiFinteTestateSelectResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DataInserimento" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IdRichiestaErogante" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="StatoOrderEntry" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="StatoErogante" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceAziendaSistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceSistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="IDSistemaErogante" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UiOrdiniTestateRichiesteErogateList" Method="UiOrdiniTestateRichiesteErogateList">
+    <Parameter Name="idOrdineTestata" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="UiOrdiniTestateRichiesteErogateListResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DataInserimento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="IdRichiestaErogante" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="StatoOrderEntry" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="StatoErogante" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CodiceAziendaSistemaErogante" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="CodiceSistemaErogante" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="IDSistemaErogante" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Erogato" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UiOrdiniRigheList" Method="UiOrdiniRigheList">
+    <Parameter Name="idTestataOrderEntry" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="idTestataOrdineErogato" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="UiOrdiniRigheListResult">
+      <Column Name="IdRigaRichiesta" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DataInserimentoRigaRichiesta" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="DataModificaRigaRichiesta" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="DataModificaStatoRigaRichiesta" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IdRigaRichiedente" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="IdSistemaRichiedente" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="StatoOrderEntryRichiedente" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="StatoOrderEntryRichiedenteDescrizione" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="IdRigaErogata" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PrestazioneCodice" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="PrestazioneDescrizione" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="DataInserimentoRigaErogata" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="DataModificaRigaErogata" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="DataModificaStatoRigaErogata" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="DataPianificataRigaErogata" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IdRigaErogante" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="IdRigaRichiedenteDaErogante" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="IdOrdineErogatoTestata" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="StatoOrderEntryErogante" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="StatoOrderEntryEroganteDescrizione" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="IdRichiestaErogante" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="StatoErogante" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Operatore" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UiOrdiniRigheRichiesteList" Method="UiOrdiniRigheRichiesteList">
+    <Parameter Name="idTestataOrderEntry" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="IDSistemaErogante" Parameter="iDSistemaErogante" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="UiOrdiniRigheRichiesteListResult">
+      <Column Name="IdRigaRichiesta" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DataInserimentoRigaRichiesta" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModificaRigaRichiesta" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModificaStatoRigaRichiesta" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IdRigaRichiedente" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="IdSistemaRichiedente" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StatoOrderEntryRichiedente" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="StatoOrderEntryDescrizione" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdRigaErogata" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrestazioneCodice" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="PrestazioneDescrizione" Type="System.String" DbType="VarChar(266) NOT NULL" CanBeNull="false" />
+      <Column Name="DataInserimentoRigaErogata" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DataModificaRigaErogata" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DataModificaStatoRigaErogata" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DataPianificataRigaErogata" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IdRigaErogante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdRigaRichiedenteDaErogante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdOrdineErogatoTestata" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatoOrderEntryErogante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatoOrderEntryEroganteDescrizione" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdRichiestaErogante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatoErogante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Data" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Operatore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

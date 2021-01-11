@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.progel.it/WCF/SAC/Service/3.0" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/SAC/Service/3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="GruppiCerca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaxRecord" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Gruppo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Attivo" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GruppiCercaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="GruppiCercaResult" nillable="true" type="q1:GruppiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GruppoOttieniPerNomeGruppo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NomeGruppo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GruppoOttieniPerNomeGruppoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="GruppoOttieniPerNomeGruppoResult" nillable="true" type="q2:GruppoReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GruppiOttieniPerUtente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Utente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GruppiOttieniPerUtenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="GruppiOttieniPerUtenteResult" nillable="true" type="q3:GruppiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoliCerca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaxRecord" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Codice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Attivo" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoliCercaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="RuoliCercaResult" nillable="true" type="q4:RuoliReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoliOttieniPerUtente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Utente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoliOttieniPerUtenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="RuoliOttieniPerUtenteResult" nillable="true" type="q5:RuoliReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoliOttieniPerIdUtente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdUtente" type="q6:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoliOttieniPerIdUtenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="RuoliOttieniPerIdUtenteResult" nillable="true" type="q7:RuoliReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoloDettagliOttieni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Utente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceRuolo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoloDettagliOttieniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="RuoloDettagliOttieniResult" nillable="true" type="q8:RuoloDettagliReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SistemiCerca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaxRecord" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Codice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAzienda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Erogante" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Richiedente" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Attivo" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SistemiCercaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="SistemiCercaResult" nillable="true" type="q9:SistemiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnitaOperativeCerca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaxRecord" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Codice" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAzienda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Attivo" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnitaOperativeCercaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="UnitaOperativeCercaResult" nillable="true" type="q10:UnitaOperativeReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtentiCerca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaxRecord" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Utente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Matricola" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Attivo" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CodiceRuolo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtentiCercaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="UtentiCercaResult" nillable="true" type="q11:UtentiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtenteOttieniPerNomeUtente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Utente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtenteOttieniPerNomeUtenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="UtenteOttieniPerNomeUtenteResult" nillable="true" type="q12:UtenteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtentiOttieniPerRuolo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodiceRuolo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtentiOttieniPerRuoloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="UtentiOttieniPerRuoloResult" nillable="true" type="q13:UtentiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccessiOttieniPerRuolo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodiceRuolo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccessiOttieniPerRuoloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="AccessiOttieniPerRuoloResult" nillable="true" type="q14:AccessiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoliOttieniPerAttributo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Utente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RuoliOttieniPerAttributoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.progel.it/WCF/SAC/RoleManagerTypes/3.0" minOccurs="0" name="RuoliOttieniPerAttributoResult" nillable="true" type="q15:RuoliReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

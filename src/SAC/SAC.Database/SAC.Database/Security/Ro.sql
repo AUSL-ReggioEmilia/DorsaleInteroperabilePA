@@ -1,0 +1,8 @@
+﻿CREATE SCHEMA [Ro]
+    AUTHORIZATION [dbo];
+
+
+GO
+GRANT SELECT
+    ON SCHEMA::[Ro] TO [DataAccessRo];
+

@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.progel.it/WCF/DWH/Ws/1.0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://schemas.progel.it/WCF/DWH/Ws/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.progel.it/WCF/DWH/Ws/1.0/Imports">
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd0" namespace="http://schemas.progel.it/WCF/DWH/Ws/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/DWH/Ws/Types/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd3" namespace="http://schemas.progel.it/WCF/DWH/Ws/Prescrizioni/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd4" namespace="http://schemas.progel.it/WCF/DWH/Ws/PrescrizioniEstesa/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd5" namespace="http://schemas.progel.it/WCF/DWH/Ws/Referti/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd6" namespace="http://schemas.progel.it/WCF/DWH/Ws/Episodi/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd7" namespace="http://schemas.progel.it/WCF/DWH/Ws/Pazienti/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd8" namespace="http://schemas.progel.it/WCF/DWH/Ws/LayerReferti/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd10" namespace="http://schemas.progel.it/WCF/DWH/Ws/NoteAnamnestiche/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc?xsd=xsd11" namespace="http://schemas.progel.it/WCF/DWH/Ws/Fse/1.0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_CreaTokenAccesso_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreaTokenAccesso" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreaTokenAccesso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreaTokenAccessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreaTokenAccessoDelega_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreaTokenAccessoDelega" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreaTokenAccessoDelega_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreaTokenAccessoDelegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioneOttieniPerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioneOttieniPerId" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioneOttieniPerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioneOttieniPerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioniCercaPerIdPaziente_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioniCercaPerIdPaziente" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioniCercaPerIdPaziente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioniCercaPerIdPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioniCercaPerGeneralita_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioniCercaPerGeneralita" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioniCercaPerGeneralita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioniCercaPerGeneralitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioniCercaPerPazienteRiferimenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioniCercaPerPazienteRiferimenti" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioniCercaPerPazienteRiferimenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioniCercaPerPazienteRiferimentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioneEstesaOttieniPerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioneEstesaOttieniPerId" />
+  </wsdl:message>
+  <wsdl:message name="IService_PrescrizioneEstesaOttieniPerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrescrizioneEstesaOttieniPerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DizionarioTipiRefertoOttieni_InputMessage">
+    <wsdl:part name="parameters" element="tns:DizionarioTipiRefertoOttieni" />
+  </wsdl:message>
+  <wsdl:message name="IService_DizionarioTipiRefertoOttieni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DizionarioTipiRefertoOttieniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertoOttieniPerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertoOttieniPerId" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertoOttieniPerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertoOttieniPerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertoOttieniPerIdEsterno_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertoOttieniPerIdEsterno" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertoOttieniPerIdEsterno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertoOttieniPerIdEsternoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertoPdfOttieniPerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertoPdfOttieniPerId" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertoPdfOttieniPerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertoPdfOttieniPerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerIdPaziente_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerIdPaziente" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerIdPaziente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerIdPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerGeneralita_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerGeneralita" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerGeneralita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerGeneralitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerPazienteRiferimenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerPazienteRiferimenti" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerPazienteRiferimenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerPazienteRiferimentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerNosologico_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerNosologico" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerNosologico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerNosologicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerNumeroReferto_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerNumeroReferto" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerNumeroReferto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerNumeroRefertoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerNumeroPrenotazione_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerNumeroPrenotazione" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerNumeroPrenotazione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerNumeroPrenotazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerIdOrderEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerIdOrderEntry" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiCercaPerIdOrderEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiCercaPerIdOrderEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiModificatiCercaPerSistema_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiModificatiCercaPerSistema" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertiModificatiCercaPerSistema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertiModificatiCercaPerSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MatricePrestazioniLabCercaPerIdPaziente_InputMessage">
+    <wsdl:part name="parameters" element="tns:MatricePrestazioniLabCercaPerIdPaziente" />
+  </wsdl:message>
+  <wsdl:message name="IService_MatricePrestazioniLabCercaPerIdPaziente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MatricePrestazioniLabCercaPerIdPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MatricePrestazioniLabCercaPerNosologico_InputMessage">
+    <wsdl:part name="parameters" element="tns:MatricePrestazioniLabCercaPerNosologico" />
+  </wsdl:message>
+  <wsdl:message name="IService_MatricePrestazioniLabCercaPerNosologico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MatricePrestazioniLabCercaPerNosologicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertoIncrementaVisionatoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefertoIncrementaVisionatoById" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefertoIncrementaVisionatoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefertoIncrementaVisionatoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodiCercaPerIdPaziente_InputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodiCercaPerIdPaziente" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodiCercaPerIdPaziente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodiCercaPerIdPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodiCercaPerPazienteRiferimenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodiCercaPerPazienteRiferimenti" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodiCercaPerPazienteRiferimenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodiCercaPerPazienteRiferimentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodiCercaPerGeneralita_InputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodiCercaPerGeneralita" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodiCercaPerGeneralita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodiCercaPerGeneralitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodioOttieniPerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodioOttieniPerId" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodioOttieniPerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodioOttieniPerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodioOttieniPerNosologico_InputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodioOttieniPerNosologico" />
+  </wsdl:message>
+  <wsdl:message name="IService_EpisodioOttieniPerNosologico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EpisodioOttieniPerNosologicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListaAttesaPerNosologico_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaAttesaPerNosologico" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListaAttesaPerNosologico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaAttesaPerNosologicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NosologicoPerListaAttesa_InputMessage">
+    <wsdl:part name="parameters" element="tns:NosologicoPerListaAttesa" />
+  </wsdl:message>
+  <wsdl:message name="IService_NosologicoPerListaAttesa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NosologicoPerListaAttesaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazienteOttieniPerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazienteOttieniPerId" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazienteOttieniPerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazienteOttieniPerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazienteOttieniPerAnagrafica_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazienteOttieniPerAnagrafica" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazienteOttieniPerAnagrafica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazienteOttieniPerAnagraficaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiCercaPerCodiceFiscale_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiCercaPerCodiceFiscale" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiCercaPerCodiceFiscale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiCercaPerCodiceFiscaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiCercaPerTesseraSanitaria_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiCercaPerTesseraSanitaria" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiCercaPerTesseraSanitaria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiCercaPerTesseraSanitariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiCercaPerGeneralita_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiCercaPerGeneralita" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiCercaPerGeneralita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiCercaPerGeneralitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiRicoveratiCercaPerReparti_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiRicoveratiCercaPerReparti" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiRicoveratiCercaPerReparti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiRicoveratiCercaPerRepartiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiTrasferitiCercaPerReparti_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiTrasferitiCercaPerReparti" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiTrasferitiCercaPerReparti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiTrasferitiCercaPerRepartiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiTransitatiCercaPerReparti_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiTransitatiCercaPerReparti" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiTransitatiCercaPerReparti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiTransitatiCercaPerRepartiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiPrenotatiCercaPerReparti_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiPrenotatiCercaPerReparti" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiPrenotatiCercaPerReparti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiPrenotatiCercaPerRepartiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiNatiCercaPerReparti_InputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiNatiCercaPerReparti" />
+  </wsdl:message>
+  <wsdl:message name="IService_PazientiNatiCercaPerReparti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PazientiNatiCercaPerRepartiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PatientSummaryOttieniPerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:PatientSummaryOttieniPerId" />
+  </wsdl:message>
+  <wsdl:message name="IService_PatientSummaryOttieniPerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PatientSummaryOttieniPerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LayerRefertoFormatiOttieniPerIdReferto_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayerRefertoFormatiOttieniPerIdReferto" />
+  </wsdl:message>
+  <wsdl:message name="IService_LayerRefertoFormatiOttieniPerIdReferto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayerRefertoFormatiOttieniPerIdRefertoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LayerRefertoFormattatoOttieniPerFormatiTipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayerRefertoFormattatoOttieniPerFormatiTipo" />
+  </wsdl:message>
+  <wsdl:message name="IService_LayerRefertoFormattatoOttieniPerFormatiTipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayerRefertoFormattatoOttieniPerFormatiTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NotaAnamnesticaOttieniPerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotaAnamnesticaOttieniPerId" />
+  </wsdl:message>
+  <wsdl:message name="IService_NotaAnamnesticaOttieniPerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotaAnamnesticaOttieniPerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NoteAnamnesticheCercaPerIdPaziente_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoteAnamnesticheCercaPerIdPaziente" />
+  </wsdl:message>
+  <wsdl:message name="IService_NoteAnamnesticheCercaPerIdPaziente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoteAnamnesticheCercaPerIdPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NoteAnamnesticheCercaPerGeneralita_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoteAnamnesticheCercaPerGeneralita" />
+  </wsdl:message>
+  <wsdl:message name="IService_NoteAnamnesticheCercaPerGeneralita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoteAnamnesticheCercaPerGeneralitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NoteAnamnesticheCercaPerPazienteRiferimenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoteAnamnesticheCercaPerPazienteRiferimenti" />
+  </wsdl:message>
+  <wsdl:message name="IService_NoteAnamnesticheCercaPerPazienteRiferimenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoteAnamnesticheCercaPerPazienteRiferimentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseConsensoAggiungiOppureModifica_InputMessage">
+    <wsdl:part name="parameters" element="tns:FseConsensoAggiungiOppureModifica" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseConsensoAggiungiOppureModifica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FseConsensoAggiungiOppureModificaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseConsensoOttieniPerCodiceFiscale_InputMessage">
+    <wsdl:part name="parameters" element="tns:FseConsensoOttieniPerCodiceFiscale" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseConsensoOttieniPerCodiceFiscale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FseConsensoOttieniPerCodiceFiscaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseDizionariOttieni_InputMessage">
+    <wsdl:part name="parameters" element="tns:FseDizionariOttieni" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseDizionariOttieni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FseDizionariOttieniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseDocumentiCerca_InputMessage">
+    <wsdl:part name="parameters" element="tns:FseDocumentiCerca" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseDocumentiCerca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FseDocumentiCercaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseDocumentoOttieniPerCodice_InputMessage">
+    <wsdl:part name="parameters" element="tns:FseDocumentoOttieniPerCodice" />
+  </wsdl:message>
+  <wsdl:message name="IService_FseDocumentoOttieniPerCodice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FseDocumentoOttieniPerCodiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="CreaTokenAccesso">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/CreaTokenAccesso" message="tns:IService_CreaTokenAccesso_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/CreaTokenAccessoResponse" message="tns:IService_CreaTokenAccesso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreaTokenAccessoDelega">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/CreaTokenAccessoDelega" message="tns:IService_CreaTokenAccessoDelega_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/CreaTokenAccessoDelegaResponse" message="tns:IService_CreaTokenAccessoDelega_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioneOttieniPerId">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioneOttieniPerId" message="tns:IService_PrescrizioneOttieniPerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioneOttieniPerIdResponse" message="tns:IService_PrescrizioneOttieniPerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioniCercaPerIdPaziente">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioniCercaPerIdPaziente" message="tns:IService_PrescrizioniCercaPerIdPaziente_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioniCercaPerIdPazienteResponse" message="tns:IService_PrescrizioniCercaPerIdPaziente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioniCercaPerGeneralita">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioniCercaPerGeneralita" message="tns:IService_PrescrizioniCercaPerGeneralita_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioniCercaPerGeneralitaResponse" message="tns:IService_PrescrizioniCercaPerGeneralita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioniCercaPerPazienteRiferimenti">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioniCercaPerPazienteRiferimenti" message="tns:IService_PrescrizioniCercaPerPazienteRiferimenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioniCercaPerPazienteRiferimentiResponse" message="tns:IService_PrescrizioniCercaPerPazienteRiferimenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioneEstesaOttieniPerId">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioneEstesaOttieniPerId" message="tns:IService_PrescrizioneEstesaOttieniPerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioneEstesaOttieniPerIdResponse" message="tns:IService_PrescrizioneEstesaOttieniPerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DizionarioTipiRefertoOttieni">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/DizionarioTipiRefertoOttieni" message="tns:IService_DizionarioTipiRefertoOttieni_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/DizionarioTipiRefertoOttieniResponse" message="tns:IService_DizionarioTipiRefertoOttieni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertoOttieniPerId">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoOttieniPerId" message="tns:IService_RefertoOttieniPerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoOttieniPerIdResponse" message="tns:IService_RefertoOttieniPerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertoOttieniPerIdEsterno">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoOttieniPerIdEsterno" message="tns:IService_RefertoOttieniPerIdEsterno_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoOttieniPerIdEsternoResponse" message="tns:IService_RefertoOttieniPerIdEsterno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertoPdfOttieniPerId">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoPdfOttieniPerId" message="tns:IService_RefertoPdfOttieniPerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoPdfOttieniPerIdResponse" message="tns:IService_RefertoPdfOttieniPerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerIdPaziente">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerIdPaziente" message="tns:IService_RefertiCercaPerIdPaziente_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerIdPazienteResponse" message="tns:IService_RefertiCercaPerIdPaziente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerGeneralita">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerGeneralita" message="tns:IService_RefertiCercaPerGeneralita_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerGeneralitaResponse" message="tns:IService_RefertiCercaPerGeneralita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerPazienteRiferimenti">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerPazienteRiferimenti" message="tns:IService_RefertiCercaPerPazienteRiferimenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerPazienteRiferimentiResponse" message="tns:IService_RefertiCercaPerPazienteRiferimenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerNosologico">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerNosologico" message="tns:IService_RefertiCercaPerNosologico_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerNosologicoResponse" message="tns:IService_RefertiCercaPerNosologico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerNumeroReferto">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerNumeroReferto" message="tns:IService_RefertiCercaPerNumeroReferto_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerNumeroRefertoResponse" message="tns:IService_RefertiCercaPerNumeroReferto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerNumeroPrenotazione">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerNumeroPrenotazione" message="tns:IService_RefertiCercaPerNumeroPrenotazione_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerNumeroPrenotazioneResponse" message="tns:IService_RefertiCercaPerNumeroPrenotazione_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerIdOrderEntry">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerIdOrderEntry" message="tns:IService_RefertiCercaPerIdOrderEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerIdOrderEntryResponse" message="tns:IService_RefertiCercaPerIdOrderEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertiModificatiCercaPerSistema">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiModificatiCercaPerSistema" message="tns:IService_RefertiModificatiCercaPerSistema_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiModificatiCercaPerSistemaResponse" message="tns:IService_RefertiModificatiCercaPerSistema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MatricePrestazioniLabCercaPerIdPaziente">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/MatricePrestazioniLabCercaPerIdPaziente" message="tns:IService_MatricePrestazioniLabCercaPerIdPaziente_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/MatricePrestazioniLabCercaPerIdPazienteResponse" message="tns:IService_MatricePrestazioniLabCercaPerIdPaziente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MatricePrestazioniLabCercaPerNosologico">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/MatricePrestazioniLabCercaPerNosologico" message="tns:IService_MatricePrestazioniLabCercaPerNosologico_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/MatricePrestazioniLabCercaPerNosologicoResponse" message="tns:IService_MatricePrestazioniLabCercaPerNosologico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefertoIncrementaVisionatoById">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoIncrementaVisionatoById" message="tns:IService_RefertoIncrementaVisionatoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoIncrementaVisionatoByIdResponse" message="tns:IService_RefertoIncrementaVisionatoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EpisodiCercaPerIdPaziente">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodiCercaPerIdPaziente" message="tns:IService_EpisodiCercaPerIdPaziente_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodiCercaPerIdPazienteResponse" message="tns:IService_EpisodiCercaPerIdPaziente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EpisodiCercaPerPazienteRiferimenti">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodiCercaPerPazienteRiferimenti" message="tns:IService_EpisodiCercaPerPazienteRiferimenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodiCercaPerPazienteRiferimentiResponse" message="tns:IService_EpisodiCercaPerPazienteRiferimenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EpisodiCercaPerGeneralita">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodiCercaPerGeneralita" message="tns:IService_EpisodiCercaPerGeneralita_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodiCercaPerGeneralitaResponse" message="tns:IService_EpisodiCercaPerGeneralita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EpisodioOttieniPerId">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodioOttieniPerId" message="tns:IService_EpisodioOttieniPerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodioOttieniPerIdResponse" message="tns:IService_EpisodioOttieniPerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EpisodioOttieniPerNosologico">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodioOttieniPerNosologico" message="tns:IService_EpisodioOttieniPerNosologico_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodioOttieniPerNosologicoResponse" message="tns:IService_EpisodioOttieniPerNosologico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaAttesaPerNosologico">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/ListaAttesaPerNosologico" message="tns:IService_ListaAttesaPerNosologico_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/ListaAttesaPerNosologicoResponse" message="tns:IService_ListaAttesaPerNosologico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NosologicoPerListaAttesa">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NosologicoPerListaAttesa" message="tns:IService_NosologicoPerListaAttesa_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NosologicoPerListaAttesaResponse" message="tns:IService_NosologicoPerListaAttesa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazienteOttieniPerId">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazienteOttieniPerId" message="tns:IService_PazienteOttieniPerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazienteOttieniPerIdResponse" message="tns:IService_PazienteOttieniPerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazienteOttieniPerAnagrafica">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazienteOttieniPerAnagrafica" message="tns:IService_PazienteOttieniPerAnagrafica_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazienteOttieniPerAnagraficaResponse" message="tns:IService_PazienteOttieniPerAnagrafica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaPerCodiceFiscale">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiCercaPerCodiceFiscale" message="tns:IService_PazientiCercaPerCodiceFiscale_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiCercaPerCodiceFiscaleResponse" message="tns:IService_PazientiCercaPerCodiceFiscale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaPerTesseraSanitaria">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiCercaPerTesseraSanitaria" message="tns:IService_PazientiCercaPerTesseraSanitaria_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiCercaPerTesseraSanitariaResponse" message="tns:IService_PazientiCercaPerTesseraSanitaria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaPerGeneralita">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiCercaPerGeneralita" message="tns:IService_PazientiCercaPerGeneralita_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiCercaPerGeneralitaResponse" message="tns:IService_PazientiCercaPerGeneralita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiRicoveratiCercaPerReparti">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiRicoveratiCercaPerReparti" message="tns:IService_PazientiRicoveratiCercaPerReparti_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiRicoveratiCercaPerRepartiResponse" message="tns:IService_PazientiRicoveratiCercaPerReparti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiTrasferitiCercaPerReparti">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiTrasferitiCercaPerReparti" message="tns:IService_PazientiTrasferitiCercaPerReparti_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiTrasferitiCercaPerRepartiResponse" message="tns:IService_PazientiTrasferitiCercaPerReparti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiTransitatiCercaPerReparti">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiTransitatiCercaPerReparti" message="tns:IService_PazientiTransitatiCercaPerReparti_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiTransitatiCercaPerRepartiResponse" message="tns:IService_PazientiTransitatiCercaPerReparti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiPrenotatiCercaPerReparti">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiPrenotatiCercaPerReparti" message="tns:IService_PazientiPrenotatiCercaPerReparti_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiPrenotatiCercaPerRepartiResponse" message="tns:IService_PazientiPrenotatiCercaPerReparti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiNatiCercaPerReparti">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiNatiCercaPerReparti" message="tns:IService_PazientiNatiCercaPerReparti_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiNatiCercaPerRepartiResponse" message="tns:IService_PazientiNatiCercaPerReparti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientSummaryOttieniPerId">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PatientSummaryOttieniPerId" message="tns:IService_PatientSummaryOttieniPerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PatientSummaryOttieniPerIdResponse" message="tns:IService_PatientSummaryOttieniPerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayerRefertoFormatiOttieniPerIdReferto">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/LayerRefertoFormatiOttieniPerIdReferto" message="tns:IService_LayerRefertoFormatiOttieniPerIdReferto_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/LayerRefertoFormatiOttieniPerIdRefertoResponse" message="tns:IService_LayerRefertoFormatiOttieniPerIdReferto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayerRefertoFormattatoOttieniPerFormatiTipo">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/LayerRefertoFormattatoOttieniPerFormatiTipo" message="tns:IService_LayerRefertoFormattatoOttieniPerFormatiTipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/LayerRefertoFormattatoOttieniPerFormatiTipoResponse" message="tns:IService_LayerRefertoFormattatoOttieniPerFormatiTipo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotaAnamnesticaOttieniPerId">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NotaAnamnesticaOttieniPerId" message="tns:IService_NotaAnamnesticaOttieniPerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NotaAnamnesticaOttieniPerIdResponse" message="tns:IService_NotaAnamnesticaOttieniPerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoteAnamnesticheCercaPerIdPaziente">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NoteAnamnesticheCercaPerIdPaziente" message="tns:IService_NoteAnamnesticheCercaPerIdPaziente_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NoteAnamnesticheCercaPerIdPazienteResponse" message="tns:IService_NoteAnamnesticheCercaPerIdPaziente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoteAnamnesticheCercaPerGeneralita">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NoteAnamnesticheCercaPerGeneralita" message="tns:IService_NoteAnamnesticheCercaPerGeneralita_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NoteAnamnesticheCercaPerGeneralitaResponse" message="tns:IService_NoteAnamnesticheCercaPerGeneralita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoteAnamnesticheCercaPerPazienteRiferimenti">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NoteAnamnesticheCercaPerPazienteRiferimenti" message="tns:IService_NoteAnamnesticheCercaPerPazienteRiferimenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NoteAnamnesticheCercaPerPazienteRiferimentiResponse" message="tns:IService_NoteAnamnesticheCercaPerPazienteRiferimenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FseConsensoAggiungiOppureModifica">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseConsensoAggiungiOppureModifica" message="tns:IService_FseConsensoAggiungiOppureModifica_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseConsensoAggiungiOppureModificaResponse" message="tns:IService_FseConsensoAggiungiOppureModifica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FseConsensoOttieniPerCodiceFiscale">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseConsensoOttieniPerCodiceFiscale" message="tns:IService_FseConsensoOttieniPerCodiceFiscale_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseConsensoOttieniPerCodiceFiscaleResponse" message="tns:IService_FseConsensoOttieniPerCodiceFiscale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FseDizionariOttieni">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseDizionariOttieni" message="tns:IService_FseDizionariOttieni_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseDizionariOttieniResponse" message="tns:IService_FseDizionariOttieni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FseDocumentiCerca">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseDocumentiCerca" message="tns:IService_FseDocumentiCerca_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseDocumentiCercaResponse" message="tns:IService_FseDocumentiCerca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FseDocumentoOttieniPerCodice">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseDocumentoOttieniPerCodice" message="tns:IService_FseDocumentoOttieniPerCodice_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseDocumentoOttieniPerCodiceResponse" message="tns:IService_FseDocumentoOttieniPerCodice_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpEndpoint" type="tns:IService">
+    <wsp:PolicyReference URI="#BasicHttpEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreaTokenAccesso">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/CreaTokenAccesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreaTokenAccessoDelega">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/CreaTokenAccessoDelega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioneOttieniPerId">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioneOttieniPerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioniCercaPerIdPaziente">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioniCercaPerIdPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioniCercaPerGeneralita">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioniCercaPerGeneralita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioniCercaPerPazienteRiferimenti">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioniCercaPerPazienteRiferimenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrescrizioneEstesaOttieniPerId">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PrescrizioneEstesaOttieniPerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DizionarioTipiRefertoOttieni">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/DizionarioTipiRefertoOttieni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertoOttieniPerId">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoOttieniPerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertoOttieniPerIdEsterno">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoOttieniPerIdEsterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertoPdfOttieniPerId">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoPdfOttieniPerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerIdPaziente">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerIdPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerGeneralita">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerGeneralita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerPazienteRiferimenti">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerPazienteRiferimenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerNosologico">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerNosologico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerNumeroReferto">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerNumeroReferto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerNumeroPrenotazione">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerNumeroPrenotazione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertiCercaPerIdOrderEntry">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiCercaPerIdOrderEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertiModificatiCercaPerSistema">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertiModificatiCercaPerSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatricePrestazioniLabCercaPerIdPaziente">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/MatricePrestazioniLabCercaPerIdPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatricePrestazioniLabCercaPerNosologico">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/MatricePrestazioniLabCercaPerNosologico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefertoIncrementaVisionatoById">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/RefertoIncrementaVisionatoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EpisodiCercaPerIdPaziente">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodiCercaPerIdPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EpisodiCercaPerPazienteRiferimenti">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodiCercaPerPazienteRiferimenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EpisodiCercaPerGeneralita">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodiCercaPerGeneralita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EpisodioOttieniPerId">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodioOttieniPerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EpisodioOttieniPerNosologico">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/EpisodioOttieniPerNosologico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaAttesaPerNosologico">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/ListaAttesaPerNosologico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NosologicoPerListaAttesa">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NosologicoPerListaAttesa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazienteOttieniPerId">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazienteOttieniPerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazienteOttieniPerAnagrafica">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazienteOttieniPerAnagrafica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaPerCodiceFiscale">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiCercaPerCodiceFiscale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaPerTesseraSanitaria">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiCercaPerTesseraSanitaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaPerGeneralita">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiCercaPerGeneralita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiRicoveratiCercaPerReparti">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiRicoveratiCercaPerReparti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiTrasferitiCercaPerReparti">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiTrasferitiCercaPerReparti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiTransitatiCercaPerReparti">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiTransitatiCercaPerReparti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiPrenotatiCercaPerReparti">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiPrenotatiCercaPerReparti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiNatiCercaPerReparti">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PazientiNatiCercaPerReparti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PatientSummaryOttieniPerId">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/PatientSummaryOttieniPerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayerRefertoFormatiOttieniPerIdReferto">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/LayerRefertoFormatiOttieniPerIdReferto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayerRefertoFormattatoOttieniPerFormatiTipo">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/LayerRefertoFormattatoOttieniPerFormatiTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotaAnamnesticaOttieniPerId">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NotaAnamnesticaOttieniPerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoteAnamnesticheCercaPerIdPaziente">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NoteAnamnesticheCercaPerIdPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoteAnamnesticheCercaPerGeneralita">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NoteAnamnesticheCercaPerGeneralita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoteAnamnesticheCercaPerPazienteRiferimenti">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/NoteAnamnesticheCercaPerPazienteRiferimenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FseConsensoAggiungiOppureModifica">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseConsensoAggiungiOppureModifica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FseConsensoOttieniPerCodiceFiscale">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseConsensoOttieniPerCodiceFiscale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FseDizionariOttieni">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseDizionariOttieni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FseDocumentiCerca">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseDocumentiCerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FseDocumentoOttieniPerCodice">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/DWH/Ws/1.0/IService/FseDocumentoOttieniPerCodice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpEndpoint" binding="tns:BasicHttpEndpoint">
+      <soap:address location="http://dagobah2.progel.org:8044/WS-DI-DWH-3/DwhClinico.WebService.Wcf.Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

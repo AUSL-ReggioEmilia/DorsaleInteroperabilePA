@@ -1,0 +1,24 @@
+﻿<div class="message-panel">
+    @*Messaggio di errore*@
+    @if (!string.IsNullOrEmpty(MessageError))
+    {
+        <div class="alert alert-danger" role="alert">
+            @MessageError
+        </div>
+    }
+    @*Messaggio di informazione*@
+    @if (!string.IsNullOrEmpty(MessageInfo))
+    {
+        <div class="alert alert-success" role="alert">
+            @MessageInfo
+        </div>
+    }
+</div>
+@code {
+
+    //
+    // Parametri
+    //
+    [Parameter] public string MessageError { get; set; }
+    [Parameter] public string MessageInfo { get; set; }
+}

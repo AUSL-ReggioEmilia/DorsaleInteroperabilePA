@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+
+  <siteMapNode url="Pages/Home.aspx" title="Ordini Pendenti" description="Ordini Pendenti">
+    <siteMapNode roles="ATTRIB@OE_RICERCA_RICOVERATI_ABILITATA,ATTRIB@OE_RICERCA_PER_NOSOLOGICO_ABILITATA,ATTRIB@OE_RICERCA_PER_ANAGRAFICA_SAC_ABILITATA"  title="Nuovo ordine" description="Nuovo ordine" url="Pages/ListaPazienti.aspx#">
+      <siteMapNode roles="ATTRIB@OE_RICERCA_RICOVERATI_ABILITATA" url="Pages/ListaPazientiRicoverati.aspx" title="Per paziente ricoverato" description="Nuovo ordine per paziente ricoverato"/>
+      <siteMapNode roles="ATTRIB@OE_RICERCA_PER_NOSOLOGICO_ABILITATA"  url="Pages/PazientePerNosologico.aspx" title="Per nosologico" description="Nuovo ordine per paziente ricoverato" />
+      <siteMapNode roles="ATTRIB@OE_RICERCA_PER_ANAGRAFICA_SAC_ABILITATA" url="Pages/ListaPazienti.aspx?mode=ricerca" title="Per ricerca paziente" description="Nuovo ordine per paziente ricoverato" />
+    </siteMapNode>
+    <siteMapNode title="Monitor ordini" url="Pages/ListaOrdini.aspx#" description="Storico ordini">
+      <!--<siteMapNode url="Pages/ListaOrdini.aspx?mode=attiviUtente" title="Personali" description="Ordini attivi dell'utente" />
+			<siteMapNode url="Pages/ListaOrdini.aspx?mode=attiviRuolo" title="Per U.O." description="Ordini attivi delle unità operative associate al ruolo corrente" />
+			<siteMapNode url="Pages/ListaOrdini.aspx?mode=evasi" title="Evasi" description="Ordini evasi" />-->
+      <siteMapNode url="Pages/ListaOrdini.aspx" title="Ordini" description="Lista ordini"  />
+      <siteMapNode url="Pages/ListaOrdiniPianificati.aspx" title="Ordini pianificati" description="Lista ordini pianificati"  />
+    </siteMapNode>
+    <siteMapNode title="Gestione" url="Pages/ProfiliUtente.aspx#" description="Gestione">
+      <siteMapNode url="Pages/ProfiliUtente.aspx" title="Profili personali" description="Profili personali dell'utente corrente" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

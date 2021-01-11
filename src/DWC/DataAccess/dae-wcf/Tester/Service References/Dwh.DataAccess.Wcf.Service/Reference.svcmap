@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="50cbdf71-48b7-4e95-9c20-046b62a336a8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/Dwh.DataAccess.Wcf.Service/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="1.0.wsdl" MetadataType="Wsdl" ID="f78868a6-324e-41c1-a348-8b00eebd43ba" SourceId="1" SourceUrl="http://localhost:8732/Dwh.DataAccess.Wcf.Service/mex" />
+    <MetadataFile FileName="1.0.xsd" MetadataType="Schema" ID="486981af-8e9d-47b8-912a-20f41117123f" SourceId="1" SourceUrl="http://localhost:8732/Dwh.DataAccess.Wcf.Service/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="6b8cdfa7-ae09-4deb-b07c-477c2ec7a06e" SourceId="1" SourceUrl="http://localhost:8732/Dwh.DataAccess.Wcf.Service/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

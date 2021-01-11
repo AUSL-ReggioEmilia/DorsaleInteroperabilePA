@@ -1,0 +1,44 @@
+﻿
+-- =============================================
+-- Author:		Stefano P.
+-- Create date: 2016-12-21
+-- Description:	Lista di Comuni per provincia
+-- =============================================
+CREATE PROCEDURE [pazienti_ws].[IstatComuniByProvincia]
+(
+	  @Nome varchar(128)
+	, @Obsoleti bit
+)
+AS
+BEGIN
+	SET NOCOUNT ON
+
+	SELECT 
+		  IstatComuni.Codice
+		, IstatComuni.Nome
+		, IstatComuni.CodiceProvincia
+		, CASE 
+			WHEN GETDATE() BETWEEN ISNULL(IstatComuni.DataInizioValidita, '1800-01-01') AND ISNULL(IstatComuni.DataFineValidita, GETDATE()) THEN
+				CAST(0 AS BIT) 
+			ELSE CAST(1 AS BIT) 
+			END AS Obsoleto
+		, DataFineValidita AS ObsoletoData		
+	FROM 
+		dbo.IstatComuni
+		INNER JOIN dbo.IstatProvince 
+			ON IstatComuni.CodiceProvincia = IstatProvince.Codice
+	WHERE
+			(IstatProvince.Nome LIKE @Nome OR @Nome IS NULL)
+		AND (IstatComuni.Nazione = 0)
+		AND 
+		(
+			(@Obsoleti IS NULL) OR 
+			 (CASE 
+				WHEN GETDATE() BETWEEN ISNULL(IstatComuni.DataInizioValidita, '1800-01-01') AND ISNULL(IstatComuni.DataFineValidita, GETDATE()) THEN
+					CAST(0 AS BIT) 
+				ELSE CAST(1 AS BIT) 
+				END = @Obsoleti) 
+		)		
+		AND (IstatComuni.Nome NOT LIKE '%{Codice Sconosciuto}%')
+	
+END

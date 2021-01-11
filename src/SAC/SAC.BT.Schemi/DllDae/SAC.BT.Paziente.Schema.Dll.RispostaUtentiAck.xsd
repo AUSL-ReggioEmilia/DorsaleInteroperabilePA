@@ -1,0 +1,33 @@
+<!-- edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Alessandro Nostini (Progel srl) -->
+<xs:schema xmlns="http://SAC.BT.Paziente.Schema.Dll.Input.RispostaUtenteAck/v1.0.0.0" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://SAC.BT.Paziente.Schema.Dll.Input.RispostaUtenteAck/v1.0.0.0" elementFormDefault="qualified">
+	<xs:element name="RispostaUtentiAck" type="RispostaUtentiAck" nillable="true"/>
+	<xs:complexType name="RispostaUtentiAck" mixed="false">
+		<xs:complexContent>
+			<xs:extension base="SerializeClassOfRispostaUtentiAck">
+				<xs:sequence>
+					<xs:element name="Ingresso" type="IngressoAck" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="Notifiche" type="NotificaAck" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SerializeClassOfRispostaUtentiAck" abstract="true"/>
+	<xs:complexType name="IngressoAck">
+		<xs:sequence>
+			<xs:element name="Utente" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Ack" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Url" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Account" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Password" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NotificaAck">
+		<xs:sequence>
+			<xs:element name="Utente" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Ack" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Url" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Account" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Password" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

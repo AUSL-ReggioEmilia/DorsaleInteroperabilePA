@@ -1,0 +1,103 @@
+﻿@page "/homedashboard"
+
+@inject IDBRepository _dbRepository
+@inject NavigationManager NavigationManager
+@inject ILogger<HomeDashboard> _logger
+@inject State.ScopedState _scopedState
+@* Tool per la visulizzazione del percorso di navigazione *@
+<NavigationPath ListPage="Home"></NavigationPath>
+
+@* Gestione messaggi di info /errore *@
+<MessagePanel MessageError="@_messageError"></MessagePanel>
+
+@* TITOLO *@
+<p class="page-title">Nuovi messaggi scartati</p>
+
+<div class="div-bianco col-sm-12 col-md-8 col-lg-7 col-xl-5">
+
+    @*GRIGLIA*@
+    @if (_messaggi == null)
+    {
+        <Loader></Loader>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-sm-12">
+                <Grid PageSize="20" AllowPaging="true" Items="_messaggi" CssClass="table table-sm">
+                    <GridHeader>
+                        <GridHeaderItem HeaderText="Scartati"></GridHeaderItem>
+                        <GridHeaderItem HeaderText="Nome Orchestrazione"></GridHeaderItem>
+                    </GridHeader>
+                    <GridRow>
+                        <GridRowItem CssClass="text-center" Value="context.NumeroMessaggiScartati"></GridRowItem>
+
+                        <GridRowItem>
+                            <TemplateField>
+                                <span class="grid-link" @onclick="(() => NavigateToList(context.NomeOrchestrazione))">
+                                    @($"{context.NomeOrchestrazione} ({context.VersioneOrchestrazione})")
+                                </span>
+                            </TemplateField>
+                        </GridRowItem>
+                    </GridRow>
+                </Grid>
+            </div>
+        </div>
+    }
+
+</div>
+
+@code {
+
+    private List<MessaggioScartatoDashboardData> _messaggi = new List<MessaggioScartatoDashboardData>();
+
+    // Messaggio errore
+    private string _messageError;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetMessaggiScartatiAsync();
+    }
+
+    // Cerca
+    private async Task GetMessaggiScartatiAsync()
+    {
+        try
+        {
+            _messaggi = null;
+
+            using (MessaggiScartatiAdapter messaggiRepository = _dbRepository.MessaggiScartati)
+            {
+                _messaggi = await messaggiRepository.GetDashboard();
+            }
+        }
+        catch (Exception ex)
+        {
+            _messageError = $"Errore durante il caricamento dei messaggi scartati nella Dashboard";
+            _logger.LogError(ex, _messageError);
+        }
+    }
+
+
+    private void NavigateToList(string nomeOrc)
+    {
+        try
+        {
+            // Resetto i filtri
+            _scopedState.Messaggi.Clear();
+
+            // Imposto i filtri
+            _scopedState.Messaggi.NomeOrchestrazione = nomeOrc;
+            _scopedState.Messaggi.IdStato = 0;
+            _scopedState.Messaggi.Periodo = -1;
+
+            NavigationManager.NavigateTo($"messaggiscartati");
+        }
+        catch (Exception ex)
+        {
+            _messageError = $"Errore durante il reindirizzamento alla pagina di lista";
+            _logger.LogError(ex, _messageError);
+        }
+
+    }
+}

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OeConnVna">
+  <DataContextMoniker Name="/OeConnVnaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="efc5ecf9-9f9f-494a-b4af-464e62b76b14" absoluteBounds="0.75, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/OeConnVnaDataContext/FiltriPrestazioni" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ef0af0b-869f-423e-a0af-1c47460dee1d" absoluteBounds="0.76499999999999968, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af228127-eeb5-4af2-9538-4cd7eddff2d7" absoluteBounds="3, 0.5, 3.125, 1.9631982421875">
+      <DataClassMoniker Name="/OeConnVnaDataContext/TranscodificaAltriSistemi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6688218f-9d72-4442-9712-da81d458adae" absoluteBounds="3.015, 0.96, 3.0949999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0749002b-2d73-491d-b51d-2c9a133cc2f8" absoluteBounds="6.25, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/OeConnVnaDataContext/TranscodificaCUP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1007e38-20ef-45b8-aaff-46285e86c6c8" absoluteBounds="6.2650000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

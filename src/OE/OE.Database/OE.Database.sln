@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "OE.Database", "OE.Database\OE.Database.sqlproj", "{9D9F8EFF-BB6F-48CB-BF8F-DA071C6263F2}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "OE.Storico", "OE.Storico\OE.Storico.sqlproj", "{E3924B42-2AAF-41C5-8D4F-B39F33F2CF76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D9F8EFF-BB6F-48CB-BF8F-DA071C6263F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D9F8EFF-BB6F-48CB-BF8F-DA071C6263F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D9F8EFF-BB6F-48CB-BF8F-DA071C6263F2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9D9F8EFF-BB6F-48CB-BF8F-DA071C6263F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D9F8EFF-BB6F-48CB-BF8F-DA071C6263F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D9F8EFF-BB6F-48CB-BF8F-DA071C6263F2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E3924B42-2AAF-41C5-8D4F-B39F33F2CF76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3924B42-2AAF-41C5-8D4F-B39F33F2CF76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3924B42-2AAF-41C5-8D4F-B39F33F2CF76}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E3924B42-2AAF-41C5-8D4F-B39F33F2CF76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3924B42-2AAF-41C5-8D4F-B39F33F2CF76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3924B42-2AAF-41C5-8D4F-B39F33F2CF76}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39C56ED8-9858-4269-941C-3265101E8E6C}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.progel.it/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OE.Database\\OE.Database.sqlproj
+		SccProjectName1 = OE.Database
+		SccLocalPath1 = OE.Database
+		SccProjectUniqueName2 = OE.Storico\\OE.Storico.sqlproj
+		SccProjectName2 = OE.Storico
+		SccLocalPath2 = OE.Storico
+	EndGlobalSection
+EndGlobal

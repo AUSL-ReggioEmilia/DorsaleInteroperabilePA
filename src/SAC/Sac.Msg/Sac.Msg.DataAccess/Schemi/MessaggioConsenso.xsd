@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MessaggioConsenso" nillable="true" type="MessaggioConsenso" />
+  <xs:complexType name="MessaggioConsenso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Utente" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Consenso" type="Consenso" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataSequenza" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Consenso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Tipo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataStato" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Stato" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PazienteId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PazienteProvenienza" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PazienteIdProvenienza" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PazienteDataNascita" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PazienteComuneNascitaCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PazienteNazionalitaCodice" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PazienteTesseraSanitaria" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

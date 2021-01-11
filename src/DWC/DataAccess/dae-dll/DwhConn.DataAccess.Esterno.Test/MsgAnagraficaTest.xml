@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MessaggioAnagrafica>
+	<IdEsternoPaziente>SAC_db108460-6290-4edc-8e14-d6220176b628</IdEsternoPaziente>
+	<AziendaErogante>ASMN</AziendaErogante>
+	<SistemaErogante>LHA</SistemaErogante>
+	<RepartoErogante></RepartoErogante>
+	<Cognome>CARAFFI</Cognome>
+	<Nome>VALTER</Nome>
+	<DataNascita>1923-04-20T00:00:00</DataNascita>
+	<LuogoNascita>Casina</LuogoNascita>
+	<CodiceFiscale>CRFVTR23D20B967U</CodiceFiscale>
+	<CodiceSanitario>0002692185</CodiceSanitario>
+	<Sesso>M</Sesso>
+	<Attributi>
+		<Attributo>
+			<Nome>Attributo1</Nome>
+			<Valore>1</Valore>
+		</Attributo>
+	</Attributi>
+	<Riferimenti>
+		<Riferimento>
+			<Nome>SAC</Nome>
+			<Valore>db108460-6290-4edc-8e14-d6220176b628</Valore>
+		</Riferimento>
+		<Riferimento>
+			<Nome>DIP_TEST1</Nome>
+			<Valore>35819</Valore>
+		</Riferimento>
+	</Riferimenti>
+</MessaggioAnagrafica>
+

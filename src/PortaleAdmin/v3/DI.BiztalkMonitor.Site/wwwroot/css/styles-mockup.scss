@@ -1,0 +1,50 @@
+﻿/*
+
+    Classi per lo stiile grafico da Template Mockup!!!!
+
+*/
+
+.div-bianco {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #c8c8c8;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.div-grigio {
+    background: #f1f1f1;
+    border: 1px solid rgba(146, 146, 146, 0.55);
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 10px 18px 5px 18px;
+}
+
+.page-title {
+    @extend .h3;
+    margin-top: 5px;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.btn-120 {
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+.btn-100 {
+    width: 100px;
+    margin-bottom: 5px;
+}
+
+.btn-70 {
+    width: 70px;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}

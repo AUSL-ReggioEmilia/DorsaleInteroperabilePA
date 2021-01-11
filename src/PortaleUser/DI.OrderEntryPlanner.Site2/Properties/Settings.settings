@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OrderEntryPlanner.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SacConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ALDERAAN;Initial Catalog=AuslAsmnre_SAC;Integrated Security=True&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ALDERAAN;Initial Catalog=AuslAsmnre_SAC;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="OrderEntryPlannerConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_OePlanner;Integrated Security=True&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_OePlanner;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="SacWs_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">progel.it\dev_vs</Value>
+    </Setting>
+    <Setting Name="SacWs_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aa1234BB</Value>
+    </Setting>
+    <Setting Name="SacUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2:8087/Sac</Value>
+    </Setting>
+    <Setting Name="SistemaRichiedente" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PortaleRichiesta</Value>
+    </Setting>
+    <Setting Name="InstrumentationKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">47f2a002-85e4-4b5b-af93-bb848e0c7a4a</Value>
+    </Setting>
+    <Setting Name="PortalUserConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_DIUserPortal;Integrated Security=True&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_DIUserPortal;Integrated Security=True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

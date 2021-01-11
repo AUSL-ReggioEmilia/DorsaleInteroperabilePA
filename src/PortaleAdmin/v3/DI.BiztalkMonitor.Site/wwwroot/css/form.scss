@@ -1,0 +1,45 @@
+﻿/*FORMS*/
+/*LABELS*/
+/*mette in bold tutte le label che hanno l'attributo "for". utile per tutti i form della DI.*/
+label[for] {
+    @extend .font-weight-bold;
+}
+
+.form-group.form-row > .col-form-label {
+    @extend .text-right, .mr-2;
+}
+
+/*BUTTONS*/
+.btn.btn-light {
+    /*@extend .btn-outline-secondary;*/
+    @extend .border, .border-secondary;
+}
+
+/*CARDS*/
+.card {
+    @extend .mb-3;
+}
+
+.card-header {
+    font-size: $fontCardHeader;
+    @extend .py-2;
+}
+
+.card-body {
+    @extend .p-2;
+}
+
+.form-group {
+    @extend .mb-2;
+}
+
+/* LINK PER LE GRIGLIE */
+.grid-link {
+    color: #0077CC;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.grid-link:hover {
+    color: #0095FF;
+}

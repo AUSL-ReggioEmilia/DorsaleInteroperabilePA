@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessaggioEvento>
+	<Paziente>
+		<IdEsternoPaziente>XXX</IdEsternoPaziente>
+		<Cognome>Felici</Cognome>
+		<Nome>Laura</Nome>
+		<Sesso>F</Sesso>
+		<DataNascita>1944-03-28T00:00:00</DataNascita>
+		<LuogoNascita>QUATTRO CASTELLA</LuogoNascita>
+		<CodiceSanitario>3400671</CodiceSanitario>
+		<CodiceFiscale>FLCLRA44C68H122B</CodiceFiscale>
+	</Paziente>
+	<Evento>
+		<IdEsternoEvento>TEST_ADT_NOSOLOGICO_A</IdEsternoEvento>
+		<AziendaErogante>ASMN</AziendaErogante>
+		<SistemaErogante>ADT</SistemaErogante>
+		<RepartoErogante>ADT-RE</RepartoErogante>
+		<DataEvento>2011-08-22T11:15:00.000</DataEvento>
+		<TipoEventoCodice>A</TipoEventoCodice>
+		<TipoEventoDescr>Accettazione</TipoEventoDescr>
+		<TipoEpisodio>O</TipoEpisodio>
+		<TipoEpisodioDescrizione>Ricovero Ordinario</TipoEpisodioDescrizione>
+		<NumeroNosologico>D09012123_TEST</NumeroNosologico>
+		<RepartoCodice>RRC-1</RepartoCodice>
+		<RepartoDescrizione>RRC-1 Descrizione</RepartoDescrizione>
+		<SettoreRicoveroCodice>SRC-1</SettoreRicoveroCodice>
+		<SettoreRicoveroDescrizione>SRC-1 Descrizione</SettoreRicoveroDescrizione>
+		<LettoRicoveroCodice>LRC-1</LettoRicoveroCodice>
+		<LettoRicoveroDescrizione>LRC-1 Descrizione</LettoRicoveroDescrizione>
+		<Diagnosi>La diagnosi è un per essere visualizzata in una lista...comunque come si vede?. (Test caratteri speciali [é è ò ù ° ò £ Ω Ñ])</Diagnosi>
+		<Attributi>
+			<Attributo>
+				<Nome>Attributo1</Nome>
+				<Valore>Valore_Attributo1</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>Attributo2</Nome>
+				<Valore>Valore_Attributo2</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>Attributo3</Nome>
+				<Valore>Valore_Attributo3</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>Attributo4</Nome>
+				<Valore>Valore_Attributo4</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>Attributo5</Nome>
+				<Valore>Valore_Attributo5</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>Attributo6</Nome>
+				<Valore>Valore_Attributo6</Valore>
+			</Attributo>
+		</Attributi>
+	</Evento>
+</MessaggioEvento>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://commesse.dev.progel.org/asmn/PrintManager/Ws/AdminVer1.asmx?wsdl" docRef="http://commesse.dev.progel.org/asmn/PrintManager/Ws/AdminVer1.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://commesse.dev.progel.org/asmn/PrintManager/Ws/AdminVer1.asmx" xmlns:q1="http://progel.org/ws/asmnRe/printManager/Admin/1" binding="q1:AdminVer1Soap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://commesse.dev.progel.org/asmn/PrintManager/Ws/AdminVer1.asmx" xmlns:q2="http://progel.org/ws/asmnRe/printManager/Admin/1" binding="q2:AdminVer1Soap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

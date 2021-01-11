@@ -1,0 +1,122 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="PrintDispatcherAdmin.Site" %>
+
+<!DOCTYPE html>
+<html lang="it-it" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+
+    <title><%: Page.Title  %></title>
+
+    <%-- DISATTIVO LA MODALITÀ COMPATIBILITÀ --%>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%-- CSS BOOTSTRAP --%>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="Content/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="formMaster" runat="server" class="form-horizontal">
+
+        <!-- ATTENZIONE: Per i portali ADMIN inserire qui lo script di Application Insight altrimenti interferisce con il treeview -->
+        <script type="text/javascript">
+            var appInsights = window.appInsights || function (config) {
+                function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;) i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+            }({
+                instrumentationKey: "<%= PrintDispatcherAdmin.CustomInitializer.Telemetry.MyTelemetryInitializer.InstrumentationKey %>"
+            });
+
+            appInsights.queue.push(function () {
+                appInsights.context.addTelemetryInitializer(function (envelope) {
+                    envelope.tags["ai.cloud.role"] = '<%= PrintDispatcherAdmin.CustomInitializer.Telemetry.MyTelemetryInitializer.RoleName %>';
+                });
+            });
+
+            window.appInsights = appInsights;
+            appInsights.trackPageView();
+        </script>
+
+        <asp:ScriptManager ID="ScriptManagerMaster" runat="server" EnablePartialRendering="true">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/jquery-3.5.1.min.js"/>
+                <asp:ScriptReference Path="~/Scripts/moment.min.js" />
+                <asp:ScriptReference Path="~/Scripts/moment-with-locales.min.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap.min.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap-datetimepicker.min.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <%-- HEADER --%>
+        <asp:Literal ID="HeaderPlaceholder" runat="server" />
+
+        <%--MENU DI NAVIGAZIONE PORTALI--%>
+        <div class="TopContent">
+            <asp:Menu ID="MenuMain" runat="server" Orientation="Horizontal" ItemWrap="false" Style="width: 100%"
+                StaticDisplayLevels="2" MaximumDynamicDisplayLevels="0" StaticEnableDefaultPopOutImage="False"
+                StaticSubMenuIndent="0px">
+                <StaticMenuStyle CssClass="MasterMenu" />
+                <StaticMenuItemStyle CssClass="MasterMenuItem" />
+            </asp:Menu>
+        </div>
+
+        <%--CORPO--%>
+        <div class="container-fluid">
+            <div class="row">
+
+                <%-- MENU SINISTRO--%>
+                <div class="LeftContent col-sm-2 ">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <asp:TreeView ID="LeftMenuTreeView" runat="server" ShowLines="false" NodeIndent="0"
+                                CssClass="LeftMenuTreeView" NodeWrap="true" ShowExpandCollapse="false" DataSourceID="SiteMapDataSourceMain">
+                                <NodeStyle CssClass="TreeNode" />
+                                <RootNodeStyle CssClass="TreeRootNode" />
+                                <ParentNodeStyle CssClass="TreeParentNode" />
+                                <SelectedNodeStyle CssClass="TreeSelectedNode" />
+                            </asp:TreeView>
+                        </div>
+                    </div>
+                </div>
+
+                <%--PAGE CONTENT--%>
+                <div class="PageContent col-sm-10">
+                    <div style="margin-bottom: 12px;">
+                        <asp:SiteMapPath ID="SiteMapPathMain" runat="server" CssClass="Navigator">
+                            <PathSeparatorStyle CssClass="NavigatorPathSeparator" />
+                            <CurrentNodeStyle CssClass="NavigatorCurrentNode" />
+                            <NodeStyle CssClass="NavigatorNode" />
+                            <RootNodeStyle CssClass="NavigatorRootNode" />
+                        </asp:SiteMapPath>
+                    </div>
+
+                    <%--ALERT MESSAGE--%>
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <asp:Label ID="ErrorMessageArea" runat="server" EnableViewState="false" CssClass="error"></asp:Label>
+                        </div>
+                        <div class="col-sm-12">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div id="FooterPlaceHolder" runat="server" class="footer-stick-bottom"></div>
+
+
+        <asp:SiteMapDataSource ID="SiteMapDataSourceMain" runat="server" />
+
+        <script type="text/javascript">
+            //Initialize popover with jQuery
+            function pageLoad(sender, args) {
+                $('[data-toggle="popover"]').popover();
+            };
+        </script>
+    </form>
+</body>
+</html>

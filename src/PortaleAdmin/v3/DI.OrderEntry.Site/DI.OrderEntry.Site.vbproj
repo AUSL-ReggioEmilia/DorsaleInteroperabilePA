@@ -1,0 +1,934 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{0BBC9585-5951-4B2A-97A3-19997D0CBC81}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>DI.OrderEntry.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.OrderEntry.Admin.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>42025,42105,42106,42107,42353,42354,42355</WarningsAsErrors>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.OrderEntry.Admin.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>42025,42105,42106,42107,42353,42354,42355</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.14.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.14.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDenied.htm" />
+    <Content Include="favicon.ico" />
+    <Content Include="Gestione\Accessi.aspx" />
+    <Content Include="Gestione\DatiAggiuntiviDettaglio.aspx" />
+    <Content Include="Gestione\DatiAggiuntiviLista.aspx" />
+    <Content Include="Gestione\DettaglioAssociazionePrestazioniDatoAccessorio.aspx" />
+    <Content Include="Gestione\DettaglioAssociazioneSistemiDatoAccessorio.aspx" />
+    <Content Include="Gestione\DettaglioPrestazioniDatoAccessorio.aspx" />
+    <Content Include="Gestione\DettaglioSistemiDatoAccessorio.aspx" />
+    <Content Include="Gestione\EnnupleDatiAccessori.aspx" />
+    <Content Include="Gestione\SimulazioneEnnupleDatiAccessori.aspx" />
+    <Content Include="Gestione\UtentiDettaglio.aspx" />
+    <Content Include="Gestione\SACCercaGruppo.aspx" />
+    <Content Include="Gestione\GruppiPrestazioni.aspx" />
+    <Content Include="Gestione\SACCercaUtente.aspx" />
+    <Content Include="Gestione\Prestazioni.aspx" />
+    <Content Include="Gestione\Profili.aspx" />
+    <Content Include="Gestione\DatiAccessori.aspx" />
+    <Content Include="Gestione\EnnupleAccessi.aspx" />
+    <Content Include="Gestione\ListaUtenti.aspx" />
+    <Content Include="Gestione\ListaSistemi.aspx" />
+    <Content Include="Gestione\SimulazioneEnnuple.aspx" />
+    <Content Include="Gestione\GruppiUtenti.aspx" />
+    <Content Include="Gestione\ListaPrestazioni.aspx" />
+    <Content Include="Gestione\Ennuple.aspx" />
+    <Content Include="HomeOrderEntry.aspx" />
+    <Content Include="Images\alert.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\copy.png" />
+    <Content Include="Images\csv.png" />
+    <Content Include="Images\detail.png" />
+    <Content Include="Images\down.gif" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\interrogativo.gif" />
+    <Content Include="Images\lock.png" />
+    <Content Include="Images\LogoAzienda.jpg" />
+    <Content Include="Images\LogoToolbarDwh.jpg" />
+    <Content Include="Images\LogoToolbarOrderEntry.jpg" />
+    <Content Include="Images\LogoToolbarPm.jpg" />
+    <Content Include="Images\LogoToolbarSac.jpg" />
+    <Content Include="Images\Marchio_CE_Header.png" />
+    <Content Include="Images\minus.gif" />
+    <Content Include="Images\new.gif" />
+    <Content Include="Images\next.gif" />
+    <Content Include="Images\ok.png" />
+    <Content Include="Images\pdficon.gif" />
+    <Content Include="Images\refresh.gif" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\sort_asc.gif" />
+    <Content Include="Images\sort_desc.gif" />
+    <Content Include="Images\stato.gif" />
+    <Content Include="Images\trash.gif" />
+    <Content Include="Images\undo.png" />
+    <Content Include="Images\unlock.png" />
+    <Content Include="Images\view.png" />
+    <Content Include="index.html" />
+    <Content Include="Messaggi\Stati.aspx" />
+    <Content Include="Messaggi\Richieste.aspx" />
+    <Content Include="Messaggi\MonitoraggioUltimiArrivi.aspx" />
+    <Content Include="Ordini\XmlViewer.aspx" />
+    <Content Include="Ordini\favicon.ico" />
+    <Content Include="Ordini\PdfViewer.aspx" />
+    <Content Include="Ordini\QuadroSinottico.aspx" />
+    <Content Include="Pages\ReportViewer.aspx" />
+    <Content Include="Scripts\ennuple-dati-accessori.js" />
+    <Content Include="Scripts\gruppi-prestazioni.js" />
+    <Content Include="Scripts\jquery.metadata.js" />
+    <Content Include="Scripts\jquery.tablesorter.widgets.min.js" />
+    <Content Include="Scripts\PopUp.js" />
+    <Content Include="Scripts\profili.js" />
+    <Content Include="Scripts\dati-accessori.js" />
+    <Content Include="Scripts\ruoli.js" />
+    <Content Include="Scripts\ennuple-accessi.js" />
+    <Content Include="Scripts\lista-utenti.js" />
+    <Content Include="Scripts\lista-unitaoperative.js" />
+    <Content Include="Scripts\lista-sistemi.js" />
+    <Content Include="Scripts\simulazione-ennuple-dati-accessori.js" />
+    <Content Include="Scripts\simulazione-ennuple.js" />
+    <Content Include="Scripts\gruppi-utenti.js" />
+    <Content Include="Scripts\jquery.json-2.3.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\lista-prestazioni.js" />
+    <Content Include="Scripts\ennuple.js" />
+    <Content Include="Scripts\jquery-1.6.1.js" />
+    <Content Include="Scripts\jquery-1.6.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.14.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\quadro-sinottico.js" />
+    <Content Include="Scripts\XmlView.js" />
+    <Content Include="Scripts\messaggi-stati.js" />
+    <Content Include="Scripts\ordini-richiesti.js" />
+    <Content Include="Scripts\ordini-dettaglio.js" />
+    <Content Include="Pages\Redirector.ashx" />
+    <None Include="Service References\DI.OrderEntry.WS\OE.disco" />
+    <Content Include="SitePopup.Master" />
+    <Content Include="ApplicationInsights.config" />
+    <None Include="App_Data\csv\gruppi prestazioni - prestazioni.csv" />
+    <None Include="App_Data\csv\prestazioni.csv" />
+    <None Include="App_Data\csv\profili_prestazioni.csv" />
+    <None Include="App_Data\csv\utenti.csv" />
+    <None Include="App_Data\csv\utenti_gruppi.csv" />
+    <None Include="Data\DatiAggiuntiviDataset.xsc">
+      <DependentUpon>DatiAggiuntiviDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DatiAggiuntiviDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatiAggiuntiviDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Data\DatiAggiuntiviDataset.xss">
+      <DependentUpon>DatiAggiuntiviDataset.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\PublishProfiles\dagobah2.pubxml" />
+    <None Include="packages.config" />
+    <Content Include="Styles\MessaggiValidazione.xslt" />
+    <None Include="Service References\DI.OrderEntry.WS\OE.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.WS\OE1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.WS\OE2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.WS\OE3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.WS\OE4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.WS\OE5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.WS\OrderEntryAdmin1.wsdl" />
+    <None Include="_Modifiche.txt" />
+    <None Include="Data\DatiAccessori.xsc">
+      <DependentUpon>DatiAccessori.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DatiAccessori.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatiAccessori.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.OrderEntry.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\DatiAccessori.xss">
+      <DependentUpon>DatiAccessori.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Ennuple.xsc">
+      <DependentUpon>Ennuple.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Ennuple.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ennuple.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.OrderEntry.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\Ennuple.xss">
+      <DependentUpon>Ennuple.xsd</DependentUpon>
+    </None>
+    <None Include="Data\EnnupleAccessi.xsc">
+      <DependentUpon>EnnupleAccessi.xsd</DependentUpon>
+    </None>
+    <None Include="Data\EnnupleAccessi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EnnupleAccessi.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.OrderEntry.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\EnnupleAccessi.xss">
+      <DependentUpon>EnnupleAccessi.xsd</DependentUpon>
+    </None>
+    <None Include="Data\OrdiniDettaglio.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>OrdiniDettaglio.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DI.OrderEntry.WS\DI.OrderEntry.WS.StatoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.OrderEntry.WS\configuration91.svcinfo" />
+    <None Include="Service References\DI.OrderEntry.WS\configuration.svcinfo" />
+    <None Include="Service References\DI.OrderEntry.WS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Styles\DatiAggiuntivi.xslt" />
+    <Content Include="Styles\images\asc.gif" />
+    <Content Include="Styles\images\background.gif" />
+    <Content Include="Styles\images\bg.gif" />
+    <Content Include="Styles\images\desc.gif" />
+    <Content Include="Styles\images\error.png" />
+    <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Styles\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Styles\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Styles\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Ordini\OrdiniDettaglio.aspx" />
+    <Content Include="Ordini\OrdiniRichiesti.aspx" />
+    <Content Include="ErrorUnknown.htm" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\arrow_down.png" />
+    <Content Include="Images\arrow_right.gif" />
+    <Content Include="Images\arrow_up.png" />
+    <Content Include="Images\back.gif" />
+    <Content Include="Images\checkbox_ok.png" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\delete_grey.gif" />
+    <Content Include="Images\detailsmerge.GIF" />
+    <Content Include="Images\detailsmerge_grey.gif" />
+    <Content Include="Images\editInPlace.gif" />
+    <Content Include="Images\edititem.gif" />
+    <Content Include="Images\edititem_grey.gif" />
+    <Content Include="Images\ErrorAccessDenied.jpg" />
+    <Content Include="Images\ErrorMissingResource.gif" />
+    <Content Include="Images\ErrorUnknown.gif" />
+    <Content Include="Images\green-left.jpg" />
+    <Content Include="Images\group.gif" />
+    <Content Include="Images\icon_err.gif" />
+    <Content Include="Images\icon_small_caution.gif" />
+    <Content Include="Images\icon_small_detail.bmp" />
+    <Content Include="Images\log.gif" />
+    <Content Include="Images\LogoToolbar.jpg" />
+    <Content Include="Images\log_grey.gif" />
+    <Content Include="Images\MenuLeftBackground.jpg" />
+    <Content Include="Images\MenuTopBackground.gif" />
+    <Content Include="Images\MenuTopPopUp.gif" />
+    <Content Include="Images\MenuTopSeparator.gif" />
+    <Content Include="Images\merge.gif" />
+    <Content Include="Images\merge_grey.gif" />
+    <Content Include="Images\newitem.gif" />
+    <Content Include="Images\PixelTrasparente.gif" />
+    <Content Include="Images\restore.gif" />
+    <Content Include="Images\restore_grey.gif" />
+    <Content Include="Images\saveInPlace.gif" />
+    <Content Include="Images\sel.gif" />
+    <Content Include="Images\toolgrad_vintage.gif" />
+    <Content Include="Images\undoInPlace.gif" />
+    <Content Include="Images\user.gif" />
+    <Content Include="MissingResource.htm" />
+    <Content Include="Styles\TreeView.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Styles\XmlView.css" />
+    <Content Include="Scripts\messaggi-richieste.js" />
+    <Content Include="Scripts\master.js" />
+    <Content Include="Styles\master.css" />
+    <Content Include="Styles\XmlView.xslt" />
+    <Content Include="UnderConstruction.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Data\Prestazioni.xsc">
+      <DependentUpon>Prestazioni.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Prestazioni.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Prestazioni.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.OrderEntry.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\Prestazioni.xss">
+      <DependentUpon>Prestazioni.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Profili.xsc">
+      <DependentUpon>Profili.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Profili.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Profili.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.OrderEntry.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\Profili.xss">
+      <DependentUpon>Profili.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Sistemi.xsc">
+      <DependentUpon>Sistemi.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Sistemi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistemi.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.OrderEntry.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\Sistemi.xss">
+      <DependentUpon>Sistemi.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Utenti.xsc">
+      <DependentUpon>Utenti.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Utenti.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Utenti.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.OrderEntry.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\Utenti.xss">
+      <DependentUpon>Utenti.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component\MyTelemetryInitializer.vb" />
+    <Compile Include="CSVHelper.vb" />
+    <Compile Include="Data\DatiAggiuntiviDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatiAggiuntiviDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GestioneErrori.vb" />
+    <Compile Include="Gestione\DatiAggiuntiviDettaglio.aspx.designer.vb">
+      <DependentUpon>DatiAggiuntiviDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\DatiAggiuntiviDettaglio.aspx.vb">
+      <DependentUpon>DatiAggiuntiviDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\DatiAggiuntiviLista.aspx.designer.vb">
+      <DependentUpon>DatiAggiuntiviLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\DatiAggiuntiviLista.aspx.vb">
+      <DependentUpon>DatiAggiuntiviLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\DettaglioAssociazionePrestazioniDatoAccessorio.aspx.designer.vb">
+      <DependentUpon>DettaglioAssociazionePrestazioniDatoAccessorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\DettaglioAssociazionePrestazioniDatoAccessorio.aspx.vb">
+      <DependentUpon>DettaglioAssociazionePrestazioniDatoAccessorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\DettaglioAssociazioneSistemiDatoAccessorio.aspx.designer.vb">
+      <DependentUpon>DettaglioAssociazioneSistemiDatoAccessorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\DettaglioAssociazioneSistemiDatoAccessorio.aspx.vb">
+      <DependentUpon>DettaglioAssociazioneSistemiDatoAccessorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\DettaglioPrestazioniDatoAccessorio.aspx.designer.vb">
+      <DependentUpon>DettaglioPrestazioniDatoAccessorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\DettaglioPrestazioniDatoAccessorio.aspx.vb">
+      <DependentUpon>DettaglioPrestazioniDatoAccessorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\DettaglioSistemiDatoAccessorio.aspx.designer.vb">
+      <DependentUpon>DettaglioSistemiDatoAccessorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\DettaglioSistemiDatoAccessorio.aspx.vb">
+      <DependentUpon>DettaglioSistemiDatoAccessorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\EnnupleDatiAccessori.aspx.designer.vb">
+      <DependentUpon>EnnupleDatiAccessori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\EnnupleDatiAccessori.aspx.vb">
+      <DependentUpon>EnnupleDatiAccessori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\SimulazioneEnnupleDatiAccessori.aspx.designer.vb">
+      <DependentUpon>SimulazioneEnnupleDatiAccessori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\SimulazioneEnnupleDatiAccessori.aspx.vb">
+      <DependentUpon>SimulazioneEnnupleDatiAccessori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messaggi\MonitoraggioUltimiArrivi.aspx.designer.vb">
+      <DependentUpon>MonitoraggioUltimiArrivi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messaggi\MonitoraggioUltimiArrivi.aspx.vb">
+      <DependentUpon>MonitoraggioUltimiArrivi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\ScriptUtility.vb" />
+    <Compile Include="SitePopup.Master.designer.vb">
+      <DependentUpon>SitePopup.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SitePopup.Master.vb">
+      <DependentUpon>SitePopup.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data\DatiAccessori.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatiAccessori.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Ennuple.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ennuple.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EnnupleAccessi.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnnupleAccessi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FilterHelper.vb" />
+    <Compile Include="Gestione\Accessi.aspx.designer.vb">
+      <DependentUpon>Accessi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\Accessi.aspx.vb">
+      <DependentUpon>Accessi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\UtentiDettaglio.aspx.designer.vb">
+      <DependentUpon>UtentiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\UtentiDettaglio.aspx.vb">
+      <DependentUpon>UtentiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\SACCercaGruppo.aspx.designer.vb">
+      <DependentUpon>SACCercaGruppo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\SACCercaGruppo.aspx.vb">
+      <DependentUpon>SACCercaGruppo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\GruppiPrestazioni.aspx.designer.vb">
+      <DependentUpon>GruppiPrestazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\GruppiPrestazioni.aspx.vb">
+      <DependentUpon>GruppiPrestazioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\SACCercaUtente.aspx.designer.vb">
+      <DependentUpon>SACCercaUtente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\SACCercaUtente.aspx.vb">
+      <DependentUpon>SACCercaUtente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\Prestazioni.aspx.designer.vb">
+      <DependentUpon>Prestazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\Prestazioni.aspx.vb">
+      <DependentUpon>Prestazioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\Profili.aspx.designer.vb">
+      <DependentUpon>Profili.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\Profili.aspx.vb">
+      <DependentUpon>Profili.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\DatiAccessori.aspx.designer.vb">
+      <DependentUpon>DatiAccessori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\DatiAccessori.aspx.vb">
+      <DependentUpon>DatiAccessori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\EnnupleAccessi.aspx.designer.vb">
+      <DependentUpon>EnnupleAccessi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\EnnupleAccessi.aspx.vb">
+      <DependentUpon>EnnupleAccessi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\ListaUtenti.aspx.designer.vb">
+      <DependentUpon>ListaUtenti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\ListaUtenti.aspx.vb">
+      <DependentUpon>ListaUtenti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\ListaSistemi.aspx.designer.vb">
+      <DependentUpon>ListaSistemi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\ListaSistemi.aspx.vb">
+      <DependentUpon>ListaSistemi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\SimulazioneEnnuple.aspx.designer.vb">
+      <DependentUpon>SimulazioneEnnuple.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\SimulazioneEnnuple.aspx.vb">
+      <DependentUpon>SimulazioneEnnuple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\GruppiUtenti.aspx.designer.vb">
+      <DependentUpon>GruppiUtenti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\GruppiUtenti.aspx.vb">
+      <DependentUpon>GruppiUtenti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\ListaPrestazioni.aspx.designer.vb">
+      <DependentUpon>ListaPrestazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\ListaPrestazioni.aspx.vb">
+      <DependentUpon>ListaPrestazioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\Ennuple.aspx.designer.vb">
+      <DependentUpon>Ennuple.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestione\Ennuple.aspx.vb">
+      <DependentUpon>Ennuple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeOrderEntry.aspx.designer.vb">
+      <DependentUpon>HomeOrderEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeOrderEntry.aspx.vb">
+      <DependentUpon>HomeOrderEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data\Messaggi.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messaggi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Messaggi\Stati.aspx.designer.vb">
+      <DependentUpon>Stati.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messaggi\Stati.aspx.vb">
+      <DependentUpon>Stati.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messaggi\Richieste.aspx.designer.vb">
+      <DependentUpon>Richieste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messaggi\Richieste.aspx.vb">
+      <DependentUpon>Richieste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data\Ordini.Designer.vb">
+      <DependentUpon>Ordini.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="OrderEntry.master.designer.vb">
+      <DependentUpon>OrderEntry.master</DependentUpon>
+    </Compile>
+    <Compile Include="OrderEntry.master.vb">
+      <DependentUpon>OrderEntry.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data\OrdiniDettaglio.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdiniDettaglio.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Ordini\XmlViewer.aspx.designer.vb">
+      <DependentUpon>XmlViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordini\XmlViewer.aspx.vb">
+      <DependentUpon>XmlViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordini\PdfViewer.aspx.designer.vb">
+      <DependentUpon>PdfViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordini\PdfViewer.aspx.vb">
+      <DependentUpon>PdfViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordini\QuadroSinottico.aspx.designer.vb">
+      <DependentUpon>QuadroSinottico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordini\QuadroSinottico.aspx.vb">
+      <DependentUpon>QuadroSinottico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordini\OrdiniDettaglio.aspx.designer.vb">
+      <DependentUpon>OrdiniDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordini\OrdiniDettaglio.aspx.vb">
+      <DependentUpon>OrdiniDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordini\OrdiniRichiesti.aspx.designer.vb">
+      <DependentUpon>OrdiniRichiesti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordini\OrdiniRichiesti.aspx.vb">
+      <DependentUpon>OrdiniRichiesti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdapterManager.vb" />
+    <Compile Include="ExceptionsManager.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pages\Redirector.ashx.vb">
+      <DependentUpon>Redirector.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportViewer.aspx.designer.vb">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportViewer.aspx.vb">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data\Prestazioni.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prestazioni.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Profili.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Profili.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DI.OrderEntry.WS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Sistemi.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistemi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.designer.vb">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.vb">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data\Utenti.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Utenti.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Data\OrdiniDettaglio.dbml.layout">
+      <DependentUpon>OrdiniDettaglio.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Messaggi.xsc">
+      <DependentUpon>Messaggi.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Messaggi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Messaggi.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.OrderEntry.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\Messaggi.xss">
+      <DependentUpon>Messaggi.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="OrderEntry.master" />
+    <None Include="Data\Ordini.xsc">
+      <DependentUpon>Ordini.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Ordini.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ordini.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.OrderEntry.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\Ordini.xss">
+      <DependentUpon>Ordini.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PortaleCommon\DI.Common\DI.Common.vbproj">
+      <Project>{EBAF272B-B9BE-4FD0-8556-2D49F031DF22}</Project>
+      <Name>DI.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.PortalAdmin\DI.PortalAdmin.vbproj">
+      <Project>{0D8EB637-68F3-47B1-B1A4-B7990011FC66}</Project>
+      <Name>DI.PortalAdmin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DI.OrderEntry.WS\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65298</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

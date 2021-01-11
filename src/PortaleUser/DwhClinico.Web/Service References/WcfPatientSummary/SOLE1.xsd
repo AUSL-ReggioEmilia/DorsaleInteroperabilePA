@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://Sole.DwhClinico.PatientSummary.RequestData" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://Sole.DwhClinico.PatientSummary.RequestData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Richiesta">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Paziente">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Nome" type="xs:string" />
+              <xs:element minOccurs="0" name="Cognome" type="xs:string" />
+              <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="CodiceFiscale" type="xs:string" />
+              <xs:element minOccurs="0" name="CodicePasS" type="xs:string" />
+              <xs:element minOccurs="0" name="CodiceFiscaleMedico" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Richiedente">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodiceFiscale" type="xs:string" />
+              <xs:element name="Ruolo" type="xs:string" />
+              <xs:element minOccurs="0" name="Nome" type="xs:string" />
+              <xs:element minOccurs="0" name="Cognome" type="xs:string" />
+              <xs:element minOccurs="0" name="ContestoApplicativo" type="xs:string" />
+              <xs:element minOccurs="0" name="PresaInCarico" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DatiRestituiti">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaxRecords" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

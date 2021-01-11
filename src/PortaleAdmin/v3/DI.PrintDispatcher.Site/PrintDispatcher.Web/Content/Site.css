@@ -1,0 +1,362 @@
+﻿@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+html, body {
+    margin: 0;
+    border: 0;
+    background-color: white;
+    color: #3E3E3E;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 14px;
+    overflow: scroll;
+}
+/*---------------------------------------------------------------------
+	Master Page
+---------------------------------------------------------------------*/
+.PageHeader {
+    /*vertical-align: top;*/
+    display: block;
+    width: 100%;
+    height: 72px;
+    text-align: center;
+}
+
+.TopContent {
+    display: block;
+    height: 21px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    border-top: solid 1px #4682B4;
+    border-bottom: solid 1px #4682B4;
+    background: #CEDCD5; /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom, #CEDCD5, #FFFFFF); /* Standard syntax */
+    background-color: #CEDCD5;
+    filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+.LeftContent {
+    /*margin-top: 5px;*/
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.PageContent {
+    margin-top: 5px;
+}
+
+/*---------------------------------------------------------------------
+	Master Menu
+---------------------------------------------------------------------*/
+
+.MasterMenu {
+    user-select: none;
+    padding-right: 2px;
+    padding-left: 2px;
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+    .MasterMenu li {
+        margin-right: 11px;
+        margin-left: 6px;
+    }
+
+.MasterMenuItem {
+    color: #4682B4;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+/*---------------------------------------------------------------------
+	TreeView spalla sinistra in Master Page
+---------------------------------------------------------------------*/
+.LeftMenuTreeView {
+    margin-top: -22px;
+}
+
+.TreeNode {
+    display: block;
+    border-radius: 4px !important;
+}
+
+    .TreeNode:hover {
+        color: #0056b3;
+    }
+
+    .TreeNode a {
+        padding: 3px 8px;
+        text-decoration: none !important;
+        color: black;
+    }
+
+.TreeRootNode {
+    color: #4c4c4c;
+    font-weight: 700;
+    margin-left: -4px; /*per il nodo root rimuovo l'indentazione data dal treenode->a */
+    font-size: 14px;
+}
+
+    .TreeRootNode:hover {
+        color: #4c4c4c;
+    }
+
+.TreeParentNode {
+    font-weight: 900 !important;
+    margin-top: 10px;
+}
+
+    .TreeParentNode:hover {
+        color: #333
+    }
+
+.TreeSelectedNode {
+    padding: 1px 3px !important;
+    font-weight: 700;
+}
+
+/*---------------------------------------------------------------------
+	Spaziature e posizione degli elementi delle pagine (Panel, bottoni, ecc.)
+---------------------------------------------------------------------*/
+
+.panel-body-custom-padding {
+    padding: 0px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.custom-mb-5 {
+    margin-bottom: 5px;
+}
+
+.custom-mb-15 {
+    margin-bottom: 15px;
+}
+
+.custom-mt-22 {
+    margin-top: 22px;
+}
+
+.btn-custom-margin {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.custom-icon-align {
+    vertical-align: middle !important;
+}
+
+
+/*---------------------------------------------------------------------
+	Controlli in stile bootstrap aggiuntivi
+---------------------------------------------------------------------*/
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn-file input[type=file] {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        outline: none;
+        background: white;
+        font-size: 100px;
+        text-align: right;
+        cursor: inherit;
+        filter: alpha(opacity=0);
+        opacity: 0;
+    }
+
+.custom-align {
+    text-align: center;
+}
+
+.td-custom-align {
+    padding-left: 5px;
+}
+
+/*SOLO SU SCHERMI MD E LG (< 768px)*/
+@media (min-width: 768px) {
+    /*ALLINEA A SINISTRA LE LABEL COLLEGATE ALLE TEXTBOX DENTRO LE FORM-HORIZONTAL
+    * PER EVITARE CHE LE LABEL SIANO ALLINEATE A DESTRA ,ATTACCATE ALLE TEXTBOX
+    */
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+}
+
+.footer-stick-bottom {
+    border-radius: 0;
+    position: absolute;
+    bottom: 0px;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 14px;
+    color: #4682b4;
+    background-color: #cedcd5;
+    border-top: solid 1px #4682b4;
+    padding: 2px;
+    text-align: center;
+    font-size: 10px;
+    filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF',startColorstr='#CEDCD5',gradientType='0');
+}
+
+
+/*PER I FORM HORIZONTAL DEL DETTAGLIO*/
+.form-horizontal-detail .control-label {
+    text-align: right;
+}
+
+.form-horizontal-detail .form-group {
+    margin-bottom: 0;
+}
+
+.form-horizontal-mb-5 .form-group {
+    margin-bottom: 5px;
+}
+
+.form-horizontal-mb-5 .control-label {
+    text-align: right;
+}
+
+.error {
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*Navigation classes*/
+.Navigator {
+    padding-right: 2px;
+    padding-left: 2px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+    .Navigator:hover {
+        padding-right: 2px;
+        padding-left: 2px;
+        color: #4682B4;
+        font-weight: bolder;
+        text-decoration: none;
+    }
+
+.NavigatorCurrentNode {
+    /*color: White;
+    background-color: #4682B4;*/
+    color: #A4A4A4;
+    text-decoration: none;
+}
+
+.NavigatorNode {
+    color: #4682B4;
+    text-decoration: none;
+}
+
+.NavigatorPathSeparator {
+    /*color: #4682B4;*/
+    color: #808080;
+    text-decoration: none;
+}
+
+.NavigatorRootNode {
+    /*color: #4682B4;*/
+    color: #808080;
+    text-decoration: none;
+}
+
+/*PAGINATION*/
+.pagination {
+    margin: 0;
+    padding: 5px;
+}
+
+input {
+    color: black;
+    font-family: Verdana, Arial, Helvetica;
+    /*background: white;*/
+    font-size: 11px;
+}
+
+/* Imposto la grandezza di tutte le icone (glyphicons) a 12 px */
+.glyphicon {
+    font-size: 12px;
+}
+
+/* 16/12/19 Kyrylo: Aggiuntte 2 clasi per sorvrascrivere quelle di default di Bootstrap per la centratura delle tabelle */
+.table > thead > tr > th {
+    vertical-align: middle;
+}
+
+th {
+    text-align: center;
+}
+
+/*
+
+    Classi per lo stiile grafico da Template Mockup!!!!
+
+*/
+
+.div-bianco {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #c8c8c8;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.div-grigio {
+    background: #f1f1f1;
+    border: 1px solid rgba(146, 146, 146, 0.55);
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 10px 18px 5px 18px;
+}
+
+.page-title {
+    margin-top: 5px;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.btn-120 {
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+.btn-100 {
+    width: 100px;
+    margin-bottom: 5px;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+    .btn-secondary:hover {
+        color: #fff;
+        background-color: #5a6268;
+        border-color: #545b62;
+    }

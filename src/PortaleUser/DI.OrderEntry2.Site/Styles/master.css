@@ -1,0 +1,1432 @@
+﻿body
+{
+	font-size: 11px;
+	margin: 0px;
+	color: #3E3E3E;
+	background-color: white;
+	font-family: Verdana, Arial, Helvetica;
+	overflow-y: hidden;
+	border: 0px;
+}
+
+input, textarea, select 
+{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+}
+
+table
+{
+	font-size: 11px;
+	color: #3E3E3E;
+}
+
+h1, h2
+{
+	color: #4682B4;
+}
+
+h3, h4
+{
+	text-transform: uppercase;
+	color: #4682B4;
+}
+
+a
+{
+	color: #4682B4;
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+a img
+{
+	border: 0px;
+}
+
+a img:hover
+{
+	/*background-color: transparent !important;*/
+}
+
+.PageContent a
+{
+	padding: 0px 2px;
+}
+
+#datiPazienteDiv
+{
+	width: 100%;
+	border: 1px solid black;
+	padding: 3px;
+}
+
+#datiPazienteDiv div
+{
+	float: left;
+	margin-left: 10px;
+}
+
+.ordineRefresh
+{
+	position: relative;
+	left: 1px;
+	top: 2px;
+	margin: 0px;
+	padding: 0px;
+	width: 12px;
+	height: 12px;
+}
+
+.gridWhiteSpaceHeader
+{
+	background-color: white;
+	filter: none !important;
+	width: 16px;
+	border-top: 0px !important;
+	border-bottom: 0px !important;
+}
+
+.loaderDiv
+{
+	background-color: White;
+	color: Black;
+	border: 1px solid silver;
+	overflow: hidden;
+	position: absolute; /*padding: 3px 4px;*/
+	width: 450px;
+	height: 400px;
+	color: #000;
+	display: none;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.loaderDivTitle
+{
+	/*background-color: Black; 	color: White;*/
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	margin: 2px 0px 5px 0px;
+	padding: 0px 2px;
+	cursor: move;
+}
+
+.loaderContainer
+{
+	margin: 2px 1px;
+	padding: 0px 2px 3px 2px;
+	height: 367px;
+	overflow: auto;
+	width: 444px;
+}
+
+.resize-helper
+{
+	border: 2px dotted black;
+}
+
+.closeButton
+{
+	background: url(../Images/close.png);
+	background-position: 0px 0px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.closeButtonHover
+{
+	background-position: 16px 0px;
+}
+
+.filters
+{
+	float: left;
+	padding: 3px;
+	margin: 5px;
+	width: 190px;
+	height: 90px;
+}
+
+.filtroSelettore
+{
+	float: left;
+	margin-left: 5px;
+}
+
+.xmlContainer
+{
+	display: none;
+}
+
+fieldset 
+{
+	border: silver 1px solid;
+	color: Black;
+}
+
+.NoRequiredField
+{
+	display: none;
+	margin: 2px 4px;
+	padding: 0px;
+	zoom: 0 !important; /*usato per aggiustare l'effetto di padding dopo il toggle, solo in IE*/
+}
+
+.quadro
+{
+	border: 1px solid #c0c0c0;
+	padding: 0px;
+	margin: 2px 1px 2px 2px;
+	width: 380px;
+	height: 300px;
+	float: left;
+}
+
+.quadroHeader
+{
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+	border-bottom: 1px solid #c0c0c0;
+	padding: 3px;
+	margin: 0px;
+	color: Black;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	zoom: 1;
+}
+
+.quadroContent
+{
+	padding: 5px;
+	margin-top: 5px;
+	width: 100%;
+	height: 280px;
+	overflow: auto;
+}
+
+.quadroContent ul
+{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.quadroContent li
+{
+	margin-top: 2px;
+	padding: 2px 1px;
+}
+
+.quadroContentItem
+{
+}
+
+.quadroContentAlternateItem
+{
+	background-color: #EFEFEF;
+}
+
+hr
+{
+	border: black solid;
+	height: 1px;
+}
+
+.separator
+{
+	clear: both;
+}
+
+span
+{
+}
+
+input
+{
+	color: black;
+	background-color: white;
+	border: 1px solid #CEDCD5;
+	margin: 0px;
+}
+
+input:active
+{
+	outline: none;
+}
+
+.Button
+{
+	width: 80px;
+	cursor: pointer;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+}
+
+.ImageButton
+{
+	/*width: 20px;*/
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.saveButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/save.png);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+}
+
+.pdfButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/pdficon.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+	width: 22px;
+}
+
+.pdfButton2
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/pdficon.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+	width: 22px;
+}
+
+.printButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/print.png);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+}
+
+.sendButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/next.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+}
+
+.backButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/back.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+}
+
+.newButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/new.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+}
+
+.toggleButton
+{
+	cursor: pointer;
+	background-color: transparent;
+	background-image: url(../Images/minus.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+}
+
+.toolButton
+{
+	cursor: pointer;
+	background-color: transparent;
+	background-image: url(../Images/stato.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+}
+
+.searchButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/find.png);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+}
+
+.deleteButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/trash.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 22px;
+}
+
+.infoButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/info.png);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	height: 21px;
+}
+
+.validaButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/ok.png);
+	background-repeat: no-repeat;
+	background-position: 1px 0px;
+	height: 21px;
+}
+
+.menuButton
+{
+	cursor: pointer;
+	background-color: transparent;
+	background-image: url(../Images/menuButton.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	width: 21px;
+	height: 69px;
+}
+
+.menuButton:hover
+{
+	background-position: -21px 0px;
+}
+
+.deleteLongButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/delete.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	width: 160px;
+	height: 22px;
+}
+
+.addLongButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/new.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	width: 160px;
+	height: 22px;
+}
+
+.leftArrowButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/back.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	width: 21px;
+	height: 21px;
+}
+
+.rightArrowButton
+{
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../Images/next.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	width: 21px;
+	height: 21px;
+}
+
+.linkProfili
+{
+	font-size: 15px;
+	padding: 2px;
+	width: 100%;
+	height: 24px;
+	color: Black;
+	cursor: pointer;
+	background-repeat: no-repeat;
+}
+
+.linkPrestazioni
+{
+	font-size: 15px;
+	padding: 2px;
+	width: 100%;
+	height: 24px;
+	color: Black;
+	cursor: pointer;
+}
+
+.linkProfili:hover
+{
+	color: Black;
+	background-color: #E6EEE6;
+	text-decoration: none;
+}
+
+.linkPrestazioniHover
+{
+	color: Black;
+	background-color: #E6EEE6;
+	text-decoration: none;
+}
+
+.linkPrestazioni a:hover
+{
+	text-decoration: none;
+}
+
+.selectedLinkProfili
+{
+	color: Black;
+	background-color: #CEDCD5;
+}
+
+.inputHover
+{
+	border: 1px solid black;
+}
+
+.DateTimeInput
+{
+	padding: 0px 3px;
+}
+
+.Radio input
+{
+	color: black;
+	background: white;
+	border: 0px solid #CEDCD5;
+}
+
+select
+{
+	/*color: black;
+	background: white;
+	border: 1px solid #CEDCD5;*/
+	width: 141px;
+}
+
+.IconError
+{
+	font-family: Webdings;
+	font-size: 14px;
+}
+
+.Error
+{
+	color: red;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+.Message
+{
+	color: #4682B4;
+	font-size: 11px;
+}
+
+.Title
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #4682B4;
+}
+
+.ModuleContent
+{
+	/* 		ATTENZIONE: inserendo padding o margin top i moduli con dimensioni 		al 100% vengono troncati. 	*/
+	height: 100%;
+	overflow: auto;
+}
+
+.IFrameContent
+{
+	width: 100%;
+	height: 100%;
+}
+
+.NoIFrameContent
+{
+	border: solid 1px silver;
+}
+
+/*
+---------------------------------------------------------------------
+	Pagina Error e Warning
+---------------------------------------------------------------------
+*/
+
+.PageErrorContainer
+{
+	color: red;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.PageWarningContainer
+{
+	vertical-align: middle;
+	text-align: center;
+}
+
+/*
+---------------------------------------------------------------------
+	Pagina Master
+---------------------------------------------------------------------
+*/
+
+.PageHeader
+{
+	vertical-align: top;
+    height: 60px;    
+    border: 0px; 
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.PageHeader_Title
+{
+    font-size: 16;
+    color: #4682b4;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.PageHeader_Links
+{
+    border: 0px; 
+    border-spacing: 0px;
+    border-collapse: collapse;
+    color: #000080; 
+    font-size: 9px;
+}
+
+.PageHeader_Links tr td
+{
+    vertical-align: middle;    
+}
+
+.TopContent
+{
+	background-color: #CEDCD5;
+	border-bottom: solid 1px #4682B4;
+	border-top: solid 1px #4682B4;
+	height: 10px;
+	padding: 3px;
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+.PageContent
+{
+	padding: 6px;
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+	/*height: 100%;*/
+}
+
+#MenuColumn
+{
+	background-color: #2A7652;
+	border-right: solid 1px #4682B4; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#C0E9D6', startColorstr='#2A7652', gradientType='1');
+}
+
+.LeftContent
+{
+	padding: 8px 3px 0px 3px;
+	width: 150px;
+	height: 100%;
+}
+
+.PageFooter
+{
+	color: #4682B4;
+	background-color: #CEDCD5;
+	border-top: solid 1px #4682B4;
+	height: 10px;
+	padding: 2px;
+	text-align: center;
+	font-size: 10px; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+/*
+---------------------------------------------------------------------
+	Master Menu (barra di navigazione orizzontale)
+---------------------------------------------------------------------
+*/
+
+.MasterMenu
+{
+	font-size: 11px;
+	text-decoration: none;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.MasterMenuItem {
+	margin-left: 6px;
+	margin-right: 7px;
+	color: #4682B4;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+.MasterMenuHover
+{
+	/*color: #CEDCD5; 	background-color: #4682B4;*/
+	text-decoration: none;
+}
+
+.MasterMenuSelected
+{
+	/*color: #CEDCD5;     background-color: #4682B4;*/
+	color: #808080;
+	text-decoration: none;
+}
+
+.MasterMenuDynamic
+{
+	background-color: white;
+	font-size: 11px;
+	text-decoration: none;
+	width: 80px;
+	padding: 2px;
+	margin: 1px;
+	border: black 1px solid;
+}
+
+.MasterMenuDynamicItem
+{
+	/*     color: #CEDCD5;     font-weight: bolder;    	text-decoration: none; 	*/
+	color: Black; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+.MasterMenuDynamicHover
+{
+	color: Black;
+	background-color: #CEDCD5;
+	text-decoration: none;
+}
+
+.MasterMenuDynamicSelected
+{
+	/*     color: White;     background-color: #CEDCD5;     font-weight: bolder;     text-decoration: none; 	*/
+	color: Black; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+/*
+---------------------------------------------------------------------
+	End Master Menu
+---------------------------------------------------------------------
+*/
+
+/*
+---------------------------------------------------------------------
+	Start Master Tree
+---------------------------------------------------------------------
+*/
+
+.TreeNode
+{
+	font-size: 11px !important;
+	text-decoration: none;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.TreeRootNode, .TreeParentNode, .TreeLeafNode
+{
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+
+.TreeHoverNode, .TreeLeafNode:hover
+{
+	text-decoration: none !important;
+	background-color: #E6EEE6;
+	color: Black;
+}
+
+.TreeSelectedNode
+{
+	/*color: #2A7652;     background-color: #FFFFFF; 	border: 1px solid #000000;*/
+	font-size: 11px;
+	text-decoration: none;
+	color: Black; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#FFEDA4', gradientType='0');
+}
+/*
+---------------------------------------------------------------------
+	End Master Tree
+---------------------------------------------------------------------
+*/
+
+/*
+---------------------------------------------------------------------
+	Start Master Navigator
+---------------------------------------------------------------------
+*/
+
+.Navigator
+{
+	font-weight: bolder;
+	font-size: 10px;
+	padding-right: 2px;
+	padding-left: 2px;
+	text-decoration: none;
+}
+
+.Navigator:hover
+{
+	color: #4682B4;
+	font-weight: bolder;
+	font-size: 10px;
+	padding-right: 2px;
+	padding-left: 2px;
+	text-decoration: none;
+}
+
+.NavigatorCurrentNode
+{
+	/*color: White;     background-color: #4682B4;*/
+	color: #A4A4A4;
+	text-decoration: none;
+}
+
+.NavigatorNode
+{
+	color: #4682B4;
+	text-decoration: none;
+}
+
+.NavigatorPathSeparator
+{
+	/*color: #4682B4;*/
+	color: #808080;
+	text-decoration: none;
+}
+
+.NavigatorRootNode
+{
+	/*color: #4682B4;*/
+	color: #808080;
+	text-decoration: none;
+}
+
+
+/*
+---------------------------------------------------------------------
+	End Master Navigator
+---------------------------------------------------------------------
+*/
+
+
+/*
+---------------------------------------------------------------------
+	Griglie di dati
+---------------------------------------------------------------------
+*/
+
+.Grid
+{
+	color: black;
+	font-size: 10px;
+	border: 1px solid #c0c0c0;
+	text-align: center;
+	border-collapse: collapse;
+	margin-top: 0px;
+}
+
+.gridCheckBox
+{
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+}
+
+.Grid caption
+{
+	filter: none;
+	background-color: #CEDCD5;
+	padding: 2px 0px;
+	font-weight: bold;
+	border: 1px solid #c0c0c0;
+	font-size: 15px;
+	color: Black;
+}
+
+.GridHeader, .Grid th, .Grid thead, .GridHeader a, .GridHeader a:link, .GridHeader a:visited, .GridHeader a:active
+{
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+	padding: 1px 2px;
+	color: #4682b4;
+}
+
+.GridHeaderSortAsc a
+{
+	color: Red !important;
+}
+
+.GridHeaderSortDesc a
+{
+	color: Red !important;
+}
+
+.GridHeader a:hover
+{
+	text-decoration: underline;
+}
+
+.GridItem, .GridItem td a, .Grid tr
+{
+	color: black;
+	font-size: 10px;
+}
+
+.GridItem a:link, .GridItem a:visited, .GridItem a:active
+{
+	color: #4682b4;
+}
+
+.GridItem a:hover
+{
+	text-decoration: underline;
+}
+
+.GridAlternatingItem, .GridAlternatingItem td a
+{
+	color: black;
+	font-size: 10px;
+	background-color: #EFEFEF;
+}
+
+.GridAlternatingItem a:link, .GridAlternatingItem a:visited, .GridAlternatingItem a:active
+{
+	color: #4682b4;
+}
+
+.GridAlternatingItem a:hover
+{
+	text-decoration: underline;
+}
+
+.GridPager, .GridPager a, .GridPager a:link, .GridPager a:visited, .GridPager a:active
+{
+	color: #4682b4;
+	font-size: 10px;
+	background-color: white;
+	text-decoration: none;
+}
+
+.GridPager a:hover
+{
+	text-decoration: underline;
+}
+
+.GridSelected
+{
+	background-color: #FFCC00;
+}
+
+.SelectableRow
+{
+	cursor: pointer;
+}
+
+.SelectableRowHover
+{
+	background-color: #CEDCD5; /*#FFCC00;*/
+}
+
+/*
+---------------------------------------------------------------------
+	End Griglie
+---------------------------------------------------------------------
+*/
+
+/*
+---------------------------------------------------------------------
+	Tab
+---------------------------------------------------------------------
+*/
+
+.DefaultView
+{
+	color: #000;
+	background-color: #E6EEE6;
+	border-width: 0px;
+	width: 115px;
+	height: 30px;
+	font-size: 11px; /*float: left;*/
+	outline: none;
+	cursor: pointer;
+}
+
+.DisableView
+{
+	background-color: #B9B9B9;
+	cursor: default;
+}
+
+.HoverView
+{
+	color: #000;
+	background-color: #D8E3DD;
+	outline: none;
+}
+
+.ActiveView
+{
+	color: #000;
+	background-color: #CEDCD5;
+	outline: none;
+}
+
+.TabSeparator
+{
+	background-color: #CEDCD5; /*#90B8A4;*/
+	clear: both;
+}
+
+.TabButton
+{
+	width: 100px;
+	height: 19px;
+}
+
+legend
+{
+	font-size: 11px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.toolbar
+{
+	border: 1px solid #FFCC00;
+	padding: 5px;
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#FFEDA4', gradientType='0');
+}
+.toolbar-img
+{
+	border: 0;
+	vertical-align: middle;
+}
+/*
+---------------------------------------------------------------------
+	End Tab
+---------------------------------------------------------------------
+*/
+
+/*
+---------------------------------------------------------------------
+	Richiesta Dettaglio
+---------------------------------------------------------------------
+*/
+
+#DatiRichiedente
+{
+	float: left;
+	width: 673px;
+	text-align: center;
+	border: 1px solid #c0c0c0;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	padding: 3px 0px;
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+#DatiErogante
+{
+	margin-left: 12px;
+	float: left;
+	width: 564px;
+	text-align: center;
+	border: 1px solid #c0c0c0;
+	border-bottom-width: 0px;
+	padding: 3px 0px;
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+.noFilter
+{
+	filter: none;
+}
+
+.RuoloCombo
+{
+	font-size: 11px;
+}
+
+/*
+---------------------------------------------------------------------
+	End Richiesta Dettaglio
+---------------------------------------------------------------------
+*/
+
+/************** TimePicker  *******************/
+
+.ui-timepicker-div .ui-widget-header
+{
+	margin-bottom: 8px;
+}
+.ui-timepicker-div dl
+{
+	text-align: left;
+}
+.ui-timepicker-div dl dt
+{
+	height: 25px;
+	margin-bottom: -25px;
+}
+.ui-timepicker-div dl dd
+{
+	margin: 0 10px 10px 65px;
+}
+.ui-timepicker-div td
+{
+	font-size: 90%;
+}
+.ui-tpicker-grid-label
+{
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+/************************************************************/
+/*table sorter*/
+
+table.tablesorter
+{
+	color: black;
+	/*font-family: Helvetica, Verdana, Arial;*/
+	font-size: 10px;
+	border: 1px solid #c0c0c0;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+/*table.tablesorter thead tr th, table.tablesorter tfoot tr th*/
+table.tablesorter tr th
+{
+	background-color: #E6EEE6; /*#e6EEEE;*/
+	border: 1px solid #c0c0c0;
+	font-size: 8pt;
+	padding: 4px 8px 4px 4px;
+}
+table.tablesorter thead tr .header
+{
+	background-image: url(images/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td
+{
+	color: #3D3D3D;
+	padding: 2px;
+	border-style: none;
+}
+table.tablesorter tbody tr.odd td, .OddRow
+{
+	background-color: #E6EEE6;
+}
+table.tablesorter thead tr .headerSortUp
+{
+	background-image: url(images/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown
+{
+	background-image: url(images/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp
+{
+	background-color: #CEDCD5; /*#8dbdd8;*/
+}
+/*table sorter*/
+
+#savePanel
+{
+	position: absolute;
+	top: 10px;
+	right: -250px;
+	border: 1px solid silver;
+	background-color: white;
+	background-image: url(../Images/refresh.gif);
+	background-repeat: no-repeat;
+	background-position: 4px center;
+	padding: 4px 4px;
+	display: none;
+	width: 250px; /*height: 30px;*/
+	text-align: center;
+	padding: 4px;
+}
+
+/********Wizard*********/
+
+#wizard
+{
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 5px 5px 0px 5px;
+	border: 0px solid #CCC;
+	overflow: visible;
+	float: left;
+	width: 980px;
+}
+
+#wizardList
+{
+	position: relative;
+	display: block;
+	float: left;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	clear: both;
+	border: 0px solid #CCCCCC;
+	background: transparent; /*#EEEEEE */
+}
+
+.wizardElement
+{
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	padding-left: 3px;
+	padding-right: 3px;
+	border: 0px solid #E0E0E0;
+	float: left;
+}
+
+.wizardElement div
+{
+	display: block;
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 2px;
+	height: 30px;
+	width: 176px;
+	text-decoration: none;
+	outline-style: none;
+	z-index: 99;
+}
+
+.wizardElement div.selected
+{
+	color: #F8F8F8;
+	background: #EA8511; /* EA8511 */
+	border: 1px solid #CCC; /*#EA8511;*/
+}
+
+.wizardElement div.done
+{
+	color: #FFF;
+	background: #8CC63F;
+	border: 1px solid #CCC; /*#8CC63F;*/
+}
+
+.wizardElement div.disabled
+{
+	color: #CCCCCC;
+	background: #F8F8F8;
+	border: 1px solid #CCC;
+}
+
+.stepNumber
+{
+	position: relative;
+	float: left;
+	width: 15px;
+	text-align: center;
+	padding: 5px;
+	padding-top: 0;
+	/*font: bold 20px Helvetica, sans-serif, Verdana, Arial;*/
+	font: bold 20px;
+}
+
+.stepDescription
+{
+	position: relative;
+	display: block;
+	float: left;
+	text-align: left;
+	padding: 3px;	
+	font: bold 13px Helvetica, sans-serif, Verdana, Arial;
+	margin-top: 2px;
+	
+}
+
+.stepDesc small
+{
+	font: normal 10px;
+}
+
+/*********Dati Accessori************/
+
+.rigaGruppo
+{
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.rigaGruppo td
+{
+	padding: 10px 0px 1px 0px;
+}
+
+.colonnaDomanda
+{
+	background-color: #E6EEE6;
+	padding: 4px 20px 4px 4px;
+	white-space:nowrap;
+}
+
+.domanda
+{
+	font-weight: bold;
+}
+
+.colonnaRisposta
+{
+	padding: 0px;
+}
+
+.erroreValidazione
+{
+	color: Red;
+	margin-left: 4px;
+}
+
+#datiAggiuntivi select
+{
+	width: 153px;
+}
+
+/*****Tooltip*****/
+
+.tooltip
+{
+	cursor: pointer;
+}
+
+#tooltip
+{
+	position: absolute;
+	z-index: 9999;
+	color: #fff;
+	font-size: 10px;
+	width: 300px;
+	margin-left:50px;
+}
+
+#tooltip .tipHeader
+{
+	height: 8px;
+}
+
+/* IE hack */
+*html #tooltip .tipHeader
+{
+	margin-bottom: -6px;
+}
+
+#tooltip .tipBody
+{
+	background-color: #000;
+	padding: 5px;
+}
+
+#tooltip .tipFooter
+{
+	height: 8px;
+}
+
+.uoRow
+{
+	border: 1px solid black !important;
+}
+
+.uoRow, .uoRow td, .uoRow th
+{
+	background-color: #CEDCD5 !important;
+}
+
+.uoRow a
+{
+	/*color: White;*/
+}
+
+
+.uoRow a:hover
+{
+}
+
+/*override jquery ui*/
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
+{
+	border: 1px solid #CEDCD5;
+	cursor: pointer;
+}
+
+.ui-widget-header
+{
+	border: 1px solid #CEDCD5;
+	background: #CEDCD5 url(images/ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x;
+}
+
+.ui-widget-content
+{
+	border: 1px solid #CEDCD5;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+{
+	border: 1px solid #CEDCD5;
+}
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DwhOutMedicinaNucleare">
+  <DataContextMoniker Name="/DwhOutMedicinaNucleareDataContext" />
+  <nestedChildShapes>
+    <classShape Id="747933f5-394b-487e-a3eb-d2b1bfc28ee7" absoluteBounds="0.5, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DwhOutMedicinaNucleareDataContext/PazientiDaMonitorare" />
+      <nestedChildShapes>
+        <elementListCompartment Id="148f304d-0e12-498e-af9c-8f8662f4b712" absoluteBounds="0.51499999999999968, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="79de35e2-d850-4a61-beac-c49f60edd268" absoluteBounds="3, 0.875, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/DwhOutMedicinaNucleareDataContext/PrestazioniDaMonitorare" />
+      <nestedChildShapes>
+        <elementListCompartment Id="042f2e90-bf4d-4557-aa62-bffae8cf9832" absoluteBounds="3.0149999999999997, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

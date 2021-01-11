@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.ConfigurazioneConnettori", "DI.ConfigurazioneConnettori\DI.ConfigurazioneConnettori.vbproj", "{DB04DA54-0B44-4DED-9A43-2164B577BDFF}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.PortalAdmin", "..\DI.PortalAdmin\DI.PortalAdmin.vbproj", "{0D8EB637-68F3-47B1-B1A4-B7990011FC66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB04DA54-0B44-4DED-9A43-2164B577BDFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB04DA54-0B44-4DED-9A43-2164B577BDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB04DA54-0B44-4DED-9A43-2164B577BDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB04DA54-0B44-4DED-9A43-2164B577BDFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D8EB637-68F3-47B1-B1A4-B7990011FC66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D8EB637-68F3-47B1-B1A4-B7990011FC66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D8EB637-68F3-47B1-B1A4-B7990011FC66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D8EB637-68F3-47B1-B1A4-B7990011FC66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hellen:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DI.ConfigurazioneConnettori\\DI.ConfigurazioneConnettori.vbproj
+		SccProjectName1 = DI.ConfigurazioneConnettori
+		SccLocalPath1 = DI.ConfigurazioneConnettori
+		SccProjectUniqueName2 = ..\\DI.PortalAdmin\\DI.PortalAdmin.vbproj
+		SccProjectName2 = ../DI.PortalAdmin
+		SccLocalPath2 = ..\\DI.PortalAdmin
+	EndGlobalSection
+EndGlobal

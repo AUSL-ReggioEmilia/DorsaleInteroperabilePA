@@ -1,0 +1,36 @@
+﻿@*TODO: RENDERE DINAMICO
+    esempio: mettere in sessione una lista di pagine (lista di enum con url e testo)*@
+<div class="row">
+    <div class="col-12">
+        <div class="navigator mt-1 mb-2">
+
+            <span class="text-black-50">Biztalk Monitor</span>
+
+            @if (!String.IsNullOrEmpty(ListPage))
+            {
+
+                <span> > </span>
+                @if (String.IsNullOrEmpty(DetailPage))
+                {
+                    <span class="text-dark">@ListPage</span>
+                }
+                else
+                {
+                    <a href="@ListPage.ToLower()" class="text-dark">@ListPage</a>
+                }
+            }
+
+            @if (!String.IsNullOrEmpty(DetailPage))
+            {
+                <span> > </span>
+                <span href="@DetailPage.ToLower()" class="text-muted">@DetailPage</span>
+            }
+        </div>
+    </div>
+</div>
+
+@code
+{
+    [Parameter] public string ListPage { get; set; }
+    [Parameter] public string DetailPage { get; set; }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fb248880-080f-4322-add5-b01aa0b3bd27" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ListenRichieste/Service/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="1.03.wsdl" MetadataType="Wsdl" ID="0dd1f515-81f7-41e8-af22-473751d04e09" SourceId="1" SourceUrl="http://localhost/ListenRichieste/Service/mex" />
+    <MetadataFile FileName="1.01.xsd" MetadataType="Schema" ID="058654a9-8ef6-4e50-978c-9798d2854985" SourceId="1" SourceUrl="http://localhost/ListenRichieste/Service/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="76cba433-aeb0-4dbd-9dc9-e4cd1f3521e1" SourceId="1" SourceUrl="http://localhost/ListenRichieste/Service/mex" />
+    <MetadataFile FileName="1.11.xsd" MetadataType="Schema" ID="93843a63-ab60-4eb1-944a-33e783f48698" SourceId="1" SourceUrl="http://localhost/ListenRichieste/Service/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{484D34FA-533B-40A7-8874-9F24BC801C4A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>DI.Sac.User</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.Sac.User.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.Sac.User.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20229.20843, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Components\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.11.2\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.11.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDenied.htm" />
+    <Content Include="App_Services\Istat.asmx" />
+    <Content Include="Consensi\ConsensiHome.aspx" />
+    <Content Include="Consensi\ConsensoDettaglio.aspx" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="ErrorUnknown.htm" />
+    <Content Include="Esenzioni\EsenzioneDettaglio.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\back.gif" />
+    <Content Include="Images\checkbox_ok.png" />
+    <Content Include="Images\Computer.gif" />
+    <Content Include="Images\CreaAnonimo.png" />
+    <Content Include="Images\CreaAnonimo_grey.png" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\delete_grey.gif" />
+    <Content Include="Images\delitem.gif" />
+    <Content Include="Images\detail.gif" />
+    <Content Include="Images\editInPlace.gif" />
+    <Content Include="Images\edititem.gif" />
+    <Content Include="Images\edititem_grey.gif" />
+    <Content Include="Images\Email.gif" />
+    <Content Include="Images\ErrorAccessDenied.jpg" />
+    <Content Include="Images\ErrorMissingResource.gif" />
+    <Content Include="Images\ErrorUnknown.gif" />
+    <Content Include="Images\green-left.jpg" />
+    <Content Include="Images\group.gif" />
+    <Content Include="Images\icon_err.gif" />
+    <Content Include="Images\icon_small_caution.gif" />
+    <Content Include="Images\icon_small_detail.bmp" />
+    <Content Include="Images\Informativa.gif" />
+    <Content Include="Images\Logo.jpg" />
+    <Content Include="Images\LogoASMN.jpg" />
+    <Content Include="Images\LogoAzienda.jpg" />
+    <Content Include="Images\LogoToolbar.gif" />
+    <Content Include="Images\LogoToolbar.jpg" />
+    <Content Include="Images\Marchio_CE_Header.png" />
+    <Content Include="Images\MenuLeftBackground.jpg" />
+    <Content Include="Images\MenuTopBackground.gif" />
+    <Content Include="Images\MenuTopPopUp.gif" />
+    <Content Include="Images\MenuTopSeparator.gif" />
+    <Content Include="Images\newitem.gif" />
+    <Content Include="Images\PixelTrasparente.gif" />
+    <Content Include="Images\saveInPlace.gif" />
+    <Content Include="Images\sel.gif" />
+    <Content Include="Images\toolgrad_vintage.gif" />
+    <Content Include="Images\undoInPlace.gif" />
+    <Content Include="Images\user.gif" />
+    <Content Include="Images\view.png" />
+    <Content Include="Images\_LogoToolbar.gif" />
+    <Content Include="MissingResource.htm" />
+    <Content Include="Pazienti\PazienteCercaAnonimizzazione.aspx" />
+    <Content Include="Pazienti\PazienteCercaPosCollegata.aspx" />
+    <Content Include="Pazienti\PazienteCreaAnonimizzazione.aspx" />
+    <Content Include="Pazienti\PazienteCreaPosCollegata.aspx" />
+    <Content Include="Pazienti\PazienteDettaglio.aspx" />
+    <Content Include="Pazienti\PazienteDettaglioAnonimizzazione.aspx" />
+    <Content Include="Pazienti\PazienteDettaglioAnonimizzazioniStampa.aspx" />
+    <Content Include="Pazienti\PazienteDettaglioPosCollegata.aspx" />
+    <Content Include="Pazienti\PazienteDettaglioPosCollegataStampa.aspx" />
+    <Content Include="Pazienti\PazientiHome.aspx" />
+    <Content Include="Pazienti\PazientiLista.aspx" />
+    <Content Include="PortalRedirect.aspx" />
+    <Content Include="Content\config.json" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.AccessiReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.GruppiReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.GruppoReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.RuoliReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.RuoloDettagliReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.SistemiReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.UnitaOperativeReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.UtenteReturn.datasource" />
+    <Content Include="My Project\DataSources\WcfSacRoleManager.UtentiReturn.datasource" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="PazientiPosizioniCollegateDataSet.xsc">
+      <DependentUpon>PazientiPosizioniCollegateDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <None Include="PazientiPosizioniCollegateDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PazientiPosizioniCollegateDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="PazientiPosizioniCollegateDataSet.xss">
+      <DependentUpon>PazientiPosizioniCollegateDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.11.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.11.2.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\master.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <None Include="Service References\WcfSacPazienti\Pazienti.wsdl" />
+    <None Include="Service References\WcfSacPazienti\SAC.disco" />
+    <None Include="Service References\WcfSacPazienti\configuration91.svcinfo" />
+    <None Include="Service References\WcfSacPazienti\configuration.svcinfo" />
+    <None Include="Service References\WcfSacPazienti\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="StyleSheet.css" />
+    <Content Include="UserControl\DettaglioPaziente.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Service References\WcfSacPazienti\SAC.wsdl" />
+    <None Include="Service References\WcfSacPazienti\SAC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfSacPazienti\SAC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfSacPazienti\SAC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfSacPazienti\SAC3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.ConsensiRelazioniConMinoreReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.ConsensoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.ErroreReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.EsenzioneReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.IstatComuniReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.IstatNazioniReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.IstatProvinceReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.IstatRegioniReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.PazienteReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.PazientiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.ProvenienzaReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WcfSacPazienti\WcfSacPazienti.TokenReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_CustControls\Progel3DropDownList.vb" />
+    <Compile Include="App_CustControls\ProgelDropDownList.vb" />
+    <Compile Include="App_CustControls\SacDropDownList.vb" />
+    <Compile Include="App_Services\Istat.asmx.vb">
+      <DependentUpon>Istat.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CacheDataSource.vb" />
+    <Compile Include="Components\CustomDataSource.vb" />
+    <Compile Include="Components\CustomExceptions.vb" />
+    <Compile Include="Components\HelperGridView.vb" />
+    <Compile Include="Components\Logging.vb" />
+    <Compile Include="Components\MyTelemetryInitializer.vb" />
+    <Compile Include="ConsensiUiDataSet.Designer.vb">
+      <DependentUpon>ConsensiUiDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Consensi\ConsensiHome.aspx.designer.vb">
+      <DependentUpon>ConsensiHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consensi\ConsensiHome.aspx.vb">
+      <DependentUpon>ConsensiHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consensi\ConsensoDettaglio.aspx.designer.vb">
+      <DependentUpon>ConsensoDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consensi\ConsensoDettaglio.aspx.vb">
+      <DependentUpon>ConsensoDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerations.vb" />
+    <Compile Include="ErrorPage.aspx.designer.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Esenzioni\EsenzioneDettaglio.aspx.designer.vb">
+      <DependentUpon>EsenzioneDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Esenzioni\EsenzioneDettaglio.aspx.vb">
+      <DependentUpon>EsenzioneDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExceptionsManager.vb" />
+    <Compile Include="FilterHelper.vb" />
+    <Compile Include="GestioneErrori.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IstatDataSet.Designer.vb">
+      <DependentUpon>IstatDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="MessageHelper.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PazientiAnonimizzazioniDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PazientiAnonimizzazioniDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PazientiPosizioniCollegateDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PazientiPosizioniCollegateDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PazientiUiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PazientiUiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PazientiUiDataSet.vb">
+      <DependentUpon>PazientiUiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCercaAnonimizzazione.aspx.designer.vb">
+      <DependentUpon>PazienteCercaAnonimizzazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCercaAnonimizzazione.aspx.vb">
+      <DependentUpon>PazienteCercaAnonimizzazione.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCercaPosCollegata.aspx.designer.vb">
+      <DependentUpon>PazienteCercaPosCollegata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCercaPosCollegata.aspx.vb">
+      <DependentUpon>PazienteCercaPosCollegata.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCreaAnonimizzazione.aspx.designer.vb">
+      <DependentUpon>PazienteCreaAnonimizzazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCreaAnonimizzazione.aspx.vb">
+      <DependentUpon>PazienteCreaAnonimizzazione.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCreaPosCollegata.aspx.designer.vb">
+      <DependentUpon>PazienteCreaPosCollegata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCreaPosCollegata.aspx.vb">
+      <DependentUpon>PazienteCreaPosCollegata.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglio.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglio.aspx.vb">
+      <DependentUpon>PazienteDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioAnonimizzazione.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglioAnonimizzazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioAnonimizzazione.aspx.vb">
+      <DependentUpon>PazienteDettaglioAnonimizzazione.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioAnonimizzazioniStampa.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglioAnonimizzazioniStampa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioAnonimizzazioniStampa.aspx.vb">
+      <DependentUpon>PazienteDettaglioAnonimizzazioniStampa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioPosCollegata.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglioPosCollegata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioPosCollegata.aspx.vb">
+      <DependentUpon>PazienteDettaglioPosCollegata.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioPosCollegataStampa.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglioPosCollegataStampa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioPosCollegataStampa.aspx.vb">
+      <DependentUpon>PazienteDettaglioPosCollegataStampa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazientiHome.aspx.designer.vb">
+      <DependentUpon>PazientiHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiHome.aspx.vb">
+      <DependentUpon>PazientiHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazientiLista.aspx.designer.vb">
+      <DependentUpon>PazientiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiLista.aspx.vb">
+      <DependentUpon>PazientiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalRedirect.aspx.designer.vb">
+      <DependentUpon>PortalRedirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PortalRedirect.aspx.vb">
+      <DependentUpon>PortalRedirect.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Service References\WcfSacPazienti\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Utility.vb" />
+    <Compile Include="UserControl\DettaglioPaziente.ascx.designer.vb">
+      <DependentUpon>DettaglioPaziente.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DettaglioPaziente.ascx.vb">
+      <DependentUpon>DettaglioPaziente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ConsensiUiDataSet.xsc">
+      <DependentUpon>ConsensiUiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ConsensiUiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConsensiUiDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>DI.Sac.User.Data</CustomToolNamespace>
+    </None>
+    <None Include="ConsensiUiDataSet.xss">
+      <DependentUpon>ConsensiUiDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="Documenti\Informativa.pdf" />
+    <None Include="IstatDataSet.xsc">
+      <DependentUpon>IstatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IstatDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IstatDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>DI.Sac.User.Data</CustomToolNamespace>
+    </None>
+    <None Include="IstatDataSet.xss">
+      <DependentUpon>IstatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\dagobah2.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+    <Content Include="Web.sitemap" />
+    <None Include="PazientiAnonimizzazioniDataSet.xsc">
+      <DependentUpon>PazientiAnonimizzazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PazientiAnonimizzazioniDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PazientiAnonimizzazioniDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PazientiAnonimizzazioniDataSet.xss">
+      <DependentUpon>PazientiAnonimizzazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PazientiUiDataSet.xsc">
+      <DependentUpon>PazientiUiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PazientiUiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>DI.Sac.User.Data</CustomToolNamespace>
+      <LastGenOutput>PazientiUiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PazientiUiDataSet.xss">
+      <DependentUpon>PazientiUiDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="Scripts\jquery-1.11.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PortaleCommon\DI.Common\DI.Common.vbproj">
+      <Project>{EBAF272B-B9BE-4FD0-8556-2D49F031DF22}</Project>
+      <Name>DI.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.PortalUser2\DI.PortalUser2.vbproj">
+      <Project>{957a73f0-ffa8-4d90-8e8d-ce48a8ddb099}</Project>
+      <Name>DI.PortalUser2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WcfSacPazienti\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50803</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50806/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

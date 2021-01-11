@@ -1,0 +1,146 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="OrderEntryPlanner.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= Page.Title %></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%-- Import degli scripts --%>
+        <asp:ScriptManager ID="ScriptManagerMaster" runat="server" EnablePageMethods="false">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="moment" />
+                <asp:ScriptReference Name="moment-it" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="fullcalendar" />
+                <asp:ScriptReference Name="fullcalendarlocale" />
+                <asp:ScriptReference Name="bundle" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <%-- Logo e Title --%>
+        <asp:Literal ID="HeaderPlaceholder" runat="server" />
+
+        <%-- Menu principale dorsale interoperabile --%>
+        <div class="div-menu-affix" data-spy="affix" data-offset-top="67">
+            <div id="MenuPrincipale" class="navbar navbar-inverse navbar-static-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapseMenuPrincipale">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse navbar-collapseMenuPrincipale">
+                        <asp:Menu ID="MenuMain" runat="server" CssClass="aspmenu-custom" SkipLinkText=""
+                            StaticDisplayLevels="2" MaximumDynamicDisplayLevels="0" IncludeStyleBlock="false" RenderingMode="List">
+                            <StaticMenuStyle CssClass="nav navbar-nav aspmenu-custom" />
+                            <StaticSelectedStyle CssClass="active" />
+                        </asp:Menu>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    <asp:Label ID="lblInfoUtente" runat="server" />
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-custom-width">
+                                    <li>
+                                        <div>
+                                            <fieldset>
+                                                <div class="col-sm-12">
+                                                    <div class="form">
+                                                        <div class="form-group" id="divRuoli" runat="server">
+                                                            <asp:Label Text="Ruolo:" runat="server" AssociatedControlID="ddlRuoliUtente"></asp:Label>
+                                                            <asp:DropDownList ID="ddlRuoliUtente" OnSelectedIndexChanged="ddlRuoliUtente_SelectedIndexChanged" runat="server" AutoPostBack="True" CssClass="form-control input-sm">
+                                                            </asp:DropDownList>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <asp:Label Text="Nome Utente:" runat="server" AssociatedControlID="lblUtente"></asp:Label>
+                                                            <asp:Label ID="lblUtente" runat="server" Text=""></asp:Label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <asp:Label Text="Postazione:" runat="server" AssociatedControlID="lblPostazione" />
+                                                            <asp:Label ID="lblPostazione" runat="server" Text=""></asp:Label>
+                                                        </div>
+                                                        <hr />
+                                                        <div class="form-group">
+                                                            <asp:Label Text="Ultimo accesso:" runat="server" AssociatedControlID="lblUltimoAccesso" />
+                                                            <asp:Label ID="lblUltimoAccesso" runat="server" Text=""></asp:Label>
+                                                        </div>
+                                                        <hr />
+                                                        <div class="form-group">
+                                                            <asp:Label Text="Versione:" runat="server" AssociatedControlID="lblVersioneAssembly" />
+                                                            <asp:Label ID="lblVersioneAssembly" runat="server" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <asp:Label Text="Host:" runat="server" AssociatedControlID="lblNomeHost" />
+                                                            <asp:Label ID="lblNomeHost" runat="server" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <%-- Menu secondario --%>
+            <div class="container-fluid">
+                <div id="MenuSecondario" class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuSecondario" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse" id="menuSecondario">
+                        <ul class="nav navbar-nav navbar-fixed">
+                            <li id="pagHome"><a href="~/Default.aspx" runat="server">Home</a></li>
+                            <li id="pagRicerca"><a href="~/Pages/RicercaOrdini.aspx" runat="server">Ricerca ordini</a></li>
+                            <li id="pagCalendario"><a href="~/Pages/Calendario.aspx" runat="server">Calendario</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid body-content">
+            <!--
+            -- Attenzione:
+            -- In questa applicazione il div utilizzato in caso d'errore è unico e definito nella master.page (DivError).
+            -- Ogni volta che si verifica un errore il div "DivError" viene reso visibile.
+            -- Per far si che il div si possa visualizzare anche nel caso in cui si verifichi un errore dentro un update panel (vedi cancellazione di una esenzione dentro la pagina esenzioni.aspx)
+                   "DivError" è stato inserito dentro l'updatePanel "updError".
+            -- In questo modo il div viene sempre reso visibile, anche se l'errore è all'interno di un altro updatepanel.
+            -->
+            <asp:UpdatePanel runat="server" ID="updError" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="alert alert-danger" id="DivError" runat="server" enableviewstate="False" style="display:none" clientIdMode="Static">
+                            </div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+

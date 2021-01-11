@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by  (Progel srl) -->
+<xs:schema xmlns="http://SAC.BT.Types.Schema.DataAccess/v1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://SAC.BT.Types.Schema.DataAccess/v1.0" elementFormDefault="qualified" attributeFormDefault="qualified" id="PazienteTypes">
+	<xs:complexType name="AttributoType">
+		<xs:sequence>
+			<xs:element name="Nome" type="xs:string"/>
+			<xs:element name="Valore" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AttributiType">
+		<xs:sequence>
+			<xs:element name="Attributo" type="AttributoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ErroreType">
+		<xs:sequence>
+			<xs:element name="Codice" type="xs:string"/>
+			<xs:element name="Descrizione" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PazienteSinonimoType">
+		<xs:sequence>
+			<xs:element name="Provenienza" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Id" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Valutare se rinominare il tipo "PazienteSinonimo" in base al suo significato</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PazienteSinonimiType">
+		<xs:sequence>
+			<xs:element name="Sinonimo" type="PazienteSinonimoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

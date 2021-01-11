@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatiAccessoriDinamici.Service", "DatiAccessoriDinamici.Service\DatiAccessoriDinamici.Service.csproj", "{89DC39A1-F8F3-410B-940C-600B873E83B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatiAccessoriDinamici.Test", "DatiAccessoriDinamici.Test\DatiAccessoriDinamici.Test.csproj", "{3D103D8F-9A48-44CB-B91F-40DFD67A0DB1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{89DC39A1-F8F3-410B-940C-600B873E83B8} = {89DC39A1-F8F3-410B-940C-600B873E83B8}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89DC39A1-F8F3-410B-940C-600B873E83B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89DC39A1-F8F3-410B-940C-600B873E83B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89DC39A1-F8F3-410B-940C-600B873E83B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89DC39A1-F8F3-410B-940C-600B873E83B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D103D8F-9A48-44CB-B91F-40DFD67A0DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D103D8F-9A48-44CB-B91F-40DFD67A0DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D103D8F-9A48-44CB-B91F-40DFD67A0DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D103D8F-9A48-44CB-B91F-40DFD67A0DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17C3ADC1-952B-42B7-8D65-54A37B4F9ACA}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hellen.progel.org:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DatiAccessoriDinamici.Service\\DatiAccessoriDinamici.Service.csproj
+		SccProjectName1 = DatiAccessoriDinamici.Service
+		SccLocalPath1 = DatiAccessoriDinamici.Service
+		SccProjectUniqueName2 = DatiAccessoriDinamici.Test\\DatiAccessoriDinamici.Test.csproj
+		SccProjectName2 = DatiAccessoriDinamici.Test
+		SccLocalPath2 = DatiAccessoriDinamici.Test
+	EndGlobalSection
+EndGlobal

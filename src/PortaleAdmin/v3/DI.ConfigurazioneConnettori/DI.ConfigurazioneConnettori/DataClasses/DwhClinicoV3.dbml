@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_DwhClinicoV3" Class="DwhClinicoV3DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_DwhClinicoV3;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_DwhClinicoV3ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="sole.AbilitazioniPrestazioni" Member="Sole_AbilitazioniPrestazionis">
+    <Type Name="Sole_AbilitazioniPrestazioni">
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrestazioneCodice" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UtenteModifica" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Abilitato" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisabilitaControlliBloccoInvio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OreRitardoInvio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AbilitazioniAziendeEroganti_Sole_AbilitazioniPrestazioni" Member="AbilitazioniAziendeEroganti" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="AbilitazioniAziendeEroganti" IsForeignKey="true" />
+      <Association Name="AbilitazioniSistemiEroganti_Sole_AbilitazioniPrestazioni" Member="AbilitazioniSistemiEroganti" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="AbilitazioniSistemiEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="sole.AbilitazioniSistemi" Member="Sole_AbilitazioniSistemis">
+    <Type Name="Sole_AbilitazioniSistemi">
+      <Column Name="Id" AutoSync="Never" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TipoErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Abilitato" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DataInizio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFine" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UtenteModifica" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="TipologiaSole" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Mittente" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="OreRitardoInvio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DisabilitaControlloRegime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisabilitaControlloInviabile" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisabilitaControlloConsensi" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Priorita" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CorrelazioneInvio" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="InviaOscurati" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InviaConfidenziali" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InviaLiberaProfessione" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="AbilitazioniSistemiEroganti_Sole_AbilitazioniSistemi" Member="AbilitazioniSistemiEroganti" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="AbilitazioniSistemiEroganti" IsForeignKey="true" />
+      <Association Name="AbilitazioniAziendeEroganti_Sole_AbilitazioniSistemi" Member="AbilitazioniAziendeEroganti" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="AbilitazioniAziendeEroganti" IsForeignKey="true" />
+      <Association Name="AbilitazioniTipologieSole_Sole_AbilitazioniSistemi" Member="AbilitazioniTipologieSole" ThisKey="TipologiaSole" OtherKey="TipologiaSole" Type="AbilitazioniTipologieSole" IsForeignKey="true" />
+      <Association Name="AbilitazioniTipiEroganti_Sole_AbilitazioniSistemi" Member="AbilitazioniTipiEroganti" ThisKey="TipoErogante" OtherKey="TipoErogante" Type="AbilitazioniTipiEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="sole_admin.AbilitazioniTipologieSole" Member="AbilitazioniTipologieSoles">
+    <Type Name="AbilitazioniTipologieSole">
+      <Column Name="TipologiaSole" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AbilitazioniTipologieSole_Sole_AbilitazioniSistemi" Member="Sole_AbilitazioniSistemis" ThisKey="TipologiaSole" OtherKey="TipologiaSole" Type="Sole_AbilitazioniSistemi" />
+    </Type>
+  </Table>
+  <Table Name="sole_admin.AbilitazioniSistemiEroganti" Member="AbilitazioniSistemiErogantis">
+    <Type Name="AbilitazioniSistemiEroganti">
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AbilitazioniSistemiEroganti_Sole_AbilitazioniPrestazioni" Member="Sole_AbilitazioniPrestazionis" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="Sole_AbilitazioniPrestazioni" />
+      <Association Name="AbilitazioniSistemiEroganti_Sole_AbilitazioniSistemi" Member="Sole_AbilitazioniSistemis" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="Sole_AbilitazioniSistemi" />
+    </Type>
+  </Table>
+  <Table Name="sole_admin.AbilitazioniTipiEroganti" Member="AbilitazioniTipiErogantis">
+    <Type Name="AbilitazioniTipiEroganti">
+      <Column Name="TipoErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AbilitazioniTipiEroganti_Sole_AbilitazioniSistemi" Member="Sole_AbilitazioniSistemis" ThisKey="TipoErogante" OtherKey="TipoErogante" Type="Sole_AbilitazioniSistemi" />
+    </Type>
+  </Table>
+  <Table Name="sole_admin.AbilitazioniAziendeEroganti" Member="AbilitazioniAziendeErogantis">
+    <Type Name="AbilitazioniAziendeEroganti">
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AbilitazioniAziendeEroganti_Sole_AbilitazioniPrestazioni" Member="Sole_AbilitazioniPrestazionis" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="Sole_AbilitazioniPrestazioni" />
+      <Association Name="AbilitazioniAziendeEroganti_Sole_AbilitazioniSistemi" Member="Sole_AbilitazioniSistemis" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="Sole_AbilitazioniSistemi" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,108 @@
+﻿@media (min-width: 768px) {
+    .form-control {
+        max-width: 280px;
+    }
+}
+
+/*
+* INIZIO GESTIONE AFFIX
+*/
+.div-menu-affix.affix +.container-fluid {
+    /*NECESSARIO PER EVITARE IL PROBLEMA DEI JUMP IN DELLA SCROLLBAR DURANTE L'AFFIX*/
+    /*margin-bottom: 150px;*/
+    padding-top:100px;
+}
+
+.div-menu-affix.affix{
+     /*AFFIX MENU' PRINCIPALE E SECONDARIO*/
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    /*AGGIUSTA L'AFFIX DEL MENU' LATERALE IN BASE ALLE DIMENSIONI DELLA PAGINA*/
+    #rightSidebar.affix {
+        width: 23%;
+        right: 10px;
+        top: 80px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /*AGGIUSTA L'AFFIX DEL MENU' LATERALE IN BASE ALLE DIMENSIONI DELLA PAGINA*/
+    #rightSidebar.affix {
+        width: 15%;
+        right: 10px;
+        top: 80px;
+    }
+}
+
+@media (max-width:768px) {
+    /*AGGIUSTA L'AFFIX DEL MENU' LATERALE IN BASE ALLE DIMENSIONI DELLA PAGINA*/
+    #rightSidebar.affix {
+        position: static !important;
+        width: 100% !important;
+    }
+}
+
+.disable-affix {
+    /*
+    *ATTENZIONE:
+    *NON UTILIZZATA. PUO' ESSERE USATA PER DISABILITARE L'AFFIX 
+    */
+    position: static !important;
+    width: 100% !important;
+}
+
+/*
+* FINE GESTIONE AFFIX 
+*/
+
+/*Toglie gli style creati dalla renderizzazione dell'aspMenu  */
+.navbar-collapse > div {
+	clear: none !important;
+}
+
+@media (max-width: 768px) {
+    /* Aggiusta il menu durante il collassamento. Toglie il float e da un colore al testo. */
+    .navbar-custum-collapse, .navbar-nav {
+        float: none !important;
+        color: #9d9d9d;
+    }
+
+    .navbar-custum-collapse .navbar-nav > li{
+        float:none !important;
+        
+    }
+
+    .staticMenuSecondario-custum-float, .pr-aspMenu {
+        float: none !important;
+    }
+}
+
+
+/* Serve per unire i due menu */
+#MenuPrincipale {
+	margin-bottom: 0px;
+}
+
+.popover {
+	margin-right: 20px;
+}
+
+/* STILI PER LE EMPTY ROW DELLE ASP.FORMVIEW E ASP.GRIDVIEW */
+.empty-row-style td {
+    padding: 0px !important;
+}
+
+.empty-row-style td div {
+    margin: 0px !important;
+}
+/* FINE STILI PER LE EMPTY ROW DELLE ASP.FORMVIEW E ASP.GRIDVIEW    */
+
+.page-header{
+    margin: 1px;
+}
+

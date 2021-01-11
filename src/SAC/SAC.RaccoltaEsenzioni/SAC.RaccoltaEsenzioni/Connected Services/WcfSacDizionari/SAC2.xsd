@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.progel.it/WCF/SAC/Service/3.0" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/SAC/Service/3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/SAC/Types/3.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd3" namespace="http://schemas.progel.it/WCF/SAC/DizionariTypes/3.0" />
+  <xs:element name="DizionariEsenzioniCerca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q1:TokenType" />
+        <xs:element minOccurs="0" name="MaxRecord" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceEsenzione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DescrizioneEsenzione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DizionariEsenzioniCercaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.progel.it/WCF/SAC/DizionariTypes/3.0" minOccurs="0" name="DizionariEsenzioniCercaResult" nillable="true" type="q2:EsenzioniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

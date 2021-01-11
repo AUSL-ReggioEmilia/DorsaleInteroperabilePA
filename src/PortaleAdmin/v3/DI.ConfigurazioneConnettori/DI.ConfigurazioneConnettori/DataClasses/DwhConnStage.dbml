@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_DwhConnStage" Class="DwhConnStageDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_DwhConnStage;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_DwhConnStageConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione" Member="AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione">
+    <Type Name="AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione">
+      <Column Name="AziendaDestinazione" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione_AdtSpecchioTranscodificheCodiciReparto" Member="AdtSpecchioTranscodificheCodiciReparto" ThisKey="AziendaDestinazione" OtherKey="AziendaDestinazione" Type="AdtSpecchioTranscodificheCodiciReparto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza" Member="AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza">
+    <Type Name="AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza">
+      <Column Name="AziendaProvenienza" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza_AdtSpecchioTranscodificheCodiciReparto" Member="AdtSpecchioTranscodificheCodiciReparto" ThisKey="AziendaProvenienza" OtherKey="AziendaProvenienza" Type="AdtSpecchioTranscodificheCodiciReparto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdtSpecchioTranscodificheCodiciReparto" Member="AdtSpecchioTranscodificheCodiciReparto">
+    <Type Name="AdtSpecchioTranscodificheCodiciReparto">
+      <Column Name="AziendaProvenienza" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceRepartoProvenienza" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AziendaDestinazione" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceRepartoDestinazione" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Association Name="AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione_AdtSpecchioTranscodificheCodiciReparto" Member="AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione" ThisKey="AziendaDestinazione" OtherKey="AziendaDestinazione" Type="AdtSpecchioTranscodificheCodiciRepartoAziendeDestinazione" IsForeignKey="true" />
+      <Association Name="AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza_AdtSpecchioTranscodificheCodiciReparto" Member="AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza" ThisKey="AziendaProvenienza" OtherKey="AziendaProvenienza" Type="AdtSpecchioTranscodificheCodiciRepartoAziendeProvenienza" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,8 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="OrderEntry.master.vb"
+    Inherits="DI.OrderEntry.Admin.OrderEntry" %>
+
+<%@ MasterType TypeName="DI.OrderEntry.Admin.Site" %>
+<asp:Content ID="MainContent" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <asp:ContentPlaceHolder ID="OrderEntryContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Tester", "Tester\Tester.vbproj", "{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DC47402B-67B3-4786-82D8-D744A6030DC3} = {DC47402B-67B3-4786-82D8-D744A6030DC3}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Dwh.DataAccess.Wcf.Service", "Dwh.DataAccess.NoteAnamnestiche.Wcf.Service\Dwh.DataAccess.Wcf.Service.vbproj", "{DC47402B-67B3-4786-82D8-D744A6030DC3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Dwh.DataAccess.Wcf.Types", "Dwh.DataAccess.NoteAnamnestiche.Wcf.Types\Dwh.DataAccess.Wcf.Types.vbproj", "{37F7909A-6D13-403B-B1A7-93F78D03E8C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Debug|x86.ActiveCfg = Debug|x86
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Debug|x86.Build.0 = Debug|x86
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Release|x86.ActiveCfg = Release|x86
+		{9C9EC600-9E16-4066-8E0F-CAA43834BF6E}.Release|x86.Build.0 = Release|x86
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Debug|x86.Build.0 = Debug|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Release|x86.ActiveCfg = Release|Any CPU
+		{DC47402B-67B3-4786-82D8-D744A6030DC3}.Release|x86.Build.0 = Release|Any CPU
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Debug|x86.ActiveCfg = Debug|x86
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Debug|x86.Build.0 = Debug|x86
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Release|x86.ActiveCfg = Release|x86
+		{37F7909A-6D13-403B-B1A7-93F78D03E8C8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC41E0B0-173E-4998-9948-CA2C14460C11}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hellen.progel.org:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Tester\\Tester.vbproj
+		SccProjectName1 = Tester
+		SccLocalPath1 = Tester
+		SccProjectUniqueName2 = Dwh.DataAccess.NoteAnamnestiche.Wcf.Service\\Dwh.DataAccess.Wcf.Service.vbproj
+		SccProjectName2 = Dwh.DataAccess.NoteAnamnestiche.Wcf.Service
+		SccLocalPath2 = Dwh.DataAccess.NoteAnamnestiche.Wcf.Service
+		SccProjectUniqueName3 = Dwh.DataAccess.NoteAnamnestiche.Wcf.Types\\Dwh.DataAccess.Wcf.Types.vbproj
+		SccProjectName3 = Dwh.DataAccess.NoteAnamnestiche.Wcf.Types
+		SccLocalPath3 = Dwh.DataAccess.NoteAnamnestiche.Wcf.Types
+	EndGlobalSection
+EndGlobal

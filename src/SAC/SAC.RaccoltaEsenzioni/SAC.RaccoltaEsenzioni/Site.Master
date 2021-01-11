@@ -1,0 +1,120 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.Master.vb" Inherits="SAC.RaccoltaEsenzioni.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <!-- meta-tag per bootstrap-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- title -->
+    <title>Raccolta delle Esenzioni</title>
+    
+    <!-- File css -->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+
+    <!--importo il css per il bootstrap datetimepicker-->
+    <link href="Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+	<!-- 
+To collect end-user usage analytics about your application, 
+insert the following script into each page you want to track.
+Place this code immediately before the closing </head> tag,
+and before any other scripts. Your first data will appear 
+automatically in just a few seconds.
+-->
+	<script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;) i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+        }({
+            instrumentationKey: "<%= SAC.RaccoltaEsenzioni.CustomInitializer.Telemetry.MyTelemetryInitializer.InstrumentationKey %>"
+        });
+
+        appInsights.queue.push(function () {
+            appInsights.context.addTelemetryInitializer(function (envelope) {
+                envelope.tags["ai.cloud.role"] = '<%= SAC.RaccoltaEsenzioni.CustomInitializer.Telemetry.MyTelemetryInitializer.RoleName %>';
+            });
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server" EnablePageMethods="false">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="modernizr" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="moment" />
+                <asp:ScriptReference Name="momentLocales" />
+                <asp:ScriptReference Name="datetimepicker" />
+                <asp:ScriptReference Name="master" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div id="PageHeader" runat="server" class="container-fluid ">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs text-nowrap">
+                    <img src="~/Images/LogoAusl.jpg" runat="server" class="pull-left">
+                </div>
+                <div class="col-sm-6 hidden-xs text-right">
+                    <a title="Portale clinico" id="LinkPortaleClinico" href="https://portaleclinico.asmn.re.it"
+                        target="_blank">
+                        <img runat="server" title="Portale clinico" alt="" src="~/Images/computer.gif" />
+                        Portale Clinico
+                    </a>
+                    <a href="mailto:dwh@asmn.re.it">
+                        <img alt="Contatta i Referenti DWH" src="~/Images/Email.gif" runat="server">Contattaci
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="container-fluid body-content">
+
+            <!--
+            -- Attenzione:
+            -- In questa applicazione il div utilizzato in caso d'errore è unico e definito nella master.page (DivError).
+            -- Ogni volta che si verifica un errore il div "DivError" viene reso visibile.
+            -- Per far si che il div si possa visualizzare anche nel caso in cui si verifichi un errore dentro un update panel (vedi cancellazione di una esenzione dentro la pagina esenzioni.aspx)
+                   "DivError" è stato inserito dentro l'updatePanel "updError".
+            -- In questo modo il div viene sempre reso visibile, anche se l'errore è all'interno di un altro updatepanel.
+            -->
+            <asp:UpdatePanel runat="server" ID="updError" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="alert alert-danger" id="DivError" runat="server" enableviewstate="False" visible="False">
+                                <asp:Label ID="LabelError" runat="server" CssClass="text-danger h4" EnableViewState="False" Visible="False" Style="display: none;"></asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <hr />
+            <footer>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="small help-block">
+                            <span class="pull-left">Azienda USL di Reggio Emilia - IRCCS</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

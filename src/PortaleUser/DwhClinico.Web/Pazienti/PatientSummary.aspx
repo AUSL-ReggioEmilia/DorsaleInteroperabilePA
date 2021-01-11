@@ -1,0 +1,1 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="PatientSummary.aspx.vb" Inherits="DwhClinico.Web.PatientSummary" %>

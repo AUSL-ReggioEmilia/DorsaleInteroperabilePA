@@ -1,0 +1,293 @@
+﻿<ns1:Message xmlns:ns1="http://SOLE.BackBone.Schema.Message/Content" xmlns:ns2="http://SOLE.BackBone.Schema.Message/Content/DataTypes" xmlns:ns0="http://SOLE.BackBone.Schema.Message/Content/Segments">
+  <ns0:Header>
+    <ns0:EncodingCharacters>^~\&amp;</ns0:EncodingCharacters>
+    <ns0:SendingApplication>
+      <ns2:UniversalId>Marcod</ns2:UniversalId>
+    </ns0:SendingApplication>
+    <ns0:DateTimeOfMessage>
+      <ns0:TimeStamp1>2015-12-04T12:02:16</ns0:TimeStamp1>
+    </ns0:DateTimeOfMessage>
+    <ns0:MessageType>
+      <ns0:MessageType>ORM</ns0:MessageType>
+      <ns0:TriggerEvent>O01</ns0:TriggerEvent>
+      <ns0:MessageStructure>ORM_O01</ns0:MessageStructure>
+    </ns0:MessageType>
+    <ns0:MessageControlId>SATPEF_TEST1</ns0:MessageControlId>
+    <ns0:ProcessingId>
+      <ns2:ProcessingId>P</ns2:ProcessingId>
+    </ns0:ProcessingId>
+    <ns0:VersionId>
+      <ns2:VersionId>2.3.1</ns2:VersionId>
+    </ns0:VersionId>
+  </ns0:Header>
+  <ns0:Patient>
+    <ns0:PatientIdentification>
+      <ns0:PatientIdentifierList>
+        <ns2:IdNumber>DVCLCU36T13C573D</ns2:IdNumber>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>MinFin</ns2:NamespaceId>
+          <ns2:UniversalId>Ministero Finanze</ns2:UniversalId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CF</ns2:IdentifierTypeCode>
+      </ns0:PatientIdentifierList>
+      <ns0:PatientIdentifierList>
+        <ns2:IdNumber>1029554756</ns2:IdNumber>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>080105</ns2:NamespaceId>
+          <ns2:UniversalIdType>AUSLassist</ns2:UniversalIdType>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CS</ns2:IdentifierTypeCode>
+      </ns0:PatientIdentifierList>
+      <ns0:PatientIdentifierList>
+        <ns2:IdNumber>0000000</ns2:IdNumber>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>080105</ns2:NamespaceId>
+          <ns2:UniversalId>descrizione AUSL appartenenza</ns2:UniversalId>
+          <ns2:UniversalIdType>AUSLappart</ns2:UniversalIdType>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>AUSLAPPART</ns2:IdentifierTypeCode>
+      </ns0:PatientIdentifierList>
+      <ns0:PatientName>
+        <ns2:FamilyName>
+          <ns2:Surname>De Vecchi</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>Lucia</ns2:GivenName>
+      </ns0:PatientName>
+      <ns0:DateTimeOfBirth>
+        <ns2:TS_Time>1936-12-13T00:00:00.0000000</ns2:TS_Time>
+      </ns0:DateTimeOfBirth>
+      <ns0:AdministrativeSex>F</ns0:AdministrativeSex>
+      <ns0:PatientAddress>
+        <ns2:StreetAddress>
+          <ns2:StreetOrMailingAddress>Via Passarotti 17</ns2:StreetOrMailingAddress>
+        </ns2:StreetAddress>
+        <ns2:City>BOLOGNA</ns2:City>
+        <ns2:StateOrProvince>BO</ns2:StateOrProvince>
+        <ns2:ZipOrPostalCode>40128</ns2:ZipOrPostalCode>
+        <ns2:AddressType>L</ns2:AddressType>
+        <ns2:CountyParishCode>037006</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+      <ns0:PatientAddress>
+        <ns2:StreetAddress>
+          <ns2:StreetOrMailingAddress>Via Passarotti 17</ns2:StreetOrMailingAddress>
+        </ns2:StreetAddress>
+        <ns2:City>BOLOGNA</ns2:City>
+        <ns2:StateOrProvince>BO</ns2:StateOrProvince>
+        <ns2:ZipOrPostalCode>40128</ns2:ZipOrPostalCode>
+        <ns2:AddressType>H</ns2:AddressType>
+        <ns2:CountyParishCode>037006</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+      <ns0:PatientAddress>
+        <ns2:City>CESENA</ns2:City>
+        <ns2:AddressType>BR</ns2:AddressType>
+        <ns2:CountyParishCode>40007</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+      <ns0:PhoneNumberHome>
+        <ns2:TelephoneNumber>051123456789</ns2:TelephoneNumber>
+      </ns0:PhoneNumberHome>
+      <ns0:Citizenship>
+        <ns2:Identifier>100</ns2:Identifier>
+        <ns2:Text>Italia</ns2:Text>
+        <ns2:NameOfCodingSystem>ISTAT</ns2:NameOfCodingSystem>
+      </ns0:Citizenship>
+    </ns0:PatientIdentification>
+    <ns0:PatientAdditionalDemographic>
+      <ns0:PatientPrimaryFacility>
+        <ns2:OrganizationName>AZIENDA USL BOLOGNA</ns2:OrganizationName>
+        <ns2:IdNumber>080105</ns2:IdNumber>
+        <ns2:IdentifierTypeCode>ASLA</ns2:IdentifierTypeCode>
+      </ns0:PatientPrimaryFacility>
+      <ns0:PatientPrimaryFacility>
+        <ns2:OrganizationName>AZIENDA USL BOLOGNA</ns2:OrganizationName>
+        <ns2:IdNumber>080105</ns2:IdNumber>
+        <ns2:IdentifierTypeCode>ASLR</ns2:IdentifierTypeCode>
+      </ns0:PatientPrimaryFacility>
+    </ns0:PatientAdditionalDemographic>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>S</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>PresenzaCons</ns2:Identifier>
+        <ns2:Text>Presenza Consenso SOLE</ns2:Text>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>2</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>BarcodeCF</ns2:Identifier>
+        <ns2:Text>Presenza Barcode Codice Fiscale</ns2:Text>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>20161231</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>DataScadTessera</ns2:Identifier>
+        <ns2:Text>Data scadenza tessera</ns2:Text>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+    <ns0:PatientVisit>
+      <ns0:PatientClass>A</ns0:PatientClass>
+      <ns0:AttendingDoctor>
+        <ns2:IdNumber>MDCPGT60R02A045R</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>MEDICOPROVA</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>PROGETTOSOLE</ns2:GivenName>
+        <ns2:DegreeEGMd>MMG</ns2:DegreeEGMd>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>MinFin</ns2:NamespaceId>
+          <ns2:UniversalId>Ministero Finanze</ns2:UniversalId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CF</ns2:IdentifierTypeCode>
+      </ns0:AttendingDoctor>
+      <ns0:ReferringDoctor>
+        <ns2:IdNumber>MDCPGT60R02A045R</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>MEDICOPROVA</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>PROGETTOSOLE</ns2:GivenName>
+        <ns2:DegreeEGMd>MMG</ns2:DegreeEGMd>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>MinFin</ns2:NamespaceId>
+          <ns2:UniversalId>Ministero Finanze</ns2:UniversalId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CF</ns2:IdentifierTypeCode>
+        <ns2:AssigningFacility>
+          <ns2:NamespaceId>via del medico di prova 1 bologna</ns2:NamespaceId>
+        </ns2:AssigningFacility>
+      </ns0:ReferringDoctor>
+      <ns0:ReferringDoctor>
+        <ns2:IdNumber>99996</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>MEDICOPROVA</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>PROGETTOSOLE</ns2:GivenName>
+        <ns2:DegreeEGMd>MMG</ns2:DegreeEGMd>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>080113</ns2:NamespaceId>
+          <ns2:UniversalId>descrizione AUSL appartenenza medico</ns2:UniversalId>
+          <ns2:UniversalIdType>Azienda medico</ns2:UniversalIdType>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>CODMAT</ns2:IdentifierTypeCode>
+      </ns0:ReferringDoctor>
+      <ns0:FinancialClass>
+        <ns2:FinancialClassCode>RE1</ns2:FinancialClassCode>
+        <ns2:EffectiveDate>
+          <ns2:Time>20171231</ns2:Time>
+        </ns2:EffectiveDate>
+      </ns0:FinancialClass>
+    </ns0:PatientVisit>
+  </ns0:Patient>
+  <ns0:Order>
+    <ns0:CommonOrder>
+      <ns0:OrderControl>NW</ns0:OrderControl>
+      <ns0:PlacerOrderNumber>
+        <ns2:EntityIdentifier>SATPEF_TEST1</ns2:EntityIdentifier>
+      </ns0:PlacerOrderNumber>
+      <ns0:QuantityTiming>
+        <ns2:Quantity>
+          <ns2:Quantity>1</ns2:Quantity>
+        </ns2:Quantity>
+        <ns2:Priority>A</ns2:Priority>
+        <ns2:Condition>S</ns2:Condition>
+        <ns2:Text>Disposizioni regionali specifiche</ns2:Text>
+      </ns0:QuantityTiming>
+      <ns0:DateTimeOfTransaction>
+        <ns2:TS_Time>2015-10-02T16:01:10.0000000</ns2:TS_Time>
+      </ns0:DateTimeOfTransaction>
+      <ns0:OrderControlCodeReason>
+        <ns2:Identifier>ND</ns2:Identifier>
+      </ns0:OrderControlCodeReason>
+    </ns0:CommonOrder>
+    <ns0:PharmacyTreatmentOrder>
+      <ns0:RequestedGiveCode>
+        <ns2:Identifier>codMINSAN10</ns2:Identifier>
+        <ns2:Text>Desc MINSAN10}</ns2:Text>
+        <ns2:NameOfCodingSystem>MINSAN10</ns2:NameOfCodingSystem>
+      </ns0:RequestedGiveCode>
+      <ns0:ProviderSAdministrationInstructions>
+        <ns2:Text>1 Compressa/e ore 12.</ns2:Text>
+      </ns0:ProviderSAdministrationInstructions>
+      <ns0:NumberOfRefills>1</ns0:NumberOfRefills>
+      <ns0:Indication>
+        <ns2:Identifier>Note AIFA 1</ns2:Identifier>
+      </ns0:Indication>
+    </ns0:PharmacyTreatmentOrder>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>A</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>Classe Farmaco</ns2:Identifier>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>Disturbi metabolismo ciclo urea 1</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>PropostaTerapeutica</ns2:Identifier>
+        <ns2:Text>Proposta Terapeutica</ns2:Text>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>Disturbi metabolismo ciclo urea 2</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>PropostaTerapeutica</ns2:Identifier>
+        <ns2:Text>Proposta Terapeutica</ns2:Text>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+  </ns0:Order>
+  <ns0:Order>
+    <ns0:CommonOrder>
+      <ns0:OrderControl>NW</ns0:OrderControl>
+      <ns0:PlacerOrderNumber>
+        <ns2:EntityIdentifier>SATPEF_TEST1</ns2:EntityIdentifier>
+      </ns0:PlacerOrderNumber>
+      <ns0:QuantityTiming>
+        <ns2:Quantity>
+          <ns2:Quantity>2</ns2:Quantity>
+        </ns2:Quantity>
+        <ns2:Priority>R</ns2:Priority>
+        <ns2:Condition>A</ns2:Condition>
+        <ns2:Text>Disposizioni regionali specifiche</ns2:Text>
+      </ns0:QuantityTiming>
+      <ns0:DateTimeOfTransaction>
+        <ns2:TS_Time>2015-10-02T16:01:10.0000000</ns2:TS_Time>
+      </ns0:DateTimeOfTransaction>
+      <ns0:OrderControlCodeReason>
+        <ns2:Identifier>NX</ns2:Identifier>
+      </ns0:OrderControlCodeReason>
+    </ns0:CommonOrder>
+    <ns0:PharmacyTreatmentOrder>
+      <ns0:RequestedGiveCode>
+        <ns2:Identifier>33B</ns2:Identifier>
+        <ns2:Text>ALLOPURINOLO 100MG 50 UNITA' USO ORALE</ns2:Text>
+        <ns2:NameOfCodingSystem>gruppo di equivalenza</ns2:NameOfCodingSystem>
+      </ns0:RequestedGiveCode>
+      <ns0:ProviderSAdministrationInstructions>
+        <ns2:Text>1 Compressa/e al giorno, prima di colazione</ns2:Text>
+      </ns0:ProviderSAdministrationInstructions>
+      <ns0:NumberOfRefills>2</ns0:NumberOfRefills>
+      <ns0:Indication>
+        <ns2:Identifier>Note AIFA 2</ns2:Identifier>
+      </ns0:Indication>
+    </ns0:PharmacyTreatmentOrder>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>H</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>Classe Farmaco</ns2:Identifier>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>Note al farmaco prescritto 2</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>Note</ns2:Identifier>
+        <ns2:Text>Note sulla prescrizione 2</ns2:Text>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+  </ns0:Order>
+</ns1:Message>

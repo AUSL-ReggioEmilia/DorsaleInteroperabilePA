@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.PrintDispatcher2.Site", "DI.PrintDispatcher2.Site\DI.PrintDispatcher2.Site.vbproj", "{6D9A7C96-BB09-4AB0-9D2A-C345B515650D}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.OrderEntry2.Site", "DI.OrderEntry2.Site\DI.OrderEntry2.Site.vbproj", "{5EC71B68-678F-4A41-A8C8-C3EBDC69B372}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.PortalUser2", "DI.PortalUser2\DI.PortalUser2.vbproj", "{957A73F0-FFA8-4D90-8E8D-CE48A8DDB099}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.PortalUser2.Site", "DI.PortalUser2.Site\DI.PortalUser2.Site.vbproj", "{3953EB78-E083-4DCC-88F6-2FC64DC81D05}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DI.Sac2.Site", "DI.Sac2.Site\DI.Sac2.Site.vbproj", "{484D34FA-533B-40A7-8874-9F24BC801C4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.OrderEntryPlanner.Data", "DI.OrderEntryPlanner.Data\DI.OrderEntryPlanner.Data.csproj", "{DCCFA75F-5687-428C-AB36-B86DE4AC35D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.OrderEntryPlanner.Site2", "DI.OrderEntryPlanner.Site2\DI.OrderEntryPlanner.Site2.csproj", "{459D385D-DDE3-4B99-B21A-EAEECB3D8DCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D9A7C96-BB09-4AB0-9D2A-C345B515650D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9A7C96-BB09-4AB0-9D2A-C345B515650D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9A7C96-BB09-4AB0-9D2A-C345B515650D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9A7C96-BB09-4AB0-9D2A-C345B515650D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC71B68-678F-4A41-A8C8-C3EBDC69B372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC71B68-678F-4A41-A8C8-C3EBDC69B372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC71B68-678F-4A41-A8C8-C3EBDC69B372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC71B68-678F-4A41-A8C8-C3EBDC69B372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{957A73F0-FFA8-4D90-8E8D-CE48A8DDB099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{957A73F0-FFA8-4D90-8E8D-CE48A8DDB099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{957A73F0-FFA8-4D90-8E8D-CE48A8DDB099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{957A73F0-FFA8-4D90-8E8D-CE48A8DDB099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3953EB78-E083-4DCC-88F6-2FC64DC81D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3953EB78-E083-4DCC-88F6-2FC64DC81D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3953EB78-E083-4DCC-88F6-2FC64DC81D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3953EB78-E083-4DCC-88F6-2FC64DC81D05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484D34FA-533B-40A7-8874-9F24BC801C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484D34FA-533B-40A7-8874-9F24BC801C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484D34FA-533B-40A7-8874-9F24BC801C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484D34FA-533B-40A7-8874-9F24BC801C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCCFA75F-5687-428C-AB36-B86DE4AC35D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCCFA75F-5687-428C-AB36-B86DE4AC35D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCCFA75F-5687-428C-AB36-B86DE4AC35D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCCFA75F-5687-428C-AB36-B86DE4AC35D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459D385D-DDE3-4B99-B21A-EAEECB3D8DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459D385D-DDE3-4B99-B21A-EAEECB3D8DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459D385D-DDE3-4B99-B21A-EAEECB3D8DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459D385D-DDE3-4B99-B21A-EAEECB3D8DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {821CEC9B-9BE5-4504-8463-674750483E15}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hellen.progel.org:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DI.PrintDispatcher2.Site\\DI.PrintDispatcher2.Site.vbproj
+		SccProjectName1 = DI.PrintDispatcher2.Site
+		SccLocalPath1 = DI.PrintDispatcher2.Site
+		SccProjectUniqueName2 = DI.OrderEntry2.Site\\DI.OrderEntry2.Site.vbproj
+		SccProjectName2 = DI.OrderEntry2.Site
+		SccLocalPath2 = DI.OrderEntry2.Site
+		SccProjectUniqueName3 = DI.PortalUser2\\DI.PortalUser2.vbproj
+		SccProjectName3 = DI.PortalUser2
+		SccLocalPath3 = DI.PortalUser2
+		SccProjectUniqueName4 = DI.PortalUser2.Site\\DI.PortalUser2.Site.vbproj
+		SccProjectName4 = DI.PortalUser2.Site
+		SccLocalPath4 = DI.PortalUser2.Site
+		SccProjectUniqueName5 = DI.Sac2.Site\\DI.Sac2.Site.vbproj
+		SccProjectName5 = DI.Sac2.Site
+		SccLocalPath5 = DI.Sac2.Site
+		SccProjectUniqueName6 = DI.OrderEntryPlanner.Data\\DI.OrderEntryPlanner.Data.csproj
+		SccProjectName6 = DI.OrderEntryPlanner.Data
+		SccLocalPath6 = DI.OrderEntryPlanner.Data
+		SccProjectUniqueName7 = DI.OrderEntryPlanner.Site2\\DI.OrderEntryPlanner.Site2.csproj
+		SccProjectName7 = DI.OrderEntryPlanner.Site2
+		SccLocalPath7 = DI.OrderEntryPlanner.Site2
+	EndGlobalSection
+EndGlobal

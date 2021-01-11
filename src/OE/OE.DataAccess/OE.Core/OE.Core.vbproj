@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{4146E959-65F6-49D8-87F5-358333EF2DD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OE.Core</RootNamespace>
+    <AssemblyName>OE.Core</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>OE.Core.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>OE.Core.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Progel.OrderEntry.Core.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 1.2|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug 1.2\</OutputPath>
+    <DocumentationFile>OE.Core.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\OE.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <DefineConstants>VER_WSDL_1_2=1</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 1.2|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Release 1.2\</OutputPath>
+    <DocumentationFile>OE.Core.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\OE.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <DefineConstants>VER_WSDL_1_2=1</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigurationHelper.vb" />
+    <Compile Include="ConfigurationSettings.vb" />
+    <Compile Include="DataContractSerializerHelper.vb" />
+    <Compile Include="DatiAccessori\DatiAccessoriDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatiAccessoriDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatiAccessori\DatiAccessoriDS.vb">
+      <DependentUpon>DatiAccessoriDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatiAccessori\DatoAccessorioAdapter.vb" />
+    <Compile Include="DiagnosticsHelper.vb" />
+    <Compile Include="Dizionari\DizionariDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DizionariDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dizionari\DizionarioAdapter.vb" />
+    <Compile Include="Exceptions\InconsistentException.vb" />
+    <Compile Include="Exceptions\DataVersioneMisMatchException.vb" />
+    <Compile Include="Exceptions\SoapFault.vb" />
+    <Compile Include="Exceptions\AccessDeniedException.vb" />
+    <Compile Include="Exceptions\AmbiguousException.vb" />
+    <Compile Include="Exceptions\ArgumentNullException.vb" />
+    <Compile Include="Exceptions\InvalidRequestException.vb" />
+    <Compile Include="Exceptions\ExceptionEnumerations.vb" />
+    <Compile Include="Exceptions\NotFoundException.vb" />
+    <Compile Include="Exceptions\BaseException.vb" />
+    <Compile Include="Global.vb" />
+    <Compile Include="IAdapter.vb" />
+    <Compile Include="IFault.vb" />
+    <Compile Include="LogEventiEnumerations.vb" />
+    <Compile Include="Messaggi\MessaggiDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessaggiDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Messaggi\MessaggioAdapter.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MyExtension.vb" />
+    <Compile Include="Organigramma\OrganigrammaAdapter.vb" />
+    <Compile Include="Organigramma\OrganigrammaDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrganigrammaDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Organigramma\OrganigrammaDS.vb">
+      <DependentUpon>OrganigrammaDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Prestazioni\PrestazioneAdapter.vb" />
+    <Compile Include="Prestazioni\PrestazioniDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrestazioniDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Prestazioni\PrestazioniDS.vb">
+      <DependentUpon>PrestazioniDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RichiestaFault.vb" />
+    <Compile Include="Schemi\Msg\SchemasDataContract.vb" />
+    <Compile Include="Schemi\Wcf\MySchemasDataContract.vb" />
+    <Compile Include="Schemi\Wcf\SchemasDataContract.vb" />
+    <Compile Include="Schemi\Wcf\SchemasDataContract12.vb" />
+    <Compile Include="StatiOrderEntry.vb" />
+    <Compile Include="StatoFault.vb" />
+    <Compile Include="Template\TemplateAdapter.vb" />
+    <Compile Include="Template\TemplateDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TemplateDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Template\TemplateDS.vb">
+      <DependentUpon>TemplateDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets\TicketAdapter.vb" />
+    <Compile Include="Tickets\TicketsDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicketsDS.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DatiAccessori\DatiAccessoriDS.xsc">
+      <DependentUpon>DatiAccessoriDS.xsd</DependentUpon>
+    </None>
+    <None Include="DatiAccessori\DatiAccessoriDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatiAccessoriDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DatiAccessori\DatiAccessoriDS.xss">
+      <DependentUpon>DatiAccessoriDS.xsd</DependentUpon>
+    </None>
+    <None Include="Dizionari\DizionariDS.xsc">
+      <DependentUpon>DizionariDS.xsd</DependentUpon>
+    </None>
+    <None Include="Dizionari\DizionariDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DizionariDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dizionari\DizionariDS.xss">
+      <DependentUpon>DizionariDS.xsd</DependentUpon>
+    </None>
+    <None Include="Messaggi\MessaggiDS.xsc">
+      <DependentUpon>MessaggiDS.xsd</DependentUpon>
+    </None>
+    <None Include="Messaggi\MessaggiDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MessaggiDS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Messaggi\MessaggiDS.xss">
+      <DependentUpon>MessaggiDS.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Organigramma\OrganigrammaDS.xsc">
+      <DependentUpon>OrganigrammaDS.xsd</DependentUpon>
+    </None>
+    <None Include="Organigramma\OrganigrammaDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrganigrammaDS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Organigramma\OrganigrammaDS.xss">
+      <DependentUpon>OrganigrammaDS.xsd</DependentUpon>
+    </None>
+    <None Include="Prestazioni\PrestazioniDS.xsc">
+      <DependentUpon>PrestazioniDS.xsd</DependentUpon>
+    </None>
+    <None Include="Prestazioni\PrestazioniDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrestazioniDS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Prestazioni\PrestazioniDS.xss">
+      <DependentUpon>PrestazioniDS.xsd</DependentUpon>
+    </None>
+    <None Include="Progel.OrderEntry.Core.snk" />
+    <None Include="Schemi\Msg\CreaDataContract.bat" />
+    <None Include="Schemi\Msg\OrdineReturn.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemi\Msg\QueueTypesQualified.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemi\Msg\RichiestaParameter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemi\Msg\RichiestaReturn.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemi\Msg\StatoParameter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemi\Msg\StatoReturn.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemi\Wcf\CreaDataContract.bat" />
+    <None Include="Schemi\Wcf\Oe-Types12-Qualified.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemi\Wcf\Oe-Types-Qualified.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemi\Wcf\Oe-Ws-Qualified.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemi\Wcf\Oe-Ws12-Qualified.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Template\TemplateDS.xsc">
+      <DependentUpon>TemplateDS.xsd</DependentUpon>
+    </None>
+    <None Include="Template\TemplateDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TemplateDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Template\TemplateDS.xss">
+      <DependentUpon>TemplateDS.xsd</DependentUpon>
+    </None>
+    <None Include="Tickets\TicketsDS.xsc">
+      <DependentUpon>TicketsDS.xsd</DependentUpon>
+    </None>
+    <None Include="Tickets\TicketsDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TicketsDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Tickets\TicketsDS.xss">
+      <DependentUpon>TicketsDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

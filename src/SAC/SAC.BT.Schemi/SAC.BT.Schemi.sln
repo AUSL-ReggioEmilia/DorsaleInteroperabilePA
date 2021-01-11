@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queue", "Queue", "{537AEA54-A30C-4BAC-8DF4-C35242C459BA}"
+	ProjectSection(SolutionItems) = preProject
+		Queue\QueuePazientiOutput.xsd = Queue\QueuePazientiOutput.xsd
+		Queue\QueuePazientiOutput_1.0.xsd = Queue\QueuePazientiOutput_1.0.xsd
+		Queue\QueueTypesOutput.xsd = Queue\QueueTypesOutput.xsd
+		Queue\SAC.BT.Consenso.Schema.Queue.Input.MessaggioInput.xsd = Queue\SAC.BT.Consenso.Schema.Queue.Input.MessaggioInput.xsd
+		Queue\SAC.BT.Consenso.Schema.Queue.Output.MessaggioOutputGenerico.xsd = Queue\SAC.BT.Consenso.Schema.Queue.Output.MessaggioOutputGenerico.xsd
+		Queue\SAC.BT.Paziente.Schema.Queue.Input.MessaggioInput.xsd = Queue\SAC.BT.Paziente.Schema.Queue.Input.MessaggioInput.xsd
+		Queue\SAC.BT.Paziente.Schema.Queue.Output.MessaggioOutputGenerico.xsd = Queue\SAC.BT.Paziente.Schema.Queue.Output.MessaggioOutputGenerico.xsd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Soap", "Soap", "{77C34D90-20AB-44DA-A819-177BAD95F830}"
+	ProjectSection(SolutionItems) = preProject
+		Soap\NotificaPazienteType.xsd = Soap\NotificaPazienteType.xsd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DllDae", "DllDae", "{11B71718-20AA-4B60-80D5-7115FF7D5717}"
+	ProjectSection(SolutionItems) = preProject
+		DllDae\SAC.BT.Consenso.Schema.Dll.MessaggioConsenso.xsd = DllDae\SAC.BT.Consenso.Schema.Dll.MessaggioConsenso.xsd
+		DllDae\SAC.BT.Consenso.Schema.Dll.RispostaConsenso.xsd = DllDae\SAC.BT.Consenso.Schema.Dll.RispostaConsenso.xsd
+		DllDae\SAC.BT.Consenso.Schema.Dll.RispostaDettaglioConsenso.xsd = DllDae\SAC.BT.Consenso.Schema.Dll.RispostaDettaglioConsenso.xsd
+		DllDae\SAC.BT.Paziente.Schema.Dll.MessaggioPaziente.xsd = DllDae\SAC.BT.Paziente.Schema.Dll.MessaggioPaziente.xsd
+		DllDae\SAC.BT.Paziente.Schema.Dll.RispostaDettaglioPaziente.xsd = DllDae\SAC.BT.Paziente.Schema.Dll.RispostaDettaglioPaziente.xsd
+		DllDae\SAC.BT.Paziente.Schema.Dll.RispostaListaPazienti.xsd = DllDae\SAC.BT.Paziente.Schema.Dll.RispostaListaPazienti.xsd
+		DllDae\SAC.BT.Paziente.Schema.Dll.RispostaPaziente.xsd = DllDae\SAC.BT.Paziente.Schema.Dll.RispostaPaziente.xsd
+		DllDae\SAC.BT.Paziente.Schema.Dll.RispostaUtentiAck.xsd = DllDae\SAC.BT.Paziente.Schema.Dll.RispostaUtentiAck.xsd
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98DE7D89-6A0C-40B2-9B1E-1669CE1F8B18}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hellen.progel.org:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+	EndGlobalSection
+EndGlobal

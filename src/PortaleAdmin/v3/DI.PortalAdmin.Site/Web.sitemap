@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="#" title="Portal Admin" description="Portal Admin">
+    <siteMapNode url="Pages/LogModifiche.aspx" title="Log Modifiche" description="Log Modifiche"/>
+    <!--<siteMapNode url="Pages/ArchivioModifiche.aspx" title="Archivio Modifiche" description="Archivio Modifiche"/>-->
+    
+  </siteMapNode>
+</siteMap>

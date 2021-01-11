@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_OeGestioneOrdiniErogante" EntityNamespace="OeGestioneOrdiniErogante" ContextNamespace="OeGestioneOrdiniErogante" Class="OeGestioneOrdiniEroganteDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_OeGestioneOrdiniErogante;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_OeGestioneOrdiniEroganteConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Sistemi" Member="Sistemi">
+    <Type Name="Sistemi">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceAzienda" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Attivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CancellazionePostInoltro" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CancellazionePostInCarico" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Sistemi_DatiAccessoriSistemi" Member="DatiAccessoriSistemi" ThisKey="ID" OtherKey="IdSistema" Type="DatiAccessoriSistemi" />
+      <Association Name="Sistemi_Prestazioni" Member="Prestazioni" ThisKey="ID" OtherKey="IDSistemaErogante" Type="Prestazioni" />
+      <Association Name="SistemiCodiciAziende_Sistemi" Member="SistemiCodiciAziende" ThisKey="CodiceAzienda" OtherKey="CodiceAzienda" Type="SistemiCodiciAziende" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SistemiCodiciAziende" Member="SistemiCodiciAziende">
+    <Type Name="SistemiCodiciAziende">
+      <Column Name="CodiceAzienda" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="SistemiCodiciAziende_Sistemi" Member="Sistemi" ThisKey="CodiceAzienda" OtherKey="CodiceAzienda" Type="Sistemi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DatiAccessori" Member="DatiAccessori">
+    <Type Name="DatiAccessori">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="DataInserimento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Etichetta" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="IdTipoDatoAccessorio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Valori" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Ordinamento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gruppo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ValidazioneRegex" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ValidazioneMessaggio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ValoreDefault" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="UtenteInserimento" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="UtenteModifica" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="DatiAccessori_DatiAccessoriSistemi" Member="DatiAccessoriSistemi" ThisKey="Id" OtherKey="IdDatoAccessorio" Type="DatiAccessoriSistemi" />
+      <Association Name="DatiAccessori_DatiAccessoriPrestazioni" Member="DatiAccessoriPrestazioni" ThisKey="Id" OtherKey="IDDatoAccessorio" Type="DatiAccessoriPrestazioni" />
+      <Association Name="TipiDatiAccessori_DatiAccessori" Member="TipiDatiAccessori" ThisKey="IdTipoDatoAccessorio" OtherKey="Id" Type="TipiDatiAccessori" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DatiAccessoriSistemi" Member="DatiAccessoriSistemi">
+    <Type Name="DatiAccessoriSistemi">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdDatoAccessorio" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdSistema" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Attivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DatiAccessori_DatiAccessoriSistemi" Member="DatiAccessori" ThisKey="IdDatoAccessorio" OtherKey="Id" Type="DatiAccessori" IsForeignKey="true" />
+      <Association Name="Sistemi_DatiAccessoriSistemi" Member="Sistemi" ThisKey="IdSistema" OtherKey="ID" Type="Sistemi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipiDatiAccessori" Member="TipiDatiAccessori">
+    <Type Name="TipiDatiAccessori">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ordine" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Attivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TipiDatiAccessori_DatiAccessori" Member="DatiAccessori" ThisKey="Id" OtherKey="IdTipoDatoAccessorio" Type="DatiAccessori" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prestazioni" Member="Prestazioni">
+    <Type Name="Prestazioni">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DataInserimento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DataModifica" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="Codice" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="IDSistemaErogante" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Attivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UtenteInserimento" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="UtenteModifica" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="Prestazioni_DatiAccessoriPrestazioni" Member="DatiAccessoriPrestazioni" ThisKey="ID" OtherKey="IDPrestazione" Type="DatiAccessoriPrestazioni" />
+      <Association Name="Sistemi_Prestazioni" Member="Sistemi" ThisKey="IDSistemaErogante" OtherKey="ID" Type="Sistemi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DatiAccessoriPrestazioni" Member="DatiAccessoriPrestazioni">
+    <Type Name="DatiAccessoriPrestazioni">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDDatoAccessorio" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IDPrestazione" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Attivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DatiAccessori_DatiAccessoriPrestazioni" Member="DatiAccessori" ThisKey="IDDatoAccessorio" OtherKey="Id" Type="DatiAccessori" IsForeignKey="true" />
+      <Association Name="Prestazioni_DatiAccessoriPrestazioni" Member="Prestazioni" ThisKey="IDPrestazione" OtherKey="ID" Type="Prestazioni" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

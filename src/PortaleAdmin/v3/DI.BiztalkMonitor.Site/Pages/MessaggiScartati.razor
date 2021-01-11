@@ -1,0 +1,686 @@
+﻿@page "/messaggiscartati"
+@inject NavigationManager NavigationManager
+@inject IDBRepository _dbRepository
+@inject ILogger<MessaggiScartati> _logger
+@inject IJSRuntime jsRunTime
+@inject State.AppState _appState
+@inject State.ScopedState _scopedState
+
+@inject IHttpContextAccessor _httpContextAccessor
+
+@using System;
+@using System.Globalization;
+@using System.Xml.Linq;
+@using Blazorise.Components;
+@using Microsoft.AspNetCore.Http;
+@using DI.BiztalkMonitor.Site.Pages.MessaggiScartatiPage;
+@using System.IO
+@using System.IO.Compression
+
+
+@* Tool per la visulizzazione del percorso di navigazione *@
+<NavigationPath ListPage="MessaggiScartati"></NavigationPath>
+
+@* Gestione messaggi di info /errore *@
+<MessagePanel MessageError="@_messageError"></MessagePanel>
+
+<div class="div-bianco">
+
+    @* TITOLO *@
+    <p class="page-title">Messaggi scartati</p>
+
+    @*FILTRI*@
+    <div class="div-grigio" @onkeyup="((e) => EnterToSearch(e))">
+        <div class="row">
+
+            @*COLONNA FILTRI*@
+            <div class="col-sm-12 col-md-8 col-lg-10">
+                @* ROW: PERIODO - ERRORE - STATO *@
+                <div class="row">
+                    @* PERIODO *@
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-12 col-form-label font-weight-bold">Periodo</label>
+                            <div class="col-12">
+                                <select class="form-control" @bind="_scopedState.Messaggi.Periodo">
+                                    <option value="-1">Tutti</option>
+                                    <option value="1">Oggi</option>
+                                    <option value="3">Ultimi 3 giorni</option>
+                                    <option value="7">Ultima settimana</option>
+                                    <option value="30">Ultimo mese</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    @* ERRORE *@
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-12 col-form-label font-weight-bold">Errore</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" @bind-value="_scopedState.Messaggi.Errore" />
+                            </div>
+                        </div>
+                    </div>
+                    @* STATO *@
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-12 col-form-label font-weight-bold">Stato</label>
+                            <div class="col-12">
+                                <select class="form-control" @bind="_scopedState.Messaggi.IdStato">
+                                    <option value="-1">Tutti</option>
+                                    @if (_statiMessaggio != null)
+                                    {
+                                        @foreach (MessaggioScartatoStatoData stato in _statiMessaggio)
+                                        {
+                                            if (stato.Id == _scopedState.Messaggi.IdStato)
+                                            {
+                                                <option value="@stato.Id" selected>@stato.Descrizione</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@stato.Id">@stato.Descrizione</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @* ROW: NOME ORCHESTRAZIONE - UTENTE *@
+                <div class="row">
+                    @* NOME ORCHESTRAZIONE *@
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label class="col-12 col-form-label font-weight-bold">Nome orchestrazione</label>
+                            <div class="col-12">
+                                @if (ClientIsIE)
+                                {
+                                    <input type="text" class="form-control" @bind-value="_scopedState.Messaggi.NomeOrchestrazione" />
+                                }
+                                else
+                                {
+                                    <Autocomplete TItem="string" Data="_listaNomiOrc" Filter="@AutocompleteFilter.Contains" TextField="@((item) => item)" ValueField="@((item) => item)" SelectedValue="_scopedState.Messaggi.NomeOrchestrazione" SelectedValueChanged="@AutocompleteNomiOrcChanged"></Autocomplete>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    @* UTENTE *@
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-12 col-form-label font-weight-bold">Utente</label>
+                            <div class="col-12">
+                                @if (_scopedState.Messaggi.UtenteReadonly)
+                                {
+                                    <input type="text" class="form-control" value="@_user.Identity.Name" readonly />
+                                }
+                                else
+                                {
+                                    <input type="text" class="form-control" @bind-value="_scopedState.Messaggi.Utente" />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @* COLONNA BOTTONI *@
+            <div class="col-sm-12 col-md-4 col-lg-2" style="margin-top:28px;">
+                @* Cerca *@
+                <button type="submit" class="btn btn-100 btn-primary" @onclick="MessaggiCercaAsync">
+                    <i class="fas fa-search fa-lg"></i>&nbsp;Cerca
+                </button>
+                @* Annulla *@
+                <button type="submit" class="btn btn-100 btn-light" @onclick="RipristinaFiltri" title="Ripristina filtri">
+                    <i class="fas fa-undo-alt fa-lg"></i>&nbsp;Annulla
+                </button>
+            </div>
+        </div>
+    </div>
+
+    @* BOTTONE - CHIUDI SELEZIONATI *@
+    @if (_messaggi != null && _messaggi.Any(x => x.Checked == true))
+    {
+        // Abilitato
+        if (_isChiudiMassivoRunning)
+        {
+            <button type="button" class="btn btn-success mb-2"><span class="spinner-border spinner-border-sm"></span>&nbsp;&nbsp;Chiudi messaggi selezionati</button>
+        }
+        else
+        {
+            <button type="button" class="btn btn-success mb-2" @onclick="OpenConfirmModalMassiva"><i class="fas fa-check-circle fa-lg"></i>&nbsp;&nbsp;Chiudi messaggi selezionati</button>
+        }
+
+        // Abilitato
+        if (_isExportMassivoRunning)
+        {
+            <button type="button" class="btn btn-secondary mb-2"><span class="spinner-border spinner-border-sm"></span>&nbsp;&nbsp;Esporta messaggi selezionati</button>
+        }
+        else
+        {
+            <button type="button" class="btn btn-secondary mb-2" @onclick="ExportSelected"><i class="fas fa-file-export fa-lg"></i>&nbsp;&nbsp;Esporta messaggi selezionati</button>
+        }
+    }
+    else
+    {
+        // Disabilitato
+        <button type="button" class="btn btn-light disabled mb-2" disabled><i class="fas fa-check-circle fa-lg"></i>&nbsp;&nbsp;Chiudi messaggi selezionati</button>
+
+        // Disabilitato
+        <button type="button" class="btn btn-light disabled mb-2" disabled><i class="fas fa-file-export fa-lg"></i>&nbsp;&nbsp;Esporta messaggi selezionati</button>
+    }
+
+
+    @*GRIGLIA*@
+    <div class="row">
+        <div class="col-sm-12">
+            <h6>La ricerca ho prodotto @_messaggi?.Count record</h6>
+            <Grid PageSize="100" AllowPaging="true" Items="_messaggi" CssClass="table table-bordered table-sm" HeaderNumber="9">
+                <GridHeader>
+                    <GridHeaderItem>
+                        <TemplateHeader>
+                            <div style="width:1px;">
+                                @if (_messaggi != null && _messaggi.Any(x => x.IsNotClosed))
+                                {
+                                    <input type="checkbox" @bind="CheckAll" />
+                                }
+                                else
+                                {
+                                    <input type="checkbox" class="disabled" disabled />
+                                }
+                            </div>
+                        </TemplateHeader>
+                    </GridHeaderItem>
+                    <GridHeaderItem></GridHeaderItem>
+                    <GridHeaderItem HeaderText="Data" AllowSort="true" OnClick="@(()=>OrderColumn("DataMessaggio"))" Sorted="@GetSortOrder("DataMessaggio")" />
+                    <GridHeaderItem HeaderText="Stato" AllowSort="true" OnClick="@(()=>OrderColumn("IdStato"))" Sorted="@GetSortOrder("IdStato")" />
+                    <GridHeaderItem HeaderText="Nome Orchestrazione" AllowSort="true" OnClick="@(()=>OrderColumn("NomeOrchestrazione"))" Sorted="@GetSortOrder("NomeOrchestrazione")" />
+                    <GridHeaderItem HeaderText="Errore" AllowSort="true" OnClick="@(()=>OrderColumn("DescrizioneErrore"))" Sorted="@GetSortOrder("DescrizioneErrore")" />
+                    <GridHeaderItem HeaderText="Utente" AllowSort="true" OnClick="@(()=>OrderColumn("UtenteModifica"))" Sorted="@GetSortOrder("UtenteModifica")" />
+                    <GridHeaderItem></GridHeaderItem>
+                    <GridHeaderItem></GridHeaderItem>
+                </GridHeader>
+                <GridRow>
+
+                    @* CHECKBOX *@
+                    <GridRowItem IsIcon="true">
+                        <TemplateField>
+                            @if (context.IsNotClosed)
+                            {
+                                <input type="checkbox" @bind="context.Checked" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" class="disabled" disabled />
+                            }
+                        </TemplateField>
+                    </GridRowItem>
+
+                    @* ICONA *@
+                    <GridRowItem IsIcon="true">
+                        <TemplateField>
+                            <button class="btn btn-sm text-primary" type="button" @onclick="(() => Dettaglio(context.Id))"><i class="fas fa-eye fa-lg"></i></button>
+                        </TemplateField>
+                    </GridRowItem>
+
+                    @* DATA MESSAGGIO *@
+                    <GridRowItem Value="context.DataMessaggio"></GridRowItem>
+
+                    @* DESCRIZIONESTATO *@
+                    <GridRowItem Value="context.DescrizioneStato"></GridRowItem>
+
+                    @* ORCHESTRAZIONE *@
+                    <GridRowItem Value=@($"{context.NomeOrchestrazione} ({context.VersioneOrchestrazione})")></GridRowItem>
+
+                    @* DESCRIZIONE ERRORE *@
+                    <GridRowItem>
+                        <TemplateField>
+                            @if (context.DescrizioneErroreIsPreview)
+                            {
+                                string err = context.DescrizioneErrore;
+                                if (err != null && err.Length > 100)
+                                {
+                                    err = err.Substring(0, 100);
+                                    @err
+                                    <button class="btn btn-sm text-primary" type="button" @onclick="@(() => context.DescrizioneErroreIsPreview = false)"><i class="fas fa-arrow-alt-circle-down fa-lg"></i></button>
+                                }
+                                else
+                                {
+                                    @context.DescrizioneErrore
+                                }
+                            }
+                            else
+                            {
+                                @context.DescrizioneErrore
+                                <button class="btn btn-sm text-primary" type="button" @onclick="@(() => context.DescrizioneErroreIsPreview = true)"><i class="fas fa-arrow-alt-circle-left fa-lg"></i></button>
+                            }
+                        </TemplateField>
+                    </GridRowItem>
+
+                    @* UTENTE MODIFICA *@
+                    <GridRowItem Value="context.UtenteModifica"></GridRowItem>
+
+                    @* BOTTONE CHIUDI *@
+                    <GridRowItem IsIcon="true">
+                        <TemplateField>
+                            @if (context.IsNotClosed)
+                            {
+                                <button class="btn btn-sm btn-70 btn-success" type="button" @onclick="(() => OpenConfirmModal(context.Id))"
+                                        title="Imposta lo stato del messaggio a chiuso">
+                                    <i class="fas fa-check-circle fa-lg"></i>&nbsp;&nbsp;Chiudi
+                                </button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-sm btn-70 btn-success disabled" type="button" disabled
+                                        title="Lo stato del messaggio è già impostato a chiuso">
+                                    <i class="fas fa-check-circle fa-lg"></i>&nbsp;&nbsp;Chiudi
+                                </button>
+                            }
+                        </TemplateField>
+                    </GridRowItem>
+
+                    @* BOTTONE XML *@
+                    <GridRowItem IsIcon="true">
+                        <TemplateField>
+                            <button class="btn btn-sm btn-70 btn-primary" type="button" @onclick="(() => OpenMessaggioXml(context))"
+                                    title="Visualizza il messaggio XML">
+                                <i class="fas fa-code fa-lg"></i>&nbsp;&nbsp;XML
+                            </button>
+                        </TemplateField>
+                    </GridRowItem>
+                </GridRow>
+            </Grid>
+        </div>
+    </div>
+</div>
+
+<ModalConferma @ref="_modalConferma" ModalTitle="Chiudi messaggio" ModalBody="Vuoi impostare lo stato del messaggio a chiuso ?" OnOkClick="ModalConfermaOkClick"></ModalConferma>
+<ModalConferma @ref="_modalConfermaMassiva" ModalTitle="Chiudi messaggi selezionati" ModalBody="Vuoi impostare lo stato dei messaggi selezionati a chiuso ?" OnOkClick="CloseSelected"></ModalConferma>
+
+<ModalXml @ref="_modalXml"></ModalXml>
+
+@code{
+
+
+    [CascadingParameter]
+    private Task<AuthenticationState> _authenticationStateTask { get; set; }
+    private System.Security.Claims.ClaimsPrincipal _user;
+
+    [CascadingParameter]
+    public bool ClientIsIE { get; set; }
+
+    // Messaggio errore
+    private string _messageError;
+
+    // Id corrente
+    private Guid _selectedId;
+    private bool _isChiudiMassivoRunning;
+    private bool _isExportMassivoRunning;
+
+
+    // Booleana per la selezione multipla
+    private bool _checkAll = false;
+    public bool CheckAll
+    {
+        get => _checkAll;
+        set
+        {
+            foreach (MessaggioScartatoPageModel messaggio in _messaggi)
+            {
+                if (messaggio.IsNotClosed)
+                    messaggio.Checked = value;
+            }
+
+            _checkAll = value;
+        }
+    }
+
+    private List<MessaggioScartatoPageModel> _messaggi;
+    private List<MessaggioScartatoStatoData> _statiMessaggio = new List<MessaggioScartatoStatoData>();
+    private MessaggioScartatoStatoData _statoChiuso;
+    private ModalConferma _modalConferma = new ModalConferma();
+    private ModalConferma _modalConfermaMassiva = new ModalConferma();
+    private ModalXml _modalXml = new ModalXml();
+
+    // Lista suggerimenti nome orchestrazione
+    private List<string> _listaNomiOrc = new List<string>();
+
+
+    #region Variabili Grid
+    private string _currentSortColumn; // Colonna sulla quale si sta facendo l'ordinamento
+    private GridHeaderItem.SortOrder _currentOrderColumn; // Indica in quele ordinamento si trova una colonna (None, Asc, Desc)
+    #endregion
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        //Utente corrente
+        _user = (await _authenticationStateTask).User;
+
+        if (!ClientIsIE)
+        {
+            // Popola i suggerimenti per la texbox del nome orchestrazione solo se non su IE11
+            await FetchAutocompleteNomiOrcAsync();
+        }
+
+        await FetchStatiMessaggiAsync();
+        await MessaggiCercaAsync();
+
+    }
+
+    private async Task EnterToSearch(KeyboardEventArgs args) // Permette di effettuare la ricerca alla pressione Enter in una texbox
+    {
+        if (args.Key == "Enter")
+        {
+            //Tolgo il focus (blur) cosi da scatenare l'onchange dell'input e aggiornarlo. Su ie11 altrimenti non viene aggiornato in automatico
+            if (ClientIsIE)
+                await jsRunTime.InvokeVoidAsync("main.blur");
+
+            await MessaggiCercaAsync();
+        }
+    }
+
+    private async Task MessaggiCercaAsync() // Cerca
+    {
+        try
+        {
+            _messageError = null;
+            _messaggi = null;
+            _checkAll = false;
+
+            string utenteTemp = _scopedState.Messaggi.Utente;
+            // _utenteReadonly è true solo se siamo nello stato 4 "In carico a me" --> Variabile gestita nel "set" della property "Stato"
+            if (_scopedState.Messaggi.UtenteReadonly)
+            {
+                utenteTemp = _user.Identity.Name;
+            }
+
+            using (MessaggiScartatiAdapter messaggiRepository = _dbRepository.MessaggiScartati)
+            {
+                _messaggi = MessaggioScartatoPageModel.CreateMessaggioScartatoPageModels(await messaggiRepository.GetAll(
+                    _scopedState.Messaggi.Periodo,
+                    _scopedState.Messaggi.Errore,
+                    _scopedState.Messaggi.IdStato,
+                    _scopedState.Messaggi.NomeOrchestrazione,
+                    utenteTemp
+                    ));
+            }
+
+            // Se lo stato è 3 --> Filtro i risultati i messaggi che non sono "Chiusi"
+            if (_scopedState.Messaggi.IdStato == 3)
+            {
+                _messaggi = _messaggi.Where(x => x.IdStato != 2).ToList();
+            }
+
+        }
+        catch (Exception ex)
+        {
+            _messageError = $"Errore durante il caricamento dei messaggi scartati";
+            _logger.LogError(ex, _messageError);
+        }
+    }
+
+    private async Task FetchStatiMessaggiAsync() // Reperisce gli stati del messaggio dal DB
+    {
+        try
+        {
+            using (MessaggiScartatiStatiAdapter messaggiScartatiStati = _dbRepository.MessaggiScartatiStati)
+            {
+                _statiMessaggio = await messaggiScartatiStati.GetAll();
+
+                // Inserisco manualmente gli stati per l'interfaccia
+                _statiMessaggio.Add(new MessaggioScartatoStatoData() { Id = 3, Descrizione = "Non chiusi" });
+                _statiMessaggio.Add(new MessaggioScartatoStatoData() { Id = 4, Descrizione = "In carico a me" });
+            }
+
+            _statoChiuso = _statiMessaggio.Where(x => x.Id == 2).FirstOrDefault();
+        }
+        catch (Exception ex)
+        {
+            _messageError = $"Errore durante il caricamento degli stati";
+            _logger.LogError(ex, _messageError);
+        }
+    }
+
+    private async Task FetchAutocompleteNomiOrcAsync() // Reperisce la lista dei nomi orchestazione per i suggerimenti del filtro
+    {
+        try
+        {
+            using (MessaggiScartatiAdapter messaggiRepository = _dbRepository.MessaggiScartati)
+            {
+                _listaNomiOrc = await messaggiRepository.GetNomiOrchestrazioni();
+            }
+        }
+        catch (Exception ex)
+        {
+            _messageError = $"Errore durante il caricamento dei suggerimenti per l'autocompletamento delle orchestrazioni";
+            _logger.LogError(ex, _messageError);
+        }
+
+    }
+
+    private void AutocompleteNomiOrcChanged(object newValue) // Imposta il valore del filtro con il valore selezionato dai suggeriti
+    {
+        if (newValue != null)
+            _scopedState.Messaggi.NomeOrchestrazione = newValue.ToString();
+        else
+            _scopedState.Messaggi.NomeOrchestrazione = null;
+    }
+
+    private void Dettaglio(Guid id) // Naviga al dettaglio
+    {
+        NavigationManager.NavigateTo($"messaggiscartati/dettaglio/{id}");
+    }
+
+    private void RipristinaFiltri() // Ripristina il default dei filtri
+    {
+        _scopedState.Messaggi.Clear();
+        _messageError = null;
+    }
+
+    private void OpenConfirmModal(Guid id) // Apre la modal conferma chiusura singolo
+    {
+        _modalConferma.Open(id.ToString());
+    }
+
+    private void OpenConfirmModalMassiva() // Apre la modal conferma chiusura massiva
+    {
+        _modalConfermaMassiva.Open();
+    }
+
+    private async Task ModalConfermaOkClick(ModalConferma.OkClickEventArgs arg)
+    {
+        try
+        {
+            Guid id = new Guid(arg.GetParameter);
+            await SetStateToClose(id);
+        }
+        catch (Exception ex)
+        {
+            _messageError = $"Errore durante la chiusura del messaggio";
+            _logger.LogError(ex, _messageError);
+        }
+
+    }
+
+    private async Task SetStateToClose(Guid id) // Cambia lo stato del messaggio in "Chiuso"
+    {
+        try
+        {
+            // Aggiorno lo stato del messaggio
+            using (MessaggiScartatiAdapter richiesteRepository = _dbRepository.MessaggiScartati)
+            {
+                await richiesteRepository.ChangeState(id, _statoChiuso.Id, _user.Identity.Name);
+            }
+
+            MessaggioScartatoPageModel messaggio = _messaggi.Find(x => x.Id == id);
+
+            //Aggiorno lo stato del messaggio per UI
+            messaggio.IdStato = _statoChiuso.Id;
+            messaggio.DescrizioneStato = _statoChiuso.Descrizione;
+            messaggio.Checked = false;
+
+            //Aggiorno la lista in base allo stato, senza fare una nuova ricerca
+            int statoFiltro = _scopedState.Messaggi.IdStato;
+            //Se il filtro dello stato è su "Nuovi" (0), su "In carico" (1) oppure su "Non chiusi" (3) rimuovo dalla lista il messaggio
+            if (statoFiltro == 0 || statoFiltro == 1 || statoFiltro == 3)
+                _messaggi.Remove(messaggio);
+        }
+        catch (Exception ex)
+        {
+            _messageError = $"Errore durante la chiusura del messaggio";
+            _logger.LogError(ex, _messageError);
+        }
+
+    }
+
+    private async Task CloseSelected()
+    {
+        // Animazione di caricamento
+        _isChiudiMassivoRunning = true;
+        StateHasChanged();
+
+        List<MessaggioScartatoPageModel> messaggiSelezionati = _messaggi.Where(x => x.Checked == true).ToList();
+
+        if (messaggiSelezionati.Any())
+        {
+            foreach (MessaggioScartatoPageModel messaggio in messaggiSelezionati)
+            {
+                await SetStateToClose(messaggio.Id);
+            }
+        }
+
+        // Tolgo l'animazione
+        _isChiudiMassivoRunning = false;
+        StateHasChanged();
+    }
+
+    private async Task OpenMessaggioXml(MessaggioScartatoPageModel messaggio) // Apre l'XML in una nuova finestra
+    {
+        // Aggiungiamo il numero "-1" per iundicare il messaggio completo (Intero)
+        string id = messaggio.Id + _appState.Xml.Separatore + "-1";
+
+        // Ottengo il messaggio XML dal DB
+        XElement messaggioOrchestrazione;
+        using (MessaggiScartatiAdapter messaggiRepository = _dbRepository.MessaggiScartati)
+        {
+            messaggioOrchestrazione = (await messaggiRepository.GetById(messaggio.Id)).MessaggioOrchestrazione;
+        }
+
+        // Aggiungo il messaggio al Dictionary per poterlo prendere dopo
+        _appState.Xml.XmlDictionary.Add(id, messaggioOrchestrazione);
+
+        // Parte della modal da sistemare --> non si riece a far vedere bene l'xml nel iframe detro la modal
+        //_modalXml.Open(id);
+
+        await Utility.OpenXMlNewTab(jsRunTime, id);
+    }
+
+    // Esporta i messaggiselezionati in unoi zip
+    private async Task ExportSelected()
+    {
+        // Animazione di caricamento
+        _isExportMassivoRunning = true;
+        StateHasChanged();
+
+        List<MessaggioScartatoPageModel> messaggiSelezionati = _messaggi.Where(x => x.Checked == true).ToList();
+
+        if (messaggiSelezionati.Any())
+        {
+
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
+                {
+                    string rootFolderName = DateTime.Today.ToString("yyyy-MM-dd");
+                    string currentDateTime = DateTime.Now.ToString("yyyy-mm-dd hh:mm");
+
+
+                    foreach (MessaggioScartatoPageModel messaggio in messaggiSelezionati)
+                    {
+
+                        // Ottengo il messaggio XML dal DB
+                        XElement messaggioOrchestrazione;
+                        using (MessaggiScartatiAdapter messaggiRepository = _dbRepository.MessaggiScartati)
+                            messaggioOrchestrazione = (await messaggiRepository.GetById(messaggio.Id)).MessaggioOrchestrazione;
+
+                        // Prendo i nodi all'interno della root
+                        IEnumerable<XElement> childList = from x in messaggioOrchestrazione.Elements() select x;
+
+                        int count = 1;
+                        foreach (XElement child in childList)
+                        {
+                            // Creto il file nella folder giusta
+                            var currentFile = archive.CreateEntry($@"{rootFolderName}\{messaggio.NomeOrchestrazione}\{currentDateTime}_{messaggio.Id}\XML_{messaggio.NomeOrchestrazione}_{count}.out");
+
+                            using (var entryStream = currentFile.Open())
+                            {
+                                using (var streamWriter = new StreamWriter(entryStream))
+                                {
+                                    streamWriter.Write(child);
+                                }
+                            }
+
+
+                            count++;
+                        }
+                    }
+                }
+                await Utility.SaveAsZip(jsRunTime, $"Export_messaggi_{DateTime.Now}.zip", memoryStream.ToArray());
+
+            }
+
+            // Tolgo l'animazione
+            _isExportMassivoRunning = false;
+            StateHasChanged();
+        }
+    }
+
+
+    #region Ordinamento Grid
+    protected async Task OrderColumn(string column) // Ordina la colonna passata
+    {
+
+        // Al primo ordinamento della colonna la ordino in Asc
+        if (_currentSortColumn != column)
+        {
+            _currentSortColumn = column;
+            _currentOrderColumn = GridHeaderItem.SortOrder.Asc;
+        }
+        // Se la colonna è già stata ordinata allora inverto l'ordinamento
+        else if (_currentSortColumn == column)
+        {
+            if (_currentOrderColumn == GridHeaderItem.SortOrder.Asc)
+                _currentOrderColumn = GridHeaderItem.SortOrder.Desc;
+            else
+                _currentOrderColumn = GridHeaderItem.SortOrder.Asc;
+        }
+
+        // Ordino la colonna passata con l'ordinamento selezionato
+        await Task.Run(() =>
+        {
+            //Ottengo la property dal nome
+            System.Reflection.PropertyInfo prop = _messaggi.GetType().GetGenericArguments().Single().GetProperty(column);
+
+            //Ordino per la property in base all'ordinamento attuale applicato alla colonna
+            if (_currentOrderColumn == GridHeaderItem.SortOrder.Asc)
+                _messaggi = _messaggi.OrderBy(x => prop.GetValue(x, null)).ToList();
+            else
+                _messaggi = _messaggi.OrderByDescending(x => prop.GetValue(x, null)).ToList();
+        });
+    }
+
+    protected GridHeaderItem.SortOrder GetSortOrder(string column) // Ottiene l'attuale ordinamento della colonna passata
+    {
+        if (_currentSortColumn == column)
+            return _currentOrderColumn;
+        else
+            return GridHeaderItem.SortOrder.None;
+    }
+    #endregion
+
+
+}

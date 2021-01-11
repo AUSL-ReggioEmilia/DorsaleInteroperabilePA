@@ -1,0 +1,1525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.progel.it/WCF/OE/Service/1.0" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/OE/Service/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/OE/WsTypes/1.2" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd3" namespace="http://schemas.progel.it/OE/Types/1.2" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntry.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="CreaTokenAccesso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CreaTokenAccessoResult" nillable="true" type="q1:TokenAccessoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoDelega">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nomeUtente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoDelegaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CreaTokenAccessoDelegaResult" nillable="true" type="q2:TokenAccessoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccesso2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pcRichiedente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccesso2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CreaTokenAccesso2Result" nillable="true" type="q3:TokenAccessoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoDelega2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nomeUtente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pcRichiedente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoDelega2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CreaTokenAccessoDelega2Result" nillable="true" type="q4:TokenAccessoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniListeDizionari">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q5:TokenAccessoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniListeDizionariResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniListeDizionariResult" nillable="true" type="q6:DizionariType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaOrdine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q7:TokenAccessoType" />
+        <xs:element xmlns:q8="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ordine" nillable="true" type="q8:OrdineType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaOrdineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ValidaOrdineResult" nillable="true" type="q9:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q10:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ValidaOrdinePerIdGuidResult" nillable="true" type="q11:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiOppureModificaOrdine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q12:TokenAccessoType" />
+        <xs:element xmlns:q13="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ordine" nillable="true" type="q13:OrdineType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiOppureModificaOrdineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiungiOppureModificaOrdineResult" nillable="true" type="q14:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q15:TokenAccessoType" />
+        <xs:element xmlns:q16="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ordine" nillable="true" type="q16:OrdineType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="InoltraOrdineResult" nillable="true" type="q17:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q18:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="InoltraOrdinePerIdGuidResult" nillable="true" type="q19:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdinePerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q20:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdinePerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="InoltraOrdinePerIdRichiestaResult" nillable="true" type="q21:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdinePerIdRichiestaRichiedente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q22:TokenAccessoType" />
+        <xs:element minOccurs="0" name="aziendaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRichiestaRichiedente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdinePerIdRichiestaRichiedenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="InoltraOrdinePerIdRichiestaRichiedenteResult" nillable="true" type="q23:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReinoltraOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q24:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReinoltraOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ReinoltraOrdinePerIdGuidResult" nillable="true" type="q25:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReinoltraOrdineIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q26:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReinoltraOrdineIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ReinoltraOrdineIdRichiestaResult" nillable="true" type="q27:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q28:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CancellaOrdinePerIdGuidResult" nillable="true" type="q29:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaOrdinePerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q30:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaOrdinePerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CancellaOrdinePerIdRichiestaResult" nillable="true" type="q31:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaOrdinePerIdRichiestaRichiedente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q32:TokenAccessoType" />
+        <xs:element minOccurs="0" name="aziendaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRichiestaRichiedente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaOrdinePerIdRichiestaRichiedenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CancellaOrdinePerIdRichiestaRichiedenteResult" nillable="true" type="q33:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaOrdinePerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q34:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaOrdinePerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ValidaOrdinePerIdRichiestaResult" nillable="true" type="q35:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RipianificaOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q36:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataPrenotazione" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RipianificaOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="RipianificaOrdinePerIdGuidResult" nillable="true" type="q37:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RipianificaOrdineIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q38:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataPrenotazione" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RipianificaOrdineIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="RipianificaOrdineIdRichiestaResult" nillable="true" type="q39:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopiaOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q40:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idSacPazienteNuovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRichiestaRichiedenteNuovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroNosologicoNuovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="aziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="copiaDatiAccessori" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopiaOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CopiaOrdinePerIdGuidResult" nillable="true" type="q41:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopiaOrdinePerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q42:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idSacPazienteNuovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRichiestaRichiedenteNuovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroNosologicoNuovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="aziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="copiaDatiAccessori" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopiaOrdinePerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CopiaOrdinePerIdRichiestaResult" nillable="true" type="q43:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopiaOrdinePerIdRichiestaRichiedente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q44:TokenAccessoType" />
+        <xs:element minOccurs="0" name="aziendaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRichiestaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idSacPazienteNuovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRichiestaRichiedenteNuovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroNosologicoNuovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="aziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="copiaDatiAccessori" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopiaOrdinePerIdRichiestaRichiedenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CopiaOrdinePerIdRichiestaRichiedenteResult" nillable="true" type="q45:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q46:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q47="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="prestazione" nillable="true" type="q47:PrestazioneListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiungiPrestazionePerIdGuidResult" nillable="true" type="q48:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdGuidPerCodicePrestazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q49:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodicePrestazione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAziendaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceSistemaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdGuidPerCodicePrestazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiungiPrestazionePerIdGuidPerCodicePrestazioneResult" nillable="true" type="q50:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdGuidPerIdPrestazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q51:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idPrestazione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdGuidPerIdPrestazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiungiPrestazionePerIdGuidPerIdPrestazioneResult" nillable="true" type="q52:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q53:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q54="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="rigaRichiesta" nillable="true" type="q54:RigaRichiestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="RimuoviPrestazionePerIdGuidResult" nillable="true" type="q55:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdGuidPerCodicePrestazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q56:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodicePrestazione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAziendaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceSistemaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdGuidPerCodicePrestazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="RimuoviPrestazionePerIdGuidPerCodicePrestazioneResult" nillable="true" type="q57:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdGuidPerIdPrestazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q58:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idPrestazione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdGuidPerIdPrestazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="RimuoviPrestazionePerIdGuidPerIdPrestazioneResult" nillable="true" type="q59:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q60:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q61="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="prestazione" nillable="true" type="q61:PrestazioneListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiungiPrestazionePerIdRichiestaResult" nillable="true" type="q62:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdRichiestaPerCodicePrestazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q63:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodicePrestazione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAziendaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceSistemaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdRichiestaPerCodicePrestazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiungiPrestazionePerIdRichiestaPerCodicePrestazioneResult" nillable="true" type="q64:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdRichiestaPerIdPrestazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q65:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idPrestazione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiPrestazionePerIdRichiestaPerIdPrestazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiungiPrestazionePerIdRichiestaPerIdPrestazioneResult" nillable="true" type="q66:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q67:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q68="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="rigaRichiesta" nillable="true" type="q68:RigaRichiestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="RimuoviPrestazionePerIdRichiestaResult" nillable="true" type="q69:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdRichiestaPerCodicePrestazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q70:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodicePrestazione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceAziendaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceSistemaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdRichiestaPerCodicePrestazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="RimuoviPrestazionePerIdRichiestaPerCodicePrestazioneResult" nillable="true" type="q71:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdRichiestaPerIdPrestazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q72:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idPrestazione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RimuoviPrestazionePerIdRichiestaPerIdPrestazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="RimuoviPrestazionePerIdRichiestaPerIdPrestazioneResult" nillable="true" type="q73:StatoValidazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniOrdinePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q74:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniOrdinePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniOrdinePerIdGuidResult" nillable="true" type="q75:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniOrdinePerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q76:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniOrdinePerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniOrdinePerIdRichiestaResult" nillable="true" type="q77:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniOrdinePerIdRichiestaRichiedente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q78:TokenAccessoType" />
+        <xs:element minOccurs="0" name="aziendaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRichiestaRichiedente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniOrdinePerIdRichiestaRichiedenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniOrdinePerIdRichiestaRichiedenteResult" nillable="true" type="q79:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TentaOttieniOrdinePerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q80:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TentaOttieniOrdinePerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="TentaOttieniOrdinePerIdRichiestaResult" nillable="true" type="q81:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerCodiceODescrizione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q82:TokenAccessoType" />
+        <xs:element xmlns:q83="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="regimePaziente" type="q83:RegimeEnum" />
+        <xs:element xmlns:q84="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="prioritaRichiesta" type="q84:PrioritaEnum" />
+        <xs:element minOccurs="0" name="codiceAziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filtroCodiceDescrizione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerCodiceODescrizioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaPrestazioniPerCodiceODescrizioneResult" nillable="true" type="q85:PrestazioniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerSistemaErogante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q86:TokenAccessoType" />
+        <xs:element xmlns:q87="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="regimePaziente" type="q87:RegimeEnum" />
+        <xs:element xmlns:q88="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="prioritaRichiesta" type="q88:PrioritaEnum" />
+        <xs:element minOccurs="0" name="codiceAziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filtroCodiceDescrizione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerSistemaEroganteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaPrestazioniPerSistemaEroganteResult" nillable="true" type="q89:PrestazioniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerUnitaOperativa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q90:TokenAccessoType" />
+        <xs:element xmlns:q91="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="regimePaziente" type="q91:RegimeEnum" />
+        <xs:element xmlns:q92="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="prioritaRichiesta" type="q92:PrioritaEnum" />
+        <xs:element minOccurs="0" name="codiceAziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filtroCodiceDescrizione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerUnitaOperativaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaPrestazioniPerUnitaOperativaResult" nillable="true" type="q93:PrestazioniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerPaziente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q94:TokenAccessoType" />
+        <xs:element xmlns:q95="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="regimePaziente" type="q95:RegimeEnum" />
+        <xs:element xmlns:q96="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="prioritaRichiesta" type="q96:PrioritaEnum" />
+        <xs:element minOccurs="0" name="codiceAziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idSacPaziente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filtroCodiceDescrizione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerPazienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaPrestazioniPerPazienteResult" nillable="true" type="q97:PrestazioniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerGruppoPrestazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q98:TokenAccessoType" />
+        <xs:element xmlns:q99="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="regimePaziente" type="q99:RegimeEnum" />
+        <xs:element xmlns:q100="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="prioritaRichiesta" type="q100:PrioritaEnum" />
+        <xs:element minOccurs="0" name="codiceAziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idGuidGruppoPrestazioni" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filtroCodiceDescrizione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniPerGruppoPrestazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaPrestazioniPerGruppoPrestazioniResult" nillable="true" type="q101:PrestazioniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniPrestazionePerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q102:TokenAccessoType" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniPrestazionePerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniPrestazionePerIdResult" nillable="true" type="q103:PrestazioneErogabileType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniPrestazionePerCodice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q104:TokenAccessoType" />
+        <xs:element minOccurs="0" name="codiceAzienda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistema" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniPrestazionePerCodiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniPrestazionePerCodiceResult" nillable="true" type="q105:PrestazioneErogabileType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniPrestazioniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q106:TokenAccessoType" />
+        <xs:element xmlns:q107="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="id" nillable="true" type="q107:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniPrestazioniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniPrestazioniPerIdResult" nillable="true" type="q108:PrestazioniErogabiliType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaGruppiPrestazioniPerDescrizione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q109:TokenAccessoType" />
+        <xs:element xmlns:q110="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="regimePaziente" type="q110:RegimeEnum" />
+        <xs:element xmlns:q111="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="prioritaRichiesta" type="q111:PrioritaEnum" />
+        <xs:element minOccurs="0" name="codiceAziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filtroDescrizione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaGruppiPrestazioniPerDescrizioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaGruppiPrestazioniPerDescrizioneResult" nillable="true" type="q112:GruppiPrestazioniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniGruppoPrestazioniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q113:TokenAccessoType" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniGruppoPrestazioniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniGruppoPrestazioniPerIdResult" nillable="true" type="q114:GruppoPrestazioniType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriPerIdPrestazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q115:TokenAccessoType" />
+        <xs:element xmlns:q116="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="id" nillable="true" type="q116:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriPerIdPrestazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniDatiAccessoriPerIdPrestazioniResult" nillable="true" type="q117:DatiAccessoriListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriPerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q118:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriPerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniDatiAccessoriPerIdGuidResult" nillable="true" type="q119:DatiAccessoriListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriPerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q120:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriPerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniDatiAccessoriPerIdRichiestaResult" nillable="true" type="q121:DatiAccessoriListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriValoriPerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q122:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriValoriPerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniDatiAccessoriValoriPerIdGuidResult" nillable="true" type="q123:DatiAccessoriValoriType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriValoriPerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q124:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAccessoriValoriPerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniDatiAccessoriValoriPerIdRichiestaResult" nillable="true" type="q125:DatiAccessoriValoriType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornaOrdineDatiAccessoriValoriPerIdGuig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q126:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q127="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="datiAccessoriValori" nillable="true" type="q127:DatiAccessoriValoriType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornaOrdineDatiAccessoriValoriPerIdGuigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiornaOrdineDatiAccessoriValoriPerIdGuigResult" nillable="true" type="q128:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornaOrdineDatiAccessoriValoriPerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q129:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q130="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="datiAccessoriValori" nillable="true" type="q130:DatiAccessoriValoriType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornaOrdineDatiAccessoriValoriPerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiornaOrdineDatiAccessoriValoriPerIdRichiestaResult" nillable="true" type="q131:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompilaOrdineDatiAccessoriValori">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q132:TokenAccessoType" />
+        <xs:element xmlns:q133="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ordine" nillable="true" type="q133:OrdineType" />
+        <xs:element xmlns:q134="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="datiAccessori" nillable="true" type="q134:DatiAccessoriValoriType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompilaOrdineDatiAccessoriValoriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CompilaOrdineDatiAccessoriValoriResult" nillable="true" type="q135:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornaOrdineDatiAccessoriPerIdGuig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q136:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q137="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="datiAccessori" nillable="true" type="q137:DatiAccessoriListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornaOrdineDatiAccessoriPerIdGuigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiornaOrdineDatiAccessoriPerIdGuigResult" nillable="true" type="q138:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornaOrdineDatiAccessoriPerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q139:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q140="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="datiAccessori" nillable="true" type="q140:DatiAccessoriListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornaOrdineDatiAccessoriPerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiornaOrdineDatiAccessoriPerIdRichiestaResult" nillable="true" type="q141:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompilaOrdineDatiAccessori">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q142:TokenAccessoType" />
+        <xs:element xmlns:q143="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ordine" nillable="true" type="q143:OrdineType" />
+        <xs:element xmlns:q144="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="datiAccessori" nillable="true" type="q144:DatiAccessoriListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompilaOrdineDatiAccessoriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CompilaOrdineDatiAccessoriResult" nillable="true" type="q145:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAggiuntiviVisualizzazionePerIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q146:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idGuidOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAggiuntiviVisualizzazionePerIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniDatiAggiuntiviVisualizzazionePerIdGuidResult" nillable="true" type="q147:DatiAggiuntiviVisualizzazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAggiuntiviVisualizzazionePerIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q148:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniDatiAggiuntiviVisualizzazionePerIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniDatiAggiuntiviVisualizzazionePerIdRichiestaResult" nillable="true" type="q149:DatiAggiuntiviVisualizzazioneType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerUtente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q150:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="nomeUtente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteCognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteDataNascita" type="xs:dateTime" />
+        <xs:element xmlns:q151="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="stati" nillable="true" type="q151:ArrayOfStatoDescrizioneEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerUtenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerUtenteResult" nillable="true" type="q152:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerPaziente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q153:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="idSacPaziente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerPazienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerPazienteResult" nillable="true" type="q154:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerUnitaOperative">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q155:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+        <xs:element xmlns:q156="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="unitaOperative" nillable="true" type="q156:ArrayOfStrutturaType" />
+        <xs:element minOccurs="0" name="nosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteCognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteDataNascita" type="xs:dateTime" />
+        <xs:element xmlns:q157="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="stati" nillable="true" type="q157:ArrayOfStatoDescrizioneEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerUnitaOperativeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerUnitaOperativeResult" nillable="true" type="q158:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerUnitaOperative2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q159:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+        <xs:element xmlns:q160="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="unitaOperative" nillable="true" type="q160:ArrayOfStrutturaType" />
+        <xs:element minOccurs="0" name="nosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteCognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteDataNascita" type="xs:dateTime" />
+        <xs:element xmlns:q161="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="stati" nillable="true" type="q161:ArrayOfStatoDescrizioneEnum" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerUnitaOperative2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q162="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerUnitaOperative2Result" nillable="true" type="q162:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerSistemaRichiedente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q163:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerSistemaRichiedenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerSistemaRichiedenteResult" nillable="true" type="q164:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerSistemaErogante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q165:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerSistemaEroganteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerSistemaEroganteResult" nillable="true" type="q166:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerNosologico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q167:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="nosologico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerNosologicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerNosologicoResult" nillable="true" type="q168:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerDataRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q169:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerDataRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerDataRichiestaResult" nillable="true" type="q170:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerDataModifica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q171:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataModificaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataModificaFine" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerDataModificaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerDataModificaResult" nillable="true" type="q172:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerDataPrenotazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q173:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataPrenotazioneInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataPrenotazioneFine" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerDataPrenotazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerDataPrenotazioneResult" nillable="true" type="q174:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniEvasi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q175:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="nosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteCognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteDataNascita" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniEvasiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniEvasiResult" nillable="true" type="q176:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerRangeIdGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q177:TokenAccessoType" />
+        <xs:element xmlns:q178="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idGuidOrderEntry" nillable="true" type="q178:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerRangeIdGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerRangeIdGuidResult" nillable="true" type="q179:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerRangeIdRichiesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q180="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q180:TokenAccessoType" />
+        <xs:element xmlns:q181="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idRichiestaOrderEntry" nillable="true" type="q181:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerRangeIdRichiestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerRangeIdRichiestaResult" nillable="true" type="q182:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerAziendaNosologico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q183:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataRichiestaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataRichiestaFine" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="codiceAzienda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nosologico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerAziendaNosologicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerAziendaNosologicoResult" nillable="true" type="q184:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerDataModificaErogato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q185:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataModificaInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataModificaFine" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxRecord" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerDataModificaErogatoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerDataModificaErogatoResult" nillable="true" type="q186:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerStatoPianificato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q187:TokenAccessoType" />
+        <xs:element minOccurs="0" name="dataPianificataInizio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataPianificataFine" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="idSacPaziente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nosologico" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteCognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pazienteDataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="pazienteAnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="maxRecord" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaOrdiniPerStatoPianificatoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaOrdiniPerStatoPianificatoResult" nillable="true" type="q188:OrdiniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaProfiliPerCodiceODescrizione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q189="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q189:TokenAccessoType" />
+        <xs:element xmlns:q190="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="regimePaziente" type="q190:RegimeEnum" />
+        <xs:element xmlns:q191="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="prioritaRichiesta" type="q191:PrioritaEnum" />
+        <xs:element minOccurs="0" name="codiceAziendaUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceUnitaOperativa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filtroCodiceDescrizione" nillable="true" type="xs:string" />
+        <xs:element xmlns:q192="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tipi" nillable="true" type="q192:ArrayOfTipoPrestazioneErogabileEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaProfiliPerCodiceODescrizioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q193="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaProfiliPerCodiceODescrizioneResult" nillable="true" type="q193:PrestazioniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniProfiliUtentePerCodiceODescrizione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q194:TokenAccessoType" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaRichiedente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceAziendaSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceSistemaErogante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filtroCodiceDescrizione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaPrestazioniProfiliUtentePerCodiceODescrizioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaPrestazioniProfiliUtentePerCodiceODescrizioneResult" nillable="true" type="q195:PrestazioniListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiOppureModificaProfiloUtente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q196="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q196:TokenAccessoType" />
+        <xs:element xmlns:q197="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="profilo" nillable="true" type="q197:ProfiloUtenteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiOppureModificaProfiloUtenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q198="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="AggiungiOppureModificaProfiloUtenteResult" nillable="true" type="q198:ProfiloUtenteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaProfiliUtentePerCodiceODescrizione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q199="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q199:TokenAccessoType" />
+        <xs:element minOccurs="0" name="filtroCodiceDescrizione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CercaProfiliUtentePerCodiceODescrizioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CercaProfiliUtentePerCodiceODescrizioneResult" nillable="true" type="q200:ProfiliUtenteListaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniProfiloUtentePerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q201="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q201:TokenAccessoType" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniProfiloUtentePerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniProfiloUtentePerIdResult" nillable="true" type="q202:ProfiloUtenteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaProfiloUtentePerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q203:TokenAccessoType" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaProfiloUtentePerIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniProfiloUtentePerCodice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q204:TokenAccessoType" />
+        <xs:element minOccurs="0" name="codice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniProfiloUtentePerCodiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q205="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="OttieniProfiloUtentePerCodiceResult" nillable="true" type="q205:ProfiloUtenteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaProfiloUtentePerCodice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q206="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q206:TokenAccessoType" />
+        <xs:element minOccurs="0" name="codice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaProfiloUtentePerCodiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniPazientePerIdSac">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q207:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idSacPaziente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OttieniPazientePerIdSacResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q208="http://schemas.progel.it/OE/Types/1.2" minOccurs="0" name="OttieniPazientePerIdSacResult" nillable="true" type="q208:PazienteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompilaPazienteSac">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q209:TokenAccessoType" />
+        <xs:element minOccurs="0" name="idSacPaziente" nillable="true" type="xs:string" />
+        <xs:element xmlns:q210="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ordine" nillable="true" type="q210:OrdineType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompilaPazienteSacResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="CompilaPazienteSacResult" nillable="true" type="q211:OrdineType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdineConValidazionePaziente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q212="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="tokenAccesso" nillable="true" type="q212:TokenAccessoType" />
+        <xs:element xmlns:q213="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="ordine" nillable="true" type="q213:OrdineType" />
+        <xs:element minOccurs="0" name="idSacPaziente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataNascita" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="luogoNascita" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sesso" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InoltraOrdineConValidazionePazienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q214="http://schemas.progel.it/WCF/OE/WsTypes/1.2" minOccurs="0" name="InoltraOrdineConValidazionePazienteResult" nillable="true" type="q214:StatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

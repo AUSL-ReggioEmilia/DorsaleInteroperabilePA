@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_DiUserPortal" EntityNamespace="DI.PortalUser2" ContextNamespace="DI.PortalUser2.Data" Class="PortaleDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Function Name="dbo.ListaReport" Method="ListaReport">
+    <Parameter Name="Categoria" Parameter="categoria" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="ListaReportResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NomeFile" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RuoloLettura" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ArchivioModificheLista" Method="ArchivioModificheLista">
+    <Parameter Name="portalName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="tableName" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="ArchivioModificheListaResult">
+      <Column Name="NomePortale" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NomeCompletoTabellaCdc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Tabella" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Id" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DataUltimaModifica" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="UtenteUltimaModifica" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Operazione" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ArchivioModificheDettaglio" Method="ArchivioModificheDettaglio">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ArchivioModificheDettaglioResult">
+      <Column Name="Valore_Prima" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+      <Column Name="Valore_Dopo" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConfigurazioneMenuLista" Method="ConfigurazioneMenuLista">
+    <ElementType Name="ConfigurazioneMenuListaResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Titolo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Ordine" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RuoloLettura" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UltimoAccesso" Method="UltimoAccesso">
+    <Parameter Name="nomeUtente" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="nomePortale" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="UltimoAccessoResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DataAccesso" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Ruolo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DatiUtenteOttieniValore" Method="DatiUtenteOttieniValore">
+    <Parameter Name="Utente" Parameter="utente" Type="System.String" DbType="VarChar(128)" />
+    <Parameter Name="Chiave" Parameter="chiave" Type="System.String" DbType="VarChar(256)" />
+    <ElementType Name="DatiUtenteOttieniValoreResult">
+      <Column Name="Valore" Type="System.Object" DbType="Variant" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DatiUtenteSalvaValore" Method="DatiUtenteSalvaValore">
+    <Parameter Name="Utente" Parameter="utente" Type="System.String" DbType="VarChar(128)" />
+    <Parameter Name="Chiave" Parameter="chiave" Type="System.String" DbType="VarChar(256)" />
+    <Parameter Name="Valore" Parameter="valore" Type="System.Object" DbType="Variant" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

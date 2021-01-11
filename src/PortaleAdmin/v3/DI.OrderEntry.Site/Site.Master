@@ -1,0 +1,142 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.Master.vb" Inherits="DI.OrderEntry.Admin.Site" %>
+<%@ Import Namespace="DI.OrderEntry.Admin" %> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Web Portal 1.0</title>
+    <link href="Styles/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/master.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/XmlView.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Scripts/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-ui-1.8.14.custom.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="../Scripts/master.js?<%# Reflection.Assembly.GetExecutingAssembly.GetName.Version.ToString %>"></script>
+    <script type="text/javascript" src="../Scripts/XmlView.js"></script>
+
+	<!-- 
+To collect end-user usage analytics about your application, 
+insert the following script into each page you want to track.
+Place this code immediately before the closing tag,
+and before any other scripts. Your first data will appear 
+automatically in just a few seconds.
+-->
+    <%--
+	<script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;) i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+        }({
+            instrumentationKey: "<%= CustomInitializer.Telemetry.MyTelemetryInitializer.InstrumentationKey %>"
+        });
+
+        appInsights.queue.push(function () {
+            appInsights.context.addTelemetryInitializer(function (envelope) {
+                envelope.tags["ai.cloud.role"] = '<%= CustomInitializer.Telemetry.MyTelemetryInitializer.RoleName %>';
+            });
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+     --%>
+
+</head>
+<body>
+    <form id="MainForm" runat="server">
+        <div id="divBrowserCompatibilityMsg" runat="server" visible="false" style="background-color:#f2dede; height:40px; text-align:center;font-weight:700;border-color: #ebccd1;">
+            <asp:Label ID="lblBrowserCompatibilityMsg" runat="server" Text="" style="margin-top: 15px; display:inline-grid"></asp:Label>
+        </div>
+
+
+        <%-- HEADER STILE BOOTSTRAP SENZA BOOTSTRAP --%>
+        <div style="width: 100%;">
+            <div style="width: 450px; float: left; text-align: left; padding-left: 15px">
+                <img src="/Images/LogoAzienda.jpg" class="pull-left">
+                <a ID="LinkInformativaCE" runat="server"><img src="/Images/Marchio_CE_Header.png" class="pull-left" style="margin:15px 15px 15px 15px"></a>
+            </div>
+            <div style="width: 50%; float: left; word-wrap: break-word">
+                <div style="box-sizing: border-box; color: rgb(62,62,62); font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: 500; text-align: center">
+                    <asp:Label ID="LblHeaderTitle" runat="server" /></div>
+
+                <div style="box-sizing: border-box; color: rgb(119,119,119); font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 400; line-height: 9px; text-align: center; margin-top:5px">
+                        <asp:Label ID="LblHeaderSubTitle" runat="server" />
+                </div>
+            </div>
+        </div>
+
+
+        <table id="MainTable" height="100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+
+            <tr style="height: 1px">
+                <td>
+                    <!-- Menu di navigazione per i portali -->
+                    <div class="TopContent">
+                        <asp:Menu ID="MenuMain" runat="server" Orientation="Horizontal"
+                            StaticDisplayLevels="2" MaximumDynamicDisplayLevels="0" StaticEnableDefaultPopOutImage="False" StaticSubMenuIndent="0px">
+                            <StaticMenuStyle CssClass="MasterMenu" />
+                            <StaticMenuItemStyle CssClass="MasterMenuItem" />
+                        </asp:Menu>
+                    </div>
+                </td>
+            </tr>
+            <!-- Corpo -->
+            <tr>
+                <td>
+                    <table height="100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+                        <tr>
+                            <!-- Menu sinistro -->
+                            <td nowrap="nowrap" valign="top" width="1px">
+                                <table class="LeftContent" cellspacing="0" cellpadding="0" border="0" runat="server" id="LeftMenuHtmlTable" style="display: none;">
+                                    <tr>
+                                        <td valign="top">
+                                            <asp:TreeView ID="LeftMenuTreeView" runat="server" ShowLines="True" MaxDataBindDepth="3" DataSourceID="MainSiteMapDataSource"
+                                                NodeIndent="15">
+                                                <ParentNodeStyle CssClass="TreeParentNode" />
+                                                <HoverNodeStyle CssClass="TreeHoverNode" />
+                                                <SelectedNodeStyle CssClass="TreeHoverNode" />
+                                                <RootNodeStyle CssClass="TreeRootNode" />
+                                                <LeafNodeStyle CssClass="TreeLeafNode" />
+                                                <NodeStyle CssClass="TreeNode" />
+                                            </asp:TreeView>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Contenuto -->
+                            <td valign="top" width="100%">
+                                <table class="PageContent" id="PageContent" cellspacing="0" cellpadding="0" border="0">
+                                    <tr height="1px">
+                                        <td valign="top">
+                                            <!-- Barra di navigazione orizzontale  -->
+                                            <asp:SiteMapPath ID="MainSiteMapPath" runat="server" CssClass="Navigator">
+                                                <PathSeparatorStyle CssClass="NavigatorPathSeparator" />
+                                                <CurrentNodeStyle CssClass="NavigatorCurrentNode" />
+                                                <NodeStyle CssClass="NavigatorNode" />
+                                                <RootNodeStyle CssClass="NavigatorRootNode" />
+                                            </asp:SiteMapPath>
+                                            <asp:SiteMapDataSource ID="MainSiteMapDataSource" runat="server" />
+                                        </td>
+                                    </tr>
+                                    <tr height="100%">
+                                        <td valign="top">
+                                            <div id="mainContainer" style="margin: 0; padding: 0;">
+                                                <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+                                                </asp:ContentPlaceHolder>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Footer -->
+            <tr height="1px">
+                <td>
+                    <asp:Literal ID="FooterPlaceholder" runat="server" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

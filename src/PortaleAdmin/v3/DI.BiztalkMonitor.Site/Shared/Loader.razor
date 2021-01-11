@@ -1,0 +1,16 @@
+﻿<div class="text-center">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Info))
+    {
+        <br />
+        <div class="text-muted">Caricarmento in corso...</div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Info { get; set; }
+}

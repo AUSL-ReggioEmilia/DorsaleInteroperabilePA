@@ -1,0 +1,871 @@
+
+INPUT
+{
+	COLOR: black;	
+	FONT-SIZE: 11px;
+	FONT-FAMILY:  Verdana, Helvetica, sans-serif;
+	BACKGROUND: #f7f7f7;
+	BORDER-TOP-WIDTH: 1px;
+	BORDER-LEFT-WIDTH: 1px;
+	BORDER-RIGHT-WIDTH: 1px;
+	BORDER-BOTTOM-WIDTH: 1px;
+	BORDER-TOP-COLOR: #67A5AF;	
+	BORDER-LEFT-COLOR: #67A5AF;	
+	BORDER-RIGHT-COLOR: #67A5AF;
+	BORDER-BOTTOM-COLOR: #67A5AF;
+}
+
+
+INPUT.normal
+{
+    BACKGROUND: #ffff;
+}
+
+
+SELECT
+{
+	COLOR: black;
+	FONT-SIZE: 11px;	
+	FONT-FAMILY:  Verdana, Helvetica, sans-serif;	
+	BACKGROUND: #f7f7f7;
+	BORDER-TOP-WIDTH: 1px;
+	BORDER-LEFT-WIDTH: 1px;
+	BORDER-RIGHT-WIDTH: 1px;
+	BORDER-BOTTOM-WIDTH: 1px;
+	BORDER-TOP-COLOR: #67A5AF;
+	BORDER-LEFT-COLOR: #67A5AF;
+	BORDER-RIGHT-COLOR: #67A5AF;
+	BORDER-BOTTOM-COLOR: #67A5AF;
+}
+
+
+/*
+---------------------------------------------------------------------
+	PERSONALIZZAZIONI 
+---------------------------------------------------------------------
+*/
+
+.MenuTop
+{
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-color: #f7f7f7;
+}
+
+.MenuToplist
+{ BACKGROUND-POSITION: 0px 0px; 
+	BACKGROUND-REPEAT: no-repeat; 
+	BACKGROUND-COLOR: #6699CC;
+}
+	
+/*  riga dell'immagine dell'intestazione di Reporting */	
+.MenuTopNobg {
+	background-image:none;
+	font-size: 5px;
+}
+
+/* ----------------------------	INIZIO formattazione delle griglie  ----------------------------*/
+/* 
+								--- Usati da Reporting ma provengono da Styles.css ---
+.GridHeader
+.GridHeader TH
+.GridHeader a, .GridHeader a:link, .GridHeader a:visited, .GridHeader a:active
+.GridHeader a:hover
+.GridItem, .GridItem  TD A 
+.GridItem a:link, .GridItem a:visited, .GridItem a:active
+.GridItem a:hover 
+.GridAlternatingItem, .GridAlternatingItem TD A 
+.GridAlternatingItem a:link, .GridAlternatingItem a:visited, .GridAlternatingItem a:active
+.GridAlternatingItem a:hover 
+.GridPager, .GridPager a, .GridPager a:link, .GridPager a:visited, .GridPager a:active
+.GridSelected --in realtà non viene usato questo stile: la riga selezionata
+*/
+
+.GridHeaderBE, .GridHeaderBE TH, .GridHeaderBE a, .GridHeaderBE a:link, .GridHeaderBE a:visited, .GridHeaderBE a:active
+{
+	font-weight: bold;
+	font-size: 10px;
+	color: white;
+	font-family: verdana,helvetica,arial,sans-serif;
+	background-color: #4c4c4c;	
+	text-decoration: underline;
+}
+
+.GridHeaderBE a:hover
+{
+	color: gold;
+	text-decoration:	none;
+}
+
+
+.GridGroup, .GridGroup a, .GridGroup a:link, .GridGroup a:visited, .GridGroup a:active
+{				/* raggruppamento */
+	font-weight: bold;
+	font-size: 10px;
+	color: black;
+	font-family: verdana,helvetica,arial,sans-serif;
+	background-color:#F7F7F7;
+	text-decoration: none;
+}
+
+.GridGroup a:hover
+{
+	color: gold;
+	text-decoration:	none;
+}
+
+.GridGroupHeader, .GridGroupHeader a, .GridGroupHeader a:link, .GridGroupHeader a:visited, .GridGroupHeader a:active
+{				/* raggruppamento */
+	font-weight: bold;
+	font-size: 10px;
+	color: black;
+	font-family: verdana,helvetica,arial,sans-serif;
+	background-color:#F7F7F7;
+	text-decoration: none;
+}
+
+/* la usa solo ReportingProgel */
+.GridGroupHeader a:hover
+{
+	color: gold;
+	text-decoration:	none;
+}
+
+.GridItemBE, .GridItemBE TD A
+{
+	font-size: 10px;
+	color: black;
+	font-family: verdana,helvetica,arial,sans-serif;
+	background-color: #f7f7f7;
+	
+}
+
+.GridItemBE a:link, .GridItemBE a:visited, .GridItemBE a:active{
+	color: black;
+	
+}
+	
+.GridItemBE a:hover {
+	color: #F56D45;
+}
+
+.GridAlternatingItemBE, .GridAlternatingItemBE TD A  {				/* items alternati della griglia del BackEnd */
+	color: black;
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:10px;
+}
+
+.GridAlternatingItemBE a:link, .GridAlternatingItemBE a:visited, .GridAlternatingItemBE a:active{
+	color: black;
+}
+	
+.GridAlternatingItemBE a:hover {
+	color: #F56D45;
+}
+
+.GridGroupFooter, .GridGroupFooter a, .GridGroupFooter a:link, .GridGroupFooter a:visited, .GridGroupFooter a:active
+{
+	font-weight: bold;
+	font-size: 10px;
+	color: black;
+	font-family: verdana,helvetica,arial,sans-serif;
+	background-color: lightgrey;
+	text-decoration: none;
+}
+
+.GridGroupFooter a:hover
+{
+	color: gold;
+	text-decoration:	none;
+}
+
+.GridGroupColumn, .GridGroupColumn a, .GridGroupColumn a:link, .GridGroupColumn a:visited, .GridGroupColumn a:active
+{
+	font-weight: bold;
+	font-size: 10px;
+	color: black;
+	font-family: verdana,helvetica,arial,sans-serif;
+	background-color: lightgrey;
+	text-decoration: none;
+}
+
+.GridGroupColumn a:hover
+{
+	color: gold;
+	text-decoration:	none;
+}
+
+.GridGroupArea, .GridGroupArea a, .GridGroupArea a:link, .GridGroupArea a:visited, .GridGroupArea a:active
+{
+	font-weight: bold;
+	font-size: 10px;
+	color: black;
+	font-family: verdana,helvetica,arial,sans-serif;
+	background-color: lightgrey;
+	text-decoration: none;
+}
+
+.GridGroupArea a:hover
+{
+	color: gold;
+	text-decoration:	none;
+}
+
+/*  i link della lista delle 'Azioni'  CHIEDERE A CLAUDIO */
+a.TitleAction, a.TitleAction:visited, a.TitleAction:link, a.TitleAction:hover {
+	text-decoration:	none;
+	color: coral;
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:10px;	
+	font-weight:bold;
+}
+
+/* ---------------------------- FINE	formattazione delle griglie  ----------------------------*/
+
+.text {
+	color: black;
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:11px;
+
+}
+
+
+.Errore
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: red;
+	font-family: verdana, helvetica, arial, sans-serif;
+	
+}
+
+/*  Div principale che contenente tutto il report */
+.ReportPage
+{
+}
+
+/*  Div principale che contenente la testata del report */
+.ReportHeader 
+{
+	width: 90%;	
+}
+
+/*  Div principale che contenente i filtri e griglia del report */
+.ReportMain
+{
+	width: 90%;
+	/*
+	border-right: #000080 1px solid;
+	border-left: #000080 1px solid;
+	border-bottom: #000080 1px solid;
+	*/
+	padding-right: 4px;
+	padding-left: 4px;
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+
+
+/*  Div che contiene i pulsanti dei report */
+.ReportButtons
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+/*  Tabella principale che contenente i filtri del report */
+.FilterTable
+{
+	padding-right: 4px;
+	padding-left: 4px;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	width: 600px;
+	/*  BACKGROUND: #f7f7f7; */
+}
+
+/*  Tabella dei filtri del report */
+.FilterTableDetail
+{
+	color: black;
+	font-family: verdana,helvetica,arial,sans-serif;
+	font-size:10px;
+}
+
+/*  Righe della tabella dei filtri del report */
+.FilterDetail, .FilterDetail TD SELECT
+{
+	color: black;
+	font-family: verdana,helvetica,arial,sans-serif;
+	font-size: 10px;
+}
+	
+/* report verticale  ereditati da StyleData */
+
+.DetailHeader, .DetailHeader a, .DetailHeader a:link, .DetailHeader a:visited, .DetailHeader a:active
+{
+	
+	color: #000080;
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:11px;
+	background-color:#EFEFEF;
+	font-weight: bold;
+	text-decoration:	none;
+	padding: 2px;
+}
+
+.DetailHeader a:hover
+{
+	color: Red;
+	text-decoration:	none;
+}
+
+
+.DetailItem, .DetailItem  TD A
+{
+	color: black;
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:11px;
+	padding: 2px;
+}
+
+.DetailItem a:link, .DetailItem a:visited, .DetailItem a:active{
+	color: black;
+}
+	
+.DetailItem a:hover {
+	color: Red;
+}
+
+/* ---------------------------- FINE	formattazione delle griglie  ----------------------------*/
+ 
+/*  Tabella contenente informazioni di debug */
+.Debug	
+{ BORDER-RIGHT: #000080 1px solid; 
+	BORDER-BOTTOM: #000080 1px solid; 
+	BACKGROUND: #f7f7f7; 
+	BORDER-LEFT: #000080 1px solid; 
+	BORDER-TOP: #000080 1px solid; 
+	color: black;
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:11px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.DebugContent	
+{ 
+	color: black;
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:11px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+/*******************************************************************/
+/* INIZIO formattazioni report raggruppati (vengono da Styles.css) */
+/*******************************************************************/
+/*
+.ReportGroupUnselectedTab, .ReportGroupUnselectedTab:hover
+{
+	border-right: #000080 1px solid;
+	padding-right: 5px;
+	border-top: #000080 1px solid;
+	border-bottom: #000080 1px solid;
+	padding-left: 5px;
+	font-weight: normal;
+	font-size: xx-small;
+	padding-bottom: 5px;
+	border-left: #000080 1px solid;
+	color: black;
+	padding-top: 5px;
+	font-family: verdana;
+	height: 100%;
+	background-color: #DCDCDC;
+	text-align: center;
+	text-decoration: none;
+}
+
+.ReportGroupSelectedTab a
+{
+	font-size:xx-small;
+	color:black;
+} 
+
+.ReportGroupSelectedTab, .ReportGroupSelectedTab:hover
+{
+	border-right: #000080 1px solid; 
+	border-top: #000080 1px solid; 
+	border-left: #000080 1px solid; 
+	border-bottom: #9ac0f1 1px solid;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	font-size: xx-small;
+	font-family: verdana;
+	text-align: center;
+	text-decoration: none;
+	background-color: #9ac0f1;
+	color: #000080;
+	height: 100%
+}
+
+.ReportGroupSelectedTab a
+{
+	font-size:xx-small;
+} 
+
+.ReportGroupSeparatorTab
+{
+	border-bottom: #000080 1px solid; 
+	background-color: white;
+}
+
+.ReportGroupSeparatorTab IMG
+{
+	width: 3px;
+}
+
+.ReportGroupLeftTab
+{
+	border-bottom: #000080 1px solid; 
+	width: 5px;
+}
+
+.ReportGroupLeftTab IMG
+{
+	width: 5px;
+}
+
+.ReportGroupRightTab
+{
+	border-bottom: #000080 1px solid; 
+	width: 100%;
+}
+
+.ReportGroupRightTab IMG
+{
+	width: 100%;
+}
+*/
+	
+/* Tab control */
+/*
+.ReportGroupThinPageBorder
+{
+	height: 4px;	
+	border-right: #000080 1px solid; 
+	border-left: #000080 1px solid; 
+	background-color: #9ac0f1;
+}
+*/
+
+/*NON USATE NELLE PAGINE E NEL CODICE DI REPORTING*/
+/*
+.ReportGroupTabSeparator 
+{
+}
+*/
+/*  Div che contiene il singolo report nei report raggruppati */
+/*
+.ReportGroupReportMain
+{
+	width: 100%;
+	height: 300px;
+	padding: 4px 4px 4px 4px;
+	BORDER-RIGHT: #000080 1px solid; 
+	BORDER-BOTTOM: #000080 1px solid; 
+	BORDER-LEFT: #000080 1px solid; 
+}
+*/
+/*******************************************/
+/* FINE   formattazioni report raggruppati */
+/*******************************************/
+
+
+/************************************************************************/
+/* INIZIO Classi per la TabStrip nelle pagine di costruzione del report */
+/************************************************************************/
+.TabContainer
+{
+	width: 100%;
+	height: 100%;
+	background-color: #fbfbfb;
+}
+
+.TabButtonsContainer
+{
+	font-weight: bold;
+	color: white;
+	BACKGROUND-COLOR: white;
+}
+
+.TabNoButtonsContainer
+{
+	BORDER-BOTTOM: #000080 1px solid;
+	background-color: white;
+	width:100%;
+}
+
+.TabButtonMainNormal /* NON USATA */
+{
+	border-bottom: solid 1px gray;
+}
+.TabButtonMainSelected /* NON USATA */
+{
+	border-bottom-style: none;
+}
+
+.TabDetailContainer
+{
+	border-left: #000080 1px solid;
+	border-right: #000080 1px solid;
+	border-bottom: #000080 1px solid;
+	vertical-align: top;
+	padding-top: 10px;
+}
+
+.TabButtonSelected
+{
+background-image: url(images/reporting/TabButtonCenterSelected.gif);
+background-repeat: repeat-x;
+height: 28px;
+}
+
+.TabButtonSelected A, .TabButtonSelected A:link, .TabButtonSelected A:hover, .TabButtonSelected A:visited
+{
+	font-size: x-small;
+	color: Black;
+	font-family: Verdana, Helvetica, Arial;
+	text-decoration: none;
+}
+
+/* PRIMA C'ERA ANCHE QUESTA!! simile a quella sopra
+.TabButtonSelected A, .TabButtonSelected A:link, .TabButtonSelected A:hover, .TabButtonSelected A:visited
+{
+	font-weight: bold;
+	font-size: xx-small;
+	color: black;
+	font-family: Verdana, Helvetica, Arial;
+	text-decoration: none;
+}
+*/
+
+
+/*  NON USATE NELLE PAGINE E NEL CODICE DI REPORTING 
+.TabButtonNormal
+{
+	background-image: url(images/reporting/TabButtonCenterNormal.gif);
+	background-repeat: repeat-x;
+	height: 25px;
+}
+
+.TabButtonNormal A, .TabButtonNormal A:link, .TabButtonNormal A:hover, .TabButtonNormal A:visited
+{
+	font-weight: bold;
+	font-size: xx-small;
+	color: gray;
+	font-family: Verdana, Helvetica, Arial;
+	text-decoration: none;
+}
+*/
+
+.TabButtonNormal2
+{
+ background-image: url(images/reporting/TabButtonNormal.gif);
+ width: 135px;
+ font-weight: bold;
+ font-size: xx-small;
+ color: gray;
+ font-family: Verdana, Helvetica, Arial;
+ text-decoration: none;
+ 
+ border-top-style: none;
+ background-repeat: no-repeat;
+ border-right-style: none;
+ border-left-style: none;
+ height: 24px;
+ background-color: transparent;
+ border-bottom-style: none;
+}
+
+.TabButtonSelected2
+{
+ background-image: url(images/reporting/TabButtonSelected.gif);
+ width: 135px;
+ font-weight: bold;
+ font-size: xx-small;
+ color: black;
+ font-family: Verdana, Helvetica, Arial;
+ text-decoration: none;
+ 
+ border-top-style: none;
+ background-repeat: no-repeat;
+ border-right-style: none;
+ border-left-style: none;
+ height: 24px;
+ background-color: transparent;
+ border-bottom-style: none;
+}
+
+/*********************************/
+/* FINE   Classi per la TabStrip */
+/*********************************/
+
+
+/************************************/
+/* INIZIO   Classi per la C1ToolBar */
+/************************************/
+
+.ToolBarSeparator
+{
+	margin-left: 2px;
+	margin-right: 4px;
+	width: 6px;
+	height: 24px;
+	background-image: url(images/reporting/af_vertdelim.gif);
+}
+
+.ToolBarToolbar /* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+{
+	padding: 1px;
+}
+
+.ToolBarButton
+{
+	padding-right: 2px;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+
+.ToolBarContent
+{									/* formattazione menu */
+	background-repeat: repeat-x;
+	background-image: url(images/reporting/MenuTopBackground.gif);
+	
+}
+
+.ToolBarCntNormal /* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+{									/* formattazione elemento non selezionato */
+    FONT-SIZE: xx-small;
+    COLOR: black;
+    padding: 1px;
+}
+.ToolBarCntSelected /* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+{									/* formattazione elemento selezionato */
+    BACKGROUND-COLOR: whitesmoke;
+    FONT-SIZE: xx-small;
+    COLOR: black;
+    border: solid 1px gray;
+}
+
+
+/* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+.ToolBarCntNormal A, .DipItemCntNormal A:hover,
+.ToolBarCntSelected A, .DipItemCntSelected A:hover
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: black;
+    TEXT-DECORATION: none;
+}
+
+.ToolBarItem  /* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+{	
+	padding: 1px;
+}
+.ToolBarItemH /* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+{
+	background-color:whitesmoke;
+	padding: 1px;
+}
+.ToolBarItemH A
+{
+	COLOR: black;
+}
+/*************************************/
+/* FINE   Classi per la C1ToolBar    */
+/*************************************/
+
+
+/*********************************/
+/* INIZIO   Classi per la C1TopicBar */
+/*********************************/
+
+/*  Tabella principale che contiene i filtri del report */
+.TopicBarContent /* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+{
+	border-right: #000080 1px solid;
+	border-top: #000080 1px solid;	
+	border-left: #000080 1px solid;
+	border-bottom: #000080 1px solid;
+	
+	width: 100%;
+	background: #f7f7f7;
+	
+}
+
+/*  Tabella dei filtri del report */ /* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+.TopicBarHeader {
+	
+	color: black;
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:9px;
+	background-color:silver;
+	FONT-WEIGHT: bold;
+}
+/*  Tabella dei filtri del report */ /* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+.TopicBarGroup, TopicBarGroup A {
+	
+	color: red;
+	font-family:verdana,helvetica,arial,sans-serif;
+	font-size:9px;
+	background-color:whitesmoke;
+}
+
+/*********************************/
+/* FINE   Classi per la C1TopicBar */
+/*********************************/
+
+
+
+/*********************************/
+/* INIZO   Classi per la barra di navigazione */
+/*********************************/
+/* formattazione menu */
+.PageNavBarContent
+{									
+	margin-bottom: 7px;
+}
+/* formattazione elementi */
+.PageNavBarItemNormal
+{									
+    color: Black;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+.PageNavBarItemNormal:hover
+{
+	color: White;
+	background-color: #cccccc;
+	TEXT-DECORATION: none;
+}
+/* formattazione elementi */
+.PageNavBarItemSelected
+{									
+    color: White;
+    background-color: #cccccc;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.LinkNavItemStyle
+{
+}
+
+.LinkNavSeparatorStyle
+{
+}
+/*********************************/
+/* FINE   Classi per la barra di navigazione */
+/*********************************/
+
+/*********************************/
+/* INIZIO   Classi per la tabella delle azioni */
+/*********************************/
+
+.MenuRight
+{
+	TEXT-ALIGN: left;
+    PADDING-RIGHT: 1px;
+    font-size: 10px;
+}
+.MenuRight td
+{
+	VERTICAL-ALIGN: top;
+}
+
+.MenuRight A
+{
+	TEXT-DECORATION: none;
+	font-size: 10px;
+}
+
+.MenuRightHotlinkCnt
+{
+	margin-bottom: 8px;
+}
+
+/* 
+BoxContent
+HotlinkCaptionOpen
+BoxCaptionClose
+BoxCaptionOpen
+BoxListContent
+: NON USATE NELLE PAGINE E NEL CODICE DI REPORTING 
+*/
+
+.HotlinkContent,
+.BoxContent
+{
+	margin-top: 0px;
+	width: 160px;
+    
+}
+.HotlinkCaptionOpen,
+.BoxCaptionClose,
+.BoxCaptionOpen
+{
+	WIDTH: 100%;					/* Larghezza menu */
+	padding:  3px;
+    TEXT-ALIGN: left;
+    BACKGROUND-COLOR: silver;
+    
+}
+.HotlinkListContent,
+.BoxListContent
+{
+	BACKGROUND-COLOR: whitesmoke;
+	border-bottom: #000080 1px solid;
+	border-left:  #000080 1px solid;
+	border-right:  #000080 1px solid;
+	padding: 3px;
+}
+
+/*********************************/
+/* FINE   Classi per la tabella delle azioni */
+/*********************************/
+
+/*  pulsanti */	
+.ButtonMain
+{
+	width:100px;	
+	font-size: 13px;
+}
+
+/* Tabella del report verticale */
+/* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+.VerticalReportMainTable {				
+	width: 100%;
+}
+
+/*  text box  */
+/* NON USATE NELLE PAGINE E NEL CODICE DI REPORTING */
+.TextBoxDetail
+{
+		
+}

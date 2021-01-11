@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DwhConnSole3">
+  <DataContextMoniker Name="/DwhConnSole3DataContext" />
+  <nestedChildShapes>
+    <classShape Id="9e00c3a7-d1ae-479d-9877-3f8ef81f3ce5" absoluteBounds="3.25, 0.5, 3.625, 3.8862125651041666">
+      <DataClassMoniker Name="/DwhConnSole3DataContext/PresidiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74794846-fe5c-479f-a978-5e03867d1dff" absoluteBounds="3.2650000000000006, 0.96, 3.5949999999999998, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95814967-3a75-47c7-a957-63a4bb4e890a" absoluteBounds="0.5, 2.25, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/DwhConnSole3DataContext/PresidiErogantiAziendeEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df778583-72b3-4f40-b9e7-9f38a8fdc7bc" absoluteBounds="0.51500000000000057, 2.7100000000000009, 1.9700000000000002, 0.44169108072916663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.34848716543783 : 2.25); (2.34848716543783 : 2); (2.75 : 2); (2.75 : 1.50291787245719); (3.25 : 1.50291787245719)]" fixedFrom="Caller" fixedTo="Caller">
+      <AssociationMoniker Name="/DwhConnSole3DataContext/PresidiErogantiAziendeEroganti/PresidiErogantiAziendeEroganti_PresidiEroganti" />
+      <nodes>
+        <classShapeMoniker Id="95814967-3a75-47c7-a957-63a4bb4e890a" />
+        <classShapeMoniker Id="9e00c3a7-d1ae-479d-9877-3f8ef81f3ce5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fd5218c5-d3dc-449a-975e-b13f13db3063" absoluteBounds="0.5, 3.625, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/DwhConnSole3DataContext/PresidiErogantiSistemiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18a6cda2-4b1f-49b4-8d4b-cf99169906fa" absoluteBounds="0.51500000000000057, 4.0850000000000009, 1.9700000000000002, 0.44169108072916663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 4.12584554036458); (3.01197926905627 : 4.12584554036458); (3.01197926905627 : 1.69695458984375); (3.25 : 1.69695458984375)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/DwhConnSole3DataContext/PresidiErogantiSistemiEroganti/PresidiErogantiSistemiEroganti_PresidiEroganti" />
+      <nodes>
+        <classShapeMoniker Id="fd5218c5-d3dc-449a-975e-b13f13db3063" />
+        <classShapeMoniker Id="9e00c3a7-d1ae-479d-9877-3f8ef81f3ce5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="967d6085-295f-4058-8eb1-a0654fe35719" absoluteBounds="0.5, 0.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/DwhConnSole3DataContext/PresidiErogantiTipiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="695523b0-bccb-4b75-97bd-bc480934bffb" absoluteBounds="0.51500000000000057, 1.2100000000000009, 1.9700000000000002, 0.44169108072916663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.29455005641663); (3.25 : 1.29455005641663)]" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/DwhConnSole3DataContext/PresidiErogantiTipiEroganti/PresidiErogantiTipiEroganti_PresidiEroganti" />
+      <nodes>
+        <classShapeMoniker Id="967d6085-295f-4058-8eb1-a0654fe35719" />
+        <classShapeMoniker Id="9e00c3a7-d1ae-479d-9877-3f8ef81f3ce5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a7109405-8c1d-4f5b-806b-49bd81964ce8" absoluteBounds="3.25, 5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DwhConnSole3DataContext/RepartiRichiedenti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1cbfcf23-65b4-4781-b4e8-9f8a324767fe" absoluteBounds="3.2650000000000006, 5.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be2198ab-87fd-44bb-aa81-219394d367f8" absoluteBounds="0.5, 5.375, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/DwhConnSole3DataContext/RepartiRichiedentiTipiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f13e9be-24a7-40c6-9f75-6e5f6bd78a09" absoluteBounds="0.51500000000000057, 5.835, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 5.80654714748654); (3.25 : 5.80654714748654)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/DwhConnSole3DataContext/RepartiRichiedentiTipiEroganti/RepartiRichiedentiTipiEroganti_RepartiRichiedenti" />
+      <nodes>
+        <classShapeMoniker Id="be2198ab-87fd-44bb-aa81-219394d367f8" />
+        <classShapeMoniker Id="a7109405-8c1d-4f5b-806b-49bd81964ce8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c59de114-28da-4674-ace0-626285b473a2" absoluteBounds="0.5, 6.75, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/DwhConnSole3DataContext/RepartiRichiedentiAziendeEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85f0cb7a-2ec8-43f5-acaa-0df6fb78b135" absoluteBounds="0.51500000000000057, 7.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 7.25084554036458); (2.875 : 7.25084554036458); (2.875 : 6.04185239573616); (3.25 : 6.04185239573616)]" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/DwhConnSole3DataContext/RepartiRichiedentiAziendeEroganti/RepartiRichiedentiAziendeEroganti_RepartiRichiedenti" />
+      <nodes>
+        <classShapeMoniker Id="c59de114-28da-4674-ace0-626285b473a2" />
+        <classShapeMoniker Id="a7109405-8c1d-4f5b-806b-49bd81964ce8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7823d1ac-57ea-427f-b355-d4633d77f322" absoluteBounds="6, 5.625, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/DwhConnSole3DataContext/RepartiRichiedentiSistemiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f1fb7e3-fd5a-4411-8a29-6537c9ec0fed" absoluteBounds="6.0150000000000006, 6.085, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 6.18633433314732); (5.25 : 6.18633433314732)]" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/DwhConnSole3DataContext/RepartiRichiedentiSistemiEroganti/RepartiRichiedentiSistemiEroganti_RepartiRichiedenti" />
+      <nodes>
+        <classShapeMoniker Id="7823d1ac-57ea-427f-b355-d4633d77f322" />
+        <classShapeMoniker Id="a7109405-8c1d-4f5b-806b-49bd81964ce8" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

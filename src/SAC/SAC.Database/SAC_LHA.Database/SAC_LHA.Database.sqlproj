@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SAC_LHA.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5d81cfe0-19b1-4ccd-98f8-f259940f98c9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SAC_LHA.Database</RootNamespace>
+    <AssemblyName>SAC_LHA.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Database Triggers\" />
+    <Folder Include="dbo\Synonyms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\RegioniAslIstat.sql" />
+    <Build Include="dbo\Tables\Log.sql" />
+    <Build Include="dbo\Tables\DizionariLhaAsl.sql" />
+    <Build Include="dbo\Tables\DizionariLhaComuni.sql" />
+    <Build Include="dbo\Tables\DizionariLhaDiagnosi.sql" />
+    <Build Include="dbo\Tables\DizionariLhaDistretti.sql" />
+    <Build Include="dbo\Tables\LogRichieste.sql" />
+    <Build Include="dbo\Tables\DizionariLhaEsenzioni.sql" />
+    <Build Include="dbo\Tables\DizionariLhaMedici.sql" />
+    <Build Include="dbo\Tables\DizionariLhaNazioni.sql" />
+    <Build Include="dbo\Tables\DizionariLhaRegioni.sql" />
+    <Build Include="dbo\Tables\PazientiDropTable.sql" />
+    <Build Include="dbo\Tables\ConsensiDropTable.sql" />
+    <Build Include="dbo\Tables\Consensi_Sole.sql" />
+    <Build Include="dbo\Tables\AppCn_Fusioni.sql" />
+    <Build Include="dbo\Tables\AppCn_AnagrafeEsenti.sql" />
+    <Build Include="dbo\Tables\AppCn_Anagrafe.sql" />
+    <Build Include="dbo\Tables\DatabaseLog.sql" />
+    <Build Include="dbo\Views\DeltaAnagrafeFusioniFull.sql" />
+    <Build Include="dbo\Views\DeltaConsensiFull.sql" />
+    <Build Include="dbo\Views\ListaDeltaInvioConsensi.sql" />
+    <Build Include="dbo\Views\ListaDeltaInvioPazienti.sql" />
+    <Build Include="dbo\Views\StatisticheDeltaInvioConsensi.sql" />
+    <Build Include="dbo\Views\StatisticheDeltaInvioPazienti.sql" />
+    <Build Include="dbo\Views\DeltaAnagrafeFull.sql" />
+    <Build Include="dbo\Views\DeltaAnagrafeEsentiFull.sql" />
+    <Build Include="dbo\Views\ConsensiSole_N.sql" />
+    <Build Include="dbo\Views\ConsensiSole_0_1_2.sql" />
+    <Build Include="Security\DataAccessUI.sql" />
+    <Build Include="Security\DataAccessSSIS.sql" />
+    <Build Include="Security\Execute Biztalk.sql" />
+    <Build Include="Security\Execute Viewer.sql" />
+    <Build Include="Security\PROGEL.IT_DAGOBAH2_.sql" />
+    <Build Include="dbo\Functions\GetIstatComuneByCodiceInterno.sql" />
+    <Build Include="dbo\Functions\GetIstatNazioneByCodiceInterno.sql" />
+    <Build Include="dbo\Functions\GetPadreFusioneLHA.sql" />
+    <Build Include="dbo\Functions\GetTreeFusioniLHA.sql" />
+    <Build Include="dbo\Stored Procedures\LookupLHABTGet.sql" />
+    <Build Include="dbo\Stored Procedures\ConsensiCopiaDeltaInSacConcensiDropTable.sql" />
+    <Build Include="dbo\Stored Procedures\SetLogLhaTipoFullsync.sql" />
+    <Build Include="dbo\Stored Procedures\SetLogLhaTipoFullsync_Storico.sql" />
+    <Build Include="dbo\Stored Procedures\LogLHABT.sql" />
+    <Build Include="dbo\Stored Procedures\LookupLHABT.sql" />
+    <Build Include="dbo\Stored Procedures\LookupLHABT2.sql" />
+    <Build Include="dbo\Stored Procedures\LogRichiesteLHABT.sql" />
+    <Build Include="dbo\Stored Procedures\PuliziaLogLHA.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiDropTableUiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PazientiDropTableUiList.sql" />
+    <Build Include="Database Triggers\DatabaseTriggerLog.sql" />
+    <Build Include="dbo\Synonyms\SacFullSyncLhaPazienti.sql" />
+    <Build Include="dbo\Synonyms\SacFullSyncLhaPazientiConsensi.sql" />
+    <Build Include="dbo\Synonyms\SacFullSyncLhaPazientiEsenzioni.sql" />
+    <Build Include="dbo\Synonyms\SacFullSyncLhaPazientiFusi.sql" />
+    <Build Include="Security\Permissions.sql" />
+    <Build Include="dbo\Tables\PazientiDropTableSemaforo.sql" />
+    <Build Include="dbo\Tables\DizionariLhaFasceReddito.sql" />
+    <Build Include="dbo\Stored Procedures\BtPazientiDropTableOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BtPazientiDropTableConta.sql" />
+    <Build Include="dbo\Synonyms\SacFullSyncDizionarioTerminazioni.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SAC_LHA_SqlSchemaCompare.scmp" />
+  </ItemGroup>
+</Project>

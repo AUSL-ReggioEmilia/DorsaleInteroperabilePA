@@ -1,0 +1,85 @@
+﻿@inject NavigationManager NavigationManager
+@inject IDBRepository _dbRepository
+@inject ILogger<NavMenu> _logger
+@inherits LayoutComponentBase
+
+
+<nav class="navbar navbar-expand navbar-admin p-1">
+    <button class="navbar-toggler" type="button">
+        @*@onclick="ToggleNavMenu"*@
+        <span class="oi oi-menu"></span>
+    </button>
+    <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+        <ul class="navbar-nav flex-grow-1">
+
+            @if (_menu != null && _menu.Count > 0)
+            {
+                @foreach (PortalAdminConfigurazioneMenuData item in _menu)
+                {
+                    <li class="nav-item navbar-admin-link text-nowrap">
+                        <NavLink class="nav-link" href="@item.Url">
+                            @item.Titolo
+                        </NavLink>
+                    </li>
+                }
+            }
+
+        </ul>
+    </div>
+</nav>
+
+@code {
+
+    [CascadingParameter]
+    private Task<AuthenticationState> _authenticationStateTask { get; set; }
+    private System.Security.Claims.ClaimsPrincipal _user;
+
+    private List<PortalAdminConfigurazioneMenuData> _menu = new List<PortalAdminConfigurazioneMenuData>();
+
+    //MENU
+    bool collapseNavMenu = true;
+    string baseMenuClass = "navbar-collapse d-sm-inline-flex flex-sm-row-reverse";
+    string NavMenuCssClass => baseMenuClass + (collapseNavMenu ? " collapse" : "");
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Utente corrente
+        _user = (await _authenticationStateTask).User;
+
+        await PopolateMenu();
+    }
+
+    protected async Task PopolateMenu()
+    {
+        try
+        {
+            List<PortalAdminConfigurazioneMenuData> menuTemp;
+
+            using (PortalAdminConfigurazioneMenuAdapter configurazioneMenuRepository = _dbRepository.ConfigurazioneMenu)
+            {
+                menuTemp = await configurazioneMenuRepository.GetAll();
+            }
+            if (menuTemp != null)
+            {
+                foreach (PortalAdminConfigurazioneMenuData item in menuTemp)
+                {
+                    //Se l'utente corrente ha il Gruppo ad per poter vedere la n voce del menu l'aggiungo alla lista "menu"
+                    string sIdRuoloLetture = Utility.GetSidObjectDomain(item.RuoloLettura);
+                    if (_user.IsInRole(sIdRuoloLetture))
+                    {
+                        _menu.Add(item);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Errore durante il caricamento del menu");
+        }
+    }
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

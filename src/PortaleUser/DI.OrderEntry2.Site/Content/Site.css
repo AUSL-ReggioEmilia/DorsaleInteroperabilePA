@@ -1,0 +1,187 @@
+﻿/* ****************************************** */
+/* Visual Studio default CSS */
+/* ****************************************** */
+
+.body-content {
+    margin-bottom: 30px;
+}
+
+/* ****************************************** */
+/* CUSTOM CSS */
+/* ****************************************** */
+
+/*Toglie gli style creati dalla renderizzazione dell'aspMenu  */
+.navbar-collapse > div {
+    clear: none !important;
+}
+
+@media (max-width: 768px) {
+    /* Aggiusta il menu durante il collassamento. Toglie il float e da un colore al testo. */
+    .navbar-custum-collapse .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+        color: #9d9d9d;
+    }
+}
+
+@media (max-width: 768px) {
+    .staticMenuSecondario-custum-float, .pr-aspMenu {
+        float: none !important;
+    }
+}
+
+/* Allinea le checkbox alle textbox nelle form bootstrap */
+@media (min-width: 768px) {
+    .checkbox-custum-top-align {
+        margin-top: 35px;
+    }
+}
+
+/* Serve per unire i due menu */
+#MenuPrincipale {
+    margin-bottom: 0px;
+}
+
+.checkboxlist-custom-left-margin > label, .checkboxlist-custom-left-margin > input {
+    margin-left: 20px !important;
+}
+
+.popover {
+    margin-right: 20px;
+}
+
+/* AFFIX MENU */
+#MenuPrincipale.affix {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+#MenuSecondario.affix {
+    position: fixed;
+    z-index: 1;
+    top: 35px;
+    width: 100%;
+}
+
+@media (max-width:768px) {
+    .affix {
+        position: static;
+        width: 100% !important;
+    }
+}
+/* FINE AFFIX FILTRI LATERALI */
+
+.custum-margin-right-sidebar {
+    margin-right: 10px;
+}
+
+/* aumenta il margin-top della row che contiene le griglie all'interno delle tab*/
+.tab-row-custom-margin-top {
+    margin-top: 10px;
+}
+
+hr {
+    margin-top: 5px;
+}
+
+/* Allinea il testo nella tab della lista dei referti in cui viene scritta la data inserita nei filtri */
+.tab-li-custum-text {
+    margin-right: 15px;
+}
+
+/* Allinea a sinistra il testo del tooltip*/
+.tooltip-inner {
+    text-align: left;
+}
+
+.navbar-accessoDiretto-button-margin {
+    margin-bottom: 10px !important;
+}
+
+.divPage {
+    margin-top: 5px;
+}
+
+.wizardElement a {
+    pointer-events: none;
+}
+
+.savePanel {
+    display: block;
+    position: fixed;
+    z-index: 1050;
+    margin-right: 20px;
+}
+
+.text-wrap {
+    white-space: nowrap;
+}
+
+.ContentPlaceHolderMain {
+    margin-bottom: 20px;
+}
+
+
+/*------------------------------------------------------------------------------------------------------
+* INIZIO GESTIONE AFFIX
+*/
+.div-menu-affix.affix + .container-fluid {
+    /*NECESSARIO PER EVITARE IL PROBLEMA DEI JUMP IN DELLA SCROLLBAR DURANTE L'AFFIX*/
+    /*margin-bottom: 150px;*/
+    padding-top: 100px;
+}
+
+.div-menu-affix.affix {
+    /*AFFIX MENU' PRINCIPALE E SECONDARIO*/
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+}
+
+/*
+* FINE GESTIONE AFFIX
+-------------------------------------------------------------------------------------------------------*/
+
+/* custom class per i wizard della pagina di compilazione di un ordine */
+.jumbotron-wizard-custom-margin {
+    padding: 5px !important;
+    margin-bottom: 5px;
+}
+
+.dropdown-menu-custom-width {
+    width: 300px;
+}
+
+/* Riduce il margine in basso del sub-menu */
+.navbarMenu2 {
+    margin-bottom: 5px !important;
+}
+
+/* Stili per le nested table nella home*/
+.column-custom-width {
+    width: 30px;
+}
+
+.nested-table-custom {
+    margin: 0px;
+}
+/* / Stili per le nested table nella home*/
+
+
+/* Riduco il margin top delle intestazioni */
+h1, .h1, h2, .h2, h3, .h3{
+    margin-top:5px !important;
+}
+
+
+#modalCaricamento {
+    top: 40%;
+}
+
+/* Classe per gli ordini nello stato programmato */
+
+.stato-programmato {
+    background-color: rgba(254, 254, 117, 0.30) !important;
+}

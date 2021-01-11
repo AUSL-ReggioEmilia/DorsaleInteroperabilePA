@@ -1,0 +1,14 @@
+﻿@using System.Net.NetworkInformation;
+
+<div class="footer fixed-bottom">
+
+	<span class="float-left">ver. @GetType().Assembly.GetName().Version.ToString()</span>
+	<span class="text-center">@CenterText</span>
+	<span class="float-right">@IPGlobalProperties.GetIPGlobalProperties().HostName.@IPGlobalProperties.GetIPGlobalProperties().DomainName </span>
+
+</div>
+
+@code
+{
+	[Parameter] public string CenterText { get; set; }
+}

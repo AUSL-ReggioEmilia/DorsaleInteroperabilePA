@@ -1,0 +1,1319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DWH.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{74d9e4e6-72ea-47cd-afca-2c4163da012f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DWH.Database</RootNamespace>
+    <AssemblyName>DWH.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <SqlCodeAnalysisRules>
+    </SqlCodeAnalysisRules>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="DataAccess\" />
+    <Folder Include="DataAccess\Views\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="store\" />
+    <Folder Include="store\Views\" />
+    <Folder Include="frontend\" />
+    <Folder Include="frontend\Views\" />
+    <Folder Include="ws2\" />
+    <Folder Include="ws2\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="frontend\Stored Procedures\" />
+    <Folder Include="ws2\Stored Procedures\" />
+    <Folder Include="Database Triggers\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="Assemblies\" />
+    <Folder Include="dbo\Synonyms\" />
+    <Folder Include="ws3\" />
+    <Folder Include="ws3\Views\" />
+    <Folder Include="ws3\Stored Procedures\" />
+    <Folder Include="sac\" />
+    <Folder Include="sac\Views\" />
+    <Folder Include="sac\Functions\" />
+    <Folder Include="Progel\" />
+    <Folder Include="Progel\Stored Procedures\" />
+    <Folder Include="test\" />
+    <Folder Include="test\Functions\" />
+    <Folder Include="test\Stored Procedures\" />
+    <Folder Include="test\Tables\" />
+    <Folder Include="test\Views\" />
+    <Folder Include="sole\" />
+    <Folder Include="sole\Tables\" />
+    <Folder Include="sole_admin\" />
+    <Folder Include="sole_admin\Views\" />
+    <Folder Include="sole\Functions\" />
+    <Folder Include="sole_da\" />
+    <Folder Include="sole_da\Functions\" />
+    <Folder Include="sole_da\Stored Procedures\" />
+    <Folder Include="sole\Stored Procedures\" />
+    <Folder Include="sole\Views\" />
+    <Folder Include="SoleWcfBt\" />
+    <Folder Include="SoleWcfBt\Stored Procedures\" />
+    <Folder Include="sinottico\" />
+    <Folder Include="sinottico\Tables\" />
+    <Folder Include="sinottico\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\AbbonamentiRepartiRicovero.sql" />
+    <Build Include="dbo\Tables\LayerRefertiFormati.sql" />
+    <Build Include="dbo\Tables\LayerRefertiFormatiNameSpace.sql" />
+    <Build Include="dbo\Tables\CodaRefertiOutputInviati.sql" />
+    <Build Include="dbo\Tables\PazientiClassificazione.sql" />
+    <Build Include="dbo\Tables\DatabaseLog.sql" />
+    <Build Include="dbo\Tables\StampeConfigurazioniStampa.sql" />
+    <Build Include="dbo\Tables\SistemiErogantiDocumenti.sql" />
+    <Build Include="dbo\Tables\PazientiDipartimenti.sql" />
+    <Build Include="dbo\Tables\OscuramentoRuoli.sql" />
+    <Build Include="dbo\Tables\RefertiStili.sql" />
+    <Build Include="dbo\Tables\MotiviAccesso.sql" />
+    <Build Include="dbo\Tables\NotificheEmail.sql" />
+    <Build Include="dbo\Tables\Oscuramenti.sql" />
+    <Build Include="dbo\Tables\StampeSottoscrizioniRepartiRichiedenti.sql" />
+    <Build Include="dbo\Tables\FileContentType.sql" />
+    <Build Include="dbo\Tables\Utenti.sql" />
+    <Build Include="dbo\Tables\AbbonamentiRepartiRichiedenti.sql" />
+    <Build Include="dbo\Tables\TracciaAccessi.sql" />
+    <Build Include="dbo\Tables\Configurazioni.sql" />
+    <Build Include="dbo\Tables\RefertiNote.sql" />
+    <Build Include="dbo\Tables\PazientiCancellati.sql" />
+    <Build Include="dbo\Tables\StampeSottoscrizioniTipoReferti.sql" />
+    <Build Include="dbo\Tables\StampeSottoscrizioniTipoSottoscrizioni.sql" />
+    <Build Include="dbo\Tables\StampeSottoscrizioniDocumentiCoda.sql" />
+    <Build Include="dbo\Tables\StampeSottoscrizioniStati.sql" />
+    <Build Include="dbo\Tables\StampeSottoscrizioniCoda.sql" />
+    <Build Include="dbo\Tables\RefertiClassificazione.sql" />
+    <Build Include="dbo\Tables\RepartiRichiedenti.sql" />
+    <Build Include="dbo\Tables\StampeSottoscrizioni.sql" />
+    <Build Include="dbo\Tables\Testi.sql" />
+    <Build Include="dbo\Tables\PazientiAnteprima.sql" />
+    <Build Include="dbo\Tables\SistemiEroganti.sql" />
+    <Build Include="dbo\Tables\RepartiRichiedentiSistemiEroganti.sql" />
+    <Build Include="dbo\Tables\TracciaAccessi_Storico.sql" />
+    <Build Include="dbo\Tables\RicoveriStati.sql" />
+    <Build Include="dbo\Tables\CodaRefertiOutput.sql" />
+    <Build Include="dbo\Tables\CodaEventiOutput.sql" />
+    <Build Include="dbo\Tables\CodaEventiOutputInviati.sql" />
+    <Build Include="DataAccess\Views\Eventi.sql" />
+    <Build Include="dbo\Views\RefertiBaseRiferimenti.sql" />
+    <Build Include="DataAccess\Views\Ricoveri.sql" />
+    <Build Include="DataAccess\Views\Prestazioni.sql" />
+    <Build Include="dbo\Views\RicoveriBase.sql" />
+    <Build Include="DataAccess\Views\Allegati.sql" />
+    <Build Include="dbo\Views\RicoveriAttributi.sql" />
+    <Build Include="DataAccess\Views\RefertiPrestazioni.sql" />
+    <Build Include="store\Views\Allegati.sql" />
+    <Build Include="store\Views\AllegatiAttributi.sql" />
+    <Build Include="DataAccess\Views\AllegatiAttributi.sql" />
+    <Build Include="store\Views\AllegatiBase.sql" />
+    <Build Include="DataAccess\Views\PrestazioniAttributi.sql" />
+    <Build Include="store\Views\Eventi.sql" />
+    <Build Include="DataAccess\Views\EventiAttributi.sql" />
+    <Build Include="store\Views\EventiAttributi.sql" />
+    <Build Include="DataAccess\Views\RicoveriAttributi.sql" />
+    <Build Include="store\Views\EventiBase.sql" />
+    <Build Include="DataAccess\Views\RefertiAttributi.sql" />
+    <Build Include="dbo\Views\PrestazioniTutte.sql" />
+    <Build Include="store\Views\Prestazioni.sql" />
+    <Build Include="dbo\Views\AllegatiTutti.sql" />
+    <Build Include="store\Views\PrestazioniAttributi.sql" />
+    <Build Include="store\Views\PrestazioniAttributiReferto.sql" />
+    <Build Include="store\Views\PrestazioniBase.sql" />
+    <Build Include="store\Views\Referti.sql" />
+    <Build Include="store\Views\RefertiAttributi.sql" />
+    <Build Include="store\Views\RefertiBase.sql" />
+    <Build Include="store\Views\RefertiBaseRiferimenti.sql" />
+    <Build Include="dbo\Views\AllegatiAttributi.sql" />
+    <Build Include="store\Views\Ricoveri.sql" />
+    <Build Include="dbo\Views\AllegatiBase.sql" />
+    <Build Include="dbo\Views\DatabaseLogTsql.sql" />
+    <Build Include="store\Views\RicoveriAttributi.sql" />
+    <Build Include="dbo\Views\EventiAttributi.sql" />
+    <Build Include="store\Views\RicoveriBase.sql" />
+    <Build Include="dbo\Views\EventiBase.sql" />
+    <Build Include="dbo\Views\PrestazioniAttributi.sql" />
+    <Build Include="dbo\Views\PrestazioniBase.sql" />
+    <Build Include="dbo\Views\RefertiAttributi.sql" />
+    <Build Include="dbo\Views\RefertiBase.sql" />
+    <Build Include="dbo\Views\Ricoveri.sql" />
+    <Build Include="dbo\Views\CodaRefertiOutputInviatiDecompressi.sql" />
+    <Build Include="dbo\Views\CodaEventiOutputInviatiDecompressi.sql" />
+    <Build Include="dbo\Views\Prestazioni2.sql" />
+    <Build Include="dbo\Views\Allegati2.sql" />
+    <Build Include="dbo\Views\RefertiNascosti.sql" />
+    <Build Include="dbo\Views\EventiNascosti.sql" />
+    <Build Include="dbo\Views\RicoveriNascosti.sql" />
+    <Build Include="frontend\Views\Referti.sql" />
+    <Build Include="dbo\Views\RefertiDettagli.sql" />
+    <Build Include="store\Views\RefertiPrestazioni.sql" />
+    <Build Include="frontend\Views\Ricoveri.sql" />
+    <Build Include="frontend\Views\Eventi.sql" />
+    <Build Include="ws2\Views\Eventi.sql" />
+    <Build Include="ws2\Views\Referti.sql" />
+    <Build Include="ws2\Views\Ricoveri.sql" />
+    <Build Include="store\Views\AllegatiAttributiReferto.sql" />
+    <Build Include="dbo\Views\AllegatiWs.sql" />
+    <Build Include="dbo\Views\EventiWs.sql" />
+    <Build Include="dbo\Views\PrestazioniWs.sql" />
+    <Build Include="dbo\Views\RefertiWs.sql" />
+    <Build Include="dbo\Views\RicoveriWs.sql" />
+    <Build Include="dbo\Views\CUSTOM_OlapTracciaAccessi.sql" />
+    <Build Include="dbo\Views\PrestazioniAttributiConIdReferto.sql" />
+    <Build Include="dbo\Views\RefertiPrestazioniTutti.sql" />
+    <Build Include="dbo\Views\Eventi.sql" />
+    <Build Include="dbo\Views\Prestazioni.sql" />
+    <Build Include="dbo\Views\Allegati.sql" />
+    <Build Include="dbo\Views\RefertiTutti.sql" />
+    <Build Include="dbo\Views\RepartiRichiedentiUnificati.sql" />
+    <Build Include="dbo\Views\Referti.sql" />
+    <Build Include="DataAccess\Views\Referti.sql" />
+    <Build Include="dbo\Views\RefertiPrestazioni.sql" />
+    <Build Include="dbo\Views\Pazienti.sql" />
+    <Build Include="dbo\Views\StampeSottoscrizioniReferti.sql" />
+    <Build Include="dbo\Views\CUSTOM_AdminPrestazioniAttributi.sql" />
+    <Build Include="dbo\Views\CUSTOM_OlapReferti.sql" />
+    <Build Include="dbo\Views\CUSTOM_AdminPazienti.sql" />
+    <Build Include="dbo\Views\CUSTOM_TracciaAccessiReferti.sql" />
+    <Build Include="dbo\Views\CUSTOM_TracciaAccessiPazienti.sql" />
+    <Build Include="dbo\Views\EventiTutti.sql" />
+    <Build Include="dbo\Views\CUSTOM_AdminReferti.sql" />
+    <Build Include="dbo\Views\RicoveriTutti.sql" />
+    <Build Include="dbo\Views\CUSTOM_TracciaAccessiSistemErogantePerGiorno.sql" />
+    <Build Include="Security\ExecuteBiztalk.sql" />
+    <Build Include="Security\ExecuteDa.sql" />
+    <Build Include="Security\ExecuteExt.sql" />
+    <Build Include="Security\ExecuteFrontEnd.sql" />
+    <Build Include="Security\ExecuteService.sql" />
+    <Build Include="Security\ExecuteSole.sql" />
+    <Build Include="Security\ExecuteWs.sql" />
+    <Build Include="Security\Adsi Asmn Ausl.sql" />
+    <Build Include="Security\ReadOlap.sql" />
+    <Build Include="Security\DataAccessSql.sql" />
+    <Build Include="Security\PROGEL.IT_DevDwhClinicoSite.sql" />
+    <Build Include="Security\PROGEL.IT_DevSharePointSearch.sql" />
+    <Build Include="Security\PROGEL.IT_DevSharePointSite.sql" />
+    <Build Include="Security\SAC_DWC.sql" />
+    <Build Include="Security\DWH_DAE.sql" />
+    <Build Include="Security\PROGEL.IT_DevBizTalkService.sql" />
+    <Build Include="Security\SOLE_BT_POLLING.sql" />
+    <Build Include="Security\PROGEL.IT_DAGOBAH2_.sql" />
+    <Build Include="Security\PROGEL.IT_CLAUDIO-HOST-HV_.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneRicoveriSistemaErogante2.sql" />
+    <Build Include="dbo\Functions\GetConfigurazioneInt.sql" />
+    <Build Include="dbo\Functions\GetConfigurazioneString.sql" />
+    <Build Include="dbo\Functions\GetEventiAttributo.sql" />
+    <Build Include="dbo\Functions\GetRefertoCodiciOscuramento2.sql" />
+    <Build Include="dbo\Functions\GetEventiId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\GetEventiIdEsterno.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetEventiTipoEpisodioDesc.sql" />
+    <Build Include="dbo\Functions\GetFileContentType.sql" />
+    <Build Include="dbo\Functions\GetPazientiConsenso.sql" />
+    <Build Include="dbo\Functions\GetPazientiAnteprima.sql" />
+    <Build Include="dbo\Functions\GetPazientiIdByDipartimento.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetPazientiRicoveroTipoEpisodio.sql" />
+    <Build Include="dbo\Functions\GetRefertiId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\GetPazientiIdByRiferimento.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetEventiIdEventoAccettazione.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniAttributo.sql" />
+    <Build Include="dbo\Functions\GetRicoveriAttributo.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetRicoveriId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\GetPrestazioniIdEsterno.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetRicoveroDataAccettazione.sql" />
+    <Build Include="dbo\Functions\GetRefertiAttributo.sql" />
+    <Build Include="dbo\Functions\GetRicoveroDataDimissione.sql" />
+    <Build Include="dbo\Functions\GetRicoveroDataTrasferimento.sql" />
+    <Build Include="dbo\Functions\GetRefertiIdEsterno.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetRicoveroDiagnosi.sql" />
+    <Build Include="dbo\Functions\GetRefertiXmlReferto.sql" />
+    <Build Include="dbo\Functions\GetRicoveroLettoCodice.sql" />
+    <Build Include="dbo\Functions\GetRefertoStatoDesc.sql" />
+    <Build Include="dbo\Functions\GetRicoveroOspedaleDesc.sql" />
+    <Build Include="dbo\Functions\GetRicoveriXmlRicovero.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetRicoveroRepartoAccettazioneCodice.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneEventiReparto.sql" />
+    <Build Include="dbo\Functions\IsNosologicoListaDiAttesa.sql" />
+    <Build Include="dbo\Functions\GetRicoveroRepartoAccettazioneDesc.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneEventiSistemaErogante.sql" />
+    <Build Include="dbo\Functions\GetRicoveroRepartoCodice.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneRefertiRepartoRichiedente.sql" />
+    <Build Include="dbo\Functions\GetRicoveroRepartoDesc.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneRefertiSistemaErogante.sql" />
+    <Build Include="dbo\Functions\GetRicoveroRepartoErogante.sql" />
+    <Build Include="dbo\Functions\GetRicoveroSettoreCodice.sql" />
+    <Build Include="dbo\Functions\GetRicoveroSettoreDesc.sql" />
+    <Build Include="dbo\Functions\GetRicoveroStatoCodice.sql" />
+    <Build Include="dbo\Functions\GetRicoveroTipoRicoveroCodice.sql" />
+    <Build Include="dbo\Functions\GetRefertiAttributo2.sql" />
+    <Build Include="dbo\Functions\GetRefertiAttributo2Datetime.sql" />
+    <Build Include="dbo\Functions\GetSacPazienteXmlById.sql" />
+    <Build Include="dbo\Functions\GetRicoveroXml.sql" />
+    <Build Include="dbo\Functions\GetRefertoOscuramentiPuntuali.sql" />
+    <Build Include="dbo\Functions\GetPatientSummaryIsValid.sql" />
+    <Build Include="dbo\Functions\GetDataPartizioneStorico.sql" />
+    <Build Include="dbo\Functions\GetCodaRefertiOutputOrdineInvio.sql" />
+    <Build Include="dbo\Functions\GetRefertoOscuramentiXml.sql" />
+    <Build Include="dbo\Functions\GetPazientiConsensoMinimo.sql" />
+    <Build Include="dbo\Functions\OttieniFiltroRefertiPerDataPartizione.sql" />
+    <Build Include="dbo\Functions\GetEventoOscuramentiPuntuali.sql" />
+    <Build Include="dbo\Functions\GetPazientiAnteprimaReferti.sql" />
+    <Build Include="dbo\Functions\GetEventoXml2.sql" />
+    <Build Include="dbo\Functions\GetRicoveroOscuramentiPuntuali.sql" />
+    <Build Include="dbo\Functions\GetPazientiAnteprimaRicoveri.sql" />
+    <Build Include="dbo\Functions\GetRefertiDataPartizione.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\GetEventoOscuramentiXml.sql" />
+    <Build Include="dbo\Functions\GetRicoveroOscuramentiXml.sql" />
+    <Build Include="dbo\Functions\OttieniFiltroRicoveriPerDataPartizione.sql" />
+    <Build Include="dbo\Functions\GetRefertoXml.sql" />
+    <Build Include="dbo\Functions\GetAllegatoHash.sql" />
+    <Build Include="dbo\Functions\GetPrestazioneHash.sql" />
+    <Build Include="dbo\Functions\BevsGetRuoliOscuramento.sql" />
+    <Build Include="dbo\Functions\GetRefertiHasPrestazioniHiv.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\GetPazientiDataDecesso.sql" />
+    <Build Include="dbo\Functions\GetRefertoHash.sql" />
+    <Build Include="dbo\Functions\GetRefertoTesto.sql" />
+    <Build Include="dbo\Functions\GetRefertoDataMax2.sql" />
+    <Build Include="dbo\Functions\GetRicoveriAttributo2.sql" />
+    <Build Include="dbo\Functions\GetRefertiDataReferto.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\GetRefertoXml2.sql" />
+    <Build Include="dbo\Functions\GetRefertiAttributoDatetime.sql" />
+    <Build Include="dbo\Functions\GetAllegatiAttributoInteger.sql" />
+    <Build Include="dbo\Functions\GetRicoveriAttributo2Datetime.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniAttributoInteger.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniAttributoDecimal.sql" />
+    <Build Include="dbo\Functions\GetRicoveriStatiDescrizione.sql" />
+    <Build Include="dbo\Functions\GetEventiAttributoDatetime.sql" />
+    <Build Include="dbo\Functions\GetRicoveriAttributoDatetime.sql" />
+    <Build Include="dbo\Functions\GetCodaRefertiOutputIdCorrelazione.sql" />
+    <Build Include="dbo\Functions\GetCodaEventiOutputIdCorrelazione.sql" />
+    <Build Include="dbo\Functions\GetRefertiIsConfidenziale.sql" />
+    <Build Include="dbo\Functions\GetPazientiDataConsenso.sql" />
+    <Build Include="dbo\Functions\GetRuoliVisualizzazioneReferti.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneRefertiConfidenziali.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneRefertiAnnullati.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneRefertiOscurati.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneEventiOscurati.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneRicoveriOscurati.sql" />
+    <Build Include="dbo\Functions\GetRuoliVisualizzazioneEventi.sql" />
+    <Build Include="dbo\Functions\GetPazienteAttivoByIdSac.sql" />
+    <Build Include="dbo\Functions\GetCodiceRicoveroByAziendaEroganteCodicePrenotazione.sql" />
+    <Build Include="dbo\Functions\GetRuoliVisualizzazioneRicoveri.sql" />
+    <Build Include="dbo\Functions\GetAllegatiAttributo.sql" />
+    <Build Include="dbo\Functions\GetCodicePrenotazioneByAziendaEroganteCodiceRicovero.sql" />
+    <Build Include="dbo\Functions\GetAllegatiId.sql" />
+    <Build Include="dbo\Functions\GetRuoloVisualizzazioneRicoveriRepartoRicovero2.sql" />
+    <Build Include="dbo\Functions\GetConfigurazioneDatetime.sql" />
+    <Build Include="dbo\Functions\compress.sql" />
+    <Build Include="dbo\Functions\decompress.sql" />
+    <Build Include="dbo\Functions\GetRefertoOscuramenti.sql" />
+    <Build Include="dbo\Functions\GetEventoOscuramenti.sql" />
+    <Build Include="dbo\Functions\GetRicoveroOscuramenti.sql" />
+    <Build Include="dbo\Functions\GetPazientiDaCercareByIdSac.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniAggiorna2.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniRepartiRichiedentiSelezionabili2.sql" />
+    <Build Include="dbo\Stored Procedures\PazienteDettaglioXml.sql" />
+    <Build Include="dbo\Stored Procedures\MntEventiRicoveroAssociaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\FeAdminRefertoPrestazioniLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\FeAdminRefertoAllegatiLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\FeAdminRefertoDettaglio.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PrestazioneDettaglio.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\PrestazioneDettaglioXml.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsApreAllegatoContent.sql" />
+    <Build Include="dbo\Stored Procedures\RefertoDettaglio.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\FeprPrestazioniMatriceTestata.sql" />
+    <Build Include="dbo\Stored Procedures\RefertoDettaglioXml.sql" />
+    <Build Include="dbo\Stored Procedures\BeRefertiLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="frontend\Stored Procedures\CancellazionePazienteAggiungi.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="frontend\Stored Procedures\SistemiErogantiDocumenti.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiRiferimentiAggiungi.sql" />
+    <Build Include="frontend\Stored Procedures\TracciaAccessiAggiungi.sql" />
+    <Build Include="ws2\Stored Procedures\EventiByNosologico.sql" />
+    <Build Include="ws2\Stored Procedures\EventiByPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiEsiste2.sql" />
+    <Build Include="ws2\Stored Procedures\EventiByPazienteFuzzy.sql" />
+    <Build Include="dbo\Stored Procedures\FeprPrestazioniMatriceRisultato2.sql" />
+    <Build Include="ws2\Stored Procedures\EventiByPazienteRiferimenti.sql" />
+    <Build Include="ws2\Stored Procedures\EventoAttributiById.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws2\Stored Procedures\EventoById.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiProprieta.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiDataModifica.sql" />
+    <Build Include="ws2\Stored Procedures\LayerRefertiFormatiByTipoReferto.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeRefertiJobName.sql" />
+    <Build Include="ws2\Stored Procedures\LayerRefertiFormatiNameSpaceByIdRefertiFormati.sql" />
+    <Build Include="ws2\Stored Procedures\ListaAttesaByNosologico.sql" />
+    <Build Include="ws2\Stored Procedures\NosologicoByListaAttesa.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiRicoveroFondi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiRimuovi.sql" />
+    <Build Include="ws2\Stored Procedures\PazienteById.sql" />
+    <Build Include="ws2\Stored Procedures\PazienteByRiferimenti.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiRicoveroRiapri.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeAllegatiReferto.sql" />
+    <Build Include="ws2\Stored Procedures\PazienteRiepilogoAttributiById.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiRimuovi.sql" />
+    <Build Include="ws2\Stored Procedures\PazienteRiepilogoById.sql" />
+    <Build Include="ws2\Stored Procedures\PazienteRiepilogoEsenzioniById.sql" />
+    <Build Include="dbo\Stored Procedures\BtCodaRefertiOutputConta.sql" />
+    <Build Include="ws2\Stored Procedures\PazienteRiepilogoInfoRefertiById.sql" />
+    <Build Include="dbo\Stored Procedures\BeRefertiRiassociazioneLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BtCodaRefertiOutputOttieni.sql" />
+    <Build Include="ws2\Stored Procedures\PazienteRiepilogoInfoRicoveriById.sql" />
+    <Build Include="dbo\Stored Procedures\BeRefertiRiassociazioneOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsEventiUltimiArrivi.sql" />
+    <Build Include="ws2\Stored Procedures\PazientiBySemplice.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsRefertiSinottico.sql" />
+    <Build Include="ws2\Stored Procedures\PazientiBySoundex.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ExtEventiAttributiAggiungi.sql" />
+    <Build Include="ws2\Stored Procedures\PrestazioniMatriceLabByIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiDataModifica.sql" />
+    <Build Include="dbo\Stored Procedures\BeRefertiRiassociazioneSACPazienteCerca.sql" />
+    <Build Include="dbo\Stored Procedures\BevsEventiSinottico.sql" />
+    <Build Include="ws2\Stored Procedures\PrestazioniMatriceLabByIdPaziente2.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiEsiste.sql" />
+    <Build Include="ws2\Stored Procedures\PrestazioniMatriceLabByNosologicoAzienda.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiRicoveroRimuovi.sql" />
+    <Build Include="dbo\Stored Procedures\BeRefertiRiassociazioneAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\FeprTracciaAccessiForzati.sql" />
+    <Build Include="ws2\Stored Procedures\PrestazioniMatriceLabByNosologicoAzienda2.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrestazioniModifica2.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws2\Stored Procedures\PrestazioniRefertiByPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrestazioniAggiungi2.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ExtRicoveriAggiungi.sql" />
+    <Build Include="ws2\Stored Procedures\RefertiByIdOrderEntry.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiAggiungi2.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRicoveriAttributiAggiungi.sql" />
+    <Build Include="ws2\Stored Procedures\RefertiByNosologico.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiModifica2.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRicoveriDataModifica.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiAggiungi3.sql" />
+    <Build Include="ws2\Stored Procedures\RefertiByNosologicoAzienda.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRicoveriEsiste.sql" />
+    <Build Include="ws2\Stored Procedures\RefertiByNumeroPrenotazione.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRicoveriModifica.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiModifica3.sql" />
+    <Build Include="ws2\Stored Procedures\RefertiByNumeroReferto.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiAttributiAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRicoveriRimuovi.sql" />
+    <Build Include="ws2\Stored Procedures\RefertiByPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPazienteLookUpNomeAnagraficaDiRicerca.sql" />
+    <Build Include="ws2\Stored Procedures\RefertiByPazienteFuzzy.sql" />
+    <Build Include="dbo\Stored Procedures\MntRefertiCancella.sql" />
+    <Build Include="ws2\Stored Procedures\RefertiByPazienteNosologico.sql" />
+    <Build Include="ws2\Stored Procedures\RefertiByPazienteRiferimenti.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrestazioniEsiste.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws2\Stored Procedures\RefertiModificatiBySistema.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiModifica.sql" />
+    <Build Include="ws2\Stored Procedures\RefertoAllegatiAttributiById.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ExtEventiAggiungi.sql" />
+    <Build Include="ws2\Stored Procedures\RefertoAllegatiById.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniLista.sql" />
+    <Build Include="ws2\Stored Procedures\RefertoAllegatiPdfById.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiRicoveroConsolida.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiDocumentiAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiInserisce.sql" />
+    <Build Include="ws2\Stored Procedures\RefertoAttributiById.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ExtEventiRicoveroAnnulla.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiDocumentiAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiModifica.sql" />
+    <Build Include="ws2\Stored Procedures\RefertoById.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiDocumentiDettaglio.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiRimuove.sql" />
+    <Build Include="ws2\Stored Procedures\RefertoPrestazioniAttributiById.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ExtAllegatiModifica.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniCancella.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiDocumentiLista.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiOttieni.sql" />
+    <Build Include="ws2\Stored Procedures\RefertoPrestazioniById.sql" />
+    <Build Include="dbo\Stored Procedures\ExtAllegatiAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniTipoRefertiLista.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiDocumentiRimuovi.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiCerca.sql" />
+    <Build Include="ws2\Stored Procedures\RicoveriByNosologico.sql" />
+    <Build Include="dbo\Stored Procedures\ExtAllegatiEsiste.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniStatiLista.sql" />
+    <Build Include="ws2\Stored Procedures\RicoveriByPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\MntSpecialitaEroganteLABAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniTipoSottoscrizioniLista.sql" />
+    <Build Include="dbo\Stored Procedures\FeprCustomView_OncologiaDettaglio.sql" />
+    <Build Include="ws2\Stored Procedures\RicoveriByPazienteFuzzy.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniSistemiErogantiLista.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertiUltimiArrivi.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiRadionetDettaglio.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws2\Stored Procedures\RicoveriByPazienteRiferimento.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentoRuoliCerca.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_CancellaReferto.sql" />
+    <Build Include="dbo\Stored Procedures\FeprCustomView_RadioGstDettaglio.sql" />
+    <Build Include="ws2\Stored Procedures\RicoveriByReparti.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniRepartiRichiedentiLista.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiAggiungi3.sql" />
+    <Build Include="dbo\Stored Procedures\FeprCustomView_RadioterapiaDettaglio.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniRepartiRichiedentiAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiModifica3.sql" />
+    <Build Include="dbo\Stored Procedures\FeprCustomView_RadioterapiaTestata.sql" />
+    <Build Include="ws2\Stored Procedures\RicoveriByReparto.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniRepartiRichiedentiRimuovi.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiLista2.sql" />
+    <Build Include="dbo\Stored Procedures\FeprCustomView_RadioGstTestata.sql" />
+    <Build Include="ws2\Stored Procedures\RicoveriByReparto2.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRicoveriAggiungi3.sql" />
+    <Build Include="ws2\Stored Procedures\RicoveroAttributiById.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiAltaviaPrestazioneTestata.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws2\Stored Procedures\RicoveroById.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRicoveriModifica3.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiAltaviaTestata.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws2\Stored Procedures\RicoveroByNosologico.sql" />
+    <Build Include="dbo\Stored Procedures\_Schedule_AttivitaFrequente.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiLettereDimissioniTestata.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws2\Stored Procedures\RicoveroEventiAttributiById.sql" />
+    <Build Include="dbo\Stored Procedures\_Schedule_AttivitaGiornaliere.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_CancellaRicovero.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiIntralabTestata.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws2\Stored Procedures\RicoveroEventiById.sql" />
+    <Build Include="dbo\Stored Procedures\_Schedule_AttivitaNotturne.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiSdoPrestazioneTestata.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\FeprRefertiSdoTestata.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\_Schedule_AttivitaOrarie.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiRadionetTestata.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\MntPazientiAnteprimaCalcolaAnteprimaReferti.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiPrgCarTestata.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\MntPazientiAnteprimaCalcolaAnteprimaRicoveri.sql" />
+    <Build Include="dbo\Stored Procedures\FeprCustomView_OncologiaTestata.sql" />
+    <Build Include="dbo\Stored Procedures\ExtAllegatiRimuovi.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\MntPazientiAnteprimaPurge.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrestazioniRimuovi.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BtCodaEventiOutputConta.sql" />
+    <Build Include="dbo\Stored Procedures\BtCodaEventiOutputOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentoRuoliInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeSottoscrizioniCodaDocumentiLista.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentoRuoliRimuove.sql" />
+    <Build Include="dbo\Stored Procedures\MntStampeSottoscrizioni.sql" />
+    <Build Include="dbo\Stored Procedures\CorePazientiAnteprimaSetCalcolaAnteprima.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertiStiliAggiungi.sql" />
+    <Build Include="frontend\Stored Procedures\StampeConfigurazioniStampaAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertiStiliRimuovi.sql" />
+    <Build Include="frontend\Stored Procedures\StampeConfigurazioniStampaAggiornaTestStampante.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertiStiliModifica.sql" />
+    <Build Include="frontend\Stored Procedures\StampeConfigurazioniStampaDettaglio.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertiStiliDettaglio.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertiStiliLista.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiCalcolaAnteprimaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\BeNotificheEmailLista.sql" />
+    <Build Include="dbo\Stored Procedures\MntRefertiCancellaLabCdaAnnullatiUnoPerUno.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiCerca2.sql" />
+    <Build Include="dbo\Stored Procedures\BevsAziendeErogantiLista.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiCalcolaAnteprimaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\BeNotificheEmailAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiLista.sql" />
+    <Build Include="dbo\Stored Procedures\BeNotificheEmailAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiGetIdPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\MntRefertiCancellaLabCdaNoMetaluvUnoPerUno.sql" />
+    <Build Include="dbo\Stored Procedures\MntRefertoCancellaPerId.sql" />
+    <Build Include="dbo\Stored Procedures\BevsGetDocumentoSistemiEroganti.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeSottoscrizioniCodaDocumentiAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\MntPazientiAnteprimaInizializza.sql" />
+    <Build Include="dbo\Stored Procedures\BevsUtentiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeSottoscrizioniCodaDocumentiAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeSottoscrizioniCodaDocumentiByIdReferto.sql" />
+    <Build Include="dbo\Stored Procedures\BevsUtentiModifica.sql" />
+    <Build Include="dbo\Stored Procedures\BeRefertiNoteDaNotificareLista.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeSottoscrizioniCodaDaProcessareAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\MntTracciaAccessiStoricizza.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRuoliLista.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeSottoscrizioniCodaDaProcessareAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\FeprTracciaAccessiSommario.sql" />
+    <Build Include="ws2\Stored Procedures\AccessiUtenteByAccount.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertiNoteDettaglio.sql" />
+    <Build Include="dbo\Stored Procedures\BeRefertiNoteDaNotificareAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertiNoteLista.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiListaAttesaChiusuraLista.sql" />
+    <Build Include="dbo\Stored Procedures\BeRefertiNoteRefertiDaNotificareLista.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiListaAttesaRiaperturaLista.sql" />
+    <Build Include="dbo\Stored Procedures\BevsUtentiRimuovi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiListaAttesaSpostamentoAnagrafico.sql" />
+    <Build Include="dbo\Stored Procedures\BevsUtentiInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\MntEventiListaAttesaAssociaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertiNoteRimuovi.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiCombo.sql" />
+    <Build Include="dbo\Stored Procedures\FeprCustomView_MetaforaBatBatteriologia.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeSottoscrizioniAttiveLista.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSACUtentiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiAltaviaPrestazione.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\FeprRefertiGenericoPrestazione.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiSdoPrestazione.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ExtEventiAfterProcess.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiStoricoTestata.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ExtEventiBeforeProcess.sql" />
+    <Build Include="dbo\Stored Procedures\FeprTracciaAccessiOperatore.sql" />
+    <Build Include="frontend\Stored Procedures\ApreRefertoStiliDisponibili.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ExtRefertiAfterProcess.sql" />
+    <Build Include="dbo\Stored Procedures\FeprTracciaAccessiPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiBeforeProcess.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiAltaviaDettaglio.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="frontend\Stored Procedures\CancellazionePazienteDettaglio.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\FeprRefertiEimDettaglio.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="frontend\Stored Procedures\CancellazioneRefertoAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiEimTestata.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="frontend\Stored Procedures\CancellazioneRefertoDettaglio.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\FeprRefertiGenericoDettaglio.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeSottoscrizioniCodaDaProcessareLista.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiGenericoTestata.sql" />
+    <Build Include="frontend\Stored Procedures\GetDocumentoSistemiEroganti.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeSottoscrizioniAggiorna.sql" />
+    <Build Include="frontend\Stored Procedures\MotiviAccessoLista.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiGenericoPrestazioneTestata.sql" />
+    <Build Include="frontend\Stored Procedures\PazientiAccessiLista.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiIntralabDettaglio.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\FeprRefertiLettereDimissioniDettaglio.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\FeprRefertiPrgCarDettaglio.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="frontend\Stored Procedures\PazientiPatientSummaryAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiSdoDettaglio.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="frontend\Stored Procedures\PazientiPatientSummaryOttieni.sql" />
+    <Build Include="frontend\Stored Procedures\PazientiPatientSummaryStato.sql" />
+    <Build Include="dbo\Stored Procedures\FeprRefertiStoricoDettaglio.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="frontend\Stored Procedures\RefertiNoteAggiungi.sql" />
+    <Build Include="frontend\Stored Procedures\RefertiNoteCancella.sql" />
+    <Build Include="dbo\Stored Procedures\SrvcStampeRefertiDaAccodareByRepartiRichiedenti2.sql" />
+    <Build Include="frontend\Stored Procedures\RefertiNoteLista.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniDettaglio2.sql" />
+    <Build Include="dbo\Stored Procedures\BevsStampeSottoscrizioniAggiungi2.sql" />
+    <Build Include="dbo\Stored Procedures\MntRefertiAssociaPaziente.sql" />
+    <Build Include="Database Triggers\DatabaseTriggerLog.sql" />
+    <Build Include="dbo\User Defined Types\RepartiRicovero.sql" />
+    <Build Include="Security\DataAccess.sql" />
+    <Build Include="Security\frontend.sql" />
+    <Build Include="Security\store.sql" />
+    <Build Include="Security\ws2.sql" />
+    <Build Include="dbo\Synonyms\SAC_Pazienti.sql" />
+    <Build Include="dbo\Synonyms\RefertiBaseRiferimenti_History.sql" />
+    <Build Include="dbo\Synonyms\RefertiBaseRiferimenti_Recent.sql" />
+    <Build Include="dbo\Synonyms\AllegatiAttributi_History.sql" />
+    <Build Include="dbo\Synonyms\AllegatiBase_History.sql" />
+    <Build Include="dbo\Synonyms\EventiAttributi_History.sql" />
+    <Build Include="dbo\Synonyms\EventiBase_History.sql" />
+    <Build Include="dbo\Synonyms\PrestazioniAttributi_History.sql" />
+    <Build Include="dbo\Synonyms\PrestazioniBase_History.sql" />
+    <Build Include="dbo\Synonyms\RefertiAttributi_History.sql" />
+    <Build Include="dbo\Synonyms\RefertiBase_History.sql" />
+    <Build Include="dbo\Synonyms\RicoveriAttributi_History.sql" />
+    <Build Include="dbo\Synonyms\RicoveriBase_History.sql" />
+    <Build Include="dbo\Synonyms\AllegatiAttributi_Recent.sql" />
+    <Build Include="dbo\Synonyms\AllegatiBase_Recent.sql" />
+    <Build Include="dbo\Synonyms\EventiAttributi_Recent.sql" />
+    <Build Include="dbo\Synonyms\EventiBase_Recent.sql" />
+    <Build Include="dbo\Synonyms\PrestazioniAttributi_Recent.sql" />
+    <Build Include="dbo\Synonyms\Eventi_History.sql" />
+    <Build Include="dbo\Synonyms\PrestazioniBase_Recent.sql" />
+    <Build Include="dbo\Synonyms\Eventi_Recent.sql" />
+    <Build Include="dbo\Synonyms\RefertiAttributi_Recent.sql" />
+    <Build Include="dbo\Synonyms\RefertiBase_Recent.sql" />
+    <Build Include="dbo\Synonyms\RicoveriAttributi_Recent.sql" />
+    <Build Include="dbo\Synonyms\RicoveriBase_Recent.sql" />
+    <Build Include="dbo\Synonyms\SAC_PazientiSinonimi.sql" />
+    <Build Include="dbo\Synonyms\SAC_Consensi.sql" />
+    <Build Include="dbo\Synonyms\SAC_Ruoli.sql" />
+    <Build Include="dbo\Synonyms\SAC_RuoliUtenti.sql" />
+    <Build Include="dbo\Synonyms\SAC_RuoliAccesso.sql" />
+    <Build Include="dbo\Synonyms\SAC_Utenti.sql" />
+    <Build Include="dbo\Synonyms\Allegati_History.sql" />
+    <Build Include="dbo\Synonyms\Allegati_Recent.sql" />
+    <Build Include="dbo\Synonyms\Prestazioni_History.sql" />
+    <Build Include="dbo\Synonyms\SAC_Esenzioni.sql" />
+    <Build Include="dbo\Synonyms\Prestazioni_Recent.sql" />
+    <Build Include="dbo\Synonyms\Referti_History.sql" />
+    <Build Include="dbo\Synonyms\Referti_Recent.sql" />
+    <Build Include="dbo\Synonyms\Ricoveri_History.sql" />
+    <Build Include="dbo\Synonyms\Ricoveri_Recent.sql" />
+    <Build Include="dbo\Synonyms\SAC_PazientiFusioni.sql" />
+    <Build Include="Security\Permissions.sql" />
+    <Build Include="store\Views\PrescrizioniAllegati.sql" />
+    <Build Include="store\Views\Prescrizioni.sql" />
+    <Build Include="DataAccess\Views\PrescrizioniAllegati.sql" />
+    <Build Include="DataAccess\Views\Prescrizioni.sql" />
+    <Build Include="dbo\Functions\GetRefertiCancellabile2.sql" />
+    <Build Include="dbo\Functions\GetIdPrescrizioniIdEsterno.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetRefertiPk.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniPk.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\ExtPrescrizioniRimuovi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrescrizioniAllegatiRimuovi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrescrizioniAllegatiAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrescrizioniAggiungi.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniAllegati_Recent.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniAllegati_History.sql" />
+    <Build Include="dbo\Synonyms\Prescrizioni_Recent.sql" />
+    <Build Include="dbo\Synonyms\Prescrizioni_History.sql" />
+    <Build Include="dbo\Tables\Tokens.sql" />
+    <Build Include="dbo\Tables\CodaPrescrizioniOutputInviati.sql" />
+    <Build Include="dbo\Tables\CodaPrescrizioniOutput.sql" />
+    <Build Include="dbo\Views\CodaPrescrizioniOutputInviatiDecompressi.sql" />
+    <Build Include="DataAccess\Views\TracciaAccessi.sql" />
+    <Build Include="ws3\Views\Prescrizioni.sql" />
+    <Build Include="dbo\Functions\TrasformRefertoXmlForCodaInviati.sql" />
+    <Build Include="dbo\Functions\TrasformEventoXmlForCodaInviati.sql" />
+    <Build Include="dbo\Functions\OttieniFiltroPrescrizioniPerDataPartizione.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioneXml.sql" />
+    <Build Include="dbo\Functions\PartizionamentoOttieniRefertiFuoriStore.sql" />
+    <Build Include="dbo\Functions\PartizionamentoOttieniPrescrizioniFuoriStore.sql" />
+    <Build Include="dbo\Functions\PartizionamentoOttieniNosologiciFuoriStore.sql" />
+    <Build Include="dbo\Stored Procedures\MntSpostamentoReferti.sql" />
+    <Build Include="dbo\Stored Procedures\MntSpostamentoPrescrizioni.sql" />
+    <Build Include="dbo\Stored Procedures\MntSpostamentoEventiRicoveri.sql" />
+    <Build Include="dbo\Stored Procedures\MntPuliziaTokens.sql" />
+    <Build Include="dbo\Stored Procedures\MntPrescrizioniAssociaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrescrizioniNotifica.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrescrizioniEsiste.sql" />
+    <Build Include="dbo\Stored Procedures\BtCodaPrescrizioniOutputOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BtCodaPrescrizioniOutputConta.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_CancellaEvento.sql" />
+    <Build Include="ws3\Stored Procedures\PrescrizioneAllegatiById.sql" />
+    <Build Include="ws3\Stored Procedures\PrescrizioniByPazienteRiferimenti.sql" />
+    <Build Include="ws3\Stored Procedures\PrescrizioniByPazienteFuzzy.sql" />
+    <Build Include="ws3\Stored Procedures\PrescrizioniByPaziente.sql" />
+    <Build Include="ws3\Stored Procedures\PrescrizioneById.sql" />
+    <Build Include="ws3\Stored Procedures\TokenInsert.sql" />
+    <Build Include="Security\ws3.sql" />
+    <Build Include="dbo\Tables\TipiReferto.sql" />
+    <Build Include="ws3\Views\Ricoveri.sql" />
+    <Build Include="ws3\Views\Referti.sql" />
+    <Build Include="ws3\Views\Eventi.sql" />
+    <Build Include="sac\Views\Utenti.sql" />
+    <Build Include="sac\Views\Pazienti.sql" />
+    <Build Include="dbo\Functions\GetDataMinimaByConsensoAziendale.sql" />
+    <Build Include="dbo\Functions\CheckRicoveroOscuramenti.sql" />
+    <Build Include="dbo\Functions\CheckRefertoOscuramenti.sql" />
+    <Build Include="dbo\Functions\StringSplit.sql" />
+    <Build Include="dbo\Functions\OttieniUnitaOperativePerToken.sql" />
+    <Build Include="dbo\Functions\OttieniSistemiErogantiPerToken.sql" />
+    <Build Include="dbo\Functions\OttieniRuoliAccessoPerToken.sql" />
+    <Build Include="sac\Functions\OttienePazientePerIdSac.sql" />
+    <Build Include="dbo\Functions\OttieniSacUnitaOperativePerRuolo.sql" />
+    <Build Include="dbo\Functions\OttieniSacSistemiErogantiPerRuolo.sql" />
+    <Build Include="dbo\Functions\OttieniSacRuoliAccessoPerRuolo.sql" />
+    <Build Include="dbo\Functions\OttienePazienteAttributiPerIdSac.sql" />
+    <Build Include="ws3\Stored Procedures\TipiReferto.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveroEventiById.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveroEventiAttributiById.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveroAttributiById.sql" />
+    <Build Include="ws3\Stored Procedures\RefertoPrestazioniById.sql" />
+    <Build Include="ws3\Stored Procedures\RefertoPrestazioniAttributiById.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws3\Stored Procedures\RefertoByIdEsterno.sql" />
+    <Build Include="ws3\Stored Procedures\RefertoById.sql" />
+    <Build Include="ws3\Stored Procedures\RefertoAttributiById.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws3\Stored Procedures\RefertoAllegatiPdfById.sql" />
+    <Build Include="ws3\Stored Procedures\RefertoAllegatiById.sql" />
+    <Build Include="ws3\Stored Procedures\RefertoAllegatiAttributiById.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws3\Stored Procedures\RefertiModificatiBySistema.sql" />
+    <Build Include="ws3\Stored Procedures\RefertiByPazienteRiferimenti.sql" />
+    <Build Include="ws3\Stored Procedures\RefertiByPazienteFuzzy.sql" />
+    <Build Include="ws3\Stored Procedures\RefertiByPaziente.sql" />
+    <Build Include="ws3\Stored Procedures\RefertiByNumeroReferto.sql" />
+    <Build Include="ws3\Stored Procedures\RefertiByNumeroPrenotazione.sql" />
+    <Build Include="ws3\Stored Procedures\RefertiByNosologicoAzienda.sql" />
+    <Build Include="ws3\Stored Procedures\RefertiByIdOrderEntry.sql" />
+    <Build Include="ws3\Stored Procedures\PrestazioniRefertiByPaziente.sql" />
+    <Build Include="ws3\Stored Procedures\PrestazioniMatriceLabByNosologicoAzienda.sql" />
+    <Build Include="ws3\Stored Procedures\PrestazioniMatriceLabByIdPaziente.sql" />
+    <Build Include="ws3\Stored Procedures\ListaAttesaByNosologico.sql" />
+    <Build Include="ws3\Stored Procedures\LayerRefertiFormatiNameSpaceByIdRefertiFormati.sql" />
+    <Build Include="ws3\Stored Procedures\PazienteEsenzioniById.sql" />
+    <Build Include="ws3\Stored Procedures\PazienteById.sql" />
+    <Build Include="ws3\Stored Procedures\PazienteByRiferimenti.sql" />
+    <Build Include="ws3\Stored Procedures\NosologicoByListaAttesa.sql" />
+    <Build Include="ws3\Stored Procedures\LayerRefertiFormatiByTipoReferto.sql" />
+    <Build Include="Progel\Stored Procedures\CreaSP_1_6.sql" />
+    <Build Include="Security\sac.sql" />
+    <Build Include="Security\Progel.sql" />
+    <Build Include="dbo\Synonyms\SAC_RuoliUnitaOperative.sql" />
+    <Build Include="dbo\Synonyms\SAC_RuoliSistemi.sql" />
+    <Build Include="sac\Views\PazientiFusioni.sql" />
+    <Build Include="sac\Views\PazientiEsenzioni.sql" />
+    <Build Include="sac\Functions\OttienePazientiPerFuzzy.sql" />
+    <Build Include="dbo\Tables\CodaRefertiOutput2.sql" />
+    <Build Include="sac\Views\PazientiConsensi.sql" />
+    <Build Include="sac\Functions\OttieneConsensiPerIdSac.sql" />
+    <Build Include="dbo\Functions\ParseAnteprimaReferti.sql" />
+    <Build Include="dbo\Functions\GetPazientiAnteprimaRicoveri2.sql" />
+    <Build Include="ws3\Stored Procedures\PazientePatientSummaryOttieniById.sql" />
+    <Build Include="ws3\Stored Procedures\TokenById.sql" />
+    <Build Include="ws3\Stored Procedures\PazientePatientSummaryAggiornaById.sql" />
+    <Build Include="ws3\Stored Procedures\PazienteConsensiById.sql" />
+    <Build Include="ws3\Stored Procedures\TokenByRuoloUtenti.sql" />
+    <Build Include="dbo\Stored Procedures\BeRefertiNotificaById.sql" />
+    <Build Include="store\Views\PrescrizioniBase.sql" />
+    <Build Include="store\Views\PrescrizioniAttributi.sql" />
+    <Build Include="store\Views\PrescrizioniAllegatiBase.sql" />
+    <Build Include="store\Views\PrescrizioniAllegatiAttributi.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniBase_Recent.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniBase_History.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniAttributi_Recent.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniAttributi_History.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniAllegatiBase_Recent.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniAllegatiBase_History.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniAllegatiAttributi_Recent.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniAllegatiAttributi_History.sql" />
+    <Build Include="dbo\Functions\PartizionamentoOttieniListeAttesaFuoriStore.sql" />
+    <Build Include="dbo\Functions\OttieniSacRuoliPerUtente.sql" />
+    <Build Include="dbo\Stored Procedures\MntSpostamentoListeAttesa.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTipiRefertoRimuove.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTipiRefertoOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTipiRefertoModifica.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTipiRefertoInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTipiRefertoCerca.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveroByNosologico2.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveroById2.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveriByPazienteRiferimento2.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveriByPazienteFuzzy2.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveriByPaziente2.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveriApertiByPaziente.sql" />
+    <Build Include="ws3\Stored Procedures\PazientiTrasferitiByReparti2.sql" />
+    <Build Include="ws3\Stored Procedures\PazientiByGeneralita2.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws3\Stored Procedures\PazientiRicoveratiByReparti2.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws3\Stored Procedures\PazientiByCodiceFiscale2.sql" />
+    <Build Include="ws3\Stored Procedures\PazientiByTesseraSanitaria2.sql" />
+    <Build Include="dbo\Stored Procedures\BevsCancellaReferto.sql" />
+    <Build Include="dbo\User Defined Types\IdRicoveri.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveriApertiEventiById.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveriApertiEventiAttributiById.sql" />
+    <Build Include="ws3\Stored Procedures\RicoveriApertiAttributiById.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniHL7Testata.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniHL7Specialistica.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniHL7PerIdPrescrizione.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniHL7Farmaceutica.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniHL7TestataPerIdPrescrizione.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniHL7SpecialisticaPerIdPrescrizione.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniHL7FarmaceuticaPerIdPrescrizione.sql" />
+    <Build Include="store\Views\PrescrizioniEstesaTestata.sql" />
+    <Build Include="store\Views\PrescrizioniEstesaSpecialistica.sql" />
+    <Build Include="store\Views\PrescrizioniEstesaFarmaceutica.sql" />
+    <Build Include="DataAccess\Views\PrescrizioniEstesaTestata.sql" />
+    <Build Include="DataAccess\Views\PrescrizioniEstesaSpecialistica.sql" />
+    <Build Include="DataAccess\Views\PrescrizioniEstesaFarmaceutica.sql" />
+    <Build Include="Security\DataAccess_1.sql" />
+    <Build Include="ws3\Stored Procedures\PrescrizioniEstesaSpecialisticaById.sql" />
+    <Build Include="ws3\Stored Procedures\PrescrizioniEstesaFarmaceuticaById.sql" />
+    <Build Include="ws3\Stored Procedures\PrescrizioneEstesaById.sql" />
+    <Build Include="dbo\Stored Procedures\ExtPrescrizioniParseHl7.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniEstesaTestata_Recent.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniEstesaTestata_History.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniEstesaSpecialistica_Recent.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniEstesaSpecialistica_History.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniEstesaFarmaceutica_Recent.sql" />
+    <Build Include="dbo\Synonyms\PrescrizioniEstesaFarmaceutica_History.sql" />
+    <Build Include="dbo\Tables\TipiDocumentoFSE.sql" />
+    <Build Include="dbo\Tables\TipiAccessoFSE.sql" />
+    <Build Include="dbo\Tables\PazientiFSE.sql" />
+    <Build Include="dbo\Tables\CodaRefertiOutputSemaforo.sql" />
+    <Build Include="dbo\Tables\CodaPrescrizioniOutputSemaforo.sql" />
+    <Build Include="dbo\Tables\CodaEventiOutputSemaforo.sql" />
+    <Build Include="dbo\Functions\GetRicoveroCodiciOscuramento.sql" />
+    <Build Include="sac\Functions\OttienePazientiPerGeneralita_1.sql" />
+    <Build Include="dbo\Stored Procedures\MntSyncOrganigramma.sql" />
+    <Build Include="dbo\Stored Procedures\MntPrescrizioniProcessaOutput.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiRimuove.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiModifica.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiCodiciCombo.sql" />
+    <Build Include="dbo\Stored Procedures\BevsSistemiErogantiCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsRicoveriOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsRefertiOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsPrestazioniRefertoOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsEventiRicoveroOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsCancellaRicovero.sql" />
+    <Build Include="dbo\Stored Procedures\BevsAttributiRicoveroOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsAttributiRefertoOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsAttributiPrestazioneOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsAttributiEventoOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsAllegatiRefertoOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BeRicoveroNotificaEventi.sql" />
+    <Build Include="dbo\Stored Procedures\BeRicoveriNotificaLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BeRicoveriLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BeRefertiNotificaLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Synonyms\SAC_Sistemi.sql" />
+    <Build Include="ws3\Views\NoteAnamnestiche.sql" />
+    <Build Include="store\Views\NoteAnamnesticheBase.sql" />
+    <Build Include="store\Views\NoteAnamnesticheAttributi.sql" />
+    <Build Include="store\Views\NoteAnamnestiche.sql" />
+    <Build Include="dbo\Functions\GetRefertoOscuramentiString.sql" />
+    <Build Include="dbo\Functions\GetEventoOscuramentiString.sql" />
+    <Build Include="dbo\Functions\OttieniRicoveroOscuramenti.sql" />
+    <Build Include="dbo\Functions\OttieniRefertoOscuramenti.sql" />
+    <Build Include="dbo\Functions\OttieniEventoOscuramenti.sql" />
+    <Build Include="dbo\Functions\LookUpTipoReferto2.sql" />
+    <Build Include="dbo\Stored Procedures\MntPuliziaCodeInvio.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiRefertiOttieniByIdOscuramentoPuntualeSOLE.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiEventiOttieniByIdOscuramentoPuntualeSOLE.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_Cdc_DisabilitaCdc.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_Cdc_AbilitaCdc.sql" />
+    <Build Include="Security\test.sql" />
+    <Build Include="dbo\Synonyms\NoteAnamnesticheBase_Recent.sql" />
+    <Build Include="dbo\Synonyms\NoteAnamnesticheBase_History.sql" />
+    <Build Include="dbo\Synonyms\NoteAnamnesticheAttributi_Recent.sql" />
+    <Build Include="dbo\Synonyms\NoteAnamnesticheAttributi_History.sql" />
+    <Build Include="dbo\Synonyms\NoteAnamnestiche_Recent.sql" />
+    <Build Include="dbo\Synonyms\NoteAnamnestiche_History.sql" />
+    <Build Include="test\Tables\OscuramentiMassiviDaProcessare.sql" />
+    <Build Include="dbo\Tables\TranscodificaRegimi.sql" />
+    <Build Include="dbo\Tables\TranscodificaPriorita.sql" />
+    <Build Include="dbo\Tables\OscuramentiPazienti.sql" />
+    <Build Include="dbo\Tables\LogMntAggancioPaziente.sql" />
+    <Build Include="dbo\Tables\DizionarioAziendeFSE.sql" />
+    <Build Include="dbo\Tables\CodaNoteAnamnesticheOutputSemaforo.sql" />
+    <Build Include="dbo\Tables\CodaNoteAnamnesticheOutputInviati.sql" />
+    <Build Include="dbo\Tables\CodaNoteAnamnesticheOutput.sql" />
+    <Build Include="DataAccess\Views\NoteAnamnesticheAttributi.sql" />
+    <Build Include="DataAccess\Views\NoteAnamnestiche.sql" />
+    <Build Include="dbo\Functions\OttieniFiltroNoteAnamnestichePerDataPartizione.sql" />
+    <Build Include="dbo\Functions\GetNoteAnamnesticheAttributoDatetime.sql" />
+    <Build Include="dbo\Functions\GetNoteAnamnesticheAttributo.sql" />
+    <Build Include="dbo\Functions\GetNotaAnamnesticaXml.sql" />
+    <Build Include="dbo\Functions\GetNotaAnamnesticaStatoDesc.sql" />
+    <Build Include="dbo\Functions\GetCodaNoteAnamnesticheOutputIdCorrelazione.sql" />
+    <Build Include="dbo\Functions\CreaEventoAnnullamentoRicovero.sql" />
+    <Build Include="dbo\Functions\CreaEventoAnnullamentoPrenotazione.sql" />
+    <Build Include="dbo\Functions\GetPazientiAnteprimaNoteAnamnestiche.sql" />
+    <Build Include="dbo\Functions\PartizionamentoOttieniNoteAnamnesticheFuoriStore.sql" />
+    <Build Include="dbo\Functions\OttieniPazienteOscuramenti.sql" />
+    <Build Include="dbo\Functions\GetRicoveriPk.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetNoteAnamnestichePk.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\GetEventiPk.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ws3\Stored Procedures\PazientiTransitatiByReparti.sql" />
+    <Build Include="ws3\Stored Procedures\NoteAnamnesticheByPazienteRiferimenti.sql" />
+    <Build Include="ws3\Stored Procedures\NoteAnamnesticheByPazienteFuzzy.sql" />
+    <Build Include="ws3\Stored Procedures\NoteAnamnesticheByPaziente.sql" />
+    <Build Include="ws3\Stored Procedures\NotaAnamnesticaById.sql" />
+    <Build Include="ws2\Stored Procedures\RuoloUtenteByAccount.sql" />
+    <Build Include="frontend\Stored Procedures\NotificheEmailInserisce.sql" />
+    <Build Include="frontend\Stored Procedures\EmailDestinatariPreferitiCerca.sql" />
+    <Build Include="frontend\Stored Procedures\CodaRefertiSoleInserisce.sql" />
+    <Build Include="frontend\Stored Procedures\CancellazionePazienteAggiungi2.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\MntSpostamentoNoteAnamnestiche.sql" />
+    <Build Include="dbo\Stored Procedures\MntPazientiAnteprimaCalcolaAnteprimaNoteAnamnestiche.sql" />
+    <Build Include="dbo\Stored Procedures\MntNoteAnamnesticheAssociaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ExtTranscodificaRegimi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtTranscodificaPriorita.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiGeneraAnteprima.sql" />
+    <Build Include="dbo\Stored Procedures\ExtNoteAnamnesticheRimuovi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtNoteAnamnesticheNotificaByOrchestrazione.sql" />
+    <Build Include="dbo\Stored Procedures\ExtNoteAnamnesticheNotifica.sql" />
+    <Build Include="dbo\Stored Procedures\ExtNoteAnamnesticheEsiste.sql" />
+    <Build Include="dbo\Stored Procedures\ExtNoteAnamnesticheCalcolaAnteprimaPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\ExtNoteAnamnesticheAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\BtCodaNoteAnamnesticheOutputOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BtCodaNoteAnamnesticheOutputConta.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaRegimiRimuove.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaRegimiOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaRegimiModifica.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaRegimiInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaRegimiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaPrioritaRimuove.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaPrioritaOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaPrioritaModifica.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaPrioritaInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\BevsTranscodificaPrioritaCerca.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRicoveroOttieniIdByAziendaNosologico.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsRefertoImport.sql" />
+    <Build Include="dbo\Stored Procedures\BevsRefertoExport.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiRinotificaSole.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiInserisce2.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiCompleta.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiCodaRefertiSoleInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\BevsOscuramentiCodaEventiSoleInserisce.sql" />
+    <Build Include="dbo\Stored Procedures\BevsNoteAnamnesticheUltimiArrivi.sql" />
+    <Build Include="dbo\Stored Procedures\BevsNoteAnamnesticheSinottico.sql" />
+    <Build Include="dbo\Stored Procedures\BevsNoteAnamnesticheRiassociazioneLista.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsNoteAnamnesticheNotificaById.sql" />
+    <Build Include="dbo\Stored Procedures\BevsNoteAnamnesticheCerca.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsNotaAnamnesticaRiassociazioneOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsNotaAnamnesticaRiassociazioneAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\BevsNotaAnamnesticaOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\BevsNotaAnamnesticaCancella.sql" />
+    <Build Include="dbo\Stored Procedures\BevsLogMntAggancioPazienteCerca.sql" />
+    <Build Include="dbo\Stored Procedures\BevsAttributiNotaAnamnesticaOttieni.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\_anon.sql" />
+    <Build Include="sole\Tables\CodaReferti.sql" />
+    <Build Include="sole\Tables\CodaEventiInviati.sql" />
+    <Build Include="sole\Tables\CodaEventi.sql" />
+    <Build Include="sole\Tables\AbilitazioniSistemi.sql" />
+    <Build Include="sole\Tables\CodaRefertiInviati.sql" />
+    <Build Include="sole_admin\Views\AbilitazioniTipologieSole.sql" />
+    <Build Include="sole_admin\Views\AbilitazioniTipiEroganti.sql" />
+    <Build Include="sole_admin\Views\AbilitazioniSistemiEroganti.sql" />
+    <Build Include="sole_admin\Views\AbilitazioniAziendeEroganti.sql" />
+    <Build Include="dbo\Functions\IsRefertoLiberaProfessione.sql" />
+    <Build Include="dbo\Functions\IsGUID.sql" />
+    <Build Include="dbo\Functions\IsEventoLiberaProfessione.sql" />
+    <Build Include="dbo\Functions\ConverteAttributoToBoolean.sql" />
+    <Build Include="sole\Functions\OttieneEventoXml.sql" />
+    <Build Include="sole\Functions\OttieneRefertoXml.sql" />
+    <Build Include="sole\Functions\OttieneRicoveroXml.sql" />
+    <Build Include="sole\Functions\OttieneSacPazienteXml.sql" />
+    <Build Include="sole\Functions\NomeAttributoCodifica.sql" />
+    <Build Include="sole\Functions\IsEventoInviabile.sql" />
+    <Build Include="sole_da\Functions\OttieniRefertiOutputInviati.sql" />
+    <Build Include="sole_da\Functions\OttieniEventiOutputInviati.sql" />
+    <Build Include="sole\Functions\OttieniOscuramentiPerReferto.sql" />
+    <Build Include="sole\Functions\OttieniOscuramentiPerEvento.sql" />
+    <Build Include="sole_da\Stored Procedures\StatoInvioRefertoAggiorna.sql" />
+    <Build Include="sole_da\Stored Procedures\StatoInvioEventoAggiorna.sql" />
+    <Build Include="sole_da\Stored Procedures\SvuotaCodaRefertiOttieni.sql" />
+    <Build Include="sole_da\Stored Procedures\SvuotaCodaEventiOttieni.sql" />
+    <Build Include="sole\Stored Procedures\CodaRefertiAggiungi.sql" />
+    <Build Include="sole\Stored Procedures\CodaEventiAggiungi.sql" />
+    <Build Include="Security\sole_da.sql" />
+    <Build Include="Security\sole_admin.sql" />
+    <Build Include="Security\sole.sql" />
+    <Build Include="sole\Tables\CodaRefertiRimossi.sql" />
+    <Build Include="sole\Tables\CodaEventiRimossi.sql" />
+    <Build Include="dbo\Tables\LogAutoprefix.sql" />
+    <Build Include="dbo\Functions\GetEventoStatoDesc.sql" />
+    <Build Include="dbo\Stored Procedures\MntTestLeggeRiscriveReferto.sql" />
+    <Build Include="dbo\Stored Procedures\ExtLogAutoprefix.sql" />
+    <Build Include="dbo\Stored Procedures\ExtAziendeErogantiLista.sql" />
+    <Build Include="test\Tables\PazientiRicoverati.sql" />
+    <Build Include="test\Tables\Pazienti.sql" />
+    <Build Include="sole\Tables\SistemiCartelle.sql" />
+    <Build Include="dbo\Tables\_ver_1.0.0.0.sql" />
+    <Build Include="sole\Views\CodaRefertiRimossiDecompressi.sql" />
+    <Build Include="sole\Views\CodaEventiRimossiDecompressi.sql" />
+    <Build Include="test\Functions\dbo_GetRicoveroStatoCodice.sql" />
+    <Build Include="test\Functions\dbo_GetPrenotazioneStatoCodice.sql" />
+    <Build Include="dbo\Functions\PulisceNosologico.sql" />
+    <Build Include="ws3\Stored Procedures\PazientiPrenotatiByReparti.sql" />
+    <Build Include="ws3\Stored Procedures\PazientiNatiByReparti.sql" />
+    <Build Include="sole\Stored Procedures\CodaRefertiRimuoveDaInviare.sql" />
+    <Build Include="sole\Stored Procedures\CodaEventiRimuoveDaInviare.sql" />
+    <Build Include="dbo\Stored Procedures\MntLogAutoprefix.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiRicoveroConsolidaRicovero2.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiRicoveroConsolidaPrenotazione2.sql" />
+    <Build Include="dbo\Stored Procedures\BeRicoveriRiassociazioneAggiorna.sql" />
+    <Build Include="SoleWcfBt\Stored Procedures\CartelleIbrideOttieniAllegatiByNosologico.sql" />
+    <Build Include="Security\SoleWcfBt.sql" />
+    <Build Include="sole\Tables\AbilitazioniPrestazioni.sql" />
+    <Build Include="dbo\Tables\RefertiAvvertenzeCodaProcessateErrore.sql" />
+    <Build Include="dbo\Tables\RefertiAvvertenzeCodaProcessate.sql" />
+    <Build Include="dbo\Tables\RefertiAvvertenzeCoda.sql" />
+    <Build Include="dbo\Tables\RefertiAvvertenze.sql" />
+    <Build Include="sinottico\Tables\UltimiArriviPrescrizioni.sql" />
+    <Build Include="sinottico\Tables\UltimiArriviReferti.sql" />
+    <Build Include="sinottico\Tables\UltimiArriviNoteAnamnestiche.sql" />
+    <Build Include="sinottico\Tables\UltimiArriviEventi.sql" />
+    <Build Include="store\Views\RefertiPazienti.sql" />
+    <Build Include="DataAccess\Views\UltimiArriviReferti.sql" />
+    <Build Include="DataAccess\Views\UltimiArriviPrescrizioni.sql" />
+    <Build Include="DataAccess\Views\UltimiArriviNoteAnamnestiche.sql" />
+    <Build Include="DataAccess\Views\UltimiArriviEventi.sql" />
+    <Build Include="DataAccess\Views\RefertiPazienti.sql" />
+    <Build Include="dbo\Functions\NomeAttributoPersistenteVisionato.sql" />
+    <Build Include="dbo\Functions\GetCodaNoteAnamnesticheOutputOrdineInvio.sql" />
+    <Build Include="dbo\Functions\GetCodaEventiOutputOrdineInvio.sql" />
+    <Build Include="dbo\Functions\OttieniRefertoRiferimenti.sql" />
+    <Build Include="ws3\Stored Procedures\RefertoIncrementaVisionatoById.sql" />
+    <Build Include="ws2\Stored Procedures\RicoveriByReparti_Estesa.sql" />
+    <Build Include="sole\Stored Procedures\CodaRefertiControlloPrestazioni.sql" />
+    <Build Include="dbo\Stored Procedures\MntRefertiAvvertenzePurge.sql" />
+    <Build Include="dbo\Stored Procedures\MntRefertiAvvertenzeProcessa.sql" />
+    <Build Include="dbo\Stored Procedures\MntRefertiAvvertenzeCalcola.sql" />
+    <Build Include="dbo\Stored Procedures\ExtSistemiErogantiLista.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiListaAttesaDLAggiornaAttributoNumeroNosologico.sql" />
+    <Build Include="sinottico\Stored Procedures\UltimiArriviNoteAnamnesticheAggiorna.sql" />
+    <Build Include="sinottico\Stored Procedures\UltimiArriviPrescrizioniAggiorna.sql" />
+    <Build Include="sinottico\Stored Procedures\UltimiArriviEventiAggiorna.sql" />
+    <Build Include="sinottico\Stored Procedures\UltimiArriviRefertiAggiorna.sql" />
+    <Build Include="Security\sinottico.sql" />
+    <Build Include="dbo\Synonyms\SAC_Aziende.sql" />
+    <Build Include="Security\Execute_sign_organizer_da.sql" />
+    <Build Include="Security\DataAccess_Admin.sql" />
+    <Build Include="dbo\Stored Procedures\MntRefertiAvvertenzeCodaOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\ExtRefertiAvvertenzeCodaAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\ExtEventiListaAttesaCreaEventoLA.sql" />
+    <Build Include="Security\sign_organizer_da.sql" />
+    <Build Include="dbo\Stored Procedures\CodaRefertiOutputAggiungi.sql" />
+    <Build Include="dbo\Stored Procedures\RefertoAttributoAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\EventoAttributoAggiorna.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_CancellaPrescrizione.sql" />
+    <Build Include="ws3\Stored Procedures\DizionarioAziendeFSE.sql" />
+    <Build Include="ws3\Stored Procedures\TipiAccessoFSEOttieni.sql" />
+    <Build Include="ws3\Stored Procedures\TipiDocumentoFSEOttieni.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assemblies\Progel.SqlCrl.Compression.dll" />
+    <None Include="DWH_SqlSchemaCompare.scmp" />
+    <None Include="DWH_REC_2_HIS_SqlSchemaCompare.scmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Progel.SqlCrl.Compression">
+      <HintPath>Assemblies\Progel.SqlCrl.Compression.dll</HintPath>
+      <SqlAssemblyName>Progel.SqlCrl.Compression</SqlAssemblyName>
+      <IsModelAware>True</IsModelAware>
+      <GenerateSqlClrDdl>False</GenerateSqlClrDdl>
+      <SqlOwnerName>dbo</SqlOwnerName>
+      <SqlPermissionSet>SAFE</SqlPermissionSet>
+    </Reference>
+  </ItemGroup>
+</Project>

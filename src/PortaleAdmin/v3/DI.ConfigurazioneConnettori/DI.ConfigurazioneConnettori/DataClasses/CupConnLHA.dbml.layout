@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CupConnLHA">
+  <DataContextMoniker Name="/CupConnLHADataContext" />
+  <nestedChildShapes>
+    <classShape Id="214488a1-991a-4d30-ac9d-e29f4a99c61d" absoluteBounds="0.75, 0.5, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/CupConnLHADataContext/LhaAgende" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac3cba8d-33d7-449c-87cc-e420a850802d" absoluteBounds="0.76499999999999968, 0.96, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

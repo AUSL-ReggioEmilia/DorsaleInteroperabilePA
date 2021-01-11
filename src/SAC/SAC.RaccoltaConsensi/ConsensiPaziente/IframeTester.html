@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Test Iframe Consensi</title>
+	<script type="text/javascript">
+		function Naviga(txtBox) {
+			var iframe = document.getElementById("iframe1");
+			iframe.src = 'Default.aspx?Id=' + txtBox.value;
+			return true;
+		}
+		function NavigaCF(txtBox) {
+			var iframe = document.getElementById("iframe1");
+			iframe.src = 'Default.aspx?CF=' + txtBox.value;
+			return true;
+		}
+
+		function NavigaProvenienza(txtProvenienza, txtIdProvenienza) {
+			var iframe = document.getElementById("iframe1");
+			iframe.src = 'Default.aspx?Provenienza=' + txtProvenienza.value + '&IdProvenienza=' + txtIdProvenienza.value;
+			return true;
+		}
+
+	</script>
+	<style type="text/css">
+		html
+		{
+			min-height: 100%;
+			height: 100%;
+			overflow: auto;
+		}
+		body
+		{
+			font-size: 12px;
+			color: black;
+			font-family: Verdana, Arial, Helvetica;
+			background-color: white;
+		}
+		body *
+		{
+			margin: 2px;
+			padding: 2px;
+		}
+		iframe
+		{
+			height: 600px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body style="background-color: #F4F4F4;">
+	<label for="txtIdSAC">
+		Id Paziente</label>
+	<input id="txtIdSAC" maxlength="36" size="38" value="D0A8E944-E311-438F-9004-C7E05CC81748" />
+	<button onclick="Naviga(txtIdSAC);">
+		Vai</button>
+	<label for="txtCF" style="margin-left: 50px;">
+		Codice Fiscale</label>
+	<input id="txtCF" maxlength="16" size="20" value="CMPGRG58H25A586Z" />
+	<button onclick="NavigaCF(txtCF);">
+		Vai</button>
+	<p>
+		<label for="txtProvenienza" >
+			Provenienza, ID Provenienza</label>
+		<input id="txtProvenienza" maxlength="64" size="20" />	
+		<input id="txtIdProvenienza" maxlength="64" size="20" />
+		<button onclick="NavigaProvenienza(txtProvenienza, txtIdProvenienza);">
+			Vai</button>
+	</p>
+	<iframe id="iframe1" frameborder="0" scrolling="no" src=""></iframe>
+</body>
+</html>

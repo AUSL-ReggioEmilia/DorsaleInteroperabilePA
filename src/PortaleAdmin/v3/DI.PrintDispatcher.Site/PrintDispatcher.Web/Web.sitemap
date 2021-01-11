@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+
+  <!-- In questo modo si rende NON cliccabile la root del tree: url="" roles="*" -->
+  <siteMapNode url="" title="Print Dispatcher"  description="Print Dispatcher" roles="*">
+
+    <siteMapNode url="JobQueueList.aspx" title="Job di stampa" description="Elenco dei job di stampa">
+      <siteMapNode hide="true" url="JobQueueDetail.aspx" title="Dettaglio job di stampa" description="Dettaglio job di stampa" />
+    </siteMapNode>
+
+    <siteMapNode url="PcRichiedentiList.aspx" title="Pc Richiedenti"  description="Elenco dei Pc Richiedenti">
+      <siteMapNode hide="true" url="PcRichiedentiDetail.aspx" title="Dettaglio"  description="Dettaglio Pc Richiedenti">
+        <siteMapNode hide="true" url="PcRichiedentiStampantiDetail.aspx" title="Dettaglio Stampante" description="Dettaglio Stampante" />
+      </siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode url="SistemiErogantiList.aspx" title="Sistemi Eroganti" description="Elenco Sistemi Eroganti">
+      <siteMapNode hide="true" url="SistemiErogantiDetail.aspx" title="Dettaglio Sistema" description="Dettaglio Sistemi Eroganti">
+        <siteMapNode hide="true" url="SistemiErogantiModuliDetail.aspx" title="Dettaglio Modulo" description="Dettaglio Modulo" />
+      </siteMapNode>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

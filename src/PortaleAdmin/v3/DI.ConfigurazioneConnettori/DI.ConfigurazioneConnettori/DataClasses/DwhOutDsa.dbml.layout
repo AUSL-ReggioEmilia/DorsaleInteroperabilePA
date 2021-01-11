@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DwhOutDsa">
+  <DataContextMoniker Name="/DwhOutDsaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4bcf8c4d-dcc4-40bb-8d4b-bb1998ab25ad" absoluteBounds="1.5, 1, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/DwhOutDsaDataContext/FiltriRepartiRichiedenti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b34ca5de-a28c-4c5f-ae1d-fe23fd270a23" absoluteBounds="1.5150000000000006, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b0a336ee-6c70-4c97-b4eb-7cd5311c5fab" absoluteBounds="1, 2.875, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/DwhOutDsaDataContext/FiltriRepartiRichiedentiTipologie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d75a0642-b112-4128-b088-e03ddf65635d" absoluteBounds="1.0150000000000001, 3.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.25 : 2.875); (2.25 : 2.19399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DwhOutDsaDataContext/FiltriRepartiRichiedentiTipologie/FiltriRepartiRichiedentiTipologie_FiltriRepartiRichiedenti" />
+      <nodes>
+        <classShapeMoniker Id="b0a336ee-6c70-4c97-b4eb-7cd5311c5fab" />
+        <classShapeMoniker Id="4bcf8c4d-dcc4-40bb-8d4b-bb1998ab25ad" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

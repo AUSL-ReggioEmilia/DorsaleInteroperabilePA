@@ -1,0 +1,17 @@
+﻿/*SIZE*/
+$fontSize: 12px; /*= 1 rem*/
+$fontSize1: 0.8rem;
+$fontSizeTitle: 2rem;
+$fontSizeSubtitle: 0.75rem;
+$fontCardHeader: 1.35rem;
+$fontNavbarTitle: 1.15rem;
+$fontBundleCardHeader: 0.92rem;
+$fontPrintSize: 1.5rem;
+
+h3 {
+    font-size: $fontSizeTitle;
+}
+
+.navbar-user {
+    font-size: $fontNavbarTitle;
+}

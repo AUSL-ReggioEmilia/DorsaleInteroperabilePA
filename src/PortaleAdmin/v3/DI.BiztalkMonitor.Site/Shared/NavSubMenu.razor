@@ -1,0 +1,36 @@
+﻿@inherits LayoutComponentBase
+
+<div class="card-sub-menu card card-body">
+    <div class="nav nav-pills flex-column ">
+
+        <div class="nav-item">
+            <div class="nav-root">
+                Biztalk Monitor
+            </div>
+            <div class="nav nav-pills ml-3">
+                <div class="nav-item ">
+                    <NavLink class="nav-link" href="homedashboard">
+                        Home
+                    </NavLink>
+                    <NavLink class="nav-link" href="messaggiscartati">
+                        Messaggi scartati
+                    </NavLink>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@code {
+    bool collapseNavMenu = true;
+
+    string baseMenuClass = "navbar-collapse d-sm-inline-flex flex-sm-row-reverse";
+
+    string NavMenuCssClass => baseMenuClass + (collapseNavMenu ? " collapse" : "");
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

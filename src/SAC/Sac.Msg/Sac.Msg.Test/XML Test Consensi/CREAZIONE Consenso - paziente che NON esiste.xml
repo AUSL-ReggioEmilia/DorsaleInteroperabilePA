@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessaggioConsensoParameter  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<Utente>BT_LHA</Utente>
+	<DataSequenza>2018-08-01T09:30:47Z</DataSequenza>		
+	<Consenso>
+		<Id>TEST_TYSGS_01</Id>
+		<Tipo>Generico</Tipo>
+		<DataStato>2014-03-16T00:00:47Z</DataStato>
+		<Stato>true</Stato>
+		<OperatoreId>ettoreg</OperatoreId>
+		<OperatoreCognome>Garulli</OperatoreCognome>
+		<OperatoreNome>Ettore</OperatoreNome>
+		<OperatoreComputer></OperatoreComputer>
+		<PazienteProvenienza>LHA</PazienteProvenienza>
+		<PazienteIdProvenienza>XWQWQWQ</PazienteIdProvenienza>
+		<PazienteCognome>CognomeXWQWQWQ</PazienteCognome>
+		<PazienteNome>NomeXWQWQWQ</PazienteNome>
+		<PazienteCodiceFiscale>XWQWQWQ000000000</PazienteCodiceFiscale>
+		<PazienteDataNascita>2001-12-17T09:30:47Z</PazienteDataNascita>
+<!-- COMUNE NASCITA CODICE VALIDO RISPETTO ALLA DATA DI NASCITA  -->		
+	<PazienteComuneNascitaCodice>037006</PazienteComuneNascitaCodice>
+<!-- COMUNE NASCITA CODICE NON VALIDO RISPETTO ALLA DATA DI NASCITA  2001-01-01 -->				
+		<!--<PazienteComuneNascitaCodice>005043</PazienteComuneNascitaCodice>		-->
+		<PazienteNazionalitaCodice>000</PazienteNazionalitaCodice>
+		<PazienteTesseraSanitaria>010101010101</PazienteTesseraSanitaria>
+	</Consenso>
+</MessaggioConsensoParameter>

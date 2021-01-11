@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Ausl_DwhOut_DSA" Class="DwhOutDsaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=Ausl_DwhOut_DSA;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Ausl_DwhOut_DSAConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FiltriRepartiRichiedenti" Member="FiltriRepartiRichiedenti">
+    <Type Name="FiltriRepartiRichiedenti">
+      <Column Name="CodiceReparto" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tipologia" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FiltriRepartiRichiedentiTipologie_FiltriRepartiRichiedenti" Member="FiltriRepartiRichiedentiTipologie" ThisKey="Tipologia" OtherKey="Tipologia" Type="FiltriRepartiRichiedentiTipologie" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.FiltriRepartiRichiedentiTipologie" Member="FiltriRepartiRichiedentiTipologie">
+    <Type Name="FiltriRepartiRichiedentiTipologie">
+      <Column Name="Tipologia" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FiltriRepartiRichiedentiTipologie_FiltriRepartiRichiedenti" Member="FiltriRepartiRichiedenti" ThisKey="Tipologia" OtherKey="Tipologia" Type="FiltriRepartiRichiedenti" Cardinality="One" />
+    </Type>
+  </Table>
+</Database>

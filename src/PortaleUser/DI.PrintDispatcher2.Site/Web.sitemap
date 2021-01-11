@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode url="Default.aspx" title="Home"  description="Home">
+    <!--Ristampa etichette-->
+    <siteMapNode url="Dispatcher/StampeLista.aspx" title="Code di stampa"  description="Code di stampa" >
+    </siteMapNode>
+  </siteMapNode>  
+</siteMap>

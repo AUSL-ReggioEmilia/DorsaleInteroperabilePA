@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.75" name="RollbackRichiestaDC">
+  <DataContextMoniker Name="/RollbackRichiestaDCDataContext" />
+  <nestedChildShapes>
+    <classShape Id="befda6e0-2c4b-43b8-8810-dc9c5b71fcaa" absoluteBounds="0.625, 0.5, 2, 8.8860498046875">
+      <DataClassMoniker Name="/RollbackRichiestaDCDataContext/OrdiniTestate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b707c6ae-4221-4f42-a653-e458b1249abb" absoluteBounds="0.63999999999999968, 0.96, 1.9700000000000002, 8.3260498046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a2628d4-4fad-4542-83b3-3f65d7a5606f" absoluteBounds="3.875, 0.875, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/RollbackRichiestaDCDataContext/OrdiniTestateDatiAggiuntivi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2529bc22-3ac6-4e02-a871-cbda19809611" absoluteBounds="3.89, 1.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 2.81810628255208); (3.875 : 2.81810628255208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RollbackRichiestaDCDataContext/OrdiniTestate/OrdiniTestate_OrdiniTestateDatiAggiuntivi" />
+      <nodes>
+        <classShapeMoniker Id="befda6e0-2c4b-43b8-8810-dc9c5b71fcaa" />
+        <classShapeMoniker Id="5a2628d4-4fad-4542-83b3-3f65d7a5606f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="98d8db0a-42e7-4a6b-b489-16cb927fc665" absoluteBounds="3.75, 5.5, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/RollbackRichiestaDCDataContext/OrdiniRigheRichieste" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c120c9ac-daf5-4cea-b1e4-ae53f8111d1d" absoluteBounds="3.765, 5.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 7.44302490234375); (3.75 : 7.44302490234375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RollbackRichiestaDCDataContext/OrdiniTestate/OrdiniTestate_OrdiniRigheRichieste" />
+      <nodes>
+        <classShapeMoniker Id="befda6e0-2c4b-43b8-8810-dc9c5b71fcaa" />
+        <classShapeMoniker Id="98d8db0a-42e7-4a6b-b489-16cb927fc665" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="59e273b3-0d71-41ff-baf8-d5a2f7cb6f88" absoluteBounds="6.625, 6.625, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/RollbackRichiestaDCDataContext/OrdiniRigheRichiesteDatiAggiuntivi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d64ae9a0-3211-4874-85e9-6f8d14433426" absoluteBounds="6.64, 7.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 8.10175699869792); (6.625 : 8.10175699869792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RollbackRichiestaDCDataContext/OrdiniRigheRichieste/OrdiniRigheRichieste_OrdiniRigheRichiesteDatiAggiuntivi" />
+      <nodes>
+        <classShapeMoniker Id="98d8db0a-42e7-4a6b-b489-16cb927fc665" />
+        <classShapeMoniker Id="59e273b3-0d71-41ff-baf8-d5a2f7cb6f88" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

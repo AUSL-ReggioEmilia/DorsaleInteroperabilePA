@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessaggioConsensoParameter  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<Utente>BT_LHA</Utente>
+	<DataSequenza>2018-08-01T09:30:47Z</DataSequenza>		
+	<Consenso>
+		<Id>TEST_TYSGS_KK</Id>
+		<Tipo>Generico</Tipo>
+		<DataStato>2014-03-16T00:00:47Z</DataStato>
+		<Stato>true</Stato>
+		<PazienteProvenienza>LHA</PazienteProvenienza>
+		<PazienteIdProvenienza>XWQWQWQ_KK</PazienteIdProvenienza>
+		<PazienteCognome>Cognome_KK</PazienteCognome>		
+		<PazienteNome>Nome_KK</PazienteNome>				
+		<PazienteCodiceFiscale>CodFisc0000000KK</PazienteCodiceFiscale>
+	</Consenso>
+</MessaggioConsensoParameter>

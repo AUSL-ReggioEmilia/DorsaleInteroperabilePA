@@ -1,0 +1,11 @@
+﻿
+
+
+***********************************************************************************************
+NEXT
+***********************************************************************************************
+
+CREATE TABLE dbo.DatiUtente
+CREATE PROC dbo.[DatiUtenteOttieniValore]
+CREATE PROC dbo.[DatiUtenteSalvaValore]
+

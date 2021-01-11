@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://progel.org/ws/asmnRe/PrintDispatcher/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://progel.org/ws/asmnRe/PrintDispatcher/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://progel.org/ws/asmnRe/PrintDispatcher/1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="StampeEtichetteByIdOrderEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdOrderEntry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteByIdOrderEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StampeEtichetteByIdOrderEntryResult" type="tns:ArrayOfStampaEtichette" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStampaEtichette">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StampaEtichette" nillable="true" type="tns:StampaEtichette" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StampaEtichette">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdOrderEntry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Periferica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AziendaRichiedente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SistemaRichiedente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitaOperativaCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitaOperativaDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPrinterManager" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServerDiStampa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Stampante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PazienteDataNascita" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteLuogoNascita" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="StampeEtichetteByPeriferica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Periferica" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataDal" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataAl" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteByPerifericaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StampeEtichetteByPerifericaResult" type="tns:ArrayOfStampaEtichette" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteByPaziente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataNascita" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LuogoNascita" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataDal" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataAl" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteByPazienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StampeEtichetteByPazienteResult" type="tns:ArrayOfStampaEtichette" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteRePrint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ts" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteRePrintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StampeEtichetteRePrintResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteByIdOrderEntry2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdOrderEntry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteByIdOrderEntry2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StampeEtichetteByIdOrderEntry2Result" type="tns:ArrayOfStampaEtichette2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStampaEtichette2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StampaEtichette2" nillable="true" type="tns:StampaEtichette2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StampaEtichette2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdOrderEntry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Periferica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AziendaRichiedente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SistemaRichiedente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitaOperativaCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitaOperativaDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPrinterManager" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServerDiStampa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Stampante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteCognome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteNome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PazienteDataNascita" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteCodiceFiscale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PazienteLuogoNascita" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrintDispatcherJob" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="StampeEtichetteByPeriferica2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Periferica" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataDal" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataAl" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteByPeriferica2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StampeEtichetteByPeriferica2Result" type="tns:ArrayOfStampaEtichette2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteByPaziente2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataNascita" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LuogoNascita" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataDal" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataAl" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteByPaziente2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StampeEtichetteByPaziente2Result" type="tns:ArrayOfStampaEtichette2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteOttieniDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteOttieniDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StampeEtichetteOttieniDocumentoResult" type="tns:DocumentoEtichette" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocumentoEtichette">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Documento" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MimeType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="StampeEtichettePrintOnComputer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeComputer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichettePrintOnComputerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StampeEtichettePrintOnComputerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichettePrintOnComputer2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeComputer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountUtente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichettePrintOnComputer2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StampeEtichettePrintOnComputer2Result" type="tns:Risultato" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Risultato">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="StampeEtichetteRePrint2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountUtente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StampeEtichetteRePrint2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StampeEtichetteRePrint2Result" type="tns:Risultato" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="StampeEtichetteByIdOrderEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByIdOrderEntry" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByIdOrderEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByIdOrderEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByPerifericaSoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByPeriferica" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByPerifericaSoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByPerifericaResponse" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByPazienteSoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByPaziente" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByPazienteSoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByPazienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteRePrintSoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteRePrint" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteRePrintSoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteRePrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByIdOrderEntry2SoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByIdOrderEntry2" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByIdOrderEntry2SoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByIdOrderEntry2Response" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByPeriferica2SoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByPeriferica2" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByPeriferica2SoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByPeriferica2Response" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByPaziente2SoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByPaziente2" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteByPaziente2SoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteByPaziente2Response" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteOttieniDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteOttieniDocumento" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteOttieniDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteOttieniDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichettePrintOnComputerSoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichettePrintOnComputer" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichettePrintOnComputerSoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichettePrintOnComputerResponse" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichettePrintOnComputer2SoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichettePrintOnComputer2" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichettePrintOnComputer2SoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichettePrintOnComputer2Response" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteRePrint2SoapIn">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteRePrint2" />
+  </wsdl:message>
+  <wsdl:message name="StampeEtichetteRePrint2SoapOut">
+    <wsdl:part name="parameters" element="tns:StampeEtichetteRePrint2Response" />
+  </wsdl:message>
+  <wsdl:portType name="Ver1Soap">
+    <wsdl:operation name="StampeEtichetteByIdOrderEntry">
+      <wsdl:input message="tns:StampeEtichetteByIdOrderEntrySoapIn" />
+      <wsdl:output message="tns:StampeEtichetteByIdOrderEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPeriferica">
+      <wsdl:input message="tns:StampeEtichetteByPerifericaSoapIn" />
+      <wsdl:output message="tns:StampeEtichetteByPerifericaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPaziente">
+      <wsdl:input message="tns:StampeEtichetteByPazienteSoapIn" />
+      <wsdl:output message="tns:StampeEtichetteByPazienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteRePrint">
+      <wsdl:input message="tns:StampeEtichetteRePrintSoapIn" />
+      <wsdl:output message="tns:StampeEtichetteRePrintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByIdOrderEntry2">
+      <wsdl:input message="tns:StampeEtichetteByIdOrderEntry2SoapIn" />
+      <wsdl:output message="tns:StampeEtichetteByIdOrderEntry2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPeriferica2">
+      <wsdl:input message="tns:StampeEtichetteByPeriferica2SoapIn" />
+      <wsdl:output message="tns:StampeEtichetteByPeriferica2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPaziente2">
+      <wsdl:input message="tns:StampeEtichetteByPaziente2SoapIn" />
+      <wsdl:output message="tns:StampeEtichetteByPaziente2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteOttieniDocumento">
+      <wsdl:input message="tns:StampeEtichetteOttieniDocumentoSoapIn" />
+      <wsdl:output message="tns:StampeEtichetteOttieniDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichettePrintOnComputer">
+      <wsdl:input message="tns:StampeEtichettePrintOnComputerSoapIn" />
+      <wsdl:output message="tns:StampeEtichettePrintOnComputerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichettePrintOnComputer2">
+      <wsdl:input message="tns:StampeEtichettePrintOnComputer2SoapIn" />
+      <wsdl:output message="tns:StampeEtichettePrintOnComputer2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteRePrint2">
+      <wsdl:input message="tns:StampeEtichetteRePrint2SoapIn" />
+      <wsdl:output message="tns:StampeEtichetteRePrint2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Ver1Soap" type="tns:Ver1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StampeEtichetteByIdOrderEntry">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByIdOrderEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPeriferica">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByPeriferica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPaziente">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByPaziente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteRePrint">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteRePrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByIdOrderEntry2">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByIdOrderEntry2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPeriferica2">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByPeriferica2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPaziente2">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByPaziente2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteOttieniDocumento">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteOttieniDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichettePrintOnComputer">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichettePrintOnComputer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichettePrintOnComputer2">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichettePrintOnComputer2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteRePrint2">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteRePrint2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Ver1Soap12" type="tns:Ver1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StampeEtichetteByIdOrderEntry">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByIdOrderEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPeriferica">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByPeriferica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPaziente">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByPaziente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteRePrint">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteRePrint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByIdOrderEntry2">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByIdOrderEntry2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPeriferica2">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByPeriferica2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteByPaziente2">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteByPaziente2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteOttieniDocumento">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteOttieniDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichettePrintOnComputer">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichettePrintOnComputer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichettePrintOnComputer2">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichettePrintOnComputer2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StampeEtichetteRePrint2">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/PrintDispatcher/1/StampeEtichetteRePrint2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Ver1">
+    <wsdl:port name="Ver1Soap" binding="tns:Ver1Soap">
+      <soap:address location="http://dagobah2/ASMN/PrintDispatcher/Ws/Ver1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Ver1Soap12" binding="tns:Ver1Soap12">
+      <soap12:address location="http://dagobah2/ASMN/PrintDispatcher/Ws/Ver1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

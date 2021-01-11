@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.progel.it/WCF/SAC/Service/3.0" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/SAC/Service/3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/SAC/Types/3.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?xsd=xsd3" namespace="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" />
+  <xs:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Pazienti.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="ProvenienzaOttieni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q1:TokenType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvenienzaOttieniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="ProvenienzaOttieniResult" nillable="true" type="q2:ProvenienzaReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccesso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodiceRuolo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="CreaTokenAccessoResult" nillable="true" type="q3:TokenReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoDelega">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodiceRuolo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UtenteDelega" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaTokenAccessoDelegaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="CreaTokenAccessoDelegaResult" nillable="true" type="q4:TokenReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCerca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q5:TokenType" />
+        <xs:element minOccurs="0" name="MaxRecord" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="LuogoNascita" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TesseraSanitaria" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCercaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazientiCercaResult" nillable="true" type="q6:PazientiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteOttieniPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q7:TokenType" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Id" type="q8:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteOttieniPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteOttieniPerIdResult" nillable="true" type="q9:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteAggiungi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q10:TokenType" />
+        <xs:element xmlns:q11="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="Paziente" nillable="true" type="q11:PazienteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteAggiungiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteAggiungiResult" nillable="true" type="q12:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteSemplificatoModificaPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q13:TokenType" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Id" type="q14:guid" />
+        <xs:element minOccurs="0" name="Provenienza" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="Paziente" nillable="true" type="q15:PazienteSemplificatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteSemplificatoModificaPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteSemplificatoModificaPerIdResult" nillable="true" type="q16:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteModificaPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q17:TokenType" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Id" type="q18:guid" />
+        <xs:element minOccurs="0" name="Provenienza" nillable="true" type="xs:string" />
+        <xs:element xmlns:q19="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="Paziente" nillable="true" type="q19:PazienteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteModificaPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteModificaPerIdResult" nillable="true" type="q20:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteOttieniPerProvenienzaIdProvenienza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q21:TokenType" />
+        <xs:element minOccurs="0" name="Provenienza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdProvenienza" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteOttieniPerProvenienzaIdProvenienzaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteOttieniPerProvenienzaIdProvenienzaResult" nillable="true" type="q22:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteSemplificatoAggiungi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q23:TokenType" />
+        <xs:element xmlns:q24="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="Paziente" nillable="true" type="q24:PazienteSemplificatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteSemplificatoAggiungiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteSemplificatoAggiungiResult" nillable="true" type="q25:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCercaPerMedicoBase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q26:TokenType" />
+        <xs:element minOccurs="0" name="MaxRecord" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Ordinamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MedicoDiBaseCodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="LuogoNascita" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TesseraSanitaria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AnnoNascita" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="ComuneResidenzaNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MedicoDiBaseCognome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MedicoDiBaseNome" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazientiCercaPerMedicoBaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazientiCercaPerMedicoBaseResult" nillable="true" type="q27:PazientiReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteSemplificatoOttieniPerProvenienzaIdProvenienzaOAggiunge">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q28:TokenType" />
+        <xs:element minOccurs="0" name="Provenienza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdProvenienza" nillable="true" type="xs:string" />
+        <xs:element xmlns:q29="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="Paziente" nillable="true" type="q29:PazienteSemplificatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteSemplificatoOttieniPerProvenienzaIdProvenienzaOAggiungeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteSemplificatoOttieniPerProvenienzaIdProvenienzaOAggiungeResult" nillable="true" type="q30:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteSemplificatoModificaPerProvenienzaIdProvenienza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q31:TokenType" />
+        <xs:element minOccurs="0" name="Provenienza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdProvenienza" nillable="true" type="xs:string" />
+        <xs:element xmlns:q32="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="Paziente" nillable="true" type="q32:PazienteSemplificatoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteSemplificatoModificaPerProvenienzaIdProvenienzaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteSemplificatoModificaPerProvenienzaIdProvenienzaResult" nillable="true" type="q33:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteModificaPerProvenienzaIdProvenienza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q34:TokenType" />
+        <xs:element minOccurs="0" name="Provenienza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdProvenienza" nillable="true" type="xs:string" />
+        <xs:element xmlns:q35="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="Paziente" nillable="true" type="q35:PazienteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteModificaPerProvenienzaIdProvenienzaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteModificaPerProvenienzaIdProvenienzaResult" nillable="true" type="q36:PazienteReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteRimuoviPerProvenienzaIdProvenienza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q37:TokenType" />
+        <xs:element minOccurs="0" name="Provenienza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdProvenienza" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteRimuoviPerProvenienzaIdProvenienzaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteRimuoviPerProvenienzaIdProvenienzaResult" nillable="true" type="q38:ErroreReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteRimuoviPerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q39:TokenType" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Id" type="q40:guid" />
+        <xs:element minOccurs="0" name="Provenienza" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PazienteRimuoviPerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="PazienteRimuoviPerIdResult" nillable="true" type="q41:ErroreReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatComuniCercaPerNome">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q42:TokenType" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Obsoleti" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatComuniCercaPerNomeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="IstatComuniCercaPerNomeResult" nillable="true" type="q43:IstatComuniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatComuniCercaPerProvincia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q44:TokenType" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Obsoleti" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatComuniCercaPerProvinciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="IstatComuniCercaPerProvinciaResult" nillable="true" type="q45:IstatComuniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatComuniCercaPerRegione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q46:TokenType" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Obsoleti" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatComuniCercaPerRegioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="IstatComuniCercaPerRegioneResult" nillable="true" type="q47:IstatComuniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatComuniCercaEsteri">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q48:TokenType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatComuniCercaEsteriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="IstatComuniCercaEsteriResult" nillable="true" type="q49:IstatComuniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatProvinceCercaPerNome">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q50:TokenType" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodiceRegione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatProvinceCercaPerNomeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="IstatProvinceCercaPerNomeResult" nillable="true" type="q51:IstatProvinceReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatProvinceCercaPerRegione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q52:TokenType" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatProvinceCercaPerRegioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="IstatProvinceCercaPerRegioneResult" nillable="true" type="q53:IstatProvinceReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatRegioniCercaPerNome">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q54:TokenType" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatRegioniCercaPerNomeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="IstatRegioniCercaPerNomeResult" nillable="true" type="q55:IstatRegioniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatNazioniCercaPerNome">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q56:TokenType" />
+        <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Obsoleti" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IstatNazioniCercaPerNomeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="IstatNazioniCercaPerNomeResult" nillable="true" type="q57:IstatNazioniReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsensiAggiungi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q58:TokenType" />
+        <xs:element xmlns:q59="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="Consenso" nillable="true" type="q59:ConsensoType" />
+        <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPazienteSac" type="q60:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsensiAggiungiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="ConsensiAggiungiResult" nillable="true" type="q61:ConsensoReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsensiEliminaPerIdPaziente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q62:TokenType" />
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPaziente" type="q63:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsensiEliminaPerIdPazienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="ConsensiEliminaPerIdPazienteResult" nillable="true" type="q64:ErroreReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsensiRelazioniConMinoreCerca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q65:TokenType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsensiRelazioniConMinoreCercaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="ConsensiRelazioniConMinoreCercaResult" nillable="true" type="q66:ConsensiRelazioniConMinoreReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EsenzioneAggiungi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q67:TokenType" />
+        <xs:element xmlns:q68="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="Esenzione" nillable="true" type="q68:EsenzioneType" />
+        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdPaziente" type="q69:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EsenzioneAggiungiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="EsenzioneAggiungiResult" nillable="true" type="q70:EsenzioneReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EsenzioneEliminaPerIdEsenzione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.progel.it/WCF/SAC/Types/3.0" minOccurs="0" name="Token" nillable="true" type="q71:TokenType" />
+        <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdEsenzione" type="q72:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EsenzioneEliminaPerIdEsenzioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.progel.it/WCF/SAC/PazientiTypes/3.0" minOccurs="0" name="EsenzioneEliminaPerIdEsenzioneResult" nillable="true" type="q73:ErroreReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

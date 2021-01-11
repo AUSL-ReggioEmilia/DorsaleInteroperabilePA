@@ -1,0 +1,78 @@
+﻿
+<div class="modal @ModalClass" tabindex="-1" role="dialog" style="display: @ModalDisplay" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold">@ModalTitle</h5>
+                <button type="button" class="close opacity-unset" @onclick="Close" aria-label="Close">
+                    <span class="fas fa-times fa-lg"></span>
+                </button>
+            </div>
+            <div class="modal-body modal-invite-dialog">
+                @ModalBody
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-100 btn-primary" @onclick="OnConfirmClick">Conferma</button>
+                <button type="button" class="btn btn-100 btn-secondary" @onclick="Close">Annulla</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ShowBackdrop)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+
+@code {
+
+    [Parameter] public string ModalTitle { get; set; }
+    [Parameter] public string ModalBody { get; set; }
+    [Parameter] public EventCallback<OkClickEventArgs> OnOkClick { get; set; }
+
+
+    //Modal
+    public string ModalDisplay = "none;";
+    public string ModalClass = "";
+    public bool ShowBackdrop = false;
+
+    private string _parameter;
+
+    // Event Args utilizzato nell'evento OkClick
+    public class OkClickEventArgs : EventArgs
+    {
+        private string _param;
+
+        public OkClickEventArgs(string param)
+        {
+            _param = param;
+        }
+
+        public string GetParameter { get { return _param; } }
+    }
+
+    public void Open(string parameter = null)
+    {
+        _parameter = parameter;
+        ModalDisplay = "block;";
+        ModalClass = "show";
+        ShowBackdrop = true;
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        ModalDisplay = "none";
+        ModalClass = "";
+        ShowBackdrop = false;
+        StateHasChanged();
+    }
+
+    public async void OnConfirmClick()
+    {
+        OkClickEventArgs arg = new OkClickEventArgs(_parameter);
+        await OnOkClick.InvokeAsync(arg);
+        Close();
+    }
+}

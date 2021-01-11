@@ -1,0 +1,297 @@
+﻿/*************************************************************************************
+Personalizzazioni dell'applicazione
+*************************************************************************************/
+
+.WarningMsg {
+    background-color: #f7f7f7;
+    border-right: #000080 1px solid;
+    border-bottom: #000080 1px solid;
+    border-left: #000080 1px solid;
+    border-top: #000080 1px solid;
+    color: Orange;
+}
+
+
+/*  
+paragrafo di titolo  
+*/
+.Title {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    font-family: verdana,helvetica,arial,sans-serif;
+}
+/* NON USATA
+.DetailTableListaReferti	
+{
+	BACKGROUND: #f7f7f7; 
+	BORDER-RIGHT: #000080 1px solid; 
+	BORDER-BOTTOM: #000080 1px solid; 
+	BORDER-LEFT: #000080 1px solid; 
+	BORDER-TOP: #000080 1px solid;
+	margin-top: 8px;
+	width: 100%;
+}*/
+.DetailTableReferto {
+    font-family: Verdana, Helvetica, sans-serif; /* aggiunto rispetto a style.css presente nel progetto Visualizzazioni, perchè lo style font-family venova preso da StyleReportData.CSS */
+    font-size: 11px;
+    background: #f7f7f7;
+    border-right: #000080 1px solid;
+    border-bottom: #000080 1px solid;
+    border-left: #000080 1px solid;
+    border-top: #000080 1px solid;
+    margin-top: 8px;
+}
+
+.DetailTitle {
+    font-family: Verdana, Helvetica, sans-serif; /* aggiunto rispetto a style.css presente nel progetto Visualizzazioni, perchè lo style font-family venova preso da StyleReportData.CSS */
+    color: #000080;
+    font-weight: bold;
+    font-size: 11px;
+    border-left: 0px none;
+    border-top: 0px none;
+    border-right: 0px none;
+    border-bottom: 1px solid #000080;
+    background-color: #CFCFCF;
+    filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF',startColorstr='#CFCFCF', gradientType='0' );
+    padding: 2px !important;
+    /* 
+    CON QUESTA le righe di .table da BootstrapMIn.css vengono cancellate ma non è sufficiente
+    border-collapse: inherit !important;
+    border-spacing: unset !important;
+
+   */
+}
+
+.DetailTitle span {
+    font-family: Verdana, Arial, Helvetica
+}
+
+
+/*------------------------------------------------------------------ 
+		Griglia di dati (Reportistica)
+------------------------------------------------------------------*/
+.Grid {
+    color: black;
+    font-family: verdana,helvetica,arial,sans-serif;
+    font-size: 10px;
+    border-right: 1px;
+    border-top: 1px;
+    border-left: 1px;
+    border-bottom: 1px;
+}
+
+.GridHeader {
+    font-family: verdana,helvetica,arial,sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: left;
+}
+
+    /*
+	NON METTERE SPAZI all'interno di questo tipo di istruzioni
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF' , startColorstr='#CFCFCF' , gradientType='0');
+*/
+    .GridHeader TH {
+        text-align: left;
+        color: #000080;
+        font-family: verdana,helvetica,arial,sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 2px;
+        padding-right: 2px;
+        filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CFCFCF', gradientType='0');
+    }
+
+    .GridHeader a, .GridHeader a:link, .GridHeader a:visited, .GridHeader a:active {
+        color: #000080;
+        font-family: verdana,helvetica,arial,sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+        .GridHeader a:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+.GridItem, .GridItem TD A {
+    color: black;
+    font-family: verdana,helvetica,arial,sans-serif;
+    font-size: 10px;
+}
+
+    .GridItem a:link, .GridItem a:visited, .GridItem a:active {
+        color: black;
+    }
+
+.GridItem1 a:hover {
+    color: #CC0000;
+}
+
+.GridAlternatingItem, .GridAlternatingItem TD A {
+    color: black;
+    font-family: verdana,helvetica,arial,sans-serif;
+    font-size: 10px;
+    background-color: #EFEFEF;
+}
+
+    .GridAlternatingItem a:link, .GridAlternatingItem a:visited, .GridAlternatingItem a:active {
+        color: black;
+    }
+
+    .GridAlternatingItem a:hover {
+        color: #F56D45;
+    }
+
+.GridPager {
+    font-weight: bold;
+    color: Black;
+    font-family: verdana,helvetica,arial,sans-serif;
+    font-size: 11px;
+    background-color: #CFCFCF;
+}
+
+    .GridPager a {
+        color: black;
+        font-family: verdana,helvetica,arial,sans-serif;
+        background-color: #9ac0f1;
+    }
+
+        .GridPager a:visited {
+            color: black;
+            font-family: verdana,helvetica,arial,sans-serif;
+            background-color: #CFCFCF;
+        }
+
+        .GridPager a:active {
+            font-weight: bold;
+            color: black;
+            font-family: verdana,helvetica,arial,sans-serif;
+            background-color: #CFCFCF;
+        }
+
+        .GridPager a:link {
+            color: black;
+            font-family: verdana,helvetica,arial,sans-serif;
+            background-color: #CFCFCF;
+        }
+
+        .GridPager a:hover {
+            color: black;
+        }
+
+.GridSelected {
+    background-color: #FFCC00;
+}
+
+.GridGroupingHeader {
+    color: black;
+    font-family: verdana,helvetica,arial,sans-serif;
+    font-size: 10px;
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+
+/*------------------------------------------------------------------ 
+		Fine Griglia di dati (Reportistica)
+------------------------------------------------------------------*/
+
+
+/*	
+	AnatomiaPatologica3
+*/
+.Container {
+    BORDER-TOP: #000080 1px solid;
+    BORDER-RIGHT: #000080 1px solid;
+    BORDER-BOTTOM: #000080 1px solid;
+    BORDER-LEFT: #000080 1px solid;
+    padding: 4px !important;
+}
+/*	
+	Fine AnatomiaPatologica3
+*/
+
+
+
+
+
+/* report verticali: intestazioni da ReportingProgel usate anche nella visualizzazione report */
+.DetailHeader, .DetailHeader a, .DetailHeader a:link, .DetailHeader a:visited, .DetailHeader a:active {
+    color: #000080;
+    font-family: verdana,helvetica,arial,sans-serif;
+    font-size: 11px;
+    background-color: #EFEFEF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2px !important;
+}
+
+    .DetailHeader a:hover {
+        color: Red;
+        text-decoration: none;
+    }
+
+.DetailItem, .DetailItem TD A {
+    color: black;
+    font-family: verdana,helvetica,arial,sans-serif;
+    font-size: 11px;
+    padding: 2px !important;
+}
+
+    .DetailItem a:link, .DetailItem a:visited, .DetailItem a:active {
+        color: black;
+    }
+
+    .DetailItem a:hover {
+        color: Red;
+    }
+
+/* Usata in Sinfo */
+.ViewContent {
+    border-right: #000080 1px solid;
+    border-left: #000080 1px solid;
+    border-bottom: #000080 1px solid;
+    border-top: #000080 4px solid;
+    background-color: white;
+    padding: 5px;
+}
+
+
+/*
+.DetailTable {
+    border-spacing: 1px !important;
+    border-collapse: separate !important;
+}
+*/
+
+
+.divContainerTrasformation table {
+    border-spacing: 1px !important;
+    border-collapse: separate !important;
+    line-height: normal;
+}
+
+
+.DetailTableReferto {
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    BACKGROUND: #f7f7f7;
+    BORDER-RIGHT: #000080 1px solid;
+    BORDER-BOTTOM: #000080 1px solid;
+    BORDER-LEFT: #000080 1px solid;
+    BORDER-TOP: #000080 1px solid;
+    margin-top: 8px;
+}

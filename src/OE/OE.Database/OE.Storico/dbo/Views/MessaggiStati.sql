@@ -1,0 +1,18 @@
+﻿CREATE VIEW [dbo].[MessaggiStati]
+AS 
+SELECT [ID]
+      ,[DataInserimento]
+      ,[DataModifica]
+      ,[IDTicketInserimento]
+      ,[IDTicketModifica]
+      ,[IDOrdineErogatoTestata]
+      ,[IDSistemaRichiedente]
+      ,[IDRichiestaRichiedente]
+      ,CASE WHEN StatoCompressione = 2 THEN CAST(dbo.decompress([MessaggioXmlCompresso]) AS XML)
+			ELSE [Messaggio] END AS [Messaggio]
+      ,[Stato]
+      ,[Fault]
+      ,[StatoOrderEntry]
+      ,[TipoStato]
+      ,[DettaglioErrore]
+  FROM [dbo].[compress_MessaggiStati]

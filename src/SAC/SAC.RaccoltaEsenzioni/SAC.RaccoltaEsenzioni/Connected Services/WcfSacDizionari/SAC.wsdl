@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.progel.it/WCF/SAC/Service/3.0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.progel.it/WCF/SAC/Service/3.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IDizionari_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.progel.it/WCF/SAC/Service/3.0/Imports">
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd0" namespace="http://schemas.progel.it/WCF/SAC/Service/3.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/SAC/Types/3.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd3" namespace="http://schemas.progel.it/WCF/SAC/DizionariTypes/3.0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDizionari_DizionariEsenzioniCerca_InputMessage">
+    <wsdl:part name="parameters" element="tns:DizionariEsenzioniCerca" />
+  </wsdl:message>
+  <wsdl:message name="IDizionari_DizionariEsenzioniCerca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DizionariEsenzioniCercaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDizionari">
+    <wsdl:operation name="DizionariEsenzioniCerca">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IDizionari/DizionariEsenzioniCerca" message="tns:IDizionari_DizionariEsenzioniCerca_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/SAC/Service/3.0/IDizionari/DizionariEsenzioniCercaResponse" message="tns:IDizionari_DizionariEsenzioniCerca_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDizionari" type="tns:IDizionari">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IDizionari_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DizionariEsenzioniCerca">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/SAC/Service/3.0/IDizionari/DizionariEsenzioniCerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

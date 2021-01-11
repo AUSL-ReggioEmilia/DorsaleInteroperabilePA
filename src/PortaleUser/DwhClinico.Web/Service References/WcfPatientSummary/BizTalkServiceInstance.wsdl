@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Sole.DwhClinico.PatientSummary" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BizTalkServiceInstance" targetNamespace="http://Sole.DwhClinico.PatientSummary" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <CreationInfo Created="2015-01-19 15:03:04Z" />
+  </wsdl:documentation>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITwoWayAsync_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Sole.DwhClinico.PatientSummary/Imports">
+      <xsd:import schemaLocation="https://marcod-bt09.progel.org:443/Sole.DwhClinico.PatientSummary/SOLE.Wcf.BtDataAccess.PatientSummary.svc?xsd=xsd2" namespace="http://Sole.DwhClinico.PatientSummary.RequestData" />
+      <xsd:import schemaLocation="https://marcod-bt09.progel.org:443/Sole.DwhClinico.PatientSummary/SOLE.Wcf.BtDataAccess.PatientSummary.svc?xsd=xsd3" namespace="http://Sole.DwhClinico.PatientSummary.Risposta" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SOLE.Wcf.BtDataAccess.PatientSummary_OttieniPaS_InputMessage">
+    <wsdl:part xmlns:q1="http://Sole.DwhClinico.PatientSummary.RequestData" name="part" element="q1:Richiesta" />
+  </wsdl:message>
+  <wsdl:message name="SOLE.Wcf.BtDataAccess.PatientSummary_OttieniPaS_OutputMessage">
+    <wsdl:part xmlns:q2="http://Sole.DwhClinico.PatientSummary.Risposta" name="part" element="q2:Risposta" />
+  </wsdl:message>
+  <wsdl:portType name="SOLE.Wcf.BtDataAccess.PatientSummary">
+    <wsdl:documentation>service "Sole.DwhClinico.PatientSummary.Recupero" port "PortRcv_RichiestaPatientSummary"</wsdl:documentation>
+    <wsdl:operation name="OttieniPaS">
+      <wsdl:documentation>operation "OttieniPaS"</wsdl:documentation>
+      <wsdl:input message="tns:SOLE.Wcf.BtDataAccess.PatientSummary_OttieniPaS_InputMessage" />
+      <wsdl:output message="tns:SOLE.Wcf.BtDataAccess.PatientSummary_OttieniPaS_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ITwoWayAsync" type="tns:SOLE.Wcf.BtDataAccess.PatientSummary">
+    <wsp:PolicyReference URI="#WSHttpBinding_ITwoWayAsync_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OttieniPaS">
+      <wsdl:documentation>operation "OttieniPaS"</wsdl:documentation>
+      <soap12:operation soapAction="OttieniPaS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BizTalkServiceInstance">
+    <wsdl:port name="WSHttpBinding_ITwoWayAsync" binding="tns:WSHttpBinding_ITwoWayAsync">
+      <soap12:address location="https://marcod-bt09.progel.org/Sole.DwhClinico.PatientSummary/SOLE.Wcf.BtDataAccess.PatientSummary.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://marcod-bt09.progel.org/Sole.DwhClinico.PatientSummary/SOLE.Wcf.BtDataAccess.PatientSummary.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>marcod@progel.org</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

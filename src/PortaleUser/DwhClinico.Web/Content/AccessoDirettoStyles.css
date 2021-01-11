@@ -1,0 +1,4 @@
+﻿body{
+    overflow-y: scroll;
+    -ms-overflow-style: scrollbar;
+}

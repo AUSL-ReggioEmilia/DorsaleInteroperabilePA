@@ -1,0 +1,666 @@
+﻿BODY
+{
+	font-size: 11px;
+	margin: 0px;
+	color: #3E3E3E;
+	background-color: white;
+	font-family: Verdana, Arial, Helvetica;
+	border: 0px;
+}
+TABLE
+{
+	font-size: 11px;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica;
+}
+H1
+{
+	color: #4682B4;
+	font-family: Verdana, Arial, Helvetica;
+}
+H2
+{
+	color: #4682B4;
+	font-family: Verdana, Arial, Helvetica;
+}
+H3
+{
+	text-transform: uppercase;
+	color: #4682B4;
+	font-family: Verdana, Arial, Helvetica;
+}
+A
+{
+	font-size: 11px;
+	color: #4682B4;
+	font-family: Verdana, Arial, Helvetica;
+	text-decoration: none;
+}
+
+A:hover
+{
+	text-decoration: underline;
+}
+HR
+{
+	border-right: black solid;
+	border-top: black solid;
+	border-left: black solid;
+	border-bottom: black solid;
+}
+DIV
+{
+	font-family: Verdana, Arial, Helvetica;
+}
+SPAN
+{
+	font-family: Verdana, Arial, Helvetica;
+}
+
+input
+{
+  	COLOR: black;
+	FONT-SIZE: 8pt;
+	FONT-FAMILY:  Verdana, Helvetica, sans-serif;
+}
+
+input[type=submit], input[type=button]
+{
+	COLOR: black;
+	FONT-FAMILY:  Verdana, Helvetica, sans-serif;
+	padding: 4px;
+}
+
+select
+{
+	COLOR: black;
+	FONT-SIZE: 8pt;
+	FONT-FAMILY:  Verdana, Helvetica, sans-serif;
+}
+
+img 
+{
+    border:0;
+}
+
+
+.IconError
+{
+	font-family: Webdings;
+	font-size: 14px;
+}
+
+.Error
+{
+	margin-top:8px;
+	margin-bottom:8px;
+	display: block;
+	color: red;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Verdana, Arial, Helvetica;
+}
+
+.Message
+{
+	color: #4682B4;
+	font-size: 11px;
+	font-family: Verdana, Arial, Helvetica;
+}
+
+.Title
+{
+/*  ORIGINALE - NON USATA
+	font-weight: bold;
+	font-size: 16px;
+	color: #4682B4;
+	font-family: Verdana, Arial, Helvetica;
+*/
+/* MODIFICA ETTORE 2016-02-10: Uguale a quella in SAC-ADMIN per anonimizzazioni */
+    font-weight: normal;
+	font-size: 14px;
+	color: #4682B4;
+	display: block;
+	padding-left: 6px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.ModuleContent
+{
+	/* 		ATTENZIONE: inserendo padding o margin top i moduli con dimensioni 		al 100% vengono troncati. 	*/
+	height: 100%;
+	overflow: auto;
+}
+
+.IFrameContent
+{
+	width: 100%;
+	height: 100%;
+}
+
+
+.NoIFrameContent
+{
+	border: solid 1px silver;
+}
+
+/*
+---------------------------------------------------------------------
+	Pagina Error e Warning
+---------------------------------------------------------------------
+*/
+
+.PageErrorContainer
+{
+	color: red;
+	vertical-align: middle;
+	text-align: center;
+}
+.PageWarningContainer
+{
+	vertical-align: middle;
+	text-align: center;
+}
+
+/*
+---------------------------------------------------------------------
+	Pagina Master
+---------------------------------------------------------------------
+*/
+
+.PageHeader
+{
+	vertical-align: top;
+    height: 60px;
+    
+    border: 0px; 
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+
+.PageHeader_Title
+{
+    font-size: 16;
+    color: #4682b4;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+.PageHeader_Links
+{
+    border: 0px; 
+    border-spacing: 0px;
+    border-collapse: collapse;
+    color: #000080; 
+    font-size: 9px;
+}
+.PageHeader_Links tr td
+{
+    vertical-align: middle;    
+}
+
+
+.TopContent
+{
+	background-color: #CEDCD5;
+	border-bottom: solid 1px #4682B4;
+	border-top: solid 1px #4682B4;
+	height: 10px;
+	padding-left: 3px;
+	padding-top: 3px;
+	padding-bottom: 3px; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+.PageContent
+{
+	padding: 6px;
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+}
+
+.LeftContent
+{
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	width: 150px;
+	height: 100%;
+	background-color: #2A7652;
+	border-right: solid 1px #4682B4; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#C0E9D6', startColorstr='#2A7652', gradientType='1');
+}
+
+.PageFooter
+{
+	color: #4682B4;
+	background-color: #CEDCD5;
+	border-top: solid 1px #4682B4;
+	height: 10px;
+	padding: 2px;
+	text-align: center;
+	font-size: 10px; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+/*
+---------------------------------------------------------------------
+	Master Menu
+---------------------------------------------------------------------
+*/
+
+.MasterMenu
+{
+	font-size: 11px;
+	font-family: Verdana, Arial, Helvetica;
+	text-decoration: none;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.MasterMenuItem {
+	margin-left: 6px;
+	margin-right: 7px;
+	color: #4682B4;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+
+.MasterMenuHover
+{
+	/*color: #CEDCD5; 	background-color: #4682B4;*/
+	text-decoration: none;
+}
+
+.MasterMenuSelected
+{
+	/*color: #CEDCD5;     background-color: #4682B4;*/
+	color: #808080;
+	text-decoration: none;
+}
+
+.MasterMenuDynamic
+{
+	background-color: white;
+	font-size: 11px;
+	font-family: Verdana, Arial, Helvetica;
+	text-decoration: none;
+	width: 80px;
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-right: 1px;
+	margin-top: 1px;
+	margin-left: 1px;
+	margin-bottom: 1px;
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	border-left: black 1px solid;
+	border-bottom: black 1px solid;
+}
+
+.MasterMenuDynamicItem
+{
+	/*     color: #CEDCD5;     font-weight: bolder;    	text-decoration: none; 	*/
+	color: Black; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+.MasterMenuDynamicHover
+{
+	color: Black;
+	background-color: #CEDCD5;
+	text-decoration: none;
+}
+
+.MasterMenuDynamicSelected
+{
+	/*     color: White;     background-color: #CEDCD5;     font-weight: bolder;     text-decoration: none; 	*/
+	color: Black; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+/*
+---------------------------------------------------------------------
+	End Master Menu
+---------------------------------------------------------------------
+*/
+
+/*
+---------------------------------------------------------------------
+	Start Master Tree
+---------------------------------------------------------------------
+*/
+
+.TreeNode
+{
+	font-size: 11px;
+	font-family: Verdana, Arial, Helvetica;
+	text-decoration: none;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.TreeRootNode, .TreeParentNode, .TreeLeafNode
+{
+	color: #FFFFFF;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+.TreeHoverNode
+{
+	/*color: #CEDCD5; 	background-color: #4682B4;*/
+	text-decoration: none;
+}
+
+.TreeSelectedNode
+{
+	/*color: #2A7652;     background-color: #FFFFFF; 	border: 1px solid #000000;*/
+	font-size: 11px;
+	text-decoration: none;
+	color: Black; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#FFEDA4', gradientType='0');
+}
+/*
+---------------------------------------------------------------------
+	End Master Tree
+---------------------------------------------------------------------
+*/
+
+/*
+---------------------------------------------------------------------
+	Start Master Navigator
+---------------------------------------------------------------------
+*/
+
+.Navigator
+{
+	font-weight: bolder;
+	font-size: 10px;
+	padding-right: 2px;
+	padding-left: 2px;
+	text-decoration: none;
+}
+
+.Navigator:hover
+{
+	color: #4682B4;
+	font-weight: bolder;
+	font-size: 10px;
+	padding-right: 2px;
+	padding-left: 2px;
+	text-decoration: none;
+}
+
+.NavigatorCurrentNode
+{
+	/*color: White;     background-color: #4682B4;*/
+	color: #A4A4A4;
+	text-decoration: none;
+}
+
+.NavigatorNode
+{
+	color: #4682B4;
+	text-decoration: none;
+}
+
+.NavigatorPathSeparator
+{
+	/*color: #4682B4;*/
+	color: #808080;
+	text-decoration: none;
+}
+
+.NavigatorRootNode
+{
+	/*color: #4682B4;*/
+	color: #808080;
+	text-decoration: none;
+}
+
+
+/*
+---------------------------------------------------------------------
+	End Master Navigator
+---------------------------------------------------------------------
+*/
+
+
+/*
+---------------------------------------------------------------------
+	Griglie di dati
+---------------------------------------------------------------------
+*/
+
+.Grid
+{
+	color: black;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	border-right: 1px;
+	border-top: 1px;
+	border-left: 1px;
+	border-bottom: 1px;
+}
+
+.GridHeader, .GridHeader TH, .GridHeader a, .GridHeader a:link, .GridHeader a:visited, .GridHeader a:active
+{
+	/* intestazione */ /*color: white;     font-family: Verdana, Arial, Helvetica; 	font-size:10px; 	background-color:#CEDCD5; 	font-weight: bold; 	text-decoration:	none; 	padding: 2px;*/ /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+.GridHeader a:hover
+{
+	color: Yellow;
+	text-decoration: none;
+}
+
+.GridItem, .GridItem TD A
+{
+	color: black;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+}
+
+.GridItem a:link, .GridItem a:visited, .GridItem a:active
+{
+	color: black;
+}
+
+.GridItem a:hover
+{
+	color: #F56D45;
+}
+
+.GridAlternatingItem, .GridAlternatingItem TD A
+{
+	color: black;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	background-color: #EFEFEF;
+}
+
+.GridAlternatingItem a:link, .GridAlternatingItem a:visited, .GridAlternatingItem a:active
+{
+	color: black;
+}
+
+.GridAlternatingItem a:hover
+{
+	color: #F56D45;
+}
+
+.GridPager, .GridPager a, .GridPager a:visited, .GridPager a:active
+{
+	color: black;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+.GridPager a:link
+{
+	color: #4682B4;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	text-decoration: underline;
+}
+
+.GridSelected
+{
+	background-color: #FFCC00;
+}
+
+/*
+---------------------------------------------------------------------
+	End Griglie
+---------------------------------------------------------------------
+*/
+
+/*
+---------------------------------------------------------------------
+	Tab
+---------------------------------------------------------------------
+*/
+
+.DefaultView
+{
+	color: #FFFFFF;
+	background-color: #AEAEAE;
+	border-width: 0px;
+	width: 130px;
+	height: 30px;
+	font-size: 11px;
+	cursor: pointer; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#C0E9D6', startColorstr='#2A7652', gradientType='0');
+}
+
+.ActiveView
+{
+	background-color: #90B8A4;
+	color: #000000;
+	border-width: 0px;
+	width: 130px;
+	height: 30px;
+	font-size: 11px;
+	cursor: pointer; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#FFF2BF', gradientType='0');
+}
+
+.TabSeparator
+{
+	background-color: #90B8A4;
+}
+
+.TabButton
+{
+	width: 100px;
+}
+
+legend
+{
+	font-size: 11px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.toolbar
+{
+	border: 1px solid #FFCC00; /*background-image: url(    "Images/toolgrad_vintage.gif" );*/
+	padding: 5 5 5 5; /*gradient*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#FFEDA4', gradientType='0');
+}
+.toolbar-img
+{
+	border: 0;
+	vertical-align: middle;
+}
+/*
+---------------------------------------------------------------------
+	End Tab
+---------------------------------------------------------------------
+*/
+
+/*
+---------------------------------------------------------------------
+	Form Control Width
+---------------------------------------------------------------------
+*/
+
+.InputDate
+{
+	width: 80px;
+}
+
+.InputFlag
+{
+	width: 20px;
+}
+
+.Input16
+{
+	width: 150px;
+}
+
+.Input64
+{
+	width: 250px;
+}
+
+.Input128
+{
+	width: 550px;
+}
+
+/*
+---------------------------------------------------------------------
+	End Form Control Width
+---------------------------------------------------------------------
+*/
+
+.LabelReadOnly
+{
+	font-weight: bold;
+}
+
+.Td-Text
+{
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #E08D53;
+}
+
+.Td-Value
+{
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #E08D53;
+	background-color: #FFEA93;
+}
+
+/*
+---------------------------------------------------------------------
+	Classe da usare per i dettagli (per ora uguale alla classe "toolbar")
+---------------------------------------------------------------------
+*/
+.detail
+{
+	border: 1px solid #FFCC00;
+	padding: 5px;
+	filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#FFEDA4', gradientType='0');
+}
+
+/*
+---------------------------------------------------------------------
+	End Classe da usare per i dettagli
+---------------------------------------------------------------------
+*/

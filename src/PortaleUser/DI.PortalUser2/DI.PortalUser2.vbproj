@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{957A73F0-FFA8-4D90-8E8D-CE48A8DDB099}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>DI.PortalUser2</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>DI.PortalUser2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>DI.PortalUser2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppGenericPrincipal.vb" />
+    <Compile Include="CurrentUser.vb" />
+    <Compile Include="DataSet\TracciaOperazioniDataSet.Designer.vb">
+      <DependentUpon>TracciaOperazioniDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DataSet\TracciaOperazioniDataSet.vb">
+      <DependentUpon>TracciaOperazioniDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\TracciaOperazioniDataSetExtender.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PortalDataAdapterManager.vb" />
+    <Compile Include="Portale.designer.vb">
+      <DependentUpon>Portale.dbml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Portale.vb">
+      <DependentUpon>Portale.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManager.vb" />
+    <Compile Include="RoleManagerUtility.vb" />
+    <Compile Include="RoleManager\ConfigurazioniDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigurazioniDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\ConfigurazioniDataSet.vb">
+      <DependentUpon>ConfigurazioniDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\DataAccess.vb" />
+    <Compile Include="RoleManager\DataStructures.vb" />
+    <Compile Include="RoleManager\OrganigrammaDataSet.Designer.vb">
+      <DependentUpon>OrganigrammaDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RoleManager\OrganigrammaDataSetExtender.vb" />
+    <Compile Include="Service References\WcfSacRoleManager\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SessioneUtente.vb" />
+    <Compile Include="TracciaOperazioniManager.vb" />
+    <Compile Include="UserInterface\UserInterface.vb" />
+    <Compile Include="Utility.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DataSet\TracciaOperazioniDataSet.xsc">
+      <DependentUpon>TracciaOperazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\TracciaOperazioniDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TracciaOperazioniDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\TracciaOperazioniDataSet.xss">
+      <DependentUpon>TracciaOperazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Portale.dbml.layout">
+      <DependentUpon>Portale.dbml</DependentUpon>
+    </None>
+    <None Include="RoleManager\ConfigurazioniDataSet.xsc">
+      <DependentUpon>ConfigurazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoleManager\ConfigurazioniDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConfigurazioniDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RoleManager\ConfigurazioniDataSet.xss">
+      <DependentUpon>ConfigurazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoleManager\OrganigrammaDataSet.xsc">
+      <DependentUpon>OrganigrammaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoleManager\OrganigrammaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrganigrammaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RoleManager\OrganigrammaDataSet.xss">
+      <DependentUpon>OrganigrammaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\RoleManager.wsdl" />
+    <None Include="Service References\WcfSacRoleManager\SAC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\SAC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\SAC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\SAC3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\WcfSacRoleManager.AccessiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\WcfSacRoleManager.GruppiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\WcfSacRoleManager.GruppoReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\WcfSacRoleManager.RuoliReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\WcfSacRoleManager.RuoloDettagliReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\WcfSacRoleManager.SistemiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\WcfSacRoleManager.UnitaOperativeReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\WcfSacRoleManager.UtenteReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\WcfSacRoleManager.UtentiReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DiagrammaDelleClassi.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Portale.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Portale.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WcfSacRoleManager\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\WcfSacRoleManager\configuration.svcinfo" />
+    <None Include="Service References\WcfSacRoleManager\configuration91.svcinfo" />
+    <None Include="Service References\WcfSacRoleManager\SAC.disco" />
+    <EmbeddedResource Include="UserInterface\headerBootstrap.htm" />
+    <Content Include="_Modifiche.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WcfSacRoleManager\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

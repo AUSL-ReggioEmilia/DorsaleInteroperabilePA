@@ -1,0 +1,39 @@
+{
+  "name": "orderentryplanner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bootstrap": "3.3.40",
+    "@types/eonasdan-bootstrap-datetimepicker": "4.17.26",
+    "@types/jquery": "^3.3.27",
+    "@types/jqueryui": "^1.12.7",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^2.0.1",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "typescript": "^3.2.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "moment": "2.24.0",
+    "@types/applicationinsights-js": "1.0.9",
+    "url-loader": "1.1.2",
+    "file-loader": "3.0.1"
+  },
+  "dependencies": {
+    "applicationinsights-js": "^1.0.20",
+    "bootstrap": "^3.3.7",
+    "eonasdan-bootstrap-datetimepicker": "4.15.35",
+    "fullcalendar": "^3.9.0",
+    "jquery": "^2.2.4",
+    "jquery-ui": "^1.12.1",
+    "jqueryui": "1.11.1"
+  }
+}

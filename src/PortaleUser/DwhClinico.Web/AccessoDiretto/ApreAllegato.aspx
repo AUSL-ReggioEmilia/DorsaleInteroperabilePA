@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" Inherits="DwhClinico.Web.AccessoDiretto_ApreAllegato" Codebehind="ApreAllegato.aspx.vb" %>

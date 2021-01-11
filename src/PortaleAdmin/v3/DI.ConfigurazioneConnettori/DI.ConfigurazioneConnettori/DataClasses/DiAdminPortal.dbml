@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_DiAdminPortal" Class="DiAdminPortalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=alderaan;Initial Catalog=AuslAsmnRe_DiAdminPortal;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_PortalAdminConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ConfigurazioneConnettoriRuoli" Member="ConfigurazioneConnettoriRuolis">
+    <Type Name="ConfigurazioneConnettoriRuoli">
+      <Column Name="Ruolo" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Claims" Type="System.String" DbType="VarChar(1024) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

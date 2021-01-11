@@ -1,0 +1,133 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="UrlPortaleCLinico" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://portaleclinico.asmn.re.it</Value>
+    </Setting>
+    <Setting Name="WsPatientSummaryUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">progel.it\dev_vs</Value>
+    </Setting>
+    <Setting Name="WsPatientSummaryPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aa1234BB</Value>
+    </Setting>
+    <Setting Name="PatientSummaryEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WcfDwhClinico_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">progel.it\dev_vs</Value>
+    </Setting>
+    <Setting Name="WcfDwhClinico_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aa1234BB</Value>
+    </Setting>
+    <Setting Name="DatiAutenteAutorizzatore_Titolo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RILEVAZIONE CONSENSO MINORE&lt;br/&gt;Inserire le generalità del Genitore/Tutore Legale</Value>
+    </Setting>
+    <Setting Name="ApreReferto_DefaultView" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Reporting/Reports/RefertoDettaglio.aspx?@@FLD@@@IdRefertiBase=@Id_Referto</Value>
+    </Setting>
+    <Setting Name="Referti_Link" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Reporting/Reports/GroupListaReferti.aspx?@@FLD@@@IdPaziente=@Id_Paziente</Value>
+    </Setting>
+    <Setting Name="Role_Delete" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Progel.it\sviluppo</Value>
+    </Setting>
+    <Setting Name="ButtonAggiungiNota_Visible" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SacDataAccess_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PROGEL.IT\DEV_VS</Value>
+    </Setting>
+    <Setting Name="SacDataAccess_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aa1234BB</Value>
+    </Setting>
+    <Setting Name="Printing_PageUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://DAGOBAH2:8044/WS-DI-DWH-PDF/StampaReferto.aspx</Value>
+    </Setting>
+    <Setting Name="Printing_ShowGeneraPDF" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="WsPrintManager_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WsPrintManager_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WsRenderingPdf_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PROGEL.IT\DevApp_DWH_RenderPdf</Value>
+    </Setting>
+    <Setting Name="WsRenderingPdf_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aa1234BB</Value>
+    </Setting>
+    <Setting Name="Referti_FiltroDataDal_DefaultDaysBeforeNow" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">365</Value>
+    </Setting>
+    <Setting Name="WsRenderingPdf_UrlDettaglioReferto" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://DAGOBAH2:8087/DWHCLINICO/Referti/ApreReferto.aspx?IdReferto={0}</Value>
+    </Setting>
+    <Setting Name="StampaReferti_UiStampeRefreshInterval_Ms" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10000</Value>
+    </Setting>
+    <Setting Name="RefertiOpenDocument_Role" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Progel.it\sviluppo</Value>
+    </Setting>
+    <Setting Name="RefertiOpenDocument_Text" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Apri Documento</Value>
+    </Setting>
+    <Setting Name="ListaAccessiPaziente_Visible" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="UrlSacPaziente" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://DAGOBAH2:8087/SAC/Pazienti/PazienteDettaglio.aspx?id={0}</Value>
+    </Setting>
+    <Setting Name="SAC_ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ALDERAAN;Initial Catalog=AuslAsmnre_SAC;Integrated Security=True&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ALDERAAN;Initial Catalog=AuslAsmnre_SAC;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="Messaggio_WarningPrivacy" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">
+          Siete entrati in un archivio di dati sensibili, tutelati e protetti dalla Legge sulla privacy. Qualsiasi violazione e uso ingiustificato o improprio può configurare un illecito disciplinare, civile o penale. Gli accessi vengono periodicamente monitorati.&amp;#xA;
+          Il DataWareHouse Clinico costituisce un archivio potenzialmente INCOMPLETO dei dati sanitari del paziente. Alcune informazioni cliniche potrebbero non essere disponibili per motivi tecnici o per ESPLICITA RICHIESTA DI OSCURAMENTO da parte dell'assistito.
+        </Value>
+    </Setting>
+    <Setting Name="FsePulsanteAbilitato" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FseDocumentiListaTop" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="WsSac_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">progel.it\dev_vs</Value>
+    </Setting>
+    <Setting Name="WsSac_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aa1234BB</Value>
+    </Setting>
+    <Setting Name="ShowNoteAnamnesticheTab" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MittenteMail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DwhClinico@progel.it</Value>
+    </Setting>
+    <Setting Name="UrlMailLinkAccessoDiretto" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://di-go.asmn.net/DwhClinico/{0}</Value>
+    </Setting>
+    <Setting Name="AziendaErogante_Visible" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Print_Enabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NuovaGestioneConsensi" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="InstrumentationKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">47f2a002-85e4-4b5b-af93-bb848e0c7a4a</Value>
+    </Setting>
+    <Setting Name="ShowCalendarioTab" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

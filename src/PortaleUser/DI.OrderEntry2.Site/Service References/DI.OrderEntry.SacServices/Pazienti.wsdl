@@ -1,0 +1,2633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://sac.org/Pazienti" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://sac.org/Istat" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://sac.org/Pazienti" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://sac.org/Pazienti">
+      <s:import namespace="http://sac.org/Istat" />
+      <s:element name="PazientiCerca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cognome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataNascita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="luogoNascita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tesseraSanitaria" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRecord" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiCercaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiCercaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiCerca">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="LivelloAttendibilita" type="s:unsignedByte" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiCercaSinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiCerca2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cognome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataNascita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="luogoNascita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tesseraSanitaria" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRecord" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiCerca2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiCerca2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiCerca2">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="LivelloAttendibilita" type="s:unsignedByte" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiCerca2Sinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiCerca2Esenzioni">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Patologica" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataInizioValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataFineValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NumeroAutorizzazioneEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NoteAggiuntive" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceTestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="TestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DecodificaEsenzioneDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="AttributoEsenzioneDiagnosi" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiCerca2Consensi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                              <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiCercaByMedicoBase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codiceFiscaleMedico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cognome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataNascita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="luogoNascita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tesseraSanitaria" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRecord" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiCercaByMedicoBaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiCercaByMedicoBaseResult">
+              <s:complexType>
+                <s:complexContent mixed="false">
+                  <s:extension base="tns:SerializeResultOfPazientiCercaByMedicoBaseResponseData">
+                    <s:sequence>
+                      <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiCercaByMedicoBase">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            <s:element minOccurs="1" maxOccurs="1" name="LivelloAttendibilita" type="s:unsignedByte" />
+                            <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                            <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                            <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                            <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                            <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiCercaByMedicoBaseConsensi">
+                              <s:complexType>
+                                <s:sequence>
+                                  <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                                  <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                                  <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                                  <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                                  <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                                  <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                                  <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                                  <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                                  <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                                  <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                                  <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                                </s:sequence>
+                              </s:complexType>
+                            </s:element>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:extension>
+                </s:complexContent>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SerializeResultOfPazientiCercaByMedicoBaseResponseData" abstract="true" />
+      <s:element name="PazientiDettaglioById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiDettaglioByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiDettaglioByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MantenimentoPediatra" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapoFamiglia" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Indigenza" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DescrizioneTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaRes" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PosizioneAss" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslAss" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataTerminazioneAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoAmm" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoTer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceMedicoDiBase" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CognomeNomeMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataSceltaMedicoDiBase" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataFineSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MotivoAnnulloSTP" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="StatusCodice" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="StatusNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglioSinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiDettaglio2ById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiDettaglio2ByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiDettaglio2ByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="LivelloAttendibilita" type="s:unsignedByte" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MantenimentoPediatra" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapoFamiglia" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Indigenza" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DescrizioneTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaRes" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PosizioneAss" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslAss" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataTerminazioneAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoAmm" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoTer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceMedicoDiBase" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CognomeNomeMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataSceltaMedicoDiBase" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataFineSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MotivoAnnulloSTP" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="StatusCodice" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="StatusNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Esenzioni">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Patologica" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataInizioValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataFineValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NumeroAutorizzazioneEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NoteAggiuntive" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceTestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="TestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DecodificaEsenzioneDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="AttributoEsenzioneDiagnosi" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Consensi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                              <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Sinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiDettaglioByIdProvenienza">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="provenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idProvenienza" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiDettaglioByIdProvenienzaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiDettaglioByIdProvenienzaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MantenimentoPediatra" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapoFamiglia" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Indigenza" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DescrizioneTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaRes" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PosizioneAss" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslAss" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataTerminazioneAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoAmm" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoTer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceMedicoDiBase" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CognomeNomeMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataSceltaMedicoDiBase" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataFineSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MotivoAnnulloSTP" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="StatusCodice" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="StatusNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglioSinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiDettaglio2ByIdProvenienza">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="provenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idProvenienza" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiDettaglio2ByIdProvenienzaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiDettaglio2ByIdProvenienzaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="LivelloAttendibilita" type="s:unsignedByte" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MantenimentoPediatra" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapoFamiglia" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Indigenza" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DescrizioneTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaRes" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PosizioneAss" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslAss" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataTerminazioneAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoAmm" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoTer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceMedicoDiBase" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CognomeNomeMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataSceltaMedicoDiBase" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataFineSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MotivoAnnulloSTP" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="StatusCodice" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="StatusNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Esenzioni">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Patologica" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataInizioValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataFineValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NumeroAutorizzazioneEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NoteAggiuntive" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceTestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="TestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DecodificaEsenzioneDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="AttributoEsenzioneDiagnosi" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Consensi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                              <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Sinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiCercaOrAggiunge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idProvenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paziente" type="tns:Paziente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Paziente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PazientiCercaOrAggiungeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiCercaOrAggiungeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="LivelloAttendibilita" type="s:unsignedByte" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MantenimentoPediatra" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapoFamiglia" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Indigenza" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DescrizioneTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaRes" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PosizioneAss" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslAss" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataTerminazioneAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoAmm" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoTer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceMedicoDiBase" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CognomeNomeMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataSceltaMedicoDiBase" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataFineSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MotivoAnnulloSTP" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="StatusCodice" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="StatusNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Esenzioni">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Patologica" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataInizioValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataFineValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NumeroAutorizzazioneEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NoteAggiuntive" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceTestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="TestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DecodificaEsenzioneDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="AttributoEsenzioneDiagnosi" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Consensi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                              <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Sinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiCercaByProvenienzaIdProvenienzaOrAggiunge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="provenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idProvenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paziente" type="tns:Paziente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiCercaByProvenienzaIdProvenienzaOrAggiungeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiCercaByProvenienzaIdProvenienzaOrAggiungeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="LivelloAttendibilita" type="s:unsignedByte" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MantenimentoPediatra" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapoFamiglia" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Indigenza" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DescrizioneTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaRes" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PosizioneAss" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslAss" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataTerminazioneAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoAmm" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoTer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceMedicoDiBase" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CognomeNomeMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataSceltaMedicoDiBase" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataFineSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MotivoAnnulloSTP" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="StatusCodice" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="StatusNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Esenzioni">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Patologica" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataInizioValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DataFineValidita" type="s:dateTime" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NumeroAutorizzazioneEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="NoteAggiuntive" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="CodiceTestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="TestoEsenzione" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="DecodificaEsenzioneDiagnosi" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="AttributoEsenzioneDiagnosi" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Consensi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" name="DataStato" type="s:dateTime" />
+                              <s:element minOccurs="1" maxOccurs="1" name="Stato" type="s:boolean" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreId" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreCognome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreNome" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="OperatoreComputer" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiDettaglio2Sinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiAggiungi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paziente" type="tns:Paziente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiAggiungiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiAggiungiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Pazienti">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MantenimentoPediatra" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapoFamiglia" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Indigenza" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DescrizioneTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaRes" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PosizioneAss" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslAss" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataTerminazioneAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoAmm" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoTer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceMedicoDiBase" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CognomeNomeMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataSceltaMedicoDiBase" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataFineSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MotivoAnnulloSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiSinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiModifica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="provenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idProvenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paziente" type="tns:Paziente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiModificaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiModificaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Pazienti">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MantenimentoPediatra" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapoFamiglia" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Indigenza" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DescrizioneTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaRes" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PosizioneAss" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslAss" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataTerminazioneAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoAmm" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoTer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceMedicoDiBase" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CognomeNomeMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataSceltaMedicoDiBase" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataFineSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MotivoAnnulloSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiSinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiModificaById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paziente" type="tns:Paziente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiModificaByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiModificaByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Pazienti">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+                        <s:element minOccurs="1" maxOccurs="1" name="DataModifica" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Tessera" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="NazionalitaNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DatiAnamnestici" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MantenimentoPediatra" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapoFamiglia" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Indigenza" type="s:boolean" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DescrizioneTerminazione" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaRes" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslRes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneResNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaDomNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="SubComuneDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CapDom" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PosizioneAss" type="s:unsignedByte" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="RegioneAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneAslAssNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceAslAss" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataTerminazioneAss" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoAmm" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoTer" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceMedicoDiBase" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CognomeNomeMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DistrettoMedicoDiBase" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataSceltaMedicoDiBase" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ComuneRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoCodice" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProvinciaRecapitoNome" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="IndirizzoRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="LocalitaRecapito" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono1" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Telefono3" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="CodiceSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataInizioSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="DataFineSTP" type="s:dateTime" />
+                        <s:element minOccurs="0" maxOccurs="1" name="MotivoAnnulloSTP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" name="PazientiSinonimi">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" name="IdPaziente" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="Provenienza" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" name="IdProvenienza" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiRimuovi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="provenienza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idProvenienza" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiRimuoviResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PazientiRimuoviResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiRimuoviById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provenienza" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiRimuoviByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PazientiRimuoviByIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProvenienza">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProvenienzaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProvenienzaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatNazioniCercaByNome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="obsoleti" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatNazioniCercaByNomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:IstatNazioniCercaByNomeResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatRegioniCercaByNome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatRegioniCercaByNomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:IstatRegioniCercaByNomeResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatProvinceCercaByNome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codiceRegione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatProvinceCercaByNomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:IstatProvinceCercaByNomeResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatProvinceCercaByRegione">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatProvinceCercaByRegioneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:IstatProvinceCercaByRegioneResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaByNome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="obsoleti" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaByNomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:IstatComuniCercaByNomeResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaEsteri">
+        <s:complexType />
+      </s:element>
+      <s:element name="IstatComuniCercaEsteriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:IstatComuniCercaEsteriResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaByRegione">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="obsoleti" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaByRegioneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:IstatComuniCercaByRegioneResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaByProvincia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="obsoleti" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaByProvinciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:IstatComuniCercaByProvinciaResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://sac.org/Istat">
+      <s:element name="IstatNazioniCercaByNomeResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatNazioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatRegioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatProvince">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceRegione" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatComuni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceProvincia" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatRegioniCercaByNomeResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatNazioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatRegioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatProvince">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceRegione" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatComuni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceProvincia" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatProvinceCercaByNomeResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatNazioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatRegioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatProvince">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceRegione" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatComuni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceProvincia" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatProvinceCercaByRegioneResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatNazioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatRegioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatProvince">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceRegione" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatComuni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceProvincia" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaByNomeResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatNazioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatRegioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatProvince">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceRegione" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatComuni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceProvincia" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaEsteriResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatNazioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatRegioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatProvince">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceRegione" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatComuni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceProvincia" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaByRegioneResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatNazioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatRegioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatProvince">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceRegione" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatComuni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceProvincia" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IstatComuniCercaByProvinciaResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatNazioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatRegioni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatProvince">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceRegione" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="IstatComuni">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CodiceProvincia" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Obsoleto" type="s:boolean" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ObsoletoData" type="s:dateTime" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PazientiCercaSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiCerca" />
+  </wsdl:message>
+  <wsdl:message name="PazientiCercaSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiCercaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiCerca2SoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiCerca2" />
+  </wsdl:message>
+  <wsdl:message name="PazientiCerca2SoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiCerca2Response" />
+  </wsdl:message>
+  <wsdl:message name="PazientiCercaByMedicoBaseSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiCercaByMedicoBase" />
+  </wsdl:message>
+  <wsdl:message name="PazientiCercaByMedicoBaseSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiCercaByMedicoBaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiDettaglioByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiDettaglioById" />
+  </wsdl:message>
+  <wsdl:message name="PazientiDettaglioByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiDettaglioByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiDettaglio2ByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiDettaglio2ById" />
+  </wsdl:message>
+  <wsdl:message name="PazientiDettaglio2ByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiDettaglio2ByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiDettaglioByIdProvenienzaSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiDettaglioByIdProvenienza" />
+  </wsdl:message>
+  <wsdl:message name="PazientiDettaglioByIdProvenienzaSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiDettaglioByIdProvenienzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiDettaglio2ByIdProvenienzaSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiDettaglio2ByIdProvenienza" />
+  </wsdl:message>
+  <wsdl:message name="PazientiDettaglio2ByIdProvenienzaSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiDettaglio2ByIdProvenienzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiCercaOrAggiungeSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiCercaOrAggiunge" />
+  </wsdl:message>
+  <wsdl:message name="PazientiCercaOrAggiungeSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiCercaOrAggiungeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiCercaByProvenienzaIdProvenienzaOrAggiungeSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiCercaByProvenienzaIdProvenienzaOrAggiunge" />
+  </wsdl:message>
+  <wsdl:message name="PazientiCercaByProvenienzaIdProvenienzaOrAggiungeSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiCercaByProvenienzaIdProvenienzaOrAggiungeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiAggiungiSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiAggiungi" />
+  </wsdl:message>
+  <wsdl:message name="PazientiAggiungiSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiAggiungiResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiModificaSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiModifica" />
+  </wsdl:message>
+  <wsdl:message name="PazientiModificaSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiModificaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiModificaByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiModificaById" />
+  </wsdl:message>
+  <wsdl:message name="PazientiModificaByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiModificaByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiRimuoviSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiRimuovi" />
+  </wsdl:message>
+  <wsdl:message name="PazientiRimuoviSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiRimuoviResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiRimuoviByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiRimuoviById" />
+  </wsdl:message>
+  <wsdl:message name="PazientiRimuoviByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiRimuoviByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProvenienzaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProvenienza" />
+  </wsdl:message>
+  <wsdl:message name="GetProvenienzaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProvenienzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IstatNazioniCercaByNomeSoapIn">
+    <wsdl:part name="parameters" element="tns:IstatNazioniCercaByNome" />
+  </wsdl:message>
+  <wsdl:message name="IstatNazioniCercaByNomeSoapOut">
+    <wsdl:part name="parameters" element="tns:IstatNazioniCercaByNomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IstatRegioniCercaByNomeSoapIn">
+    <wsdl:part name="parameters" element="tns:IstatRegioniCercaByNome" />
+  </wsdl:message>
+  <wsdl:message name="IstatRegioniCercaByNomeSoapOut">
+    <wsdl:part name="parameters" element="tns:IstatRegioniCercaByNomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IstatProvinceCercaByNomeSoapIn">
+    <wsdl:part name="parameters" element="tns:IstatProvinceCercaByNome" />
+  </wsdl:message>
+  <wsdl:message name="IstatProvinceCercaByNomeSoapOut">
+    <wsdl:part name="parameters" element="tns:IstatProvinceCercaByNomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IstatProvinceCercaByRegioneSoapIn">
+    <wsdl:part name="parameters" element="tns:IstatProvinceCercaByRegione" />
+  </wsdl:message>
+  <wsdl:message name="IstatProvinceCercaByRegioneSoapOut">
+    <wsdl:part name="parameters" element="tns:IstatProvinceCercaByRegioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IstatComuniCercaByNomeSoapIn">
+    <wsdl:part name="parameters" element="tns:IstatComuniCercaByNome" />
+  </wsdl:message>
+  <wsdl:message name="IstatComuniCercaByNomeSoapOut">
+    <wsdl:part name="parameters" element="tns:IstatComuniCercaByNomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IstatComuniCercaEsteriSoapIn">
+    <wsdl:part name="parameters" element="tns:IstatComuniCercaEsteri" />
+  </wsdl:message>
+  <wsdl:message name="IstatComuniCercaEsteriSoapOut">
+    <wsdl:part name="parameters" element="tns:IstatComuniCercaEsteriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IstatComuniCercaByRegioneSoapIn">
+    <wsdl:part name="parameters" element="tns:IstatComuniCercaByRegione" />
+  </wsdl:message>
+  <wsdl:message name="IstatComuniCercaByRegioneSoapOut">
+    <wsdl:part name="parameters" element="tns:IstatComuniCercaByRegioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IstatComuniCercaByProvinciaSoapIn">
+    <wsdl:part name="parameters" element="tns:IstatComuniCercaByProvincia" />
+  </wsdl:message>
+  <wsdl:message name="IstatComuniCercaByProvinciaSoapOut">
+    <wsdl:part name="parameters" element="tns:IstatComuniCercaByProvinciaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PazientiSoap">
+    <wsdl:operation name="PazientiCerca">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i pazienti.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiCercaSoapIn" />
+      <wsdl:output message="tns:PazientiCercaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCerca2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i pazienti. Ritorna anche le esenzioni ed i consensi associati.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiCerca2SoapIn" />
+      <wsdl:output message="tns:PazientiCerca2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaByMedicoBase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i pazienti per medico di base.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiCercaByMedicoBaseSoapIn" />
+      <wsdl:output message="tns:PazientiCercaByMedicoBaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglioById">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i pazienti per id.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiDettaglioByIdSoapIn" />
+      <wsdl:output message="tns:PazientiDettaglioByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglio2ById">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i pazienti per id. Ritorna anche le esenzioni ed i consensi associati.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiDettaglio2ByIdSoapIn" />
+      <wsdl:output message="tns:PazientiDettaglio2ByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglioByIdProvenienza">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i pazienti per id provenienza.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiDettaglioByIdProvenienzaSoapIn" />
+      <wsdl:output message="tns:PazientiDettaglioByIdProvenienzaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglio2ByIdProvenienza">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i pazienti per id provenienza. Ritorna anche le esenzioni ed i consensi associati.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiDettaglio2ByIdProvenienzaSoapIn" />
+      <wsdl:output message="tns:PazientiDettaglio2ByIdProvenienzaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaOrAggiunge">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiunge un nuovo paziente solo se non viene trovato.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiCercaOrAggiungeSoapIn" />
+      <wsdl:output message="tns:PazientiCercaOrAggiungeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaByProvenienzaIdProvenienzaOrAggiunge">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiunge un nuovo paziente solo se non viene trovato.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiCercaByProvenienzaIdProvenienzaOrAggiungeSoapIn" />
+      <wsdl:output message="tns:PazientiCercaByProvenienzaIdProvenienzaOrAggiungeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiAggiungi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiunge un nuovo paziente.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiAggiungiSoapIn" />
+      <wsdl:output message="tns:PazientiAggiungiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiModifica">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiorna un paziente.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiModificaSoapIn" />
+      <wsdl:output message="tns:PazientiModificaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiModificaById">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiorna un paziente per id.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiModificaByIdSoapIn" />
+      <wsdl:output message="tns:PazientiModificaByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiRimuovi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rimuove un paziente.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiRimuoviSoapIn" />
+      <wsdl:output message="tns:PazientiRimuoviSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiRimuoviById">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rimuove un paziente per id.</wsdl:documentation>
+      <wsdl:input message="tns:PazientiRimuoviByIdSoapIn" />
+      <wsdl:output message="tns:PazientiRimuoviByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvenienza">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ritorna il codice di provenienza.</wsdl:documentation>
+      <wsdl:input message="tns:GetProvenienzaSoapIn" />
+      <wsdl:output message="tns:GetProvenienzaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IstatNazioniCercaByNome">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca le nazioni istat per nome.</wsdl:documentation>
+      <wsdl:input message="tns:IstatNazioniCercaByNomeSoapIn" />
+      <wsdl:output message="tns:IstatNazioniCercaByNomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IstatRegioniCercaByNome">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca le regioni istat per nome.</wsdl:documentation>
+      <wsdl:input message="tns:IstatRegioniCercaByNomeSoapIn" />
+      <wsdl:output message="tns:IstatRegioniCercaByNomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IstatProvinceCercaByNome">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca le province istat per nome.</wsdl:documentation>
+      <wsdl:input message="tns:IstatProvinceCercaByNomeSoapIn" />
+      <wsdl:output message="tns:IstatProvinceCercaByNomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IstatProvinceCercaByRegione">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca le province istat per nome regione.</wsdl:documentation>
+      <wsdl:input message="tns:IstatProvinceCercaByRegioneSoapIn" />
+      <wsdl:output message="tns:IstatProvinceCercaByRegioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaByNome">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i comuni istat per nome.</wsdl:documentation>
+      <wsdl:input message="tns:IstatComuniCercaByNomeSoapIn" />
+      <wsdl:output message="tns:IstatComuniCercaByNomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaEsteri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i comuni esteri istat.</wsdl:documentation>
+      <wsdl:input message="tns:IstatComuniCercaEsteriSoapIn" />
+      <wsdl:output message="tns:IstatComuniCercaEsteriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaByRegione">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i comuni istat per nome regione.</wsdl:documentation>
+      <wsdl:input message="tns:IstatComuniCercaByRegioneSoapIn" />
+      <wsdl:output message="tns:IstatComuniCercaByRegioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaByProvincia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i comuni istat per nome provincia.</wsdl:documentation>
+      <wsdl:input message="tns:IstatComuniCercaByProvinciaSoapIn" />
+      <wsdl:output message="tns:IstatComuniCercaByProvinciaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PazientiSoap" type="tns:PazientiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PazientiCerca">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiCerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCerca2">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiCerca2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaByMedicoBase">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiCercaByMedicoBase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglioById">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiDettaglioById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglio2ById">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiDettaglio2ById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglioByIdProvenienza">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiDettaglioByIdProvenienza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglio2ByIdProvenienza">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiDettaglio2ByIdProvenienza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaOrAggiunge">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiCercaOrAggiunge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaByProvenienzaIdProvenienzaOrAggiunge">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiCercaByProvenienzaIdProvenienzaOrAggiunge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiAggiungi">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiAggiungi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiModifica">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiModifica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiModificaById">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiModificaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiRimuovi">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiRimuovi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiRimuoviById">
+      <soap:operation soapAction="http://sac.org/Pazienti/PazientiRimuoviById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvenienza">
+      <soap:operation soapAction="http://sac.org/Pazienti/GetProvenienza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatNazioniCercaByNome">
+      <soap:operation soapAction="http://sac.org/Pazienti/IstatNazioniCercaByNome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatRegioniCercaByNome">
+      <soap:operation soapAction="http://sac.org/Pazienti/IstatRegioniCercaByNome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatProvinceCercaByNome">
+      <soap:operation soapAction="http://sac.org/Pazienti/IstatProvinceCercaByNome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatProvinceCercaByRegione">
+      <soap:operation soapAction="http://sac.org/Pazienti/IstatProvinceCercaByRegione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaByNome">
+      <soap:operation soapAction="http://sac.org/Pazienti/IstatComuniCercaByNome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaEsteri">
+      <soap:operation soapAction="http://sac.org/Pazienti/IstatComuniCercaEsteri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaByRegione">
+      <soap:operation soapAction="http://sac.org/Pazienti/IstatComuniCercaByRegione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaByProvincia">
+      <soap:operation soapAction="http://sac.org/Pazienti/IstatComuniCercaByProvincia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PazientiSoap12" type="tns:PazientiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PazientiCerca">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiCerca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCerca2">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiCerca2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaByMedicoBase">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiCercaByMedicoBase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglioById">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiDettaglioById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglio2ById">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiDettaglio2ById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglioByIdProvenienza">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiDettaglioByIdProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiDettaglio2ByIdProvenienza">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiDettaglio2ByIdProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaOrAggiunge">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiCercaOrAggiunge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiCercaByProvenienzaIdProvenienzaOrAggiunge">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiCercaByProvenienzaIdProvenienzaOrAggiunge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiAggiungi">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiAggiungi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiModifica">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiModifica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiModificaById">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiModificaById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiRimuovi">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiRimuovi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiRimuoviById">
+      <soap12:operation soapAction="http://sac.org/Pazienti/PazientiRimuoviById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvenienza">
+      <soap12:operation soapAction="http://sac.org/Pazienti/GetProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatNazioniCercaByNome">
+      <soap12:operation soapAction="http://sac.org/Pazienti/IstatNazioniCercaByNome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatRegioniCercaByNome">
+      <soap12:operation soapAction="http://sac.org/Pazienti/IstatRegioniCercaByNome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatProvinceCercaByNome">
+      <soap12:operation soapAction="http://sac.org/Pazienti/IstatProvinceCercaByNome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatProvinceCercaByRegione">
+      <soap12:operation soapAction="http://sac.org/Pazienti/IstatProvinceCercaByRegione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaByNome">
+      <soap12:operation soapAction="http://sac.org/Pazienti/IstatComuniCercaByNome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaEsteri">
+      <soap12:operation soapAction="http://sac.org/Pazienti/IstatComuniCercaEsteri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaByRegione">
+      <soap12:operation soapAction="http://sac.org/Pazienti/IstatComuniCercaByRegione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IstatComuniCercaByProvincia">
+      <soap12:operation soapAction="http://sac.org/Pazienti/IstatComuniCercaByProvincia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Pazienti">
+    <wsdl:port name="PazientiSoap" binding="tns:PazientiSoap">
+      <soap:address location="http://dagobah2:8082/Pazienti.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PazientiSoap12" binding="tns:PazientiSoap12">
+      <soap12:address location="http://dagobah2:8082/Pazienti.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

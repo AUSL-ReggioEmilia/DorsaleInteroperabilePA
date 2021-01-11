@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc1808ae-602c-4b84-b227-e21dc2607a6a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dagobah2:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SAC.wsdl" MetadataType="Wsdl" ID="537f64b4-9b32-4db8-8912-6e6bf4aa83b1" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SAC.disco" MetadataType="Disco" ID="8d2533cd-a990-42e9-b461-56c616868ab6" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?disco" />
+    <MetadataFile FileName="Dizionari.wsdl" MetadataType="Wsdl" ID="3f27e295-f10a-424f-9656-1195d4c26f13" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?wsdl" />
+    <MetadataFile FileName="SAC.xsd" MetadataType="Schema" ID="9fc854d6-ee4f-4129-a31e-dc70512f9507" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd2" />
+    <MetadataFile FileName="SAC1.xsd" MetadataType="Schema" ID="9659ec6e-f689-4e25-a70a-db85c4909da5" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd3" />
+    <MetadataFile FileName="SAC2.xsd" MetadataType="Schema" ID="b65104f8-40d1-468b-8359-6525f92e42b3" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd0" />
+    <MetadataFile FileName="SAC3.xsd" MetadataType="Schema" ID="2d132030-a29f-49e8-8ad2-e54caa1b69c1" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Dizionari.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

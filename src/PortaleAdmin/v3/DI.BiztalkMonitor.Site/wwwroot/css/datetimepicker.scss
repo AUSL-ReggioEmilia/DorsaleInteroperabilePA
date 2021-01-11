@@ -1,0 +1,42 @@
+﻿/* ----------------- DATA PICKER -----------------*/
+
+.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {
+    border-bottom-color: white;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {
+    border-bottom-color: white;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) {
+    background-color: white;
+}
+
+.mdc-text-field:hover::before {
+    opacity: 0;
+}
+
+.mdc-text-field--dense .mdc-text-field__input {
+    padding: 0px 5px;
+}
+
+.mdc-icon-button {
+    padding: 0px 12px;
+    height: 100%;
+    //toglie l'ombra: si vede male su IE11
+    --mdc-ripple-fg-size: 0px !important;
+}
+
+.mdc-icon-button:focus {
+    // toglie il controno blue alla selezione
+    outline: none;
+}
+
+.material-icons {
+    font-size: 22px;
+}
+
+.mdc-line-ripple {
+    // toglie il bordo inferirore viola di matblazor
+    display: none;
+}

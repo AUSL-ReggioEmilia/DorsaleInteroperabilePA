@@ -1,0 +1,80 @@
+﻿@import "scss/bootstrap.scss";
+@import 'blazor-reconnection.scss';
+@import 'styles-mockup.scss';
+@import 'color.scss';
+@import 'size.scss';
+@import 'form.scss';
+@import 'table.scss';
+@import 'print.scss';                               
+@import "datetimepicker.scss";
+@import 'navbar_admin.scss';
+@import 'animation.scss';
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: $fontSize;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 40px;
+}
+
+.badge-card-title {
+    background: $headerSubTitleColor;
+    color: white;
+    display: inline;
+    font-size: $fontBundleCardHeader;
+    @extend .mb-0;
+}
+
+.badge-card-title-blue {
+    background: #007bff;
+    color: white;
+    display: inline;
+    font-size: $fontBundleCardHeader;
+    @extend .mb-0;
+}
+
+.message-panel {
+    @extend .my-2;
+}
+
+.text-deleted {
+    text-decoration: line-through;
+}
+
+.modal {
+    overflow-y: auto;
+}
+
+/*FOOTER*/
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-weight: 700;
+    color: #4682b4;
+    background-color: #CEDCD5;
+    border-top: solid 1px #4682B4;
+    padding: 3px;
+    text-align: center;
+    font-size: 10px;
+    filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+}
+
+/* Impostazione per far funzionare la classe solo per le versioni di IE dalla 10 in poi */
+/*@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .footer {
+        margin-bottom: 14px;
+    }
+}*/
+
+/* MODAL */
+.modal-backdrop{
+    z-index:1040 !important;
+}

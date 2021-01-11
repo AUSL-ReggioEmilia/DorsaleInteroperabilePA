@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessaggioConsenso  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Utente>BT_LHA</Utente>
+	<Consenso>
+		<Id></Id>
+		<Tipo>Generico</Tipo>
+		<DataStato>2001-12-17T09:30:47Z</DataStato>
+		<Stato>true</Stato>
+		<OperatoreId>OperatoreId</OperatoreId>
+		<OperatoreCognome>OperatoreCognome</OperatoreCognome>
+		<OperatoreNome>OperatoreNome</OperatoreNome>
+		<OperatoreComputer>OperatoreComputer</OperatoreComputer>
+		<PazienteId>PazienteId</PazienteId>
+		<PazienteProvenienza>xxxxxxxxxxx</PazienteProvenienza>
+		<PazienteIdProvenienza>1XXXXX1000</PazienteIdProvenienza>
+		<PazienteCognome>PAZ_TEST_A</PazienteCognome>
+		<PazienteNome>PAZ_TEST_A</PazienteNome>
+		<PazienteCodiceFiscale>PAZTESTA00000000</PazienteCodiceFiscale>
+		<PazienteDataNascita>2001-12-17T09:30:47Z</PazienteDataNascita>
+		<PazienteComuneNascitaCodice>000</PazienteComuneNascitaCodice>
+		<PazienteNazionalitaCodice>000</PazienteNazionalitaCodice>
+		<PazienteTesseraSanitaria>010101010101</PazienteTesseraSanitaria>
+	</Consenso>
+	<DataSequenza>2001-12-17T09:30:47Z</DataSequenza>
+</MessaggioConsenso>

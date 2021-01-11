@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.progel.it/WCF/SAC/Service/3.0" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/SAC/Service/3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.Transcodifiche.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" />
+  <xs:element name="TranscodificaUnitaOperativaDaSistemaACentrale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="sistema" nillable="true" type="q1:SistemaType" />
+        <xs:element xmlns:q2="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="uo" nillable="true" type="q2:UnitaOperativaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranscodificaUnitaOperativaDaSistemaACentraleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="TranscodificaUnitaOperativaDaSistemaACentraleResult" nillable="true" type="q3:UnitaOperativaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranscodificaUnitaOperativaDaCentraleASistema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="sistema" nillable="true" type="q4:SistemaType" />
+        <xs:element xmlns:q5="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="uo" nillable="true" type="q5:UnitaOperativaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranscodificaUnitaOperativaDaCentraleASistemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="TranscodificaUnitaOperativaDaCentraleASistemaResult" nillable="true" type="q6:UnitaOperativaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranscodificaUnitaOperativeDaSistemaACentrale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="sistema" nillable="true" type="q7:SistemaType" />
+        <xs:element xmlns:q8="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="uos" nillable="true" type="q8:UnitaOperativeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranscodificaUnitaOperativeDaSistemaACentraleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="TranscodificaUnitaOperativeDaSistemaACentraleResult" nillable="true" type="q9:UnitaOperativeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranscodificaUnitaOperativeDaCentraleASistema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="sistema" nillable="true" type="q10:SistemaType" />
+        <xs:element xmlns:q11="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="uos" nillable="true" type="q11:UnitaOperativeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranscodificaUnitaOperativeDaCentraleASistemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.progel.it/WCF/SAC/TranscodificaTypes/3.0" minOccurs="0" name="TranscodificaUnitaOperativeDaCentraleASistemaResult" nillable="true" type="q12:UnitaOperativeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

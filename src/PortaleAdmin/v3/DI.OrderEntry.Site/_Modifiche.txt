@@ -1,0 +1,176 @@
+﻿*************************************************************************
+| 1 - RICORDARSI DI DARE IL GRANT EXECUTE AL DATABASE ROLE DataAccessUI |
+*************************************************************************
+*****************************************************************************************************************************
+| 2 - Nella generazione degli script non fare il drop e create, ma quello che è alter è alter, quello che è create è create |
+*****************************************************************************************************************************
+
+* Leggere note sopra!!!!!!!!!!!!!!!!!!!!!!!!*
+-- =============================================
+
+
+
+*******************************************************************************
+2016-10-10 limite righe DatiAccessori, controllo stringhe su accentate
+
+ALTER PROCEDURE [dbo].[UiLookupSistemiRichiedenti]
+ALTER PROCEDURE [dbo].[UiDatiAccessoriList]
+
+
+
+*******************************************************************************
+2016-08-24   Dati Accessori, aggiunto campo ConcatenaNomeUguale
+
+ALTER TABLE [dbo].[DatiAccessori] ADD [ConcatenaNomeUguale] [bit] NOT NULL CONSTRAINT [DF_DatiAccessori_Concatena]  DEFAULT ((1))
+ALTER PROCEDURE [dbo].[UiDatiAccessoriList]
+ALTER PROCEDURE [dbo].[UiDatiAccessoriInsert]
+ALTER PROCEDURE [dbo].[UiDatiAccessoriUpdate]
+
+*******************************************************************************
+2016-01-05 Aggiunto parametro Ordinamento
+CREATE FUNCTION GetOrdineValidazione
+CREATE PROCEDURE dbo.UiOrdiniList4
+ALTER VIEW [dbo].[OrdiniLista2]
+	
+*******************************************************************************
+2015-10-28   Monitor Ordini, Ricerca In Inoltro e Reinoltrati, Pulizia procedure non usate
+
+CREATE PROCEDURE [dbo].[UiOrdiniTestateUltimiArrivi]
+CREATE PROCEDURE [dbo].[UiOrdiniErogatiTestateUltimiArrivi]
+ALTER PROCEDURE  [dbo].[UiOrdiniRigheList]
+ALTER PROCEDURE  [dbo].[UiOrdiniRigheRichiesteList]
+ALTER FUNCTION   [dbo].[GetStatoSenzaSottostato2]
+CREATE FUNCTION  [dbo].[IsOrdineReinoltrato]
+ALTER PROCEDURE  [dbo].[UiOrdiniList3]
+CREATE FUNCTION  [dbo].[GetStatoCalcolatoRigheRichieste]
+CREATE PROCEDURE [dbo].[Maintenance_BuildSinottico]
+ALTER PROCEDURE  [dbo].[UiSinottico1]
+ALTER PROCEDURE  [dbo].[UiSinotticoSistemi1]
+--CANCELLAZIONE PROCEDURE NON PIU' USATE
+DROP PROCEDURE UiOrdiniList
+DROP PROCEDURE UiOrdiniList1
+DROP PROCEDURE UiOrdiniList2
+DROP PROCEDURE UiBuildSinottico
+DROP PROCEDURE UiBuildSinotticoUltimaSettimana
+DROP PROCEDURE UiBuildSinotticoUltimoGiorno
+DROP PROCEDURE UiSinottico
+DROP PROCEDURE UiSinotticoSistemi
+DROP FUNCTION GetStatoSenzaSottostato
+DROP FUNCTION GetStatoSenzaSottostato1
+
+
+
+
+*******************************************************************************
+2015-09-03
+ALTER PROCEDURE [dbo].[UiOrdiniList3]
+ALTER FUNCTION [dbo].[GetStatoSenzaSottostato2]
+
+
+*******************************************************************************
+2015-08-03
+
+ALTER PROCEDURE [dbo].[UiOrdiniTestateDatiAggiuntiviList]
+ALTER PROCEDURE [dbo].[UiOrdiniRigheRichiesteDatiAggiuntiviList]
+ALTER PROCEDURE [dbo].[UiOrdiniErogatiTestateDatiAggiuntiviList]
+ALTER PROCEDURE [dbo].[UiOrdiniRigheErogateDatiAggiuntiviList]
+
+*******************************************************************************
+2015-07-23  Data Pianificata + Ricerca per filtri In Inoltro e Reinoltrato
+
+ALTER PROCEDURE [dbo].[UiGruppiPrestazioniInsert1]
+CREATE PROCEDURE [dbo].[UiPrestazioniGruppiPrestazioniCopy]
+CREATE PROCEDURE [dbo].[UiPrestazioniProfiloPrestazioniCopy]
+
+
+*******************************************************************************
+2015-04-28  
+
+Dati Aggiuntivi indicati come 'Non Visibile':
+	ALTER PROCEDURE dbo.UiOrdiniTestateDatiAggiuntiviList
+	ALTER PROCEDURE dbo.UiOrdiniRigheRichiesteDatiAggiuntiviList
+	ALTER PROCEDURE dbo.UiOrdiniErogatiTestateDatiAggiuntiviList
+	ALTER PROCEDURE dbo.UiOrdiniRigheErogateDatiAggiuntiviList
+
+Bug Mancato filtro su sistema erogante:
+	ALTER PROCEDURE [dbo].[UiOrdiniList3]
+
+
+*******************************************************************************
+2015-02-18: PAGINA DATI AGGIUNTIVI
+
+CRATE TABLE DatiAggiuntivi
+CREATE PROC [dbo].[UiDatiAggiuntiviSelect] 
+CREATE PROC [dbo].[UiDatiAggiuntiviInsert] 
+CREATE PROC [dbo].[UiDatiAggiuntiviUpdate] 
+CREATE PROC [dbo].[UiDatiAggiuntiviDelete] 
+CREATE PROC [dbo].[UiDatiAggiuntiviList]   
+
+
+*******************************************************************************
+2015-01-30 Aggiunta Campo Desc UO 
+
+ALTER VIEW [dbo].[OrdiniLista2]
+ALTER PROCEDURE [dbo].[UiOrdiniList3]
+
+*******************************************************************************
+2015-01-26 BUG CARATTERI SPECIALI XML DatiAggiuntivi:
+  ALTER PROCEDURE [dbo].[UiOrdiniRigheRichiesteDatiAggiuntiviList]
+
+*******************************************************************************
+Rilascio 2/12/2014  (LAB + PROD)
+
+ALTER VIEW [dbo].[OrdiniLista2]
+ALTER PROCEDURE [dbo].[UiOrdiniList3]
+
+*******************************************************************************
+Rilascio 6/11/2014 
+
+CREATE FUNCTION dbo.GetUiUtentiGruppiUtentiCount
+CREATE FUNCTION dbo.GetUiPrestazioniGruppiPrestazioniCount
+GRANT EXECUTE ON dbo.GetUiUtentiGruppiUtentiCount TO DataAccessUi AS dbo
+GRANT EXECUTE ON dbo.GetUiPrestazioniGruppiPrestazioniCount TO DataAccessUi AS dbo
+ALTER PROCEDURE dbo.UiPrestazioniSelectPrestazioni
+ALTER PROCEDURE [dbo].[UiGruppiPrestazioniList2]
+ALTER PROCEDURE [dbo].[UiGruppiUtentiList1]
+
+DROP PROCEDURE dbo.UiPrestazioniSelect2
+
+*******************************************************************************
+Rilascio 21/10/2014 
+
+ALTER PROCEDURE [dbo].[UiSistemiUpdate1]
+CREATE PROCEDURE dbo.UiGruppiUtentiPerUtente
+GRANT EXECUTE ON dbo.UiGruppiUtentiPerUtente TO DataAccessUi AS dbo
+ALTER PROCEDURE [dbo].[UiSistemiDatiAccessoriInsert]
+
+*******************************************************************************
+
+Rilascio 14/10/2014
+
+ALTER PROCEDURE [dbo].[UiUtentiSelect]
+ALTER PROCEDURE [dbo].[UiUtentiUpdate]
+ALTER PROCEDURE [dbo].[UiUtentiInsert]
+ALTER PROCEDURE [dbo].[UiUtentiList1]
+CREATE PROCEDURE [dbo].[UiSACUtentiCerca]
+CREATE PROCEDURE [dbo].[UiSACGruppiCerca]
+ALTER PROCEDURE dbo.UiSistemiSelect1
+CREATE VIEW [dbo].[UiSistemi]
+ALTER PROCEDURE [dbo].[UiDatiAccessoriList]
+ALTER PROCEDURE [dbo].[UiUtentiInsertOrUpdate]
+ALTER PROCEDURE [dbo].[UiEnnupleList]
+ALTER PROCEDURE [dbo].[UiEnnupleAccessiList]
+ALTER PROCEDURE [dbo].[UiPrestazioniSelect]
+ALTER PROCEDURE [dbo].[UiPrestazioniList1]
+ALTER PROCEDURE [dbo].[UiGruppiUtentiList1]
+
+
+*******************************************************************************
+
+Rilascio 16/09/2014
+
+  CREATE_PROCEDURE - dbo.UiSimulazioneEnnupleList1 - GRANT_DATABASE - dbo.UiSimulazioneEnnupleList1
+  ALTER_PROCEDURE - dbo.UiPrestazioniSelect -  GRANT_DATABASE - dbo.UiPrestazioniSelect
+  ALTER_PROCEDURE - dbo.UiDatiAccessoriList -  GRANT_DATABASE - dbo.UiDatiAccessoriList
+  ALTER_PROCEDURE - dbo.UiPrestazioniList1  -  GRANT_DATABASE - dbo.UiPrestazioniList1
+  ALTER FUNCTION [dbo].[GetStatoCalcolatoRighe]

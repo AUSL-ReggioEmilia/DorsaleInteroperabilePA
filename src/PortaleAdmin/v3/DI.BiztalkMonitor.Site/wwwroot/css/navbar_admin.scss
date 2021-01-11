@@ -1,0 +1,56 @@
+﻿/*Header*/
+@import 'color.scss';
+@import 'size.scss';
+
+.header-main-title {
+    color: $headerMainTitleColor;
+    font-size: $fontSizeTitle;
+}
+
+.navbar-admin {
+    background-color: #CEDCD5;
+    border-bottom: solid 1px #4682B4;
+    border-top: solid 1px #4682B4;
+    height: 21px;
+    display: block;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background: #CEDCD5;
+    filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+    background: linear-gradient(to bottom, #CEDCD5, #FFFFFF);
+    font: 11px Verdana, Arial, Helvetica;
+}
+
+.navbar-admin-link > a {
+    color: #4682B4;
+    font-weight: bolder;
+    @extend .mx-1;
+    text-decoration: none;
+    border-style: none;
+    padding-left: 0.15em;
+    padding-right: 0.15em;
+}
+
+.card-sub-menu {
+    background-color: #f5f5f5 !important;
+}
+
+.nav-link {
+    @extend .py-1, .px-2;
+    color: black;
+}
+
+// SOVRASCRIVE L'ACTIVE DI BOOTSTRAP NEI MENU'
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: black !important;
+    @extend .font-weight-bold;
+    background-color: transparent !important;
+}
+
+.nav-root {
+    @extend .font-weight-bold;
+    font-size: $fontNavbarTitle;
+    color: $navbarRootColor;
+}

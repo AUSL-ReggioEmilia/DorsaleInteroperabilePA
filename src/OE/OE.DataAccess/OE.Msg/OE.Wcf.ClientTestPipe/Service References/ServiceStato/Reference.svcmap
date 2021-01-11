@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="32bf497b-01c6-40f9-9823-b0de78be3c3c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/OeDataAccess/Stato/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Stato.wsdl" MetadataType="Wsdl" ID="e395e2fa-a520-46ca-a611-3facba99dc0e" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Stato/mex" />
+    <MetadataFile FileName="Stato.xsd" MetadataType="Schema" ID="e2e38d89-8152-461f-bb10-7c3fcc346f5f" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Stato/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3a574fdc-2682-4170-ad74-7ac3745ac057" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Stato/mex" />
+    <MetadataFile FileName="1.1.xsd" MetadataType="Schema" ID="a620e9b5-d242-482a-9dd5-91e38a093bbd" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Stato/mex" />
+    <MetadataFile FileName="1.11.xsd" MetadataType="Schema" ID="1893f725-ea39-4512-9c04-17e68b44fdd2" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Stato/mex" />
+    <MetadataFile FileName="1.12.xsd" MetadataType="Schema" ID="5b0a774d-348e-43dd-ab1f-4f436b20560c" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Stato/mex" />
+    <MetadataFile FileName="OE.Wcf.BtDataAccess1.xsd" MetadataType="Schema" ID="5cbc062c-cdad-4dae-be00-3914a4419b28" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Stato/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_OeBtConfig" Class="OeBtConfigDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_OeBtConfig;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_OeBtConfigConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TipoOperazioneOsu" Member="TipoOperazioneOsu">
+    <Type Name="TipoOperazioneOsu">
+      <Column Name="Sistema" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Azienda" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TipoOperazione" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TipoOperazioneOsuAziende_TipoOperazioneOsu" Member="TipoOperazioneOsuAziende" ThisKey="Azienda" OtherKey="Azienda" Type="TipoOperazioneOsuAziende" IsForeignKey="true" />
+      <Association Name="TipoOperazioneOsuSistemi_TipoOperazioneOsu" Member="TipoOperazioneOsuSistemi" ThisKey="Sistema" OtherKey="Sistema" Type="TipoOperazioneOsuSistemi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.TipoOperazioneOsuAziende" Member="TipoOperazioneOsuAziende">
+    <Type Name="TipoOperazioneOsuAziende">
+      <Column Name="Azienda" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TipoOperazioneOsuAziende_TipoOperazioneOsu" Member="TipoOperazioneOsu" ThisKey="Azienda" OtherKey="Azienda" Type="TipoOperazioneOsu" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="admin.TipoOperazioneOsuSistemi" Member="TipoOperazioneOsuSistemi">
+    <Type Name="TipoOperazioneOsuSistemi">
+      <Column Name="Sistema" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TipoOperazioneOsuSistemi_TipoOperazioneOsu" Member="TipoOperazioneOsu" ThisKey="Sistema" OtherKey="Sistema" Type="TipoOperazioneOsu" Cardinality="One" />
+    </Type>
+  </Table>
+</Database>

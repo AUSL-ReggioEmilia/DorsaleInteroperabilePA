@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ReportingUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://DAGOBAH2:8088/Reporting/Reports/{0}.aspx</Value>
+    </Setting>
+    <Setting Name="DwhNewsMaxRowsNumber" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="DwhNewsUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DwhNewsPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DwhNewsUrlDetail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://wss3-dev.progel.it/Lists/Annunci/DispForm.aspx?ID={0}</Value>
+    </Setting>
+    <Setting Name="DwhNewsImpersonate" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MenuLeft_Visible" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DwhNewsTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">NEWS Sistemi Clinici</Value>
+    </Setting>
+    <Setting Name="DwhNewsListName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VecchioPortaleUserUrlASMN" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2.progel.org:8088/PortalHome</Value>
+    </Setting>
+    <Setting Name="VecchioPortaleUserUrlAUSL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dagobah2.progel.org:8088/PortalHome</Value>
+    </Setting>
+    <Setting Name="WsSac_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">progel.it\dev_vs</Value>
+    </Setting>
+    <Setting Name="WsSac_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aa1234BB</Value>
+    </Setting>
+    <Setting Name="InstrumentationKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">47f2a002-85e4-4b5b-af93-bb848e0c7a4a</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

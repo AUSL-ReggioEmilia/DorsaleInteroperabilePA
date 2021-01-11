@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="SiteAdmins" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PROGEL.IT\Sviluppo</Value>
+    </Setting>
+    <Setting Name="ReportingUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://DAGOBAH2:8080/Reporting/Reports/{0}.aspx</Value>
+    </Setting>
+    <Setting Name="Anonimizzazioni_ModuloStampa_Avviso" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Su richiesta dell'assistito la Direzione Sanitaria ha rilasciato la seguente posizione anonima, da utilizzare 
+per gli accessi alle strutture sanitarie pubbliche della provincia di Reggio Emilia.&lt;br/&gt;
+Per chiarimenti contattare le Direzioni Sanitarie dell'Azienda USL o Azienda Ospedaliera.&lt;br/&gt;&lt;br/&gt;
+In caso di registrazione dell'assistito sui sistemi informativi aziendali, procedere con una RICERCA
+preliminare per verificare che la posizione anonima seguente non sia già presente.&lt;br/&gt;
+Qualora la posizione non sia presente, inserirla garantendo che siano compilati tutti i campi come indicato.</Value>
+    </Setting>
+    <Setting Name="InstrumentationKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">137d619d-c491-40b7-ad25-b33124a14470</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,167 @@
+﻿@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+html, body {
+    /*font: 12pt Calibri, sans-serif;*/
+    height: 100%;
+}
+
+/*Toglie il margin-bottom di tutte le tabelle.*/
+table {
+    margin-bottom: 0px !important;
+}
+
+
+/*---------------------------------------------------------------------
+	Master Page
+---------------------------------------------------------------------*/
+
+.PageHeader {
+    vertical-align: top;
+    display: block;
+    height: 72px;
+    width: 100%;
+    text-align: center;
+}
+
+.TopContent {
+    background-color: #CEDCD5;
+    border-bottom: solid 1px #4682B4;
+    border-top: solid 1px #4682B4;
+    height: 21px;
+    display: block;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background: #CEDCD5; /* For browsers that do not support gradients */
+    filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#CEDCD5', gradientType='0');
+    background: linear-gradient(to bottom, #CEDCD5, #FFFFFF); /* Standard syntax */
+}
+
+.LeftContent {
+    margin-top: 5px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.PageContent {
+    margin-top: 5px;
+}
+
+
+/*---------------------------------------------------------------------
+	Master Menu
+---------------------------------------------------------------------*/
+
+.MasterMenu {
+    font-size: 11px;
+    font-family: Verdana, Arial, Helvetica;
+    text-decoration: none;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+    .MasterMenu li {
+        margin-left: 6px;
+        margin-right: 11px;
+    }
+
+.MasterMenuItem {
+    color: #4682B4;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+/*---------------------------------------------------------------------
+	TreeView spalla sinistra in Master Page
+---------------------------------------------------------------------*/
+.LeftMenuTreeView {
+    /*font-family: Verdana;*/
+    /*font-size: 11pt !important;*/
+    margin-top: -10px;
+}
+
+.TreeNode {
+    display: block;
+    border-radius: 4px !important;
+}
+
+    .TreeNode a {
+        padding: 3px 8px;
+        text-decoration: none !important;
+    }
+
+.TreeRootNode {
+    font-weight: 900 !important;
+    margin-left: -4px; /*per il nodo root rimuovo l'indentazione data dal treenode->a */
+}
+
+.TreeParentNode {
+    font-weight: 900 !important;
+    margin-top: 10px;
+}
+
+.TreeHoverNode {
+    background-color: white;
+}
+
+.TreeSelectedNode {
+    padding: 1px 3px !important;
+}
+
+.TreeNode:hover {
+    background-color: white;
+}
+
+
+/*---------------------------------------------------------------------
+	Pagina List.aspx
+---------------------------------------------------------------------*/
+/* Toglie i padding degli elementi all'interno delle tabelle. */
+.table-custom-padding .form-control-static {
+    padding: 0px !important;
+    min-height: 1px !important;
+}
+
+/*---------------------------------------------------------------------
+	Controlli in stile bootstrap aggiuntivi
+---------------------------------------------------------------------*/
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+
+.custom-align {
+    text-align: center;
+}
+
+.td-custom-align {
+    padding-left: 5px;
+}
+
+/*SOLO SU SCHERMI MD E LG (< 768px)*/
+@media (min-width: 768px) {
+    /*ALLINEA A SINISTRA LE LABEL COLLEGATE ALLE TEXTBOX DENTRO LE FORM-HORIZONTAL
+    * PER EVITARE CHE LE LABEL SIANO ALLINEATE A DESTRA ,ATTACCATE ALLE TEXTBOX
+    */
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+}

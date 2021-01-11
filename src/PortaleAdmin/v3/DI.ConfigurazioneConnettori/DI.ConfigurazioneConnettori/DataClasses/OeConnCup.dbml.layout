@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 19, 11.25" name="OeConnCup">
+  <DataContextMoniker Name="/OeConnCupDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e0eca975-abdd-4b42-98fb-6e87bfe06daa" absoluteBounds="0.75, 1.5, 2.75, 2.3478011067708335">
+      <DataClassMoniker Name="/OeConnCupDataContext/TranscodificaAgendaCupStrutturaErogante" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a15abd32-8426-484d-bec2-919795ef8107" absoluteBounds="0.765, 1.96, 2.7199999999999998, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1c7a4a0f-4729-4601-9784-ecb49bb46329" absoluteBounds="8.75, 0.625, 2.875, 3.1170068359375">
+      <DataClassMoniker Name="/OeConnCupDataContext/TranscodificaAttributiPrestazioniCupErogante" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27c4f985-5db2-4db2-87fb-e3becad348e8" absoluteBounds="8.765, 1.085, 2.8449999999999998, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e1e38a2-ca85-4911-acdd-c3efd63b83ba" absoluteBounds="0.625, 6.5, 2.875, 1.5785953776041666">
+      <DataClassMoniker Name="/OeConnCupDataContext/TranscodificaCodiceProvenienzaCupErogante" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db3abcbc-1878-4163-a372-79a21df4c220" absoluteBounds="0.63999999999999968, 6.9600000000000009, 2.8449999999999998, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2ea40c6-f99b-4d20-b517-e8f7a9c193f5" absoluteBounds="9, 7.625, 2.75, 1.3862939453124996">
+      <DataClassMoniker Name="/OeConnCupDataContext/TranscodificaCodiceUrgenzaCupOrderEntry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dcb59afe-ac59-49c7-b8f8-7abe98181e39" absoluteBounds="9.015, 8.085, 2.7199999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16a18c54-c2e0-4788-9bcf-6fcd4f8ee46d" absoluteBounds="4.75, 1.75, 2.625, 1.3862939453125">
+      <DataClassMoniker Name="/OeConnCupDataContext/TranscodificaTipoContrattoCupErogante" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25f4b19d-e304-42b5-9e09-b6950c18241f" absoluteBounds="4.765, 2.21, 2.5949999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="582beb29-a724-4b4b-b143-8eaf25f75a96" absoluteBounds="9.125, 9.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/OeConnCupDataContext/AgendeCupSistemiDiStampa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59769523-d691-4f38-9f4e-da685a2c58d6" absoluteBounds="9.14, 9.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39ef4fc6-ea62-45fc-b98c-db0443c52d4e" absoluteBounds="4.125, 5.625, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnCupDataContext/ocup_StruttureEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bb6b220-27e4-4d34-9ba7-cc4a51a103ff" absoluteBounds="4.1400000000000006, 6.085, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8c3d099-7a3d-494d-b9d4-3b3f1b773406" absoluteBounds="14.5, 3.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/OeConnCupDataContext/DiffAgendeCup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aaae4200-e4d4-496c-ad15-cf79918104ce" absoluteBounds="14.515, 3.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11f4010a-6c87-4c32-bc87-b17bf2b8802c" absoluteBounds="14.5, 7.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/OeConnCupDataContext/DiffProvenienzeCup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a2bc98f-24cc-47bf-9633-909d2c05fbc3" absoluteBounds="14.515, 7.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7db7a59a-ec9a-42c0-8e43-7cc95a617950" absoluteBounds="14.5, 5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/OeConnCupDataContext/DiffPrestazioniCup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a87fa90a-d7fb-4586-846a-ca8e66827323" absoluteBounds="14.515, 5.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8f4a275c-6276-4b5c-878b-523619648e91" absoluteBounds="6, 0.5, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnCupDataContext/TipiContrattoErogante" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b41e0c6a-32a9-423b-8320-acae8df49f31" absoluteBounds="6.0150000000000006, 0.96, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.6875 : 1.50169108072917); (6.6875 : 1.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/TipiContrattoErogante/TipiContrattoErogante_TranscodificaTipoContrattoCupErogante" />
+      <nodes>
+        <classShapeMoniker Id="8f4a275c-6276-4b5c-878b-523619648e91" />
+        <classShapeMoniker Id="16a18c54-c2e0-4788-9bcf-6fcd4f8ee46d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b333035b-febf-4841-86a4-1f95400a2962" absoluteBounds="5.125, 8.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/OeConnCupDataContext/RegimiOe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7283b5d-78d4-49cf-8a0a-621c03aad16c" absoluteBounds="5.1400000000000006, 9.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="908b23a3-af49-4f51-abe0-3f202e807775" absoluteBounds="12.125, 1.375, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnCupDataContext/AttributiNomi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18611702-fbc2-4c22-8f22-0c3e5322f1c7" absoluteBounds="12.14, 1.835, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.125 : 1.90923121954805); (11.625 : 1.90923121954805)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/AttributiNomi/AttributiNomi_TranscodificaAttributiPrestazioniCupErogante" />
+      <nodes>
+        <classShapeMoniker Id="908b23a3-af49-4f51-abe0-3f202e807775" />
+        <classShapeMoniker Id="1c7a4a0f-4729-4601-9784-ecb49bb46329" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0938109a-5ceb-4775-b6fc-3918da3c2d35" absoluteBounds="5.125, 7.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/OeConnCupDataContext/ocup_SistemiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="916f222a-e3a3-48e8-a977-50e782b5116f" absoluteBounds="5.1400000000000006, 7.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ce5d88c2-80c2-4e3d-b141-e3ad33af44f1" absoluteBounds="6.125, 4.5, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/OeConnCupDataContext/Enum_CodiciSistemiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="861a0f1e-788d-4a08-9a06-a2592c279b0b" absoluteBounds="6.1400000000000006, 4.96, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5425d525-fdb4-4a1b-b323-9b933e9bd495" absoluteBounds="2.125, 4.5, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnCupDataContext/Enum_CodiciAziendeEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec0ba3cb-6e6c-41ac-85f7-efbb024dca4f" absoluteBounds="2.1400000000000006, 4.96, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.60097984182087 : 4.5); (6.60097984182087 : 4.22044108072917); (5.48958333333333 : 4.22044108072917 : JumpStart); (5.32291666666667 : 4.22044108072917 : JumpEnd); (4.44406066683936 : 4.22044108072917 : JumpStart); (4.2773940001727 : 4.22044108072917 : JumpEnd); (3.95827828653242 : 4.22044108072917 : JumpStart); (3.79161161986576 : 4.22044108072917 : JumpEnd); (2.39731350119604 : 4.22044108072917 : JumpStart); (2.23064683452938 : 4.22044108072917 : JumpEnd); (0.458333333333333 : 4.22044108072917); (0.458333333333333 : 3.24648785470546); (0.75 : 3.24648785470546)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/Enum_CodiciSistemiEroganti/Enum_CodiciSistemiEroganti_TranscodificaAgendaCupStrutturaErogante" />
+      <nodes>
+        <classShapeMoniker Id="ce5d88c2-80c2-4e3d-b141-e3ad33af44f1" />
+        <classShapeMoniker Id="e0eca975-abdd-4b42-98fb-6e87bfe06daa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.74270840183898 : 4.5); (7.74270840183898 : 3.38541666666667); (8.75 : 3.38541666666667)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/Enum_CodiciSistemiEroganti/Enum_CodiciSistemiEroganti_TranscodificaAttributiPrestazioniCupErogante" />
+      <nodes>
+        <classShapeMoniker Id="ce5d88c2-80c2-4e3d-b141-e3ad33af44f1" />
+        <classShapeMoniker Id="1c7a4a0f-4729-4601-9784-ecb49bb46329" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.31398016786271 : 4.5); (2.31398016786271 : 4.0457177734375); (0.59375 : 4.0457177734375); (0.59375 : 3.50433123270671); (0.75 : 3.50433123270671)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/Enum_CodiciAziendeEroganti/Enum_CodiciAziendeEroganti_TranscodificaAgendaCupStrutturaErogante" />
+      <nodes>
+        <classShapeMoniker Id="5425d525-fdb4-4a1b-b323-9b933e9bd495" />
+        <classShapeMoniker Id="e0eca975-abdd-4b42-98fb-6e87bfe06daa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.87494495319909 : 4.5); (3.87494495319909 : 3.55354971811281); (4.2773940001727 : 3.55354971811281 : JumpStart); (4.44406066683936 : 3.55354971811281 : JumpEnd); (5.32291666666667 : 3.55354971811281 : JumpStart); (5.48958333333333 : 3.55354971811281 : JumpEnd); (7.65937506850565 : 3.55354971811281 : JumpStart); (7.82604173517231 : 3.55354971811281 : JumpEnd); (8.75 : 3.55354971811281)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/Enum_CodiciAziendeEroganti/Enum_CodiciAziendeEroganti_TranscodificaAttributiPrestazioniCupErogante" />
+      <nodes>
+        <classShapeMoniker Id="5425d525-fdb4-4a1b-b323-9b933e9bd495" />
+        <classShapeMoniker Id="1c7a4a0f-4729-4601-9784-ecb49bb46329" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.36072733350603 : 5.625); (4.36072733350603 : 2.88626156901042); (3.5 : 2.88626156901042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/ocup_StruttureEroganti/ocup_StruttureEroganti_TranscodificaAgendaCupStrutturaErogante" />
+      <nodes>
+        <classShapeMoniker Id="39ef4fc6-ea62-45fc-b98c-db0443c52d4e" />
+        <classShapeMoniker Id="e0eca975-abdd-4b42-98fb-6e87bfe06daa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 6.12584554036458); (10.1875 : 6.12584554036458); (10.1875 : 3.7420068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/ocup_StruttureEroganti/ocup_StruttureEroganti_TranscodificaAttributiPrestazioniCupErogante" />
+      <nodes>
+        <classShapeMoniker Id="39ef4fc6-ea62-45fc-b98c-db0443c52d4e" />
+        <classShapeMoniker Id="1c7a4a0f-4729-4601-9784-ecb49bb46329" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.125 : 6.12584554036458); (3.75 : 6.12584554036458); (3.75 : 7.28929768880208); (3.5 : 7.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/ocup_StruttureEroganti/ocup_StruttureEroganti_TranscodificaCodiceProvenienzaCupErogante" />
+      <nodes>
+        <classShapeMoniker Id="39ef4fc6-ea62-45fc-b98c-db0443c52d4e" />
+        <classShapeMoniker Id="9e1e38a2-ca85-4911-acdd-c3efd63b83ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.40625 : 5.625); (5.40625 : 3.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/ocup_StruttureEroganti/ocup_StruttureEroganti_TranscodificaTipoContrattoCupErogante" />
+      <nodes>
+        <classShapeMoniker Id="39ef4fc6-ea62-45fc-b98c-db0443c52d4e" />
+        <classShapeMoniker Id="16a18c54-c2e0-4788-9bcf-6fcd4f8ee46d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 5.81292277018229); (14.5 : 5.81292277018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/ocup_StruttureEroganti/ocup_StruttureEroganti_DiffPrestazioniCup" />
+      <nodes>
+        <classShapeMoniker Id="39ef4fc6-ea62-45fc-b98c-db0443c52d4e" />
+        <classShapeMoniker Id="7db7a59a-ec9a-42c0-8e43-7cc95a617950" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1cb6a1da-42fa-4db2-a30b-9504b5ecebc5" absoluteBounds="3.875, 0.5, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnCupDataContext/TipiContrattoCup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3780ac6c-a6f2-4d11-831c-cd60cd5a72d2" absoluteBounds="3.8900000000000006, 0.96, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.3125 : 1.50169108072917); (5.3125 : 1.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/TipiContrattoCup/TipiContrattoCup_TranscodificaTipoContrattoCupErogante" />
+      <nodes>
+        <classShapeMoniker Id="1cb6a1da-42fa-4db2-a30b-9504b5ecebc5" />
+        <classShapeMoniker Id="16a18c54-c2e0-4788-9bcf-6fcd4f8ee46d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="db05181e-0b0b-4ef0-ad0f-d2777620d95e" absoluteBounds="0.625, 8.625, 3.25, 1.3862939453125">
+      <DataClassMoniker Name="/OeConnCupDataContext/TranscodificaTipoContrattoCupRegimeOrderEntry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba6529a6-4a4e-427e-a12b-4969f068b22e" absoluteBounds="0.6399999999999999, 9.085, 3.2199999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 9.64583333333333); (3.875 : 9.64583333333333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/RegimiOe/RegimiOe_TranscodificaTipoContrattoCupRegimeOrderEntry" />
+      <nodes>
+        <classShapeMoniker Id="b333035b-febf-4841-86a4-1f95400a2962" />
+        <classShapeMoniker Id="db05181e-0b0b-4ef0-ad0f-d2777620d95e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.875 : 0.9687505); (0.25 : 0.9687505); (0.25 : 9.4475497671274); (0.625 : 9.4475497671274)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnCupDataContext/TipiContrattoCup/TipiContrattoCup_TranscodificaTipoContrattoCupRegimeOrderEntry" />
+      <nodes>
+        <classShapeMoniker Id="1cb6a1da-42fa-4db2-a30b-9504b5ecebc5" />
+        <classShapeMoniker Id="db05181e-0b0b-4ef0-ad0f-d2777620d95e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dda3c375-578f-40d2-8147-46c807d87252" absoluteBounds="16.75, 3.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/OeConnCupDataContext/DiffAgendeEsistentiPrestazioniMancanti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="076559ae-321e-43f7-816e-c2b18a3343fc" absoluteBounds="16.765, 3.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

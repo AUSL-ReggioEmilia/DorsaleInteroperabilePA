@@ -1,0 +1,27 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SitePopup.Master.vb"
+	Inherits="DI.OrderEntry.Admin.SitePopup" %>
+
+<%--  
+	                 MASTER PAGE USATA PER LE PAGINE POPUP
+--%>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+	<link href="Styles/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<link href="Styles/master.css" rel="stylesheet" type="text/css" />
+	<link href="Styles/XmlView.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../Scripts/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="../Scripts/jquery-ui-1.8.14.custom.min.js"></script>
+	<script type="text/javascript" src="../Scripts/jquery-ui-timepicker-addon.js"></script>
+	<script type="text/javascript" src="../Scripts/jquery.tablesorter.min.js"></script>
+	<script type="text/javascript" src="../Scripts/master.js"></script>
+    <script type="text/javascript" src="../Scripts/PopUp.js"></script>
+
+	<%--<script type="text/javascript" src="../Scripts/XmlView.js"></script>--%>
+</head>
+<body>
+	<form id="MainForm" runat="server">
+	<asp:ContentPlaceHolder ID="OrderEntryContentPlaceHolder" runat="server" />
+	</form>
+</body>
+</html>

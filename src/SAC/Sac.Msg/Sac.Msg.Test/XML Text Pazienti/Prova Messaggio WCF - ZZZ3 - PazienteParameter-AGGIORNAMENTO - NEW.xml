@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<MessaggioPazienteParameter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Utente>BT_LHA</Utente>
+  <DataSequenza>2014-03-13T17:00:00</DataSequenza>
+  <Paziente>
+    <Id>ZZZ3</Id>
+    <Tessera>ZZZ3</Tessera>
+    <Cognome>ProvaZZZ3</Cognome>
+    <Nome>ProvaZZZ3</Nome>
+    <DataNascita>1968-01-01T00:00:00</DataNascita>
+    <Sesso>M</Sesso>
+    <!-- COMUNE NASCITA -->
+    <ComuneNascitaCodice>037006</ComuneNascitaCodice>
+    <NazionalitaCodice>100</NazionalitaCodice>
+    <CodiceFiscale>ZZZZZZ0000000001</CodiceFiscale>
+    <MantenimentoPediatra>false</MantenimentoPediatra>
+    <CapoFamiglia>true</CapoFamiglia>
+    <Indigenza>false</Indigenza>
+    <CodiceTerminazione />
+    <DescrizioneTerminazione />
+    <!-- COMUNE RESIDENZA -->
+    <ComuneResCodice>037006</ComuneResCodice>
+    <SubComuneRes>SubComuneRes</SubComuneRes>
+    <IndirizzoRes>GIOVANNI  VECCHI 1/00</IndirizzoRes>
+    <LocalitaRes>LocalitaRes</LocalitaRes>
+    <CapRes>42121</CapRes>
+    <!-- <DataDecorrenzaRes xsi:nil="true"/>-->
+    <DataDecorrenzaRes>2011-02-10T00:00:00</DataDecorrenzaRes>
+    <ComuneAslResCodice>000000</ComuneAslResCodice>
+    <!-- verificare se viene scritto -->
+    <CodiceAslRes>103</CodiceAslRes>
+    <RegioneResCodice>080</RegioneResCodice>
+    <!-- COMUNE DOMICILIO -->
+    <ComuneDomCodice>037006</ComuneDomCodice>
+    <SubComuneDom>SubComuneDom</SubComuneDom>
+    <IndirizzoDom>GIOVANNI  VECCHI 1/00</IndirizzoDom>
+    <LocalitaDom>LocalitaDom</LocalitaDom>
+    <CapDom>42121</CapDom>
+    <PosizioneAss>1</PosizioneAss>
+    <RegioneAssCodice>080</RegioneAssCodice>
+    <ComuneAslAssCodice>0000001</ComuneAslAssCodice>
+    <!-- verificare se viene scritto -->
+    <CodiceAslAss>103</CodiceAslAss>
+    <DataInizioAss>2011-02-10T00:00:00</DataInizioAss>
+    <DataScadenzaAss>2012-01-13T00:00:00</DataScadenzaAss>
+    <DataTerminazioneAss xsi:nil="true" />
+    <DistrettoAmm>AMM</DistrettoAmm>
+    <DistrettoTer>TER</DistrettoTer>
+    <Ambito>Ambito</Ambito>
+    <CodiceMedicoDiBase>190</CodiceMedicoDiBase>
+    <CodiceFiscaleMedicoDiBase>FNTNTN51H17I496O</CodiceFiscaleMedicoDiBase>
+    <CognomeNomeMedicoDiBase>FONTANESI/ANTONIO</CognomeNomeMedicoDiBase>
+    <DistrettoMedicoDiBase>888</DistrettoMedicoDiBase>
+    <DataSceltaMedicoDiBase>2011-02-10T00:00:00</DataSceltaMedicoDiBase>
+    <!-- COMUNE RECAPITO-->
+    <ComuneRecapitoCodice>000000</ComuneRecapitoCodice>
+    <IndirizzoRecapito>IndirizzoRecapito</IndirizzoRecapito>
+    <LocalitaRecapito>LocalitaRecapito</LocalitaRecapito>
+    <Telefono1>Telefono1</Telefono1>
+    <Telefono2>Telefono2</Telefono2>
+    <Telefono3>Telefono3</Telefono3>
+    <CodiceSTP>STP0801030015361</CodiceSTP>
+    <DataInizioSTP>2010-10-04T04:00:00</DataInizioSTP>
+    <DataFineSTP>2011-04-04T04:00:00</DataFineSTP>
+    <MotivoAnnulloSTP />
+  <Attributi>
+    <AttributoType>
+      <Nome>MantenimentoPediatra</Nome>
+      <Valore>false</Valore>
+    </AttributoType>
+    <AttributoType>
+      <Nome>CapoFamiglia</Nome>
+      <Valore>true</Valore>
+    </AttributoType>
+    <AttributoType>
+      <Nome>Indigenza</Nome>
+      <Valore>false</Valore>
+    </AttributoType>
+  </Attributi>
+
+  </Paziente>
+  <Esenzioni>
+    <PazienteEsenzioneType>
+      <CodiceEsenzione>003</CodiceEsenzione>
+      <CodiceDiagnosi>01</CodiceDiagnosi>
+      <Patologica>true</Patologica>
+      <DataInizioValidita>2001-12-17T09:30:47Z</DataInizioValidita>
+      <DataFineValidita>2001-12-17T09:30:47Z</DataFineValidita>
+      <NumeroAutorizzazioneEsenzione>500001</NumeroAutorizzazioneEsenzione>
+      <NoteAggiuntive>Note aggiuntive</NoteAggiuntive>
+      <CodiceTestoEsenzione>CT1</CodiceTestoEsenzione>
+      <TestoEsenzione>testo esenzione</TestoEsenzione>
+      <DecodificaEsenzioneDiagnosi>DecodificaEsenzioneDiagnosi</DecodificaEsenzioneDiagnosi>
+      <AttributoEsenzioneDiagnosi>AttributoEsenzioneDiagnosi</AttributoEsenzioneDiagnosi>
+    </PazienteEsenzioneType>
+    <PazienteEsenzioneType>
+      <CodiceEsenzione>004</CodiceEsenzione>
+      <CodiceDiagnosi>02</CodiceDiagnosi>
+      <Patologica>true</Patologica>
+      <DataInizioValidita>2001-12-17T09:30:47Z</DataInizioValidita>
+      <DataFineValidita>2001-12-17T09:30:47Z</DataFineValidita>
+      <NumeroAutorizzazioneEsenzione>500002</NumeroAutorizzazioneEsenzione>
+      <NoteAggiuntive>Note aggiuntive 2</NoteAggiuntive>
+      <CodiceTestoEsenzione>CT2</CodiceTestoEsenzione>
+      <TestoEsenzione>testo esenzione 2</TestoEsenzione>
+      <DecodificaEsenzioneDiagnosi>DecodificaEsenzioneDiagnosi 2</DecodificaEsenzioneDiagnosi>
+      <AttributoEsenzioneDiagnosi>AttributoEsenzioneDiagnosi 2</AttributoEsenzioneDiagnosi>
+    </PazienteEsenzioneType>
+  </Esenzioni>
+</MessaggioPazienteParameter>

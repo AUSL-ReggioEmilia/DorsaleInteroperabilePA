@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Asmn_DwhOut_Screening" Class="DwhOutScreeningDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=Asmn_DwhOut_Screening;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Asmn_DwhOut_ScreeningConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FiltriMammografia" Member="FiltriMammografia">
+    <Type Name="FiltriMammografia">
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrestazioneCodice" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FiltriMammografiaAziendaErogante_FiltriMammografia" Member="FiltriMammografiaAziendeEroganti" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="FiltriMammografiaAziendeEroganti" IsForeignKey="true" />
+      <Association Name="FiltriMammografiaSistemiErogante_FiltriMammografia" Member="FiltriMammografiaSistemiEroganti" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="FiltriMammografiaSistemiEroganti" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="admin.FiltriMammografiaAziendeEroganti" Member="FiltriMammografiaAziendeEroganti">
+    <Type Name="FiltriMammografiaAziendeEroganti">
+      <Column Name="AziendaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FiltriMammografiaAziendaErogante_FiltriMammografia" Member="FiltriMammografia" ThisKey="AziendaErogante" OtherKey="AziendaErogante" Type="FiltriMammografia" />
+    </Type>
+  </Table>
+  <Table Name="admin.FiltriMammografiaSistemiEroganti" Member="FiltriMammografiaSistemiEroganti">
+    <Type Name="FiltriMammografiaSistemiEroganti">
+      <Column Name="SistemaErogante" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FiltriMammografiaSistemiErogante_FiltriMammografia" Member="FiltriMammografia" ThisKey="SistemaErogante" OtherKey="SistemaErogante" Type="FiltriMammografia" Cardinality="One" />
+    </Type>
+  </Table>
+</Database>

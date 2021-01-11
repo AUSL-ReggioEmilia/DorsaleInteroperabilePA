@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f14accc6-37d5-4d9e-9f8e-aa8d59b8b572" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dagobah2:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RoleManager.wsdl" MetadataType="Wsdl" ID="029997d3-eb00-4055-a2c6-37a91e4f7957" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?wsdl" />
+    <MetadataFile FileName="SAC.xsd" MetadataType="Schema" ID="6b278dac-7842-47da-99a5-96ecae277d16" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd2" />
+    <MetadataFile FileName="SAC1.xsd" MetadataType="Schema" ID="779287a7-83e3-45ba-94e5-6a402ad3637d" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd0" />
+    <MetadataFile FileName="SAC2.xsd" MetadataType="Schema" ID="179c1a88-93a9-40f1-8846-d3153c30b045" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd1" />
+    <MetadataFile FileName="SAC3.xsd" MetadataType="Schema" ID="dad47a61-0426-4cd9-adc0-2a9309f6db4f" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?xsd=xsd3" />
+    <MetadataFile FileName="SAC.disco" MetadataType="Disco" ID="fd90196d-18fe-48ca-b508-c0ef7004550f" SourceId="1" SourceUrl="http://dagobah2.progel.org:8082/WS-DI-SAC-3/SAC.Wcf.Service.RoleManager.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

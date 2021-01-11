@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:q1="http://schemas.progel.it/WCF/OE/CmsTypes/1.1" xmlns:tns="http://schemas.progel.it/WCF/OE/RichiestaCms/1.1" elementFormDefault="qualified" targetNamespace="http://schemas.progel.it/WCF/OE/RichiestaCms/1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Oe.Cms.ListenRichieste3.xsd" namespace="http://schemas.progel.it/WCF/OE/CmsTypes/1.1" />
+  <xs:complexType name="RichiestaCmsType">
+    <xs:sequence>
+      <xs:element name="Richiesta" nillable="true" type="q1:TestataRichiestaType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RichiestaCmsType" nillable="true" type="tns:RichiestaCmsType" />
+  <xs:complexType name="RichiestaCmsReturnType">
+    <xs:sequence>
+      <xs:element name="Stato" type="tns:StatoEnum" />
+      <xs:element minOccurs="0" name="ErroreNumero" type="xs:int" />
+      <xs:element minOccurs="0" name="ErroreDescrizione" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RichiestaCmsReturnType" nillable="true" type="tns:RichiestaCmsReturnType" />
+  <xs:simpleType name="StatoEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AA" />
+      <xs:enumeration value="AR" />
+      <xs:enumeration value="AE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatoEnum" nillable="true" type="tns:StatoEnum" />
+</xs:schema>

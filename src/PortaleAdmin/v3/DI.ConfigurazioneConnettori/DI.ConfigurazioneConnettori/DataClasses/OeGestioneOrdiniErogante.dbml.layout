@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OeGestioneOrdiniErogante">
+  <DataContextMoniker Name="/OeGestioneOrdiniEroganteDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c5edda02-50b3-4697-98f8-9cf14706b13d" absoluteBounds="0.875, 0.5, 3.5, 1.9631982421875">
+      <DataClassMoniker Name="/OeGestioneOrdiniEroganteDataContext/Sistemi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71501c39-cb75-4d75-b404-fcee74e2d903" absoluteBounds="0.89, 0.96, 3.4699999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb5508ff-7049-4c84-84f2-e024b950c31c" absoluteBounds="1, 2.875, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeGestioneOrdiniEroganteDataContext/SistemiCodiciAziende" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38a069fc-06f0-4ddc-add3-ca824a3d50a1" absoluteBounds="1.0149999999999997, 3.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2 : 2.875); (2 : 2.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeGestioneOrdiniEroganteDataContext/SistemiCodiciAziende/SistemiCodiciAziende_Sistemi" />
+      <nodes>
+        <classShapeMoniker Id="eb5508ff-7049-4c84-84f2-e024b950c31c" />
+        <classShapeMoniker Id="c5edda02-50b3-4697-98f8-9cf14706b13d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="69e943d3-2b42-4c27-b910-223af6675a0e" absoluteBounds="4.75, 0.5, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/OeGestioneOrdiniEroganteDataContext/DatiAccessori" />
+      <nestedChildShapes>
+        <elementListCompartment Id="316f4be8-cbea-4a29-804a-c89ce01d27f2" absoluteBounds="4.7650000000000006, 0.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="033e5610-1af4-4f46-a853-7410de10c1f7" absoluteBounds="1, 4.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/OeGestioneOrdiniEroganteDataContext/DatiAccessoriSistemi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc5faf63-d21e-4eda-9e97-d9a4daee4064" absoluteBounds="1.0149999999999997, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625270503649 : 4.1939111328125); (5.625270503649 : 4.9686640536039); (3 : 4.9686640536039)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeGestioneOrdiniEroganteDataContext/DatiAccessori/DatiAccessori_DatiAccessoriSistemi" />
+      <nodes>
+        <classShapeMoniker Id="69e943d3-2b42-4c27-b910-223af6675a0e" />
+        <classShapeMoniker Id="033e5610-1af4-4f46-a853-7410de10c1f7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.6875005 : 2.4631982421875); (3.6875005 : 4.62201298365485); (3 : 4.62201298365485)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeGestioneOrdiniEroganteDataContext/Sistemi/Sistemi_DatiAccessoriSistemi" />
+      <nodes>
+        <classShapeMoniker Id="c5edda02-50b3-4697-98f8-9cf14706b13d" />
+        <classShapeMoniker Id="033e5610-1af4-4f46-a853-7410de10c1f7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="651f5bb2-04bf-41ad-a444-41c739618da1" absoluteBounds="7.125, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/OeGestioneOrdiniEroganteDataContext/TipiDatiAccessori" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1505dce6-7206-4851-b426-9a3f344bf32c" absoluteBounds="7.1400000000000006, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 1.38544840494792); (6.75 : 1.38544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeGestioneOrdiniEroganteDataContext/TipiDatiAccessori/TipiDatiAccessori_DatiAccessori" />
+      <nodes>
+        <classShapeMoniker Id="651f5bb2-04bf-41ad-a444-41c739618da1" />
+        <classShapeMoniker Id="69e943d3-2b42-4c27-b910-223af6675a0e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c43ada3e-8d0c-433e-b75d-238d4d388ac2" absoluteBounds="7.25, 2.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/OeGestioneOrdiniEroganteDataContext/Prestazioni" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91b5c7cf-ab56-429f-be40-06c4c4d5293f" absoluteBounds="7.2650000000000006, 2.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.84375025 : 2.4631982421875); (2.84375025 : 2.8125); (4.6875 : 2.8125); (4.6875 : 4.2564111328125); (7.15625 : 4.2564111328125); (7.15625 : 3.77005126953125); (7.25 : 3.77005126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeGestioneOrdiniEroganteDataContext/Sistemi/Sistemi_Prestazioni" />
+      <nodes>
+        <classShapeMoniker Id="c5edda02-50b3-4697-98f8-9cf14706b13d" />
+        <classShapeMoniker Id="c43ada3e-8d0c-433e-b75d-238d4d388ac2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="590dfc2e-bdcd-4d24-8e0d-bcf7fdfd06c7" absoluteBounds="7.25, 5.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/OeGestioneOrdiniEroganteDataContext/DatiAccessoriPrestazioni" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05e69310-e718-4004-be88-66f49bcd32a1" absoluteBounds="7.2650000000000006, 5.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.2188877518245 : 4.1939111328125); (6.2188877518245 : 6.28929768880208); (7.25 : 6.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeGestioneOrdiniEroganteDataContext/DatiAccessori/DatiAccessori_DatiAccessoriPrestazioni" />
+      <nodes>
+        <classShapeMoniker Id="69e943d3-2b42-4c27-b910-223af6675a0e" />
+        <classShapeMoniker Id="590dfc2e-bdcd-4d24-8e0d-bcf7fdfd06c7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 5.0401025390625); (8.25 : 5.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeGestioneOrdiniEroganteDataContext/Prestazioni/Prestazioni_DatiAccessoriPrestazioni" />
+      <nodes>
+        <classShapeMoniker Id="c43ada3e-8d0c-433e-b75d-238d4d388ac2" />
+        <classShapeMoniker Id="590dfc2e-bdcd-4d24-8e0d-bcf7fdfd06c7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

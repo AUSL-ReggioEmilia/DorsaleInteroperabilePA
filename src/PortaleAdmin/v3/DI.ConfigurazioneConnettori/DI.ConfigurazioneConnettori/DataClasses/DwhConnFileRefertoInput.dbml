@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuslAsmnRe_DwhConnFileRefertoInput" Class="DwhConnFileRefertoInputDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALDERAAN;Initial Catalog=AuslAsmnRe_DwhConnFileRefertoInput;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AuslAsmnRe_DwhConnFileRefertoInputConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="admin.SistemiErogantiAziende" Member="SistemiEroganti_Aziende">
+    <Type Name="SistemiEroganti_Aziende">
+      <Column Name="Azienda" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="SistemiEroganti_Aziende_SistemiEroganti" Member="SistemiEroganti" ThisKey="Azienda" OtherKey="Azienda" Type="fri_SistemiEroganti" />
+    </Type>
+  </Table>
+  <Table Name="admin.SistemiErogantiSistemi" Member="SistemiEroganti_Sistemi">
+    <Type Name="SistemiEroganti_Sistemi">
+      <Column Name="Sistema" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="SistemiEroganti_Sistemi_SistemiEroganti" Member="SistemiEroganti" ThisKey="Sistema" OtherKey="Sistema" Type="fri_SistemiEroganti" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SistemiEroganti" Member="fri_SistemiErogantis">
+    <Type Name="fri_SistemiEroganti">
+      <Column Name="Azienda" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Sistema" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrefissoIdEsterno" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="StiveVisualizzazione" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="OrdineInvio" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="MaxSizeMB" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="SistemiEroganti_Sistemi_SistemiEroganti" Member="SistemiEroganti_Sistemi" ThisKey="Sistema" OtherKey="Sistema" Type="SistemiEroganti_Sistemi" IsForeignKey="true" />
+      <Association Name="SistemiEroganti_Aziende_SistemiEroganti" Member="SistemiEroganti_Aziende" ThisKey="Azienda" OtherKey="Azienda" Type="SistemiEroganti_Aziende" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

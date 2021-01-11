@@ -1,0 +1,1176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A7019DD-152C-4E39-8F54-A8CC90E7877F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>DI.Sac.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.Sac.Admin.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PublishDatabases>false</PublishDatabases>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.Sac.Admin.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Components\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\Components\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.14.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.14.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Progel.Identity.ActiveDirectory">
+      <HintPath>..\Components\Progel.Identity.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CacheUtility.aspx" />
+    <Content Include="Codifiche\ICD9Lista.aspx" />
+    <Content Include="Codifiche\FarmaPrincipiAttiviLista.aspx" />
+    <Content Include="Codifiche\FarmaProdottiLista.aspx" />
+    <Content Include="Codifiche\SOLELista.aspx" />
+    <Content Include="Consensi\ConsensoDettaglio.aspx" />
+    <Content Include="Images\CreaPosCollegata.png" />
+    <Content Include="Images\CreaPosCollegata_grey.png" />
+    <Content Include="Images\LogoAzienda.jpg" />
+    <Content Include="Images\LogoHD.jpg" />
+    <Content Include="Images\Marchio_CE_Header.png" />
+    <Content Include="Images\ok.png" />
+    <Content Include="Images\rinotifica.gif" />
+    <Content Include="Images\rinotificaPaz.gif" />
+    <Content Include="Images\rinotificaPaz_grey.gif" />
+    <Content Include="Images\rinotifica_grey.gif" />
+    <Content Include="Istat\IstatProvinceDettaglio.aspx" />
+    <Content Include="Istat\IstatProvinceLista.aspx" />
+    <Content Include="Istat\IstatComuniDettaglio.aspx" />
+    <Content Include="Istat\IstatComuniLista.aspx" />
+    <Content Include="Monitoraggio\ConsensiSinottico.aspx" />
+    <Content Include="Monitoraggio\ConsensiUltimiArrivi.aspx" />
+    <Content Include="Monitoraggio\PazientiSinottico.aspx" />
+    <Content Include="Monitoraggio\PazientiUltimiArrivi.aspx" />
+    <Content Include="Pazienti\PazienteCercaAnonimizzazione.aspx" />
+    <Content Include="Pazienti\PazienteCercaPosCollegata.aspx" />
+    <Content Include="Pazienti\PazienteCreaAnonimizzazione.aspx" />
+    <Content Include="Esenzioni\EsenzioneDettaglio.aspx" />
+    <Content Include="Images\copy.png" />
+    <Content Include="Images\copy_grey.png" />
+    <Content Include="Images\CreaAnonimo.png" />
+    <Content Include="Images\CreaAnonimo_grey.png" />
+    <Content Include="Images\minus_icon.gif" />
+    <Content Include="Images\plus_icon.gif" />
+    <Content Include="Images\refresh.gif" />
+    <Content Include="Images\refresh.png" />
+    <Content Include="Images\refresh_grey.png" />
+    <Content Include="Images\view.png" />
+    <Content Include="index.html" />
+    <Content Include="Pages\ReportViewer.aspx" />
+    <Content Include="Pazienti\PazienteCreaPosCollegata.aspx" />
+    <Content Include="Pazienti\PazienteDettaglioAnonimizzazione.aspx" />
+    <Content Include="Pazienti\PazienteDettaglioAnonimizzazioniStampa.aspx" />
+    <Content Include="Pazienti\PazienteDettaglioPosCollegata.aspx" />
+    <Content Include="Pazienti\PazienteDettaglioPosCollegataStampa.aspx" />
+    <Content Include="Pazienti\PazienteDettaglioRiassunto.aspx" />
+    <Content Include="Pazienti\PazienteLog.aspx" />
+    <Content Include="Pazienti\PazientiFusi.aspx" />
+    <Content Include="Pazienti\PazientiIncoerenzaISTATDettaglio.aspx" />
+    <Content Include="Pazienti\PazientiIncoerenzaISTATLista.aspx" />
+    <Content Include="Pazienti\PazientiRinotificaMassiva.aspx" />
+    <Content Include="RoleManager\AttributiLista.aspx" />
+    <Content Include="RoleManager\AttributiInserisci.aspx" />
+    <Content Include="RoleManager\RuoliCopiaDaSistema.aspx" />
+    <Content Include="RoleManager\SistemaRuoloLista.aspx" />
+    <Content Include="RoleManager\SistemaUnitaOperativeLista.aspx" />
+    <Content Include="RoleManager\UnitaOperativaRegimi.aspx" />
+    <Content Include="RoleManager\OggettoActiveDirectoryRuoliLista.aspx" />
+    <Content Include="RoleManager\OggettoADDettaglio.aspx" />
+    <Content Include="RoleManager\OggettiAD.aspx" />
+    <Content Include="RoleManager\RuoloOggettiActiveDirectoryLista.aspx" />
+    <Content Include="Transcodifiche\UnitaOperativeSeleziona.aspx" />
+    <Content Include="Transcodifiche\TranscodificheUODettaglio.aspx" />
+    <Content Include="Transcodifiche\TranscodificheUOLista.aspx" />
+    <Content Include="RoleManager\UnitaOperativeDettaglio.aspx" />
+    <Content Include="RoleManager\SistemiDettaglio.aspx" />
+    <Content Include="RoleManager\UnitaOperativeLista.aspx" />
+    <Content Include="RoleManager\SistemiLista.aspx" />
+    <Content Include="RoleManager\RuoloSistemiLista.aspx" />
+    <Content Include="RoleManager\RuoloUnitaOperativeLista.aspx" />
+    <Content Include="RoleManager\RuoliDettaglio.aspx" />
+    <Content Include="RoleManager\RuoliLista.aspx" />
+    <Content Include="Scripts\pazienti-lista.js" />
+    <Content Include="Scripts\jquery-1.6.1.js" />
+    <Content Include="Scripts\jquery-1.6.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.14.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\master.js" />
+    <Content Include="Scripts\PopUp.js" />
+    <Content Include="Styles\DatiAggiuntivi.xslt" />
+    <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Styles\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Styles\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Styles\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Styles\master.css" />
+    <Content Include="Styles\TreeView.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Styles\XmlView.css" />
+    <Content Include="Styles\XmlView.xslt" />
+    <Content Include="Utenti\PermessiUtenteDettaglio.aspx" />
+    <Content Include="Utenti\UtenteConsensoDettaglio.aspx" />
+    <Content Include="Utenti\UtenteEsenzioneDettaglio.aspx" />
+    <Content Include="Utenti\UtentiSQLAggiungiLista.aspx" />
+    <Content Include="Utenti\UtentiAggiungiLista.aspx" />
+    <Content Include="WebServices\Istat.asmx" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Datasets\CodificheDataSet.xsc">
+      <DependentUpon>CodificheDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\CodificheDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CodificheDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\CodificheDataSet.xss">
+      <DependentUpon>CodificheDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="Datasets\Monitoraggio.xsc">
+      <DependentUpon>Monitoraggio.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\Monitoraggio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Monitoraggio.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\Monitoraggio.xss">
+      <DependentUpon>Monitoraggio.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\PazientiPosizioniCollegateDataSet.xsc">
+      <DependentUpon>PazientiPosizioniCollegateDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\PazientiPosizioniCollegateDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PazientiPosizioniCollegateDataSet.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+    </None>
+    <Content Include="Datasets\PazientiPosizioniCollegateDataSet.xss">
+      <DependentUpon>PazientiPosizioniCollegateDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\UtentiDataSet.xsc">
+      <DependentUpon>UtentiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\UtentiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UtentiDataSet.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Datasets\UtentiDataSet.xss">
+      <DependentUpon>UtentiDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="Licenses\2016 Oem Aspose.Cells.lic" />
+    <None Include="My Project\PublishProfiles\dagobah2.pubxml" />
+    <None Include="packages.config" />
+    <None Include="_Modifiche.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_CustControls\Progel3DropDownList.vb" />
+    <Compile Include="App_CustControls\ProgelDropDownList.vb" />
+    <Compile Include="App_CustControls\SacDropDownList.vb" />
+    <Compile Include="CacheUtility.aspx.designer.vb">
+      <DependentUpon>CacheUtility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CacheUtility.aspx.vb">
+      <DependentUpon>CacheUtility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Component\MyTelemetryInitializer.vb" />
+    <Compile Include="Datasets\CodificheDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CodificheDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codifiche\ICD9Lista.aspx.designer.vb">
+      <DependentUpon>ICD9Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Codifiche\ICD9Lista.aspx.vb">
+      <DependentUpon>ICD9Lista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Codifiche\FarmaPrincipiAttiviLista.aspx.designer.vb">
+      <DependentUpon>FarmaPrincipiAttiviLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Codifiche\FarmaPrincipiAttiviLista.aspx.vb">
+      <DependentUpon>FarmaPrincipiAttiviLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Codifiche\FarmaProdottiLista.aspx.designer.vb">
+      <DependentUpon>FarmaProdottiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Codifiche\FarmaProdottiLista.aspx.vb">
+      <DependentUpon>FarmaProdottiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Codifiche\SOLELista.aspx.designer.vb">
+      <DependentUpon>SOLELista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Codifiche\SOLELista.aspx.vb">
+      <DependentUpon>SOLELista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Datasets\ConsensiUiDataSet.Designer.vb">
+      <DependentUpon>ConsensiUiDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Consensi\ConsensoDettaglio.aspx.designer.vb">
+      <DependentUpon>ConsensoDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consensi\ConsensoDettaglio.aspx.vb">
+      <DependentUpon>ConsensoDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Datasets\ISTATDataSet.Designer.vb">
+      <DependentUpon>ISTATDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Datasets\Monitoraggio.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Monitoraggio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\PazientiPosizioniCollegateDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PazientiPosizioniCollegateDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Istat\IstatProvinceDettaglio.aspx.designer.vb">
+      <DependentUpon>IstatProvinceDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Istat\IstatProvinceDettaglio.aspx.vb">
+      <DependentUpon>IstatProvinceDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Istat\IstatProvinceLista.aspx.designer.vb">
+      <DependentUpon>IstatProvinceLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Istat\IstatProvinceLista.aspx.vb">
+      <DependentUpon>IstatProvinceLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Istat\IstatComuniDettaglio.aspx.designer.vb">
+      <DependentUpon>IstatComuniDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Istat\IstatComuniDettaglio.aspx.vb">
+      <DependentUpon>IstatComuniDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Istat\IstatComuniLista.aspx.designer.vb">
+      <DependentUpon>IstatComuniLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Istat\IstatComuniLista.aspx.vb">
+      <DependentUpon>IstatComuniLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Datasets\PazientiIncoerenzaISTATDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PazientiIncoerenzaISTATDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Monitoraggio\ConsensiSinottico.aspx.designer.vb">
+      <DependentUpon>ConsensiSinottico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Monitoraggio\ConsensiSinottico.aspx.vb">
+      <DependentUpon>ConsensiSinottico.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Monitoraggio\ConsensiUltimiArrivi.aspx.designer.vb">
+      <DependentUpon>ConsensiUltimiArrivi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Monitoraggio\ConsensiUltimiArrivi.aspx.vb">
+      <DependentUpon>ConsensiUltimiArrivi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Monitoraggio\PazientiSinottico.aspx.designer.vb">
+      <DependentUpon>PazientiSinottico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Monitoraggio\PazientiSinottico.aspx.vb">
+      <DependentUpon>PazientiSinottico.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Monitoraggio\PazientiUltimiArrivi.aspx.designer.vb">
+      <DependentUpon>PazientiUltimiArrivi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Monitoraggio\PazientiUltimiArrivi.aspx.vb">
+      <DependentUpon>PazientiUltimiArrivi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCercaAnonimizzazione.aspx.designer.vb">
+      <DependentUpon>PazienteCercaAnonimizzazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCercaAnonimizzazione.aspx.vb">
+      <DependentUpon>PazienteCercaAnonimizzazione.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCercaPosCollegata.aspx.designer.vb">
+      <DependentUpon>PazienteCercaPosCollegata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCercaPosCollegata.aspx.vb">
+      <DependentUpon>PazienteCercaPosCollegata.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCreaAnonimizzazione.aspx.designer.vb">
+      <DependentUpon>PazienteCreaAnonimizzazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCreaAnonimizzazione.aspx.vb">
+      <DependentUpon>PazienteCreaAnonimizzazione.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EntitaAccessi\EntitaAccessoDettaglio.aspx.designer.vb">
+      <DependentUpon>EntitaAccessoDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntitaAccessi\EntitaAccessoDettaglio.aspx.vb">
+      <DependentUpon>EntitaAccessoDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EntitaAccessi\EntitaAccessiLista.aspx.designer.vb">
+      <DependentUpon>EntitaAccessiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntitaAccessi\EntitaAccessiLista.aspx.vb">
+      <DependentUpon>EntitaAccessiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EntitaAccessi\NuovoAccesso.aspx.designer.vb">
+      <DependentUpon>NuovoAccesso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntitaAccessi\NuovoAccesso.aspx.vb">
+      <DependentUpon>NuovoAccesso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Esenzioni\EsenzioneDettaglio.aspx.designer.vb">
+      <DependentUpon>EsenzioneDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Esenzioni\EsenzioneDettaglio.aspx.vb">
+      <DependentUpon>EsenzioneDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExceptionsManager.vb" />
+    <Compile Include="FilterHelper.vb" />
+    <Compile Include="GestioneErrori.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Datasets\Lha.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lha.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MessageHelper.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pages\ReportViewer.aspx.designer.vb">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportViewer.aspx.vb">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Datasets\PazientiAnonimizzazioniDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PazientiAnonimizzazioniDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\PazientiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PazientiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCreaPosCollegata.aspx.designer.vb">
+      <DependentUpon>PazienteCreaPosCollegata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteCreaPosCollegata.aspx.vb">
+      <DependentUpon>PazienteCreaPosCollegata.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioAnonimizzazione.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglioAnonimizzazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioAnonimizzazione.aspx.vb">
+      <DependentUpon>PazienteDettaglioAnonimizzazione.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioAnonimizzazioniStampa.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglioAnonimizzazioniStampa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioAnonimizzazioniStampa.aspx.vb">
+      <DependentUpon>PazienteDettaglioAnonimizzazioniStampa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioPosCollegata.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglioPosCollegata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioPosCollegata.aspx.vb">
+      <DependentUpon>PazienteDettaglioPosCollegata.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioPosCollegataStampa.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglioPosCollegataStampa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioPosCollegataStampa.aspx.vb">
+      <DependentUpon>PazienteDettaglioPosCollegataStampa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioRiassunto.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglioRiassunto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglioRiassunto.aspx.vb">
+      <DependentUpon>PazienteDettaglioRiassunto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteLog.aspx.designer.vb">
+      <DependentUpon>PazienteLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteLog.aspx.vb">
+      <DependentUpon>PazienteLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglio.aspx.designer.vb">
+      <DependentUpon>PazienteDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDettaglio.aspx.vb">
+      <DependentUpon>PazienteDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDiagrammaMerge.aspx.designer.vb">
+      <DependentUpon>PazienteDiagrammaMerge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteDiagrammaMerge.aspx.vb">
+      <DependentUpon>PazienteDiagrammaMerge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazienteMerge.aspx.designer.vb">
+      <DependentUpon>PazienteMerge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazienteMerge.aspx.vb">
+      <DependentUpon>PazienteMerge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazientiFusi.aspx.designer.vb">
+      <DependentUpon>PazientiFusi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiFusi.aspx.vb">
+      <DependentUpon>PazientiFusi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazientiIncoerenzaISTATDettaglio.aspx.designer.vb">
+      <DependentUpon>PazientiIncoerenzaISTATDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiIncoerenzaISTATDettaglio.aspx.vb">
+      <DependentUpon>PazientiIncoerenzaISTATDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazientiIncoerenzaISTATLista.aspx.designer.vb">
+      <DependentUpon>PazientiIncoerenzaISTATLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiIncoerenzaISTATLista.aspx.vb">
+      <DependentUpon>PazientiIncoerenzaISTATLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazientiLista.aspx.designer.vb">
+      <DependentUpon>PazientiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiLista.aspx.vb">
+      <DependentUpon>PazientiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pazienti\PazientiListaMerge.aspx.designer.vb">
+      <DependentUpon>PazientiListaMerge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiListaMerge.aspx.vb">
+      <DependentUpon>PazientiListaMerge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Datasets\PermessiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermessiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\ProvenienzeDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProvenienzeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiRinotificaMassiva.aspx.designer.vb">
+      <DependentUpon>PazientiRinotificaMassiva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pazienti\PazientiRinotificaMassiva.aspx.vb">
+      <DependentUpon>PazientiRinotificaMassiva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Provenienze\ProvenienzaDettaglio.aspx.designer.vb">
+      <DependentUpon>ProvenienzaDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Provenienze\ProvenienzaDettaglio.aspx.vb">
+      <DependentUpon>ProvenienzaDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Provenienze\ProvenienzeLista.aspx.designer.vb">
+      <DependentUpon>ProvenienzeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Provenienze\ProvenienzeLista.aspx.vb">
+      <DependentUpon>ProvenienzeLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\AttributiLista.aspx.designer.vb">
+      <DependentUpon>AttributiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\AttributiLista.aspx.vb">
+      <DependentUpon>AttributiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\AttributiInserisci.aspx.designer.vb">
+      <DependentUpon>AttributiInserisci.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\AttributiInserisci.aspx.vb">
+      <DependentUpon>AttributiInserisci.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\RuoliCopiaDaSistema.aspx.designer.vb">
+      <DependentUpon>RuoliCopiaDaSistema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\RuoliCopiaDaSistema.aspx.vb">
+      <DependentUpon>RuoliCopiaDaSistema.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\SistemaRuoloLista.aspx.designer.vb">
+      <DependentUpon>SistemaRuoloLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\SistemaRuoloLista.aspx.vb">
+      <DependentUpon>SistemaRuoloLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\SistemaUnitaOperativeLista.aspx.designer.vb">
+      <DependentUpon>SistemaUnitaOperativeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\SistemaUnitaOperativeLista.aspx.vb">
+      <DependentUpon>SistemaUnitaOperativeLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\UnitaOperativaRegimi.aspx.designer.vb">
+      <DependentUpon>UnitaOperativaRegimi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\UnitaOperativaRegimi.aspx.vb">
+      <DependentUpon>UnitaOperativaRegimi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\OggettoActiveDirectoryRuoliLista.aspx.designer.vb">
+      <DependentUpon>OggettoActiveDirectoryRuoliLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\OggettoActiveDirectoryRuoliLista.aspx.vb">
+      <DependentUpon>OggettoActiveDirectoryRuoliLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\OggettoADDettaglio.aspx.designer.vb">
+      <DependentUpon>OggettoADDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\OggettoADDettaglio.aspx.vb">
+      <DependentUpon>OggettoADDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\OggettiAD.aspx.designer.vb">
+      <DependentUpon>OggettiAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\OggettiAD.aspx.vb">
+      <DependentUpon>OggettiAD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\RuoloOggettiActiveDirectoryLista.aspx.designer.vb">
+      <DependentUpon>RuoloOggettiActiveDirectoryLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\RuoloOggettiActiveDirectoryLista.aspx.vb">
+      <DependentUpon>RuoloOggettiActiveDirectoryLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Transcodifiche\UnitaOperativeSeleziona.aspx.designer.vb">
+      <DependentUpon>UnitaOperativeSeleziona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transcodifiche\UnitaOperativeSeleziona.aspx.vb">
+      <DependentUpon>UnitaOperativeSeleziona.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificheUODettaglio.aspx.designer.vb">
+      <DependentUpon>TranscodificheUODettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificheUODettaglio.aspx.vb">
+      <DependentUpon>TranscodificheUODettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificheUOLista.aspx.designer.vb">
+      <DependentUpon>TranscodificheUOLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificheUOLista.aspx.vb">
+      <DependentUpon>TranscodificheUOLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\UnitaOperativeDettaglio.aspx.designer.vb">
+      <DependentUpon>UnitaOperativeDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\UnitaOperativeDettaglio.aspx.vb">
+      <DependentUpon>UnitaOperativeDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\SistemiDettaglio.aspx.designer.vb">
+      <DependentUpon>SistemiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\SistemiDettaglio.aspx.vb">
+      <DependentUpon>SistemiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\UnitaOperativeLista.aspx.designer.vb">
+      <DependentUpon>UnitaOperativeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\UnitaOperativeLista.aspx.vb">
+      <DependentUpon>UnitaOperativeLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\SistemiLista.aspx.designer.vb">
+      <DependentUpon>SistemiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\SistemiLista.aspx.vb">
+      <DependentUpon>SistemiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Datasets\OrganigrammaDataSet.vb">
+      <DependentUpon>OrganigrammaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\RuoloSistemiLista.aspx.designer.vb">
+      <DependentUpon>RuoloSistemiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\RuoloSistemiLista.aspx.vb">
+      <DependentUpon>RuoloSistemiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Datasets\OrganigrammaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrganigrammaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\RuoloUnitaOperativeLista.aspx.designer.vb">
+      <DependentUpon>RuoloUnitaOperativeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\RuoloUnitaOperativeLista.aspx.vb">
+      <DependentUpon>RuoloUnitaOperativeLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\RuoliDettaglio.aspx.designer.vb">
+      <DependentUpon>RuoliDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\RuoliDettaglio.aspx.vb">
+      <DependentUpon>RuoliDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\RuoliLista.aspx.designer.vb">
+      <DependentUpon>RuoliLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\RuoliLista.aspx.vb">
+      <DependentUpon>RuoliLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RolesHelper.vb" />
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enumerations.vb" />
+    <Compile Include="Datasets\UtentiDataSet.Designer.vb">
+      <DependentUpon>UtentiDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Utenti\PermessiUtenteDettaglio.aspx.designer.vb">
+      <DependentUpon>PermessiUtenteDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\PermessiUtenteDettaglio.aspx.vb">
+      <DependentUpon>PermessiUtenteDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utenti\UtenteConsensoDettaglio.aspx.designer.vb">
+      <DependentUpon>UtenteConsensoDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\UtenteConsensoDettaglio.aspx.vb">
+      <DependentUpon>UtenteConsensoDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utenti\UtenteEsenzioneDettaglio.aspx.designer.vb">
+      <DependentUpon>UtenteEsenzioneDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\UtenteEsenzioneDettaglio.aspx.vb">
+      <DependentUpon>UtenteEsenzioneDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Utenti\UtentiSQLAggiungiLista.aspx.designer.vb">
+      <DependentUpon>UtentiSQLAggiungiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\UtentiSQLAggiungiLista.aspx.vb">
+      <DependentUpon>UtentiSQLAggiungiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Utenti\UtentiAggiungiLista.aspx.designer.vb">
+      <DependentUpon>UtentiAggiungiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\UtentiAggiungiLista.aspx.vb">
+      <DependentUpon>UtentiAggiungiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Utenti\UtenteDettaglio.aspx.designer.vb">
+      <DependentUpon>UtenteDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\UtenteDettaglio.aspx.vb">
+      <DependentUpon>UtenteDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utenti\UtentePazienteDettaglio.aspx.designer.vb">
+      <DependentUpon>UtentePazienteDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\UtentePazienteDettaglio.aspx.vb">
+      <DependentUpon>UtentePazienteDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utenti\UtentiConsensiLista.aspx.designer.vb">
+      <DependentUpon>UtentiConsensiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\UtentiConsensiLista.aspx.vb">
+      <DependentUpon>UtentiConsensiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utenti\UtentiLista.aspx.designer.vb">
+      <DependentUpon>UtentiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\UtentiLista.aspx.vb">
+      <DependentUpon>UtentiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utenti\UtentiPazientiLista.aspx.designer.vb">
+      <DependentUpon>UtentiPazientiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\UtentiPazientiLista.aspx.vb">
+      <DependentUpon>UtentiPazientiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility.vb" />
+    <Compile Include="Utlity\Excel.vb" />
+    <Compile Include="Utlity\Extensions.vb" />
+    <Compile Include="Utlity\ProspettoRuoliExcel.vb" />
+    <Compile Include="WebServices\Istat.asmx.vb">
+      <DependentUpon>Istat.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Datasets\ConsensiUiDataSet.xsc">
+      <DependentUpon>ConsensiUiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\ConsensiUiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConsensiUiDataSet.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\ConsensiUiDataSet.xss">
+      <DependentUpon>ConsensiUiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\ISTATDataSet.xsc">
+      <DependentUpon>ISTATDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\ISTATDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ISTATDataSet.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\ISTATDataSet.xss">
+      <DependentUpon>ISTATDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\Lha.xsc">
+      <DependentUpon>Lha.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\Lha.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Lha.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Datasets\Lha.xss">
+      <DependentUpon>Lha.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Images\arrow_down.png" />
+    <Content Include="Images\arrow_right.gif" />
+    <Content Include="Images\arrow_up.png" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\delete_grey.gif" />
+    <Content Include="Images\detailsmerge.GIF" />
+    <Content Include="Images\detailsmerge_grey.gif" />
+    <Content Include="Images\edititem_grey.gif" />
+    <Content Include="Images\log.gif" />
+    <Content Include="Images\LogoToolbar.jpg" />
+    <Content Include="Images\log_grey.gif" />
+    <Content Include="Images\merge.gif" />
+    <Content Include="Images\merge_grey.gif" />
+    <Content Include="Images\restore.gif" />
+    <Content Include="Images\restore_grey.gif" />
+    <Content Include="Pazienti\PazienteDettaglio.aspx" />
+    <Content Include="Pazienti\PazienteDiagrammaMerge.aspx" />
+    <Content Include="Pazienti\PazienteMerge.aspx" />
+    <Content Include="Pazienti\PazientiListaMerge.aspx" />
+    <Content Include="Provenienze\ProvenienzaDettaglio.aspx" />
+    <Content Include="Provenienze\ProvenienzeLista.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="AccessDenied.htm" />
+    <Content Include="EntitaAccessi\EntitaAccessoDettaglio.aspx" />
+    <Content Include="EntitaAccessi\EntitaAccessiLista.aspx" />
+    <Content Include="EntitaAccessi\NuovoAccesso.aspx" />
+    <Content Include="ErrorUnknown.htm" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\back.gif" />
+    <Content Include="Images\checkbox_ok.png" />
+    <Content Include="Images\editInPlace.gif" />
+    <Content Include="Images\edititem.gif" />
+    <Content Include="Images\ErrorAccessDenied.jpg" />
+    <Content Include="Images\ErrorMissingResource.gif" />
+    <Content Include="Images\ErrorUnknown.gif" />
+    <Content Include="Images\green-left.jpg" />
+    <Content Include="Images\group.gif" />
+    <Content Include="Images\icon_err.gif" />
+    <Content Include="Images\icon_small_caution.gif" />
+    <Content Include="Images\icon_small_detail.bmp" />
+    <Content Include="Images\MenuLeftBackground.jpg" />
+    <Content Include="Images\MenuTopBackground.gif" />
+    <Content Include="Images\MenuTopPopUp.gif" />
+    <Content Include="Images\MenuTopSeparator.gif" />
+    <Content Include="Images\newitem.gif" />
+    <Content Include="Images\PixelTrasparente.gif" />
+    <Content Include="Images\saveInPlace.gif" />
+    <Content Include="Images\sel.gif" />
+    <Content Include="Images\toolgrad_vintage.gif" />
+    <Content Include="Images\undoInPlace.gif" />
+    <Content Include="Images\user.gif" />
+    <Content Include="MissingResource.htm" />
+    <Content Include="Pazienti\PazientiLista.aspx" />
+    <Content Include="Utenti\UtenteDettaglio.aspx" />
+    <Content Include="Utenti\UtentePazienteDettaglio.aspx" />
+    <Content Include="Utenti\UtentiConsensiLista.aspx" />
+    <Content Include="Utenti\UtentiLista.aspx" />
+    <Content Include="Utenti\UtentiPazientiLista.aspx" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Datasets\PazientiAnonimizzazioniDataSet.xsc">
+      <DependentUpon>PazientiAnonimizzazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PazientiAnonimizzazioniDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PazientiAnonimizzazioniDataSet.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Datasets\PazientiAnonimizzazioniDataSet.xss">
+      <DependentUpon>PazientiAnonimizzazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PazientiDataSet.xsc">
+      <DependentUpon>PazientiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PazientiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+      <LastGenOutput>PazientiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\PazientiDataSet.xss">
+      <DependentUpon>PazientiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PazientiIncoerenzaISTATDataSet.xsc">
+      <DependentUpon>PazientiIncoerenzaISTATDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PazientiIncoerenzaISTATDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PazientiIncoerenzaISTATDataSet.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Datasets\PazientiIncoerenzaISTATDataSet.xss">
+      <DependentUpon>PazientiIncoerenzaISTATDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PermessiDataSet.xsc">
+      <DependentUpon>PermessiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PermessiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+      <LastGenOutput>PermessiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\PermessiDataSet.xss">
+      <DependentUpon>PermessiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\ProvenienzeDataSet.xsc">
+      <DependentUpon>ProvenienzeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\ProvenienzeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProvenienzeDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>DI.Sac.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Datasets\ProvenienzeDataSet.xss">
+      <DependentUpon>ProvenienzeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\OrganigrammaDataSet.xsc">
+      <DependentUpon>OrganigrammaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\OrganigrammaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrganigrammaDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\OrganigrammaDataSet.xss">
+      <DependentUpon>OrganigrammaDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PortaleCommon\DI.Common\DI.Common.vbproj">
+      <Project>{EBAF272B-B9BE-4FD0-8556-2D49F031DF22}</Project>
+      <Name>DI.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.PortalAdmin\DI.PortalAdmin.vbproj">
+      <Project>{0D8EB637-68F3-47B1-B1A4-B7990011FC66}</Project>
+      <Name>DI.PortalAdmin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62139</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets')" />
+</Project>

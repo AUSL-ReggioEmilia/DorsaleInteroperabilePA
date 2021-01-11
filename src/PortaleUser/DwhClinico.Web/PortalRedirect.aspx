@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" Inherits="DwhClinico.Web.PortalRedirect" Codebehind="PortalRedirect.aspx.vb" %>

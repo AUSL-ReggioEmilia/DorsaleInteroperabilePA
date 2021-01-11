@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<configSections>
+		<sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+			<section name="Tester.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+		</sectionGroup>
+	</configSections>
+	<startup>
+		<supportedRuntime version="v2.0.50727" />
+	</startup>
+	<system.serviceModel>
+		<bindings>
+		
+			<basicHttpBinding>
+				<binding name="BasicHttpBinding"
+closeTimeout="00:01:00"
+      openTimeout="00:01:00"
+      receiveTimeout="00:10:00"
+      sendTimeout="00:01:00"
+      allowCookies="false"
+      bypassProxyOnLocal="false"
+      maxBufferPoolSize="52428800"
+      maxReceivedMessageSize="2147483647"
+      useDefaultWebProxy="true" >
+
+					<readerQuotas maxDepth="320"
+        maxStringContentLength="819200"
+        maxArrayLength="1638400"
+        maxBytesPerRead="409600"
+        maxNameTableCharCount="1638400" />								
+					
+					<security mode="TransportCredentialOnly">
+						<transport clientCredentialType="Windows" /> 
+						
+					</security>					
+					<!--<security mode="Transport">
+						<transport clientCredentialType="Windows" />						
+					</security>-->					
+					
+				</binding>
+			
+			<binding name="BasicHttpsBinding"
+closeTimeout="00:01:00"
+      openTimeout="00:01:00"
+      receiveTimeout="00:10:00"
+      sendTimeout="00:01:00"
+      allowCookies="false"
+      bypassProxyOnLocal="false"
+      maxBufferPoolSize="52428800"
+      maxReceivedMessageSize="2147483647"
+      useDefaultWebProxy="true" >
+
+					<readerQuotas maxDepth="320"
+        maxStringContentLength="819200"
+        maxArrayLength="1638400"
+        maxBytesPerRead="409600"
+        maxNameTableCharCount="1638400" />								
+					
+									
+					<security mode="Transport">
+						<transport clientCredentialType="Windows" />						
+					</security>				
+					
+				</binding>
+			</basicHttpBinding>
+			
+		</bindings>
+		<client>
+		<clear />
+			<endpoint address="http://ws-di-hpv-test.asmn.net/WS-DI-HPV-1/DI.HPV.Service.Service.svc" binding="basicHttpBinding"
+    bindingConfiguration="BasicHttpBinding" contract="wcf.HPV.IService"
+    name="Test http://ws-di-hpv-test.asmn.net" />
+	
+		<endpoint address="https://ws-di-hpv.asmn.net/WS-DI-HPV-1/DI.HPV.Service.Service.svc" binding="basicHttpBinding"
+    bindingConfiguration="BasicHttpsBinding" contract="wcf.HPV.IService"
+    name="Produzione https://ws-di-hpv.asmn.net" />
+	
+		</client>
+	</system.serviceModel>
+	<userSettings>
+		<Tester.My.MySettings>
+			<setting name="HPV_USERNAME" serializeAs="String">
+				<value>OSPEDALE\APP_HPV-SCR-RE</value>
+			</setting>
+			<setting name="HPV_PASSWORD" serializeAs="String">
+				<value>+nY@c5h*d+5N82c</value>
+			</setting>
+		</Tester.My.MySettings>
+	</userSettings>
+</configuration>
+

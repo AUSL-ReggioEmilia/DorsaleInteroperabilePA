@@ -1,0 +1,140 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.Master.vb" Inherits="DI.PortalAdmin.Site" %>
+
+<!DOCTYPE html>
+<html lang="it-it">
+<head runat="server">
+    <meta charset="utf-8" />
+    <%-- DISATTIVO LA MODALITÀ COMPATIBILITÀ --%>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Web Portal 1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%-- CSS BOOTSTRAP --%>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Styles/master.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="~/Content/css/glyphicons.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="MainForm" runat="server">
+        <!-- ATTENZIONE: Per i portali ADMIN inserire qui lo script di Application Insight altrimenti interferisce con il treeview -->
+        <script type="text/javascript">
+            var appInsights = window.appInsights || function (config) {
+                function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;) i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+            }({
+                instrumentationKey: "<%= CustomInitializer.Telemetry.MyTelemetryInitializer.InstrumentationKey %>"
+                });
+
+            appInsights.queue.push(function () {
+                appInsights.context.addTelemetryInitializer(function (envelope) {
+                    envelope.tags["ai.cloud.role"] = '<%= CustomInitializer.Telemetry.MyTelemetryInitializer.RoleName %>';
+                });
+            });
+
+            window.appInsights = appInsights;
+            appInsights.trackPageView();
+        </script>
+
+
+        <asp:ScriptManager ID="ScriptManagerMaster" runat="server" EnablePageMethods="false">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="moment" />
+                <asp:ScriptReference Name="momentLocales" />
+                <asp:ScriptReference Name="datetimepicker" />
+                <%--<asp:ScriptReference Path="~/Scripts/master.js" />--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <%-- HEADER --%>
+        <asp:Literal ID="HeaderPlaceholder" runat="server" />
+
+
+        <%-- MENU PRINCIPALE --%>
+        <div class="TopContent">
+            <asp:Menu ID="MenuMain" runat="server" Orientation="Horizontal" ItemWrap="false">
+                <StaticMenuStyle CssClass="MasterMenu" />
+                <StaticMenuItemStyle CssClass="MasterMenuItem" />
+            </asp:Menu>
+        </div>
+
+        <%--CORPO--%>
+        <div class="container-fluid">
+            <div class="row">
+
+                <%--TREEVIEW SPALLA SINISTRA--%>
+                <div class="LeftContent col-sm-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <asp:TreeView ID="LeftMenuTreeView" runat="server" ShowLines="false" NodeIndent="0"
+                                CssClass="LeftMenuTreeView small" ShowExpandCollapse="false" NodeWrap="true" DataSourceID="MainSiteMapDataSource">
+                                <NodeStyle CssClass="TreeNode" />
+                                <RootNodeStyle CssClass="TreeRootNode" />
+                                <ParentNodeStyle CssClass="TreeParentNode" />
+                                <SelectedNodeStyle CssClass="TreeSelectedNode list-group-item active" />
+                                <HoverNodeStyle CssClass="TreeHoverNode" />
+                            </asp:TreeView>
+
+                            <hr />
+                            <ul class="list-unstyled small" id="MenuInformazioni">
+                                <li class="TreeNode TreeRootNode">
+                                    <span style="margin-left: -5px;">Informazioni </span>
+                                </li>
+                                <li class="TreeNode">
+                                    <a href="~/Pages/Informazioni.aspx" runat="server" class="TreeNode">Informazioni</a>
+                                </li>
+                                <li class="TreeNode">
+                                    <a href="~/Pages/Legenda.aspx" runat="server" class="TreeNode">Legenda</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <%--BODY CONTENT--%>
+                <div class="PageContent">
+
+                    <%--ALERT MESSAGE--%>
+                    <div class="col-sm-10 ">
+                        <div runat="server" id="divAlertMessage" class="alert alert-danger" visible="false" enableviewstate="false">
+                        </div>
+                    </div>
+
+                    <%--PAGINA CONTENT--%>
+                    <div class="col-sm-10">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <asp:ContentPlaceHolder ID="footerPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+
+        <asp:SiteMapDataSource ID="MainSiteMapDataSource" runat="server" />
+
+        <script type="text/javascript">
+            //Imposto la classe "Active" sull'item selezionato
+            $("#MenuInformazioni a").ready(function () {
+                $(".TreeNode a").each(function (e) {
+                    let href = this.getAttribute("href");
+                    var pathname = window.location.pathname;
+                    if (pathname.indexOf(href) != -1) {
+                        this.parentElement.setAttribute("class", "TreeNode TreeSelectedNode list-group-item active");
+                        this.setAttribute("class", "TreeSelectedNode list-group-item active")
+                    }
+                })
+            });
+        </script>
+    </form>
+</body>
+</html>

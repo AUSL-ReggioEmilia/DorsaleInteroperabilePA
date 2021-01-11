@@ -1,0 +1,21 @@
+﻿
+<div class="container-fluid pl-0">
+    <div class="row">
+        <div class="col-lg-5 d-none d-lg-block text-nowrap">
+            <img src="/Images/LogoAzienda.jpg" class="float-left">
+            <a href="@InformazioniURL"><img src="/Images/Marchio_CE_Header.png" class="float-left" style="margin:15px 15px 15px 15px"></a>
+        </div>
+        <div class="col-lg-3 text-center text-nowrap">
+            <span class="header-main-title">@MainTitle</span>
+            <br />
+            <span class="h6 small text-secondary">@SubTitle</span>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    [Parameter] public string MainTitle { get; set; }
+    [Parameter] public string SubTitle { get; set; }
+    [Parameter] public string InformazioniURL { get; set; }
+}

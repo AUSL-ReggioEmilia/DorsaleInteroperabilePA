@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="WcfSac_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aa1234BB</Value>
+    </Setting>
+    <Setting Name="ProvenienzaPortale" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">APP_ESENZIONI</Value>
+    </Setting>
+    <Setting Name="WcfSac_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">progel.it\dev_vs</Value>
+    </Setting>
+    <Setting Name="InstrumentationKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">47f2a002-85e4-4b5b-af93-bb848e0c7a4a</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

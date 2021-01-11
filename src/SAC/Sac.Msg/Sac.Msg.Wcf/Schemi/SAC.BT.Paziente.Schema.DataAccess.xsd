@@ -1,0 +1,454 @@
+<!-- edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by  (Progel srl) -->
+<xs:schema xmlns="http://SAC.BT.Paziente.Schema.DataAccess/v1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://SAC.BT.Paziente.Schema.DataAccess/v1.0" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:simpleType name="MessaggioPazienteTipoEnum">
+		<xs:annotation>
+			<xs:documentation>Usato come parametro di input per la funzione ProcessaMessaggioPaziente</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Modify"/>
+			<xs:enumeration value="Delete"/>
+			<xs:enumeration value="Merge"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MessaggioPazienteParameter">
+		<xs:sequence>
+			<xs:element name="Utente" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Questo era il tipo "MessaggioPaziente"</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DataSequenza" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Paziente" type="PazienteType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Esenzioni" type="EsenzioniType" minOccurs="0"/>
+			<xs:element name="Fusione" type="FusioneType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PazienteType">
+		<xs:sequence>
+			<xs:element name="Provenienza" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Id" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Tessera" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Cognome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Nome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DataNascita" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Sesso" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComuneNascitaCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComuneNascitaNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="NazionalitaCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="NazionalitaNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceFiscale" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DatiAnamnestici" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceTerminazione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DescrizioneTerminazione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComuneResCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComuneResNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="SubComuneRes" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IndirizzoRes" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="LocalitaRes" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CapRes" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DataDecorrenzaRes" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ComuneAslResCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceAslRes" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="AslResNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RegioneResCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RegioneResNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComuneDomCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComuneDomNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="SubComuneDom" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IndirizzoDom" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="LocalitaDom" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CapDom" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PosizioneAss" type="xs:unsignedByte" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RegioneAssCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RegioneAssNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComuneAslAssCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceAslAss" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="AslAssNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DataInizioAss" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DataScadenzaAss" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DataTerminazioneAss" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DistrettoAmm" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DistrettoTer" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Ambito" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceMedicoDiBase" type="xs:int" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CodiceFiscaleMedicoDiBase" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CognomeNomeMedicoDiBase" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DistrettoMedicoDiBase" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DataSceltaMedicoDiBase" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ComuneRecapitoCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComuneRecapitoNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IndirizzoRecapito" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="LocalitaRecapito" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Telefono1" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Telefono2" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Telefono3" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceSTP" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DataInizioSTP" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DataFineSTP" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="MotivoAnnulloSTP" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Attributi" type="AttributiType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EsenzioneType">
+		<xs:sequence>
+			<xs:element name="CodiceEsenzione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceDiagnosi" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Patologica" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DataInizioValidita" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DataFineValidita" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NumeroAutorizzazioneEsenzione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="NoteAggiuntive" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceTestoEsenzione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="TestoEsenzione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DecodificaEsenzioneDiagnosi" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="AttributoEsenzioneDiagnosi" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EsenzioniType">
+		<xs:sequence>
+			<xs:element name="Esenzione" type="EsenzioneType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FusioneType">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Cognome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Tessera" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Nome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DataNascita" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Sesso" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComuneNascitaCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="NazionalitaCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceFiscale" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Questo è il messaggio di risposta della DAE-WCF -->
+	<xs:complexType name="MessaggioPazienteReturn">
+		<xs:sequence>
+			<xs:element name="IdMessaggio" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Id di sequenza di lettura da coda</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DataSequenza" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Data di processo del messaggio in uscita</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Azione" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>0=Inserimento, 1=Modifica, 2=Cancellazione, 3=Fusione</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Paziente" type="PazienteReturn" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Esenzioni" type="EsenzioniReturn" minOccurs="0"/>
+			<xs:element name="Sinonimi" type="SinonimiType" minOccurs="0"/>
+			<xs:element name="Consensi" type="ConsensiType" minOccurs="0"/>
+			<xs:element name="Fusione" type="FusoType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Se Azione=3 il campo Fusione è obbligatorio e specifica il paziente PERDENTE, quello che sarà fuso nel VINCENTE.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Errore" type="ErroreType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ListaPazientiReturn">
+		<xs:sequence>
+			<xs:element name="Pazienti" type="ListaPazientiType" minOccurs="0"/>
+			<xs:element name="Errore" type="ErroreType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ListaPazientiType">
+		<xs:sequence>
+			<xs:element name="Paziente" type="ListaPazienteType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ListaPazienteType">
+		<xs:sequence>
+			<xs:element name="IdSac" type="xs:string" minOccurs="1"/>
+			<xs:element name="Provenienza" type="xs:string" minOccurs="1"/>
+			<xs:element name="IdProvenienza" type="xs:string" minOccurs="1"/>
+			<xs:element name="LivelloAttendibilita" type="xs:integer" minOccurs="1"/>
+			<xs:element name="CodiceTerminazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="DescrizioneTerminazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceFiscale" type="xs:string" minOccurs="0"/>
+			<xs:element name="Cognome" type="xs:string" minOccurs="0"/>
+			<xs:element name="Nome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataNascita" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="Sesso" type="xs:string" minOccurs="0"/>
+			<xs:element name="Tessera" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneNascitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneNascitaNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="NazionalitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="NazionalitaNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataDecesso" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="ComuneResCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneResNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="IndirizzoRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="LocalitaRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="CapRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataDecorrenzaRes" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="ComuneDomCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneDomNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="IndirizzoDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="LocalitaDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="CapDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneRecapitoCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneRecapitoNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="IndirizzoRecapito" type="xs:string" minOccurs="0"/>
+			<xs:element name="LocalitaRecapito" type="xs:string" minOccurs="0"/>
+			<xs:element name="Telefono1" type="xs:string" minOccurs="0"/>
+			<xs:element name="Telefono2" type="xs:string" minOccurs="0"/>
+			<xs:element name="Telefono3" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceSTP" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataInizioSTP" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="DataFineSTP" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="MotivoAnnulloSTP" type="xs:string" minOccurs="0"/>
+			<xs:element name="PosizioneAss" type="xs:unsignedByte" nillable="true" minOccurs="0"/>
+			<xs:element name="DataInizioAss" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="DataScadenzaAss" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="DataTerminazioneAss" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="CodiceAslRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegioneResCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneAslResCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceAslAss" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegioneAssCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneAslAssCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceFiscaleMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="CognomeNomeMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="DistrettoMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataSceltaMedicoDiBase" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="SubComuneRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="AslResNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegioneResNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubComuneDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegioneAssNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="AslAssNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DistrettoAmm" type="xs:string" minOccurs="0"/>
+			<xs:element name="DistrettoTer" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ambito" type="xs:string" minOccurs="0"/>
+			<!-- Figli -->
+			<xs:element name="Attributi" type="AttributiType" minOccurs="0"/>
+			<xs:element name="Sinonimi" type="SinonimiType" minOccurs="0"/>
+			<xs:element name="Esenzioni" type="EsenzioniReturn" minOccurs="0"/>
+			<xs:element name="Consensi" type="ConsensiType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="PazientiSortOrderEnum">
+		<xs:annotation>
+			<xs:documentation>Usato come parametro di input per decidere l'ordinamento della lista pazienti</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Cognome"/>
+			<xs:enumeration value="Nome"/>
+			<xs:enumeration value="CodiceFiscale"/>
+			<xs:enumeration value="Sesso"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--
+  RispostaDettaglioPaziente deve contenere tutti i dati che serviranno alla risposta paziente di tipo 2
+  viene chiamata a partire dalla coda SQL 
+  -->
+	<xs:complexType name="DettaglioPazienteReturn">
+		<xs:sequence>
+			<xs:element name="Paziente" type="PazienteReturn" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Esenzioni" type="EsenzioniReturn" minOccurs="0"/>
+			<xs:element name="Sinonimi" type="SinonimiType" minOccurs="0"/>
+			<xs:element name="Consensi" type="ConsensiType" minOccurs="0"/>
+			<xs:element name="Errore" type="ErroreType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- da usare nella DettaglioPazienteReturn e MessaggioPazienteReturn -->
+	<xs:complexType name="PazienteReturn">
+		<xs:sequence>
+			<xs:element name="IdSac" type="xs:string" minOccurs="1"/>
+			<xs:element name="Provenienza" type="xs:string" minOccurs="1"/>
+			<xs:element name="IdProvenienza" type="xs:string" minOccurs="1"/>
+			<xs:element name="LivelloAttendibilita" type="xs:integer" minOccurs="1"/>
+			<!-- Terminazione -->
+			<xs:element name="CodiceTerminazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="DescrizioneTerminazione" type="xs:string" minOccurs="0"/>
+			<!-- Generalità -->
+			<xs:element name="CodiceFiscale" type="xs:string" minOccurs="0"/>
+			<xs:element name="Cognome" type="xs:string" minOccurs="0"/>
+			<xs:element name="Nome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataNascita" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="Sesso" type="xs:string" minOccurs="0"/>
+			<xs:element name="Tessera" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneNascitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneNascitaNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="NazionalitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="NazionalitaNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataDecesso" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<!-- Dati di residenza -->
+			<xs:element name="ComuneResCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneResNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="IndirizzoRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="LocalitaRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="CapRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataDecorrenzaRes" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<!-- Dati di domicilio -->
+			<xs:element name="ComuneDomCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneDomNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="IndirizzoDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="LocalitaDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="CapDom" type="xs:string" minOccurs="0"/>
+			<!-- Dati di recapito -->
+			<xs:element name="ComuneRecapitoCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneRecapitoNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="IndirizzoRecapito" type="xs:string" minOccurs="0"/>
+			<xs:element name="LocalitaRecapito" type="xs:string" minOccurs="0"/>
+			<xs:element name="Telefono1" type="xs:string" minOccurs="0"/>
+			<xs:element name="Telefono2" type="xs:string" minOccurs="0"/>
+			<xs:element name="Telefono3" type="xs:string" minOccurs="0"/>
+			<!-- Dati di STP -->
+			<xs:element name="CodiceSTP" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataInizioSTP" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="DataFineSTP" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="MotivoAnnulloSTP" type="xs:string" minOccurs="0"/>
+			<!-- Dati Assistito -->
+			<xs:element name="PosizioneAss" type="xs:unsignedByte" nillable="true" minOccurs="0"/>
+			<xs:element name="DataInizioAss" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="DataScadenzaAss" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="DataTerminazioneAss" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<!-- Dati USL Residenza -->
+			<xs:element name="CodiceAslRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegioneResCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneAslResCodice" type="xs:string" minOccurs="0"/>
+			<!-- Dati USL Assistenza -->
+			<xs:element name="CodiceAslAss" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegioneAssCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneAslAssCodice" type="xs:string" minOccurs="0"/>
+			<!-- Dati Medico di base -->
+			<xs:element name="CodiceMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceFiscaleMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="CognomeNomeMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="DistrettoMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataSceltaMedicoDiBase" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<!-- Questi dati verranno messi negli attributi del messaggio QueueOutput ver 2-->
+			<xs:element name="SubComuneRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="AslResNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegioneResNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubComuneDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegioneAssNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="AslAssNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DistrettoAmm" type="xs:string" minOccurs="0"/>
+			<xs:element name="DistrettoTer" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ambito" type="xs:string" minOccurs="0"/>
+			<xs:element name="Attributi" type="AttributiType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EsenzioneReturn">
+		<xs:sequence>
+			<xs:element name="CodiceEsenzione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceDiagnosi" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Patologica" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DataInizioValidita" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DataFineValidita" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NumeroAutorizzazioneEsenzione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="NoteAggiuntive" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CodiceTestoEsenzione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="TestoEsenzione" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DecodificaEsenzioneDiagnosi" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="AttributoEsenzioneDiagnosi" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<!-- Nuovi campi delle esenzioni QUESTI SERVONO SOLO  IN USCITA -->
+			<xs:element name="Provenienza" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OperatoreId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OperatoreCognome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OperatoreNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OperatoreComputer" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EsenzioniReturn">
+		<xs:sequence>
+			<xs:element name="Esenzione" type="EsenzioneReturn" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConsensiType">
+		<xs:sequence>
+			<xs:element name="Consenso" type="ConsensoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConsensoType">
+		<xs:sequence>
+			<xs:element name="Provenienza" type="xs:string" minOccurs="0"/>
+			<xs:element name="IdProvenienza" type="xs:string" minOccurs="0"/>
+			<xs:element name="Tipo" type="xs:string"/>
+			<xs:element name="Stato" type="xs:boolean"/>
+			<xs:element name="DataStato" type="xs:dateTime"/>
+			<xs:element name="OperatoreId" type="xs:string" minOccurs="0"/>
+			<xs:element name="OperatoreCognome" type="xs:string" minOccurs="0"/>
+			<xs:element name="OperatoreNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="OperatoreComputer" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Usato ne messaggio di risposta paziente -->
+	<xs:complexType name="FusoType">
+		<xs:sequence>
+			<xs:element name="IdSac" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Identificativo anagrafica centralizzata</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Provenienza" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Nome dell'anagrafica del dipartimentale.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IdProvenienza" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Codice del paziente nell'anagrafica del dipartimentale  </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodiceFiscale" type="xs:string"/>
+			<xs:element name="Cognome" type="xs:string" minOccurs="0"/>
+			<xs:element name="Nome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataNascita" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="Sesso" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceSanitario" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneNascitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneNascitaNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="NazionalitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="NazionalitaNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataDecesso" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Calcolato su Terminazione.Codice = 4 e DataTerminazione</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Attributi" type="AttributiType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AttributoType">
+		<xs:sequence>
+			<xs:element name="Nome" type="xs:string"/>
+			<xs:element name="Valore" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AttributiType">
+		<xs:sequence>
+			<xs:element name="Attributo" type="AttributoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ErroreType">
+		<xs:sequence>
+			<xs:element name="Codice" type="xs:string"/>
+			<xs:element name="Descrizione" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SinonimoType">
+		<xs:sequence>
+			<xs:element name="Provenienza" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Id" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Valutare se rinominare il tipo "PazienteSinonimo" in base al suo significato</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SinonimiType">
+		<xs:sequence>
+			<xs:element name="Sinonimo" type="SinonimoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

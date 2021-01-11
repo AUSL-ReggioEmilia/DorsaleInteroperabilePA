@@ -1,0 +1,162 @@
+﻿NOTE:
+
+ 1 - RICORDARSI DI DARE IL GRANT EXECUTE AL DATABASE ROLE ExecuteFrontEnd 
+ 2 - Nella generazione degli script non fare il drop e create, ma quello che è alter è alter, quello che è create è create
+
+* Leggere note sopra!!!!!!!!!!!
+
+***************************************************************************************************
+
+***************************************************************************************************
+2017-02-15  Aggiunta campi pagina SottoscrizioniLista
+ALTER PROCEDURE [admin].[SottoscrizioniCerca]
+CREATE NONCLUSTERED INDEX IX_Sottoscrizioni ON [dbo].[LogOperazioni] (SottoscrizioniDettaglioId, Esito, DataInserimento desc)
+CREATE NONCLUSTERED INDEX IX_SottoscrizioniId ON [dbo].[SottoscrizioniDettaglio] (SottoscrizioniId)
+
+
+
+
+***************************************************************************************************
+2016-10-07  Cancellazione Referti
+
+CREATE PROCEDURE [dbo].[BevsCancellaReferto]
+
+
+***************************************************************************************************
+2016-09-09  Pagina TipiReferto
+CREATE PROCEDURE [dbo].[BevsTipiRefertoCerca]
+CREATE PROCEDURE [dbo].[BevsTipiRefertoOttieni]
+CREATE PROCEDURE [dbo].[BevsTipiRefertoModifica]
+CREATE PROCEDURE [dbo].[BevsTipiRefertoInserisce]
+CREATE PROCEDURE [dbo].[BevsTipiRefertoRimuove]
+
+
+
+2016-01-11  SoleAbilitazioni
+DB: AuslAsmnRe_DwhConnSole3
+ CREATE PROCEDURE dbo.Admin_AbilitazioniAggiorna2
+ CREATE PROCEDURE dbo.Admin_AbilitazioniInserisci2
+ CREATE PROCEDURE dbo.Admin_AbilitazioniLista2
+ CREATE PROCEDURE dbo.Admin_LogInviiSoleListaPerReferto
+ CREATE PROCEDURE [dbo].[Admin_NotificaCancellazione]
+
+
+***************************************************************************************************
+2015-12 : Pagine di Monitoraggio
+
+CREATE PROCEDURE [dbo].[BevsEventiUltimiArrivi]
+CREATE PROCEDURE [dbo].[BevsRefertiSinottico]
+CREATE PROCEDURE [dbo].[BevsEventiSinottico]
+
+DB DwhConnSole3  - ELIMINATE PROCEDURE:
+Admin_OscuramentiLista
+Admin_OscuramentiInserisci
+Admin_OscuramentiAggiorna
+Admin_OscuramentiElimina
+
+***************************************************************************************************
+2015-06-30 Oscuramento IDEsterno, Utenti DWH, Ruoli Bypass Oscuramento
+
+*** Pagine OscuramentoRuoliLista, OscuramentiLista, OscuramentiDettaglio
+
+CREATE TABLE dbo.OscuramentoRuoli
+CREATE PROC dbo.BevsOscuramentoRuoliCerca
+CREATE PROC dbo.BevsOscuramentoRuoliInserisce
+CREATE PROC dbo.BevsOscuramentoRuoliRimuove
+
+CREATE PROCEDURE [dbo].[BevsOscuramentiCerca2]
+ALTER  PROCEDURE [dbo].[BevsOscuramentiOttieni]
+ALTER  PROCEDURE [dbo].[BevsOscuramentiInserisce]
+ALTER  PROCEDURE [dbo].[BevsOscuramentiModifica]
+ALTER  PROCEDURE [dbo].[BevsOscuramentiRimuove]
+
+CREATE FUNCTION dbo.[BevsGetRuoliOscuramento]
+CREATE PROCEDURE [dbo].[BevsGetDocumentoSistemiEroganti]
+
+IF  NOT EXISTS 
+(SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[Utenti]') AND name = N'IX_Utenti_Utente')
+BEGIN
+	CREATE UNIQUE NONCLUSTERED INDEX [IX_Utenti_Utente] ON [dbo].[Utenti] 
+	([Utente] ASC) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF,	DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 95) 
+END
+
+*** PAGINE UtentiLista, UtentiDettaglio
+
+CREATE SYNONYM [SAC_Utenti]
+
+CREATE PROCEDURE [dbo].[BevsUtentiCerca]
+CREATE PROCEDURE [dbo].[BevsUtentiModifica]
+CREATE PROCEDURE [dbo].[BevsUtentiInserisce]
+CREATE PROCEDURE [dbo].[BevsUtentiRimuovi]
+CREATE PROCEDURE [dbo].[BevsRuoliLista]
+CREATE PROCEDURE [dbo].[BevsSACUtentiCerca]
+
+
+*** Nuovo Oscuramento per IdEsternoReferto
+
+ALTER TABLE dbo.Oscuramenti ADD	IdEsternoReferto varchar(64) NULL
+GO	
+CREATE NONCLUSTERED INDEX [IX_IdEsternoReferto] ON [dbo].[Oscuramenti] 
+ ([IdEsternoReferto] ASC) WHERE ([IdEsternoReferto] IS NOT NULL)
+GO
+
+
+
+
+
+
+***************************************************************************************************
+2015-05-04	Oscuramenti: 
+				Aggiunta campo Titolo
+				Aggiunta tipo oscuramento per reparto di ricovero
+
+ALTER TABLE dbo.Oscuramenti ADD	Titolo varchar(50) NULL
+ALTER PROCEDURE [dbo].[BevsOscuramentiCerca]
+ALTER PROCEDURE [dbo].[BevsOscuramentiOttieni]
+ALTER PROCEDURE [dbo].[BevsOscuramentiInserisce]
+ALTER PROCEDURE [dbo].[BevsOscuramentiModifica]
+ALTER PROCEDURE [dbo].[BevsOscuramentiRimuove]
+
+da verificare:
+	ALTER PROCEDURE [dbo].[BeRefertiRiassociazioneLista]
+
+***************************************************************************************************
+2015-01-26  Pagina Referti Ultimi Arrivi (include 11-dic) (LAB + CL)
+	CREATE PROCEDURE [dbo].[BevsRefertiUltimiArrivi]
+
+
+***************************************************************************************************
+2015-01-19  Oscuramenti: Filtro azienda + nosologico (LAB)
+	ALTER FUNCTION [dbo].[GetRefertiIsOscurato]
+	INDICI TABELLA OSCURAMENTI
+
+***************************************************************************************************
+2014-12-11 Lista referti: filtro anche sull'ora (LAB)
+*Lista Referti - i filtri data modifica accettano anche l'ora
+	ALTER PROCEDURE [dbo].[BeRefertiLista]
+
+
+***************************************************************************************************
+2014-12-01 Velocizzazione Referti (LAB PROD)
+
+	ALTER PROCEDURE [dbo].[BeRefertiLista]
+	ALTER PROCEDURE [dbo].[BeRefertiRiassociazioneLista]
+	ALTER_PROCEDURE dbo.FeAdminRefertoDettaglio
+
+	web.config  nuovo parametro CommandTimeoutMAX
+	modifica report: “Referto testata”
+
+
+***************************************************************************************************
+2014-11-27 Riassociazione Referti Paziente (SVI-LAB)
+
+	CREATE NONCLUSTERED INDEX [IX_RepartoRichiedente] ON [dbo].[Oscuramenti] 	
+	CREATE PROCEDURE [dbo].[BeRefertiRiassociazioneLista]
+	CREATE PROCEDURE [dbo].[BeRefertiRiassociazioneOttieni]
+	CREATE PROCEDURE [dbo].[BeRefertiRiassociazioneSACPazienteCerca]
+	CREATE PROCEDURE [dbo].[BeRefertiRiassociazioneAggiorna]
+
+ABBIAMO notato che ad es. per ASMN PS l'id esterno del referto viene costruito come SAC_idprovenienza_paziente
+invece che SAC_guid_sac
+
+***************************************************************************************************

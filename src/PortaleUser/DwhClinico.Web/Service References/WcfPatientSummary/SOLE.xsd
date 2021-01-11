@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://Sole.DwhClinico.PatientSummary.Risposta" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://Sole.DwhClinico.PatientSummary.Risposta" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Risposta">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="InErrore" type="xs:boolean" />
+        <xs:element name="Esito">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Codice" type="xs:string" />
+              <xs:element minOccurs="0" name="Descrizione" type="xs:string" />
+              <xs:element minOccurs="0" name="CodiceErroreHL7" type="xs:string" />
+              <xs:element minOccurs="0" name="DescrizioneErroreHL7" type="xs:string" />
+              <xs:element minOccurs="0" name="CodiceErroreApplicazione" type="xs:string" />
+              <xs:element minOccurs="0" name="DescrizioneErroreApplicazione" type="xs:string" />
+              <xs:element minOccurs="0" name="CodiceSeverita" type="xs:string" />
+              <xs:element minOccurs="0" name="DescrizioneSeverita" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="Dati">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CDA" type="xs:base64Binary" />
+              <xs:element name="PDF" type="xs:base64Binary" />
+              <xs:element name="CodiceStato" type="xs:string" />
+              <xs:element name="DescrizioneStato" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

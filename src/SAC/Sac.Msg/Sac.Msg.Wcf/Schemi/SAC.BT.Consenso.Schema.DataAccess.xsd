@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by  (Progel srl) -->
+<xs:schema xmlns="http://SAC.BT.Consenso.Schema.DataAccess/v1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://SAC.BT.Consenso.Schema.DataAccess/v1.0" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:simpleType name="MessaggioConsensoTipoEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Insert"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MessaggioConsensoParameter">
+		<xs:sequence>
+			<xs:element name="Utente" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataSequenza" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="Consenso" type="ConsensoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConsensoType">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Tipo" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataStato" type="xs:dateTime" minOccurs="1"/>
+			<xs:element name="Stato" type="xs:boolean" minOccurs="1"/>
+			<xs:element name="OperatoreId" type="xs:string" minOccurs="0"/>
+			<xs:element name="OperatoreCognome" type="xs:string" minOccurs="0"/>
+			<xs:element name="OperatoreNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="OperatoreComputer" type="xs:string" minOccurs="0"/>
+			<xs:element name="PazienteProvenienza" type="xs:string" minOccurs="0"/>
+			<xs:element name="PazienteIdProvenienza" type="xs:string" minOccurs="0"/>
+			<xs:element name="PazienteCognome" type="xs:string" minOccurs="0"/>
+			<xs:element name="PazienteNome" type="xs:string" minOccurs="0"/>
+			<xs:element name="PazienteCodiceFiscale" type="xs:string" minOccurs="0"/>
+			<xs:element name="PazienteDataNascita" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="PazienteComuneNascitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="PazienteNazionalitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="PazienteTesseraSanitaria" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ErroreType">
+		<xs:sequence>
+			<xs:element name="Codice" type="xs:string"/>
+			<xs:element name="Descrizione" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MessaggioConsensoReturn">
+		<xs:sequence>
+			<xs:element name="Errore" type="ErroreType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SAC.Database", "SAC.Database\SAC.Database.sqlproj", "{F8B74DCD-13EA-4E8B-9436-118ED8AC6214}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SAC_LHA.Database", "SAC_LHA.Database\SAC_LHA.Database.sqlproj", "{5D81CFE0-19B1-4CCD-98F8-F259940F98C9}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SAC_DWH.Database", "SAC_DWH.Database\SAC_DWH.Database.sqlproj", "{D81078B9-D299-4E09-8A51-DCBB2EEC8E96}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SyncAdsi.Database", "SyncAdsi.Database\SyncAdsi.Database.sqlproj", "{765DF503-0255-4537-991B-8B26C979FFA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8B74DCD-13EA-4E8B-9436-118ED8AC6214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8B74DCD-13EA-4E8B-9436-118ED8AC6214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8B74DCD-13EA-4E8B-9436-118ED8AC6214}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F8B74DCD-13EA-4E8B-9436-118ED8AC6214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8B74DCD-13EA-4E8B-9436-118ED8AC6214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8B74DCD-13EA-4E8B-9436-118ED8AC6214}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5D81CFE0-19B1-4CCD-98F8-F259940F98C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D81CFE0-19B1-4CCD-98F8-F259940F98C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D81CFE0-19B1-4CCD-98F8-F259940F98C9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5D81CFE0-19B1-4CCD-98F8-F259940F98C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D81CFE0-19B1-4CCD-98F8-F259940F98C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D81CFE0-19B1-4CCD-98F8-F259940F98C9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D81078B9-D299-4E09-8A51-DCBB2EEC8E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81078B9-D299-4E09-8A51-DCBB2EEC8E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81078B9-D299-4E09-8A51-DCBB2EEC8E96}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D81078B9-D299-4E09-8A51-DCBB2EEC8E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81078B9-D299-4E09-8A51-DCBB2EEC8E96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81078B9-D299-4E09-8A51-DCBB2EEC8E96}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{765DF503-0255-4537-991B-8B26C979FFA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{765DF503-0255-4537-991B-8B26C979FFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{765DF503-0255-4537-991B-8B26C979FFA2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{765DF503-0255-4537-991B-8B26C979FFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{765DF503-0255-4537-991B-8B26C979FFA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{765DF503-0255-4537-991B-8B26C979FFA2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95F55E70-D560-42E5-BAD1-6229819FCF32}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hellen.progel.org:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SAC.Database\\SAC.Database.sqlproj
+		SccProjectName1 = SAC.Database
+		SccLocalPath1 = SAC.Database
+		SccProjectUniqueName2 = SAC_LHA.Database\\SAC_LHA.Database.sqlproj
+		SccProjectName2 = SAC_LHA.Database
+		SccLocalPath2 = SAC_LHA.Database
+		SccProjectUniqueName3 = SAC_DWH.Database\\SAC_DWH.Database.sqlproj
+		SccProjectName3 = SAC_DWH.Database
+		SccLocalPath3 = SAC_DWH.Database
+		SccProjectUniqueName4 = SyncAdsi.Database\\SyncAdsi.Database.sqlproj
+		SccProjectName4 = SyncAdsi.Database
+		SccLocalPath4 = SyncAdsi.Database
+	EndGlobalSection
+EndGlobal

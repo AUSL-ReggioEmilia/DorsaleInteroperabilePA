@@ -1,0 +1,200 @@
+﻿<ns1:Message xmlns:ns1="http://SOLE.BackBone.Schema.Message/Content" xmlns:ns2="http://SOLE.BackBone.Schema.Message/Content/DataTypes" xmlns:ns0="http://SOLE.BackBone.Schema.Message/Content/Segments">
+  <ns0:Header>
+    <ns0:EncodingCharacters>^~\&amp;</ns0:EncodingCharacters>
+    <ns0:SendingApplication>
+      <ns2:NamespaceId>SIRE &amp; Medsoffice 10.21.03.06</ns2:NamespaceId>
+    </ns0:SendingApplication>
+    <ns0:DateTimeOfMessage>
+      <ns0:TimeStamp1>2016-06-27T15:10:00.0000000</ns0:TimeStamp1>
+    </ns0:DateTimeOfMessage>
+    <ns0:MessageType>
+      <ns0:MessageType>OMG</ns0:MessageType>
+      <ns0:TriggerEvent>O19</ns0:TriggerEvent>
+      <ns0:MessageStructure>OMG_O19</ns0:MessageStructure>
+    </ns0:MessageType>
+    <ns0:MessageControlId>2016/06/27 03:10:27.526</ns0:MessageControlId>
+    <ns0:ProcessingId>
+      <ns2:ProcessingId>P</ns2:ProcessingId>
+    </ns0:ProcessingId>
+    <ns0:VersionId>
+      <ns2:VersionId>2.5</ns2:VersionId>
+    </ns0:VersionId>
+  </ns0:Header>
+  <ns0:NotesAndComments>
+    <ns0:SourceOfComment>P</ns0:SourceOfComment>
+    <ns0:Comment>A4</ns0:Comment>
+    <ns0:CommentType>
+      <ns2:Identifier>Stampa</ns2:Identifier>
+      <ns2:Text>Formato Stampa</ns2:Text>
+    </ns0:CommentType>
+  </ns0:NotesAndComments>
+  <ns0:NotesAndComments>
+    <ns0:SourceOfComment>P</ns0:SourceOfComment>
+    <ns0:Comment>00:1A:4B:EC:18:B0</ns0:Comment>
+    <ns0:CommentType>
+      <ns2:Identifier>MAC</ns2:Identifier>
+      <ns2:Text>Indirizzo MAC</ns2:Text>
+    </ns0:CommentType>
+  </ns0:NotesAndComments>
+  <ns0:NotesAndComments>
+    <ns0:SourceOfComment>P</ns0:SourceOfComment>
+    <ns0:Comment>NonDisponibile</ns0:Comment>
+    <ns0:CommentType>
+      <ns2:Identifier>VersioneSOLE</ns2:Identifier>
+      <ns2:Text>Versione Catalogo SOLE</ns2:Text>
+    </ns0:CommentType>
+  </ns0:NotesAndComments>
+  <ns0:NotesAndComments>
+    <ns0:SourceOfComment>P</ns0:SourceOfComment>
+    <ns0:Comment>1</ns0:Comment>
+    <ns0:CommentType>
+      <ns2:Identifier>PrescrizioneStandard</ns2:Identifier>
+      <ns2:Text>Prescrizione Standard</ns2:Text>
+    </ns0:CommentType>
+  </ns0:NotesAndComments>
+  <ns0:Patient>
+    <ns0:PatientIdentification>
+      <ns0:PatientIdentifierList>
+        <ns2:IdNumber>SSSMNN75B01F257L</ns2:IdNumber>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>Ministero Finanze</ns2:NamespaceId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>NNITA</ns2:IdentifierTypeCode>
+      </ns0:PatientIdentifierList>
+      <ns0:PatientName>
+        <ns2:FamilyName>
+          <ns2:Surname>ASSISTITOPROVA</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>MODENA UNO</ns2:GivenName>
+      </ns0:PatientName>
+      <ns0:DateTimeOfBirth>
+        <ns2:TS_Time>1975-02-01T00:00:00.0000000</ns2:TS_Time>
+      </ns0:DateTimeOfBirth>
+      <ns0:AdministrativeSex>M</ns0:AdministrativeSex>
+      <ns0:PatientAddress>
+        <ns2:StreetAddress>
+          <ns2:StreetOrMailingAddress>VIA DI PROVA 1</ns2:StreetOrMailingAddress>
+        </ns2:StreetAddress>
+        <ns2:City>GUIGLIA</ns2:City>
+        <ns2:StateOrProvince>080</ns2:StateOrProvince>
+        <ns2:ZipOrPostalCode>41052</ns2:ZipOrPostalCode>
+        <ns2:AddressType>L</ns2:AddressType>
+        <ns2:OtherGeographicDesignation>MO</ns2:OtherGeographicDesignation>
+        <ns2:CountyParishCode>36017</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+      <ns0:PatientAddress>
+        <ns2:StreetAddress>
+          <ns2:StreetOrMailingAddress>VIA DI PROVA 1</ns2:StreetOrMailingAddress>
+        </ns2:StreetAddress>
+        <ns2:City>GUIGLIA</ns2:City>
+        <ns2:StateOrProvince>080</ns2:StateOrProvince>
+        <ns2:ZipOrPostalCode>41052</ns2:ZipOrPostalCode>
+        <ns2:AddressType>H</ns2:AddressType>
+        <ns2:OtherGeographicDesignation>MO</ns2:OtherGeographicDesignation>
+        <ns2:CountyParishCode>36017</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+      <ns0:PatientAddress>
+        <ns2:City>MODENA</ns2:City>
+        <ns2:AddressType>N</ns2:AddressType>
+        <ns2:CountyParishCode>36023</ns2:CountyParishCode>
+      </ns0:PatientAddress>
+      <ns0:PhoneNumberHome>
+        <ns2:TelecommunicationEquipmentType>PRN</ns2:TelecommunicationEquipmentType>
+      </ns0:PhoneNumberHome>
+      <ns0:Citizenship>
+        <ns2:AlternateIdentifier>100</ns2:AlternateIdentifier>
+        <ns2:AlternateText>ITALIA</ns2:AlternateText>
+        <ns2:NameOfAlternateCodingSystem>ISTAT</ns2:NameOfAlternateCodingSystem>
+      </ns0:Citizenship>
+    </ns0:PatientIdentification>
+    <ns0:PatientAdditionalDemographic>
+      <ns0:PatientPrimaryFacility>
+        <ns2:OrganizationName>AUSL MODENA</ns2:OrganizationName>
+        <ns2:IdNumber>080104</ns2:IdNumber>
+        <ns2:IdentifierTypeCode>ASLA</ns2:IdentifierTypeCode>
+      </ns0:PatientPrimaryFacility>
+      <ns0:PatientPrimaryFacility>
+        <ns2:OrganizationName>AUSL MODENA</ns2:OrganizationName>
+        <ns2:IdNumber>080104</ns2:IdNumber>
+        <ns2:IdentifierTypeCode>ASLR</ns2:IdentifierTypeCode>
+      </ns0:PatientPrimaryFacility>
+      <ns0:ProtectionIndicator>N</ns0:ProtectionIndicator>
+    </ns0:PatientAdditionalDemographic>
+    <ns0:NotesAndComments>
+      <ns0:SourceOfComment>P</ns0:SourceOfComment>
+      <ns0:Comment>S</ns0:Comment>
+      <ns0:CommentType>
+        <ns2:Identifier>LivCons</ns2:Identifier>
+        <ns2:Text>Livello Consenso SOLE</ns2:Text>
+      </ns0:CommentType>
+    </ns0:NotesAndComments>
+    <ns0:PatientVisit>
+      <ns0:PatientClass>A</ns0:PatientClass>
+      <ns0:ReferringDoctor>
+        <ns2:IdNumber>MDCMNN54A01F257R</ns2:IdNumber>
+        <ns2:FamilyName>
+          <ns2:Surname>MODENA UNO</ns2:Surname>
+        </ns2:FamilyName>
+        <ns2:GivenName>MEDICOPROVA</ns2:GivenName>
+        <ns2:DegreeEGMd>Z</ns2:DegreeEGMd>
+        <ns2:AssigningAuthority>
+          <ns2:NamespaceId>Ministero Finanze</ns2:NamespaceId>
+        </ns2:AssigningAuthority>
+        <ns2:IdentifierTypeCode>NNITA</ns2:IdentifierTypeCode>
+        <ns2:AssigningJurisdiction>
+          <ns2:Identifier>080104</ns2:Identifier>
+          <ns2:NameOfCodingSystem>Azienda medico prescrittore</ns2:NameOfCodingSystem>
+        </ns2:AssigningJurisdiction>
+        <ns2:AssigningAgencyOrDepartment>
+          <ns2:Identifier>080104</ns2:Identifier>
+          <ns2:NameOfCodingSystem>Struttura inviante</ns2:NameOfCodingSystem>
+        </ns2:AssigningAgencyOrDepartment>
+      </ns0:ReferringDoctor>
+      <ns0:FinancialClass>
+        <ns2:FinancialClassCode>T01</ns2:FinancialClassCode>
+      </ns0:FinancialClass>
+    </ns0:PatientVisit>
+  </ns0:Patient>
+  <ns0:Order>
+    <ns0:CommonOrder>
+      <ns0:OrderControl>NW</ns0:OrderControl>
+      <ns0:PlacerOrderNumber>
+        <ns2:EntityIdentifier>904FAH0E39GW2PC8</ns2:EntityIdentifier>
+      </ns0:PlacerOrderNumber>
+      <ns0:PlacerGroupNumber>
+        <ns2:EntityIdentifier>080A03000952266</ns2:EntityIdentifier>
+      </ns0:PlacerGroupNumber>
+    </ns0:CommonOrder>
+    <ns0:TimingQuantity>
+      <ns0:Quantity>
+        <ns2:Quantity>1</ns2:Quantity>
+      </ns0:Quantity>
+      <ns0:Priority>
+        <ns2:Identifier>B</ns2:Identifier>
+      </ns0:Priority>
+      <ns0:TotalOccurrenceS>1</ns0:TotalOccurrenceS>
+    </ns0:TimingQuantity>
+    <ns0:ObservationRequest>
+      <ns0:SetIdObr>1</ns0:SetIdObr>
+      <ns0:PlacerOrderNumber>
+        <ns2:EntityIdentifier>904FAH0E39GW2PC8</ns2:EntityIdentifier>
+      </ns0:PlacerOrderNumber>
+      <ns0:UniversalServiceIdentifier>
+        <ns2:Identifier>4027.001</ns2:Identifier>
+        <ns2:Text>ALCOLIZZAZIONE NODULI TIROIDE</ns2:Text>
+        <ns2:NameOfCodingSystem>Catalogo Unico SOLE</ns2:NameOfCodingSystem>
+      </ns0:UniversalServiceIdentifier>
+      <ns0:RelevantClinicalInformation>Riga di nota EN00310</ns0:RelevantClinicalInformation>
+      <ns0:PlacerField1>009</ns0:PlacerField1>
+      <ns0:ReasonForStudy>
+        <ns2:Text>Prova ore 15.06</ns2:Text>
+        <ns2:NameOfCodingSystem>ICD9CM</ns2:NameOfCodingSystem>
+      </ns0:ReasonForStudy>
+      <ns0:PlacerSupplementalServiceInformation>
+        <ns2:Identifier>06.98.1</ns2:Identifier>
+        <ns2:Text>ALCOLIZZAZIONE ECOGUIDATA DEI NODULI TIROIDEI </ns2:Text>
+        <ns2:NameOfCodingSystem>DMR</ns2:NameOfCodingSystem>
+      </ns0:PlacerSupplementalServiceInformation>
+    </ns0:ObservationRequest>
+  </ns0:Order>
+</ns1:Message>

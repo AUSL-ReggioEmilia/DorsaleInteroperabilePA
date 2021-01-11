@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" Inherits="DwhClinico.Web.HtmlRender" Codebehind="HtmlRender.aspx.vb" %>

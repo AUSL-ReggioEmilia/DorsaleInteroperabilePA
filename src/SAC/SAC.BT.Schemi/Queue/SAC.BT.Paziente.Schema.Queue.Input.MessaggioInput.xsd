@@ -1,0 +1,136 @@
+<!-- edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Alessandro Nostini (Progel srl) -->
+<xs:schema xmlns="http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns:ns1="http://schemas.progel.it/BT/DI/Message-properties/1.0" xmlns:ns0="http://SAC.BT.Paziente.Schema.Queue.PropertyInput/v1.0.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0">
+	<xs:annotation>
+		<xs:appinfo>
+			<b:imports>
+				<b:namespace prefix="ns1" uri="http://schemas.progel.it/BT/DI/Message-properties/1.0" location="Progel.BT.DI.GlobalPropertySchemas.Message.MessageProperties"/>
+				<b:namespace prefix="ns0" uri="http://SAC.BT.Paziente.Schema.Queue.PropertyInput/v1.0.0.0" location="SAC.BT.Paziente.Schema.Queue.PropertyInput.MessaggioInputPropSchema"/>
+			</b:imports>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="MessaggioInput" type="MessaggioTipo" nillable="true">
+		<xs:annotation>
+			<xs:appinfo>
+				<b:recordInfo rootTypeName="MessaggioInput" xmlns:b="http://schemas.microsoft.com/BizTalk/2003"/>
+				<b:properties>
+					<b:property distinguished="true" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='AckCorrelationID' and namespace-uri()='']"/>
+					<b:property distinguished="true" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='Operazione' and namespace-uri()='']"/>
+					<b:property distinguished="true" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='Utente' and namespace-uri()='']"/>
+					<b:property name="ns0:AckCorrelationID" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='AckCorrelationID' and namespace-uri()='']"/>
+					<b:property name="ns0:Operazione" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='Operazione' and namespace-uri()='']"/>
+					<b:property name="ns0:Utente" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='Utente' and namespace-uri()='']"/>
+					<b:property name="ns1:Track_Cognome" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='Paziente' and namespace-uri()='']/*[local-name()='Cognome' and namespace-uri()='']"/>
+					<b:property name="ns1:Track_Nome" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='Paziente' and namespace-uri()='']/*[local-name()='Nome' and namespace-uri()='']"/>
+					<b:property name="ns1:Track_CodiceFiscale" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='Paziente' and namespace-uri()='']/*[local-name()='CodiceFiscale' and namespace-uri()='']"/>
+					<b:property name="ns1:Track_IdEsterno" xpath="/*[local-name()='MessaggioInput' and namespace-uri()='http://SAC.BT.Paziente.Schema.Queue.Input/v1.0.0.0']/*[local-name()='Paziente' and namespace-uri()='']/*[local-name()='Id' and namespace-uri()='']"/>
+				</b:properties>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="MessaggioTipo">
+		<xs:sequence>
+			<xs:element name="AckCorrelationID" type="xs:string"/>
+			<xs:element name="Operazione" type="xs:unsignedByte"/>
+			<xs:element name="Utente" type="xs:string"/>
+			<xs:element name="DataSequenza" type="xs:dateTime"/>
+			<xs:element name="Paziente" type="PazienteTipo"/>
+			<xs:element name="Esenzioni" type="EsenzioneTipo" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Fusione" type="FusioneTipo" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="PazienteAttributi" type="AttributoTipo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PazienteTipo">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Tessera" type="xs:string" minOccurs="0"/>
+			<xs:element name="Cognome" type="xs:string" minOccurs="0"/>
+			<xs:element name="Nome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataNascita" type="xs:dateTime" nillable="true"/>
+			<xs:element name="Sesso" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneNascitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="NazionalitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceFiscale" type="xs:string" minOccurs="0"/>
+			<xs:element name="DatiAnamnestici" type="xs:string" minOccurs="0"/>
+			<xs:element name="MantenimentoPediatra" type="xs:boolean" nillable="true"/>
+			<xs:element name="CapoFamiglia" type="xs:boolean" nillable="true"/>
+			<xs:element name="Indigenza" type="xs:boolean" nillable="true"/>
+			<xs:element name="CodiceTerminazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="DescrizioneTerminazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneResCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubComuneRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="IndirizzoRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="LocalitaRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="CapRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataDecorrenzaRes" type="xs:dateTime" nillable="true"/>
+			<xs:element name="ComuneAslResCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceAslRes" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegioneResCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneDomCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubComuneDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="IndirizzoDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="LocalitaDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="CapDom" type="xs:string" minOccurs="0"/>
+			<xs:element name="PosizioneAss" type="xs:unsignedByte" nillable="true"/>
+			<xs:element name="RegioneAssCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneAslAssCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceAslAss" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataInizioAss" type="xs:dateTime" nillable="true"/>
+			<xs:element name="DataScadenzaAss" type="xs:dateTime" nillable="true"/>
+			<xs:element name="DataTerminazioneAss" type="xs:dateTime" nillable="true"/>
+			<xs:element name="DistrettoAmm" type="xs:string" minOccurs="0"/>
+			<xs:element name="DistrettoTer" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ambito" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceMedicoDiBase" type="xs:int" nillable="true"/>
+			<xs:element name="CodiceFiscaleMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="CognomeNomeMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="DistrettoMedicoDiBase" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataSceltaMedicoDiBase" type="xs:dateTime" nillable="true"/>
+			<xs:element name="ComuneRecapitoCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="IndirizzoRecapito" type="xs:string" minOccurs="0"/>
+			<xs:element name="LocalitaRecapito" type="xs:string" minOccurs="0"/>
+			<xs:element name="Telefono1" type="xs:string" minOccurs="0"/>
+			<xs:element name="Telefono2" type="xs:string" minOccurs="0"/>
+			<xs:element name="Telefono3" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceSTP" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataInizioSTP" type="xs:dateTime" nillable="true"/>
+			<xs:element name="DataFineSTP" type="xs:dateTime" nillable="true"/>
+			<xs:element name="MotivoAnnulloSTP" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EsenzioneTipo">
+		<xs:sequence>
+			<xs:element name="CodiceEsenzione" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceDiagnosi" type="xs:string" minOccurs="0"/>
+			<xs:element name="Patologica" type="xs:boolean"/>
+			<xs:element name="DataInizioValidita" type="xs:dateTime" nillable="true"/>
+			<xs:element name="DataFineValidita" type="xs:dateTime" nillable="true"/>
+			<xs:element name="NumeroAutorizzazioneEsenzione" type="xs:string" minOccurs="0"/>
+			<xs:element name="NoteAggiuntive" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceTestoEsenzione" type="xs:string" minOccurs="0"/>
+			<xs:element name="TestoEsenzione" type="xs:string" minOccurs="0"/>
+			<xs:element name="DecodificaEsenzioneDiagnosi" type="xs:string" minOccurs="0"/>
+			<xs:element name="AttributoEsenzioneDiagnosi" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FusioneTipo">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Cognome" type="xs:string" minOccurs="0"/>
+			<xs:element name="Tessera" type="xs:string" minOccurs="0"/>
+			<xs:element name="Nome" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataNascita" type="xs:dateTime" nillable="true"/>
+			<xs:element name="Sesso" type="xs:string" minOccurs="0"/>
+			<xs:element name="ComuneNascitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="NazionalitaCodice" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceFiscale" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+  <!-- MODIFICA ETTORE 2018-07-26 Nuovo tipo per gli attributi da usare con il Paziente-->
+  <xs:complexType name="AttributoTipo">
+    <xs:sequence>
+      <xs:element name="Nome" type="xs:string"/>
+      <xs:element name="Valore" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

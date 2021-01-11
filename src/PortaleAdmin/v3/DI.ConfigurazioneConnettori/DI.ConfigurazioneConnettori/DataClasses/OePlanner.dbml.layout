@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OePlanner">
+  <DataContextMoniker Name="/OePlannerDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ea55a3dd-6d73-4534-8630-2c37aa683033" absoluteBounds="0.75, 1.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/OePlannerDataContext/Sistemi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3026d324-69b7-4677-9e33-5512339cc303" absoluteBounds="0.76500000000000057, 1.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3563479f-8eb0-4db5-8962-c430f66dca58" absoluteBounds="6.5, 1.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/OePlannerDataContext/Regimi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9726c91-c276-4c9d-aa16-3e25eee927a5" absoluteBounds="6.5150000000000006, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9bc3112c-bad2-40fd-a19d-32fa070e2bb7" absoluteBounds="3.625, 1.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/OePlannerDataContext/Priorita" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e9e493a-a526-4f68-9d08-a18da2c3cb10" absoluteBounds="3.6400000000000006, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,3 @@
+﻿CREATE ROLE [DataAccessSSIS]
+    AUTHORIZATION [dbo];
+

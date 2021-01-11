@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f6c90f30-2e12-4ed6-be5f-fbba77fb6287" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/OeDataAccess/Ordine/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Ordine.wsdl" MetadataType="Wsdl" ID="c0f06de7-4e0a-40fd-aa4a-07e520363703" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Ordine/mex" />
+    <MetadataFile FileName="Ordine.xsd" MetadataType="Schema" ID="5b04343e-532b-4f9f-bcbf-b0da2b3fd3f4" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Ordine/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="69998f34-7191-4d38-8889-dbf79bd77ea5" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Ordine/mex" />
+    <MetadataFile FileName="1.1.xsd" MetadataType="Schema" ID="effb985e-d9b1-484b-a84c-c722866fd4c6" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Ordine/mex" />
+    <MetadataFile FileName="1.11.xsd" MetadataType="Schema" ID="90357f43-b871-46a2-bc92-e36d989fec0a" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Ordine/mex" />
+    <MetadataFile FileName="OE.Wcf.BtDataAccess.xsd" MetadataType="Schema" ID="2f7aeb20-d5b1-41be-a6dc-f2f5fef89d63" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Ordine/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

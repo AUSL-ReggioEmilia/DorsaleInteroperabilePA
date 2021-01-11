@@ -1,0 +1,60 @@
+<MessaggioPazienteParameter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Utente>BT_LHA</Utente>
+	<DataSequenza>2018-10-01T16:10:39</DataSequenza>
+	<Paziente>
+		<Id>PCS_002</Id>
+		<Tessera>2584071</Tessera>
+		<Cognome>Iba2</Cognome>
+		<Nome>Nurten2</Nome>
+		<DataNascita xsi:nil="true"/>
+		<CodiceFiscale>IBNNTN0000000001</CodiceFiscale>
+		<DataDecorrenzaRes xsi:nil="true"/>
+		<PosizioneAss xsi:nil="true"/>
+		<DataInizioAss xsi:nil="true"/>
+		<DataScadenzaAss xsi:nil="true"/>
+		<DataTerminazioneAss xsi:nil="true"/>
+		<CodiceMedicoDiBase xsi:nil="true"/>
+		<DataSceltaMedicoDiBase xsi:nil="true"/>
+		<DataInizioSTP xsi:nil="true"/>
+		<DataFineSTP xsi:nil="true"/>
+		<Attributi>
+			<Attributo>
+				<Nome>codiceTEAM</Nome>
+				<Valore>80380000800080438130</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>dataFineTEAM</Nome>
+				<Valore>23/01/2015</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>nPersonaleTEAM</Nome>
+				<Valore>DNACNT92D53H223V</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>enteTEAM</Nome>
+				<Valore>500001</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>MantenimentoPediatra</Nome>
+				<Valore/>
+			</Attributo>
+			<Attributo>
+				<Nome>CapoFamiglia</Nome>
+				<Valore/>
+			</Attributo>
+			<Attributo>
+				<Nome>Indigenza</Nome>
+				<Valore/>
+			</Attributo>
+		</Attributi>
+	</Paziente>
+	<Esenzioni/>
+	<Fusione>
+		<Id>PCS_001</Id>
+		<Cognome>Iba</Cognome>
+		<Tessera>2584071</Tessera>
+		<Nome>Nurten</Nome>
+		<DataNascita>1986-02-19T00:00:00</DataNascita>
+		<Sesso>F</Sesso>
+	</Fusione>
+</MessaggioPazienteParameter>

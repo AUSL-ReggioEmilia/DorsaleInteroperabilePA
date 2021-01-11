@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OeConnARTEXE">
+  <DataContextMoniker Name="/OeConnARTEXEDataContext" />
+  <nestedChildShapes>
+    <classShape Id="37781137-6c6a-4238-b522-92841fab6396" absoluteBounds="2.625, 1.75, 2, 1.2586491059263547">
+      <DataClassMoniker Name="/OeConnARTEXEDataContext/RichiesteAgendeAbilitate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c992a955-30f4-4de8-b47f-5597a3c2f011" absoluteBounds="2.64, 2.21, 1.9700000000000002, 0.69864910592635465" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

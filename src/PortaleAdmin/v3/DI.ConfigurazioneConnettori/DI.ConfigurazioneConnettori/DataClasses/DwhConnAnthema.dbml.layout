@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DwhConnAnthema">
+  <DataContextMoniker Name="/DwhConnAnthemaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="69b3292c-131e-4987-840a-90d00e32caf7" absoluteBounds="0.875, 0.625, 2, 3.5771712959806123">
+      <DataClassMoniker Name="/DwhConnAnthemaDataContext/CentriRichiedenti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22e04fa8-8975-408c-b602-5d025423dbff" absoluteBounds="0.88999999999999968, 1.085, 1.9700000000000002, 3.0171712959806123" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.progel.it/WCF/OE/Service/1.0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OrderEntryAdmin" targetNamespace="http://schemas.progel.it/WCF/OE/Service/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IOrderEntryAdmin_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.progel.it/WCF/OE/Service/1.0/Imports">
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntryAdmin.svc?xsd=xsd0" namespace="http://schemas.progel.it/WCF/OE/Service/1.0" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntryAdmin.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/OE.Core" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntryAdmin.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntryAdmin.svc?xsd=xsd2" namespace="http://schemas.progel.it/WCF/OE/WsTypes/1.2" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntryAdmin.svc?xsd=xsd3" namespace="http://schemas.progel.it/OE/Types/1.2" />
+      <xsd:import schemaLocation="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntryAdmin.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOrderEntryAdmin_InoltraOrdinePerIdGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:InoltraOrdinePerIdGuid" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_InoltraOrdinePerIdGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InoltraOrdinePerIdGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_InoltraOrdinePerIdGuid_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q1:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_InoltraOrdinePerIdGuid_DataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q2:DataFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_InoltraOrdinePerIdGuid_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q3:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_InoltraOrdinePerIdGuid_TokenFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q4:TokenFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReinoltraOrdinePerIdGuid" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReinoltraOrdinePerIdGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q5:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_DataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q6:DataFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q7:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_TokenFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q8:TokenFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_CancellaOrdinePerIdGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancellaOrdinePerIdGuid" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_CancellaOrdinePerIdGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancellaOrdinePerIdGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_CancellaOrdinePerIdGuid_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q9:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_CancellaOrdinePerIdGuid_DataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q10:DataFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_CancellaOrdinePerIdGuid_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q11:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_CancellaOrdinePerIdGuid_TokenFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q12:TokenFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_RipianificaOrdinePerIdGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:RipianificaOrdinePerIdGuid" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_RipianificaOrdinePerIdGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RipianificaOrdinePerIdGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_RipianificaOrdinePerIdGuid_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q13:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_RipianificaOrdinePerIdGuid_DataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q14:DataFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_RipianificaOrdinePerIdGuid_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q15:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IOrderEntryAdmin_RipianificaOrdinePerIdGuid_TokenFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/OE.Core" name="detail" element="q16:TokenFault" />
+  </wsdl:message>
+  <wsdl:portType name="IOrderEntryAdmin">
+    <wsdl:operation name="InoltraOrdinePerIdGuid">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/InoltraOrdinePerIdGuid" message="tns:IOrderEntryAdmin_InoltraOrdinePerIdGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/InoltraOrdinePerIdGuidResponse" message="tns:IOrderEntryAdmin_InoltraOrdinePerIdGuid_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/InoltraOrdinePerIdGuidServiceFaultFault" name="ServiceFaultFault" message="tns:IOrderEntryAdmin_InoltraOrdinePerIdGuid_ServiceFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/InoltraOrdinePerIdGuidDataFaultFault" name="DataFaultFault" message="tns:IOrderEntryAdmin_InoltraOrdinePerIdGuid_DataFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/InoltraOrdinePerIdGuidArgumentFaultFault" name="ArgumentFaultFault" message="tns:IOrderEntryAdmin_InoltraOrdinePerIdGuid_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/InoltraOrdinePerIdGuidTokenFaultFault" name="TokenFaultFault" message="tns:IOrderEntryAdmin_InoltraOrdinePerIdGuid_TokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReinoltraOrdinePerIdGuid">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/ReinoltraOrdinePerIdGuid" message="tns:IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/ReinoltraOrdinePerIdGuidResponse" message="tns:IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/ReinoltraOrdinePerIdGuidServiceFaultFault" name="ServiceFaultFault" message="tns:IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_ServiceFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/ReinoltraOrdinePerIdGuidDataFaultFault" name="DataFaultFault" message="tns:IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_DataFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/ReinoltraOrdinePerIdGuidArgumentFaultFault" name="ArgumentFaultFault" message="tns:IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/ReinoltraOrdinePerIdGuidTokenFaultFault" name="TokenFaultFault" message="tns:IOrderEntryAdmin_ReinoltraOrdinePerIdGuid_TokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancellaOrdinePerIdGuid">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/CancellaOrdinePerIdGuid" message="tns:IOrderEntryAdmin_CancellaOrdinePerIdGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/CancellaOrdinePerIdGuidResponse" message="tns:IOrderEntryAdmin_CancellaOrdinePerIdGuid_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/CancellaOrdinePerIdGuidServiceFaultFault" name="ServiceFaultFault" message="tns:IOrderEntryAdmin_CancellaOrdinePerIdGuid_ServiceFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/CancellaOrdinePerIdGuidDataFaultFault" name="DataFaultFault" message="tns:IOrderEntryAdmin_CancellaOrdinePerIdGuid_DataFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/CancellaOrdinePerIdGuidArgumentFaultFault" name="ArgumentFaultFault" message="tns:IOrderEntryAdmin_CancellaOrdinePerIdGuid_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/CancellaOrdinePerIdGuidTokenFaultFault" name="TokenFaultFault" message="tns:IOrderEntryAdmin_CancellaOrdinePerIdGuid_TokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RipianificaOrdinePerIdGuid">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/RipianificaOrdinePerIdGuid" message="tns:IOrderEntryAdmin_RipianificaOrdinePerIdGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/RipianificaOrdinePerIdGuidResponse" message="tns:IOrderEntryAdmin_RipianificaOrdinePerIdGuid_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/RipianificaOrdinePerIdGuidServiceFaultFault" name="ServiceFaultFault" message="tns:IOrderEntryAdmin_RipianificaOrdinePerIdGuid_ServiceFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/RipianificaOrdinePerIdGuidDataFaultFault" name="DataFaultFault" message="tns:IOrderEntryAdmin_RipianificaOrdinePerIdGuid_DataFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/RipianificaOrdinePerIdGuidArgumentFaultFault" name="ArgumentFaultFault" message="tns:IOrderEntryAdmin_RipianificaOrdinePerIdGuid_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/RipianificaOrdinePerIdGuidTokenFaultFault" name="TokenFaultFault" message="tns:IOrderEntryAdmin_RipianificaOrdinePerIdGuid_TokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOrderEntryAdmin" type="tns:IOrderEntryAdmin">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IOrderEntryAdmin_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InoltraOrdinePerIdGuid">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/InoltraOrdinePerIdGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataFaultFault">
+        <soap:fault use="literal" name="DataFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TokenFaultFault">
+        <soap:fault use="literal" name="TokenFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReinoltraOrdinePerIdGuid">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/ReinoltraOrdinePerIdGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataFaultFault">
+        <soap:fault use="literal" name="DataFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TokenFaultFault">
+        <soap:fault use="literal" name="TokenFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancellaOrdinePerIdGuid">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/CancellaOrdinePerIdGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataFaultFault">
+        <soap:fault use="literal" name="DataFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TokenFaultFault">
+        <soap:fault use="literal" name="TokenFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RipianificaOrdinePerIdGuid">
+      <soap:operation soapAction="http://schemas.progel.it/WCF/OE/Service/1.0/IOrderEntryAdmin/RipianificaOrdinePerIdGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DataFaultFault">
+        <soap:fault use="literal" name="DataFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TokenFaultFault">
+        <soap:fault use="literal" name="TokenFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderEntryAdmin">
+    <wsdl:port name="BasicHttpBinding_IOrderEntryAdmin" binding="tns:BasicHttpBinding_IOrderEntryAdmin">
+      <soap:address location="http://dagobah2.progel.org:8085/WS-DI-OE-1_2/OE.Wcf.DataAccess.OrderEntryAdmin.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

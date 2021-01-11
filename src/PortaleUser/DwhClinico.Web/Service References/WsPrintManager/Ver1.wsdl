@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://progel.org/ws/asmnRe/printManager/1" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://progel.org/ws/asmnRe/printManager/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://progel.org/ws/asmnRe/printManager/1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="ServerEnum">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServerEnumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServerEnumResult" type="tns:ArrayOfServerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfServerInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServerInfo" nillable="true" type="tns:ServerInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServerInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinorVersion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MajorVersion" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueueEnum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueueEnumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueueEnumResult" type="tns:ArrayOfQueueInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfQueueInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QueueInfo" nillable="true" type="tns:QueueInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QueueInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShareName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueueStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfJobs" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueueGetMyDefault">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueueGetMyDefaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueueGetMyDefaultResult" type="tns:QueuePath" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QueuePath">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Server" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="JobEnum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobEnumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JobEnumResult" type="tns:ArrayOfJobInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfJobInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JobInfo" nillable="true" type="tns:JobInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JobInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IdJob" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Identifier" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PositionInPrintQueue" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateCreated" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateConverted" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatePrinted" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorConverted" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorPrinted" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="JobEnumByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataDal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataAl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobEnumByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JobEnumByDateResult" type="tns:ArrayOfJobInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobEnumById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobEnumByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JobEnumByIdResult" type="tns:JobInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobEnumByUserSubmitter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataDal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataAl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobEnumByUserSubmitterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JobEnumByUserSubmitterResult" type="tns:ArrayOfJobInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddXpsDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XpsDocunent" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddXpsDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="JobAddXpsDocumentResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddWordDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WordDocunent" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddWordDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="JobAddWordDocumentResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddHtmlDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HtmlDocunent" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddHtmlDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="JobAddHtmlDocumentResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddMhtDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MhtDocunent" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddMhtDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="JobAddMhtDocumentResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddPdfDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PdfDocunent" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddPdfDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="JobAddPdfDocumentResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintTestPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintTestPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintTestPageResult" type="tns:JobInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddTiffDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TiffDocument" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddTiffDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="JobAddTiffDocumentResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobAddFileDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Extension" type="tns:FileExtention" />
+            <s:element minOccurs="0" maxOccurs="1" name="Docunent" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="StyleSheet" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="FileExtention">
+        <s:restriction base="s:string">
+          <s:enumeration value="Xps" />
+          <s:enumeration value="Pdf" />
+          <s:enumeration value="Word" />
+          <s:enumeration value="Html" />
+          <s:enumeration value="Mht" />
+          <s:enumeration value="Tiff" />
+          <s:enumeration value="XmlXlst" />
+          <s:enumeration value="XmlXlstFo" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="JobAddFileDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="JobAddFileDocumentResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JobMergingAddPdfDocuments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrinterServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueueName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSubmitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PdfDocuments" type="tns:ArrayOfDocumentContainer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDocumentContainer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentContainer" nillable="true" type="tns:DocumentContainer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocumentContainer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Document" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="JobMergingAddPdfDocumentsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueueEnumOfComputer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComputerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueueEnumOfComputerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueueEnumOfComputerResult" type="tns:ArrayOfQueueInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServerEnumSoapIn">
+    <wsdl:part name="parameters" element="tns:ServerEnum" />
+  </wsdl:message>
+  <wsdl:message name="ServerEnumSoapOut">
+    <wsdl:part name="parameters" element="tns:ServerEnumResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueueEnumSoapIn">
+    <wsdl:part name="parameters" element="tns:QueueEnum" />
+  </wsdl:message>
+  <wsdl:message name="QueueEnumSoapOut">
+    <wsdl:part name="parameters" element="tns:QueueEnumResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueueGetMyDefaultSoapIn">
+    <wsdl:part name="parameters" element="tns:QueueGetMyDefault" />
+  </wsdl:message>
+  <wsdl:message name="QueueGetMyDefaultSoapOut">
+    <wsdl:part name="parameters" element="tns:QueueGetMyDefaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobEnumSoapIn">
+    <wsdl:part name="parameters" element="tns:JobEnum" />
+  </wsdl:message>
+  <wsdl:message name="JobEnumSoapOut">
+    <wsdl:part name="parameters" element="tns:JobEnumResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobEnumByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:JobEnumByDate" />
+  </wsdl:message>
+  <wsdl:message name="JobEnumByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:JobEnumByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobEnumByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:JobEnumById" />
+  </wsdl:message>
+  <wsdl:message name="JobEnumByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:JobEnumByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobEnumByUserSubmitterSoapIn">
+    <wsdl:part name="parameters" element="tns:JobEnumByUserSubmitter" />
+  </wsdl:message>
+  <wsdl:message name="JobEnumByUserSubmitterSoapOut">
+    <wsdl:part name="parameters" element="tns:JobEnumByUserSubmitterResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobAddXpsDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:JobAddXpsDocument" />
+  </wsdl:message>
+  <wsdl:message name="JobAddXpsDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:JobAddXpsDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobAddWordDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:JobAddWordDocument" />
+  </wsdl:message>
+  <wsdl:message name="JobAddWordDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:JobAddWordDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobAddHtmlDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:JobAddHtmlDocument" />
+  </wsdl:message>
+  <wsdl:message name="JobAddHtmlDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:JobAddHtmlDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobAddMhtDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:JobAddMhtDocument" />
+  </wsdl:message>
+  <wsdl:message name="JobAddMhtDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:JobAddMhtDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobAddPdfDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:JobAddPdfDocument" />
+  </wsdl:message>
+  <wsdl:message name="JobAddPdfDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:JobAddPdfDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintTestPageSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintTestPage" />
+  </wsdl:message>
+  <wsdl:message name="PrintTestPageSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintTestPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobAddTiffDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:JobAddTiffDocument" />
+  </wsdl:message>
+  <wsdl:message name="JobAddTiffDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:JobAddTiffDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobAddFileDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:JobAddFileDocument" />
+  </wsdl:message>
+  <wsdl:message name="JobAddFileDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:JobAddFileDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="JobMergingAddPdfDocumentsSoapIn">
+    <wsdl:part name="parameters" element="tns:JobMergingAddPdfDocuments" />
+  </wsdl:message>
+  <wsdl:message name="JobMergingAddPdfDocumentsSoapOut">
+    <wsdl:part name="parameters" element="tns:JobMergingAddPdfDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueueEnumOfComputerSoapIn">
+    <wsdl:part name="parameters" element="tns:QueueEnumOfComputer" />
+  </wsdl:message>
+  <wsdl:message name="QueueEnumOfComputerSoapOut">
+    <wsdl:part name="parameters" element="tns:QueueEnumOfComputerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Ver1Soap">
+    <wsdl:operation name="ServerEnum">
+      <wsdl:input message="tns:ServerEnumSoapIn" />
+      <wsdl:output message="tns:ServerEnumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueEnum">
+      <wsdl:input message="tns:QueueEnumSoapIn" />
+      <wsdl:output message="tns:QueueEnumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueGetMyDefault">
+      <wsdl:input message="tns:QueueGetMyDefaultSoapIn" />
+      <wsdl:output message="tns:QueueGetMyDefaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobEnum">
+      <wsdl:input message="tns:JobEnumSoapIn" />
+      <wsdl:output message="tns:JobEnumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobEnumByDate">
+      <wsdl:input message="tns:JobEnumByDateSoapIn" />
+      <wsdl:output message="tns:JobEnumByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobEnumById">
+      <wsdl:input message="tns:JobEnumByIdSoapIn" />
+      <wsdl:output message="tns:JobEnumByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobEnumByUserSubmitter">
+      <wsdl:input message="tns:JobEnumByUserSubmitterSoapIn" />
+      <wsdl:output message="tns:JobEnumByUserSubmitterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobAddXpsDocument">
+      <wsdl:input message="tns:JobAddXpsDocumentSoapIn" />
+      <wsdl:output message="tns:JobAddXpsDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobAddWordDocument">
+      <wsdl:input message="tns:JobAddWordDocumentSoapIn" />
+      <wsdl:output message="tns:JobAddWordDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobAddHtmlDocument">
+      <wsdl:input message="tns:JobAddHtmlDocumentSoapIn" />
+      <wsdl:output message="tns:JobAddHtmlDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobAddMhtDocument">
+      <wsdl:input message="tns:JobAddMhtDocumentSoapIn" />
+      <wsdl:output message="tns:JobAddMhtDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobAddPdfDocument">
+      <wsdl:input message="tns:JobAddPdfDocumentSoapIn" />
+      <wsdl:output message="tns:JobAddPdfDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintTestPage">
+      <wsdl:input message="tns:PrintTestPageSoapIn" />
+      <wsdl:output message="tns:PrintTestPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobAddTiffDocument">
+      <wsdl:input message="tns:JobAddTiffDocumentSoapIn" />
+      <wsdl:output message="tns:JobAddTiffDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobAddFileDocument">
+      <wsdl:input message="tns:JobAddFileDocumentSoapIn" />
+      <wsdl:output message="tns:JobAddFileDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JobMergingAddPdfDocuments">
+      <wsdl:input message="tns:JobMergingAddPdfDocumentsSoapIn" />
+      <wsdl:output message="tns:JobMergingAddPdfDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueEnumOfComputer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restituisce le code di stampa utilizzabili dal computer.</wsdl:documentation>
+      <wsdl:input message="tns:QueueEnumOfComputerSoapIn" />
+      <wsdl:output message="tns:QueueEnumOfComputerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Ver1Soap" type="tns:Ver1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServerEnum">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/ServerEnum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueueEnum">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/QueueEnum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueueGetMyDefault">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/QueueGetMyDefault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobEnum">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobEnum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobEnumByDate">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobEnumByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobEnumById">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobEnumById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobEnumByUserSubmitter">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobEnumByUserSubmitter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddXpsDocument">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddXpsDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddWordDocument">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddWordDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddHtmlDocument">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddHtmlDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddMhtDocument">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddMhtDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddPdfDocument">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddPdfDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintTestPage">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/PrintTestPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddTiffDocument">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddTiffDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddFileDocument">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddFileDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobMergingAddPdfDocuments">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobMergingAddPdfDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueueEnumOfComputer">
+      <soap:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/QueueEnumOfComputer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Ver1Soap12" type="tns:Ver1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServerEnum">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/ServerEnum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueueEnum">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/QueueEnum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueueGetMyDefault">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/QueueGetMyDefault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobEnum">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobEnum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobEnumByDate">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobEnumByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobEnumById">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobEnumById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobEnumByUserSubmitter">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobEnumByUserSubmitter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddXpsDocument">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddXpsDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddWordDocument">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddWordDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddHtmlDocument">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddHtmlDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddMhtDocument">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddMhtDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddPdfDocument">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddPdfDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintTestPage">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/PrintTestPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddTiffDocument">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddTiffDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobAddFileDocument">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobAddFileDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JobMergingAddPdfDocuments">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/JobMergingAddPdfDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueueEnumOfComputer">
+      <soap12:operation soapAction="http://progel.org/ws/asmnRe/printManager/1/QueueEnumOfComputer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Ver1">
+    <wsdl:port name="Ver1Soap" binding="tns:Ver1Soap">
+      <soap:address location="http://dagobah2/ASMN/PrintManager/Ws/Ver1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Ver1Soap12" binding="tns:Ver1Soap12">
+      <soap12:address location="http://dagobah2/ASMN/PrintManager/Ws/Ver1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

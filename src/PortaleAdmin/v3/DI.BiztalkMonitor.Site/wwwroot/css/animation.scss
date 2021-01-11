@@ -1,0 +1,35 @@
+﻿/* Animazione Fade in 
+    i tag -ms- sono per il funzionamento corretto su IE11
+*/
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+        transform: scaleX(0.999);
+        -ms-transform: scale(0.999,0.999);
+    }
+
+    85% {
+        opacity: 1;
+        transform: scaleX(1.005);
+        -ms-transform: scale(1.005,1.005);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+        -ms-transform: scale(1,1);
+    }
+}
+
+/* Aggiungere la classe tr-fade-in per usare l'animazione */
+@for $i from 1 through 50 {
+    tr:nth-child(#{$i}).tr-fade-in {
+        $time: $i * 0.01 + unquote('');
+        $delay: unquote( $time + 's');
+        animation-delay: $delay;
+        animation-name: FadeIn;
+        animation-duration: 0.3s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+}

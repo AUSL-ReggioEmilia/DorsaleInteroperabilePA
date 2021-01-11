@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.progel.it/OE/WCF/DataAccess/Stato" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Stato" targetNamespace="http://schemas.progel.it/OE/WCF/DataAccess/Stato" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="pipeStato_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.progel.it/OE/WCF/DataAccess/Stato/Imports">
+      <xsd:import namespace="http://schemas.progel.it/OE/WCF/DataAccess/Stato" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/OE.Wcf.BtDataAccess" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.progel.it/BT/OE/DataAccess/StatoParameter/1.1" />
+      <xsd:import namespace="http://schemas.progel.it/BT/OE/QueueTypes/1.1" />
+      <xsd:import namespace="http://schemas.progel.it/BT/OE/DataAccess/StatoReturn/1.1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IStato_ProcessaMessaggio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessaMessaggio" />
+  </wsdl:message>
+  <wsdl:message name="IStato_ProcessaMessaggio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessaMessaggioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStato_ProcessaMessaggio_StatoFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/OE.Wcf.BtDataAccess" name="detail" element="q1:StatoFault" />
+  </wsdl:message>
+  <wsdl:portType name="IStato">
+    <wsdl:operation name="ProcessaMessaggio">
+      <wsdl:input wsaw:Action="http://schemas.progel.it/OE/WCF/DataAccess/Stato/IStato/ProcessaMessaggio" message="tns:IStato_ProcessaMessaggio_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.progel.it/OE/WCF/DataAccess/Stato/IStato/ProcessaMessaggioResponse" message="tns:IStato_ProcessaMessaggio_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.progel.it/OE/WCF/DataAccess/Stato/IStato/ProcessaMessaggioStatoFaultFault" name="StatoFaultFault" message="tns:IStato_ProcessaMessaggio_StatoFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="pipeStato" type="tns:IStato">
+    <wsp:PolicyReference URI="#pipeStato_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="ProcessaMessaggio">
+      <soap12:operation soapAction="http://schemas.progel.it/OE/WCF/DataAccess/Stato/IStato/ProcessaMessaggio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StatoFaultFault">
+        <soap12:fault use="literal" name="StatoFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Stato">
+    <wsdl:port name="pipeStato" binding="tns:pipeStato">
+      <soap12:address location="net.pipe://localhost/oeDataAccess/stato" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/oeDataAccess/stato</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Sandro@progel.org</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

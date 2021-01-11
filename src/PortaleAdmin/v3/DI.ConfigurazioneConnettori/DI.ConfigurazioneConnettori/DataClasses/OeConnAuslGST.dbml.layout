@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.125, 8.5" name="OeConnGST">
+  <DataContextMoniker Name="/OeConnAuslGstDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f4f3ac11-3560-41c7-93ab-b62dd86bf8c7" absoluteBounds="1.875, 1, 3.25, 2.7324039713541666">
+      <DataClassMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstELCO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55125520-df96-440b-a878-87adeb292f69" absoluteBounds="1.89, 1.46, 3.2199999999999998, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="42ebc685-1a40-4649-845e-75fe4d8481ff" absoluteBounds="6.75, 1, 3.125, 2.5401025390625">
+      <DataClassMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstMetafora" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fccf07bc-5cce-4407-847e-bad42057ec17" absoluteBounds="6.765, 1.46, 3.0949999999999998, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="923722c7-b8d8-401f-9595-7ebd30a51595" absoluteBounds="1.875, 3.875, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstELCOSistemiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05d4f9c6-2a57-484e-b75a-b2eb49393568" absoluteBounds="1.8900000000000001, 4.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 3.875); (2.875 : 3.73240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstELCOSistemiEroganti/TranscodificaAttributiPrestazioniGstELCOSistemiEroganti_TranscodificaAttributiPrestazioniGstELCO" />
+      <nodes>
+        <classShapeMoniker Id="923722c7-b8d8-401f-9595-7ebd30a51595" />
+        <classShapeMoniker Id="f4f3ac11-3560-41c7-93ab-b62dd86bf8c7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="be730071-f168-48af-b31b-c2b60909cf80" absoluteBounds="4, 3.875, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstELCONomi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35539d89-4c23-4ff8-883a-042fe87880d4" absoluteBounds="4.015, 4.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5625 : 3.875); (4.5625 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstELCONomi/TranscodificaAttributiPrestazioniGstELCONomi_TranscodificaAttributiPrestazioniGstELCO" />
+      <nodes>
+        <classShapeMoniker Id="be730071-f168-48af-b31b-c2b60909cf80" />
+        <classShapeMoniker Id="f4f3ac11-3560-41c7-93ab-b62dd86bf8c7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f7b754ec-81b2-477c-914a-85989abbbf72" absoluteBounds="1.875, 5, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstELCOAziendeEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc976a8e-b494-4b8f-8c8d-6a966fbe61fd" absoluteBounds="1.8900000000000001, 5.46, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.875 : 5); (1.5 : 4.625); (1.5 : 4.10740397135417); (1.875 : 3.73240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstELCOAziendeEroganti/TranscodificaAttributiPrestazioniGstELCOAziendeEroganti_TranscodificaAttributiPrestazioniGstELCO" />
+      <nodes>
+        <classShapeMoniker Id="f7b754ec-81b2-477c-914a-85989abbbf72" />
+        <classShapeMoniker Id="f4f3ac11-3560-41c7-93ab-b62dd86bf8c7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5b74da51-886a-4b46-a079-c21e188fb2d1" absoluteBounds="6.75, 3.875, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aab7b87b-57e1-4604-b518-0aa15bb83321" absoluteBounds="6.765, 4.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 3.875); (7.75 : 3.5401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti/TranscodificaAttributiPrestazioniGstMetaforaStruttureEroganti_TranscodificaAttributiPrestazioniGstMetafora" />
+      <nodes>
+        <classShapeMoniker Id="5b74da51-886a-4b46-a079-c21e188fb2d1" />
+        <classShapeMoniker Id="42ebc685-1a40-4649-845e-75fe4d8481ff" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="87e34970-7d61-4a5d-984a-84d709be3b73" absoluteBounds="8.875, 3.875, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstMetaforaNomi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24bab557-403a-45dd-b4d1-09d30ef0ccee" absoluteBounds="8.89, 4.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.375 : 3.875); (9.375 : 3.5401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/OeConnAuslGstDataContext/TranscodificaAttributiPrestazioniGstMetaforaNomi/TranscodificaAttributiPrestazioniGstMetaforaNomi_TranscodificaAttributiPrestazioniGstMetafora" />
+      <nodes>
+        <classShapeMoniker Id="87e34970-7d61-4a5d-984a-84d709be3b73" />
+        <classShapeMoniker Id="42ebc685-1a40-4649-845e-75fe4d8481ff" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

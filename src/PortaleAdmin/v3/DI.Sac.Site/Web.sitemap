@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode url="#" title="SAC" description="SAC" >
+
+    <!--Pazienti-->
+    <siteMapNode url="Pazienti/PazientiLista.aspx" title="Ricerca pazienti"  description="Ricerca pazienti" roles="ROLE_AMMINISTRATORE" >
+      <siteMapNode hide="true" url="Pazienti/PazienteDettaglio.aspx" title="Dettaglio" description="Dettaglio">
+        <siteMapNode hide="true" url="Pazienti/PazientiListaMerge.aspx" title="Elenco Pazienti Destinazione" description="Elenco Pazienti Destinazione"/>
+        <siteMapNode hide="true" url="Pazienti/PazienteMerge.aspx" title="Dettaglio Fusione" description="Dettaglio Fusione"/>
+        <siteMapNode hide="true" url="Pazienti/PazienteDiagrammaMerge.aspx" title="Diagramma Fusione" description="Dettaglio Fusione"/>
+        <siteMapNode hide="true" url="Pazienti/PazienteCreaAnonimizzazione.aspx" title="Anonimizzazione" description="Anonimizzazione"/>
+        <siteMapNode hide="true" url="Pazienti/PazienteDettaglioAnonimizzazione.aspx" title="Dettaglio anonimizzazione" description="Dettaglio anonimizzazione"/>
+        <siteMapNode hide="true" url="Pazienti/PazienteCreaPosCollegata.aspx" title="Posizione collegata" description="Posizione collegata"/>
+        <siteMapNode hide="true" url="Pazienti/PazienteDettaglioPosCollegata.aspx" title="Dettaglio posizione collegata" description="Dettaglio posizione collegata"/>
+      </siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode url="Pazienti/PazientiRinotificaMassiva.aspx" title="Rinotifica massiva pazienti"  description="Rinotifica massiva pazienti" roles="ROLE_AMMINISTRATORE" >
+    </siteMapNode>
+
+    <!-- Monitoraggio -->
+    <siteMapNode title="Monitoraggio" description="Monitoraggio" roles="ROLE_AMMINISTRATORE" >
+      <siteMapNode url="Monitoraggio/PazientiUltimiArrivi.aspx" title="Pazienti Ultimi Arrivi"  description="Pazienti Ultimi Arrivi">
+      </siteMapNode>
+      <siteMapNode url="Monitoraggio/PazientiSinottico.aspx" title="Pazienti Sinottico"  description="Pazienti Sinottico">
+      </siteMapNode>
+      <siteMapNode url="Monitoraggio/ConsensiUltimiArrivi.aspx" title="Consensi Ultimi Arrivi"  description="Consensi Ultimi Arrivi">
+      </siteMapNode>
+      <siteMapNode url="Monitoraggio/ConsensiSinottico.aspx" title="Consensi Sinottico"  description="Consensi Sinottico">
+      </siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode url="Pazienti/PazienteCercaAnonimizzazione.aspx" title="Ricerca anonimizzazione"  description="Ricerca anonimizzazione" roles="ROLE_PAZIENTI_READ_ANONIMIZZAZIONE">
+    </siteMapNode>
+    
+    <siteMapNode url="Pazienti/PazienteCercaPosCollegata.aspx" title="Ricerca posizione collegata"  description="Ricerca posizione collegata" roles="ROLE_PAZIENTI_READ_POS_COLLEGATA">
+    </siteMapNode>
+
+    <siteMapNode url="Pazienti/PazientiIncoerenzaISTATLista.aspx" title="Incoerenza Istat"  description="Incoerenza Istat" roles="ROLE_AMMINISTRATORE">
+      <siteMapNode hide="true" url="Pazienti/PazientiIncoerenzaISTATDettaglio.aspx" title="Dettaglio" description="Dettaglio"></siteMapNode>
+    </siteMapNode>
+
+    <!--Applicazioni Integrate-->
+    <siteMapNode title="Applicazioni Integrate" description="Applicazioni Integrate" roles="ROLE_AMMINISTRATORE" >
+      <!--Provenienze-->
+      <siteMapNode url="Provenienze/ProvenienzeLista.aspx" title="Provenienze" description="Provenienze" roles="ROLE_AMMINISTRATORE" >
+        <siteMapNode hide="true" url="Provenienze/ProvenienzaDettaglio.aspx" title="Dettaglio" description="Dettaglio"/>
+      </siteMapNode>
+      <!--Utenti-->
+      <siteMapNode url="Utenti/UtentiLista.aspx" title="Utenti Applicativi" description="Utenti Applicativi" >
+        <siteMapNode hide="true" url="Utenti/UtentiAggiungiLista.aspx" title="Aggiunta Utente Active Directory"  description="Aggiunta Utente Active Directory"/>
+        <siteMapNode hide="true" url="Utenti/UtentiSQLAggiungiLista.aspx" title="Aggiunta Utente SQL Server"  description="Aggiunta Utente SQL Server"/>
+        <siteMapNode hide="true" url="Utenti/UtenteDettaglio.aspx" title="Dettaglio Utente"  description="Dettaglio Utente">
+          <siteMapNode hide="true" url="Utenti/UtentePazienteDettaglio.aspx" title="Servizio Pazienti" description="Servizio Pazienti"/>
+          <siteMapNode hide="true" url="Utenti/UtenteConsensoDettaglio.aspx" title="Servizio Consensi"  description="Servizio Consensi"/>
+          <siteMapNode hide="true" url="Utenti/PermessiUtenteDettaglio.aspx" title="Servizio Organigramma"  description="Servizio Organigramma"/>
+        </siteMapNode>
+      </siteMapNode>
+    </siteMapNode>
+
+    <!--Accessi-->
+    <siteMapNode url="EntitaAccessi/EntitaAccessiLista.aspx" title="Accessi utente" description="Accessi utente" roles="ROLE_AMMINISTRATORE" >
+      <siteMapNode hide="true" url="EntitaAccessi/NuovoAccesso.aspx" title="Nuovo Accesso" description="Nuovo Accesso"/>
+      <siteMapNode hide="true" url="EntitaAccessi/EntitaAccessoDettaglio.aspx" title="Dettaglio"  description="Dettaglio"/>
+    </siteMapNode>
+
+    <!--ISTAT-->
+    <siteMapNode title="Istat" description="Istat" roles="ROLE_AMMINISTRATORE" >
+      <siteMapNode url="Istat/IstatProvinceLista.aspx" title="Province" description="Province">
+        <siteMapNode hide="true" url="Istat/IstatProvinceDettaglio.aspx" title="Dettaglio"  description="Dettaglio"/>
+      </siteMapNode>
+      <siteMapNode url="Istat/IstatComuniLista.aspx" title="Comuni" description="Comuni">
+        <siteMapNode hide="true" url="Istat/IstatComuniDettaglio.aspx" title="Dettaglio"  description="Dettaglio"/>
+      </siteMapNode>
+    </siteMapNode>
+
+    <!--ROLE MANAGER-->
+    <siteMapNode title="Role Manager" description="Role Manager" roles="ROLE_AMMINISTRATORE" >
+      <siteMapNode url="RoleManager/OggettiAD.aspx" title="Utenti e Gruppi" description="Utenti e Gruppi">
+        <siteMapNode hide="true" url="RoleManager/OggettoADDettaglio.aspx" title="Dettaglio" description="Dettaglio"/>
+        <siteMapNode hide="true" url="RoleManager/OggettoActiveDirectoryRuoliLista.aspx" title="Imposta Ruoli" description="Imposta Ruoli"/>
+
+      </siteMapNode>
+
+      <siteMapNode url="RoleManager/RuoliLista.aspx" title="Ruoli" description="Ruoli">
+        <siteMapNode hide="true" url="RoleManager/RuoliDettaglio.aspx" title="Dettaglio" description="Dettaglio">
+          <siteMapNode hide="true" url="RoleManager/RuoloOggettiActiveDirectoryLista.aspx" title="Utenti e Gruppi"  description="Utenti e Gruppi"/>
+        </siteMapNode>
+
+
+        <siteMapNode hide="true" url="RoleManager/RuoloUnitaOperativeLista.aspx" title="Unità Operative"  description="Unità Operative"/>
+        <siteMapNode hide="true" url="RoleManager/RuoloSistemiLista.aspx" title="Sistemi"  description="Sistemi"/>
+
+        <siteMapNode hide="true" url="RoleManager/AttributiLista.aspx" title="Attributi"  description="Attributi"/>
+        <siteMapNode hide="true" url="RoleManager/AttributiInserisci.aspx" title="Inserimento Attributi"  description="Inserimento Attributi"/>
+      </siteMapNode>
+      <siteMapNode url="RoleManager/SistemiLista.aspx" title="Sistemi" description="Sistemi">
+        <siteMapNode hide="true" url="RoleManager/SistemiDettaglio.aspx" title="Dettaglio"  description="Dettaglio">
+          <siteMapNode hide="true" url="RoleManager/RuoliCopiaDaSistema.aspx" title="Copia Ruoli Da Sistema"  description="Copia Ruoli Da Sistema">
+          </siteMapNode>
+        </siteMapNode>
+        <siteMapNode hide="true" url="RoleManager/SistemaRuoloLista.aspx" title="Associazione Ruoli"  description="Associazione Ruoli">
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode url="RoleManager/UnitaOperativeLista.aspx" title="Unità Operative" description="Unità Operative">
+        <siteMapNode hide="true" url="RoleManager/UnitaOperativeDettaglio.aspx" title="Dettaglio" description="Dettaglio"/>
+        <siteMapNode hide="true" url="RoleManager/SistemaUnitaOperativeLista.aspx" title="Associazione Ruoli" description="Associazione Ruoli"/>
+      </siteMapNode>
+
+    </siteMapNode>
+
+    <!-- TRANSCODIFICHE -->
+    <siteMapNode title="Transcodifiche" description="Transcodifiche" roles="ROLE_AMMINISTRATORE" >
+      <siteMapNode url="Transcodifiche/TranscodificheUOLista.aspx" title="Unità Operative" description="Unità Operative">
+        <siteMapNode hide="true" url="Transcodifiche/TranscodificheUODettaglio.aspx" title="Elenco Transcodifiche" description="Elenco delle Transcodifiche per l'Unità Operativa"/>
+        <siteMapNode hide="true" url="Transcodifiche/UnitaOperativeSeleziona.aspx" title="Scelta Unità Operativa" description="Scelta Unità Operativa"/>
+      </siteMapNode>
+
+    </siteMapNode>
+
+    <!-- CODIFICHE -->
+    <siteMapNode title="Codifiche" description="Codifiche" roles="ROLE_AMMINISTRATORE" >
+      <siteMapNode url="Codifiche/SOLELista.aspx" title="SOLE" description="SOLE"/>
+      <siteMapNode url="Codifiche/ICD9Lista.aspx" title="ICD9" description="ICD9"/>
+      <siteMapNode title="Farmadati" description="Farmadati" roles="ROLE_AMMINISTRATORE" >
+        <siteMapNode url="Codifiche/FarmaProdottiLista.aspx" title="Prodotti" description="Prodotti"/>
+        <siteMapNode url="Codifiche/FarmaPrincipiAttiviLista.aspx" title="Principi Attivi" description="Principi Attivi"/>
+      </siteMapNode>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

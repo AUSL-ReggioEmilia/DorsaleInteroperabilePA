@@ -1,0 +1,27 @@
+﻿<CascadingAuthenticationState>
+    <Router AppAssembly="typeof(Program).Assembly">
+        <Found Context="routeData">
+            <CascadingValue Value="@UserAgent">
+                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            </CascadingValue>
+        </Found>
+        <NotFound>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <div class="text-center">
+                    <h1>RISORSA MANCANTE</h1>
+                    <h4>
+                        <i>
+                            La risorsa richiesta non esiste
+                        </i>
+                    </h4>
+                </div>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
+
+@code
+{
+    [Parameter]
+    public string UserAgent { get; set; }
+}

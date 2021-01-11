@@ -1,0 +1,40 @@
+﻿
+
+
+
+
+
+
+
+-- =============================================
+-- Author:		Francesco Pichierri
+-- Create date: 2011-11-23
+-- Description:	Seleziona una lista di priorità
+-- =============================================
+CREATE PROCEDURE [dbo].[WsPrioritaList]
+
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	BEGIN TRY
+		
+		SELECT Codice, Descrizione FROM Priorita
+			
+	END TRY
+	BEGIN CATCH
+		DECLARE @ErrorMessage varchar(2560)
+		SELECT @ErrorMessage = dbo.GetException()		
+		RAISERROR(@ErrorMessage, 16, 1)
+	END CATCH
+	
+END
+
+
+
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[WsPrioritaList] TO [DataAccessWs]
+    AS [dbo];
+

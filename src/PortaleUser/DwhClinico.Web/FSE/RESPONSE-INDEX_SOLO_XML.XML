@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DOC_T12 xmlns="urn:hl7-org:v2xml\" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance\">
+  <MSH>
+    <MSH.1>|</MSH.1>
+    <MSH.2>^~\\&amp;</MSH.2>
+    <MSH.3>
+      <HD.1 />
+      <HD.2>SOLE</HD.2>
+      <HD.3>2.7P1H0</HD.3>
+    </MSH.3>
+    <MSH.9>
+      <MSG.1>DOC</MSG.1>
+      <MSG.2>T12</MSG.2>
+      <MSG.3>DOC_T12</MSG.3>
+    </MSH.9>
+    <MSH.10>ProgelMsg1-R</MSH.10>
+    <MSH.11>
+      <PT.1>P</PT.1>
+      <PT.2>NOT PRESENT</PT.2>
+    </MSH.11>
+    <MSH.12>
+      <VID.1>2.3.1</VID.1>
+    </MSH.12>
+    <MSH.13 />
+    <MSH.14 />
+  </MSH>
+  <MSA>
+    <MSA.1>AA</MSA.1>
+    <MSA.2>ProgelMsg1</MSA.2>
+    <MSA.6>
+      <CE.1>0</CE.1>
+      <CE.2>SUCCESS</CE.2>
+      <CE.3 />
+      <CE.4 />
+      <CE.5 />
+      <CE.6 />
+    </MSA.6>
+  </MSA>
+  <QRD>
+    <QRD.1>
+      <TS.1>20170301111640313</TS.1>
+    </QRD.1>
+    <QRD.2>R</QRD.2>
+    <QRD.3>I</QRD.3>
+    <QRD.4>ProgelQry1</QRD.4>
+    <QRD.7>
+      <CQ.1>100</CQ.1>
+      <CQ.2>
+        <CE.1>RD</CE.1>
+      </CQ.2>
+    </QRD.7>
+    <QRD.8>
+      <XCN.2>
+        <FN.1 />
+      </XCN.2>
+      <XCN.3 />
+    </QRD.8>
+    <QRD.9>
+      <CE.1>FSE</CE.1>
+    </QRD.9>
+    <QRD.10>
+      <CE.1 />
+    </QRD.10>
+  </QRD>
+  <DOC_T12.EVNPIDPV1TXAOBX_SUPPGRP>
+    <PID>
+      <PID.1 />
+      <PID.3>
+        <CX.1 />
+        <CX.2 />
+        <CX.3 />
+        <CX.4>
+          <HD.1 />
+          <HD.2 />
+          <HD.3 />
+        </CX.4>
+        <CX.5 />
+        <CX.6>
+          <HD.1 />
+          <HD.2 />
+          <HD.3 />
+        </CX.6>
+      </PID.3>
+      <PID.5>
+        <XPN.1>
+          <FN.1>ASSISTITOPROVA</FN.1>
+          <FN.2 />
+        </XPN.1>
+        <XPN.2>REGGIO RX</XPN.2>
+        <XPN.3 />
+        <XPN.4 />
+        <XPN.5 />
+        <XPN.6 />
+        <XPN.7 />
+        <XPN.8 />
+      </PID.5>
+      <PID.7>
+        <TS.1>19750204</TS.1>
+      </PID.7>
+      <PID.8 />
+    </PID>
+    <PV1>
+      <PV1.2 />
+      <PV1.9>
+        <XCN.1 />
+        <XCN.2>
+          <FN.1 />
+        </XCN.2>
+        <XCN.3 />
+        <XCN.9>
+          <HD.1>080103</HD.1>
+          <HD.2 />
+          <HD.3>AzErog</HD.3>
+        </XCN.9>
+      </PV1.9>
+      <PV1.45>
+        <TS.1 />
+      </PV1.45>
+    </PV1>
+    <TXA>
+      <TXA.1>1</TXA.1>
+      <TXA.2>SPS</TXA.2>
+      <TXA.3 />
+      <TXA.4>
+        <TS.1 />
+      </TXA.4>
+      <TXA.12>
+        <EI.1>10308002100EFDSM16-01359940V5</EI.1>
+        <EI.2 />
+      </TXA.12>
+      <TXA.17 />
+      <TXA.21 />
+      <TXA.22>
+        <PPN.15>
+          <TS.1>20161121</TS.1>
+        </PPN.15>
+      </TXA.22>
+    </TXA>
+  </DOC_T12.EVNPIDPV1TXAOBX_SUPPGRP>
+  <DOC_T12.EVNPIDPV1TXAOBX_SUPPGRP>
+    <PID>
+      <PID.1 />
+      <PID.3>
+        <CX.1 />
+        <CX.2 />
+        <CX.3 />
+        <CX.4>
+          <HD.1 />
+          <HD.2 />
+          <HD.3 />
+        </CX.4>
+        <CX.5 />
+        <CX.6>
+          <HD.1 />
+          <HD.2 />
+          <HD.3 />
+        </CX.6>
+      </PID.3>
+      <PID.5>
+        <XPN.1>
+          <FN.1>ASSISTITOPROVA</FN.1>
+          <FN.2 />
+        </XPN.1>
+        <XPN.2>REGGIO RX</XPN.2>
+        <XPN.3 />
+        <XPN.4 />
+        <XPN.5 />
+        <XPN.6 />
+        <XPN.7 />
+        <XPN.8 />
+      </PID.5>
+      <PID.7>
+        <TS.1>19750204</TS.1>
+      </PID.7>
+      <PID.8 />
+    </PID>
+    <PV1>
+      <PV1.2 />
+      <PV1.9>
+        <XCN.1 />
+        <XCN.2>
+          <FN.1 />
+        </XCN.2>
+        <XCN.3 />
+        <XCN.9>
+          <HD.1>080103</HD.1>
+          <HD.2 />
+          <HD.3>AzErog</HD.3>
+        </XCN.9>
+      </PV1.9>
+      <PV1.45>
+        <TS.1 />
+      </PV1.45>
+    </PV1>
+    <TXA>
+      <TXA.1>1</TXA.1>
+      <TXA.2>SPS</TXA.2>
+      <TXA.3 />
+      <TXA.4>
+        <TS.1 />
+      </TXA.4>
+      <TXA.12>
+        <EI.1>10308002100EFDSM16-01359940V4</EI.1>
+        <EI.2 />
+      </TXA.12>
+      <TXA.17 />
+      <TXA.21 />
+      <TXA.22>
+        <PPN.15>
+          <TS.1>20161111</TS.1>
+        </PPN.15>
+      </TXA.22>
+    </TXA>
+  </DOC_T12.EVNPIDPV1TXAOBX_SUPPGRP>
+  <DOC_T12.EVNPIDPV1TXAOBX_SUPPGRP>
+    <PID>
+      <PID.1 />
+      <PID.3>
+        <CX.1 />
+        <CX.2 />
+        <CX.3 />
+        <CX.4>
+          <HD.1 />
+          <HD.2 />
+          <HD.3 />
+        </CX.4>
+        <CX.5 />
+        <CX.6>
+          <HD.1 />
+          <HD.2 />
+          <HD.3 />
+        </CX.6>
+      </PID.3>
+      <PID.5>
+        <XPN.1>
+          <FN.1>ASSISTITOPROVA</FN.1>
+          <FN.2 />
+        </XPN.1>
+        <XPN.2>REGGIO RX</XPN.2>
+        <XPN.3 />
+        <XPN.4 />
+        <XPN.5 />
+        <XPN.6 />
+        <XPN.7 />
+        <XPN.8 />
+      </PID.5>
+      <PID.7>
+        <TS.1>19750204</TS.1>
+      </PID.7>
+      <PID.8 />
+    </PID>
+    <PV1>
+      <PV1.2 />
+      <PV1.9>
+        <XCN.1 />
+        <XCN.2>
+          <FN.1 />
+        </XCN.2>
+        <XCN.3 />
+        <XCN.9>
+          <HD.1>080103</HD.1>
+          <HD.2 />
+          <HD.3>AzErog</HD.3>
+        </XCN.9>
+      </PV1.9>
+      <PV1.45>
+        <TS.1 />
+      </PV1.45>
+    </PV1>
+    <TXA>
+      <TXA.1>1</TXA.1>
+      <TXA.2>SPS</TXA.2>
+      <TXA.3 />
+      <TXA.4>
+        <TS.1 />
+      </TXA.4>
+      <TXA.12>
+        <EI.1>10308002100EFDSM16-01359940V3</EI.1>
+        <EI.2 />
+      </TXA.12>
+      <TXA.17 />
+      <TXA.21 />
+      <TXA.22>
+        <PPN.15>
+          <TS.1>20161111</TS.1>
+        </PPN.15>
+      </TXA.22>
+    </TXA>
+  </DOC_T12.EVNPIDPV1TXAOBX_SUPPGRP>
+</DOC_T12>

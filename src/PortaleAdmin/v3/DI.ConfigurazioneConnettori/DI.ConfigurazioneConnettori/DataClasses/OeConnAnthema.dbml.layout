@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10" name="OeConnAnthema">
+  <DataContextMoniker Name="/OeConnAnthemaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c3613031-3d37-451e-992a-2cacdacc89ee" absoluteBounds="0.5, 0.5, 3.375, 2.5401025390625">
+      <DataClassMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniMetaforaAnthema" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6fbe47b-1831-46d3-b6c3-e62438e25683" absoluteBounds="0.515, 0.96, 3.3449999999999998, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9b63a95-0df0-47a4-a7ee-0b8d1e63d282" absoluteBounds="4.25, 0.5, 3.625, 2.5401025390625">
+      <DataClassMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniAnthemaMetafora" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bfaeec9a-fe21-436b-8666-b73890e45032" absoluteBounds="4.265, 0.96, 3.5949999999999998, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d28f2209-f757-4a24-a803-4b96271f71b1" absoluteBounds="0.5, 5.75, 2.625, 2.7324039713541666">
+      <DataClassMoniker Name="/OeConnAnthemaDataContext/OeConnAnthema_CentriRichiedenti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d678966-03a6-4fce-8842-251ab52dc4eb" absoluteBounds="0.51500000000000012, 6.21, 2.5949999999999998, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed598d1c-7774-4a8a-a5c4-f7450028a806" absoluteBounds="0.5, 3.25, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26c042d4-0bea-4c49-80da-f5f03c3f4d33" absoluteBounds="0.515, 3.71, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 3.25); (1.5 : 3.0401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante/TranscodificaAttributiPrestazioniMetaforaAnthemaStrutturaErogante_TranscodificaAttributiPrestazioniMetaforaAnthema" />
+      <nodes>
+        <classShapeMoniker Id="ed598d1c-7774-4a8a-a5c4-f7450028a806" />
+        <classShapeMoniker Id="c3613031-3d37-451e-992a-2cacdacc89ee" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5b374b03-464b-4711-bff0-ef68df553f6d" absoluteBounds="0.5, 4.375, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniMetaforaAnthemaNomi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d6d4dbd-815b-460d-b4cd-35ec5d4cf0c6" absoluteBounds="0.515, 4.835, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.5 : 4.375); (0.125 : 4); (0.125 : 3.41705546409255); (0.501952925030048 : 3.0401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniMetaforaAnthemaNomi/TranscodificaAttributiPrestazioniMetaforaAnthemaNomi_TranscodificaAttributiPrestazioniMetaforaAnthema" />
+      <nodes>
+        <classShapeMoniker Id="5b374b03-464b-4711-bff0-ef68df553f6d" />
+        <classShapeMoniker Id="c3613031-3d37-451e-992a-2cacdacc89ee" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a60e71a7-fa8a-4fad-9faf-cd19dd25ec7d" absoluteBounds="4.25, 3.25, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="993723a9-d100-4c07-bc1f-9b39f9f8a009" absoluteBounds="4.265, 3.71, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 3.25); (5.25 : 3.0401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti/TranscodificaAttributiPrestazioniAnthemaMetaforaStruttureEroganti_TranscodificaAttributiPrestazioniAnthemaMetafora" />
+      <nodes>
+        <classShapeMoniker Id="a60e71a7-fa8a-4fad-9faf-cd19dd25ec7d" />
+        <classShapeMoniker Id="a9b63a95-0df0-47a4-a7ee-0b8d1e63d282" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9d57a45b-fe79-4f03-8b3e-6bf04d757de5" absoluteBounds="6.375, 3.25, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniAnthemaMetaforaNomi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc184dbd-00b9-4f30-b1bb-2612e707b0ee" absoluteBounds="6.39, 3.71, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 3.25); (7.125 : 3.0401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnAnthemaDataContext/TranscodificaAttributiPrestazioniAnthemaMetaforaNomi/TranscodificaAttributiPrestazioniAnthemaMetaforaNomi_TranscodificaAttributiPrestazioniAnthemaMetafora" />
+      <nodes>
+        <classShapeMoniker Id="9d57a45b-fe79-4f03-8b3e-6bf04d757de5" />
+        <classShapeMoniker Id="a9b63a95-0df0-47a4-a7ee-0b8d1e63d282" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="72eeae8c-8520-43ff-9688-2090a123fe95" absoluteBounds="0.5, 8.75, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAnthemaDataContext/CentriRichiedentiAziendeEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0601775-9b4e-486b-a466-c8a09175a0f9" absoluteBounds="0.515, 9.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 8.75); (1.5 : 8.48240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/OeConnAnthemaDataContext/CentriRichiedentiAziendeEroganti/CentriRichiedentiAziendeEroganti_OeConnAnthema_CentriRichiedenti" />
+      <nodes>
+        <classShapeMoniker Id="72eeae8c-8520-43ff-9688-2090a123fe95" />
+        <classShapeMoniker Id="d28f2209-f757-4a24-a803-4b96271f71b1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="04896c17-d2d0-42b2-842e-798c9d0d1ab2" absoluteBounds="2.75, 8.75, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/OeConnAnthemaDataContext/CentriRichiedentiSistemiEroganti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="563ece7c-4cb3-4e47-bdd3-f14e6f178b49" absoluteBounds="2.765, 9.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.9375 : 8.75); (2.9375 : 8.48240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/OeConnAnthemaDataContext/CentriRichiedentiSistemiEroganti/CentriRichiedentiSistemiEroganti_OeConnAnthema_CentriRichiedenti" />
+      <nodes>
+        <classShapeMoniker Id="04896c17-d2d0-42b2-842e-798c9d0d1ab2" />
+        <classShapeMoniker Id="d28f2209-f757-4a24-a803-4b96271f71b1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

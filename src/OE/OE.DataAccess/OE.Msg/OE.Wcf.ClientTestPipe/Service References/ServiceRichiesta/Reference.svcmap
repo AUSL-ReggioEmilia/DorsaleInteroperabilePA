@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="85375511-1a7f-4e67-b181-d6051fbc7746" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/OeDataAccess/Richiesta/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Richiesta.wsdl" MetadataType="Wsdl" ID="14451fdd-ee7f-4679-8307-c214f10de578" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Richiesta/mex" />
+    <MetadataFile FileName="Richiesta.xsd" MetadataType="Schema" ID="c66cbbdd-f5d3-4589-bc20-7227f2c29faf" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Richiesta/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3ca97b00-1062-45e3-aa56-f2da954de069" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Richiesta/mex" />
+    <MetadataFile FileName="1.1.xsd" MetadataType="Schema" ID="a94f9cc7-4f80-4ca9-85cb-b23928c120ad" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Richiesta/mex" />
+    <MetadataFile FileName="1.11.xsd" MetadataType="Schema" ID="68b58700-f726-4a3b-9dd4-ac3b3d0f0a74" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Richiesta/mex" />
+    <MetadataFile FileName="1.12.xsd" MetadataType="Schema" ID="f1f3ebe2-2b2f-4a45-90ca-af351912d244" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Richiesta/mex" />
+    <MetadataFile FileName="OE.Wcf.BtDataAccess1.xsd" MetadataType="Schema" ID="edd1292a-117c-46a3-9633-c1eee902e25e" SourceId="1" SourceUrl="http://localhost/OeDataAccess/Richiesta/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

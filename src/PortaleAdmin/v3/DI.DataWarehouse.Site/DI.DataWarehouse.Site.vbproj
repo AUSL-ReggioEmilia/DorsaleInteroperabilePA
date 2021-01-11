@@ -1,0 +1,1396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{E3EB4ED4-2198-4084-ABDD-2C3FBC39C7C2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>DI.DataWarehouse.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.DataWarehouse.Admin.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DI.DataWarehouse.Admin.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=8.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Components\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.14.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.14.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDenied.htm" />
+    <Content Include="Accessi\GdAGruppiAD.aspx" />
+    <Content Include="Accessi\GdALista.aspx" />
+    <Content Include="Accessi\GdARuoli.aspx" />
+    <Content Include="CrashSystem\LogOperazioni.aspx" />
+    <Content Include="CrashSystem\SottoscrizioniLista.aspx" />
+    <Content Include="CrashSystem\SottoscrizioniDettaglio.aspx" />
+    <Content Include="ErrorUnknown.htm" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\arrow_down.png" />
+    <Content Include="Images\arrow_right.gif" />
+    <Content Include="Images\arrow_up.png" />
+    <Content Include="Images\back.gif" />
+    <Content Include="Images\checkbox_ok.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\delete_grey.gif" />
+    <Content Include="Images\detail.png" />
+    <Content Include="Images\detailsmerge.GIF" />
+    <Content Include="Images\detailsmerge_grey.gif" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\editInPlace.gif" />
+    <Content Include="Images\edititem.gif" />
+    <Content Include="Images\edititem_grey.gif" />
+    <Content Include="Images\ErrorAccessDenied.jpg" />
+    <Content Include="Images\ErrorMissingResource.gif" />
+    <Content Include="Images\ErrorUnknown.gif" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\find.png" />
+    <Content Include="Images\green-left.jpg" />
+    <Content Include="Images\group.gif" />
+    <Content Include="Images\icon_err.gif" />
+    <Content Include="Images\icon_small_caution.gif" />
+    <Content Include="Images\icon_small_detail.bmp" />
+    <Content Include="Images\ImageNotFound.png" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\invalida.gif" />
+    <Content Include="Images\log.gif" />
+    <Content Include="Images\LogoAzienda.jpg" />
+    <Content Include="Images\LogoToolbar.jpg" />
+    <Content Include="Images\LogoToolbarDispatcher.jpg" />
+    <Content Include="Images\LogoToolbarDwh.jpg" />
+    <Content Include="Images\LogoToolbarOrderEntry.jpg" />
+    <Content Include="Images\LogoToolbarPm.jpg" />
+    <Content Include="Images\LogoToolbarSac.jpg" />
+    <Content Include="Images\log_grey.gif" />
+    <Content Include="Images\Marchio_CE_Header.png" />
+    <Content Include="Images\MenuLeftBackground.jpg" />
+    <Content Include="Images\MenuTopBackground.gif" />
+    <Content Include="Images\MenuTopPopUp.gif" />
+    <Content Include="Images\MenuTopSeparator.gif" />
+    <Content Include="Images\merge.gif" />
+    <Content Include="Images\merge_grey.gif" />
+    <Content Include="Images\minus.gif" />
+    <Content Include="Images\new.gif" />
+    <Content Include="Images\newitem.gif" />
+    <Content Include="Images\next.gif" />
+    <Content Include="Images\ok.png" />
+    <Content Include="Images\pdficon.gif" />
+    <Content Include="Images\PixelTrasparente.gif" />
+    <Content Include="Images\print.png" />
+    <Content Include="Images\refresh.gif" />
+    <Content Include="Images\restore.gif" />
+    <Content Include="Images\restore_grey.gif" />
+    <Content Include="Images\rinotificareferto.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\saveInPlace.gif" />
+    <Content Include="Images\sel.gif" />
+    <Content Include="Images\sort_asc.gif" />
+    <Content Include="Images\sort_desc.gif" />
+    <Content Include="Images\stato.gif" />
+    <Content Include="Images\toolgrad_vintage.gif" />
+    <Content Include="Images\trash.gif" />
+    <Content Include="Images\undo.png" />
+    <Content Include="Images\undoInPlace.gif" />
+    <Content Include="Images\user.gif" />
+    <Content Include="Images\view.png" />
+    <Content Include="Images\ViewDoc.gif" />
+    <Content Include="Images\_LogoToolbar.gif" />
+    <Content Include="index.html" />
+    <Content Include="MissingResource.htm" />
+    <Content Include="PagesLog\LogAggancioPaziente.aspx" />
+    <Content Include="PagesNoteAnamnestiche\NoteAnamnesticheRiassociazionePazientiLista.aspx" />
+    <Content Include="PagesRicoveri\RicoveriRiassociazioneSACPazientiLista.aspx" />
+    <Content Include="PagesRicoveri\RicoveriRiassociazioneDettaglio.aspx" />
+    <Content Include="PagesRicoveri\RicoveriRiassociazioneLista.aspx" />
+    <Content Include="PagesSole\EventiReinvioByEsito.aspx" />
+    <Content Include="PagesSole\RefertiReinvioByEsito.aspx" />
+    <Content Include="PagesTools\RefertoExport.aspx" />
+    <Content Include="PagesTools\RefertoImport.aspx" />
+    <Content Include="Pages\AbbonamentiStampe.aspx" />
+    <Content Include="Pages\AbbonamentiStampeDettaglio.aspx" />
+    <Content Include="Pages\ApreAllegato.aspx" />
+    <Content Include="PagesNoteAnamnestiche\DownloadNotaAnamnesticaContenuto.aspx" />
+    <Content Include="Pages\EventiInviiSoleSinottico.aspx" />
+    <Content Include="Pages\MMGSistemiAbilitatiDettaglio.aspx" />
+    <Content Include="Pages\MMGSistemiAbilitatiLista.aspx" />
+    <Content Include="PagesNoteAnamnestiche\NoteAnamnesticheDettaglio.aspx" />
+    <Content Include="PagesNoteAnamnestiche\NoteAnamnesticheLista.aspx" />
+    <Content Include="PagesNoteAnamnestiche\NoteAnamnesticheRiassociazioneDettaglio.aspx" />
+    <Content Include="PagesNoteAnamnestiche\NoteAnamnesticheRiassociazioneLista.aspx" />
+    <Content Include="PagesNoteAnamnestiche\NoteAnamnesticheSinottico.aspx" />
+    <Content Include="PagesNoteAnamnestiche\NoteAnamnesticheUltimiArrivi.aspx" />
+    <Content Include="Pages\OscuramentiRinotifica.aspx" />
+    <Content Include="Pages\RefertiDettaglio.aspx" />
+    <Content Include="Pages\RefertiInviiSoleSinottico.aspx" />
+    <Content Include="Pages\RicoveriDettaglio.aspx" />
+    <Content Include="Pages\RicoveriLista.aspx" />
+    <Content Include="Pages\EventiSOLELogInvii.aspx" />
+    <Content Include="Pages\RinotificaMassivaReferti.aspx" />
+    <Content Include="Pages\RinotificaMassivaRicoveri.aspx" />
+    <Content Include="Pages\SistemiErogantiDettaglio.aspx" />
+    <Content Include="Pages\SistemiErogantiLista.aspx" />
+    <Content Include="Pages\SOLELogInvii.aspx" />
+    <Content Include="Pages\EventiSinottico.aspx" />
+    <Content Include="Pages\RefertiSinottico.aspx" />
+    <Content Include="Pages\EventiUltimiArrivi.aspx" />
+    <Content Include="Pages\TipiRefertoDettaglio.aspx" />
+    <Content Include="Pages\TipiRefertoLista.aspx" />
+    <Content Include="Pages\UtentiSACAggiungiLista.aspx" />
+    <Content Include="Pages\UtentiDettaglio.aspx" />
+    <Content Include="Pages\UtentiLista.aspx" />
+    <Content Include="Pages\RefertiUltimiArrivi.aspx" />
+    <Content Include="Pages\RefertiRiassociazioneSACPazientiLista.aspx" />
+    <Content Include="Pages\RefertiRiassociazioneDettaglio.aspx" />
+    <Content Include="Pages\RefertiRiassociazioneLista.aspx" />
+    <Content Include="Pages\RefertiLista.aspx" />
+    <Content Include="Pages\ReportViewer.aspx" />
+    <Content Include="Pages\OscuramentiDettaglio.aspx" />
+    <Content Include="Pages\OscuramentiLista.aspx" />
+    <Content Include="Pages\FileUpload.aspx" />
+    <Content Include="Pages\RefertiListaAdmin.aspx" />
+    <Content Include="Pages\RefertiNoteDettaglio.aspx" />
+    <Content Include="Pages\RefertiNoteLista.aspx" />
+    <Content Include="Pages\OscuramentoRuoliLista.aspx" />
+    <Content Include="Pages\SistemiErogantiDocumentiDettaglio.aspx" />
+    <Content Include="Pages\SistemiErogantiDocumentiLista.aspx" />
+    <Content Include="Pages\StiliDettaglio.aspx" />
+    <Content Include="Pages\StiliDettaglio1.ascx" />
+    <Content Include="Pages\StiliLista.aspx" />
+    <Content Include="Scripts\abbonamenti-stampe.js" />
+    <Content Include="Scripts\abbonamenti-stampe-dettaglio.js" />
+    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.18.custom.min.js" />
+    <Content Include="Scripts\jquery.json-2.3.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\PopUp-2.0.0.js" />
+    <Content Include="Scripts\referti-lista.js" />
+    <Content Include="Scripts\ricovero.js" />
+    <Content Include="Scripts\sole-oscuramenti.js" />
+    <Content Include="Scripts\sole-abilitazioni.js" />
+    <Content Include="Scripts\master.js" />
+    <Content Include="Scripts\referti-note-lista.js" />
+    <Content Include="Scripts\Web.config" />
+    <Content Include="ApplicationInsights.config" />
+    <None Include="Data\AccessiDataSet.xsc">
+      <DependentUpon>AccessiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\AccessiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccessiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Data\AccessiDataSet.xss">
+      <DependentUpon>AccessiDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="Data\CrashSystem.xsc">
+      <DependentUpon>CrashSystem.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\CrashSystem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CrashSystem.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Data\CrashSystem.xss">
+      <DependentUpon>CrashSystem.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\Monitor.xsc">
+      <DependentUpon>Monitor.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Monitor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Monitor.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Data\Monitor.xss">
+      <DependentUpon>Monitor.xsd</DependentUpon>
+    </None>
+    <Content Include="ImageHandler.ashx" />
+    <Content Include="Data\RicoveriDataSet.xsc">
+      <DependentUpon>RicoveriDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Data\OscuramentiDataSet.xsc">
+      <DependentUpon>OscuramentiDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Data\NoteAnamnesticheDataSet.xsc">
+      <DependentUpon>NoteAnamnesticheDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\NoteAnamnesticheDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NoteAnamnesticheDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Data\NoteAnamnesticheDataSet.xss">
+      <DependentUpon>NoteAnamnesticheDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\OscuramentiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OscuramentiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Data\OscuramentiDataSet.xss">
+      <DependentUpon>OscuramentiDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\RicoveriDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RicoveriDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Data\RicoveriDataSet.xss">
+      <DependentUpon>RicoveriDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Licenses\2016 Oem Aspose.Cells.lic" />
+    <Content Include="Data\ToolsDataSet.xsc">
+      <DependentUpon>ToolsDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\ToolsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToolsDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Data\ToolsDataSet.xss">
+      <DependentUpon>ToolsDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Data\TranscodificheDataSet.xsc">
+      <DependentUpon>TranscodificheDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\TranscodificheDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TranscodificheDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Data\TranscodificheDataSet.xss">
+      <DependentUpon>TranscodificheDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="My Project\PublishProfiles\dagobah2.pubxml" />
+    <None Include="packages.config" />
+    <None Include="_Modifiche.txt" />
+    <None Include="Data\RefertiDataSet.xsc">
+      <DependentUpon>RefertiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\RefertiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RefertiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Data\RefertiDataSet.xss">
+      <DependentUpon>RefertiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DataAccessV2.wsdl" />
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.EventiPerNosologicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.EventiPerPazienteFuzzyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.EventiPerPazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.EventiPerPazienteRiferimentiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.EventoPerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PazientePerAnagraficaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PazientePerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PazienteRiepilogoPerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PazientiCercaClassificazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PazientiCercaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PazientiCercaSoundexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PazientiRiepilogoPerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PrestazioniMatriceLab2PerNosologicoAziendaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PrestazioniMatriceLab2PerPazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PrestazioniMatriceLabPerNosologicoAziendaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PrestazioniMatriceLabPerPazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.PrestazioniRefertiPerPazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerClassificazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerIdOrderEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerNosologicoAziendaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerNosologicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerNumeroPrenotazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerNumeroRefertoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerPazienteClassificazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerPazienteFuzzyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerPazienteNosologicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerPazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Referti2PerPazienteRiferimentiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertiPerClassificazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertiPerNosologicoAziendaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertiPerNosologicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertiPerNumeroRefertoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertiPerPazienteClassificazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertiPerPazienteFuzzyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertiPerPazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertiPerPazienteRiferimentiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertoPdfPerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RefertoPerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.Ricoveri2PerRepartoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RicoveriPerNosologicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RicoveriPerPazienteFuzzyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RicoveriPerPazienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RicoveriPerPazienteRiferimentiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RicoveriPerRepartoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RicoveroPerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DI.DataWarehouse.DwhServices.RicoveroPerNosologicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.GetProvenienzaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.IstatComuniCercaByNomeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.IstatComuniCercaByProvinciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.IstatComuniCercaByRegioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.IstatComuniCercaEsteriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.IstatNazioniCercaByNomeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.IstatProvinceCercaByNomeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.IstatProvinceCercaByRegioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.IstatRegioniCercaByNomeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiAggiungiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiCerca2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiCercaByMedicoBaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiCercaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiDettaglio2ByIdProvenienzaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiDettaglio2ByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiDettaglioByIdProvenienzaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiDettaglioByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiModificaByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiModificaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiRimuoviByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\DI.DataWarehouse.SacServices.PazientiRimuoviResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\Pazienti.disco" />
+    <None Include="Service References\DI.DataWarehouse.SacServices\configuration91.svcinfo" />
+    <None Include="Service References\DI.DataWarehouse.SacServices\configuration.svcinfo" />
+    <None Include="Service References\DI.DataWarehouse.SacServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.DwhServices\DataAccessV2.disco" />
+    <None Include="Service References\DI.DataWarehouse.DwhServices\configuration91.svcinfo" />
+    <None Include="Service References\DI.DataWarehouse.DwhServices\configuration.svcinfo" />
+    <None Include="Service References\DI.DataWarehouse.DwhServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Styles\images\asc.gif" />
+    <Content Include="Styles\images\bg.gif" />
+    <Content Include="Styles\images\desc.gif" />
+    <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Styles\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Styles\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Styles\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Styles\master.css" />
+    <Content Include="Transcodifiche\TranscodificaPrioritaDettaglio.aspx" />
+    <Content Include="Transcodifiche\TranscodificaPrioritaLista.aspx" />
+    <Content Include="Transcodifiche\TranscodificaRegimiDettaglio.aspx" />
+    <Content Include="Transcodifiche\TranscodificaRegimiLista.aspx" />
+    <Content Include="UnderConstruction.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accessi\GdAGruppiAD.aspx.designer.vb">
+      <DependentUpon>GdAGruppiAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accessi\GdAGruppiAD.aspx.vb">
+      <DependentUpon>GdAGruppiAD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Accessi\GdALista.aspx.designer.vb">
+      <DependentUpon>GdALista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accessi\GdALista.aspx.vb">
+      <DependentUpon>GdALista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accessi\GdARuoli.aspx.designer.vb">
+      <DependentUpon>GdARuoli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accessi\GdARuoli.aspx.vb">
+      <DependentUpon>GdARuoli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\MyTelemetryInitializer.vb" />
+    <Compile Include="CrashSystem\LogOperazioni.aspx.designer.vb">
+      <DependentUpon>LogOperazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrashSystem\LogOperazioni.aspx.vb">
+      <DependentUpon>LogOperazioni.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CrashSystem\SottoscrizioniLista.aspx.designer.vb">
+      <DependentUpon>SottoscrizioniLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrashSystem\SottoscrizioniLista.aspx.vb">
+      <DependentUpon>SottoscrizioniLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrashSystem\SottoscrizioniDettaglio.aspx.designer.vb">
+      <DependentUpon>SottoscrizioniDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrashSystem\SottoscrizioniDettaglio.aspx.vb">
+      <DependentUpon>SottoscrizioniDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data\AccessiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.vb" />
+    <Compile Include="DataAdapterManager.vb" />
+    <Compile Include="Data\BackEndDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BackEndDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BackEndDataSet.vb">
+      <DependentUpon>BackEndDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CrashSystem.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrashSystem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Monitor.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Monitor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\NoteAnamnesticheDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoteAnamnesticheDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\NoteAnamnesticheDataSet.vb">
+      <DependentUpon>NoteAnamnesticheDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\OscuramentiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OscuramentiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\OscuramentiDataSet.vb">
+      <DependentUpon>OscuramentiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RefertiDataSet.vb">
+      <DependentUpon>RefertiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RicoveriDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RicoveriDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ToolsDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToolsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TranscodificheDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TranscodificheDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FilterHelper.vb" />
+    <Compile Include="GestioneErrori.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ImageHandler.ashx.vb">
+      <DependentUpon>ImageHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PagesLog\LogAggancioPaziente.aspx.designer.vb">
+      <DependentUpon>LogAggancioPaziente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesLog\LogAggancioPaziente.aspx.vb">
+      <DependentUpon>LogAggancioPaziente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheRiassociazionePazientiLista.aspx.designer.vb">
+      <DependentUpon>NoteAnamnesticheRiassociazionePazientiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheRiassociazionePazientiLista.aspx.vb">
+      <DependentUpon>NoteAnamnesticheRiassociazionePazientiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesRicoveri\RicoveriRiassociazioneSACPazientiLista.aspx.designer.vb">
+      <DependentUpon>RicoveriRiassociazioneSACPazientiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesRicoveri\RicoveriRiassociazioneSACPazientiLista.aspx.vb">
+      <DependentUpon>RicoveriRiassociazioneSACPazientiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesRicoveri\RicoveriRiassociazioneDettaglio.aspx.designer.vb">
+      <DependentUpon>RicoveriRiassociazioneDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesRicoveri\RicoveriRiassociazioneDettaglio.aspx.vb">
+      <DependentUpon>RicoveriRiassociazioneDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesRicoveri\RicoveriRiassociazioneLista.aspx.designer.vb">
+      <DependentUpon>RicoveriRiassociazioneLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesRicoveri\RicoveriRiassociazioneLista.aspx.vb">
+      <DependentUpon>RicoveriRiassociazioneLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesSole\EventiReinvioByEsito.aspx.designer.vb">
+      <DependentUpon>EventiReinvioByEsito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesSole\EventiReinvioByEsito.aspx.vb">
+      <DependentUpon>EventiReinvioByEsito.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesSole\RefertiReinvioByEsito.aspx.designer.vb">
+      <DependentUpon>RefertiReinvioByEsito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesSole\RefertiReinvioByEsito.aspx.vb">
+      <DependentUpon>RefertiReinvioByEsito.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesTools\RefertoExport.aspx.designer.vb">
+      <DependentUpon>RefertoExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesTools\RefertoExport.aspx.vb">
+      <DependentUpon>RefertoExport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesTools\RefertoImport.aspx.designer.vb">
+      <DependentUpon>RefertoImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesTools\RefertoImport.aspx.vb">
+      <DependentUpon>RefertoImport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AbbonamentiStampe.aspx.designer.vb">
+      <DependentUpon>AbbonamentiStampe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AbbonamentiStampe.aspx.vb">
+      <DependentUpon>AbbonamentiStampe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AbbonamentiStampeDettaglio.aspx.designer.vb">
+      <DependentUpon>AbbonamentiStampeDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AbbonamentiStampeDettaglio.aspx.vb">
+      <DependentUpon>AbbonamentiStampeDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ApreAllegato.aspx.designer.vb">
+      <DependentUpon>ApreAllegato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ApreAllegato.aspx.vb">
+      <DependentUpon>ApreAllegato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\DownloadNotaAnamnesticaContenuto.aspx.designer.vb">
+      <DependentUpon>DownloadNotaAnamnesticaContenuto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\DownloadNotaAnamnesticaContenuto.aspx.vb">
+      <DependentUpon>DownloadNotaAnamnesticaContenuto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventiInviiSoleSinottico.aspx.designer.vb">
+      <DependentUpon>EventiInviiSoleSinottico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventiInviiSoleSinottico.aspx.vb">
+      <DependentUpon>EventiInviiSoleSinottico.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MMGSistemiAbilitatiDettaglio.aspx.designer.vb">
+      <DependentUpon>MMGSistemiAbilitatiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MMGSistemiAbilitatiDettaglio.aspx.vb">
+      <DependentUpon>MMGSistemiAbilitatiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MMGSistemiAbilitatiLista.aspx.designer.vb">
+      <DependentUpon>MMGSistemiAbilitatiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MMGSistemiAbilitatiLista.aspx.vb">
+      <DependentUpon>MMGSistemiAbilitatiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheDettaglio.aspx.designer.vb">
+      <DependentUpon>NoteAnamnesticheDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheDettaglio.aspx.vb">
+      <DependentUpon>NoteAnamnesticheDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheLista.aspx.designer.vb">
+      <DependentUpon>NoteAnamnesticheLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheLista.aspx.vb">
+      <DependentUpon>NoteAnamnesticheLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheRiassociazioneDettaglio.aspx.designer.vb">
+      <DependentUpon>NoteAnamnesticheRiassociazioneDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheRiassociazioneDettaglio.aspx.vb">
+      <DependentUpon>NoteAnamnesticheRiassociazioneDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheRiassociazioneLista.aspx.designer.vb">
+      <DependentUpon>NoteAnamnesticheRiassociazioneLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheRiassociazioneLista.aspx.vb">
+      <DependentUpon>NoteAnamnesticheRiassociazioneLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheSinottico.aspx.designer.vb">
+      <DependentUpon>NoteAnamnesticheSinottico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheSinottico.aspx.vb">
+      <DependentUpon>NoteAnamnesticheSinottico.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheUltimiArrivi.aspx.designer.vb">
+      <DependentUpon>NoteAnamnesticheUltimiArrivi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNoteAnamnestiche\NoteAnamnesticheUltimiArrivi.aspx.vb">
+      <DependentUpon>NoteAnamnesticheUltimiArrivi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OscuramentiRinotifica.aspx.designer.vb">
+      <DependentUpon>OscuramentiRinotifica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OscuramentiRinotifica.aspx.vb">
+      <DependentUpon>OscuramentiRinotifica.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiDettaglio.aspx.designer.vb">
+      <DependentUpon>RefertiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiDettaglio.aspx.vb">
+      <DependentUpon>RefertiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiInviiSoleSinottico.aspx.designer.vb">
+      <DependentUpon>RefertiInviiSoleSinottico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiInviiSoleSinottico.aspx.vb">
+      <DependentUpon>RefertiInviiSoleSinottico.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RicoveriDettaglio.aspx.designer.vb">
+      <DependentUpon>RicoveriDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RicoveriDettaglio.aspx.vb">
+      <DependentUpon>RicoveriDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RicoveriLista.aspx.designer.vb">
+      <DependentUpon>RicoveriLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RicoveriLista.aspx.vb">
+      <DependentUpon>RicoveriLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventiSOLELogInvii.aspx.designer.vb">
+      <DependentUpon>EventiSOLELogInvii.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventiSOLELogInvii.aspx.vb">
+      <DependentUpon>EventiSOLELogInvii.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RinotificaMassivaReferti.aspx.designer.vb">
+      <DependentUpon>RinotificaMassivaReferti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RinotificaMassivaReferti.aspx.vb">
+      <DependentUpon>RinotificaMassivaReferti.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RinotificaMassivaRicoveri.aspx.designer.vb">
+      <DependentUpon>RinotificaMassivaRicoveri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RinotificaMassivaRicoveri.aspx.vb">
+      <DependentUpon>RinotificaMassivaRicoveri.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SistemiErogantiDettaglio.aspx.designer.vb">
+      <DependentUpon>SistemiErogantiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SistemiErogantiDettaglio.aspx.vb">
+      <DependentUpon>SistemiErogantiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SistemiErogantiLista.aspx.designer.vb">
+      <DependentUpon>SistemiErogantiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SistemiErogantiLista.aspx.vb">
+      <DependentUpon>SistemiErogantiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SOLELogInvii.aspx.designer.vb">
+      <DependentUpon>SOLELogInvii.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SOLELogInvii.aspx.vb">
+      <DependentUpon>SOLELogInvii.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventiSinottico.aspx.designer.vb">
+      <DependentUpon>EventiSinottico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventiSinottico.aspx.vb">
+      <DependentUpon>EventiSinottico.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiSinottico.aspx.designer.vb">
+      <DependentUpon>RefertiSinottico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiSinottico.aspx.vb">
+      <DependentUpon>RefertiSinottico.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventiUltimiArrivi.aspx.designer.vb">
+      <DependentUpon>EventiUltimiArrivi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventiUltimiArrivi.aspx.vb">
+      <DependentUpon>EventiUltimiArrivi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TipiRefertoDettaglio.aspx.designer.vb">
+      <DependentUpon>TipiRefertoDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TipiRefertoDettaglio.aspx.vb">
+      <DependentUpon>TipiRefertoDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TipiRefertoLista.aspx.designer.vb">
+      <DependentUpon>TipiRefertoLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TipiRefertoLista.aspx.vb">
+      <DependentUpon>TipiRefertoLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UtentiSACAggiungiLista.aspx.designer.vb">
+      <DependentUpon>UtentiSACAggiungiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UtentiSACAggiungiLista.aspx.vb">
+      <DependentUpon>UtentiSACAggiungiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UtentiDettaglio.aspx.designer.vb">
+      <DependentUpon>UtentiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UtentiDettaglio.aspx.vb">
+      <DependentUpon>UtentiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UtentiLista.aspx.designer.vb">
+      <DependentUpon>UtentiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UtentiLista.aspx.vb">
+      <DependentUpon>UtentiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiUltimiArrivi.aspx.designer.vb">
+      <DependentUpon>RefertiUltimiArrivi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiUltimiArrivi.aspx.vb">
+      <DependentUpon>RefertiUltimiArrivi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiRiassociazioneSACPazientiLista.aspx.designer.vb">
+      <DependentUpon>RefertiRiassociazioneSACPazientiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiRiassociazioneSACPazientiLista.aspx.vb">
+      <DependentUpon>RefertiRiassociazioneSACPazientiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiRiassociazioneDettaglio.aspx.designer.vb">
+      <DependentUpon>RefertiRiassociazioneDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiRiassociazioneDettaglio.aspx.vb">
+      <DependentUpon>RefertiRiassociazioneDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiRiassociazioneLista.aspx.designer.vb">
+      <DependentUpon>RefertiRiassociazioneLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiRiassociazioneLista.aspx.vb">
+      <DependentUpon>RefertiRiassociazioneLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiLista.aspx.designer.vb">
+      <DependentUpon>RefertiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiLista.aspx.vb">
+      <DependentUpon>RefertiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ReportViewer.aspx.designer.vb">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportViewer.aspx.vb">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiListaAdmin.aspx.designer.vb">
+      <DependentUpon>RefertiListaAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OscuramentiDettaglio.aspx.designer.vb">
+      <DependentUpon>OscuramentiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OscuramentiDettaglio.aspx.vb">
+      <DependentUpon>OscuramentiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OscuramentiLista.aspx.designer.vb">
+      <DependentUpon>OscuramentiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OscuramentiLista.aspx.vb">
+      <DependentUpon>OscuramentiLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FileUpload.aspx.designer.vb">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FileUpload.aspx.vb">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiListaAdmin.aspx.vb">
+      <DependentUpon>RefertiListaAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiNoteDettaglio.aspx.designer.vb">
+      <DependentUpon>RefertiNoteDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiNoteDettaglio.aspx.vb">
+      <DependentUpon>RefertiNoteDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RefertiNoteLista.aspx.designer.vb">
+      <DependentUpon>RefertiNoteLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RefertiNoteLista.aspx.vb">
+      <DependentUpon>RefertiNoteLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OscuramentoRuoliLista.aspx.designer.vb">
+      <DependentUpon>OscuramentoRuoliLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OscuramentoRuoliLista.aspx.vb">
+      <DependentUpon>OscuramentoRuoliLista.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SistemiErogantiDocumentiDettaglio.aspx.designer.vb">
+      <DependentUpon>SistemiErogantiDocumentiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SistemiErogantiDocumentiDettaglio.aspx.vb">
+      <DependentUpon>SistemiErogantiDocumentiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SistemiErogantiDocumentiLista.aspx.designer.vb">
+      <DependentUpon>SistemiErogantiDocumentiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SistemiErogantiDocumentiLista.aspx.vb">
+      <DependentUpon>SistemiErogantiDocumentiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\StiliDettaglio.aspx.designer.vb">
+      <DependentUpon>StiliDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StiliDettaglio.aspx.vb">
+      <DependentUpon>StiliDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\StiliDettaglio1.ascx.designer.vb">
+      <DependentUpon>StiliDettaglio1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StiliDettaglio1.ascx.vb">
+      <DependentUpon>StiliDettaglio1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\StiliLista.aspx.designer.vb">
+      <DependentUpon>StiliLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StiliLista.aspx.vb">
+      <DependentUpon>StiliLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data\RefertiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefertiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RefertiStiliDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefertiStiliDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DI.DataWarehouse.DwhServices\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DI.DataWarehouse.SacServices\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data\Sole.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sole.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificaPrioritaDettaglio.aspx.designer.vb">
+      <DependentUpon>TranscodificaPrioritaDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificaPrioritaDettaglio.aspx.vb">
+      <DependentUpon>TranscodificaPrioritaDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificaPrioritaLista.aspx.designer.vb">
+      <DependentUpon>TranscodificaPrioritaLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificaPrioritaLista.aspx.vb">
+      <DependentUpon>TranscodificaPrioritaLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificaRegimiDettaglio.aspx.designer.vb">
+      <DependentUpon>TranscodificaRegimiDettaglio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificaRegimiDettaglio.aspx.vb">
+      <DependentUpon>TranscodificaRegimiDettaglio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificaRegimiLista.aspx.designer.vb">
+      <DependentUpon>TranscodificaRegimiLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transcodifiche\TranscodificaRegimiLista.aspx.vb">
+      <DependentUpon>TranscodificaRegimiLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.designer.vb">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.vb">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload.vb" />
+    <Compile Include="Utility.vb" />
+    <Compile Include="Utility\Excel.vb" />
+    <Compile Include="Pages\Extensions.vb" />
+    <Compile Include="Utility\SessionHandler.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\BackEndDataSet.xsc">
+      <DependentUpon>BackEndDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\BackEndDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>DI.DataWarehouse.Admin.Data</CustomToolNamespace>
+      <LastGenOutput>BackEndDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Data\BackEndDataSet.xss">
+      <DependentUpon>BackEndDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="DocumentViewer.ashx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Site.Master" />
+    <None Include="Data\RefertiStiliDataSet.xsc">
+      <DependentUpon>RefertiStiliDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\RefertiStiliDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RefertiStiliDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>DI.DataWarehouse.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\RefertiStiliDataSet.xss">
+      <DependentUpon>RefertiStiliDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Service References\DI.DataWarehouse.SacServices\Pazienti.wsdl" />
+    <None Include="Data\Sole.xsc">
+      <DependentUpon>Sole.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Sole.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sole.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>DI.DataWarehouse.Admin.Data</CustomToolNamespace>
+    </None>
+    <None Include="Data\Sole.xss">
+      <DependentUpon>Sole.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.PortalAdmin\DI.PortalAdmin.vbproj">
+      <Project>{0D8EB637-68F3-47B1-B1A4-B7990011FC66}</Project>
+      <Name>DI.PortalAdmin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DI.DataWarehouse.DwhServices\" />
+    <WCFMetadataStorage Include="Service References\DI.DataWarehouse.SacServices\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>62008</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.14.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.14.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.14.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.14.0\build\Microsoft.ApplicationInsights.Web.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,261 @@
+﻿/*
+* INIZIO GESTIONE AFFIX
+*/
+.div-menu-affix.affix + .container-fluid {
+    /*NECESSARIO PER EVITARE IL PROBLEMA DEI JUMP IN DELLA SCROLLBAR DURANTE L'AFFIX*/
+    /*margin-bottom: 150px;*/
+    padding-top: 100px;
+}
+
+.div-menu-affix.affix {
+    /*AFFIX MENU' PRINCIPALE E SECONDARIO*/
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    /*AGGIUSTA L'AFFIX DEL MENU' LATERALE IN BASE ALLE DIMENSIONI DELLA PAGINA*/
+    #rightSidebar.affix {
+        width: 23%;
+        right: 10px;
+        top: 80px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /*AGGIUSTA L'AFFIX DEL MENU' LATERALE IN BASE ALLE DIMENSIONI DELLA PAGINA*/
+    #rightSidebar.affix {
+        width: 15%;
+        right: 10px;
+        top: 80px;
+    }
+}
+
+@media (max-width:768px) {
+    /*AGGIUSTA L'AFFIX DEL MENU' LATERALE IN BASE ALLE DIMENSIONI DELLA PAGINA*/
+    #rightSidebar.affix {
+        position: static !important;
+        width: 100% !important;
+    }
+}
+
+.disable-affix {
+    /*
+    *ATTENZIONE:
+    *NON UTILIZZATA. PUO' ESSERE USATA PER DISABILITARE L'AFFIX 
+    */
+    position: static !important;
+    width: 100% !important;
+}
+
+/*
+* FINE GESTIONE AFFIX 
+*/
+
+/*SOLO SU SCHERMI MD E LG (< 768px)*/
+@media (min-width: 768px) {
+    /*ALLINEA A SINISTRA LE LABEL COLLEGATE ALLE TEXTBOX DENTRO LE FORM-HORIZONTAL
+    * PER EVITARE CHE LE LABEL SIANO ALLINEATE A DESTRA ,ATTACCATE ALLE TEXTBOX
+    */
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+}
+
+/*TOGLIE GLI STILI CREATI DAL ASP.MENU*/
+.navbar-collapse > div {
+    clear: none !important;
+}
+
+@media (max-width: 768px) {
+    /* Aggiusta il menu durante il collassamento. Toglie il float e da un colore al testo. */
+    .navbar-custom-collapse, .navbar-nav, navbar-custom-collapse .navbar-nav > li {
+        float: none !important;
+        color: #9d9d9d;
+    }
+
+    .staticMenuSecondario-custom-float, .pr-aspMenu {
+        float: none !important;
+    }
+}
+
+/* ALLINEA LE CHECKBOX ALLE TEXTBOX NELLE FORM BOOTSTRAP */
+@media (min-width: 768px) {
+    .checkbox-custom-top-align {
+        margin-top: 35px;
+    }
+}
+
+#MenuPrincipale {
+    /* Serve per unire verticalmente i due menu */
+    margin-bottom: 0px;
+}
+
+.checkboxlist-custom-left-margin > label, .checkboxlist-custom-left-margin > input {
+    margin-left: 20px !important;
+}
+
+.btn {
+    white-space: normal;
+}
+
+.popover {
+    /*DA UN MARGINE AL TESTO CONTENUTO NEI POPOVER*/
+    margin-right: 20px;
+}
+
+.custom-margin-right-sidebar {
+    margin-right: 10px;
+}
+
+/* aumenta il margin-top della row che contiene le griglie all'interno delle tab*/
+.tab-row-custom-margin-top {
+    margin-top: 10px;
+}
+
+/* Allinea il testo nella tab della lista dei referti in cui viene scritta la data inserita nei filtri */
+.tab-li-custom-text {
+    margin-right: 15px;
+}
+
+/* Allinea a sinistra il testo del tooltip*/
+.tooltip-inner {
+    text-align: left;
+}
+
+.navbar-accessoDiretto-button-margin {
+    margin-bottom: 10px !important;
+}
+
+.divPage {
+    margin-top: 5px;
+}
+
+.text-wrap {
+    white-space: nowrap;
+}
+
+/* TOOLBARBTN-XXX-CUSTOM-MARGIN SONO CLASSI UTILIZZATE PER SPAZIARE LE TOOLBAR DI PULSANTI */
+.toolbarbtn-top-custom-margin {
+    margin-bottom: 5px;
+}
+
+.toolbarbtn-bottom-custom-margin {
+    margin-top: 10px;
+}
+
+/* DEFINISCE UNA CUSTOM BOOTSTRAP-MODAL PER RENDERIZZARE L'ALERT IN STILE POPUP */
+.warning-modal-content {
+    border: none !important;
+}
+
+/* DA UN MARGIN BOTTOM DI 5 PX AI BOTTONI. USATO NEI BOTTONI NEL MENÙ LATERALE.*/
+.btn-custom-margin-bottom {
+    margin-bottom: 5px;
+}
+
+/* STILI PER ICONE STATO INVIO A SOLE 
+    *AA = INVIATO, AE = ERRORE, AR = RIGETTATO
+*/
+.glyphicons-sun-soleEsitoAA {
+    color: #42ba18;
+    font-size: 15px;
+}
+
+.glyphicons-sun-soleEsitoAE {
+    color: #ff0000;
+    font-size: 15px;
+}
+
+.glyphicons-sun-soleEsitoAR {
+    color: #808080;
+    font-size: 15px;
+}
+/* FINE STILI PER ICONE STATO INVIO A SOLE */
+
+.jumbotron-custom {
+    margin-top: 5px;
+    padding: 5px !important;
+}
+
+/*CUSTOM CLASS PER MODIFICARE I JUMBOTRON CONTENENTI I MESSAGGI*/
+.message-custom-padding {
+    font-weight:600;
+    padding: 10px !important;
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+
+.iconaNotaAnamnestica-completata {
+    color: #42ba18;
+    font-size: 15px;
+}
+
+.iconaNotaAnamnestica-inCorso {
+    font-size: 15px;
+}
+
+/*BOOTSTRAP ICON DI COLORE VERDE*/
+.custom-icon-green-color {
+    color: #66cc99;
+}
+
+/*BOOTSTRAP ICON DI COLORE ROSSO*/
+.custom-icon-red-color {
+    color: #ff0000;
+}
+
+/*BOOTSTRAP ICON DI COLORE ARANCIONE*/
+.custom-icon-orange-color {
+    color: #ff9966;
+}
+/*BOOTSTRAP ICON DI COLORE GRIGIO*/
+.custom-icon-gray-color {
+    color: #74817b;
+}
+
+/*BOOTSTRAP ICON DI COLORE BLU*/
+.custom-icon-blue-color {
+    color: #569aff;
+}
+
+/*BOOTSTRAP ICON DI COLORE GIALLO*/
+.custom-icon-yellow-color {
+    color: #fbad38;
+}
+
+.custom-icon-font-size-15px {
+    font-size: 15px;
+}
+
+/* PANEL PER AVERE UN CONTENUTO SCROLLABILE DENTRO AD UN MODAL DIALOG */
+.modal-panel-scrollable {
+    max-height: 400px;
+    max-height: calc(100vh - 250px);
+    min-height: 70px;
+    overflow-y: auto;
+}
+
+/*
+    ELIMINA LA LARGHEZZA MASSIMA DALLE TOKEN LABEL.
+*/
+.token-label {
+    height: 20px;
+    max-width: none !important;
+}
+
+/* SERVE PER IL BOLD DEI REFERTI NON VARIATI */
+.referto-nuovo {
+    font-weight: 900;
+    font-size: 13px;
+    color: darkslategray;
+    background-color: rgba(193, 234, 197, 0.32);
+}
+
+/* SERVE PER CENTRARE LE ICONE NELLE TABELLE */
+.icon-align {
+    text-align: center !important;
+    vertical-align: middle !important;
+}

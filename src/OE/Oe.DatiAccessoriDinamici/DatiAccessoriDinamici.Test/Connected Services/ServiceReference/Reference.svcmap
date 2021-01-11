@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b5a195a0-53fa-4074-adeb-11425ad634e9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/DatiAccessoriDinamici/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="1.0.wsdl" MetadataType="Wsdl" ID="7617578e-5625-4f81-b689-0308a5431a20" SourceId="1" SourceUrl="http://localhost:8733/DatiAccessoriDinamici/mex" />
+    <MetadataFile FileName="1.01.wsdl" MetadataType="Wsdl" ID="e48e5a42-a51d-47e4-b7e7-73aeab7b312c" SourceId="1" SourceUrl="http://localhost:8733/DatiAccessoriDinamici/mex" />
+    <MetadataFile FileName="1.0.xsd" MetadataType="Schema" ID="f9bf5d2c-b4b5-4398-87f3-babdc930ec80" SourceId="1" SourceUrl="http://localhost:8733/DatiAccessoriDinamici/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="8b6beca6-6aab-4d5c-af91-853e5dc490e8" SourceId="1" SourceUrl="http://localhost:8733/DatiAccessoriDinamici/mex" />
+    <MetadataFile FileName="1.1.xsd" MetadataType="Schema" ID="84cbc9a6-2bc1-42cc-898e-29393259edd4" SourceId="1" SourceUrl="http://localhost:8733/DatiAccessoriDinamici/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

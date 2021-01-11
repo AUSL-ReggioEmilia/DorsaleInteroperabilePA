@@ -1,0 +1,39 @@
+﻿/* necessario per evitare il problema dei jump in della scrollbar durante l'affix */
+.div-menu-affix.affix + .container-fluid {
+    padding-top: 100px;
+}
+
+/* affix menu' principale e secondario */
+.div-menu-affix.affix {
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+}
+
+/* attenzione: non utilizzata. puo' essere usata per disabilitare l'affix */ 
+.disable-affix {
+    position: static !important;
+    width: 100% !important;
+}
+
+/* toglie gli style creati dalla renderizzazione dell'aspMenu  */
+.navbar-collapse > div {
+    clear: none !important;
+}
+
+/* solo su schermi small */
+@media (max-width: 768px) {
+    /* aggiusta il menu durante il collassamento. Toglie il float e da un colore al testo. */
+    .navbar-nav {
+        color: #9d9d9d;
+    }
+
+    .aspmenu-custom {
+        float: none !important;
+    }
+}
+
+/* serve per unire i due menu */
+#MenuPrincipale {
+    margin-bottom: 0px;
+}

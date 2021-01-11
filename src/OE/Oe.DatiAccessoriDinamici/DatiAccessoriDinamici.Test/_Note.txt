@@ -1,0 +1,11 @@
+﻿
+Service di test pubblicato in :
+
+http://dagobah2.progel.org:8085/DatiAccessoriDinamiciTest/DatiAccessoriDinamici.Service.Service.svc
+
+
+http://dagobah2.progel.org:8085/DatiAccessoriDinamiciTest/DatiAccessoriDinamici.Service.Service.svc?singleWsdl
+
+
+Uso del test:
+DatiAccessoriDinamici.Test.exe OttieneParameter.xml http://dagobah2.progel.org:8085/DatiAccessoriDinamiciTest/DatiAccessoriDinamici.Service.Service.svc

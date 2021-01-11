@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DWH.History</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{505f38b4-df4f-4a14-835f-ae7ffb9ec433}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DWH.History</RootNamespace>
+    <AssemblyName>DWH.History</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Assemblies\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\RefertiAttributi.sql" />
+    <Build Include="dbo\Tables\PrestazioniBase.sql" />
+    <Build Include="dbo\Tables\EventiAttributi.sql" />
+    <Build Include="dbo\Tables\AllegatiBase.sql" />
+    <Build Include="dbo\Tables\AllegatiAttributi.sql" />
+    <Build Include="dbo\Tables\RefertiBase.sql" />
+    <Build Include="dbo\Tables\PrestazioniAttributi.sql" />
+    <Build Include="dbo\Tables\RicoveriBase.sql" />
+    <Build Include="dbo\Tables\EventiBase.sql" />
+    <Build Include="dbo\Tables\RefertiBaseRiferimenti.sql" />
+    <Build Include="dbo\Tables\RicoveriAttributi.sql" />
+    <Build Include="dbo\Views\Allegati.sql" />
+    <Build Include="dbo\Views\Eventi.sql" />
+    <Build Include="dbo\Views\Prestazioni.sql" />
+    <Build Include="dbo\Views\Referti.sql" />
+    <Build Include="dbo\Views\Ricoveri.sql" />
+    <Build Include="Security\PROGEL.IT_DevDwhClinicoSite.sql" />
+    <Build Include="Security\DWH_DAE.sql" />
+    <Build Include="Security\SOLE_BT_POLLING.sql" />
+    <Build Include="Security\PROGEL.IT_DevBizTalkService.sql" />
+    <Build Include="Security\PROGEL.IT_DAGOBAH2_.sql" />
+    <Build Include="dbo\Functions\GetAllegatiAttributi2Xml.sql" />
+    <Build Include="dbo\Functions\GetAllegatiAttributo2.sql" />
+    <Build Include="dbo\Functions\GetAllegatiAttributo2Integer.sql" />
+    <Build Include="dbo\Functions\GetEventiAttributi2Xml.sql" />
+    <Build Include="dbo\Functions\GetEventiAttributo2.sql" />
+    <Build Include="dbo\Functions\GetEventiAttributo2Datetime.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniAttributi2Xml.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniAttributo2.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniAttributo2Decimal.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniAttributo2Integer.sql" />
+    <Build Include="dbo\Functions\GetRefertiAttributi2Xml.sql" />
+    <Build Include="dbo\Functions\GetRefertiAttributo2.sql" />
+    <Build Include="dbo\Functions\GetRefertiAttributo2Datetime.sql" />
+    <Build Include="dbo\Functions\GetRicoveriAttributi2Xml.sql" />
+    <Build Include="dbo\Functions\GetRicoveriAttributo2.sql" />
+    <Build Include="dbo\Functions\GetRicoveriAttributo2Datetime.sql" />
+    <Build Include="dbo\Functions\compress.sql" />
+    <Build Include="dbo\Functions\decompress.sql" />
+    <Build Include="dbo\Stored Procedures\CompressioneAllegati.sql" />
+    <Build Include="dbo\Stored Procedures\MuoveAllegati.sql" />
+    <Build Include="dbo\Stored Procedures\CompressioneAllegatiUndo.sql" />
+    <Build Include="Security\Permissions.sql" />
+    <Build Include="dbo\Tables\PrescrizioniAllegati.sql" />
+    <Build Include="dbo\Tables\Prescrizioni.sql" />
+    <Build Include="dbo\Tables\PrescrizioniBase.sql" />
+    <Build Include="dbo\Tables\PrescrizioniAttributi.sql" />
+    <Build Include="dbo\Tables\PrescrizioniAllegatiBase.sql" />
+    <Build Include="dbo\Tables\PrescrizioniAllegatiAttributi.sql" />
+    <Build Include="dbo\Views\PrescrizioniAllegati.sql" />
+    <Build Include="dbo\Views\Prescrizioni.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniAttributi2Xml.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniAllegatiAttributi2Xml.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniAttributi.sql" />
+    <Build Include="dbo\Tables\PrescrizioniHl7Testata.sql" />
+    <Build Include="dbo\Tables\PrescrizioniHl7Specialistica.sql" />
+    <Build Include="dbo\Tables\PrescrizioniHl7Farmaceutica.sql" />
+    <Build Include="dbo\Tables\PrescrizioniEstesaTestata.sql" />
+    <Build Include="dbo\Tables\PrescrizioniEstesaSpecialistica.sql" />
+    <Build Include="dbo\Tables\PrescrizioniEstesaFarmaceutica.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniAttributo2Datetime.sql" />
+    <Build Include="dbo\Functions\GetPrescrizioniAttributo2.sql" />
+    <Build Include="dbo\Tables\NoteAnamnesticheBase.sql" />
+    <Build Include="dbo\Tables\NoteAnamnesticheAttributi.sql" />
+    <Build Include="dbo\Views\NoteAnamnestiche.sql" />
+    <Build Include="dbo\Functions\GetNoteAnamnesticheAttributoDatetime.sql" />
+    <Build Include="dbo\Functions\GetNoteAnamnesticheAttributo.sql" />
+    <Build Include="dbo\Functions\GetNoteAnamnesticheAttributiXml.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assemblies\Progel.SqlCrl.Compression.dll" />
+    <None Include="DWH_HIS_SqlSchemaCompare.scmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Progel.SqlCrl.Compression">
+      <HintPath>Assemblies\Progel.SqlCrl.Compression.dll</HintPath>
+      <SqlAssemblyName>Progel.SqlCrl.Compression</SqlAssemblyName>
+      <IsModelAware>True</IsModelAware>
+      <GenerateSqlClrDdl>False</GenerateSqlClrDdl>
+      <SqlOwnerName>dbo</SqlOwnerName>
+      <SqlPermissionSet>SAFE</SqlPermissionSet>
+    </Reference>
+  </ItemGroup>
+</Project>

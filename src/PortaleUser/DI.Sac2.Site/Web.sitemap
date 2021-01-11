@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="Home.aspx" title="Home"  description="Home">
+
+    <!--Pazienti-->
+    <siteMapNode url="Pazienti/PazientiLista.aspx" title="Ricerca pazienti"  description="Ricerca pazienti" >
+      <!--<siteMapNode hide="true" url="Pazienti/PazienteDettaglio.aspx" title="Dettaglio" description="Dettaglio">
+        <siteMapNode hide="true" url="Pazienti/PazienteCreaAnonimizzazione.aspx" title="Anonimizzazione" description="Anonimizzazione"/>
+        <siteMapNode hide="true" url="Pazienti/PazienteDettaglioAnonimizzazione.aspx" title="Dettaglio anonimizzazione" description="Dettaglio anonimizzazione"/>
+      </siteMapNode>-->
+    </siteMapNode>
+
+    <siteMapNode url="Pazienti/PazienteCercaAnonimizzazione.aspx" title="Ricerca anonimizzazione"  description="Ricerca anonimizzazione" roles="ATTRIB@UTE_ANONIMIZZATORE">
+    </siteMapNode>
+
+    <siteMapNode url="Pazienti/PazienteCercaPosCollegata.aspx" title="Ricerca posizione collegata" description="Ricerca posizione collegata" roles="ATTRIB@UTE_POSIZIONI_COLLEGATE">
+    </siteMapNode>
+
+
+  </siteMapNode>
+
+</siteMap>

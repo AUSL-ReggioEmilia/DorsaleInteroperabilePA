@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 (x64) (http://www.altova.com) by Alessandro Nostini (Progel srl) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.progel.it/BT/DWH/DataAccess/Prescrizioni/1.0" targetNamespace="http://schemas.progel.it/BT/DWH/DataAccess/Prescrizioni/1.0" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:element name="Prescrizione" type="PrescrizioneType">
+		<xs:annotation>
+			<xs:documentation>Root </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="AttributoType">
+		<xs:sequence>
+			<xs:element name="Nome" type="xs:string"/>
+			<xs:element name="Valore" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PrescrizioneType">
+		<xs:sequence>
+			<xs:element name="IdEsterno" type="xs:string"/>
+			<xs:element name="DataModificaEsterno" type="xs:dateTime"/>
+			<xs:element name="StatoCodice" type="xs:unsignedByte"/>
+			<xs:element name="TipoPrescrizione" type="xs:string"/>
+			<xs:element name="DataPrescrizione" type="xs:dateTime"/>
+			<xs:element name="NumeroPrescrizione" type="xs:string"/>
+			<xs:element name="MedicoPrescrittoreCodiceFiscale" type="xs:string"/>
+			<xs:element name="QuesitoDiagnostico" type="xs:string" minOccurs="0"/>
+			<xs:element name="Paziente" type="PazienteType"/>
+			<xs:element name="Attributi" type="AttributiType" minOccurs="0"/>
+			<xs:element name="Allegati" type="AllegatiType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AllegatoType">
+		<xs:sequence>
+			<xs:element name="IdEsterno" type="xs:string"/>
+			<xs:element name="TipoContenuto" type="xs:string"/>
+			<xs:element name="Contenuto" type="xs:base64Binary"/>
+			<xs:element name="Attributi" type="AttributiType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AttributiType">
+		<xs:sequence>
+			<xs:element name="Attributo" type="AttributoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AllegatiType">
+		<xs:sequence>
+			<xs:element name="Allegato" type="AllegatoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PazienteType">
+		<xs:sequence>
+			<xs:element name="Nome" type="xs:string" minOccurs="0"/>
+			<xs:element name="Cognome" type="xs:string" minOccurs="0"/>
+			<xs:element name="CodiceFiscale" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataNascita" type="xs:dateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="TesseraSanitaria" type="xs:string" minOccurs="0"/>
+			<xs:element name="LuogoNascita" type="CodiceDescrizioneType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ErroreType">
+		<xs:sequence>
+			<xs:element name="Codice" type="xs:string"/>
+			<xs:element name="Descrizione" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CodiceDescrizioneType">
+		<xs:sequence>
+			<xs:element name="Codice" type="xs:string" minOccurs="0"/>
+			<xs:element name="Descrizione" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>----- TIPI USATI COME PARAMETRO DALLA DATA ACCESS -----</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="PrescrizioneParameter">
+		<xs:sequence>
+			<xs:element name="Prescrizione" type="PrescrizioneType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PrescrizioneReturn">
+		<xs:sequence>
+			<xs:element name="Prescrizione" type="PrescrizioneType" minOccurs="0"/>
+			<xs:element name="Errore" type="ErroreType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,119 @@
+﻿body {
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+#calendario {
+    margin-bottom: 20px;
+}
+
+#calendario {
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
+    #calendario > .fc-toolbar {
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        background-color: #f5f6f8;
+        margin: 0;
+        padding: 5px 15px 5px 5px;
+        height: 50px;
+    }
+
+        #calendario > .fc-toolbar > .fc-left h2 {
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #calendario > .fc-toolbar > .fc-right button {
+            margin-top: 10px;
+        }
+
+.fc-toolbar.fc-header-toolbar {
+    margin-bottom: 1em;
+}
+
+.fc th, .fc-basic-view td.fc-week-number, .fc-icon, .fc-toolbar {
+    text-align: center;
+}
+
+#calendario .fc-view-container .fc-head .fc-head-container .fc-day-header {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+#calendario .fc-view-container .fc-head .fc-head-container .fc-day-header {
+    font-size: 12px;
+    font-weight: 400;
+    font-weight: 700;
+    height: 40px;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#calendario .fc-view-container .fc-body .fc-day-grid .fc-day {
+    border-color: #dfe1e5;
+    border-top-color: rgb(223, 225, 229);
+    border-right-color: rgb(223, 225, 229);
+    border-bottom-color: rgb(223, 225, 229);
+    border-left-color: rgb(223, 225, 229);
+    background-color: #f5f6f8;
+}
+
+#calendario .fc-view-container .fc-body .fc-day-grid .fc-day {
+    border-width: 0 0 1px 0;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+}
+
+#calendario .fc-view-container .fc-body .fc-widget-content {
+    border-width: 0;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+
+.fc-unthemed .fc-content, .fc-unthemed .fc-divider, .fc-unthemed .fc-list-heading td, .fc-unthemed .fc-list-view, .fc-unthemed .fc-popover, .fc-unthemed .fc-row, .fc-unthemed tbody, .fc-unthemed td, .fc-unthemed th, .fc-unthemed thead {
+    border-color: #ddd;
+    border-top-color: rgb(221, 221, 221);
+    border-right-color: rgb(221, 221, 221);
+    border-bottom-color: rgb(221, 221, 221);
+    border-left-color: rgb(221, 221, 221);
+}
+
+.fc-today {
+    border-top: 2px solid #408ab7 !important;
+}
+
+.fc-event-daRiprogrammare {
+    background-color: #f5f6f8 !important;
+    color: black !important;
+    border-color: transparent !important;
+    margin-top: 5px !important;
+    padding: 10px !important;
+    border-radius: unset !important;
+    min-height:35px !important;
+}
+
+
+.blink {
+    animation: blinker 1s linear infinite;
+    /*background-color: red !important;*/
+}
+
+@keyframes blinker {
+    50% {
+        background-color: lightcoral;
+    }
+}
+
+.fc-day:hover {
+    background-color:#d9edf7 !important;
+}

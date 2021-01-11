@@ -1,0 +1,13 @@
+﻿@media print {
+    .print {
+        margin: 9mm;
+        font-size: $fontPrintSize;
+    }
+
+    body {
+        color: black;
+        background-color: White;
+        margin: 0px; /* margine del body */
+    }
+
+}

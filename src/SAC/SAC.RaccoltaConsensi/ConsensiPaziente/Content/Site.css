@@ -1,0 +1,24 @@
+﻿.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+}
+
+hr{
+    margin-top:3px;
+}
+
+.btn-tuttiConsensi{
+    margin-left:20px;
+    width:250px;
+}
+
+.custom-button{
+    width:450px;
+}

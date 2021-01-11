@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MessaggioEpisodio xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Paziente>
+		<IdEsternoPaziente>TEST_800000</IdEsternoPaziente>
+		<CodiceAnagraficaCentrale>563948</CodiceAnagraficaCentrale>
+		<NomeAnagraficaCentrale>SMS</NomeAnagraficaCentrale>
+		<Cognome>Topone</Cognome>
+		<Nome>Ciccio</Nome>
+		<Sesso>M</Sesso>
+		<DataNascita>2001-10-24</DataNascita>
+		<LuogoNascita>Bologna</LuogoNascita>
+		<CodiceFiscale>CCCTPN45ngr356g</CodiceFiscale>
+		<CodiceSanitario>12345678</CodiceSanitario>
+		<Attributi>
+			<Attributo>
+				<Nome>LuogoResidenza</Nome>
+				<Valore>San Giorgio di Piano</Valore>
+			</Attributo>
+			<Attributo>
+				<Nome>IndirizzoResidenza</Nome>
+				<Valore>Via XX Settembre, 14</Valore>
+			</Attributo>
+		</Attributi>
+	</Paziente>
+	<Referto>
+		<IdEsternoReferto>TEST_20060311_00000</IdEsternoReferto>
+		<AziendaErogante>AUSL</AziendaErogante>
+		<SistemaErogante>LAB</SistemaErogante>
+		<RepartoErogante>REP1</RepartoErogante>
+		<SezioneErogante>SEZ1</SezioneErogante>
+		<SpecialitaErogante>SPEC1</SpecialitaErogante>
+		<DataReferto>2007-05-03T11:52:46</DataReferto>
+		<NumeroReferto>10222</NumeroReferto>
+		<NumeroPrenotazione>20001</NumeroPrenotazione>
+		<NumeroNosologico>32300</NumeroNosologico>
+		<PrioritaCodice>1</PrioritaCodice>
+		<PrioritaDescrizione>Normale</PrioritaDescrizione>
+		<StatoRichiestaCodice>1</StatoRichiestaCodice>
+		<StatoRichiestaDescrizione>Completato</StatoRichiestaDescrizione>
+		<TipoRichiestaCodice>U</TipoRichiestaCodice>
+		<TipoRichiestaDescrizione>Urgente</TipoRichiestaDescrizione>
+		<RepartoRichiedenteCodice>CARD1</RepartoRichiedenteCodice>
+		<RepartoRichiedenteDescrizione>Cardiologia1</RepartoRichiedenteDescrizione>
+		<MedicoRefertanteCodice>PP</MedicoRefertanteCodice>
+		<MedicoRefertanteDescrizione>Pinco Pallo</MedicoRefertanteDescrizione>
+		<Attributi>
+			<Attributo>
+				<Nome>Referto</Nome>
+				<Valore>Niente di rotto</Valore>
+			</Attributo>
+		</Attributi>
+	</Referto>
+	<Prestazioni>
+		<Prestazione>
+			<IdEsternoPrestazione>TEST_0001</IdEsternoPrestazione>
+			<DataErogazione>2007-05-03T11:52:46</DataErogazione>
+			<PrestazioneCodice>PRES1</PrestazioneCodice>
+			<PrestazioneDescrizione>Prestazione 1</PrestazioneDescrizione>
+			<PrestazionePosizione>1</PrestazionePosizione>
+			<SezioneCodice>Sez1</SezioneCodice>
+			<SezioneDescrizione>Sezione uno</SezioneDescrizione>
+			<SezionePosizione>1</SezionePosizione>
+			<GravitaCodice>N</GravitaCodice>
+			<GravitaDescrizione>Normale</GravitaDescrizione>
+			<Quantita>10</Quantita>
+			<Risultato>50</Risultato>
+			<ValoriRiferimento>&gt; 100</ValoriRiferimento>
+			<PrestazioneCommenti />
+			<Attributi>
+				<Attributo>
+					<Nome>CodiceIstat</Nome>
+					<Valore>3354</Valore>
+				</Attributo>
+			</Attributi>
+		</Prestazione>
+		<Prestazione>
+			<IdEsternoPrestazione>TEST_0002</IdEsternoPrestazione>
+			<DataErogazione>2007-05-03T11:52:46</DataErogazione>
+			<PrestazioneCodice>PRES2</PrestazioneCodice>
+			<PrestazioneDescrizione>Prestazione 2</PrestazioneDescrizione>
+			<PrestazionePosizione>2</PrestazionePosizione>
+			<SezioneCodice>Sez2</SezioneCodice>
+			<SezioneDescrizione>Sezione due</SezioneDescrizione>
+			<SezionePosizione>2</SezionePosizione>
+			<GravitaCodice>N</GravitaCodice>
+			<GravitaDescrizione>Normale</GravitaDescrizione>
+			<Quantita>13</Quantita>
+			<Risultato>107</Risultato>
+			<ValoriRiferimento>&lt; 200</ValoriRiferimento>
+			<PrestazioneCommenti>Fuori scala</PrestazioneCommenti>
+		</Prestazione>
+	</Prestazioni>
+	<StileVisualizzazione>Test.1.0.1</StileVisualizzazione>
+	<DatiSoloPerCercare>false</DatiSoloPerCercare>
+</MessaggioEpisodio>

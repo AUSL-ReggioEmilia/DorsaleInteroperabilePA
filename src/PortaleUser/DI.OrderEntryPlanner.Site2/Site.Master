@@ -1,0 +1,218 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="OrderEntryPlanner.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/fullcalendar.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server" EnablePartialRendering="True">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+
+                <%--Site Scripts--%>
+                <%--Moment serve per il DateTimePicker --%>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="moment" />
+                <asp:ScriptReference Name="moment-it" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="fullcalendar" />
+                <asp:ScriptReference Name="fullcalendarlocale-it" />
+                <asp:ScriptReference Name="bootstrap-datetimepicker" />
+
+            </Scripts>
+        </asp:ScriptManager>
+
+        <%-- Logo e Title --%>
+        <asp:Literal ID="HeaderPlaceholder" runat="server" />
+
+        <%-- Menu principale dorsale interoperabile --%>
+        <div class="div-menu-affix" data-spy="affix" data-offset-top="67">
+            <div id="MenuPrincipale" class="navbar navbar-inverse navbar-static-top navbar-custum-collapse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapseMenuPrincipale">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse navbar-collapsMenu1">
+                        <asp:Menu ID="MenuMain" runat="server" Orientation="Horizontal" CssClass="aspmenu-custom" SkipLinkText=""
+                            StaticDisplayLevels="2" MaximumDynamicDisplayLevels="0" IncludeStyleBlock="false" RenderingMode="List">
+                            <StaticMenuStyle CssClass="nav navbar-nav staticMenuStyle-custum-float" />
+                            <StaticSelectedStyle CssClass="active" />
+                        </asp:Menu>
+                        <ul id="MainMenuRight" class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    <asp:Label ID="lblInfoUtente" runat="server" Text="Info Utente"></asp:Label>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-custom-width">
+                                    <li>
+                                        <div id="divUtente">
+                                            <fieldset>
+                                                <div class="form-group col-sm-12" id="divRuoli" runat="server">
+                                                    <asp:Label Text="Ruolo:" runat="server" AssociatedControlID="ddlRuoliUtente"></asp:Label>
+                                                    <asp:DropDownList ID="ddlRuoliUtente" OnSelectedIndexChanged="ddlRuoliUtente_SelectedIndexChanged" runat="server" AutoPostBack="True" CssClass="form-control input-sm">
+                                                    </asp:DropDownList>
+                                                </div>
+                                                <div class="form-group col-sm-12">
+                                                    <asp:Label Text="Nome Utente:" runat="server" AssociatedControlID="lblUtente"></asp:Label>
+                                                    <asp:Label ID="lblUtente" runat="server" Text=""></asp:Label>
+                                                </div>
+                                                <div class="form-group col-sm-12">
+                                                    <asp:Label Text="Postazione:" runat="server" AssociatedControlID="lblPostazione" />
+                                                    <asp:Label ID="lblPostazione" runat="server" Text=""></asp:Label>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <fieldset>
+                                            <div class="form-group col-sm-12">
+                                                <asp:Label Text="Ultimo accesso:" runat="server" AssociatedControlID="lblUltimoAccesso" />
+                                                <asp:Label ID="lblUltimoAccesso" runat="server" Text=""></asp:Label>
+                                            </div>
+                                        </fieldset>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <fieldset>
+                                            <div class="form-group col-sm-12">
+                                                <asp:Label Text="Versione:" runat="server" AssociatedControlID="lblVersioneAssembly" />
+                                                <asp:Label ID="lblVersioneAssembly" runat="server" />
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <asp:Label Text="Host:" runat="server" AssociatedControlID="lblNomeHost" />
+                                                <asp:Label ID="lblNomeHost" runat="server" />
+                                            </div>
+                                        </fieldset>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <%-- Menu secondario --%>
+            <div class="container-fluid">
+                <div id="MenuSecondario" class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuSecondario" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse" id="menuSecondario">
+                        <ul class="nav navbar-nav navbar-fixed">
+                            <li id="pagHome"><a href="~/Default.aspx" runat="server">Home</a></li>
+                            <li id="pagRicerca"><a href="~/Pages/RicercaOrdini.aspx" runat="server">Ricerca ordini</a></li>
+                            <li id="pagCalendario"><a href="~/Pages/Calendario.aspx" runat="server">Calendario</a></li>
+                        </ul>
+                        <%--LEGGENDA--%>
+                        <ul id="MainMenuRight2" class="nav navbar-nav navbar-right ">
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Legenda<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <div id="popoverContent" class="col-sm-12">
+                                        <dl>
+                                            <dt>Tipi di ordine</dt>
+                                            <dd>
+                                                <span class='glyphicon glyphicon-stop' style="color: #3a87ad"></span>
+                                                Prenotato
+                                            </dd>
+                                            <dd>
+                                                <span class='glyphicon glyphicon-stop' style="color: #160b8c"></span>
+                                                Riprenotato
+                                            </dd>
+                                            <dd>
+                                                <span class='glyphicon glyphicon-stop' style="color: #f0c9ee"></span>
+                                                Non Riprenotabile
+                                            </dd>
+                                            <dd>
+                                                <span class='glyphicon glyphicon-stop' style="color: #69f542"></span>
+                                                Ordine Selezionato
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid body-content">
+            <!--
+            -- Attenzione:
+            -- In questa applicazione il div utilizzato in caso d'errore è unico e definito nella master.page (DivError).
+            -- Ogni volta che si verifica un errore il div "DivError" viene reso visibile.
+            -- Per far si che il div si possa visualizzare anche nel caso in cui si verifichi un errore dentro un update panel (vedi cancellazione di una esenzione dentro la pagina esenzioni.aspx)
+                   "DivError" è stato inserito dentro l'updatePanel "updError".
+            -- In questo modo il div viene sempre reso visibile, anche se l'errore è all'interno di un altro updatepanel.
+            -->
+            <asp:UpdatePanel runat="server" ID="updError" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="alert alert-danger" id="DivError" runat="server" enableviewstate="False" style="display: none" clientidmode="Static">
+                            </div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.navbar-collapsMenu1 .selected').parent().addClass('active');
+        $('.navbar-collapsMenu2 .selected').parent().addClass('active');
+
+        //Rendering per Bootstrap: permette di non chiudere il dropdown-menu al click nel suo contenuto
+        $('.dropdown-menu').click(function (e) {
+            e.stopPropagation();
+        });
+    });
+</script>

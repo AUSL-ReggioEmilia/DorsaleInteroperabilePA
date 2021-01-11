@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>OE.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{9d9f8eff-bb6f-48cb-bf8f-da071c6263f2}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>OE.Database</RootNamespace>
+    <AssemblyName>OE.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="DataAccess\" />
+    <Folder Include="DataAccess\Views\" />
+    <Folder Include="DataConfig\" />
+    <Folder Include="DataConfig\Views\" />
+    <Folder Include="Storage\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Database Triggers\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="Assemblies\" />
+    <Folder Include="dbo\Synonyms\" />
+    <Folder Include="SacOrganigramma\" />
+    <Folder Include="SacOrganigramma\Synonyms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Ennuple.sql" />
+    <Build Include="dbo\Tables\DatiAccessori.sql" />
+    <Build Include="dbo\Tables\PrestazioniProfili.sql" />
+    <Build Include="dbo\Tables\EnnupleStati.sql" />
+    <Build Include="dbo\Tables\CodaRichiesteOutput.sql" />
+    <Build Include="dbo\Tables\OrdiniErogatiVersioni.sql" />
+    <Build Include="dbo\Tables\GruppiUtenti.sql" />
+    <Build Include="dbo\Tables\EnnupleAccessi.sql" />
+    <Build Include="dbo\Tables\Utenti.sql" />
+    <Build Include="dbo\Tables\CodaRichiesteOutputInviate.sql" />
+    <Build Include="dbo\Tables\PrestazioniGruppiPrestazioni.sql" />
+    <Build Include="dbo\Tables\OrdiniVersioni.sql" />
+    <Build Include="dbo\Tables\PrestazioniPrestazioni.sql" />
+    <Build Include="dbo\Tables\DatabaseLog.sql" />
+    <Build Include="dbo\Tables\GruppiPrestazioni.sql" />
+    <Build Include="dbo\Tables\DatiAccessoriPrestazioni.sql" />
+    <Build Include="dbo\Tables\DatiAccessoriSistemi.sql" />
+    <Build Include="dbo\Tables\OrdiniErogatiStatiRisposta.sql" />
+    <Build Include="dbo\Tables\OrdiniTestateDatiAggiuntivi.sql" />
+    <Build Include="dbo\Tables\OrdiniTestate.sql" />
+    <Build Include="dbo\Tables\OrdiniRigheRichiesteDatiAggiuntivi.sql" />
+    <Build Include="dbo\Tables\OrdiniSequenza.sql" />
+    <Build Include="dbo\Tables\Prestazioni.sql" />
+    <Build Include="dbo\Tables\OrdiniErogatiTestateDatiAggiuntivi.sql" />
+    <Build Include="dbo\Tables\OrdiniRigheErogateDatiAggiuntivi.sql" />
+    <Build Include="dbo\Tables\OrdiniStati.sql" />
+    <Build Include="dbo\Tables\OrdiniRigheRichieste.sql" />
+    <Build Include="dbo\Tables\Tickets.sql" />
+    <Build Include="dbo\Tables\DatiAggiuntivi.sql" />
+    <Build Include="dbo\Tables\OrdiniErogatiStati.sql" />
+    <Build Include="dbo\Tables\OrdiniRigheErogate.sql" />
+    <Build Include="dbo\Tables\DatiAccessoriDefault.sql" />
+    <Build Include="dbo\Tables\Sinottico.sql" />
+    <Build Include="dbo\Tables\UtentiGruppiUtenti.sql" />
+    <Build Include="dbo\Tables\OrdiniErogatiTestate.sql" />
+    <Build Include="dbo\Tables\OrdiniRigheErogateStati.sql" />
+    <Build Include="dbo\Tables\OrdiniRigheRichiesteStati.sql" />
+    <Build Include="dbo\Tables\OrdiniSottoStati.sql" />
+    <Build Include="dbo\Tables\OrdiniStatiCalcolati.sql" />
+    <Build Include="dbo\Tables\Priorita.sql" />
+    <Build Include="dbo\Tables\OrdiniErogatiSottoStati.sql" />
+    <Build Include="dbo\Tables\Regimi.sql" />
+    <Build Include="dbo\Tables\MessaggiRichieste.sql" />
+    <Build Include="dbo\Tables\OrdiniStatiRisposta.sql" />
+    <Build Include="dbo\Tables\Aziende.sql" />
+    <Build Include="dbo\Tables\MessaggiStati.sql" />
+    <Build Include="dbo\Views\OrdiniLista1.sql" />
+    <Build Include="dbo\Views\CorePrestazioniList.sql" />
+    <Build Include="dbo\Views\OrdiniLista.sql" />
+    <Build Include="DataAccess\Views\OrdiniLista.sql" />
+    <Build Include="DataAccess\Views\OrdiniDettaglio.sql" />
+    <Build Include="DataAccess\Views\OrdiniRigheRichiesteLista.sql" />
+    <Build Include="DataAccess\Views\OrdiniRigheErogateLista.sql" />
+    <Build Include="dbo\Views\OrdiniErogatiVersioniDecompressi.sql" />
+    <Build Include="DataAccess\Views\OrdiniErogatiLista.sql" />
+    <Build Include="dbo\Views\OrdiniVersioniDecompressi.sql" />
+    <Build Include="DataAccess\Views\OrdiniRigheRichiesteListaDatiAggiuntivi.sql" />
+    <Build Include="DataAccess\Views\OrdiniListaDatiAggiuntivi.sql" />
+    <Build Include="DataAccess\Views\OrdiniRigheErogateListaDatiAggiuntivi.sql" />
+    <Build Include="DataAccess\Views\OrdiniErogatiListaDatiAggiuntivi.sql" />
+    <Build Include="dbo\Views\DatabaseLogTsql.sql" />
+    <Build Include="DataConfig\Views\DatiAccessoriPrestazioni.sql" />
+    <Build Include="DataConfig\Views\DatiAccessoriSistema.sql" />
+    <Build Include="DataConfig\Views\DatiAccessori.sql" />
+    <Build Include="DataConfig\Views\EnnuplePrestazioni.sql" />
+    <Build Include="DataConfig\Views\EnnupleAccessi.sql" />
+    <Build Include="DataConfig\Views\GruppiPrestazioni.sql" />
+    <Build Include="DataConfig\Views\GruppiUtenti.sql" />
+    <Build Include="DataConfig\Views\Prestazioni.sql" />
+    <Build Include="dbo\Views\DatabaseLogLastObjectChanged.sql" />
+    <Build Include="dbo\Views\UiSistemi.sql" />
+    <Build Include="dbo\Views\OrdiniLista2.sql" />
+    <Build Include="dbo\Views\WsOrdiniTestateSelect.sql" />
+    <Build Include="DataConfig\Views\Utenti.sql" />
+    <Build Include="dbo\Views\WsOrdiniTestateList2.sql" />
+    <Build Include="DataConfig\Views\UtentiGruppiUtenti.sql" />
+    <Build Include="DataConfig\Views\PrestazioniGruppiPrestazioni.sql" />
+    <Build Include="DataConfig\Views\Sistemi.sql" />
+    <Build Include="DataConfig\Views\UnitaOperative.sql" />
+    <Build Include="DataConfig\Views\Regimi.sql" />
+    <Build Include="DataConfig\Views\Priorita.sql" />
+    <Build Include="dbo\Views\WsOrdiniErogatiTestateSelect.sql" />
+    <Build Include="DataConfig\Views\ProfiliPrestazioni.sql" />
+    <Build Include="dbo\Views\CorePrestazioniSelect.sql" />
+    <Build Include="dbo\Views\GruppiPrestazioniListaPrestazioni.sql" />
+    <Build Include="Storage\SECONDARY.sql" />
+    <Build Include="Security\DataAccessMsg.sql" />
+    <Build Include="Security\DataAccessWs.sql" />
+    <Build Include="Security\ExecuteBiztalk.sql" />
+    <Build Include="Security\DataAccessUi.sql" />
+    <Build Include="Security\ExecuteImportExport.sql" />
+    <Build Include="Security\DataAccessSql.sql" />
+    <Build Include="Security\OE_BT_DA.sql" />
+    <Build Include="Security\PROGEL.IT_Sviluppo.sql" />
+    <Build Include="Security\PROGEL.IT_dagobah_.sql" />
+    <Build Include="Security\PROGEL.IT_DAGOBAH2_.sql" />
+    <Build Include="Security\PROGEL.IT_ENDOR2_.sql" />
+    <Build Include="Security\DEV_VS.sql" />
+    <Build Include="Security\PROGEL.IT_dev_vs.sql" />
+    <Build Include="dbo\Functions\GetXMLOrdineStatusUpdate.sql" />
+    <Build Include="dbo\Functions\GetTotaleRigheRichiesteByIDOrdine.sql" />
+    <Build Include="dbo\Functions\GetTotaleRigheErogateByIDOrdineErogato.sql" />
+    <Build Include="dbo\Functions\IsOrdineCancellabile.sql" />
+    <Build Include="dbo\Functions\GetXMLOrdineErogato.sql" />
+    <Build Include="dbo\Functions\GetException.sql" />
+    <Build Include="dbo\Functions\GetUiPrestazioniGruppiPrestazioniCount.sql" />
+    <Build Include="dbo\Functions\GetUiUtentiGruppiUtentiCount.sql" />
+    <Build Include="dbo\Functions\GetXMLOrdineErogati.sql" />
+    <Build Include="dbo\Functions\IsOrdineArchiviabile.sql" />
+    <Build Include="dbo\Functions\IsOrdineSenzaRispostaOppureStato.sql" />
+    <Build Include="dbo\Functions\GetMinStatoErogatoTestateOrderEntry.sql" />
+    <Build Include="dbo\Functions\GetWsTotalePrestazioniProfilo.sql" />
+    <Build Include="dbo\Functions\GetWsAggregazioneSistemiErogantiProfilo.sql" />
+    <Build Include="dbo\Functions\GetProgressivoPrestazioni.sql" />
+    <Build Include="dbo\Functions\GetMinStatoErogatoOrderEntry.sql" />
+    <Build Include="dbo\Functions\GetStatoCalcolato.sql" />
+    <Build Include="dbo\Functions\GetAggregazioneSistemi.sql" />
+    <Build Include="dbo\Functions\IsOrdineCancellato.sql" />
+    <Build Include="dbo\Functions\GetWsAggregazioneSistemiEroganti.sql" />
+    <Build Include="dbo\Functions\GetWsAggregazioneSistemiErogantiDescrizione.sql" />
+    <Build Include="dbo\Functions\GetWsDescrizioneStato2.sql" />
+    <Build Include="dbo\Functions\GetDescrizionePrestazioneByIDRigaRichiedente.sql" />
+    <Build Include="dbo\Functions\IsProfiloNelProfiloRecursivo.sql" />
+    <Build Include="dbo\Functions\IsGuid.sql" />
+    <Build Include="dbo\Functions\GetAggregazioneStatoMessaggioOriginale.sql" />
+    <Build Include="dbo\Functions\GetStatoSenzaSottostato2.sql" />
+    <Build Include="dbo\Functions\GetXMLOrdine.sql" />
+    <Build Include="dbo\Functions\IsNullOrEmpty.sql" />
+    <Build Include="dbo\Functions\compress.sql" />
+    <Build Include="dbo\Functions\decompress.sql" />
+    <Build Include="dbo\Functions\GetProfiloGerarchia2.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniRichiedibili.sql" />
+    <Build Include="dbo\Functions\GetUiEnnuple1.sql" />
+    <Build Include="dbo\Functions\GetEnnuple.sql" />
+    <Build Include="dbo\Functions\GetEnnupleProfili.sql" />
+    <Build Include="dbo\Functions\GetGruppiOePerUtente.sql" />
+    <Build Include="dbo\Functions\GetEnnupleAccessi.sql" />
+    <Build Include="dbo\Functions\GetGerarchiaPrestazioniOrdineByIdTestata.sql" />
+    <Build Include="dbo\Functions\GetGruppiPrestazioniPreferiti.sql" />
+    <Build Include="dbo\Functions\RicalcolaGruppiOePerUtente.sql" />
+    <Build Include="dbo\Functions\GetStatiDaMessaggioXml.sql" />
+    <Build Include="dbo\Stored Procedures\CoreMessaggiStatiInsert2.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniDatiAccessoriUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateStatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleAccessiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateDatiAggiuntiviUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\CoreMessaggiStatiUpdateByID2.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniErogatiSelectByIDOrdine.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleAccessiCopy.sql" />
+    <Build Include="dbo\Stored Procedures\CoreUnitaOperativeSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiPrestazioniInsert1.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceExportPrestazioniPerGruppo.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiPrestazioniUpdate1.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceExportUtentiPerGruppo.sql" />
+    <Build Include="dbo\Stored Procedures\UiSinotticoSistemi.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiPrestazioniList2.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceExportEnnuple.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniRigheErogateList.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiUpdate1.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateDatiAggiuntiviDeleteByIDOrdine.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceExportEnnupleAccessi.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniErogatiSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\MsgMessaggiRichiesteUpdateByID.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiInsert1.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceImportUtentiPerGruppo.sql" />
+    <Build Include="dbo\Stored Procedures\UiVersioniList.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiSelect1.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceImportPrestazioniPerGruppo.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniRigheRichiesteSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiList1.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceImportEnnuple.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniRigheErogateSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiUtentiList1.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceImportEnnupleAccessi.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniRigheErogateSelectByIDRigaRichiedente.sql" />
+    <Build Include="dbo\Stored Procedures\UiUtentiList1.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteDatiAggiuntiviInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniList2.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniCheckByIds.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteDatiAggiuntiviUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceExportPrestazioniPerProfilo.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceImportPrestazioniPerProfilo.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleDelete.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniProfiliList.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteDatiAggiuntiviDeleteByIDRigaRichiesta.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleAccessiDelete.sql" />
+    <Build Include="dbo\Stored Procedures\MsgMessaggiStatiUpdateByID.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniErogatiVersioniListByIDOrdineErogato.sql" />
+    <Build Include="dbo\Stored Procedures\UiBuildSinotticoUltimaSettimana.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniTestateRichiesteErogateList.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriSelect.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateDatiAggiuntiviDeleteByIDOrdineErogato.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniErogatiList.sql" />
+    <Build Include="dbo\Stored Procedures\UiBuildSinotticoUltimoGiorno.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriList.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniInsert1.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateDatiAggiuntiviInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniRigheList.sql" />
+    <Build Include="dbo\Stored Procedures\CoreUtentiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniUpdate1.sql" />
+    <Build Include="dbo\Stored Procedures\UiStatiEnnupleList.sql" />
+    <Build Include="dbo\Stored Procedures\UiSimulazioneEnnupleInteressateList.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupSistemiRichiedenti.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniList3.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriDelete.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateDatiAggiuntiviUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupUnitaOperative.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriPreview.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriCheckCode.sql" />
+    <Build Include="dbo\Stored Procedures\BtCodaRichiesteOutputOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupTipiDatiAccessori.sql" />
+    <Build Include="dbo\Stored Procedures\BtCodaRichiesteOutputConta.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupAziende.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreGruppiPrestazioniListByIdGruppo.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupStatiOrdine.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceCancella_MessaggiRichiesteOrfani.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupRegimi.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniList1.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceCancella_MessaggiStatiOrfani.sql" />
+    <Build Include="dbo\Stored Procedures\CompressOrdiniErogatiVersioni.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupPriorita.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniProfiliList1.sql" />
+    <Build Include="dbo\Stored Procedures\CompressOrdiniVersioni.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupEnnupleStati.sql" />
+    <Build Include="dbo\Stored Procedures\CompressAllOrdiniErogatiVersioni.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDatiAggiuntiviInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiPrestazioniList1.sql" />
+    <Build Include="dbo\Stored Procedures\CompressAllOrdiniVersioni.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDatiAggiuntiviUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\WsProfiloUtenteInsert.sql" />
+    <Build Include="dbo\Stored Procedures\WsProfiloUtenteUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDatiAggiuntiviDeleteByIDRigaErogata.sql" />
+    <Build Include="dbo\Stored Procedures\WsProfiloUtenteDelete.sql" />
+    <Build Include="dbo\Stored Procedures\WsCodaRichiesteOutputInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniProfiliDelete.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniListByCodiceDescrizione3.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteSelectByIDOrdine2.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniList.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateSelectByIDSistemaRichiedente2.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniProfiliInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniSelectByIDProfilo.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateSelectByProtocollo2.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniDelete.sql" />
+    <Build Include="dbo\Stored Procedures\CoreEnnupleAccessiCheck.sql" />
+    <Build Include="dbo\Stored Procedures\UiUtentiInsertOrUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteSelectByRigaRichiedente2.sql" />
+    <Build Include="dbo\Stored Procedures\WsProfiloUtenteSelect.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniInsertOrUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteSelectById.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateDatiAggiuntiviSelectByIDDatoAggiuntivo2.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_Ordine_Completati.sql" />
+    <Build Include="dbo\Stored Procedures\WsProfiliUtenteList.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateDatiAggiuntiviSelect2.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_Versioni_Completati.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_Ordine_NoRisposta.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteUpdateStato.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateDatiAggiuntiviList2.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiSimulazioneEnnupleList1.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteDatiAggiuntiviSelectByIDDatoAggiuntivo2.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniProfiliList.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_Versioni_PrenotazionePassata.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteDatiAggiuntiviSelect2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateInsert2.sql" />
+    <Build Include="dbo\Stored Procedures\WsPrestazioniProfiliInsert.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteDatiAggiuntiviList2.sql" />
+    <Build Include="dbo\Stored Procedures\WsPrestazioniProfiliDelete.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_VersioniPerId.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniErogatiTestateInsert2.sql" />
+    <Build Include="dbo\Stored Procedures\WsPrestazioniProfiliList.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateSelectByProtocollo2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateSelectByProtocolloIDSplit2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateSelectByProtocolloOrdineSistemaErogante2.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateUpdateAnteprima.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateSelectBySistemaEroganteIDOrdineTestata2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateUpdateAnteprima.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateSelectByIDOrdineTestata.sql" />
+    <Build Include="dbo\Stored Procedures\WsProfiloUtenteSelectById.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateSelect2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateSelectByRigaErogante2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateSelectByRigaRichiedente2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateDatiAggiuntiviList2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiVersioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateDatiAggiuntiviSelect2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateDatiAggiuntiviSelectByIDDatoAggiuntivo2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDatiAggiuntiviList2.sql" />
+    <Build Include="dbo\Stored Procedures\WsPrestazioniErogabiliProfiliListByCodiceDescrizione.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDatiAggiuntiviSelect2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDatiAggiuntiviSelectByIDDatoAggiuntivo2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateDatiPersistentiDeleteByIDOrdineErogato.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_OrdinePerId.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniDatiAccessoriList.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_Ordine_PrenotazionePassata.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceCancella_Ordini.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiDatiAccessoriList.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniDatiAccessoriDelete.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_Ordine_Rimasti.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceCancella_OrdiniErogatiOrfani.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiDatiAccessoriDelete.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniDatiAccessoriInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreUtentiVerifyAccess.sql" />
+    <Build Include="dbo\Stored Procedures\CoreMessaggiRichiesteSelectByIDOrdineTestata.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiDatiAccessoriInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreOrdiniOttieniProssimoNumero.sql" />
+    <Build Include="dbo\Stored Procedures\CoreTicketsInsert2.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateDatiAggiuntiviInsert2.sql" />
+    <Build Include="dbo\Stored Procedures\CoreMessaggiStatiSelectByIDOrdineErogatoTestata.sql" />
+    <Build Include="dbo\Stored Procedures\CoreTicketsSelectIfValid.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateDatiAggiuntiviUpdate2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDeleteByIDOrdineErogato.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniVersioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreTicketsIsValid.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteDatiAggiuntiviInsert2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDelete.sql" />
+    <Build Include="dbo\Stored Procedures\CoreTicketsSelectByID2.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteDatiAggiuntiviUpdate2.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniRigheRichiesteList.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniErogatiFinteTestateSelect.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateDatiAggiuntiviDeleteByIDOrdine.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAggiuntiviConvert.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniErogatiTestateDatiAggiuntiviList.sql" />
+    <Build Include="dbo\Stored Procedures\UiTrackingList.sql" />
+    <Build Include="dbo\Stored Procedures\UiTrackingSelect.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAccessoriListByCheck2.sql" />
+    <Build Include="dbo\Stored Procedures\CoreSistemiEstesaAllinea.sql" />
+    <Build Include="dbo\Stored Procedures\CoreUnitaOperativeEstesaAllinea.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteDatiAggiuntiviDeleteByIDOrdine.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteDelete.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteDeleteByIDOrderEntry.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteDeleteByIDPrestazione.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleCopy.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleInsert.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteUpdateStato.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleList.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleSelect.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiSACGruppiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiSACUtentiCerca.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupStatiCalcolatiOrdine.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiPrestazioniDelete.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiPrestazioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiPrestazioniList.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiUtentiPerUtente.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiPrestazioniUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteDeleteByIDOrderEntry.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiUtentiDelete.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniListBySistemaErogante4.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteDatiAggiuntiviDeleteByIDOrdine.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAccessoriSelect2.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAggiuntiviSelect.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiUtentiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniErogatiTestateUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniListByUnitaOperativa3.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDatiAggiuntiviDeleteByIDOrdineErogato.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAggiuntiviInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiUtentiList.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniListByPaziente3.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAggiuntiviDelete.sql" />
+    <Build Include="dbo\Stored Procedures\UiGruppiUtentiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAggiuntiviList.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniList1.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupDatiAccessoriValoriDefault.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniDelete.sql" />
+    <Build Include="dbo\Stored Procedures\UiBuildSinottico.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniGruppiPrestazioniDelete.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateSelectByID4.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniMessaggiValidazioneList.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniGruppiPrestazioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateSelectByIDSistemaErogante4.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAggiuntiviUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiLookupSistemiEroganti.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateSelectByIDSistemaRichiedente4.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAccessoriDefaultList.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniList.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniListByIdGruppo.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateSelectByProtocollo4.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniSelect.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByDataModifica.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteSelect3.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteDatiAggiuntiviDeleteByIDRigaRichiesta.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteDatiAggiuntiviList2.sql" />
+    <Build Include="dbo\Stored Procedures\UiSimulazioneEnnupleList.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheRichiesteSelectByIDOrdine4.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateUpdateTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\CoreSistemiErogantiListByUtente.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiDelete.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByDataRichiesta.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAccessoriListByIDsPrestazioni3.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheErogateSelectByIDOrdineErogato3.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateUpdate2.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceExportPrestazioniPerSistema.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniErogatiTestateSelect.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByIDSacPaziente.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniRigheErogateDatiAggiuntiviList2.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateInsert2.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceImportPrestazioniPerSistema.sql" />
+    <Build Include="dbo\Stored Procedures\UiMessaggiRichiesteList.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiList.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByIDSistemaErogante.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAccessoriListByIDRichiesta3.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniSelect1.sql" />
+    <Build Include="dbo\Stored Procedures\UiMessaggiStatiList.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByIDSistemaRichiedente.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniErogatiTestateDatiAggiuntiviList2.sql" />
+    <Build Include="dbo\Stored Procedures\UiMessaggiRichiesteSelect.sql" />
+    <Build Include="dbo\Stored Procedures\WsRegimiList.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MsgMessaggiRichiesteInsert.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByNomeUtente.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateDatiAggiuntiviList2.sql" />
+    <Build Include="dbo\Stored Procedures\UiSinottico.sql" />
+    <Build Include="dbo\Stored Procedures\WsPrioritaList.sql" />
+    <Build Include="dbo\Stored Procedures\UiUnitaOperativeDelete.sql" />
+    <Build Include="dbo\Stored Procedures\MsgMessaggiStatiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByNosologico.sql" />
+    <Build Include="dbo\Stored Procedures\UiMessaggiStatiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheRichiesteInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiUnitaOperativeInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreAziendeList.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByProtocollo.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniErogatiTestateSelectByIDOrdine2.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceCancella_DatiRollback.sql" />
+    <Build Include="dbo\Stored Procedures\UiUnitaOperativeSelect.sql" />
+    <Build Include="dbo\Stored Procedures\CoreAziendeSelectByCodice.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByRangeID.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniErogatiTestateSelectByProtocollo5.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByDataModificaErogato.sql" />
+    <Build Include="dbo\Stored Procedures\UiUnitaOperativeUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\CoreUnitaOperativeSelectByCodice.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByUnitaOperative.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniTestateDatiAggiuntiviList.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniErogatiTestateSelectByProtocolloIDSplit3.sql" />
+    <Build Include="dbo\Stored Procedures\UiUtentiDelete.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByDataPrenotazione.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniErogatiTestateSelectBySistemaErogante3.sql" />
+    <Build Include="dbo\Stored Procedures\UiUtentiGruppiUtentiDelete.sql" />
+    <Build Include="dbo\Stored Procedures\CoreUnitaOperativeInsert.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniErogatiTestateSelectBySistemaEroganteIDOrdineTestata3.sql" />
+    <Build Include="dbo\Stored Procedures\MsgMessaggiRichiesteSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\UiUtentiGruppiUtentiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreSistemiSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\CoreMessaggiRichiesteSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\UiUtentiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreSistemiSelectByCodice.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateDeleteRollback.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniSelectBySistemaErogante2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgMessaggiStatiSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\UiUtentiList.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniSelectByID2.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniList.sql" />
+    <Build Include="dbo\Stored Procedures\UiUtentiSelect.sql" />
+    <Build Include="dbo\Stored Procedures\CoreSistemiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniSelectByIDs.sql" />
+    <Build Include="dbo\Stored Procedures\CoreMessaggiStatiSelectByID.sql" />
+    <Build Include="dbo\Stored Procedures\UiUtentiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\CoreSistemiErogantiList.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniSelectByIDsAndCodiceSininimo.sql" />
+    <Build Include="dbo\Stored Procedures\WsProfiliListByCodiceDescrizione.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniRigheRichiesteDatiAggiuntiviList.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniDatiAggiuntiviList.sql" />
+    <Build Include="dbo\Stored Procedures\UiSinottico1.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriPrestazioniSelect.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniRigheErogateDatiAggiuntiviList.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniGruppiPrestazioniCopy.sql" />
+    <Build Include="dbo\Stored Procedures\UiSinotticoSistemi1.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\CoreGruppiPrestazioniListByDescrizione.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\MsgRollbackOrdiniDeleteAll.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniProfiloPrestazioniCopy.sql" />
+    <Build Include="dbo\Stored Procedures\MsgRollbackOrdiniTestateDatiAggiuntiviInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreSistemiRichiedentiList.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByStato.sql" />
+    <Build Include="dbo\Stored Procedures\MsgRollbackOrdiniRigheRichiesteDatiAggiuntiviInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreUnitaOperativeList.sql" />
+    <Build Include="dbo\Stored Procedures\MsgRollbackOrdiniRigheRichiesteInsert.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniVersioniInsert.sql" />
+    <Build Include="dbo\Stored Procedures\MsgRollbackOrdiniTestateUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\CorePrestazioniSelectByIdGruppo.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleAccessiList.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateUpdateStatoByIDOrdineErogato.sql" />
+    <Build Include="dbo\Stored Procedures\UiProfiliPrestazioniSelect.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleAccessiUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateStatusUpdate2.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniSelectPrestazioni.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiDatiAccessoriSelect.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniTestateUltimiArrivi.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniTestateDatiAggiuntiviInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiSistemiDatiAccessoriUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniErogatiTestateUltimiArrivi.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleAccessiInsert.sql" />
+    <Build Include="dbo\Stored Procedures\CoreMessaggiRichiesteInsert3.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniInsert1.sql" />
+    <Build Include="dbo\Stored Procedures\CoreMessaggiRichiesteUpdateByID2.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniDatiAccessoriSelect.sql" />
+    <Build Include="dbo\Stored Procedures\UiPrestazioniUpdate1.sql" />
+    <Build Include="Database Triggers\DatabaseTriggerLog.sql" />
+    <Build Include="dbo\User Defined Types\AnnoNumero.sql" />
+    <Build Include="Security\DataAccess.sql" />
+    <Build Include="Security\DataConfig.sql" />
+    <Build Include="Security\SacOrganigramma.sql" />
+    <Build Include="dbo\Synonyms\Log_Storico.sql" />
+    <Build Include="dbo\Synonyms\MessaggiRichieste_Storico.sql" />
+    <Build Include="dbo\Synonyms\MessaggiStati_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniErogatiTestate_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniErogatiTestateDatiAggiuntivi_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniErogatiVersioni_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniRigheErogate_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniRigheErogateDatiAggiuntivi_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniRigheRichieste_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniRigheRichiesteDatiAggiuntivi_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniTestate_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniTestateDatiAggiuntivi_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniVersioni_Storico.sql" />
+    <Build Include="SacOrganigramma\Synonyms\Sistemi.sql" />
+    <Build Include="SacOrganigramma\Synonyms\UnitaOperative.sql" />
+    <Build Include="SacOrganigramma\Synonyms\Utenti.sql" />
+    <Build Include="SacOrganigramma\Synonyms\Gruppi.sql" />
+    <Build Include="SacOrganigramma\Synonyms\GruppiUtenti.sql" />
+    <Build Include="SacOrganigramma\Synonyms\GruppiOttienePerUtente.sql" />
+    <Build Include="SacOrganigramma\Synonyms\SistemiInserisceOppureModifica.sql" />
+    <Build Include="SacOrganigramma\Synonyms\UnitaOperativeInserisceOppureModifica.sql" />
+    <Build Include="Security\Permissions.sql" />
+    <Build Include="dbo\Functions\GetStatoCalcolatoRigheRichieste.sql" />
+    <Build Include="dbo\Functions\IsOrdineReinoltrato.sql" />
+    <Build Include="dbo\Functions\GetOrdineValidazione.sql" />
+    <Build Include="dbo\Stored Procedures\UiOrdiniList4.sql" />
+    <Build Include="dbo\Functions\GetPrestazioniRichiedibili2.sql" />
+    <Build Include="dbo\Functions\GetEnnuple2.sql" />
+    <Build Include="dbo\Stored Procedures\UiSimulazioneEnnupleList2.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniRigheErogateDatiAggiuntiviListByIDOrdineErogato.sql" />
+    <Build Include="dbo\Tables\UnitaOperative.sql" />
+    <Build Include="dbo\Tables\Sistemi.sql" />
+    <Build Include="dbo\Views\UnitaOperativeEstesa.sql" />
+    <Build Include="dbo\Views\SistemiEstesa.sql" />
+    <Build Include="dbo\Stored Procedures\Maintenance_SyncOrganigramma.sql" />
+    <Build Include="dbo\Tables\EnnupleDatiAccessori.sql" />
+    <Build Include="dbo\Tables\CodaRichiesteOutputSemaforo.sql" />
+    <Build Include="dbo\Functions\GetEnnupleDatiAccessori.sql" />
+    <Build Include="dbo\Functions\GetDatiAccessoriUsabili.sql" />
+    <Build Include="dbo\Stored Procedures\UiSimulazioneEnnupleDatiAccessoriList.sql" />
+    <Build Include="dbo\Stored Procedures\UiSimulazioneEnnupleDatiAccessoriInteressateList.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleDatiAccessoriUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleDatiAccessoriSelect.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleDatiAccessoriList.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleDatiAccessoriInsert.sql" />
+    <Build Include="dbo\Stored Procedures\UiEnnupleDatiAccessoriDelete.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriSistemi.sql" />
+    <Build Include="dbo\Stored Procedures\UiDatiAccessoriPrestazioni.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAccessoriListByIDsPrestazioni4.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAccessoriListByIDRichiesta4.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAccessoriListByCheck3.sql" />
+    <Build Include="dbo\Stored Procedures\CoreSistemiErogantiAccessiListByUtente.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_Cdc_DisabilitaCdc.sql" />
+    <Build Include="dbo\Stored Procedures\_Util_Cdc_AbilitaCdc.sql" />
+    <Build Include="dbo\Stored Procedures\CoreDatiAggiuntiviConvert2.sql" />
+    <Build Include="dbo\Tables\UtentiGruppiDominio.sql" />
+    <Build Include="dbo\Stored Procedures\CoreRicalcolaUtentiGruppiDominio.sql" />
+    <Build Include="dbo\Tables\DatiAccessoriTipi.sql" />
+    <Build Include="dbo\Views\MsgOrdiniErogatiTestateSelect.sql" />
+    <Build Include="dbo\Functions\GetMsgDescrizioneStatoErogato.sql" />
+    <Build Include="dbo\Stored Procedures\MsgOrdiniErogatiTestateSelectByIDOrdineTestata_1.sql" />
+    <Build Include="dbo\Stored Procedures\Maintenance_CacheGruppiUtente.sql" />
+    <Build Include="dbo\Functions\GetMsgDescrizioneStatoRichiesta.sql" />
+    <Build Include="DataAccess\Views\OrdiniErogatiDateStati.sql" />
+    <Build Include="DataAccess\Views\OrdiniDateStati.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_CodaRichiesteInviate.sql" />
+    <Build Include="dbo\Synonyms\CodaRichiesteOutputInviate_Storico.sql" />
+    <Build Include="dbo\Tables\SinotticoUltimoMese.sql" />
+    <Build Include="dbo\Tables\SinotticoUltime24Ore.sql" />
+    <Build Include="dbo\Stored Procedures\UiSinotticoUltimiNGiorniSistemi.sql" />
+    <Build Include="dbo\Stored Procedures\UiSinotticoUltimiNGiorni.sql" />
+    <Build Include="dbo\Stored Procedures\UiSinotticoUltime24OreSistemi.sql" />
+    <Build Include="dbo\Stored Procedures\UiSinotticoUltime24Ore.sql" />
+    <Build Include="dbo\Stored Procedures\Maintenance_BuildSinotticoUltimoMese.sql" />
+    <Build Include="dbo\Stored Procedures\Maintenance_BuildSinotticoUltime24Ore.sql" />
+    <Build Include="dbo\Tables\RicercaOrdiniProcessoLog.sql" />
+    <Build Include="dbo\Tables\RicercaOrdiniCodaProcessate.sql" />
+    <Build Include="dbo\Tables\RicercaOrdiniCoda.sql" />
+    <Build Include="dbo\Tables\RicercaOrdini.sql" />
+    <Build Include="dbo\Stored Procedures\WsOrdiniTestateList2ByStatoPianificato.sql" />
+    <Build Include="dbo\Stored Procedures\RicercaOrdiniCodaOttieni.sql" />
+    <Build Include="dbo\Stored Procedures\Maintenance_RicercaOrdiniProcessa.sql" />
+    <Build Include="dbo\Stored Procedures\Maintenance_RicercaOrdiniCancella.sql" />
+    <Build Include="dbo\Tables\EnnupleArchiviazione.sql" />
+    <Build Include="dbo\Functions\GetEnnupleArchiviazioneRigheRichieste.sql" />
+    <Build Include="dbo\Functions\GetEnnupleArchiviazione.sql" />
+    <Build Include="dbo\Functions\GetArchiviazioneMinima.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceStorico_TabelleDiBase.sql" />
+    <Build Include="dbo\Stored Procedures\MaintenanceCancella_Ticket.sql" />
+    <Build Include="dbo\Synonyms\UnitaOperative_Storico.sql" />
+    <Build Include="dbo\Synonyms\Tickets_Storico.sql" />
+    <Build Include="dbo\Synonyms\Sistemi_Storico.sql" />
+    <Build Include="dbo\Synonyms\PrestazioniProfili_Storico.sql" />
+    <Build Include="dbo\Synonyms\Prestazioni_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniStati_Storico.sql" />
+    <Build Include="dbo\Synonyms\OrdiniErogatiStati_Storico.sql" />
+    <Build Include="DataAccess\Views\OrdiniErogatiDateStatiOsu.sql" />
+    <Build Include="dbo\Functions\SplitStringToListGiud.sql" />
+    <Build Include="dbo\Stored Procedures\_Schedule_AttivitaFrequente.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assemblies\Progel.SqlCrl.Compression.dll" />
+    <None Include="OE_SqlSchemaCompare.scmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Progel.SqlCrl.Compression">
+      <HintPath>Assemblies\Progel.SqlCrl.Compression.dll</HintPath>
+      <SqlAssemblyName>Progel.SqlCrl.Compression</SqlAssemblyName>
+      <IsModelAware>True</IsModelAware>
+      <GenerateSqlClrDdl>False</GenerateSqlClrDdl>
+      <SqlOwnerName>dbo</SqlOwnerName>
+      <SqlPermissionSet>SAFE</SqlPermissionSet>
+    </Reference>
+  </ItemGroup>
+</Project>

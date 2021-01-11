@@ -1,0 +1,64 @@
+<!-- edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Alessandro Nostini (Progel srl) -->
+<xs:schema xmlns="http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0" elementFormDefault="qualified">
+	<xs:element name="RispostaConsenso" type="RispostaConsenso" nillable="true">
+		<xs:annotation>
+			<xs:appinfo>
+				<b:properties>
+					<b:property distinguished="true" xpath="/*[local-name()='RispostaConsenso' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='IngressoAck' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='Utente' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']"/>
+					<b:property distinguished="true" xpath="/*[local-name()='RispostaConsenso' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='IngressoAck' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='Ack' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']"/>
+					<b:property distinguished="true" xpath="/*[local-name()='RispostaConsenso' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='IngressoAck' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='Url' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']"/>
+					<b:property distinguished="true" xpath="/*[local-name()='RispostaConsenso' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='IngressoAck' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='Account' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']"/>
+					<b:property distinguished="true" xpath="/*[local-name()='RispostaConsenso' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='IngressoAck' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']/*[local-name()='Password' and namespace-uri()='http://SAC.BT.Consenso.Schema.Dll.Input.RispostaConsenso/v1.0.0.0']"/>
+				</b:properties>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RispostaConsenso">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Consenso" type="Consenso" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IngressoAck" type="IngressoAck" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="NotificheAck" type="NotificaAck" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Consenso">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Tipo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DataStato" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Stato" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OperatoreId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OperatoreCognome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OperatoreNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OperatoreComputer" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PazienteId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PazienteProvenienza" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PazienteIdProvenienza" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PazienteCognome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PazienteNome" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PazienteCodiceFiscale" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PazienteDataNascita" type="xs:dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PazienteComuneNascitaCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PazienteNazionalitaCodice" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PazienteTesseraSanitaria" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IngressoAck">
+		<xs:sequence>
+			<xs:element name="Utente" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Ack" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Url" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Account" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Password" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NotificaAck">
+		<xs:sequence>
+			<xs:element name="Utente" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Ack" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Url" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Account" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Password" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
