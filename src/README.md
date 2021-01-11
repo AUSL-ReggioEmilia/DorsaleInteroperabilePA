@@ -1,5 +1,5 @@
 # Dorsale Interoperabile
-*Dispositivo medico per l'integrazione di sistemi richiednte e sistemi eroganti sanitari, abbreviato in DI*
+*Dispositivo medico per l'integrazione di sistemi richiedente e sistemi eroganti sanitari, abbreviato in DI*
 ## DWC
 *Contiene i vari sorgenti che compongono il progetto del Data Warehouse Clinico*
 ## OE
