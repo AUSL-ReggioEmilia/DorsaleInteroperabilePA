@@ -23,7 +23,7 @@ La direzione tecnica dell’ente sanitario ha sempre contribuito attivamente all
 
 La forma di collaborazione, ormai consolidata nel tempo, con l’Azienda Sanitaria Locale di Reggio Emila ha trovato una regolare formalizzazione con l’adesione delle parti (4WardPRO S.R.L e AUSL RE) alla “normativa sul Riuso” del software (rif. CAD Decreto legislativo n. 235/2010 e successive integrazioni) che prevede quanto di seguito riportato:
 
-• 4WardPRO S.R.L è proprietaria dei componenti CORE della DI in quanto inizialmente realizzati in seguito ad aggiudicazione di una gara pubblica ad invito. PROGEL detiene quindi le competenze ed i sorgenti dei componenti CORE della DI e ne esegue l’evoluzione e la manutenzione in esclusiva;
+• 4WardPRO S.R.L è proprietaria dei componenti CORE della DI in quanto inizialmente realizzati in seguito ad aggiudicazione di una gara pubblica ad invito. 4WardPRO S.R.L detiene quindi le competenze ed i sorgenti dei componenti CORE della DI e ne esegue l’evoluzione e la manutenzione in esclusiva;
 
 • L’Azienda Sanitaria Locale di Reggio Emilia detiene la proprietà di ogni componente della DI sviluppato a seguito di evolutive di cui fornisce l’analisi funzionale del progetto e ne richiede lo sviluppo (ad eccezione dei moduli che sono di proprietà di 4WardPRO S.R.L);
 
