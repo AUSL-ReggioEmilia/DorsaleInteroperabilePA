@@ -20,18 +20,18 @@ Una volta al mese nel ciclo di rilascio l'ultima versione stabile viene pubblica
 
 ### Documentazione del prodotto
 
-La documentazione della Dorsale Interoperabile PA è disponibile sul sito https://www.progel.it/healthcare/ 
+La documentazione della Dorsale Interoperabile PA è disponibile sul sito https://www.4ward.it/healthcare/
 
-Nella sezione Dorsale Interoperabile PA è disponibile l'intero manuale della Soluzione: https://www.progel.it/healthcare/
+Nella sezione Dorsale Interoperabile PA è disponibile l'intero manuale della Soluzione: https://www.4ward.it/healthcare/
 
 ### Contatti della AUSL Reggio Emilia (Pubblica Amministrazione cedente) 
 
 Il referente tecnico del Servizio Tecnologie Informatiche e Telematiche (https://www.ausl.re.it/node/304003) che segue gli sviluppi e la conduzione della Soluzione Dorsale Interoperabile PA è l'Ing. Marco Foracchia marco.foracchia@ausl.re.it
 
-### Contatti di Progel S.p.A (Mantainer) 
+### Contatti di 4WardPRO s.r.l (Mantainer) 
 
-Progel S.p.A. è il mantainer della Soluzione e partecipa alla conduzione del tavolo di confronto sul riuso della Soluzione, offre contratti di assistenza e presidio presso il cliente, manutenzione e sviluppi sulla Soluzione Dorsale Interoperabile PA, offre consulenza in ambito di digitalizzazione dei processi sanitari (IAAS qualificato nei marketplace della PA).
+4WardPRO s.r.l è il mantainer della Soluzione e partecipa alla conduzione del tavolo di confronto sul riuso della Soluzione, offre contratti di assistenza e presidio presso il cliente, manutenzione e sviluppi sulla Soluzione Dorsale Interoperabile PA, offre consulenza in ambito di digitalizzazione dei processi sanitari (IAAS qualificato nei marketplace della PA).
 
-Maggiori informazioni sul sito aziendale https://www.progel.it
+Maggiori informazioni sul sito aziendale https://www.4ward.it/
 
-Contatto del responsabile della BU ISV - Healthcare di Progel S.p.A.: Alessandro Nostini alessandro.nostini@progel.it 
+Contatto del responsabile della BU ISV - Healthcare di 4WardPRO s.r.l: Massimiliano Tacconi massimiliano.tacconi@4wardpro.it
