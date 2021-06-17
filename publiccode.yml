@@ -324,7 +324,7 @@ maintenance:
   contractors:
     - name: 4WardPRO
       until: '2022-12-31'
-      website: 'https://www.progel.it/'
+      website: 'https://www.4ward.it/'
   type: contract
 name: |-
   Dorsale Interoperabile - Clinical Data Repository (CDR), Enterprise Master
