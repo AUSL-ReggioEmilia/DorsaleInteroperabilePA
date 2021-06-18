@@ -264,8 +264,7 @@ description:
 
       Ogni modifica apportata da terze parti al Dispositivo Medico Dorsale
       Interoperabile dovrà essere oggetto di ricertificazione da parte di un
-      Mantainer che ha i requisiti in vigore nel rispetto della norma ISO
-      13485. 
+      Mantainer che ha i requisiti in vigore nel rispetto della norma ISO 13485. 
     screenshots:
       - |-
         https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_Referti_Core.png
