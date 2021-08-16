@@ -3,7 +3,7 @@
 # More info at https://github.com/italia/publiccode.yml
 
 publiccodeYmlVersion: '0.2'
-applicationSuite: >-
+applicationSuite: |-
   Dorsale Interoperabile - DataWareHouse Clinico, Anagrafica Pazienti
   Centralizzata, OrderEntry
 categories:
@@ -35,9 +35,9 @@ description:
       - ' OrderEntry (OE)'
       - Print Manager (stampa automatizzata dei referti)
       - Print Dispatcher (stampa automatizzata delle etichette)
-      - >-
-        Generazione dei CDA e Invio dei referti verso Fascicolo Sanitario Emilia
-        Romagna
+      - |-
+        Firma digitale Pades, Generazione dei CDA e Invio dei referti al
+        Fascicolo Sanitario Emilia Romagna
       - Portale Web Consultazione Utente
       - 'Portale Web di Amministrazione, Monitoraggio e Configurazione'
       - Integrazione con il Fascicolo Sanitario Emilia Romagna
@@ -46,7 +46,7 @@ description:
       - Codifiche SOLE
     genericName: Dorsale Interoperabile PA
     localisedName: Dorsale Interoperabile PA
-    longDescription: >
+    longDescription: |
       **COME FUNZIONA**
 
        
@@ -264,24 +264,23 @@ description:
 
       Ogni modifica apportata da terze parti al Dispositivo Medico Dorsale
       Interoperabile dovrà essere oggetto di ricertificazione da parte di un
-      Mantainer che ha i requisiti in vigore nel rispetto della norma ISO
-      13485. 
+      Mantainer che ha i requisiti in vigore nel rispetto della norma ISO 13485. 
     screenshots:
-      - >-
+      - |-
         https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_Referti_Core.png
-      - >-
+      - |-
         https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_Eventi_Core.png
-      - >-
+      - |-
         https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_SAC_Pazienti_Core.png
-      - >-
+      - |-
         https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_OE_RichiesteStati_Core.png
-      - >-
+      - |-
         https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_DWH_NoteAnamnestiche_Core.png
-      - >-
+      - |-
         https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_SAC_Consensi_Core.png
-      - >-
+      - |-
         https://raw.githubusercontent.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA/master/DI_OE_EroganteGenerico_Core.png
-    shortDescription: >-
+    shortDescription: |-
       Dorsale Interoperabile: Clinical Data Repository (CDR), Enterprise Master
       Patient Index (MPI), OrderEntry (OE)
 developmentStatus: stable
@@ -322,19 +321,19 @@ maintenance:
       name: Marco Foracchia
       phone: '+393346478393'
   contractors:
-    - name: Progel SpA
+    - name: 4WardPRO
       until: '2022-12-31'
-      website: 'https://www.progel.it/'
+      website: 'https://www.4ward.it/'
   type: contract
-name: >-
+name: |-
   Dorsale Interoperabile - Clinical Data Repository (CDR), Enterprise Master
   Patient Index (MPI), OrderEntry (OE)
 platforms:
   - windows
-releaseDate: '2020-05-13'
+releaseDate: '2021-06-16'
 roadmap: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
 softwareType: standalone/other
-softwareVersion: 1.2020.5.13
+softwareVersion: 1.2026.6.16
 url: 'https://github.com/AUSL-ReggioEmilia/DorsaleInteroperabilePA'
 usedBy:
   - AUSL Reggio Emilia
