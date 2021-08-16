@@ -3,3 +3,23 @@
 ################################################################################
 
 /src/DWC/DataAccess/dae-dll/DwhConn.DataAccess.Esterno/obj
+/src/DWC/DataAccess/dae-dll/DwhConn.DataAccess.Esterno.Config/obj
+/src/DWC/DataAccess/dae-dll/DwhConn.DataAccess.Esterno.Test/obj
+/src/DWC/DataAccess/dae-wcf/Tester/obj
+/src/DWC/DataAccess/dae-wcf-note-anamnestiche/Dwh.DataAccess.NoteAnamnestiche.Wcf.Types/obj
+/src/OE/OE.DataAccess/OE.Core/obj
+/src/OE/OE.DataAccess/OE.Msg/OE.Msg.DataAccess/obj
+/src/OE/OE.DataAccess/OE.Msg/OE.Msg.Test/obj
+/src/OE/OE.DataAccess/OE.Msg/OE.Wcf.ClientTestPipe/obj
+/src/OE/Oe.DatiAccessoriDinamici/DatiAccessoriDinamici.Test/obj
+/src/DWC/DataAccess/dae-wcf-note-anamnestiche/Tester/obj
+/src/OE/Oe.Eroganti.Generico/ListenRichieste/obj
+/src/PortaleAdmin/v3/DI.BiztalkMonitor.Site/obj
+/src/PortaleUser/DwhClinico.Data/obj
+/src/PortaleUser/DI.PortalUser2/obj
+/src/PortaleCommon/DI.Common/obj
+/src/PortaleAdmin/v3/DI.PortalAdmin/obj
+/src/SAC/Sac.Notifica.Generico/SendPaziente/obj
+/src/SAC/Sac.Msg/Sac.Msg.Test/obj
+/src/SAC/Sac.Msg/Sac.Msg.DataAccess/obj
+/src/SAC/Sac.Msg/Sac.Msg.Config/obj
